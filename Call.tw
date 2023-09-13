@@ -1,0 +1,730 @@
+:: Call-Chanel {"position":"225,11100","size":"100,100"}
+<<loc_Room>>\
+
+	''You pull up $john.name's contact info on your phone and give her a call. After a few rings, she answers the phone.''
+
+	<<if isEvening()>>\
+		<<nm $john "$player.name? Hey sexy, what's goin' on?">>\
+
+		<<if $john.dateCD > 0>>\
+			<<nm $player "Hey $john.name, what are you up to?">>\
+
+			<<nm $john "Tee-hee, oh, not much. Feeling pretty wrecked from work, so I think I'm gonna finish my dinner and head to bed. How about you?">>\
+
+			<<nm $player "Oh, um, yeah, I'll probably do the same.">>\
+
+			''The two of you chat for a bit before hanging up the phone.''
+
+			<<love $john 1>>
+
+			<<btnLink "Go back" "Room" "passTime()">>
+		<<else>>\
+			<<if visited("Chanel-Date-Default")>>\
+				<<nm $player "Hey $john.name. Actually I was wondering if you wanted to go grab a drink or three with me. Same place as last time?">>\
+
+				<<nm $john "Yeah, that sounds great! I'll be ready by the time you get here!">>\
+
+				<<nm $player "Alright, see you-">>\
+
+				''She hung up on you. You gather your things and head out the door, taking your time walking to $john.name's apartment.''
+			<<else>>\
+				<<nm $player "Heya $john.name! Actually, I was wondering if maybe you'd wanna go grab a couple drinks with me?">>\
+
+				''There's a pause.''
+
+				<<nm $john "Tee-hee, you mean like a date?">>\
+
+				<<nm $player "Ha, sure, I guess so.">>\
+
+				''Another pause.''
+
+				<<nm $john "U-um, okay. There's a bar near my apartment that I used to go to a lot. Maybe pick me up and we'll head over there?">>\
+
+				<<nm $player "Sounds like a plan. I'll see you soon!">>\
+
+				''You hang up the phone and gather your things before heading out to pick up $john.name.''
+			<</if>>\
+
+			<<btnLink "Pick up $john.name" "Chanel-Date-Default">>\
+		<</if>>\
+	<<else>>\
+		<<if visited("Chanel-Date-Default")>>\
+			<<nm $john "Hey sexy! I was just thinking about our last night out... How's it going?">>\
+
+			<<nm $player "Ha, yeah me too.">>\
+		<<else>>\
+			<<nm $john "Hey sexy, I was just thinking about you! What's up?">>\
+
+			<<nm $player "Oh, you know...">>\
+		<</if>>\
+
+		''The two of you chat for some time before finally hanging up with each other.''
+
+		<<love $john 1>>
+
+		<<btnLink "Go back" "Room" "passTime()">>
+	<</if>>\
+
+
+:: Call-Chris {"position":"350,11100","size":"100,100"}
+<<loc_Room>>\
+
+	''You pull up $chris.name's contact on your phone and press dial.''
+
+	<<if isNight() and (isMonday() or isThursday())>>\
+		<<if flag($chris,"Drunk")>>\
+			''$chris.name picks up.''
+			
+			<<nm $chris "$player.name? What's up, I'm free if you wanna hang out.">>\
+				
+			<<btnLink "Meet $chris.name at the bar" "Chris-P0-Default">>
+		<<elseif flag($chris,"Stressed")>>\
+			''The phone rings several times before there's an answer.''
+			
+			<<nm $chris "...He-Hello?">>\
+				
+			<<nm $player "Hey, $chris.name, it's $player.name. You, ah, up for some drinks tonight?">>\
+				
+			<<nm $chris "Drinks!? Hahaha, fuck yeah. Hell yeah! I'll... I'll see you at the bar.">>\
+				
+			<<Thought "Jesus Christ, it sounds like he's already started without me. I should definitely keep an eye on him tonight...">>\
+			
+			<<nm $player "Sounds go- He hung up already.">>\
+				
+			<<btnLink "Meet $chris.name at the bar" "Chris-P3-Drunk">>
+		<<elseif flag($chris,"Reunion")>>\
+			''The phone rings a few times before there's an answer.''
+							
+			<<nm $chris "...Hello?">>\
+									
+			<<nm $player "Hey $chris.name, it's $player.name. Up for some drinks tonight?">>\
+								
+			<<nm $chris "Oh, god... Yes, haha, yes I could definitely go for some drinks tonight. Meet you at the place in 20 or so?">>\
+				
+			<<Thought "$chris.name sounds a little stressed. Guess it's a good thing I called!">>\
+			
+			<<nm $player "Sounds great, see'ya then.">>\
+				
+			<<btnLink "Meet $chris.name at the bar" "Chris-P2-Stressed">>
+		<<else>>\
+			''The phone rings a few times before there's an answer.''
+			
+			<<nm $chris "...Hello?">>\
+			
+			<<nm $player "Hey $chris.name, it's $player.name. You still wanna grab that drink?">>\
+				
+			<<nm $chris "Oh! Hell yeah I do. I noticed our old dive is still open on the corner of 8th and Townsend. Meet me there in 20?">>\
+				
+			<<Thought "Heh, back in the day we practically lived at that place. I'm glad he remembers it.">>\
+			
+			<<nm $player "Sounds great, see'ya then.">>\
+				
+			<<btnLink "Meet $chris.name at the bar" "Chris-P1-Reunion">>
+		<</if>>\
+	<<else>>\
+		''$chris.name's phone rings a few times before going to voicemail.''
+
+		<<Thought "Oh yeah, I think he mentioned he's usually only free on Monday and Thursday nights depending on his schedule. I guess I'll try then.">>\
+
+		<<btnBack>>
+	<</if>>\
+
+
+:: Call-Elsa {"position":"475,11100","size":"100,100"}
+<<if chance(50)>>\
+		''You call $elsa.name's cell phone and after a couple rings she picks up.''
+
+		<<nmr $elsa 
+			"Hey cuz!"
+			"Heya cutie!"
+			"Hey you!"
+			"$player.name!"
+		>>\
+		
+		<<nm $player "Hey $elsa.name! Just thinking about you. How's it going?">>\
+		
+		''You can hear her sipping at a drink.''
+		
+		<<nmr $elsa
+			"Pretty good, it's really boring out here without you and $sister.name, though."
+			"Not too bad, just chillin'. I miss you guys!"
+			"Oh not too much, just sittin' here touching myself, hahahaha!"
+			"Oh you know, not a whole helluvalot... I should really visit again."
+			"Eh, it's fine. Not nearly as exciting as it was while I was visiting you guys."
+			"Oh, you know, just sitting here thinking about fucking your <<sister>> again... Hahaha!"
+		>>\
+		
+		''You chat for a bit and catch up. Eventually she has to let you go, so you wrap up the call and hang up.''
+		
+		<<btnLink "Continue" "Room" "passTime()">>
+	<<else>>\
+		''You call $elsa.name's cell phone but there's no response.''
+
+		<<Thought "Hm, guess she's busy... I'll try again later.">>\
+
+		''A moment after you put your phone down, you get a text from $elsa.name.''
+
+		<<Thought "Hm?">>\
+
+		<<pic $elsa "selfie">>\
+
+		<<nm $elsa "That's for you ;)">>\
+
+		<<nm $player "H-holy shit!">>\
+
+		<<horny 10>>
+
+		<<btnLink "Continue" "Room" "passTime()">>
+	<</if>>\
+
+
+:: Call-John {"position":"600,11100","size":"100,100"}
+<<loc_Room>>\
+
+    ''You excitedly pull up $john.name's contact on your phone.''
+
+    <<if isNight() or isEvening()>>\
+        <<Thought "@@.bf;Daddy said I could call him over at night, so...@@">>\
+
+        ''You hit the call button and wait anxiously for $john.name to pick up.''
+
+        <<if cd("JohnHomeISS")>>\
+            <<nm $john "'Sup slut.">>\
+
+            <<nm $player "@@.bf;Daddy! Um, hey, I've been feeling really lonely... Wanna come over and keep me company?@@" "I sound so fucking stupid! @@.bf;I hope he says yes!@@">>\
+
+            ''$john.name can be heard laughing on the other end of the line.''
+
+            <<nm $john "Damn slut, miss my cock already? Aight, fine, gimme 'bout 20 minutes to get over there.">>\
+
+            ''He hangs up the phone.''
+
+            <<Thought "@@.bf;He's comming! He's comming! Tee-hee, well, he will be anyway!@@">>\
+
+            <<btnLink "Wait for $john.name to arrive" "John-ISS-BimboPlayer-Start">>\
+        <<else>>\
+            <<nm $john "Whaddaya want, slut? I'm fuckin' busy...">>\
+
+            ''You can hear moaning and slurping on the other end of the line.''
+
+            <<if chance(50)>>\
+                <<nm $penny "Mmmm, so tasty! Hehe, yeah slut, he's busy right now!">>\
+            <<else>>\
+                <<nm $tasha "Ooooh, Daddy, your cock's so yummy! Tee-hee, sorry slut, Daddy's busy with me right now!">>\
+            <</if>>\
+
+            <<nm $john "Bitch I just fucked you anyway, I'll catch ya' later!">>\
+
+            ''He hangs up the phone.''
+
+            <<Thought "@@.bf;Aww... That's so unfair!@@">>\
+
+            <<btnLink "Go back" "Room">>\
+        <</if>>\
+    <<else>>\
+        <<Thought "@@.bf;Daddy's usually busy during the daytime, I should call him later tonight!@@">>\
+
+        ''You text $john.name a cutesy message and set down your phone.''
+
+        <<btnLink "Go back" "Room">>\
+    <</if>>\
+
+
+:: Call-John-Sub {"position":"725,11100","size":"100,100"}
+<<loc_Room>>\
+
+    <<if isEvening()>>\
+        ''You call $john.name. It takes a few seconds, but soon he picks up the phone.''
+
+        <<if $john.dateCD is 0 or not visited("John-Date-Default")>>\
+            <<nm $john "$player.name? Eyyy! How ya' doin'?">>\
+
+            <<nm $player "Hey $john.name. Are you busy?">>\
+
+            <<nm $player "Uh, well, that's kinda out of the blue. Why?">>\
+
+            <<nm $player "I wanted to hang out with you this evening. So, busy?">>\
+
+            ''You hear rustling and clattering on the other side of the phone.''
+
+            <<nm $john "Busy? Not anymore. Honestly, I'm dying to get outta the house. Whatever ya' got planned sure beats laundry. Whatcha got on your mind?">>\
+
+            <<nm $player "Alcohol. Lots of it. Know any good bars? Lookin' to break out of my usual rotation...">>\
+
+            <<nm $john "I know a couple. Ya' know what? Fuck it. I'm buyin'. I just feel like bein' nice today, ya' know?">>\
+
+            <<Thought "Serum or no, hearing $john.name talk like that is still gonna take some getting used to...">>\
+
+            <<nm $player "Sounds good.">>\
+
+            ''You discuss bars for a while and $john.name suggests his favorite bar downtown. It doesn't make much difference to you, so you agree to meet him there.''
+
+            <<btnLink "Meet $john.name at the bar" "John-Date-Default">>\
+        <<else>>\
+            <<nm $john "$player.name? Wassup!">>\
+
+            <<nm $player "Heya $john.name. Just wanted to see if you wanted to head out again tonight.">>\
+
+            ''You can hear some clatter in the background.''
+
+            <<nm $john "Ahhhh, shit man, I had a killer time but I think I'mma have to pass tonight... Raincheck?">>\
+
+            <<nm $player "Yeah, sure, no prob...">>\
+
+            ''The two of you chat for a bit before you hang up the phone.''
+
+            <<btnBack>>\
+        <</if>>\
+    <<else>>\
+        ''You give $john.name's cell a call but ultimately get sent to voicemail.''
+
+        <<nm $john "You've reached $john.name's voicemail. Leave it!">>\
+
+        <<Thought "Huh, guess I'll have to try another time.">>\
+
+        <<btnBack>>\
+    <</if>>\
+
+
+:: Call-Penny {"position":"850,11100","size":"100,100"}
+<<loc_Room>>\
+
+	<<if isSeptember(9)>>\
+		''The phone rings a few times before $penny.name picks up.''
+
+		<<nm $penny "...Hello... $player.name?">>\
+			
+		<<nm $player "$penny.name! Not much of a morning person, are ya'?">>\
+			
+		<<nm $penny "No... What's up?">>\
+			
+		<<nm $player "Oh not much, I was just thinkin' about asking you out on a date is all.">>\
+			
+		''$penny.name's voice perks up.''
+
+		<<nm $penny "Okay! I-I mean, that would be... fine. Where do you want to meet?">>\
+			
+		<<nm $player "How do you feel about... the lab?">>\
+			
+		''There's a pause.''
+
+		<<nm $penny "...This isn't a date, is it? You need my help with something... Fine, I'll meet you down there in about an hour. Not cool, $player.name.">>\
+			
+		<<btnLink "Meet $penny.name at the lab" "Lab-Event-MakeCMD1" "passTime()">>
+	<<else>>\
+		<<switch $time.time>>\
+			<<case "Morning">>\
+				''You call $penny.name's cell phone, but she doesn't answer.''
+				
+				<<Thought "Right, she's not much of a morning person. I should try again later.">>\
+				
+				<<btnLink "Go back" "Room">>
+			<<case "Late Morning">>\
+				<<if isWeekday()>>\
+					''You send $penny.name a text message but there's no response.''
+
+					<<nm $player "Must be on her way to work... Come to think of it, I should probably get going...">>\
+
+					<<btnLink "Go back" "Room">>
+				<<else>>\
+					''You send $penny.name a text message, and the two of you chat back and forth for a while, wasting away the morning.''
+					
+					<<if $john.cPenny > 1>>\
+						''As you wrap up the conversation, she sends you one last message.''
+
+						<<nm $penny "Anyways, gotta get back to work!">>\
+
+						<<pic $penny "phonejohn">>\
+
+						<<nm $penny "Mmmmm!">>\
+
+						<<Thought "Oh, she's with... $john.name...">>\
+					<<elseif $penny.control.slut>>\
+						''As you wrap up the conversation, she sends you a picture.''
+						
+						<<if $penny.isSlut>>\
+							<<pic $penny "phone2">>\
+						<<else>>\
+							<<pic $penny "phone1">>\
+						<</if>>\
+						
+						<<Thought "!!!">>\
+						
+						<<nm $penny ":)">>\
+						
+						<<lust $penny 1>>
+					<</if>>\
+					<<love $penny 1>>
+						
+					<<btnLink "Go back" "Room" "passTime()">>
+				<</if>>\
+			<<case "Noon">>
+				''You call $penny.name's cell, but there's no answer.''
+				
+				<<Thought "She's probably busy right now, I should call her later and see if she wants to hang out.">>\
+				
+				<<btnLink "Go back" "Room">>
+			<<case "Early Afternoon">>\
+				<<if $penny.dateCD is 0 and not flag($penny,"breakup") and not $ElsaVisiting and not isDecember(24)>>\
+					''You're just about to give $penny.name a call when a message appears on your screen.''
+					
+					<span id="output">\
+						<<if not flag($penny,"firstDate")>>\
+							<<nm $penny "Heya $player.name! Um, we'd been talking about maybe going out some time, like for dinner, or whatever... Maybe you'd like to do that today maybe?">>\
+
+							<<btnLink "Take her up on her offer - <<t2>>" "PennyDateFirst" "$penny.dateCD+=2, $penny.dates+=1">>
+						<<elseif not flag($penny,"secondDate") and $Chapter >= 3>>\
+							<<nm $penny "So I was thinking... We've been having a lot of fun together, yeah? What do you think about maybe spending some time at my place tonight and watching a movie together?">>\
+
+							<<btnLink "Take her up on her offer - <<t2>>" "PennyDateSecond" "$penny.dateCD+=2, $penny.dates+=1">>
+						<<else>>\
+							<<nm $penny "Hey you! I'm just sitting here all thinking about how nice it would be for some <<guy>> to take me out for dinner and drinks... Know anyone who might be up for that?">>\
+
+							<<btnLink "Take her up on her offer - <<t2>>" "Penny-Date" "$penny.dateCD+=2, $penny.dates+=1">>
+						<</if>>\
+						@@.btnUI;<<button "Take a raincheck">>
+							<<replace "#output">>\
+								<<nm $penny "Well... that's too bad.<br><br>Your loss.<br><br>:(">>\
+								
+								<<love $penny -1>>
+								
+								<<btnLink "Go back" "Room" "passTime()">>
+							<</replace>>\
+						<</button>>@@
+					</span>\
+				<<elseif flag($penny,"breakup")>>\
+					''You give $penny.name's cell phone a call. After a few rings, she picks up.''
+
+					<<nm $player "Hey $penny.name. I was wondering if you were free today, maybe you'd want to-">>\
+
+					<<nm "penny-d" "I'm busy today.">>\
+					<<nm "penny-w" "Oh, yeah um... I'm pretty booked up with clients today. Lots of fuckin' to do!">>\
+					<<nm "penny-o" "Oh, I... I'm not really feeling well today, $player.name.">>\
+					<<nm "penny" "Oh, I... I'm not really feeling well today, $player.name.">>\
+
+					''There's a long pause.''
+
+					<<nm $player "S-sorry to hear that. Maybe another time?">>\
+
+					<<nm "penny-d" "I'm probably going to be busy then, too.">>\
+					<<nm "penny-w" "Yeah, we'll see... Pretty booked up for a while actually. Well, gotta go.">>\
+					<<nm "penny-o" "...">>\
+					<<nm "penny" "Yeah, I'll let you know...">>\
+
+					''The line goes dead.''
+
+					<<Thought "Hm...">>\
+
+					<<btnLink "Go back" "Room" "passTime()">>
+				<<else>>\
+					''You call $penny.name and the two of you chat for a while.''
+					
+					<<nm "penny-d" "Y'know I had a nice time on our last date... When are you gonna take me out again, hm?">>\
+					<<nm "penny-w" "I had a really great time on our last date! Really can't wait to go out again, hehe!">>\
+					<<nm "penny-o" "I had a really great time on our last date, I'm really looking forward to the next one! Maybe next weekend?">>\
+					<<nm "penny" "I had a really great time on our last date, I'm really looking forward to the next one! Maybe next weekend?">>\
+					
+					<<love $penny 1>>
+					
+					<<btnLink "Go back" "Room" "passTime()">>
+				<</if>>\
+			<<case "Afternoon">>\
+				''You call $penny.name's cell, but there's no answer.''
+				
+				<<Thought "She's probably busy right now, I should call her later and see if she wants to hang out.">>\
+				
+				<<btnLink "Go back" "Room">>
+			<<case "Evening">>\
+				''You send $penny.name a text message, and the two of you chat back and forth for a while through the evening into the night.''
+				
+				<<if $john.cPenny > 1>>\
+					''As you wrap up the conversation, she sends you one last message.''
+
+					<<nm $penny "Anyways, gotta get back to work!">>\
+
+					<<pic $penny "phonejohn">>\
+
+					<<nm $penny "Mmmmm!">>\
+
+					<<Thought "Oh, she's with... $john.name...">>\
+				<<elseif $penny.control.slut>>\
+					''As you wrap up the conversation, she sends you a picture.''
+					
+					<<if $penny.isSlut>>\
+						<<pic $penny "phone2">>\
+					<<else>>\
+						<<pic $penny "phone1">>\
+					<</if>>\
+					
+					<<Thought "!!!">>\
+					
+					<<nm $penny ":)">>\
+					
+					<<lust $penny 1>>
+				<</if>>\
+				<<love $penny 1>>
+				
+				<<btnLink "Go back" "Room" "passTime()">>
+			<<case "Night">>\
+				''You call $penny.name's cell phone, but she doesn't answer.''
+				
+				<<Thought "Knowing $penny.name she's probably already asleep.">>\
+				
+				<<btnLink "Go back" "Room">>
+		<</switch>>\
+	<</if>>\
+
+
+:: Call-Sophie {"position":"975,11100","size":"100,100"}
+<<loc_Room>>\
+
+	<<switch $time.time>>\
+		<<case "Morning">>\
+			''You call $sophie.name's cell phone, and after only a couple rings she picks up.''
+			
+			<<nm $sophie "Ah, $player.sophieName, good to see you're up an about so early. What can I do for you?">>\
+			
+			<<nm $player "Oh, hey $sophie.name, wasn't actually sure you'd answer. I, um... Well I guess I was just calling to check in, say hi. So... Hi!">>\
+			
+			''There's a long pause.''
+			
+			<<nm $sophie "<<Mr>> $player.surname, just because I'm up early does not mean it's 'not early'. I've had neither my shower nor my coffee and all you have for me is 'hi'?">>\
+			
+			<<nm $player "......Yes?">>\
+			
+			@@CLICK!@@
+			
+			<<Thought "Well... Guess maybe I deserved that?">>\
+			
+			<<love $sophie -1>>
+			
+			<<btnLink "Go back" "Room" "passTime()">>
+		<<case "Late Morning">>\
+			''You send $sophie.name a text, just asking her how she's doing and letting her know you enjoyed the steakhouse. Several minutes go by before you finally get a response.''
+			
+			<<nm $sophie "Yes, the steak was excellent.">>\
+			
+			<<Thought "Hm, not very chatty... Not like I'm dealing with some college student here either, though...">>\
+				
+			<<btnLink "Go back" "Room" "passTime()">>
+		<<case "Noon">>
+			''You call $sophie.name's cell, and after a couple rings there's an answer.''
+			
+			<<nm $sophie "$player.sophieName, good afternoon. What can I do for you?">>\
+			
+			<<if $sophie.control.date>>\
+				<<nm $player "Well, I was just thinking about that steakhouse again... Wondering if maybe you'd like to go, just, y'know, for fun?">>\
+				
+				''There's a brief pause.''
+				
+				<<nm $sophie "O-oh, um, y-yes, I'd quite like that. I'm free in the evening, if you'd like to give me a call then? We can work out details.">>\
+				
+				<<nm $player "Sounds good, I'll call you tonight!">>\
+				
+				<<nm $sophie "Excellent! I-I mean... Yes, that will work. I'll speak with you then.">>\
+				
+				''She hangs up the phone.''
+				
+				<<love $sophie 1>>
+			<<else>>\
+				<<nm $player "Oh, I just wanted to see what you were up to, how thing's were going, y'know?">>\
+				
+				''There's a pause.''
+				
+				<<nm $sophie "<<Mr>> $player.surname, while I appreciate your interest I didn't give you my phone number so you could call me at your every whim. I'm actually quite busy at the moment, so, if you'll excuse me.">>\
+				
+				''She hangs up the phone.''
+				
+				<<love $sophie -1>>
+			<</if>>\
+			
+			<<btnLink "Go back" "Room" "passTime()">>
+		<<case "Early Afternoon">>\
+			''You call $sophie.name's cell, but there's no answer.''
+			
+			<<Thought "She mentioned her afternoon's are busy, so she probably can't talk anyway.">>\
+			
+			<<btnLink "Go back" "Room">>
+		<<case "Afternoon">>\
+			<<if $sophie.control.date>>\
+				''You send $sophie.name a text message, and the two of you spend the next several minutes chatting before she has to go.''
+				
+				<<love $sophie 1>>
+			<<else>>\
+				''You send $sophie.name a text message, but there's no response.''
+			<</if>>\
+			
+			<<btnLink "Go back" "Room" "passTime()">>
+		<<case "Evening">>\
+			<<if isWeekend()>>\
+				<<if $sophie.control.date>>\
+					''You give $sophie.name a call, and after a couple rings she picks up.''
+					
+					<<nm $sophie "$player.sophieName, how are you?">>\
+					
+					<span id="date">\
+						@@.btnChoice;<<button "Ask her out on a date - <<t1>>">>
+							<<replace "#date">>\
+								<<nm $player "I'm good, $sophie.name. Actually, I was wonder if you'd like to head out to that steakhouse with me? Might be nice to get out and share a meal together without work getting in the way of the evening. Whaddaya think?">>\
+								
+								<<nm $sophie "That... actually sounds really nice, $player.sophieName! I'll come by and pick you up shortly.">>\
+								
+								<<nm $player "See you then!">>\
+								
+								<<btnLink "Wait for $sophie.name" "Sophie-Date">>
+							<</replace>>\
+						<</button>>@@
+						@@.btnChoice;<<button "Talk to her about her day - <<t1>>">>
+							<<replace "#date">>\
+								<<nm $player "I'm good, $sophie.name. I just wanted to check in, see how your day was. It's nice to chat outside of work once in a while.">>\
+								
+								<<nm $sophie "That's... actually quite thoughtful.">>\
+								
+								''The two of you talk for about an hour. $sophie.name vents about various things while also taking interest in what you have to say. All in all, it was a nice conversation.''
+								
+								<<love $sophie 1>>
+								
+								<<btnLink "Go back" "Room" "passTime()">>
+							<</replace>>\
+						<</button>>@@
+					</span>\
+				<<else>>\
+					''You send $sophie.name a text message, but there's no response.''
+					
+					<<Thought "Hm, maybe she's out.">>\
+				
+				<<btnLink "Go back" "Room">>
+				<</if>>\
+			<<else>>\
+				''You give $sophie.name's cell a call, but there's no answer.''
+				
+				<<Thought "She may not be home from work yet.">>\
+				
+				<<btnLink "Go back" "Room">>
+			<</if>>\
+		<<case "Night">>\
+			''You call $sophie.name's cell phone, but she doesn't answer.''
+			
+			<<Thought "Must be sleeping.">>\
+			
+			<<btnLink "Go back" "Room">>
+	<</switch>>\
+
+
+:: Call-Tasha {"position":"1100,11100","size":"100,100"}
+<<loc_Room>>\
+
+	<<if $tasha.isGone>>\
+		''The phone rings a few times before going to voicemail.''
+
+		<<Thought "I guess she's not home right now...">>\
+
+		<<btnLink "Go back" "Room">>
+	<<else>>\
+		<<switch $time.time>>\
+			<<case "Morning">>\
+				''You call $tasha.name's cell phone and after a couple rings she picks up.''
+				
+				<<if isWeekend()>>\
+					<<nm $tasha "Hey you! What's going on?">>\
+					
+					<<nm $player "Nothing much, surprised to see you up this early on the weekend.">>\
+					
+					''You hear what sounds like $tasha.name stirring a cup of coffee.''
+					
+					<<nm $tasha "Oh yeah, I don't like to waste too much of the day, you know? The longer I'm awake, the more time I have to relax! Hey, want to come over for breakfast?">>\
+					
+					<<nm $player "That sounds great, but I kinda have to plan for it. Raincheck?">>\
+					
+					<<nm $tasha "Sure thing! Just let me know, okay?">>\
+					
+					<<nm $player "You got it!">>\
+					
+					''You chat for a bit before hanging up''
+					
+					<<love $tasha 1>>
+					
+					<<btnLink "Continue" "Room" "passTime()">>
+				<<else>>\
+					<<nm $tasha "Hey $player.name? What's up?">>\
+					
+					''Her voice is a little muffled, like there's wind in the background.''
+					
+					<<nm $player "Not much, just wanted to call and say good morning before I head in.">>\
+					
+					<<nm $tasha "Aw, you're so sweet! I'm actually on my way into the office right now. I'll see you later, yeah?">>\
+					
+					<<nm $player "Yep, see you soon!">>\
+					
+					<<love $tasha 1>>
+					
+					<<btnLink "Continue" "Room" "passTime()">>
+				<</if>>\
+			<<case "Late Morning">>\
+				''You send $tasha.name a text message, and the two of you chat back and forth for a while, wasting away the morning.''
+				
+				<<if dose($tasha,"oral")>>\
+					''As you wrap up the conversation, she sends you a picture.''
+					
+					<<pic $tasha "phone1">>\
+					
+					<<Thought "Oh wow!">>\
+					
+					<<nm $tasha "Tee-hee!">>\
+					
+					<<lust $tasha 1>>
+				<</if>>\
+				<<love $tasha 1>>
+					
+				<<btnLink "Continue" "Room" "passTime()">>
+			<<case "Noon">>
+				''You call $tasha.name's cell, and after a few rings she answers.''
+				
+				<<nm $tasha "Hey you! What're you up to?">>\
+				
+				<<nm $player "Oh not much, just wanted to call and check in. What's going on today?">>\
+				
+				''You can hear her giggle lightly.''
+				
+				<<nm $tasha "Not much, just enjoying my day off. Actually, I have some errands to run today but otherwise not much.">>\
+				
+				''The two of you chat for a while before $tasha.name eventually has to let you go.''
+				
+				<<love $tasha 1>>
+				
+				<<btnLink "Continue" "Room" "passTime()">>
+			<<case "Early Afternoon">>\
+				''You call $tasha.name's cell but end up getting her voicemail.''
+				
+				<<Thought "She must be out, maybe I can give her a call later.">>\
+				
+				<<btnLink "Go back" "Room">>
+			<<case "Afternoon">>\
+				''You call $tasha.name's cell but end up getting her voicemail.''
+				
+				<<Thought "She must be out, maybe I can give her a call later.">>\
+				
+				<<btnLink "Go back" "Room">>
+			<<case "Evening">>\
+				''You send $tasha.name a text message, and the two of you chat back and forth for a while, wasting away the evening.''
+				
+				''As you wrap up the conversation, she sends you a picture.''
+					
+				<<pic $tasha "phone1">>\
+				
+				<<Thought "Oh wow!">>\
+				
+				<<nm $tasha "Tee-hee! LOL, g'night you :)">>\
+				
+				<<lust $tasha 1>>
+				<<love $tasha 1>>
+					
+				<<btnLink "Continue" "Room" "passTime()">>
+			<<case "Night">>\
+				''You call $tasha.name's cell phone, but she doesn't answer.''
+				
+				<<Thought "I think $tasha.name mentioned she doesn't stay up very late. Probably already asleep.">>\
+				
+				<<btnLink "Go back" "Room">>
+		<</switch>>\
+	<</if>>\

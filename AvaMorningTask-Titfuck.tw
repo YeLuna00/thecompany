@@ -1,0 +1,15 @@
+:: AvaMorningTask-Titfuck {"position":"475,5475","size":"100,100"}
+<<loc_Room>>\
+
+    <<nm $player "You should wake me up with a titjob in the mornings, could be fun!">>\
+
+    <<if $mom.morningTask is "titfuck">>\
+        <<nm $mom "Hehe, you mean like I already am? Sure baby!">>\
+    <<else>>\
+        <<nm $mom "Ooohh, that does sound like fun! Hehe, my tits are definitely big enough for it... You got it!">>\
+    <</if>>\
+
+    ''Your ?mother gives you a quick kiss and leaves the room.''
+
+    <<set $mom.morningTask to "titfuck">>\
+    <<btnLink "Continue" "Room">>\

@@ -1,0 +1,57 @@
+:: AvaBride-WeddingPlans {"position":"350,2225","size":"100,100"}
+<<loc_Room>>\
+
+    ''Just as you're drifting off, your door cracks open and there's a weight on your bed.''
+
+    <<pic $mom>>\
+
+    <<nm $mom "Hey sweetie, did I wake you?">>\
+
+    <<nm $player "$mom.name? N-no, I hadn't quite fallen asleep yet... What's up?">>\
+
+    ''Your <<mother>> lays down next to you, taking your head into her ample chest as she strokes your hair.''
+
+    <<nm $mom "Mmm, isn't this nice? Wouldn't it be nice to do this all the time?">>\
+
+    <<nm $player "This? I mean, yeah, it's nice...">>\
+
+    ''She cuddles up closer to you, you can feel her cock start to press against your ass. You can feel her warm breath on your ear.''
+
+    <<pic $mom>>\
+    
+    <<nm $mom "Y'know, if I were to take you as my wife, you'd never have to leave my bed!">>\
+
+    <<if isMale()>>\
+        <<nm $player "Wife? I'm not a woman, $mom.name...">>\
+
+        ''You feel her press herself harder into your ass.''
+
+        <<nm $mom "Mmm, let's be honest baby, mommy would be far better suited for the husband role...">>\
+    <<else>>\
+        <<nm $player "You're crazy...">>\
+        
+        ''You feel her press herself harder into your ass.''
+
+        <<nm $mom "Not that crazy...">>\
+    <</if>>\
+
+    ''Your <<mother>> rolls on top of you, leaning in for a warm, soft kiss.''
+
+    <<pic $mom "kiss-player">>\
+
+    <<nm $mom "Mmmm... So?">>\
+
+    <<nm $player "Sure $mom.name, whatever you say..." "No way she's serious, best just to have her little fantasy at this point.">>\
+
+    ''She springs up.''
+
+    <<nm $mom "Yay! This is gonna be just the best, baby, you'll see!">>\
+
+    ''With that, she hops off your bed and skips out of your room after turning around for one last smile.''
+
+    <<Thought "That was... weird... sleep now...">>\
+
+    <<set $mom.mcsx.avabride += 1>>\
+    <<set $mom.mcsx.cd to $mcsxCD>>\
+    <<AddNote $mom "$mom.name came to my room tonight, cuddling up and joking about making me her wife.">>\
+    <<btnLink "Continue" "Room-Sleep">>\

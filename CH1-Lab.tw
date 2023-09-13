@@ -1,0 +1,1366 @@
+:: CH1-Lab {"position":"225,18475","size":"100,100"}
+<<loc_Lab true>>\
+	<<SetFlag $player "meetCompany">>\
+
+	<<pic $sophie>>\
+	<<art $sophie "happy">>\
+
+	''You arrive in the lab. It's not too dissimilar from where you worked in the university. The equipment's cleaner, and newer, and you have more storage and work space. You're surprised at how comfortable you feel here, actually.''
+
+	<<nm $sophie "This is your laboratory, <<Mr>> $player.surname! All the equipment is fully operational and we've stocked it with all the materials you had at the university, which I trust will be enough to get you started. Anything else you need, chemicals, equipment, what have you, just talk to me and I'll handle procurement.">>\
+		
+	<<nm $player "$sophie.name, this is quite spectacular, but you still haven't told me what it is I'm actually expected to be doing here. The only new information I have is that the fact that I mind controlled a young girl into sexually assaulting an old man in front of a room full of people has 'impressed' you somehow.<br><br>Just what is it I've been hired to do?">>\
+		
+	''$sophie.name paces around the lab for a moment before giving you a severe look.''
+
+	<<nm $sophie "There are those in this world willing to pay... a lot of money to purchase... how should I put this...<br><br>Well, <<Mr>> $player.surname, The Company handles the conditioning, modification, and distribution of human chattel, per the requirements of our clients. To put it bluntly, we engineer and sell sex slaves.">>\
+		
+	''Your pulse quickens. You can feel your heart rate increase, but it isn't fear, you don't think. There's... something welling up inside you, but you can't quite place it.''
+
+	<<nm $sophie "You're not trying to run. That's good. For one thing, running is not an option, and for another, the fact that you're maintaining your composure right now confirms my suspicions about you.<br><br>You see, <<Mr>> $player.surname, while we've found great success in our business ventures the fact is this is a messy, often gruesome field. Our methods have always been crude, violent... inconsistent. Personally, I believe there has to better way, and my superiors have seen fit to allow me to explore those avenues.">>\
+		
+	<<nm $player "Thus, the interest in my little lab experiment. You want me to design a drug to let you control people. No more torture or blackmail or whatever it is you people do, you want your victims to become sex slaves... willingly?">>\
+		
+	''As $sophie.name's face changes to an expression of approval it hits you. It's not fear you're feeling...''
+
+	''It's excitement. Your whole body is tingling as your world turns upside down. You can barely contain yourself.''
+
+	''You calm yourself, and think for just a moment...''
+
+	<<nm $player "...Okay. What else can I say? I don't know that I completely understand what I'm involved in, or even if I quite believe it for that matter, but okay. I mean, really, if what you're telling me is all true then there's no way you're letting me leave without my cooperation. I'd be killed, or worse.<br><br>To be honest, assuming all this to be true... Let's just say I'd have my own reasons for accepting your offer anyway.">>\
+		
+	<<nm $sophie "I can't tell you how delighted I am, <<Mr>> $player.surname. I want to say I'm surprised at how easily you accepted your situation, but, somehow I knew you'd-">>\
+		
+	<<nm $player "I have terms. Three rather simple ones, I think you'll find them agreeable.">>\
+		
+	''$sophie.name looks surprised for a moment, but now appears more amused than anything.''
+		
+	<<pic $sophie>>\
+	<<art $sophie "aroused,1">>
+
+	<<nm $sophie "By all means.">>\
+		
+	<<nm $player "First, I know you know I live with my <<sister>> and mother. I need normal hours so as not to raise suspicion with them. Monday through Friday, 8-5.<br><br>Second, I want you to stop gassing me, I mean Jesus fuck... The big scary escorts are fine, but no more knocking me out just to drive me around. With you knowing what really happened in that lab plus the resources you apparently have at your disposal, I have just as much to lose now as you do. You can trust me to keep quiet on all this.">>\
+		
+	<<nm $sophie "Your first two terms are quite acceptable. There should be no problem there. And the third?">>\
+		
+	''You look around the room for a moment.''
+
+	<<nm $player "I want to make a single dose of my drug here in the lab, right now. It's a very quick process, we'll be out of here in less than an hour.">>\
+		
+	''$sophie.name ponders your proposal for a minute.''
+
+	<<nm $sophie "May I ask why? Can't you wait until Monday to start working?">>\
+		
+	<<nm $player "This is a lot to take in, and having some on me should the opportunity arise to test it over the weekend will keep me thinking. Call it a chemical safety blanket. To be frank, I could just as easily head to the university to make a batch, but being here in this lab has my head spinning.<br><br>I have to try it out!">>\
+		
+	''$sophie.name can't control her laughter this time, she's clearly pleased with herself. She agrees, and acts as a surrogate lab assistant as you make a single dose of what you've decided to name MCS-1.''
+
+	@@.gain;MCS-1 x1 added to inventory@@
+	<<set $serum[1].unlocked to true>>\
+	<<set $serum[1].qty += 1>>\
+
+	<<Thought "Perfect! So, okay, I may have stretched the truth a little with the university lab. It's actually under renovations this weekend and all of the supplies have been moved elsewhere. This was my only chance to get a dose together before Monday...">>\
+
+	<<nm $player "This serum is actually different from the one I made at the university lab. If I'm right, this particular mixture will have a much more subtle impact on the target, but the effect should last much longer, if not become permanent. In theory, after enough time and a few doses, your suggestions will be, to the user, less a suggestion and more a thought they formed on their own.<br><br>Unlike the original formula, which was really just thrown together, this version should be much more controlled. Whoever takes it should only be under the effects for 30 seconds or so, which is when they'll be open to suggestions. I expect there will be some sort of physical indication that this has occurred. After that time, the individual should be back to normal and have no direct memory of what happened during that short window, however, the suggestion should have taken root.">>\
+		
+	''$sophie.name looks at the small vial for a minute, clearly intrigued.''
+
+	<<nm $sophie "Hmm... Maybe it's the exhaustion, but I can't help but be curious. If it works as you say it does...<br><br>...Would you like to try it out on me, right now?">>\
+		
+	<<Thought "That was unexpected... If I use it now I wouldn't have it for the weekend on the off-chance I had the opportunity to test it. On the other hand, getting to use it on my boss...">>\
+
+	<<btnChoice "Use it on $sophie.name" "CH1-Lab-UseSerum">>
+	<<btnChoice "Save it for later" "CH1-Lab-SaveSerum">>
+
+
+:: CH1-Lab-Casual {"position":"475,18475","size":"100,100"}
+<<loc_Lab>>\
+
+	<<nm $player "$sophie.name, now that I've accepted your job offer you feel that our working relationship should be a little less formal. You think even one day we could become friends, if not more. A simple start would be for you to allow me to call you by your first name from now on.">>\
+		
+	''$sophie.name nods slightly, and after almost exactly 30 seconds, her eyes clear up and she appears much more aware. She looks down at the empty vial in her hand and gives you an inquisitive look.''
+	
+	<<nm $sophie "I clearly drank down the serum, and the expression on your face tells me something happened. Care to share?">>\
+		
+	<<nm $player "If I told you what happened that would affect the outcome of the experiment, don't you think, $sophie.name?">>\
+		
+	''$sophie.name thinks for a moment, and shrugs in agreement.''\
+	
+	<<nm $sophie "Well I guess that's it for the night. It's late, and despite what you might hear others say about me I sleep, too. Please see yourself back to the lift where an escort will be waiting to return you home.">>\
+		
+	''You make your way back to the door...''
+	
+	<<nm $sophie "One more thing, <<Mr>> $player.surname. Since we're going to be spending a lot of time together here in the Institute, I insist you simply call me Sophie. No need for such strict formalities down here.">>\
+		
+	<<set $sophie.name = "Sophie">>\
+	<<nm $player "Sure thing, $sophie.name, if that's what you insist.">>\
+		
+	''You smile to yourself as the lift doors close.''
+	
+	<<Thought "It was a simple test, sure, but it proves the serum works. With more time I can explore the full extent of the formula, and hopefully improve upon it.">>\
+	
+	''Your drivers return you to your house and you immediately make your way to the bed''
+	
+	<<set $sophie.doseF++>>\
+	<<set $sophie.control.casual to true>>\
+	<<AddNote $sophie "Ms. Dee, or rather, $sophie.name and I grew a little closer today with the help of my new low-power formula. It was a simple test but still a good proof of concept. Plus I got to see $sophie.name lower her a guard, if only a little">>\
+	<<btnLink "Go to bed" "Room-GotoBed">>
+
+
+:: CH1-Lab-Oral {"position":"725,18475","size":"100,100"}
+<<loc_Lab>>\
+	
+	<<Thought "Go big or go home, right?">>\
+	
+	<<nm $player "$sophie.name, you can't resist the idea of <<if hasPenis()>>sucking my cock. <<else>>eating my pussy. <</if>>It's all you've thought about since meeting me yesterday. You want to do it tonight, here in the lab.">>\
+		
+	''$sophie.name stares blankly for a moment before nodding slightly, and after almost exactly 30 seconds, her eyes clear up and she appears much more aware. She looks down at the empty vial in her hand and gives you an inquisitive look.''
+	
+	<<nm $sophie "I clearly drank down the serum, and the expression on your face tells me something happened. Care to share?">>\
+		
+	<<nm $player "If I told you what happened that would affect the outcome of the experiment, don't you think, $sophie.name?">>\
+		
+	''$sophie.name thinks for a moment, and shrugs in agreement.''
+	
+	<<nm $sophie "Well, I guess that's it for the night. It's late, and despite what you might hear others say about me I sleep, too. Please see yourself back to the lift where an escort will be waiting to return you home.">>\
+		
+	''You make your way back to the door...''
+	
+	<<nm $sophie "Good night, <<Mr>> $player.surname. I'll see you Monday morning.">>\
+		
+	''It's subtle, but you can tell $sophie.name looks somewhat distracted compared to earlier. It could just how late it is, or...''
+		
+	<<nm $player "Sure thing, $sophie.name, I'll see you again soon.">>\
+		
+	''For fun, you lean back against the lift wall, slightly emphasizing your crotch, but not in a way that would seem obvious. Even still, as the doors close you clearly see your posture has captured $sophie.name's attention.''
+	
+	<<Thought "I can tell it had an effect on her, but $sophie.name is particularly strong-willed. Still, it's good to know that I can at least somewhat push the boundaries with my suggestions without any negative consequences... at least for now. With more time I can explore the full extent of the formula, and hopefully improve upon it.">>\
+	
+	''Your drivers return you to your house and you immediately make your way to the bed''
+	
+	<<set $sophie.control.oralThink to true>>\
+	<<set $sophie.doseS++>>\
+	<<AddNote $sophie "$sophie.name allowed me to test my new formula on her tonight, so I decided to have a little fun, putting the idea for her to go down on me in her head. As expected, she didn't do it after she came to, but I couldn't help but notice a few not-so-accidental glances towards my crotch. I might be able to go further with this if I get another chance to dose her somehow.">>\
+	<<btnLink "Go to bed" "Room-GotoBed" "$Location='Home'">>
+
+
+:: CH1-Lab-SaveSerum {"position":"850,18475","size":"100,100"}
+<<loc_Lab>>\
+
+	<<nm $player "Tempting, but before properly testing it in a more controlled environment I'd be a little hesitant to have someone in your position acting as a guinea pig. Besides, I only 'think' it'll work the way I said it would. For all I know, one drop of this and your brain will melt.">>\
+					
+	<<pic $sophie>>\
+	<<art $sophie>>\
+
+	<<love $sophie 1>>
+	
+	<<nm $sophie "I suppose you're right. Not the smartest move on my part. I find the matter of mind control fascinating, I let my curiosity get the better of me.<br><br>Well, I guess that's it for the night. It's late, and despite what you might hear others say about me I sleep, too. Please see yourself back to the lift where an escort will be waiting to return you home.">>\
+		
+	''You make your way back to the door...''
+	
+	<<nm $sophie "Good night, <<Mr>> $player.surname. I'll see you Monday morning.">>\
+	
+	<<nm $player "Until then.">>\
+		
+	''The lift doors close.''
+	
+	<<Thought "I have little doubt the formula would have worked, though to exactly what extent I can't be sure. I'll sure I'll have the opportunity to try it out on something simple at home.">>\
+	
+	''Your drivers return you to your house and you immediately make your way to the bed''
+
+	<<AddNote $sophie "$sophie.name asked me to test my new formula on her tonight, but I opted not to. Perhaps this was a huge mistake, as I doubt she'll be so willing to volunteer for something like that again, but without proper testing, I just couldn't bring myself to do it. In the end, especially not knowing what all I'm involved in here, this may have been the smarter play.">>\
+	<<btnLink "Go to bed" "Room-GotoBed">>
+
+
+:: CH1-Lab-Tease {"position":"600,18475","size":"100,100"}
+<<loc_Lab>>\
+
+	<<nm $player "$sophie.name, you've been thinking about me checking you out when we first met, and you think it would be fun to tease me a little by flashing your tits at me before I leave tonight.">>\
+
+	<<Thought "May as well have some fun with it, right?">>\
+
+	''$sophie.name nods slightly, and after almost exactly 30 seconds, her eyes clear up and she appears much more aware. She looks down at the empty vial in her hand and gives you an inquisitive look.''
+
+	<<nm $sophie "I clearly drank down the serum, and the expression on your face tells me something happened. Care to share?">>\
+
+	<<nm $player "If I told you what happened that would affect the outcome of the experiment, don't you think, $sophie.name?">>\
+
+	''$sophie.name thinks for a moment, and shrugs in agreement.''
+
+	<<nm $sophie "Well, I guess that's it for the night. It's late, and despite what you might hear others say about me I sleep, too. Please see yourself back to the lift where an escort will be waiting to return you home.">>\
+
+	''You make your way onto the lift, and just as you're about to close the doors...''
+
+	<<nm $sophie "One more thing, <<Mr>> $player.surname.<br><br>You've impressed me tonight, and I think you've earned yourself a small reward. Don't think I didn't see the way you were looking at me last night...">>\
+
+	<<pic $sophie "flash1">>\
+	<<art "scene/SophieElevatorFlash">>\
+		
+	<<nm $player "Holy shi-.">>\
+		
+	''The lift doors close before you can finish your sentiment.''
+	
+	<<Thought "I can't believe how well that worked, with the adjustments I made to the dosage I didn't expect something like that to pay off. It proves the serum works. With more time I can explore the full extent of the formula, and hopefully improve upon it.">>\
+	
+	''Your drivers return you to your house and you immediately make your way to the bed''
+	
+	<<set $sophie.control.flash to true>>\
+	<<set $sophie.doseD++>>\
+	<<AddWorkEvent 23>>\
+	<<AddNote $sophie "I decided to test my new formula on $sophie.name, and the results were excellent! $sophie.name was actually compelled to flash her bare chest at me!">>\
+	<<btnLink "Go to bed" "Room-GotoBed">>
+
+
+:: CH1-Lab-UseSerum {"position":"350,18475","size":"100,100"}
+<<loc_Lab>>\
+
+	<<nm $player "I mean, how could I turn down a willing subject! If you're sure about this I won't stop you, I really don't see anything going... wrong. Once you take the dose I'll observe any changes in you. I'm hoping there'll be a pretty clear indication that the drug has taken hold. After that, I'll offer a simple suggestion and ask you about it after you've come to.">>\
+		
+	''You hand $sophie.name the vial and after considering it for a moment, she drinks it down.''
+	
+	@@.loss;$serum[1].name x1 removed from inventory@@
+	<<set $serum[1].qty -= 1>>\
+	<<set $sophie.dose += 1>>\
+	<<updatebar>>\
+	
+	<<Thought "Okay, let's see... ah, there it is!">>\
+	
+	''As expected, $sophie.name's eyes have glazed over, very clearly clouded and, perhaps even a slightly different color.''
+
+	<<art $sophie "dosed,2">>\
+	
+	<<Thought "This is my chance, now how to test it...">>\
+
+	<<btnChoice "Have $sophie.name act more casually with you" "CH1-Lab-Casual">>
+	<<btnChoice "Have $sophie.name act flirty with you, wanting to tease you" "CH1-Lab-Tease">>
+	<<btnChoice "Have $sophie.name want to please you sexually" "CH1-Lab-Oral">>
+
+
+:: CH1-MeetCompany {"position":"100,18350","size":"100,100"}
+<<loc_Landing>>\
+
+    ''The doorbell rings. You rush to answer it. In front of you are two large men in black suits who, if you didn't know any better, you might mistake for secret service.''
+
+    ''They seem nice enough, actually, even going so far as to shake your hand and introduce themselves as, well, "your ride"''
+
+    ''You're just about to leave when...''
+
+    <<nm $mom "Oh well look who it is! Thanks again for bringing $player.name home last night. I still can't believe <<he>> got toasted enough to black out, but... well thanks again.">>\
+        
+    ''The men nod at your <<mother>> as you hurry everyone out the door. You're escorted to the backseat of a black SUV.''
+
+    <<art "cg/0-6-FirstPickup">>
+
+    <<nmc "Driver" "You're in luck, the boss said not to gas you tonight, so you can enjoy the air and take in the... scenery, haha.">>\
+        
+    ''The vehicle winds up and down several back roads until eventually stopping in front of an unassuming warehouse hidden among dozens of nearly identical buildings.''
+
+    <<btnLink "Continue" "CH1-MeetCompany2">>
+
+
+:: CH1-MeetCompany2 {"position":"225,18350","size":"100,100"}
+<<loc_CompanyOutside>>\
+
+    ''You recognize this as the industrial part of the city, though you've never had any reason to come here on your own. You and your escorts step out of the car and you immediately take in the scent of smog, sewage and what you'd imagine death to smell like. Your eyes are stinging from the dirty air, and you're actually relieved when one of the men gestures towards a rusty, metal door.''
+
+    ''You're even more surprised when you step on the lift inside, which descends for what feels like an eternity.''
+
+    <<img "room" "Lift">>\
+
+    ''After no less than 10 minutes of downward motion, you stop in front of a wood and glass office door. You're nudged from behind to enter, and you have a pretty good feeling as to who you're about to meet on the other side...''''
+
+    <<btnLink "Go through the door" "CH1-SophieOffice">>
+
+
+:: CH1-SecretMeeting {"position":"600,18725","size":"100,100"}
+<<loc_CompanyBar>>\
+
+    ''It's late. Clouds move slowly on the cool autumn wind, covering the moon. Beneath this cover of darkness, two men in finely pressed business suits meet in a smoky bar across the street from the Company's headquarters.''
+
+    <<art "scene/CompanyBar">>\
+
+    <<nm $erik "It's late, where is she!?">>\
+
+    <<nm $james "Calm down, she'll be here.">>\
+
+    <<nm $erik "Calm down? You're telling ME to calm down!? You're not the one putting their ass on the line by stickin' in a fucking mole right under S- Right under that bitch's nose!">>\
+
+    ''$erik.name quiets himself, taking a large drink out of a pint glass.''
+
+    <<nm $james "A 'mole', $erik.name? That's what you call them? I think you've been watching too many spy movies.">>\
+
+    <<nm $erik "Fuck you... If she's not here-">>\
+
+    ''A woman walks into the bar, the door swinging open in front of her. She's confident, perhaps even arrogant, curling half a smile as she spots the men sitting at their table.''
+
+    <<nm $tory "Now, now, boys... No reason to fight over little ol' me.">>\
+
+    <<artB $tory "happy">>\
+    <<nm $james "$tory.name, nice of you to join us. $erik.name here was just talking about you. Please, I'd prefer it if you called me $james.name while we're outside the office.">>\
+
+    ''$tory.name takes a seat.''
+
+    <<nm $tory "$james.name? Ha, you guys are fuckin' nerds... Whatever. I'm only here because of what you told me, '$james.name'.">>\
+
+    ''$james.name takes a large sip of his drink.''
+
+    <<nm $james "Money, power, status... I have big plans, $tory.name, and I need help from both of you. $tory.name, you have a little trip scheduled down to Branch Sub-8 in about a week, right?">>\
+
+    <<nm $tory "Yes, I'm checking in on my sales reps.">>\
+
+    <<nm $james "Okay, well the purpose of your visit has changed. $erik.name here recently sent a notice to our dear friend Sophie that you'll be visiting to evaluate the profitability of their new science division. Naturally, you will find it severely lacking...">>\
+
+    <<nm $erik "I bet that bitch pissed herself when she read that! HA!">>\
+
+    ''$tory.name taps her long fingernails along the wooden table.''
+
+    <<artB $tory "angry,2">>\
+    <<nm $tory "This again... Hmp, fine. Not like I owe Sophie any favors, and I'd love to see her get taken down a peg or ten. I assume you've already put together a security detail for me?">>\
+
+    <<nm $james "Of course, of course... Anyway, I'll fill you in on the details later. Tonight, I just wanted to make sure you were onboard... And share a few drinks, of course.">>\
+
+    ''The three of them talked late into the night...''
+
+    <<set $tory.isHidden to false, $tory.name to "Tory">>\
+    <<btnLink "Continue..." "Room-Sleep">>
+
+
+:: CH1-SophieOffice {"position":"100,18475","size":"100,100"}
+<<loc_SophieOffice true>>\
+
+    <<pic $sophie>>\
+    <<art $sophie "happy">>
+
+    <<nm $sophie "<<Mr>> $player.surname, how nice to see you again!">>\
+        
+    ''You tense up a little, unsure of why you're suddenly so anxious.''
+
+    <<nm $player "Y-yes. You as well. So I understand we're here to go over the details of my employment? Look, I have to be honest here. I barely remember the interview, or even the listing for that matter. In fact, if I remember correctly it was your organization that called me directly.<br><br>I've gathered that the organization is called 'The Company', which is ominously vague, and that I caught your attention because of the tests I was running at the university. I'd hardly call what I accomplished there revolutionary, though...">>\
+        
+    <<nm $sophie "You're smart, and you catch on quick. That's very good, <<Mr>> $player.surname. I find your modesty, however, quite tiresome.">>\
+        
+    ''$sophie.name again walks around to the front of her desk to meet you face to face. Again, your body reacts to her proximity, and she knows it.''
+
+    <<pic $sophie>>\
+    <<art $sophie "angry,2">>\
+
+    <<nm $sophie "You developed a drug that, when ingested, opens one to... dangerous levels of suggestion. In fact, we also know that you happened to take some liberties with that little invention of yours, didn't you?">>\
+        
+    <<Thought "Shit, so that's what this is about...">>\
+
+    <<nm $player "My... lab partner. She didn't actually help develop the drug, and I had no real grounds to believe it would work, so when I gave it to her to help me test it, I mean... What does this have to do with why I'm here? Is this some kind of punishment?">>\
+        
+    <<nm $sophie "On the contrary, but before anything I need to hear it from you. What did you use that drug for?">>\
+        
+    ''Your fist clenches.''
+
+    <<Thought "Damn it...">>\
+
+    <<nm $player "I told her to start... masturbating... and she did. Right there in the university chem lab, door open and everything! I was shocked, sure, but she wasn't exactly the most conservative student either, so I wasn't ready to be convinced.">>\
+        
+    <<nm $sophie "Of course not, maybe the little slut was just trying to get your attention, right? So what happened next?">>\
+        
+    <<Thought "The bitch...">>\
+
+    <<nm $player "I told her to go into the dean's office and blow him... He was right in the middle of a faculty meeting. From what I heard, by the time the effects of the drug had worn off she'd already forced his pants down and got him down her throat. The staff was mortified and I guess she lost it. She ran off campus in tears and I never saw her again. No one knew what to make of it, so the school just tried to move on and keep it quiet, saying it was some kind of crazy prank...">>\
+        
+    ''$sophie.name looks visibly pleased with your account of the event.''
+
+    <<nm $sophie "Perfect. This way, please. I'll show you where you'll be working.">>\
+        
+    ''$sophie.name opens the door leading to the lift and motions for you to follow her.''
+
+    <<btnLink "Follow her" "CH1-Lab">>
+
+
+:: CH1-ToryEnding {"position":"850,18725","size":"100,100"}
+<<loc_CompanyHQ>>\
+
+    <<pic $npc "tory-oral1">>\
+    <<act $tory "blowjob">>\
+
+    ''$tory.name eagerly inhales $james.name's hard cock as they lay together in his private Company quarters.''
+
+    <<nm $james "Mmm, $tory.name, you're quite good at this! And to think, for all these years I thought you hated me. How does my cock taste?">>\
+
+    <<nm $tory "You taste incredible, master! Mph! Mph! Mph!" "Fuck you, you fucking bastard! I'll fucking kill you!">>\
+
+    <<nm $james "I couldn't believe my men when they called me and told me what happened, but, here you are! You know, I panicked at first, thinking my plan was falling apart, but seeing you like this? Pure vindication!">>\
+
+    <<pic $npc "tory-oral2">>\
+    <<act $tory "blowjob,lick">>\
+
+    ''$james.name had had his way with $tory.name repeatedly since her return, often in humiliating or painful fashions. Inside she's screaming in agony and anger, but her body... The body she was no longer in control of just begged for more and more...''
+
+    <<nm $james "You know the best part, $tory.name? The best part about all of this is that I've figured out how to fix you!">>\
+
+    ''$tory.name releases $james.name's penis from her mouth with a loud "pop".''
+
+    <<nm $tory "huh?" "What!?">>\
+
+    ''$james.name pulls out a small, blue vial.''
+
+    <<nm $james "It's true! This, right here, will return all of your mental faculties, ending the effects of whatever concoction you're under. All you have to do... is ask!">>\
+
+    <<nm $tory "Uh, ummmmmmm..." "Yes! God, yes, PLEASE! I'm begging you please make this end! PLEASE HELP ME!">>\
+
+    <<nm $james "Hm, it looks like you're having a hard time understanding me, so I'll make it simpler for you. You can either tell me to cure you and make you smart again, or you can throw this against the wall and go back to sucking master's yummy cock.">>\
+
+    ''$james.name hands $tory.name the antidote. She examines it for a moment...''
+
+    <<nm $tory "Hmmmm..." "Please, please no... I don't want this, I don't want to be like this. PLEASE! Just... just... NOOOO!">>\
+
+    ''The vial hits the wall with a crash, sending the liquid inside splattering to the ground. Not a second later and $tory.name had returned to attending $james.name...''
+
+    <<pic $npc "tory-oral3">>\
+    <<act $tory "blowjob,facial">>\
+
+    <<nm $tory "Mmm, you taste so good, master!" "What have you... What... No... I... Guhuh... Gwahahuh... *sob*">>\
+
+    <<nm $james "That's a good girl. Well, I think I'm done with you now... Do me one last favor, please. Go down to international shipping and tell them you're supposed to be in a crate headed for Afghanistan. Here, I'll write you a note...">>\
+
+    <<nm $tory "You got it!" "No... no... no... nooooo........">>\
+
+    ''$tory.name skips towards the door, heading off to her new life.''
+
+    <<nm $james "Well... I didn't expect to be losing 'Ms. L' so early in the game, but... It won't be a problem. Sophie and her new pet have made things much more interesting...">>\
+    <<AddConvo $penny 6>>\
+
+    <<btnLink "Continue..." "Room-Sleep">>
+
+
+:: CH2-BadEnd {"position":"350,18975","size":"100,100"}
+<<loc_CompanyHQ>>\
+
+''And just like that, everything and everyone that defined your last month had been shattered. You and $penny.name watched as suited executives, armed guards, and men in HAZMAT suits swarmed the building. All your notes and lab supplies were carefully packed and removed, and within minutes the room was spotless and empty. Afterwards, you would meet $penny.name in one of The Company's black SUVs used for transportation, and be taken to a private airstrip to relocate to their central HQ. You and $penny.name, as well as $julia.name would all be positioned in The Company's central medical division, now rebranded as R&D.
+
+As time passed, you would come to learn what happened to your former coworkers. $diana.name held enough sway in The Company that she was simply relocated to another satellite branch.
+
+<<if not $story.ch2.endTasha>>\
+	$tasha.name was put through The Company's training program, as expected, and sold internally.
+<<else>>\
+	$tasha.name's newly altered mental start made her somewhat difficult to train, but she quickly found a place in The Company. She had been allowed to roam freely around the upper offices, offering herself to anyone who needed to relieve some stress. Her new status as the office pet brought her great happiness, until one day she followed an executive home and he refused to bring her back to share...
+<</if>>\
+
+<<if not $story.ch2.endJohn>>\
+	<<if $john.isMale>>\
+		$john.name was kept on board to work in the central sales division, and would stop by R&D from time to time to catch up with $julia.name. His former rank and ability didn't mean much when compared to The Company's best, but he was good enough to get by.
+	<<else>>\
+		$john.name would have been kept around as a sales assistant, if not for the fact that she kept fucking her coworkers in the office. Eventually, it was decided to train her and sell her internally. She actually enjoyed the training so much that the training staff kept her around for several weeks before finally releasing her to auction.
+	<</if>>\
+<<else>>\
+	<<if $john.isMale>>\
+		After exposure to the BMB-1, $john.name's mental state was beyond repair, and beyond the ability to train in any capacity. Since he could no longer communicate, it was decided to sell him at a discount to a client looking for a male cumdumpster to entertain her guests with.
+	<<else>>\
+		After exposure to the BMB-1, $john.name's mental state was beyond repair, and beyond the ability to train in any capacity. Since she could no longer communicate, it was decided to sell her at a discount to a client looking for a broken cumdumpster to entertain his guests with.
+	<</if>>\
+<</if>>\
+
+<<if not $story.ch2.endSophie>>\
+	$sophie.name was given to the Company VP as a gift and treated as his pet dog. He would walk her up and down the hallways on all fours, occasionally getting fucked in front of staff. When he was having a good day, he would make it open season on $sophie.name, allowing anyone with a spare minute to rape her as they pleased.
+<<else>>\
+	$sophie.name ultimately injected herself with the BMB-1, and ended up in a state too broken for The Company to rehabilitate. She lost her ability to speak beyond simple moans and gestures, and was eventually just sold at a discount to a client looking for an attractive, broken cumdumpster.
+<</if>>\
+
+Your fates were ultimately no better than your former peers. Once the senior lab technicians learned all they could from you, and formulated their own transformative serum under $julia.name's supervision, you and $penny.name were reshaped into living sex dolls to be set up and used by the staff whenever they needed to get off. Not that it mattered much to you. The transformation dulled all your senses save for pleasure, and you eventually slipped into a deep, blissful coma...''
+
+<span id="badend">\
+	@@.btnChoiceDom;<<button "THE END...?">>
+		<<replace "#badend">>\
+			<<pic $npc "saya">>\
+			
+			<<nm $saya "Are you kidding me!? Is this really how it ends? You put in all that time and effort just to get turned into a lifeless fuck puppet? I mean, hey, if that's your bag then by all means, but... Don't you think that'd just be disappointing?">>\
+			
+			@@.btnUI;<<button [[No, it can't end this way!|Story-CH2-DoseSuspect]]>>
+				<<set $story.ch2.endJohn to false>>
+				<<set $story.ch2.endTasha to false>>
+				<<set $story.ch2.endSophie to false>>
+			<</button>>@@
+		<</replace>>\
+	<</button>>@@
+</span>\
+
+
+:: CH2-CompanyTalk1 {"position":"850,18975","size":"100,100"}
+<<loc_CompanyHQ>>\
+
+''Executives at The Company are extended several privileges for their position. Not least among these is a private suite within the building. These suites are almost small condos, and include a kitchenette, full size bathroom, king size bed, and a small living space with a couch, work area, and television.
+
+Right now, two executives occupy one such space; An older, fidgeting man in a business suit and a younger, confident man in a short lab coat...''
+
+<<nm $erik "So, $james.name... It sounds like one of your former subordinates is causing some trouble again, down at our favorite branch office...">>\
+
+''$james.name is pouring himself and $erik.name drinks at the small bar near the kitchen.''
+
+<<nm $james "Haha, quite so... It's unfortunate that they started acting up again 'now', but also entirely unrelated to our plan. I knew this was going to happen again eventually, so we may as well watch how it all plays out.">>\
+
+''$erik.name takes a glass from $james.name.''
+
+<<nm $erik "Hmph. My contact down there knows better than to cause such a ruckus.">>\
+
+<<nm $james "Frankly, $erik.name, I don't care if she sets the entire complex on fire, as long as she does what she was placed there to do...">>\
+
+''$erik.name finishes his drink, and exits the room.''
+
+<<btnLink [[Continue|Room-Sleep]]>>
+
+
+:: CH2-DianaEnd1 {"position":"100,18975","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+''You enter $diana.name's office and knock on the doorframe to get her attention.''
+
+<<nm $player "Hey $diana.name, mind if I talk to you about something in private?">>\
+
+<<pic $diana "bimbo">>\
+
+<<nm $diana "Of course, dear. Please, close the door and take a seat.">>\
+
+''You close the doors and casually walk around to where $diana.name's sitting. When she looks up at you, you take the opportunity and slide the needle into her neck. The immediate effects of this serum are different than you're used to. Her eyes turn dull and her expression is vacant. This looks like your chance.''
+
+<<nm $player "$diana.name, I need you to tell me if you're responsible for the slave girls dying. Did you have anything to do with this?">>\
+
+''The color returns to $diana.name's eyes and a smile spreads across her face.''
+
+<<pic $diana "bimbo1">>\
+
+<<nm $diana "Oh? What? Hehehehe, you think little ol' me killed those poor girls?">>\
+
+<<nm $player "Well, did you?">>\
+
+<<nm $diana "Now, why would I do that? People are a lot less fun fuck when they're dead! Trust me, hehe, I know!">>\
+
+<<nm $player "...What?">>\
+
+<<pic $diana "bimbo2">>\
+
+<<nm $diana "Ohhhhhh, waaaanna heeeaaar a stoooory? Back when I was a young little thing I had a boyfriend. He was perfect and we were in love and he had the biggest cock you'd ever seen! Then I found out he'd been putting that yummy cock in one of my friends, and that made me sad... So, all poor little me could do when I caught him in the act, was find a shovel and bash his skull in while he was still fucking her!">>\
+
+''You slowly back up towards the door as $diana.name begins to masturbate.''
+
+<<pic $diana "bimbo3">>\
+
+<<nm $diana "I had to gag the little bitch to stop the screaming, then I tied her up and made her watch me make love to Richie's cold, dead body. Ever heard of angel lust? Tee-hee, what a rush! Of course, he couldn't come anymore, but that didn't stop me from getting off over and over while that little slut cried and cried. Don't worry, I made sure to drag her over and clean him off with her mouth. I wonder what that was like, having to suck off a corpse for hours on end until I got tired of watching? Hehehehe!!!">>\
+
+''You back up further, tripping over a chair and falling to the ground. $diana.name is quick to pounce, coming hard and fast as she grinds her wet mound against your crotch.''
+
+<<nm $diana "AHHHH!!!!! GOD YES!!! I kept the slut around as a pet after that, using her as my personal little fuck toy. I'd ride her face until she'd pass out under me. When she'd wake up she'd usually find herself gagged and tied down to a chair getting knotted by my Saint Bernard. I filled the bitch up with so much doggy cum I thought she might start popping out puppies at one point! HAHAHAHA!!! Oh, fuck! Coming again! Yes! YESSSS!!!!">>\
+
+''Your back's against the wall, you may have sprained your ankle getting it caught in the chair when you fell, and $diana.name's clawing at your clothing. You desperately try to remove yourself from the situation, but the lust-crazed MILF seems intent on keeping you trapped.''
+
+<<nm $diana "Oh no you don't! I need more! MAKE ME CUM MORE!!!">>\
+
+''$diana.name pulls you down hard and slams her dripping cunt into your mouth, riding your head into the ground. You try to scream and flail, but she has you pinned well. As she reaches what must be her fifth or sixth screaming climax, her hot juices flood your mouth. As you choke, she reaches down and clamps your nose shut!''
+
+<<Thought "What the fuck! No! I can't bre-... can't...">>\
+
+''The taste of her pussy and sinister smile are the last thing you remember before you lose consciousness...''
+
+<<btnLink [[Continue|CH2-DianaEnd2]]>>
+
+
+:: CH2-DianaEnd2 {"position":"225,18975","size":"100,100"}
+<<set $Location to "Unknown">>\
+<<Thought "...Uhhhgh... What... Where am I?">>\
+
+''Your vision is slow to focus, and you can't quite figure out what's happened. You're still recovering from your earlier suffocation, and your senses are muted. The first thing you notice is the pain in your jaw. This is quickly explained as you run your tongue along a large cold ballgag prying your mouth open. You start to feel the tight straps digging into your face.''
+
+<<Thought "What the fuck! How did I... ugh... my head...">>\
+
+''The next thing you realize is that you're resting on your elbows, since your wrists are bound to your arms, near your shoulders. Your torso is supported by some kind of bench, and your ankles are shackled to what feels like a solid metal bar. Your arms and legs feel hot and restricted like they're wrapped in tight, harsh clothing. As your ears stop ringing, you can begin to make out the muffled grunts and moans of someone near you.''
+
+<<pic $events "dianaslave">>\
+
+''Just off to your side is an older woman, about $diana.name's age, mouth gagged and arms bound behind her. She's wearing a latex bondage getup similar to what you imagine you're in now. She's straddling a bench with a large dildo mounted to, desperately fucking herself. She's lost in her own world, either oblivious or, more likely, indifferent to the fact that you're imprisoned only a few feet away from her.''
+
+<<pic $diana "bimbo4">>\
+
+<<nm $diana "Oh, looks like you're awake!">>\
+
+''$diana.name sits on the edge of a bed in front of you, nearly naked save for a pair of kneehigh boots, thigh-high fishnet stockings and a top pulled down to expose her breasts. You'd be significantly more aroused if not for, well, everything else about your situation...''
+
+<<nm $player "Mphph! Aghff mphp!">>\
+
+<<nm $diana "Aw, poor puppy, don't try to speak when your mouth's full! I wanted to thank you for reminding me about this part of myself! We're gonna have so much fun together! My poor little bitch has been so lonely for so many years... Tee-hee, you're gonna be the best of friends! Who's a good <<boy>>? You're a good <<boy>>! Yes you are! Yes you are!">>\
+
+''$diana.name runs her fingers through your scalp, petting and scratching you like one would a dog.''
+
+<<nm $player "MMMMMMPPHH!!! Mph... mmmm....">>\
+
+''As the feeling returns to your body, you realize your ass is exposed. The air runs over your hole, and you can feel the wet coolness of what you can only imagine is a liberal amount of lubricant.''
+
+<<pic $diana "pussy">>\
+
+<<nm $diana "Time to play! Can you see how excited I am? You're gonna make me feel good now, and I'm gonna keep you forever and ever! Oh look! Your new lover's come to join us. He'll make you feel good while you make me feel good!">>\
+
+''You notice the sound of loud clicking on the hard floor in the room. As $diana.name lowers herself onto your face, you can hear heavy panting from just behind you, and feel warm breath against your wet, unguarded hole...''
+
+<span id="badend">\
+	<<link "THE END...?">>
+		<<replace "#badend">>\
+			<<pic $npc "saya">>\
+			
+			<<nm $saya "Are you kidding me!? Is this really how it ends? You put in all that time and effort just to get turned into a doggy fuck slave by some sexy dominatrix MILF? I mean, okay, yeah, that doesn't sound too bad... but... Don't you think it'd just be disappointing to let things end here?">>\
+			
+			<<btnLink [[No, it can't end this way!|Story-CH2-DoseSuspect]]>>
+		<</replace>>\
+	<</link>>
+</span>\
+
+
+:: CH2-Epilogue {"position":"225,19100","size":"100,100"}
+<span id="ep">\
+	<<loc_CompanyHQ>>\
+	
+	''$james.name sits alone at a small bar across the street from a towering, corporate skyscraper. An older man walks hurriedly through the door, taking a seat next to him, ordering a neat glass of whisky.''
+
+	<<nm $james "$erik.name. I suppose you're here to tell me about $julia.name?">>\
+
+	<<nm $erik "Hmph, how'd you know?">>\
+
+	<<nm $james "You're not the only one with eyes and ears down in that 'bunker', you know...">>\
+
+	''The men drink silently for a moment.''
+
+	<<nm $erik "Still, what they did to her... And her kid, no less! Brutal...">>\
+
+	''$james.name laughs.''
+
+	<<nm $james "Brutal!? Did you forget who we work for?">>\
+
+	<<nm $erik "Yeah, but-">>\
+
+	<<nm $james "It doesn't matter. In fact, this little incident only serves to justify my interest... Sophie has a treasure under her nose, and she uses <<his>> talents like some kind of delusional activist... Our trade, what we do, it clouds our vision from the bigger picture. What that <<boy>> is making down in that lab... Well, it could change the world.">>\
+
+	''$james.name finishes his drink.''
+
+	<<nm $erik "Change the world... Now you're starting to sound like 'him'...">>\
+
+	''$james.name finishes paying his tab, then leaves for the door, laughing.''
+
+	<<nm $james "Haha, perhaps... But I'd say given the circumstances that's wholly appropriate, wouldn't you?">>\
+
+	''The door closes behind him.''
+
+	<<nm $erik "...Jackass...">>\
+
+	@@.btnUI;<<button "Continue">>
+		<<replace "#ep">>\
+			<center>\
+			<h1><<timed 1s t8n>>__Chapter 3__<</timed>></h1>\
+			<<timed 2s t8n>><<btnLink "Continue" "Room-Sleep" "$Chapter = 3">><</timed>>
+			</center>
+		<</replace>>\
+	<</button>>@@
+</span>\
+
+
+:: CH2-JohnEnd {"position":"1100,18850","size":"100,100"}
+<<loc_Bathroom>>\
+
+	''You find $john.name in the bathroom.''
+
+	<<pic $john>>\
+
+	<<if $john.isMale>>\
+		<<if $john.isNice>>\
+			<<nm $john "Hey $player.name, what's up?">>\
+		<<else>>\
+			<<nm $john "The fuck do you want?">>\
+		<</if>>\
+	<<else>>\
+		<<nm $john "Hey sexy, what can I do for you?">>\
+	<</if>>\
+
+	''You don't really have time to come up with anything clever, and the bathroom is pretty crowded. Instead you just quickly slip the needle up into $john.name's throat and push <<if $john.isMale>>him<<else>>her<</if>> into a less populated corner.''
+
+	<<nm $player "$john.name, I need to know if you had anything to do with those girls' deaths, or if you know who did.">>\
+
+	''The color returns to $john.name's eyes, you repeat the question.''
+
+	<<if $john.isMale>>\
+		<<nm $john "What? No... I didn't kill nobody? When I heard those girls died I got... It made me really really sad, you know? Like, really, really..."sniff"">>\
+
+		''$john.name has started crying, and people are noticing.''
+
+		<<nm $player "Fuck... Okay, $john.name, look, it's fine. It'll be... What the fuck are you doing?">>\
+
+		''$john.name has gone from crying to giggling as he starts stroking his massive erection in the middle of the crowded bathroom.''
+
+		<<nmc "Random Guy 1" "Holy shit, is that $john.name? Hahaha, what the fuck is he doin' over there?">>\
+
+		''$john.name has lost it. He's completely naked now, jamming fingers into his ass while working his cock in front of everyone. Mouth agape, eyes rolled back, he's become completely mindbroken.''
+
+		<<nm $john "Hahaha!!! Cock, cock, COCK! My cock, your cock, pussy, cocks, ass, EVERYTHING! HAHAHAHA!!!">>\
+
+		<<nmc "Random Guy 2" "Haha, oh, man, holy shit. Hey, Johnny boy, is that you want? You want us to fuck you?">>\
+
+		<<nm $john "Yeah, okay, sure! Yeah! Sounds FUN!">>\
+
+		''He's now offering his ass to the crowd around him, cock dangling in the wind.''
+
+		<<nmc "Random Guy 1" "Eh, fuck it. I'm not into guys, but I owe this fucker some pain... Let's get him!">>\
+
+		<<pic $john "group-males">>\
+
+		''The crowd that was once around $john.name has now made their way //inside// him, and they're not at all being gentle about it. He seems to be lost to his own desires, so you use the opportunity to sneak away.''
+	<<else>>\
+		<<nm $john "What? No... I didn't kill anyone... When I *sniff* When I heard those girls died I got... It made me, like, really really sad, you know? Like, really, really...*sniff*">>\
+
+		''$john.name has started crying, tears flowing down her cheaks.''
+
+		<<nm $player "Fuck... Okay, $john.name, look, it's fine. It'll be... What are you doing?">>\
+
+		''$john.name has gone from crying to giggling as she starts rubbing her dripping pussy in the middle of the crowded bathroom.''
+
+		<<nmc "Random Guy 1" "Hm? Oh! Hey everyone, looks like $john.name's at it again!">>\
+
+		''$john.name has lost it. She's completely naked now, jamming fingers into her ass while working her clit in front of everyone. Mouth agape, eyes rolled back, she's become completely mindbroken.''
+
+		<<nm $john "Hahaha!!! Cock, cock, COCK! Your cock, your cock, pussy, cocks, ass, EVERYTHING! HAHAHAHA!!!">>\
+
+		<<nmc "Random Guy 2" "Haha, oh, man, holy shit. Well, what are we supposed to do? Poor bitch looks like she needs our help? Hey, $john.name, you wanna feel what it's like to be airtight?">>\
+
+		<<nm $john "Yeah, okay, sure! Yeah! Sounds FUN!">>\
+
+		''She's now offering her ass to the crowd around her, hips swaying wantingly from side to side.''
+
+		<<nmc "Random Guy 1" "Hahaha! Awesome, I've been a little pent up lately. Let's give the slut what she wants!">>\
+
+		<<pic $john "gangbang-bbc">>\
+
+		''The crowd that was once around $john.name has now made their way //inside// her, and they're not at all being gentle about it. She seems to be lost to her own desires, so you use the opportunity to sneak away.''
+	<</if>>\
+
+	<<Thought "Fuck... That was a complete waste! Now all I've done is broken $john.name...">>\
+
+	<<set $story.ch2.endJohn to true>>\
+	<<btnLink "Continue" "CH2-BadEnd">>
+
+
+:: CH2-JuliaEnd {"position":"475,18975","size":"100,100"}
+<<loc_MedicalOffice>>\
+
+    ''You enter $julia.name's office and find her with her back turned to you, poring over stacks of documents on her desk. Her head turns for a split second as a way of both acknowledging and dismissing you. Deciding not to look a gift horse in the mouth, you quickly approach behind her and slide the needle into her neck.''
+
+    <<nm $julia "What the fu...">>\
+    <<set $julia.isBimbo to true>>\
+    <<set $julia.status to "@@.xxx;Bimbo Nurse@@">>\
+    <<set $serum[5].qty -= 1>>\
+
+    ''$julia.name's eyes shift. Unlike the bright, drastic color changes you're used to seeing with other serums, this time they fade and dull, and her expression goes completely vacant.''
+
+    <<nm $player "$julia.name, you need to tell me if you're the one responsible for these girls dying. Do you know anything about who's doing this?">>\
+
+    ''Color slowly returns to her irises, and a smile stretches across her face. She begins cupping one of her breasts and panting.''
+
+    <<nm $player "$julia.name?">>\
+
+    <<pic $julia "bimbo1">>\
+
+    <<nm $julia "Kill them? Ohhhh, mmmm, hehehe! I did more than just kill them sweetie. I made those little sluts suffer miserably! Tee-hee, I even tried my hand at waterboarding with the last one! Ahhhhh, HAH!">>\
+
+    ''$julia.name climaxes as she fondles herself.''
+
+    <<nm $player "W... What? But why!?">>\
+
+    <<nm $julia "Why? Mmmm... This horrible evil company took something from me when I was younger, and I just wanted to hurt them for it! That's really all it was. Plus, it's not like I didn't enjoy giving those little bitches what they deserved. Hehehe, letting themselves slip into accepting, even enjoying their treatment here! Did you know the last one came SEVEN TIMES over a night of cattle-prodding, whipping and simulated drowning? What a fucking SLUT HAHAHA! OH MY GOD! Frankly, I was doing those whores a FAVOR by putting them down!">>\
+
+    ''She's orgasming for the third time now.''
+
+    <<nm $player "$julia.name, I... I don't even know... I'm taking you to $sophie.name, we have to set this straight. People have died, more people are going to die, or worse! Come on...">>\
+
+    ''$julia.name pulls you to the ground by your knees, causing you to fall on your back. Her panties are off, and she's mounted your face. You struggle, but the sudden loss of oxygen is sending your body into a panic.''
+
+    <<nm $julia "Oh no, we're gonna spend the rest of the night right here, $player.name! You're gonna make me feel good and I'm gonna make you, well... I'm gonna have to just make you go away! Hahaha! Can't have anyo-">>\
+
+    ''Air rushes into your lungs and you gasp for breath as $julia.name is suddenly flung off of you. You look up to see $penny.name standing over you with a now-broken desk lamp in her hand.''
+
+    <<nm $penny "And stay down bitch! Holy shit, $player.name, are you okay? I couldn't do anything until I got Ms. Dee down here.">>\
+
+    <<nm $player "Wh... *gasp* Oh, ugh... What? $sophie.name's here?">>\
+
+    <<nm $penny "As soon as I saw you get off the elevator with the vial in your hand, I had a pretty good idea what was about to go down, so I called her.">>\
+
+    <<pic $sophie>>\
+
+    <<nm $sophie "It's good that she did, this encounter was quite... enlightening.">>\
+
+    ''You sit up to see $sophie.name with one of her bodyguards. Behind them, you spot $diana.name, as well as a woman you've never seen before.''
+
+    <<nm $player "Um, yeah... Great, glad I could help. Who...?">>\
+
+    <<pic $lisa "greeting">>\
+
+    <<nm $lisa "It's nice to finally meet you, <<Mr>> $player.surname. I'm the administrative director for the corporate office, and Ms. Dee's direct report. Please, just call me $lisa.name. To be blunt, I came here to handle the disbandment of this branch. However, in light of new information, we may need to reconsider.">>\
+
+    <<nm $sophie "I would be grateful if you did, ma'am.">>\
+
+    <<nm $lisa "Yes, well... In any case, I have to report this back to corporate which at the very least will put the branch shutdown on hold. However, we cannot overlook the inability to fulfill a client's order even after he graciously tolerated a delay...">>\
+
+    <<nm $player "But that's not-">>\
+
+    ''$sophie.name shoots you a stern look and you stop short.''
+
+    <<nm $sophie "We understand, and we'll see that it gets resolved. Thank you very much, Ms. Ann.">>\
+
+    <<nm $lisa "Yes... In regards to the good doctor here, I trust we can leave her in your care until a decision is reached as to what will be done with her?">>\
+
+    <<nm $penny "Oh yeah, you just leave this one to me. I'll make sure she's taken care of real good.">>\
+
+    ''You're a little surprised to see $penny.name so worked up, not that you can blame her.''
+
+    <<nm $lisa "Very good. I'll take my leave then. You can expect to hear from us soon. Until then, I advise you find a way to make things right with your client.">>\
+
+    ''$lisa.name turns and walks out the door. $sophie.name sends her security guard to escort her.''
+
+    <<nm $sophie "Now then... I'll call Craig to come up and move $julia.name to more appropriate accommodations downstairs. We have more to discuss, but if it's all the same to you, I would prefer to continue our conversation in my office.">>\
+
+    <<set $player.met.lisa to true>>\
+    <<set $julia.default to "julia-bimbo">>\
+    <<set $julia.convo[1].seen to false>>\
+    <<set $julia.convo[2].seen to false>>\
+    <<set $julia.convo[3].seen to false>>\
+    <<set $julia.convo[4].seen to false>>\
+    <<set $julia.convo[6].seen to false>>\
+    <<set $julia.convo[7].seen to false>>\
+    <<set $player.coinOutfits.pushUnique("julia-bimbo")>>\
+    <<meet $lisa>>\
+    <<AddNote $lisa "I met $lisa.name for the first time today, $sophie.name's superior. She's quite intimidating. I wonder if I'll see her again.">>\
+    <<btnLink "Go upstairs" "CH2-SophieOffice">>
+
+
+:: CH2-KatieTraining {"position":"975,18975","size":"100,100"}
+<<loc_Lobby>>\
+
+''As you arrive at work, you're more than a little shocked to see Craig standing in the hallway waiting for you.''
+
+<<nm $player "Craig! Not gonna lie, it's a little weird seeing you in a well-lit room outside of a dank sex pit... What's up?">>\
+
+@@.men;
+<<Pro "Unknown">>Craig:<hr>
+Yeah, yeah... Anyways, we received the new meat late last night and did what ya' told us to with 'em. Put the girly's cage right next to mama's and, boy, whadda show that was lemme tell ya'!@@\
+
+''Craig stares blankly at you.''
+
+<<nm $player "...Well tell me!">>\
+
+@@.men;
+<<Pro "Unknown">>Craig:<hr>
+Haha, $julia.name's off her fuckin' rocker, for real. After she woke up, before we got her kid, man, I couldn't pry her off my boys for the life of me! Bitch is fuckin' ravenous. After the girl did show up and we put 'em both in their cages facin' each other, $julia.name just stared at her daughter all night while she fucked herself silly with some toys we tossed her! Eventually passed out in a pool o' her own lady jizz.@@\
+
+<<nm $player "And Katie?">>\
+
+@@.men;
+<<Pro "Unknown">>Craig:<hr>
+She just criiiiied and criiiied all night long, beggin' mama to stop. Didn't work for nothin' though, if anything, her pleading only seemed to get $julia.name even more worked up! Anyhow, we ain't got a lot of time. Your cute little helper's already down there with your things, so just follow me.@@\
+
+''You walk with Craig down the halls to the elevator that leads to the training area.''
+
+<<btnLink [[To the pit!|CH2-KatieTraining2]]>>
+
+
+:: CH2-KatieTraining2 {"position":"1225,18975","size":"100,100"}
+<<loc_TrainingRoom>>\
+<<set $time.cTime = 2>>\
+
+''As you and Craig step off the lift, you see it's just as he described. $julia.name and her daughter are both held in separate cages facing each other. While Katie sobs silently into her folded arms, $julia.name is going full throttle on her own twat, squeezing the bars of her cage and screaming in orgasm.''
+
+<<nm $penny "Morning boss! Here's the BMB-1, locked and loaded. Katie's looking a little sad, maybe you could go cheer her up?">>\
+
+''You take the case from $penny.name and give it a quick inspection.''
+
+<<nm $player "Maybe I can. Thank you, $penny.name.">>\
+
+''As you approach the cages you notice that Katie has been gagged with a cloth, likely to stifle the crying.''
+
+<<Thought "This should be bothering me, right? I should be freaking out right now, but... When did this become so 'normal'?">>\
+
+''You start with $julia.name.''
+
+<<nm $player "Hey $julia.name. You still recognize me, right? You don't want to kill me anymore, do you?">>\
+
+''$julia.name stops rubbing herself as ravenously to give you some of her attention.''
+
+<<pic $julia "bimbo2">>\
+
+<<nm $julia "I don't wanna kill you, <<Mr>> $player.name, don't be silly! You're so silly! Wanna fuck me? We could, like, totally fuck! Like, right now! Those mean men over there haven't even touched me since, like, FOREVER ago, and Katie's no fun either!">>\
+
+<<nm $player "Actually, that's what I'm here for! Poor Katie over there, doesn't she look sad? What do you think might make her feel better? What makes YOU happy?">>\
+
+''$julia.name thinks hard for a moment.''
+
+<<nm $julia "Ummm.... Getting fucked makes me happy. Hehe, I like coming, a lot! OH!!! Do you think that's what it is? Katie just wants to get fucked and come a lot, too!?">>\
+
+''Hearing this, Katie begins screaming into her gag and thrashing against the bindings holding her to the cage.''
+
+<<nm $player "Look at how excited you made her! That must be it! $julia.name, do you want to help teach your daughter how to feel good?">>\
+
+''$julia.name starts nodding emphatically.''
+
+<<nm $player "Great! We need to get you two dressed up and moved to the back room for some fun time. Katie's new boyfriend will be here soon to take her back to his place and make sure she gets lots and lots of cock!">>\
+
+''Katie is as mortified as her mother is ecstatic. Two of the trainers come by to escort the girls to the back. Before Katie's cage opens, you give her the BMB-1 injection. Her eyes go dim...''
+
+<<nm $player "Katie, the only thing in life that matters anymore is pleasing those around you and feeling good. You'll do anything to feel good, won't you?">>\
+
+''That familiar smile creeps across her face as the trainer pulls her out of the cage and walks her to the back room.''
+
+<<btnLink [[Go to the back room|CH2-KatieTraining3]]>>
+
+
+:: CH2-KatieTraining3 {"position":"100,19100","size":"100,100"}
+<<loc_TrainingRoom>>\
+<<set $time.cTime = 5>>\
+
+''Once the girls are ready, you enter the back room. This room is brightly lit, compared to the dark coldness of the main area, and is generally used for roleplaying and what the trainers refer to as "mental conditioning"''
+
+<<pic $julia "katie1">>\
+
+''Katie's the first to greet you at the door. With a new outlook on life and some cute clothes, you can't help but get a little turned on by her.''
+
+<<nm $player "Okay, $julia.name, Katie's new boyfriend will be here in a few short hours, so you need to teach her what it means to feel good, okay? I'm counting on you!">>\
+
+<<pic $julia "katie2">>
+
+<<nm $julia "You can count on us! Come here baby...">>\
+
+<<pic $julia "katie-sex1">>\
+
+''$julia.name leans in and kisses her daughter deeply. Katie is quick to reciprocate and before long their tongues are pushing, exploring, embracing each other. They engage like this for some time, as if they've been lovers their whole lives.''
+
+<<pic $julia "katie-sex2">>\
+
+''Once Katie has been sufficiently warmed up, her mother circles around to start working her daughter's cunt. $julia.name rubs her daughter's bald pussy relentlessly, paying extra attention to her clit. The serum naturally increases one's reception to pleasure, and this final push will likely break Katie completely.''
+
+<<pic $julia "katie-sex3">>\
+
+''Once fingers no longer suffice, Katie is flipped over onto her back as her mother wraps her mouth around her dripping mound. Katie can barely contain herself, screaming as she reaches climax over and over again. $julia.name works her own pussy at the same time, forming a puddle between her legs.''
+
+<<pic $julia "katie-sex4">>\
+
+''Katie, now fully surrendered to her new, endless lust, finds a small, pink dildo in the room, which she expertly uses to impale her mother with. She plunges the fake cock in and out of the other woman's soaking sex, sending her into a final, trembling orgasm.''
+
+<<nm $sophie "It looks like you came through for us, <<Mr>> $player.surname. I'm quite impressed.">>\
+
+''You're a little surprised when $sophie.name sneaks up on you in the training room. Beside her stands an older, well-dressed man.''
+
+<<nm $player "Thank you, $sophie.name. I take it this is our buyer?">>\
+
+@@.men;
+<<Pro "Unknown">>Client:<hr>
+Indeed I am, young <<man>>, and I must say I'm pleasantly surprised. I had my doubts when my order was delayed but what I see here has exceeded my expectations! Ms. Dee, are we ready to finalize the transaction now?@@\
+
+<<nm $sophie "Of course, sir, we'll go sit down with our sales division for a moment and get you all squared away. Craig, if you would please prepare the product for transportation. $player.name, it's about that time, please go ahead and head home for the day. Thank you for all your hard work.">>\
+
+<<nm $player "Thank you, $sophie.name. I'll see you Monday.">>\
+
+''$sophie.name walks the client to the elevator. You watch $julia.name and Katie for a little bit longer. It's amazing that they're still going at it, though a lot of that likely has to do with the serum. Seeking pleasure for them now takes priority over all other needs, and given the chance they'd likely keep at it until they both collapsed from exhaustion.''
+
+<<nm $player "Okay Craig, it's been fun. I'll see you later.">>\
+
+@@.men;
+<<Pro "Unknown">>Craig:<hr>
+Haha, I sure hope not, kid. You take care now.@@\
+
+''With that, you leave for your home. It's strange, you think, that with such a rollercoaster of a week you'll finally get to relax a little...''
+
+<<AddConvo $penny 7>>\
+<<AddConvo $diana 4>>\
+<<AddConvo $tasha 7>>\
+<<AddConvo $john 4>>\
+<<AddConvo $sophie 4>>\
+<<btnLink [[Go home|Room]]>>
+
+
+:: CH2-SophieEnd {"position":"975,18850","size":"100,100"}
+<<loc_SophieOffice>>\
+
+''When you reach the upper level, you're surprised to find that $sophie.name's door is cracked open. She's sitting at her desk, appearing lost in thought, but not so distracted that she doesn't see you from the hallway.''
+
+<<nm $sophie "<<Mr>> $player.surname, please, come on.">>\
+
+''You enter her office, syringe in hand. She sees this as well.''
+
+<<pic $sophie>>\
+
+<<nm $sophie "What's that you have there? Another one of your serums? Since we won't be in business anymore after the next couple hours, I can only assume you brought it here to use on me. Well, what are you waiting for?">>\
+
+''You break eye contact with her.''
+
+<<nm $player "I... I don't want things to end this way, $sophie.name... I just thought... I just thought that maybe with this I could get some straight answer from you, but... $sophie.name, you didn't kill those girls, did you?">>\
+
+''$sophie.name closes her eyes and smiles.''
+
+<<nm $sophie "Have I really become so distant that someone might think I'd have an ulterior motive in planning my own suicide? Haha... No, $player.name, keeping those girls alive was literally tantamount to my own survival. I'd have nothing to gain, and everything to lose.<br><br>So tell me, what does this one do? Truth serum? Or just more mind control business?">>\
+
+''You look down at the syringe in your hand, realizing you're gripping it dangerously tightly.''
+
+<<nm $player "This... $penny.name actually came up with the idea. It twists its victim into stupid, horny bimbo. They become happily lost to their own pleasure. Of course, in that state, it's not difficult to extract any desired information...<br><br>Here.">>\
+
+''You place the vial on $sophie.name's desk.''
+
+<<nm $player "I was hoping to find the person responsible for the incidents, but it looks like I came up empty. If you want an out, there it is. I'm sure what becomes of you couldn't be any worse than what The Company has planned.">>\
+
+<<nm $sophie "$player.name...">>\
+
+''You turn to walk back to your lab and wait with $penny.name for the inevitable.''
+
+<<nm $player "It was fun while it lasted, Sophie.">>\
+
+<<set $story.ch2.endSophie to true>>\
+<<btnLink [[Continue|CH2-BadEnd]]>>
+
+
+:: CH2-SophieOffice {"position":"600,18975","size":"100,100"}
+<<loc_SophieOffice>>\
+
+''The four of you ride the lift up to $sophie.name's floor, then enter her office. You never noticed before that she keeps a sofa on one of the walls, which you and $penny.name promptly fall into. $diana.name takes a seat across from $sophie.name at her desk. All of you look exhausted.''
+
+<<pic $sophie>>\
+
+<<nm $sophie "First, $player.name, $penny.name, I can't thank the two of you enough. If not for your, frankly, rogue operations, well... Anyway, thank you both. Secondly, as much as I want to send everyone home after a day like this, we have to discuss the matter of the impending sale...">>\
+
+<<nm $penny "Well, can't we just substitute $julia.name? She's already drugged and willing...">>\
+
+<<nm $diana "As satisfying as that would be, the client is after someone a little on the younger side.">>\
+
+''$penny.name shrugs and sinks back into the couch.''
+
+<<btnChoice "Wait, what are you saying exactly?" "CH2-SophieOffice2" "$c=1">>\
+<<btnChoice "$diana.name, why are you even here?" "CH2-SophieOffice2" "$c=2">>\
+<<btnChoice "Did you have someone in mind?" "CH2-SophieOffice2" "$c=3">>\
+
+
+:: CH2-SophieOffice2 {"position":"725,18975","size":"100,100"}
+<<loc_SophieOffice>>\
+
+<<switch $c>>\
+    <<case 1>>\
+        <<nm $player "Wait, I'm not quite sure I follow...">>\
+
+        ''$diana.name smiles innocently at you.''
+
+        <<nm $diana "Oh, sweetie, I mean he wants someone with less wrinkles and a tighter twat, you know?">>\
+
+        <<nm $player "N-no that's not-">>\
+
+        ''You're cut off, $penny.name elbows you in the ribs quietly laughing to herself.''
+    <<case 2>>\
+        <<nm $player "Hey, no offense, but why are you even here, $diana.name? I mean... I didn't mean it like that, but...">>\
+
+        ''$diana.name starts laughing.''
+
+        <<nm $diana "Haha, no, no, I get it. Aren't I just worth having around by virtue of being me?">>\
+
+        ''She raises her arms, as if holding for applause.''
+    <<case 3>>\
+        <<nm $player "Sounds like you already have someone in mind...">>\
+
+        <<nm $diana "Mmm, astute as always, $player.name dear. Indeed I do!">>\
+
+        <<love $diana 1>>
+
+        ''$diana.name adjusts her glasses and turns towards $sophie.name.''
+<</switch>>\
+
+<<pic $diana>>\
+
+<<nm $diana "The truth is, I met Sophie on her way down after doing a little investigating on my own. It's no secret I keep files on everyone in this company, Sophie and her lovely director included. I was going through everyone's documents as something of a trip down memory lane, and something in $julia.name's file jumped out at me.">>\
+
+''$sophie.name raises an eyebrow.''
+
+<<nm $diana "It turns out, $julia.name was a known associate of a girl picked up by acquisitions several years ago, and sold through The Company. Our records indicate they knew each other, but don't go deeper than that. It's unfortunate that it took so long for us to shore up our investigation practices...">>\
+
+''You lean forward.''
+
+<<nm $player "So, you think there was more to it? If her intentions were to infiltrate the organization just to take it down from the inside, that would be a lot of trouble for just a friend. Lovers, maybe?">>\
+
+<<nm $sophie "Maybe, most likely even, but to be honest it doesn't matter at this point. What we need to focus on right now is our current client.">>\
+
+<<nm $diana "Impatient as always, dear Sophie. My files are quite thorough these days, especially when it comes to immediate family. By the way, $player.name, say hello to $sister.name for me, won't you?">>\
+
+''A chill runs up your spine.''
+
+<<nm $diana "Anyway, turns out our $julia.name was going home to her husband, Sean, and her sweet daughter, Katie. She's a student at the local university and moved in with her parents to save some cash. You would know something about that, right $player.name?">>\
+
+<<nm $player "...Please stop doing that.">>\
+
+<<nm $sophie "Company policy would see that those two disappear. I think a better course of action would be to dispatch acquisitions and ensure Katie ends up in our... care.">>\
+
+''$penny.name suddenly perks up.''
+
+<<nm $penny "Oh! Oh! If we're just gonna kill him anyway... What? Do I still need to 4kids it? Fine, if he's just gonna 'get sent to another dimension' anyway, can we bring him here instead, too?">>\
+
+<<nm $player "You want another lab rat, don't you? Well, it's not a terrible idea. It would help advance serum development.">>\
+
+<<pic $penny>>\
+
+<<nm "penny-d" "Oh I've got so many plans for that body of... his...">>\
+<<nm "penny-w" "Mmmm, it's gonna be so much fun!">>\
+<<nm "penny-o" "Hehe, you're gonna be so proud of me when I'm done, boss!">>\
+<<nm "penny" "Hehe, oh I think you'll find my little project pretty interesting!">>\
+
+<<nm $sophie "I think that should be fine, I'll arrange for it. However, he will be kept in holding until business with our client has concluded. Katie comes first.">>\
+
+<<nm $penny "And second, and third, and last, and... Right, I'll see myself out...">>\
+
+''The four of you sit in silence for what feels like several minutes, barely able to speak or move.''
+
+<<nm $diana "Sophie... The actual transaction isn't scheduled until tomorrow afternoon, right? And it'll take acquisitions a few hours to actually get Sean and Katie on site. What's say we all go home and freshen up, hm? $player.name, with your serums you can have the girl ready by then, right?">>\
+
+<<nm $penny "I found enough materials to make another batch of BMB-1 today, so, it should be easy enough.">>\
+
+''$penny.name yawns loudly.''
+
+<<nm $sophie "You're probably right... Let's all get some rest, we can get back to work first thing tomorrow. Good night, everyone, and thank you again.">>\
+
+''You all get up, slowly, and head for the elevator. Your escort has to wake you up when you reach your house. You climb upstairs and collapse in your bed.''
+
+<<btnLink [[Go to sleep...|Room-Sleep]]>>
+
+
+:: CH2-TalkMedical {"position":"600,18850","size":"100,100"}
+<<loc_MedicalOffice>>\
+
+''You lean on the frame of $julia.name's open door. She's alone in her office drinking what looks like a cup of tea. When she hears your knock, she turns to look at you.''
+
+<<pic $julia>>\
+
+<<nm $julia "$player.name, what can I do for you?">>\
+
+<<nm $player "Hey, $julia.name. Um, I was hoping I could talk to you about something actually. It has to do with… you know…">>\
+
+''$julia.name gestures towards a chair.''
+
+<<nm $julia "That's fine, but I'll tell you now. I don't offer “consoling” if that's what you're here for.">>\
+
+<<nm $player "Ha, actually, I wanted to ask you about the last time this happened. I've been hearing that a series of incidents very similar to this one occurred a few years ago. You were the medical officer back then as well, so I figured maybe you'd have some insights as to what happened.">>\
+
+''$julia.name's expression turns. You can't tell if she's angry, grief-stricken or just irritated. Either way, she responds.''
+
+<<nm $julia "I don't need to tell you there's nothing glamorous or noble about the work we're doing here. It's the kind of work that attracts all sorts of broken, unsavory and even downright twisted individuals. The way these girls are treated by these… well by these monsters is disgusting, and at times being the one who has to nurse them back from the brink is almost unbearable.">>\
+
+''$julia.name is doing her best to choke back tears.''
+
+<<nm $julia "And the worst part? These girls actually start BELIEVING they're better off here, that this is what they want! It's heartbreaking and, to be perfectly frank, <<Mr>> $player.surname, what ended up happening to these girls is horrible, but, they're probably better off for it.">>\
+
+<<nm $player "I… I'm sorry…">>\
+
+''$julia.name works to compose herself.''
+
+<<nm $julia "It's… fine… I apologize for getting emotional. I'm afraid that's all I have time for right now, $player.name. There's a lot I need to do before... ">>\
+
+<<nm $player "Sure, no problem. Thanks for talking to me.">>\
+
+''You leave the medical office, closing the door behind you.''
+
+<<btnLink [[Go back to lobby|Story-CH2-TalkCoworkers]]>>
+
+
+:: CH2-TalkRecords {"position":"475,18850","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+<<nm $diana "$player.name, what can I do for you today?">>\
+
+<<nm $player "Hey $diana.name… Um, I actually wanted to talk to about those girls that, uh…">>\
+
+<<nm $diana "Died? Yes, I'd be stupid not to know about what's been going on… and what it will mean for us here… What did you want to discuss?">>\
+
+<<nm $player "Well, I heard a rumor that this isn't the first time this has happened, and that there's a lot of similarities between then and now. You would have been around back then, right? I was wondering if you could tell me about what happened the first time around.">>\
+
+''$diana.name leans back in her chair and inhales deeply.''
+
+<<nm $diana "I suppose there's no harm in being open about it, since we won't be here for much longer anyway. Yes, I was there. Two girls died from training injuries, despite our best efforts to prevent them. The former lead trainer, before Craig came on, made a huge stink about false allegations, but corporate ultimately terminated him and his entire team due to the incident. Poor Sophie could barely hold it together back then. She's doing better this time around, but I can tell she's having difficulty keeping it together.">>\
+
+<<nm $player "I got a lot of pushback from Craig as well recently. What do you think? Did the training team go too far?">>\
+
+''$diana.name's mouth curls into a smile.''
+
+<<nm $diana "No matter what anyone may tell you about any level of strictness or security, there's really only one rule here at The Company. That rule is simply that there are no rules… so long as your actions don't cause The Company to lose profits. Everyone who's worked here for any meaningful amount of time is familiar with this rule, and they're just as familiar with what happens if you're caught breaking it.<br><br>We use business speak here. We say people “get terminated”, but I'm sure I don't have to go into too much detail as to what that really means. Men disappear, women are repurposed as company assets, often sold, or worse. Their families and close friends are also taken or otherwise silenced. The Company is very thorough when it comes to this part of the job. Everyone knows that defying The Company in this regard is a literal death wish… and that includes the training team. Excessive or irreparable damage to company assets equals a major loss in profits, that leads to, well, you know.">>\
+
+''$diana.name appears to be finished saying what she has to say on the matter, and you soak it all in. Despite this information dump, she sits there as calm and calculating as ever, it's easy to see why she and $sophie.name are close.''
+
+<<nm $player "Well, that was helpful. Thanks for talking with me, $diana.name.">>\
+
+<<nm $diana "Of course, let's enjoy the time we have left together.">>\
+
+''You take your leave.''
+
+<<btnLink [[Go back to lobby|Story-CH2-TalkCoworkers]]>>
+
+
+:: CH2-TalkSales {"position":"725,18850","size":"100,100"}
+<<loc_SalesOffice>>\
+
+''You walk into the sales office and find $tasha.name and $john.name in the middle of a conversation. When $tasha.name notices you, she smiles and waves you in.''
+
+<<pic $tasha>>\
+
+<<nm $tasha "Hey, $player.name, come to say goodbye?">>\
+
+''You can't help but laugh a little at her bluntness.''
+
+<<nm $player "I'm hoping it won't come to that, but that is actually kind of why I'm here. I've been hearing that there's a lot of weird similarities between the incidents over the last couple weeks, and the ones that happened a few years ago. I was hoping you two might have some insights on that?">>\
+
+''$tasha.name and $john.name look at each other before turning back to you.''
+
+<<nm $tasha "I heard something about that, too, but I actually started a few months after that happened. $john.name was here though…">>\
+
+<<nm $john "<<if $john.isMale and not dose($john,'classes')>>Yea', I was here. Beatin' the bitches is just parta' the deal in this business, but I ain't never seen nothin' like I did that time. I typically stay outta the dungeon, y'know, where you an' Specs work, but what with everything goin' on I decided to go visit $julia.name down there. Y'know, see if maybe she needed me to “comfort” her, y'know? Haha! Anyways, the girl I seen down there was showin' more bruises than skin, it was tough to look at. Don' get me wrong, I smacked my share of bitches before, even helped out the guys downstairs teach some o' them some manners, but this… It was like they was TRYIN' to kill her, y'know. Been makin' it a point to stay topside ever since.<<else>>Yeah, I was around back then. It's normal to have to get a little aggressive with the girls to get results around here, but, I've never seen anything like I did back then. Normally I'd stay out of the B1 level, where you and $penny.name work, always kinda gave me the creeps. Given everything that was going on at the time, though, I decided to go visit $julia.name, make sure she was alright. When I walked into her office, the girl I saw laying on that bed… It was a miracle she was even breathing, she looked like she'd been run over a truck! A few times! I mean, I'll be honest, I used to help the training team out from time to time, and I'd get a little violent, too, but this… It was like whoever did that to her was TRYING to kill her… Ever since then I've been trying to make it a point to stay off that floor...<</if>>">>\
+
+''Hearing $john.name recount the events from that time managed to shake both you and $tasha.name. All of you stayed silent for several uncomfortable seconds.''
+
+<<nm $player "That's… intense. Well, thanks for taking the time to talk to me. Hopefully I'll see you around!">>\
+
+<<nm $tasha "Yeah, bye $player.name.">>\
+
+<<nm $john "Later…">>\
+
+<<btnLink [[Go back to lobby|Story-CH2-TalkCoworkers]]>>
+
+
+:: CH2-TashaEnd {"position":"1225,18850","size":"100,100"}
+<<loc_SalesOffice>>\
+
+''You linger around the sales office and wait for $john.name to leave. Once it's clear, you make your move.''
+
+<<nm $player "Hey $tasha.name, I need to talk to you about something. Mind if I close the door?">>\
+
+''She hops up from her desk and walks over to where you are, reaching past you and pulling the door closed. As it clicks, while she's still not fully focused on you, you slip the needle into her neck. The effects aren't quite what you were expecting. Rather than her eyes lighting up and changing color, they become dull and noticeably vacant. You're not a hundred percent sure, but this is probably your window to get her to talk...''
+
+<<nm $player "Okay $tasha.name, I want you to tell me honestly. Are you responsible for the recent slave girl deaths?">>\
+
+''The color returns to $tasha.name's eyes, and a smile spreads across her face.''
+
+<<pic $tasha "bimbo1">>\
+
+<<nm $tasha "Oh my god, you mean those poor girls that, like... you know? That's like, sooooo sad! I don't even, like, want to THINK about that right now!">>\
+
+<<Thought "Oh for fuck's sake...">>\
+
+<<nm $player "$tasha.name, I understand how you feel, really, but do you "how" they, you know?">>\
+
+<<pic $tasha "bimbo2">>\
+
+<<nm $tasha "Do I know? Haha, noooo. I've never even actually SEEN those girls, how would I know why they, like, died or anything? Hey, can we stop talking about this? It's like, super icky! Know what I'd rather do instead?">>\
+
+<<nm $player "I have a pretty good idea... I'm sorry, $tasha.name, I really don't have time right-">>\
+
+''It's too late. Her mind's been made and she's already got your pants off.''
+
+<<if hasPenis()>>\
+<<pic $tasha "cum-on-face">>\
+<<else>>\
+<<pic $tasha "rim-female">>\
+<</if>>\
+
+''Once you've let her get it out of her system, you put your clothes back on and leave her to her own... devices.''
+
+<<set $story.ch2.endTasha to true>>\
+<<btnLink [[Continue|CH2-BadEnd]]>>
+
+
+:: CH3-Tasha-and-Lauren {"position":"975,19600","size":"100,100"}
+<<loc_SalesOffice>>\
+
+    ''You're wandering the hallways trying to figure out where $penny.name disappeared to when your train of thought is interrupted by the sounds of arguing coming from $tasha.name's office.''
+    
+    <<pic $tasha>>\
+    
+    <<nm $tasha "Don't give me that shit! I watched you for like five minutes rummaging through my desk and flipping through my files!">>\
+    
+    <<pic $lauren>>\
+    
+    <<nm $lauren "N-no! I swear, I was just looking for Post-It notes!">>\
+    
+    <<nm $tasha "And you decided my office looked like the supply closet!? What the fuck!">>\
+    
+    <<Thought "Wow, $lauren.name's already managing to make enemies, huh? Better help...">>\
+    
+    ''You walk over and step in.''
+    
+    <<nm $player "$tasha.name, $lauren.name, what's up! I heard you guys yelling clear across the building. What's going on?">>\
+    
+    <<nm $tasha "$player.name! I caught this bitch digging through my shit while I was gone, just making herself at home in my office!">>\
+    
+    <<nm $lauren "And I told you, I just needed some sticky notes! I wasn't digging through anything!">>\
+    
+    <<nm $player "O-oh, ahhhh...">>\
+
+    <<btnChoice "Side with $tasha.name" "CH3-Tasha-and-Lauren-B" "$c=1">>
+    <<btnChoice "Side with $lauren.name" "CH3-Tasha-and-Lauren-B" "$c=2">>
+
+
+:: CH3-Tasha-and-Lauren-B {"position":"1100,19600","size":"100,100"}
+<<loc_SalesOffice>>\
+
+    <<switch $c>>\
+        <<case 1>>\
+            ''You walk over to $tasha.name.''
+            
+            <<nm $player "I wasn't here, but I mean, I'm kinda with $tasha.name on this one. Plus, you're all the way down at the other end of the hallway... And there's a stack of Post-Its right there!">>\
+            
+            ''You point at the front of $tasha.name's desk where a stack of multicolored sticky notes sits in clear view.''
+            
+            <<nm $lauren "I-I mean, I'm still new, y'know? I just got a little turned around a-and...">>\
+            
+            <<nm $tasha "Just get the fuck out, please! If you need something from my office you ask ME and I'll be happy to help, but if I'm not here then you don't need to be either!">>\
+            
+            ''$lauren.name's face contorts to a expression equal parts disgust and amusement for the briefest of moments before she looks at the floor and concedes.''
+            
+            <<nm $lauren "F-fine, I'm sorry $tasha.name, it won't happen again.">>\
+            
+            ''With that, she leaves the office and heads down the hall.''
+            
+            <<pic $tasha>>\
+
+            <<nm $tasha "Ugh! Thanks $player.name, I appreciate you stepping in.">>\
+            
+            <<nm $player "No worries! Oh hey, she forgot her sticky notes...">>\
+            
+            ''You're both startled by a sudden knocking on $tasha.name's door frame.''
+            
+            <<nm $sophie "Ah, $player.sophieName, I'm glad I ran into you.">>\
+            
+            <<nm $player "$sophie.name?">>\
+            
+            <<love $tasha 10>>
+        <<case 2>>\
+            ''You walk over to $lauren.name.''
+            
+            <<nm $player "Hey now, come on $tasha.name. I'm sure $lauren.name didn't mean to go snooping through your stuff. She's only been here a couple days.">>\
+            
+            <<nm $lauren "Y-yeah, like I said, I just needed some stick notes, y'know?">>\
+            
+            ''$tasha.name starts fuming.''
+            
+            <<nm $tasha "Oh bull shit! You didn't SEE her! She was rummaging through all my drawers and files and I'm sure if I didn't say something she'd have started trying to log into my computer!">>\
+            
+            <<nm $lauren "N-no!">>\
+            
+            ''You pick up a stack of Post-Its on $tasha.name's desk and hand them to $lauren.name.''
+            
+            <<nm $player "Here, take these and next time just ask someone to show you where the supplies closet is. Maybe don't go through other peoples' offices, huh?">>\
+
+            <<pic $lauren>>\
+            
+            <<nm $lauren "Yeah, I'm sorry $tasha.name, I won't do it again.">>\
+            
+            <<nm $tasha "Fuck off!">>\
+            
+            ''With that, she leaves the office and heads down the hall.''
+            
+            <<nm $tasha "You're an asshole, you know that? Why the fuck would you side with that slut?">>\
+            
+            <<nm $player "Hey, hey, it's not like that...">>\
+            
+            ''You're both startled by a sudden knocking on $tasha.name's door frame.''
+            
+            <<nm $sophie "Ah, $player.sophieName, I'm glad I ran into you.">>\
+            
+            <<nm $player "$sophie.name?">>\
+    <</switch>>\
+    
+    <<btnLink "Continue" "Story-CH3-CheckOnJulia">>

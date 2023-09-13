@@ -1,0 +1,31 @@
+:: Ava-PackedLunch {"position":"1225,12600","size":"100,100"}
+<<set $player.hasLunch to false>>\
+    <<nm $c "Hey, that looks pretty good!">>
+
+    <<nm $player "Thanks! It was a little gift from my ?mother for today. Lunch usually isn't this good, but this sandwich... oh yeah.">>\
+
+    <<nm $c "Aw, that's so cute!">>
+
+    ''You start eating the sandwich and get lost in the flavor. It still tastes fresh, like it was just made a minute ago. Every bite is fantastic and filled with love, and it takes you until halfway through to notice that there was a small printed photograph under the sandwich.''
+
+    <<Thought "Hmm?">>\
+
+    ''Nobody else can see it from here, so you peer in and give it a look. It's a photo of $mom.name wearing lingerie, and she's posed by her bedroom door. Her legs are spread out, and she's rubbing herself through her panties. There's a little message written in marker on the back of the photo...''
+
+    <<pic $mom "lingerie-show">>\
+
+    <<nm $mom "Enjoy your day, and I hope you're hungry for dessert after work!">>\
+
+    ''You stare at the photo for a while.''
+
+    <<Thought "I certainly am hungry for dessert... and this sandwich!">>\
+
+    ''Your desire to finish your delicious lunch overwhelms you, and you continue ravenously chomping away at it.''
+
+    <<nm $c "You okay?">>\
+
+    <<nm $player "Mmph, yeah, mmm...">>\
+
+    <<nm $c "It must be as tasty as it looks...">>\
+
+    ''After the intense sandwich action, you conclude a snack and finish your drink. Lunch ends, and you slip the photo of your ?mother into your pocket so that you can look at it throughout the day.''

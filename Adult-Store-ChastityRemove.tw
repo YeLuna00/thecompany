@@ -1,0 +1,28 @@
+:: Adult-Store-ChastityRemove {"position":"1225,12100","size":"100,100"}
+<<loc_Image>>\
+
+	<<nm $player "Fine, go ahead and get this thing off.">>\
+			
+	''You pay the $200, and $ash.name gets to work carefully clipping through the latches on the chastity device until it finally falls to the floor.''
+
+	<<pic $npc "ash">>\
+	
+	<<nm $ash "Alright, all done...">>\
+	
+	<<RemoveChastity>>\
+
+	''$ash.name focuses her gaze.''
+
+	<<if pSize($XL)>>\
+		<<nm $ash "Holy shit, how'd THAT thing get locked up!?">>\
+	<<elseif pSize($M)>>\
+		<<nm $ash "Hm... Nice cock.">>\
+	<<else>>\
+		<<nm $ash "Hm... Cute cock.">>\
+	<</if>>\
+
+	''You're a little embarrassed.''
+	
+	<<nm $player "Um, thanks?">>\
+	
+	<<btnLink "Go back" "Adult-Store">>

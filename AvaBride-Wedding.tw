@@ -1,0 +1,14 @@
+:: AvaBride-Wedding {"position":"475,2225","size":"100,100"}
+<<loc_Room>>\
+
+    ''Just as you start to drift off, you hear your door open, followed by hurried steps over to your bed. You open your eyes just in time to see your <<mother>> staring down at you before fading off.''
+
+    <<pic $mom>>\
+
+    <<nm $mom "Shhhh, sweetie... Tonight's the big night!">>\
+
+    <<Thought "W-what the... are those... f-foot... ste...">>\
+
+    ''You pass out.''
+
+    <<btnLink "Continue..." "AvaBride-WeddingNight">>\

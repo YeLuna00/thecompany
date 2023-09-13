@@ -1,0 +1,605 @@
+:: Cam-Handjob {"position":"225,11975","size":"100,100"}
+<<loc_SisterRoom>>\
+
+    <<if isChastity() or isSissy()>>\
+        ''You take the camera off its mount and get into position, spreading your legs and lifting your knees, your <<if isChastity()>>caged<<else>>limp<</if>> cock in clear view. Once you hit the record button, your <<sister>> enters frame with a large dildo in her hand.''
+
+        <<pic $sister "solo2">>\
+
+        <<nm $sister "Tee-hee, u-um, okay, ready for your punishment?">>\
+
+        ''$sister.name licks the dildo while using her free hand to lube your <<aSize>> up.''
+
+        <<nm $sister "Mmmmm, aaahhhh, there it goes... Mmmm, that feel good? Hehehe!">>\
+
+        ''She continues putting on a big show, sliding the toy in and out of ass while rubbing her tiny breasts and reacting every time she's able to make your <<pSize>> twitch. After several minutes of teasing, she pulls her dildo out of you and backs up towards the bed.''
+
+        <<nm $sister "Well, it'd be a waste if neither of us got off, so...">>\
+
+        <<pic $sister "solo2">>\
+
+        ''You focus the camera on your <<sister>> as she begins to fuck herself with the dildo that was just inside of you a moment ago, slowly working herself up to a loud, rolling climax.''
+
+        <<nm $sister "Haaa... haaa... gonna cum... I'm gonna cum! F-FUCK!">>\
+
+        <<pic $sister "orgasm">>\
+
+        <<nm $sister "OOOOHHHH!!!">>\
+
+        ''She writhes on her bed in an intense squirting orgasm that she keeps going for as long as she can. You'd be lying if you said it wasn't getting you fired up, so you're pretty sure her viewers will love it to. $sister.name gives the camera a final smile before you stop filming.''
+
+        <<horny 10>>
+    <<elseif hasPenis()>>\
+        ''You take the camera off its mount and get into position, your <<pSize>> laying limp between your legs in clear view. Once you hit the record button, your <<sister>> enters frame with a big smile on her face.''
+
+        <<pic $sister "dakota-nekkid">>\
+
+        <<nm $sister "Mmmmm, aaahhhh, there it is... Get nice and hard for me, okay? Hehehe!">>\
+
+        ''Your <<sister>> wraps her tiny fingers around your growing <<pSize>> and begins to stroke, slowly at first as she looks on in awe while it expands and extends in her grip. Once fully erect, she starts to pick up the pace, clearly having a good time in the process.''
+
+        <<pic $sister "handjob-player">>\
+
+        <<nm $player "H-haaa, mmm...">>\
+
+        <<nm $sister "Mmmm, is that good? I love how warm it is... Are you gonna cum for me, huh? Don't hold back!">>\
+
+        ''She strokes faster and faster until you finally give in and cum for your <<sister>>.''
+
+        <<pic $sister "handjob-finish">>\
+
+        <<nm $sister "Mmmmm, ooohhhh, hehe! So warm...">>\
+
+        ''Streams of thick cum shoot across $sister.name's face and tongue while she continues to pump every last drop out of you. Once she's finally done, she gives the camera one last smile before exiting frame.''
+
+        <<horny 0>>
+    <<else>>\
+        ''You take the camera off its mount and get into position, spreading your legs and lifting your knees, your <<vSize>> in clear view. Once you hit the record button, your <<sister>> enters frame with a large dildo in her hand.''
+
+        <<pic $sister "solo2">>\
+
+        <<nm $sister "Tee-hee, u-um, okay, ready for your reward?">>\
+
+        ''$sister.name licks the dildo while using her free hand to lube your slit up.''
+
+        <<nm $sister "Mmmmm, aaahhhh, there it goes... Mmmm, that feel good? Hehehe!">>\
+
+        ''She continues putting on a big show, sliding the toy in and out of ass while rubbing her tiny breasts and reacting every time she's able to make your thighs spasm. After several minutes of teasing, she finally starts to ramp up her speed and force, intent on making you squirt on camera.''
+
+        <<nm $sister "Hehehe, time you came for me! C'mon, don't hold back!">>\
+
+        <<nm $player "A-ahhh! O-OOH!" "S-shit, <<sis>>!">>\
+
+        <<pic $player "squirt">>\
+        
+        ''You spray wave after wave of thick squirt across your <<sister>>'s face while she excitedly catches as much as she can with her tongue. Eventually, the tide subsides and you finally settle down, relieved to find you didn't drop the camera... $sister.name gives the camera a final smile before you stop filming.''
+
+        <<horny 0>>
+    <</if>>\
+
+    <<love $sister>>
+    <<lust $sister>>
+
+    <<nm $player "Got it! This should be really good, I'll start moving it over now.">>\
+
+    ''You initiate a file transfer and upload while your <<sister>> grabs a water bottle off her nightstand and starts getting herself back together.''
+
+    <<pic $sister "bed-naked">>\
+
+    <<nm $sister "Haaa... hmmmm, hehe! So you think that was good?">>\
+
+    <<nm $player "Hell yeah! Alright, it's uploaded, so I guess we'll check it out later. <<Sis>>?">>\
+
+    ''$sister.name has already passed out on her bed. You shut down her laptop and quietly leave the room.''
+    
+    <<set $sister.followers += Math.clamp((random(66,96) - (visited() * 2)),2,100)>>\
+    <<set $sister.earnings += ($sister.followers * 5)>>\
+    <<set $sister.playerCut to Math.floor($sister.earnings * 0.20)>>\
+    <<btnLink "Go to bed..." "Room-GotoBed">>\
+
+
+:: Cam-Oral {"position":"350,11975","size":"100,100"}
+<<loc_SisterRoom>>\
+
+    <<if isChastity() or isSissy()>>\
+        <<trackAction "rimjob.get" $sister>>\
+        ''You take the camera off its mount and get into position, spreading your legs and lifting your knees, your <<if isChastity()>>caged<<else>>limp<</if>> cock in clear view. Once you hit the record button, your <<sister>> enters frame and knees down in front of you.''
+
+        <<pic $sister "dakota-nekkid">>\
+
+        <<nm $sister "Mmmm, I've been waiting to taste this!">>\
+
+        ''$sister.name leans in, kissing your inner thighs as she gradually makes her way to waiting <<aSize>>.''
+
+        <<nm $sister "Mmmmm, aaahhhh, let's get you nice and lubed up now...">>\
+
+        <<pic $sister "rim-player">>\
+
+        ''You nearly drop the camera as $sister.name's tongue slides into your hole, slowly at first before quickly ramping up into a rapid fucking motion. She moans and gasps as she gets more and more into it, eventually sliding a finger inside, then two.''
+
+        <<nm $sister "Haa, mmmm, hehe, how's that feel? You gonna cum for me yet? Don't hold back now!">>\
+
+        ''$sister.name starts digging in deep, hitting your prostate with every thrust until you start to feel the tension welling up between your thighs.''
+
+        <<nm $player "M-mmm, h-haaa!" "Shit, she's gonna make me cum!">>\
+
+        <<if isChastity()>>\
+            <<pic $action "chastity-squirt">>\
+
+            ''Your hips buck as you shoot your load into your <<accf>>, streams of cum flow out from under it while $sister.name continues to milk you until she's satisfied.''
+        <<else>>\
+            <<pic $action "sissy-squirt">>\
+
+            ''Your hips buck as a stream of thin cum flows from your <<pSize>> and down your waist while $sister.name continues to milk you until she's satisfied.''
+        <</if>>\
+
+        <<nm $sister "Ooohhh! Hehehe! I can't believe you came so much just from your ass getting played with!">>\
+
+        ''$sister.name plays with your cum a little bit before giving the camera a final smile. You stop filming, letting out an audible sigh.''
+
+        <<horny 0>>
+    <<elseif hasPenis()>>\
+        <<trackAction "suckCock.get" $sister>>\
+        <<trackAction "cumEat.give" $sister>>\
+        ''You take the camera off its mount and get into position, your <<pSize>> laying limp between your legs in clear view. Once you hit the record button, your <<sister>> enters frame with a big smile on her face.''
+
+        <<pic $sister "dakota-nekkid">>\
+
+        <<nm $sister "Mmmmm, aaahhhh, there it is... Get nice and hard for me, okay? Hehehe!">>\
+
+        ''Your <<sister>> wraps her tiny fingers around your growing <<pSize>> and begins to stroke, slowly at first as she looks on in awe while it expands and extends in her grip. Once fully erect, she moves down to start start pleasuring you with her tongue.''
+
+        <<pic $sister "couchoral-mf1">>\
+
+        <<nm $player "H-haaa, mmm...">>\
+
+        <<nm $sister "Mmmm, mmmmmph, haaaa, hmph!">>\
+
+        ''She starts to pick up the pace, taking you deeper and deeper while you try to hold out for as long as you can.''
+
+        <<pic $sister "couchoral-mf2">>\
+
+        <<nm $sister "Mmmmm, mph! Are you gonna cum for me yet? Mmmm, don't hold back!">>\
+
+        ''$sister.name doubles her efforts before finally sending you over the edge.''
+
+        <<pic $sister "cum-in-mouth">>\
+
+        ''Streams of thick cum shoot across $sister.name's face and tongue while she continues to pump every last drop out of you. Once she's finally done, she gives the camera one last smile before exiting frame.''
+
+        <<horny 0>>
+    <<else>>\
+        <<trackAction "eatPussy.get" $sister>>\
+        ''You take the camera off its mount and get into position, spreading your legs and lifting your knees, your <<vSize>> in clear view. Once you hit the record button, your <<sister>> enters frame with a big smile on her face.''
+
+        <<pic $sister "dakota-nekkid">>\
+
+        <<nm $sister "Mmmmm, your little pussy's so cute!... Let's get you nice and wet, okay? Hehehe!">>\
+
+        ''Your <<sister>> leans in, kissing you along your thighs, working her way closer and closer to your pussy, teasing you with every pass. You shudder in anticipation every time you feel her breath on you. Finally, after what feels like forever, she dives in.''
+
+        <<pic $sister "eat-pussy">>\
+
+        <<nm $player "H-haaa, mmm...">>\
+
+        <<nm $sister "Mmmm, mmmmmph, haaaa, hmph!">>\
+
+        ''It takes everything you've got not to drop the camera as your <<sister>> buries her tongue deep into you <<vSize>>, occasionally switching off with her fingers while she nibbles your clit. It only gets worse when she notices you struggling.''
+
+        <<nm $sister "Mmmm, like that, huh? Here, let's go even harder!">>\
+
+        <<nm $player "A-ahh, fuuuu... Mmmmm...">>\
+
+        ''She picks up the pace, clearly trying to make you squirt. It only takes a few moments before she succeeds.''
+
+        <<nm $sister "Mmmmm, mph! Are you gonna cum for me yet? Mmmm, don't hold back!">>\
+
+        <<nm $player "A-ahhh! O-OOH!" "S-shit, <<sis>>!">>\
+
+        <<pic $player "squirt">>\
+        
+        ''You spray wave after wave of thick squirt across your <<sister>>'s face while she excitedly catches as much as she can with her tongue. Eventually, the tide subsides and you finally settle down, relieved to find you didn't drop the camera... $sister.name gives the camera a final smile before you stop filming.''
+
+        <<horny 0>>
+    <</if>>\
+
+    <<love $sister>>
+    <<lust $sister>>
+
+    <<nm $player "Got it! This should be really good, I'll start moving it over now.">>\
+
+    ''You initiate a file transfer and upload while your <<sister>> grabs a water bottle off her nightstand and starts getting herself back together.''
+
+    <<pic $sister "bed-naked">>\
+
+    <<nm $sister "Haaa... hmmmm, hehe! So you think that was good?">>\
+
+    <<nm $player "Hell yeah! Alright, it's uploaded, so I guess we'll check it out later. <<Sis>>?">>\
+
+    ''$sister.name has already passed out on her bed. You shut down her laptop and quietly leave the room.''
+    
+    <<set $sister.followers += Math.clamp((random(106,146) - (visited() * 3)),2,150)>>\
+    <<set $sister.earnings += ($sister.followers * 5)>>\
+    <<set $sister.playerCut to Math.floor($sister.earnings * 0.20)>>\
+    <<btnLink "Go to bed..." "Room-GotoBed">>\
+
+
+:: Cam-Sex {"position":"475,11975","size":"100,100"}
+<<loc_SisterRoom>>\
+
+    <<if isChastity() or isSissy()>>\
+        <<trackAction "analFuck.get" $sister>>\
+        <<trackAction "suckCock.give" $sister>>\
+        ''You take some time to stragetically position the camera, not particularly wanting to become the next internet sensation yourself, and take your place on $sister.name's bed.''
+
+        <<nm $player "I put it on a thirty second timer, you'll hear it beep just before it starts recording. You ready?">>\
+
+        <<pic $sister "strapon">>\
+
+        <<nm $sister "Hehehe, the question is, are YOU ready!?">>\
+
+        ''After the beep, $sister.name saunters out of her closet and into frame, circling you like some kind of captured prey as she strokes her thick strapon cock. She stops in front of you, dangling the bobbing toy just in front of your face.''
+
+        <<nm $sister "Mmmm, you better get me all nice and lubed up, okay?">>\
+
+        ''Her fake cock slides past your lips. She steadily and seductively fucks your mouth, putting on a show for the camera as she gyrates her hips and wraps her fingers around the back of your neck.''
+
+        <<pic $player "suck-female">>\
+
+        <<nm $sister "O-ooohhh, yeah... That's it... suck that cock...">>\
+
+        ''You try not to choke as $sister.name gets a little too into it. Before things escalate too far, she slides it out of your throat, smiling approvingly as she runs a hand along your back on her way behind you.''
+
+        <<nm $sister "Mmmm, hehe! Good <<boy>>... Now it's time you got fucked by a REAL woman!">>\
+
+        ''You shudder as the cold tip of $sister.name's fake cock presses against your <<aSize>>. Again, she puts on a big show leading up to the actual penetration. Sliding the cock between your asscheeks, running it between your legs to compare its size yours. You'd be lying if you weren't feeling just a little humiliated right now.''
+
+        <<nm $player "Okay, here it comes!">>\
+
+        <<pic $sister "fuck-player">>\
+
+        <<anal "$sister.name's strapon">>
+
+        <<nm $player "A-AHHH! Mmmm, oooohhh... H-haaa, haaaa..." "Jeez <<sis>>, take it easy!">>\
+
+        ''She starts slow, but as soon as she finds a comfortable rhythm your <<sister>> starts ramming her big, slick cock harder and harder, deeper and deeper, forcing moans and pleasurable squeals from both parties. You can feel the tip of her strapon slamming against your prostate, bringing you closer and closer to an anal induced orgasm. You hardly notice when $sister.name leans over you, dropping her head down by yours and blocking her face from the camera momentarily.''
+
+        ''She whispers in your ear as she continues to thrust her hips.''
+
+        <<nm $sister "Hey, I'm having lots of fun. I love you, <<bro>>!">>\
+
+        <<nm $player "<<Sis>>...">>\
+
+        ''$sister.name plants a reassuring kiss on your cheek before returning to her previous position. A sudden sting as your ass brings you back to focus.''
+
+        @@SMACK!@@
+
+        <<nm $player "OOoooohhh, mmmm...">>\
+
+        <<nm $sister "Hehe, mmmm, yeah, work that ass for me! Oooohhh, I'm getting close... I-I think I'm...">>\
+
+        ''Finally brought to her limit, your <<sister>> buries her strapon as deep into your <<aSize>> as she can get as she succumbs to her intense climax.''
+
+        <<pic $sister "orgasm">>\
+
+        <<nm $sister "AAAAHHHHHH!!! MMMmmmm, ffuck! C-cum for me! Cum with me inside you!">>\
+
+        ''She bucks her hips a couple more times, stimulating you enough to shoot your own load without having ever touched yourself.''
+
+        <<if isChastity()>>\
+            <<pic $action "chastity-squirt">>\
+
+            ''Your thighs tremble as you shoot your load into your <<accf>>, streams of cum drip out from under it while $sister.name continues to milk you until she's satisfied.''
+        <<else>>\
+            <<pic $action "sissy-squirt">>\
+
+            ''Your thighs tremble as a stream of thin cum flows from your <<pSize>> and puddles beneath you while $sister.name continues to milk you until she's satisfied.''
+        <</if>>\
+
+        <<nm $sister "Ooohhh! Hehehe! I can't believe you came so much just from your ass getting fucked!">>\
+
+        ''$sister.name rests inside you for a moment before pulling out. She gives the camera a satisfied smile as she slaps your ass with the wet toy. Finally, she gets up and turns off the camera.''
+
+        <<dom $player -3>>
+        
+        <<horny 0>>
+    <<elseif hasPenis()>>\
+        <<trackAction "suckCock.get" $sister>>\
+        <<trackAction "pussyFuck.give" $sister>>\
+        ''You take some time to stragetically position the camera, not particularly wanting to become the next internet sensation yourself, and take your place on $sister.name's bed.''
+
+        <<nm $player "I put it on a thirty second timer, you'll hear it beep just before it starts recording. You ready?">>\
+
+        <<pic $sister "naked">>\
+
+        <<nm $sister "Hehehe, the question is, are YOU ready!?">>\
+
+        ''After the beep, $sister.name saunters out of her closet and into frame, keeping eye contact with the camera as she slowly takes her place between your legs.''
+        
+        <<nm $sister "Mmmmm, aaahhhh, there it is... Let's get you nice a lubed up...">>\
+
+        ''Your <<sister>> wraps her tiny fingers around your growing <<pSize>> and begins to stroke, slowly at first as she looks on in awe while it expands and extends in her grip. Once fully erect, she moves down to start start pleasuring you with her tongue.''
+
+        <<pic $sister "suck-player">>\
+
+        <<nm $player "H-haaa, mmm...">>\
+
+        <<nm $sister "Mmmm, mmmmmph, haaaa, hmph!">>\
+
+        ''She starts to pick up the pace, taking you deeper and deeper before catching herself and easing off.''
+
+        <<nm $sister "Hehe, don't want you coming too early! C'mon, I need your cock inside me!">>\
+
+        ''$sister.name climbs over you, getting on her hands and knees and offers her tiny, glistening slit.''
+
+        <<pic $sister "bendover">>\
+
+        <<nm $sister "Come on, come on! I can't wait any long, I need you fuck my little pussy nice and hard! Please!">>\
+
+        ''She's definitely making a spectacle out of it, but you're more than happy to oblige. You turn around a get behind her, sliding your <<pSize>> between her cheeks and teasing her a little bit before finally sliding it in.''
+
+        <<nm $sister "O-OH!">>\
+
+        <<pic $sister "fucked-by-player-doggy">>\
+
+        ''You easily enter your <<sister>>'s eager pussy, she had herself gotten incredibly wet while sucking your cock earlier so there was virtually no resistance despite how tight she is. You go slow at first, for as long as you can manage anyway, but between $sister.name's pressing herself back against you and the incredible feeling of being inside her, it's not long before you're pounding away full speed.''
+
+        <<nm $sister "AHH! A-AHHhhh, oooohhhh, haa! Ha! Mmmmm, h-holy fuck! F-FUCK! FUCK ME HARDER!">>\
+
+        <<nm $player "Mmmm, o-oohhh, haaa!" "Jeez <<sis>>, how much of this is still acting, huh? Well if you really want it harder...">>\
+
+        ''You press your <<sister>>'s face into her pillow, propping yourself up and burying your cock even deeper into her. From this angle, you can feel yourself hitting her cervix. She screams in pleasure, squirting her orgasm back onto your thighs as you relentless pound her tiny hole.''
+
+        <<if chance(50)>>\
+            <<trackAction "creampie.give" $sister>>\
+            <<nm $sister "C-cum inside me! Don't pull out! Fill me with your cum!!">>\
+
+            <<nm $player "H-haaa! C-cumming!">>\
+
+            ''Not that you could stop yourself anyway, you drive your pulsing cock as deep as you can before unleashing a massive load deep inside your <<sister>>'s gushing cunt.''
+
+            <<pic $sister "creampie">>\
+
+            <<nm $sister "OOOOooohhhh... Mmmmmm... So warm!">>\
+
+            ''You fall forward, stopping yourself before collapsing completely. $sister.name looks up at you, smiling, before flashing that same smile at the camera. After a moment, you roll over allowing $sister.name to crawl out from under you.''
+
+            <<preg $sister "you">>
+        <<else>>\
+            <<trackAction "cumEat.give" $sister>>\
+            <<nm $sister "A-ah, no, I wanna taste it!">>\
+
+            ''Before you can cum, your <<sister>> spins herself around and positions her open mouth in front of your twitching cock.''
+
+            <<nm $player "C-cumming!">>\
+
+            <<pic $sister "cum-in-mouth">>\
+
+            ''You empty your thick, hot load directly into your <<sister>>'s waiting mouth as she continues to ride the aftershocks of her earlier orgasm. Once she's completely satisfied, she flashes the camera one last cum-covered smile while you collapse into the bed behind her.''
+        <</if>>\
+
+        <<horny 0>>
+    <<else>>\
+        <<trackAction "pussyFuck.get" $sister>>\
+        <<trackAction "suckCock.give" $sister>>\
+        ''You take some time to stragetically position the camera, not particularly wanting to become the next internet sensation yourself, and take your place on $sister.name's bed.''
+
+        <<nm $player "I put it on a thirty second timer, you'll hear it beep just before it starts recording. You ready?">>\
+
+        <<pic $sister "strapon">>\
+
+        <<nm $sister "Hehehe, the question is, are YOU ready!?">>\
+
+        ''After the beep, $sister.name saunters out of her closet and into frame, circling you like some kind of captured prey as she strokes her thick strapon cock. She stops in front of you, dangling the bobbing toy just in front of your face.''
+
+        <<nm $sister "Mmmm, you better get me all nice and lubed up, okay?">>\
+
+        ''Her fake cock slides past your lips. She steadily and seductively fucks your mouth, putting on a show for the camera as she gyrates her hips and wraps her fingers around the back of your neck. You reach down, sliding a pair of fingers into your <<vSize>>.''
+
+        <<pic $player "suck-female">>\
+
+        <<nm $sister "O-ooohhh, yeah... That's it... suck that cock...">>\
+
+        ''You try not to choke as $sister.name gets a little too into it. Before things escalate too far, she slides it out of your throat, smiling approvingly as she runs a hand along your back on her way behind you.''
+
+        <<nm $sister "Mmmm, hehe! Good <<boy>>... Now it's time you got fucked by a REAL woman!">>\
+
+        ''You shudder as the cold tip of $sister.name's fake cock presses against your pussy, which you're now spreading open with your fingers. Again, she puts on a big show leading up to the actual penetration. Sliding the cock between your asscheeks, running it between your legs and rubbing it over your twitching clit.''
+
+        <<nm $player "Okay, here it comes!">>\
+
+        <<pic $sister "fuck-player">>\
+
+        <<vaginal "$sister.name's strapon">>
+
+        <<nm $player "A-AHHH! Mmmm, oooohhh... H-haaa, haaaa..." "Jeez <<sis>>, take it easy!">>\
+
+        ''She starts slow, but as soon as she finds a comfortable rhythm your <<sister>> starts ramming her big, slick cock harder and harder, deeper and deeper, forcing moans and pleasurable squeals from both parties. You can feel the tip of her strapon slamming against your cervix, bringing you closer and closer to a rolling orgasm. You hardly notice when $sister.name leans over you, dropping her head down by yours and blocking her face from the camera momentarily.''
+
+        ''She whispers in your ear as she continues to thrust her hips.''
+
+        <<nm $sister "Hey, I'm having lots of fun. I love you, <<bro>>!">>\
+
+        <<nm $player "<<Sis>>...">>\
+
+        ''$sister.name plants a reassuring kiss on your cheek before returning to her previous position. A sudden sting as your ass brings you back to focus.''
+
+        @@SMACK!@@
+
+        <<nm $player "OOoooohhh, mmmm...">>\
+
+        <<nm $sister "Hehe, mmmm, yeah, work that ass for me! Oooohhh, I'm getting close... I-I think I'm...">>\
+
+        ''Finally brought to her limit, your <<sister>> buries her strapon as deep into your <<vSize>> as she can get as she succumbs to her intense climax.''
+
+        <<pic $sister "orgasm">>\
+
+        <<nm $sister "AAAAHHHHHH!!! MMMmmmm, ffuck! C-cum for me! Cum with me inside you!">>\
+
+        ''She bucks her hips a couple more times, stimulating you enough to unleash your own flood of juices.''
+
+        <<pic $player "squirt">>\
+
+        ''Your thighs tremble as thick juices gush from your quivering pussy while $sister.name continues to pump you until she's satisfied.''
+
+        <<nm $sister "Ooohhh! Hehehe! I can't believe you came so much just from your pussy getting fucked!">>\
+
+        ''$sister.name rests inside you for a moment before pulling out. She gives the camera a satisfied smile as she slaps your ass with the wet toy. Finally, she gets up and turns off the camera.''
+
+        <<horny 0>>
+    <</if>>\
+
+    <<love $sister>>
+    <<lust $sister>>
+
+    <<nm $player "I uh... ooohhhh... gimme a sec... Alright, let's see what we got...">>\
+
+    ''You drag yourself over to the desk, initiate a file transfer and upload while your <<sister>> grabs a water bottle off her nightstand and starts getting herself back together.''
+
+    <<pic $sister "bed-naked">>\
+
+    <<nm $sister "Haaa... hmmmm, hehe! So you think that was good?">>\
+
+    <<nm $player "Good? That's one way to put it. Alright, it's uploaded, so I guess we'll check it out later. <<Sis>>?">>\
+
+    ''$sister.name has already passed out on her bed. You shut down her laptop and quietly leave the room.''
+    
+    <<set $sister.followers += Math.clamp((random(206,246) - (visited() * 5)),2,250)>>\
+    <<set $sister.earnings += ($sister.followers * 5)>>\
+    <<set $sister.playerCut to Math.floor($sister.earnings * 0.20)>>\
+    <<btnLink "Go to bed..." "Room-GotoBed">>\
+
+
+:: Cam-SexWithJessica {"position":"600,11975","size":"100,100"}
+<<loc_SisterRoom>>\
+
+    ''Your <<sister>> sends a text message and about thirty minutes later she gets a notification which prompts her to run downstairs and open the front door. A moment later, she returns with $jessica.name in tow.''
+
+    <<pic $npc "jessica">>\
+
+    <<nm $jessica "Hey you!">>\
+
+    <<nm $player "Heya $jessica.name, how's it going?">>\
+    
+    ''$jessica.name gives you a big hug, and a not at all subtle squeeze of your ass.''
+
+    <<nm $jessica "Mmmm, so it's you and me getting it on tonight, right?">>\
+
+    <<nm $player "Ah, hehe, no no. Tonight I'm just the camera<<man>>.">>\
+
+    <<nm $sister "Yeah, you're all mine tonight!">>\
+
+    <<pic $npc "jessica-kiss-sister">>\
+    
+    ''$sister.name grabs $jessica.name and pulls her in for a deep, sensual kiss on her bed. You catch yourself gawking and scramble to get the camera ready to go. Once in position, you wave them down trying to get their attention.''
+    
+    <<nm $player "Hey, hey! C'mon, you two have to start over!">>\
+
+    <<nm $sister "Hehe, oh, sorry! Mmmm, tonight we-hmmmm, mmmm, ahhh!">>\
+    
+    <<pic $npc "jessica-kiss-sister2">>\
+
+    <<nm $jessica "Shush you, mmmmm, mmmm, we're busy!">>\
+
+    ''It can't be helped, and you can't imagine anyone watching will particularly mind the impromptu start of tonight's session. You follow the action with the camera while the girls basically just have a good time. It's not long before things start to escalate.''
+
+    <<nm $sister "Mmmm, c-come on, kiss me... down here instead!">>\
+
+    ''Your <<sister>> guides $jessica.name down between her legs where she happily starts lapping away at $sister.name's trembling pussy.''
+    
+    <<pic $npc "jessica-eat-sister">>\
+    
+    <<nm $sister "A-AHH F-fuck babe, s-so good! Hnnn, ooooohhhh!">>\
+    
+    ''This continues for some time, $jessica.name switching between her tongue and her fingers to keep $sister.name on edge throughout the entire encounter. Finally, being driven to the edge herself, $jessica.name lays your <<sister>> down, turns around and lowers herself on top of her. $sister.name giggles before rolling over, taking top position and going to town on $jessica.name's pussy.''
+    
+    <<pic $npc "jessica-69-sister">>\
+
+    <<nm $jessica "Mmmmph, ooohhh, mmmmm, haaa!">>\
+
+    <<nm $sister "Haaaa, haaaa, mmmmph, mph, mphwaahhh!">>\
+    
+    <<Thought "They're really going at it!">>\
+
+    ''They go back and forth, shifting positions, exploring each others' bodies and filling the room with sensual moans and sighs. It's $sister.name who finally gives out first, as a particularly intense oral assault from $jessica.name finally sends her over the edge.''
+
+    <<nm $sister "O-OH SHIT! C-COMING!">>\
+
+    <<pic $sister "orgasm">>\
+
+    ''$sister.name writhes and reels, unable to keep still or quiet as $jessica.name keeps her lock on your <<sister>>'s hypersensitive clitoris. Just before that climax comes to an end, $jessica.name sits up and works herself to her own squirting orgasm.''
+
+    <<nm $jessica "A-AAHHHH!!!">>\
+
+    <<pic $sister "squirt">>\
+
+    ''It takes a few moments for her to finally calm down enough to collapse into the bed next to your worn out <<sister>>. They both lay there, cuddled up for some time after the camera's stopped filming.''
+
+    <<nm $player "Got it! This should be really- Hehe, sorry, I'll just start the upload and leave...">>\
+
+    ''You initiate a file transfer and upload while your <<sister>> and $jessica.name sleep soundly on the bed behind you. You shut down her laptop and quietly leave the room.''
+
+    <<horny 10>>
+
+    <<love $sister>>
+    <<lust $sister>>
+    
+    <<set $sister.followers += Math.clamp((random(346,376) - (visited() * 5)),2,400)>>\
+    <<set $sister.earnings += ($sister.followers * 5)>>\
+    <<set $sister.playerCut to Math.floor($sister.earnings * 0.20)>>\
+    <<run setDailyCD("CamGirlJessica",3)>>\
+    <<btnLink "Go to bed..." "Room-GotoBed">>\
+
+
+:: Cam-Solo {"position":"100,11975","size":"100,100"}
+<<loc_SisterRoom>>\
+
+    <<if chance(50)>>\
+        ''You start recording as $sister.name crawls into her bed, smiling at the camera before slowly starting to remove her clothes. She really takes her time with it, putting on a real strip show before finally reaching down between her legs.''
+
+        <<nm $sister "Mmmmm, oooohhhhh... ahhhhh...">>\
+
+        <<pic $sister "solo1">>\
+
+        ''Your <<sister>> moans in exaggerated pleaseure as she rubs her clit and plunges her fingers in and out of her tiny wet slit.''
+    <<else>>\
+        ''You start recording as $sister.name crawls into her bed, smiling at the camera before slowly starting to remove her clothes. She really takes her time with it, putting on a real strip show before finally reaching behind her pillow for a large dildo.''
+
+        <<nm $sister "Mmmmm, oooohhhhh... ahhhhh...">>\
+
+        <<pic $sister "solo2">>\
+
+        ''Your <<sister>> moans in exaggerated pleaseure as she plunges her toy in and out of her tiny slit.''
+    <</if>>\
+
+    <<nm $sister "Haaa... haaa... gonna cum... I'm gonna cum! F-FUCK!">>\
+
+    <<pic $sister "squirt">>\
+
+    <<nm $sister "OOOOHHHH!!!">>\
+
+    <<pic $sister "orgasm">>\
+
+    ''She writhes on her bed in an intense squirting orgasm that she keeps going for as long as she can. You'd be lying if you said it wasn't getting you fired up, so you're pretty sure her viewers will love it to. $sister.name gives the camera a final smile before you stop filming.''
+
+    <<nm $player "Got it! This should be really good, I'll start moving it over now.">>\
+
+    ''You initiate a file transfer and upload while your <<sister>> grabs a water bottle off her nightstand and starts getting herself back together.''
+
+    <<pic $sister "bed-naked">>\
+
+    <<nm $sister "Haaa... hmmmm, hehe! So you think that was good?">>\
+
+    <<nm $player "Hell yeah! Alright, it's uploaded, so I guess we'll check it out later. <<Sis>>?">>\
+
+    ''$sister.name has already passed out on her bed. You shut down her laptop and quietly leave the room.''
+
+    <<horny 10>>
+
+    <<love $sister>>
+    <<lust $sister>>
+    
+    <<set $sister.followers += Math.clamp((random(46,76) - (visited() * 2)),2,100)>>\
+    <<set $sister.earnings += ($sister.followers * 5)>>\
+    <<set $sister.playerCut to Math.floor($sister.earnings * 0.20)>>\
+    <<btnLink "Go to bed..." "Room-GotoBed">>\

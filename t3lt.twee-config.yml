@@ -1,0 +1,568 @@
+sugarcube-2:
+  macros:
+    nm:
+      name: nm
+      description: this is where it someone says something bullshit and shows here
+    nmc:
+      name: nmc
+    Thought:
+      name: Thought
+      description: |-
+        Creates a container to show texts as thoughts.
+
+        Usage:
+        ```
+        <<Thought "whatever your thoughts">>\ 
+        ```
+        READ: [Documentation](https://github.com/YeLuna00)
+      parameters: text
+    CheckMSG:
+      name: CheckMSG
+      description: check the status of the MC such as BB, SS, DF
+    DisplayCharacterThumb:
+      name: DisplayCharacterThumb
+      description: Character Portrait
+    btnLink:
+      name: btnLink
+    loc_Bathroom:
+      name: loc_Bathroom
+    loc_Night:
+      name: loc_Night
+    loc_Bar:
+      name: loc_Bar
+    loc_Room:
+      name: loc_Room
+    SetFlag:
+      name: SetFlag
+    pic:
+      name: pic
+    horny:
+      name: horny
+    trackAction:
+      name: trackAction
+    mother:
+      name: mother
+    pSize:
+      name: pSize
+    lust:
+      name: lust
+    preg:
+      name: preg
+    dom:
+      name: dom
+    loc_Lab:
+      name: loc_Lab
+    art:
+      name: art
+    btnChoice:
+      name: btnChoice
+    AddNote:
+      name: AddNote
+    love:
+      name: love
+    loc_Landing:
+      name: loc_Landing
+    updatebar:
+      name: updatebar
+    loc_Image:
+      name: loc_Image
+    num:
+      name: num
+    btnDisable:
+      name: btnDisable
+    vaginal:
+      name: vaginal
+    AddConvo:
+      name: AddConvo
+    CommentPussy:
+      name: CommentPussy
+    CommentAss:
+      name: CommentAss
+    anal:
+      name: anal
+    AssOrPussy:
+      name: AssOrPussy
+    mom:
+      name: Check if you are blood related to mc mother.
+    sister:
+      name: Check if you are blood related to mc sister.
+    AddChastity:
+      name: AddChastity
+    AddHomeEvent:
+      name: AddHomeEvent
+    RemoveConvo:
+      name: RemoveConvo
+    BathroomEvents:
+      name: BathroomEvents
+    loc_HomeBathroom:
+      name: loc_HomeBathroom
+    StraponOrCock:
+      name: StraponOrCock
+    UnderwearOrPants:
+      name: Underwe narOrPants
+    vSize:
+      name: vSize
+    bSize:
+      name: bSize
+    act:
+      name: act
+    loc_ClubPearl:
+      name: loc_ClubPearl
+    actB:
+      name: actB
+    skillComment:
+      name: skillComment
+    npc:
+      name: npc
+    CoinOutfits:
+      name: CoinOutfits
+    CommonsEvents:
+      name: CommonsEvents
+    loc_Commons:
+      name: loc_Commons
+    artB:
+      name: artB
+    loc_Kitchen:
+      name: loc_Kitchen
+    top:
+      name: top
+    bottom:
+      name: bottom
+    shoes:
+      name: shoes
+    underwear:
+      name: underwear
+    bra:
+      name: bra
+    accb:
+      name: accb
+    RemoveChastity:
+      name: RemoveChastity
+    SexUpdate:
+      name: SexUpdate
+    prefComment:
+      name: prefComment
+    SexInitialize:
+      name: SexInitialize
+    loc_SalesOffice:
+      name: loc_SalesOffice
+    loc_Bowling:
+      name: loc_Bowling
+    NoticePussy:
+      name: NoticePussy
+    accf:
+      name: accf
+    SexResults:
+      name: SexResults
+    SetSexWants:
+      name: SetSexWants
+    btnDom:
+      name: btnDom
+    btnSub:
+      name: btnSub
+    NoticePenis:
+      name: NoticePenis
+    aSize:
+      name: aSize
+    btnTakeover:
+      name: btnTakeover
+    CommentPenis:
+      name: CommentPenis
+    littlesister:
+      name: littlesister
+    pDSize:
+      name: pDSize
+    loc_CompanyOutside:
+      name: loc_CompanyOutside
+    meet:
+      name: meet
+    achieve:
+      name: achieve
+    GetFamilyLocation:
+      name: GetFamilyLocation
+    loc_CompanyHQ:
+      name: loc_CompanyHQ
+    loc_LivingRoom:
+      name: loc_LivingRoom
+    loc_SisterRoom:
+      name: loc_SisterRoom
+    loc_RecordsOffice:
+      name: loc_RecordsOffice
+    hard:
+      name: hard
+    AddDreamEvent:
+      name: AddDreamEvent
+    picB:
+      name: picB
+    NoticeBreasts:
+      name: NoticeBreasts
+    tfm:
+      name: tfm
+    nmr:
+      name: nmr
+    btnBack:
+      name: btnBack
+    AddNightEvent:
+      name: AddNightEvent
+    RemoveNightEvent:
+      name: RemoveNightEvent
+    clientComment:
+      name: clientComment
+    err:
+      name: err
+    btnSissy:
+      name: btnSissy
+    btnBimbo:
+      name: btnBimbo
+    ShowChoiceStats:
+      name: ShowChoiceStats
+    PussyOrCock:
+      name: PussyOrCock
+    Choose-Penny-Menu:
+      name: Choose-Penny-Menu
+    Conversation:
+      name: Conversation
+    CommentChastity:
+      name: CommentChastity
+    son:
+      name: son
+    img:
+      name: img
+    bg:
+      name: bg
+    error:
+      name: error
+    btnTooSub:
+      name: btnTooSub
+    loc_MomRoom:
+      name: loc_MomRoom
+    btnTooHorny:
+      name: btnTooHorny
+    MomRoom:
+      name: MomRoom
+    DisplayCharacter:
+      name: DisplayCharacter
+    draw_TableClothingShow:
+      name: draw_TableClothingShow
+    HornyCheck:
+      name: HornyCheck
+    MoodCheck:
+      name: MoodCheck
+    DrawPreferencesTable:
+      name: DrawPreferencesTable
+    UpdateTasha:
+      name: UpdateTasha
+    loc_Mall:
+      name: loc_Mall
+    MedicalEvents:
+      name: MedicalEvents
+    loc_MedicalOffice:
+      name: loc_MedicalOffice
+    ShowAffection:
+      name: ShowAffection
+    RemoveWorkEvent:
+      name: RemoveWorkEvent
+    TooHorny:
+      name: TooHorny
+    AddWorkEvent:
+      name: AddWorkEvent
+    CallNightEvent:
+      name: CallNightEvent
+    HornyCheckValue:
+      name: HornyCheckValue
+    NewDay:
+      name: NewDay
+    loc_PennyApartment:
+      name: loc_PennyApartment
+    TFCheck:
+      name: TFCheck
+    SalesEventsJohn:
+      name: SalesEventsJohn
+    greet-John:
+      name: greet-John
+    SalesEventsTasha:
+      name: SalesEventsTasha
+    btnNotSub:
+      name: btnNotSub
+    aDSize:
+      name: aDSize
+    loc_Cubicles:
+      name: loc_Cubicles
+    GetCubeSlave:
+      name: GetCubeSlave
+    prefThought:
+      name: prefThought
+    loc_Theater:
+      name: loc_Theater
+    loc_Cafe:
+      name: loc_Cafe
+    loc_Park:
+      name: loc_Park
+    loc_Ramen:
+      name: loc_Ramen
+    Hat:
+      name: Hat
+    Outfit:
+      name: Outfit
+    Underwear:
+      name: Underwear
+    Bra:
+      name: Bra
+    Accf:
+      name: Accf
+    Accb:
+      name: Accb
+    vDSize:
+      name: vDSize
+    RemoveHomeEvent:
+      name: RemoveHomeEvent
+    AddUnderwear:
+      name: AddUnderwear
+    btnNotHorny:
+      name: btnNotHorny
+    RunCheats:
+      name: RunCheats
+    SetPronouns:
+      name: SetPronouns
+    loc_JohnApartment:
+      name: loc_JohnApartment
+    daughter:
+      name: daughter
+    LabEvents:
+      name: LabEvents
+    toTop:
+      name: toTop
+    LivingRoom:
+      name: LivingRoom
+    loc_Lobby:
+      name: loc_Lobby
+    AddOutfit:
+      name: AddOutfit
+    Pro:
+      name: Pro
+    KitchenEvents:
+      name: KitchenEvents
+    GetTimeInfo:
+      name: GetTimeInfo
+    NoticePussyInside:
+      name: NoticePussyInside
+    CommentBreasts:
+      name: CommentBreasts
+    ShowOPBarMobile:
+      name: ShowOPBarMobile
+    ShowOPArousal:
+      name: ShowOPArousal
+    ShowOPBar:
+      name: ShowOPBar
+    loc_Diner:
+      name: loc_Diner
+    DrawPrefBar:
+      name: DrawPrefBar
+    RecordsEvents:
+      name: RecordsEvents
+    RecordsEventsL:
+      name: RecordsEventsL
+    loc_SophieOffice:
+      name: loc_SophieOffice
+    SisterRoom:
+      name: SisterRoom
+    loc_TrainingRoom:
+      name: loc_TrainingRoom
+    psXp:
+      name: psXp
+    psLty:
+      name: psLty
+    psWlp:
+      name: psWlp
+    draw_TableUnderwears:
+      name: draw_TableUnderwears
+    draw_TableBras:
+      name: draw_TableBras
+    AddAccf:
+      name: AddAccf
+    loc_LabHallway:
+      name: loc_LabHallway
+    Choose-Penny-FinishScene:
+      name: Choose-Penny-FinishScene
+    Choose-Penny-EatPussy:
+      name: Choose-Penny-EatPussy
+    Choose-Penny-AnalPlay:
+      name: Choose-Penny-AnalPlay
+    Choose-Penny-SuckStrapon:
+      name: Choose-Penny-SuckStrapon
+    Choose-Penny-GetBlowjob:
+      name: Choose-Penny-GetBlowjob
+    Choose-Penny-GetEatenOut:
+      name: Choose-Penny-GetEatenOut
+    Choose-Penny-AnalFuck:
+      name: Choose-Penny-AnalFuck
+    Choose-Penny-FuckPussy:
+      name: Choose-Penny-FuckPussy
+    Choose-Penny-FuckAss:
+      name: Choose-Penny-FuckAss
+    Choose-Penny-GetRimjob:
+      name: Choose-Penny-GetRimjob
+    AddAnalToy:
+      name: AddAnalToy
+    AddFrontToy:
+      name: AddFrontToy
+    ChooseScene:
+      name: ChooseScene
+    trackSex:
+      name: trackSex
+    escortGetClient:
+      name: escortGetClient
+    escortSetClient:
+      name: escortSetClient
+    loc_Hotel:
+      name: loc_Hotel
+    mr:
+      name: mr
+    Mr:
+      name: Mr
+    CallHomeEvent:
+      name: CallHomeEvent
+    SexCancel:
+      name: SexCancel
+    all_Love:
+      name: all_Love
+    all_Lust:
+      name: all_Lust
+    RemoveDreamEvent:
+      name: RemoveDreamEvent
+    children:
+      name: children
+    NoticeAss:
+      name: NoticeAss
+    doseComment:
+      name: doseComment
+    GenderCheck:
+      name: GenderCheck
+    loc_Lift:
+      name: loc_Lift
+    Sister:
+      name: Sister
+    brother:
+      name: brother
+    loc_SophieApartment:
+      name: loc_SophieApartment
+    SophieOfficeEvents:
+      name: SophieOfficeEvents
+    DefineDB:
+      name: DefineDB
+    UpdateCharacters:
+      name: UpdateCharacters
+    loc_HQRoom:
+      name: loc_HQRoom
+    loc_Rail:
+      name: loc_Rail
+    loc_TashaApartment:
+      name: loc_TashaApartment
+    loc_LaurenApartment:
+      name: loc_LaurenApartment
+    CallDreamEvent:
+      name: CallDreamEvent
+    loc_Outside:
+      name: loc_Outside
+    DisplayCharacterPortrait:
+      name: DisplayCharacterPortrait
+    loc_Steakhouse:
+      name: loc_Steakhouse
+    PitTrainingUpdate:
+      name: PitTrainingUpdate
+    draw_TableAccf:
+      name: draw_TableAccf
+    draw_TableAccb:
+      name: draw_TableAccb
+    loc_WomensBoutique:
+      name: loc_WomensBoutique
+    WorkThoughts:
+      name: WorkThoughts
+    RemoveAnalToy:
+      name: RemoveAnalToy
+    escortDesc:
+      name: escortDesc
+    escortPayMod:
+      name: escortPayMod
+    Sir:
+      name: Sir
+    HomeThoughts:
+      name: HomeThoughts
+    AddBra:
+      name: AddBra
+    loc_Intimate:
+      name: loc_Intimate
+    NewDailySlave:
+      name: NewDailySlave
+    loc_MensBoutique:
+      name: loc_MensBoutique
+    UpdateCheck:
+      name: UpdateCheck
+    StatReset:
+      name: StatReset
+    loc_Dream:
+      name: loc_Dream
+    GetSlaveStrings:
+      name: GetSlaveStrings
+    SlaveLevelUp:
+      name: SlaveLevelUp
+    GetSecondSlave:
+      name: GetSecondSlave
+    psSex:
+      name: psSex
+    draw_TableOutfits:
+      name: draw_TableOutfits
+    GetWorkLocation:
+      name: GetWorkLocation
+    CallWorkEvent:
+      name: CallWorkEvent
+    showVideo:
+      name: showVideo
+    com:
+      name: com
+    Choose-Penny-HerChoice:
+      name: Choose-Penny-HerChoice
+    Choose-Default-Continue:
+      name: Choose-Default-Continue
+    btnReturn:
+      name: btnReturn
+    RemoveOutfit:
+      name: RemoveOutfit
+    AddAccb:
+      name: AddAccb
+    draw_TableHats:
+      name: draw_TableHats
+    t1:
+      name: t1
+    t2:
+      name: t2
+    draw_TableClothingChange:
+      name: draw_TableClothingChange
+    GenerateWorkThoughts:
+      name: GenerateWorkThoughts
+    GenerateHomeThoughts:
+      name: GenerateHomeThoughts
+    AddHat:
+      name: AddHat
+    loc_HQLab:
+      name: loc_HQLab
+    man:
+      name: man
+    GiveTashaPussy:
+      name: GiveTashaPussy
+    react:
+      name: react
+    loc_HQLobby:
+      name: loc_HQLobby
+    dl:
+      name: dl
+    GetGameState:
+      name: GetGameState
+    loc_Studio:
+      name: loc_Studio
+    InitializeFreePlay:
+      name: InitializeFreePlay
+    EventsCheck:
+      name: EventsCheck
+    loc_CompanyBar:
+      name: loc_CompanyBar

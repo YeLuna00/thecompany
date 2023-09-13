@@ -1,0 +1,90 @@
+:: BathroomEvents [widget] {"position":"975,13475","size":"100,100"}
+<<widget "BathroomEvents">>\
+	<<switch $args[0]>>\
+		<<case "empty">>\
+			''The bathroom is empty.''
+			
+			<<Thought "I don't really need to go right now.">>\
+			
+			<<btnLink "Head back to the lobby" "Work">>
+		<<case "bullyJohn">>\
+			''$john.name is standing at the bathroom sink washing his hands. You can tell he looks a little nervous being in the bathroom alone.''
+
+			<<Thought "Heh, now that he's docile, maybe I should go have some fun with him...">>\
+
+			<<btnLink "Take advantage of $john.name in the bathroom" "John-ISS-OralSub-Start" "$john.sexCD++">>
+			<<btnLink "Head back to the lobby" "Work">>\
+		<<case "suckYou">>\
+			''$john.name is standing at the bathroom sink. You can see the discomfort on his face as his erection strains against his jeans.''
+
+			<<if canFuck()>>\
+				<<Thought "Heh, maybe I can see about offering him some... relief...">>\
+
+				''You rub your <<StraponOrCock>> beneath your <<bottom>>.''
+
+				<<btnLink "Use $john.name's modified throat" "John-ISS-OralDoll-Start" "$john.sexCD++">>
+			<<else>>\
+				<<Thought "Wow, $john.name's really having a rough time! Heh, I wonder who he'll get to help him out today...">>\
+
+			<</if>>\
+			<<btnLink "Head back to the lobby" "Work">>\
+		<<case "john">>\
+			<<if dose($john,"oralSlave") and $john.sexCD is 0>>\
+				''$john.name is standing at the bathroom sink. You can see the discomfort on his face as his erection strains against his jeans.''
+
+				<<if canFuck()>>\
+					<<Thought "Heh, maybe I can see about offering him some... relief...">>\
+
+					''You rub your <<StraponOrCock>> beneath your <<bottom>>.''
+
+					<<btnLink "Use $john.name's modified throat" "John-ISS-OralDoll-Start" "$john.sexCD++">>
+				<<else>>\
+					<<Thought "Wow, $john.name's really having a rough time! Heh, I wonder who he'll get to help him out today...">>\
+
+				<</if>>\
+				<<btnLink "Head back to the lobby" "Work">>\
+			<<elseif $john.isDom>>\
+				<<nm $john "Hey bitch, decide on a cockmeat sandwich for lunch? Well I got ya' covered!">>\
+					
+				<<btnLink "Suck $john.name's cock - <<t1>>" "John-ISS-Bathroom-Dom" "$c='bathroom'">>
+				<<if not isSissy() and not isBimbo()>>\
+					<<btnLink "Head back to the lobby" "Work">>
+				<</if>>\
+			<<elseif $john.isFemale>>\
+				<<pic $john "blowbang">>\
+				
+				''You see $john.name in the corner of the bathroom surrounded by a group of men from around the office. She's furiously inhaling cock after cock.''
+				
+				<<Thought "$john.name looks... busy... I'll come back later.">>\
+				
+				<<btnLink "Head back to the lobby" "Work">>
+			<<elseif dose($john,"oralMale")>>\
+				<<if chance(50)>>\
+					<<Thought "This is around the time $john.name hangs out around here, and I just saw a group of men head for the bathroom together...">>\
+					
+					<<btnLink "Poke your head into the bathroom" "Bathroom-John-OralMale">>
+				<<else>>\
+					<<Thought "I think I just saw some girls running to the bathroom and they were... giggling? I wonder...">>\
+				
+					<<btnLink "Poke your head into the bathroom" "Bathroom-John-OralFemale">>
+				<</if>>\
+				<<btnLink "Head back to the lobby" "Work">>
+			<<elseif dose($john,"oralBathroom")>>\
+				<<Thought "I think I just saw some girls running to the bathroom and they were... giggling? I wonder...">>\
+				
+				<<btnLink "Poke your head into the bathroom" "Bathroom-John-OralFemale">>
+				<<btnLink "Head back to the lobby" "Work">>
+			<<elseif dose($john,"nice") or dose($john,"oralSlave")>>\
+				<<nm $john "Hey $player.name, how's it goin'? Just wrappin' up in here, I'll catch ya' later!">>\
+				
+				<<btnLink "Head back to the lobby" "Work">>
+			<<else>>\
+				<<nm $john "What's up bitch, come to watch?">>\
+				
+				<<btnLink "Head back to the lobby" "Work">>
+			<</if>>\
+		<<default>>\
+			
+			<<btnLink "Head back to the lobby" "Work">>
+	<</switch>>
+<</widget>>
