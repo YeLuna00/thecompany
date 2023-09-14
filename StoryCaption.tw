@@ -1,0 +1,271 @@
+:: StoryCaption [StoryCaption] {"position":"100,1350","size":"100,100"}
+$game.release $game.Version
+@@.btnUIScale;<<button "Saves">><<script>>UI.saves()<</script>><</button>>@@
+@@.btnUIScale;<<button "Restart">><<script>>UI.restart()<</script>><</button>>@@
+/* @@.btnUIScale;<<button "Settings">><<script>>UI.settings()<</script>><</button>>@@ */
+<<if $Chapter > 0 or visited("Intro-ChapterStart")>>\
+	<hr>\
+	<<if $SceneCredit>>\
+		''Scene Credit:'' @@.gain;$SceneCredit@@
+		<hr>\
+	<</if>>\
+	<<if $FreePlay>>\
+		@@.gain;Free Play@@
+		@@$time.time@@
+	<<elseif $Chapter is 0>>\
+		Prologue - @@$time.time@@
+	<<else>>\
+		Chapter $Chapter - @@$time.time@@
+	<</if>>\
+	$time.day, $time.month $time.calendarDay
+	<hr>\
+	Money: <<num $Money "$" "">>
+	$Location
+	<hr>\
+	''$player.name $player.surname''
+	<<if $UsePics or $UseArt>>\
+		<<DisplayCharacterPortrait>>\
+	<<elseif $ShowImages>>\
+		<<pic $player "portrait">>\
+	<</if>>\
+	<hr>\
+	<<MoodCheck>>\
+	<hr>
+	
+	<<if $player.dom >= 99>>\
+			@@.gain;Completely Dominant@@
+			@@.pic;<img data-passage="d100">@@\
+		<<elseif $player.dom >= 90>>\
+			@@.gain;Very Dominant@@
+			@@.pic;<img data-passage="d90">@@\
+		<<elseif $player.dom >= 80>>\
+			@@.gain;Very Dominant@@
+			@@.pic;<img data-passage="d80">@@\
+		<<elseif $player.dom >= 70>>\
+			@@.gain;Dominant@@
+			@@.pic;<img data-passage="d70">@@\
+		<<elseif $player.dom >= 60>>\
+			@@.gain;Dominant@@
+			@@.pic;<img data-passage="d60">@@\
+		<<elseif $player.dom >= 50>>\
+			@@.data;Neutral Dominance@@
+			@@.pic;<img data-passage="d50">@@\
+		<<elseif $player.dom >= 40>>\
+			@@.data;Neutral@@
+			@@.pic;<img data-passage="d40">@@\
+		<<elseif $player.dom >= 30>>\
+			@@.xxx;Submissive@@
+			@@.pic;<img data-passage="d30">@@\
+		<<elseif $player.dom >= 20>>\
+			@@.xxx;Submissive@@
+			@@.pic;<img data-passage="d20">@@\
+		<<elseif $player.dom >= 2>>\
+			@@.xxx;Very Submissive@@
+			@@.pic;<img data-passage="d10">@@\
+		<<else>>\
+			@@.xxx;Completely Submissive@@
+			@@.pic;<img data-passage="d0">@@\
+	<</if>>\
+	<<if $player.horny >= 99>>\
+			@@.xxx;Uncontrollably Aroused ($player.horny)@@
+			@@.pic;<img data-passage="a100">@@\
+		<<elseif $player.horny >= 90>>\
+			@@.xxx;Uncontrollably Aroused ($player.horny)@@
+			@@.pic;<img data-passage="a90">@@\
+		<<elseif $player.horny >= 80>>\
+			@@.xxx;Extremely Aroused ($player.horny)@@
+			@@.pic;<img data-passage="a80">@@\
+		<<elseif $player.horny >= 70>>\
+			@@.xxx;Extremely Aroused ($player.horny)@@
+			@@.pic;<img data-passage="a70">@@\
+		<<elseif $player.horny >= 60>>\
+			@@.xxx;Very Aroused ($player.horny)@@
+			@@.pic;<img data-passage="a60">@@\
+		<<elseif $player.horny >= 50>>\
+			@@.xxx;Very Aroused ($player.horny)@@
+			@@.pic;<img data-passage="a50">@@\
+		<<elseif $player.horny >= 40>>\
+			@@.xxx;Aroused ($player.horny)@@
+			@@.pic;<img data-passage="a40">@@\
+		<<elseif $player.horny >= 30>>\
+			@@.xxx;Aroused ($player.horny)@@
+			@@.pic;<img data-passage="a30">@@\
+		<<elseif $player.horny >= 20>>\
+			@@.ef;Somewhat Aroused ($player.horny)@@
+			@@.pic;<img data-passage="a20">@@\
+		<<elseif $player.horny >= 2>>\
+			@@.ef;Somewhat Aroused ($player.horny)@@
+			@@.pic;<img data-passage="a10">@@\
+		<<else>>\
+			@@.data;Not Aroused ($player.horny)@@
+			@@.pic;<img data-passage="a0">@@\
+	<</if>>\
+	@@.data;$player.gender $player.tfSuffix@@\
+	<<if $player.genderv >= 50>>\
+			@@.pic;<img data-passage="g100">@@\
+		<<elseif $player.genderv >= 40>>\
+			@@.pic;<img data-passage="g90">@@\
+		<<elseif $player.genderv >= 30>>\
+			@@.pic;<img data-passage="g80">@@\
+		<<elseif $player.genderv >= 20>>\
+			@@.pic;<img data-passage="g70">@@\
+		<<elseif $player.genderv >= 10>>\
+			@@.pic;<img data-passage="g60">@@\
+		<<elseif $player.genderv >= (-10)>>\
+			@@.pic;<img data-passage="g50">@@\
+		<<elseif $player.genderv >= (-11)>>\
+			@@.pic;<img data-passage="g40">@@\
+		<<elseif $player.genderv >= (-20)>>\
+			@@.pic;<img data-passage="g30">@@\
+		<<elseif $player.genderv >= (-30)>>\
+			@@.pic;<img data-passage="g20">@@\
+		<<elseif $player.genderv >= (-40)>>\
+			@@.pic;<img data-passage="g10">@@\
+		<<elseif $player.genderv >= (-50)>>\
+			@@.pic;<img data-passage="g0">@@\
+		<<else>>\
+			@@.data;$player.genderv Unknown@@
+			@@.pic;<img data-passage="g50">@@\
+	<</if>>\
+	<hr>\
+	<<if tasksOpen()>>\
+		Tasks:
+		<<for _ta = 0; _ta < $Tasks.length; _ta++>>\
+			<<if $Tasks[_ta].open>>\
+				__''$Tasks[_ta].name''__
+				<<if $Tasks[_ta].complete>>\
+					@@.gain;Complete! - $Tasks[_ta].desc@@
+				<<else>>\
+					@@.loss;$Tasks[_ta].desc@@
+				<</if>>\
+			<</if>>\
+		<</for>>\
+		<hr>\
+	<</if>>\
+	<<if $BirthControl > 0>>\
+		''Birth Control:''
+		@@.tf;$BirthControl day(s) remaining@@
+		<hr>\
+	<</if>>\
+	<<if $player.has.collar or $player.has.strapon>>\
+		''Items:''
+		<<if $player.has.collar>>\
+			• Cat Collar
+		<</if>>\
+		<<if $player.has.strapon>>\
+			• Strange Strapon
+		<</if>>\
+		<hr>\
+	<</if>>\
+	''Status:''
+	@@.btnUIScale;<<button "Player Info">><<run loadMenu("Player Info","Menu-Wardrobe")>><</button>>@@
+	<<if visited("Lab-Crafting") or serums() > 0>>\
+		@@.btnUIScale;<<button "Inventory">><<run loadMenu("Inventory","Menu-Inventory")>><</button>>@@
+	<</if>>\
+	/*
+	<<if visited("PreferenceResult")>>\
+		@@.btnUIScale;<<button "Preferences & Traits">><<run loadMenu("Preferences","Menu-Preferences")>><</button>>@@
+	<</if>>\
+	*/\
+	<<if $game.release is "Dev Build" and not $UseArt>>\
+		@@.btnUIScale;<<button "Tracking - @@Dev@@">><<run loadMenu("Tracking","Menu-Tracking")>><</button>>@@
+	<</if>>\
+	@@.btnUIScale;<<button "Characters">><<run loadMenu("Characters","Menu-Characters")>><</button>>@@
+	@@.btnUIScale;<<button "Achievements">><<run loadMenu("Achievements","Achievements")>><</button>>@@
+	<hr>\
+	<<if $game.release is "Dev Build" or $game.unlockDebug>>\
+		<<btnLink "Debug Menu" "debug_DebugMenu" "$dbgReturnPassage=passage(), $dbgC=_dbgC, $dbgC2=_dbgC2">>
+		<hr>\
+	<</if>>\
+	<<if not $UseArt>>\
+		<<= '<a href="' + _ur + '" target="_blank">@@.btnChoiceDom;<<button "REPORT ISSUE">><</button>>@@</a>'>>
+		<hr>
+	<</if>>\
+	''Options:''
+	Show Images: \
+	<<if $ShowImages>>\
+		@@.gain;On@@ - \
+		<<link "Off">>
+			<<set $ShowImages to false>>
+			<<set $ShowWeather to false>>
+			<<updatebar>>
+		<</link>>
+	<<else>>\
+		<<link "On">>
+			<<set $ShowImages to true>>
+			<<set $ShowWeather to true>>
+			<<updatebar>>
+		<</link>> - @@.loss;Off@@
+	<</if>>\
+	<<if $ShowImages>>\
+		Show Time Images: \
+		<<if $ShowWeather>>\
+			@@.gain;On@@ - \
+			<<link "Off">>
+				<<set $ShowWeather to false>>
+				<<updatebar>>
+			<</link>>
+		<<else>>\
+			<<link "On">>
+				<<set $ShowWeather to true>>
+				<<updatebar>>
+			<</link>> - @@.loss;Off@@
+		<</if>>\
+		Use Paperdoll: \
+		<<if $UsePics>>\
+			@@.gain;On@@ - \
+			<<link "Off">>
+				<<set $UsePics to false>>
+				<<updatebar>>
+			<</link>>
+		<<else>>\
+			<<link "On">>
+				<<set $UsePics to true>>
+				<<updatebar>>
+			<</link>> - @@.loss;Off@@
+		<</if>>\
+	<</if>>\
+	<<if not $ForceTF>>\
+		Lock Gender: \
+		<<if $game.lockGender>>\
+			@@.gain;On@@ - \
+			<<link "Off">>
+				<<set $game.lockGender to false>>
+				<<updatebar>>
+			<</link>>
+		<<else>>\
+			<<link "On">>
+				<<set $game.lockGender to true>>
+				<<updatebar>>
+			<</link>> - @@.loss;Off@@
+		<</if>>\
+	<</if>>\
+	Autosave: \
+	<<if config.saves.autosave.includes("autosave")>>\
+		@@.gain;Enabled@@ - \
+		<<link "Disable">>
+			<<set config.saves.autosave.delete("autosave")>>
+			<<set config.saves.autosave.pushUnique("disabled")>>
+			<<updatebar>>
+		<</link>>
+	<<else>>\
+		<<link "Enable">>
+			<<set config.saves.autosave.delete("disabled")>>
+			<<set config.saves.autosave.pushUnique("autosave")>>
+			<<updatebar>>
+		<</link>> - @@.loss;Disabled@@
+	<</if>>\
+<</if>>\
+
+@@.btnUIScale;<<button "Credits">><<run loadMenu("Credits","Credits")>><</button>>@@
+@@.btnUIScale;<<button "Supporters">><<run loadMenu("Supporters","Supporters")>><</button>>@@
+
+<a href="https://www.patreon.com/westane" target="_blank"><img data-passage="bannerPatreon" width="100%" align="middle"></a>
+<a href="https://discord.gg/QZguwZ3Ryy" target="_blank"><img data-passage="bannerDiscord" width="100%" align="middle"></a>
+
+<a href="https://www.patreon.com" target="_blank"><img data-passage="btnPatreon" height="32" width="32" align="middle"></a> \
+<a href="https://www.reddit.com/r/thecompanyaif" target="_blank"><img data-passage="btnReddit" height="32" width="32" align="middle"></a> \
+<a href="https://twitter.com/WestaneDigital" target="_blank"><img data-passage="btnTwitter" height="32" width="32" align="middle"></a> \
+<a href="https://www.coolcompany.com" target="_blank"><img data-passage="btnWeb" height="32" width="32" align="middle"></a> \
+<a href="https://discord.gg/Q" target="_blank"><img data-passage="btnDiscord" height="32" width="32" align="middle"></a>
+@@color:grey;font-size:small;Build: $game.version@@

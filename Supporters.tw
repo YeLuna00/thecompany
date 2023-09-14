@@ -1,0 +1,27 @@
+:: Supporters [nobr] {"position":"100,15225","size":"100,100"}
+<<set _patreons = [
+        "Fire D Legend",
+
+    ]>>
+
+    __''A special thank you to everyone who helped support this project, and especially to the following individuals:''__
+    <br><br>
+    <table style="width:100%;">
+    <<for _i=0; _i < _patreons.length; _i ++>>
+        <tr>
+            <td>_patreons[_i]</td>
+            <<set _i++>>
+            <<if _patreons[_i]>>
+                <td>_patreons[_i]</td>
+            <<else>>
+                <td></td>
+            <</if>>
+            <<set _i++>>
+            <<if _patreons[_i]>>
+                <td>_patreons[_i]</td>
+            <<else>>
+                <td></td>
+            <</if>>
+        </tr>
+    <</for>>
+    </table>
