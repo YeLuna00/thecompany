@@ -1,0 +1,2492 @@
+:: Sophie-Apartment {"position":"350,8350","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    ''You follow $sophie.name into her condo, closing and locking the door behind you. She puts down her bag and takes off her coat and walks into the kitchen.''
+
+    <<pic $sophie>>\
+
+    <<nm $sophie "Well, here we are... Can I get you something to drink, or... Should we just take care of what we came here for?">>\
+
+    <<nm $player "Hehe, little anxious huh? Well, why doNPH-">>\
+
+    <<pic $sophie "kiss-player">>\
+
+    ''Before you can finish your statement, $sophie.name has you locked in a lustful embrace, pulling at your clothes and pushing you towards the bedroom...''
+
+    <<btnLink "Continue..." "Sophie-ISS-Condo-Start">>
+
+
+:: Sophie-Apartment-AfterWork {"position":"1100,8225","size":"100,100"}
+<<pic $sophie>>\
+
+	<<nm $sophie "Ah, $player.name. Going home?">>\
+
+    <<nm $player "Oh, heya $sophie.name. Yeah, I was just getting ready to leave for the day.">>\
+
+    ''$sophie.name rocks back and forth on her feet for a moment before finally looking at you directly and asking her question.''
+
+    <<nm $sophie "Would you perhaps like to spend some time with me? My ride is waiting and... we could go together, if you're free...">>\
+
+    <<btnChoice "Go with $sophie.name to her condo for the night - <<t2>>" "Sophie-Apartment-Go">>
+    <<btnChoice "Tell her you need to go home tonight" "Sophie-Apartment-Pass">>
+
+
+:: Sophie-Apartment-Go {"position":"1225,8225","size":"100,100"}
+<<loc_Lift>>\
+
+    <<nm $player "Sure, that sounds great!">>\
+
+    <<nm $sophie "Perfect!">>\
+
+    ''You follow $sophie.name out to her escort and drive off towards her condo.''
+
+    <<btnLink "Continue" "Sophie-Apartment">>\
+
+
+:: Sophie-Apartment-Intro {"position":"225,8350","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    ''You're pulled into $sophie.name's surprisingly minimalistic condo as the black SUV pulls away. You were half expecting some kind of lavishly furnished impossibly decadent lifestyles of the rich and crazy crib, but that's not quite the case. Instead, the small livingroom contains only a couple small sofas and a coffee table, while the connected kitchen is completely bare, save for an empty wine bottle. The dining nook has a small table with a plugged in laptop on it, and a single chair.''
+
+    <<pic $sophie>>\
+
+    <<nm $sophie "Mmmm, welcome home baby...">>\
+
+    ''She's still a little sloshed as she pulls a single-serve coffee maker out from under a counter with a couple plastic pods. You just watch while she fills the reservoir and looks for mugs.''
+
+    <<nm $player "So, um... Doesn't look like you stay here too often, huh?">>\
+
+    <<nm $sophie "Hm? Oh, no dear, not if I can help it. This littGRMPH, o-oohh... hmm, excuse me...">>\
+
+    ''$sophie.name fills a glass with water while impatiently waiting for the coffee to brew.''
+
+    <<nm $sophie "This little... hovel... is company issued. No point getting too comfortable when you're likely to get relocated at the whim of just about anyone higher up than you, never mind the constant monitoring...">>\
+
+    <<nm $player "Monitoring!? Aren't you worried about-">>\
+
+    ''$sophie.name laughs.''
+
+    <<nm $sophie "Oh sweetie, in middle-management there are no secrets. If I decide I'm going to fuck someone it really doesn't make a difference where I decide to do it... And tonight...">>\
+
+    <<pic $sophie "topless">>\
+
+    <<nm $sophie "I'll be fucking you...">>\
+
+    ''The coffee finishes brewing, but that doesn't matter now as $sophie.name pulls you into her bedroom...''
+
+    <<btnLink "Continue..." "Sophie-ISS-Condo-Start">>
+
+
+:: Sophie-Apartment-Pass {"position":"100,8350","size":"100,100"}
+<<loc_Lift>>\
+
+    <<nm $player "Sorry $sophie.name, I really need to get home tonight. Raincheck?">>\
+
+    ''She does her best to hide her disappointment.''
+
+    <<nm $sophie "Of course $player.name, that's not a problem at all. I'll see you later.">>\
+
+    ''You tell her goodbye and head home.''
+
+    <<run setDailyCD("SophieCondo",3)>>\
+    <<btnLink "Continue" "Home">>\
+
+
+:: Sophie-Date {"position":"225,8725","size":"100,100"}
+<<loc_Steakhouse>>\
+
+    ''$sophie.name's company SUV arrives at your house in just under an hour. She greets you as you get in and the two of you are driven off into the night.''
+
+    <<pic $sophie>>\
+
+    <<nm $sophie "This was an excellent idea, $player.name. It's nice to get out once in a while without all the stress from the office weighing us down.">>\
+
+    <<nm $player "Yeah, it should be a lot of fun!">>\
+
+    ''You pull up into the now-familiar dirt parking lot and exit the vehicle, which then circles to the back of the building. As usual, you're promptly seated at a booth where a server takes your order and brings you your water and wine.''
+
+    <<nm $player "Well, this is nice. Kinda' like a date, huh?">>\
+
+    <<nm $sophie "Oh! Y-yes, I suppose it is...">>\
+
+    ''She starts in on her wine.''
+
+    <<nm $player "Is that a problem? I mean the whole, you're my supervisor thing.">>\
+
+    <<nm $sophie "Problem? No, not here anyway. There's no real policy about workplace relationships or, u-um, romance. It makes sense, really, given the nature of our organization. To that end, having that sort of relationship with a coworker, any coworker, could prove to be dangerous in this field of work.">>\
+
+    <<nm $player "Are you worried?">>\
+
+    ''$sophie.name scoffs as she pours you both another glass.''
+
+    <<nm $sophie "One would be foolish to work for The Company and not be in a constant state of worry. Not to put too fine a point on it, <<Mr>> $player.surname, but when you work for the people we work for, well, any day could be your last as a free or breathing human being...">>\
+
+    ''There's a long pause before the server shows up with your meals.''
+
+    <<nm $sophie "Oh! These look excellent! Thank you so much, and, if you wouldn't mind, another bottle of wine? Thank you.">>\
+
+    <<nm $player "Heh, never figured you for much of a drinker before we started coming here.">>\
+
+    ''She swallows her first bite of steak.''
+
+    <<nm $sophie "Really? Hm, you should see what I keep stashed away in my desk...">>\
+
+    ''The two of you continue to talk and eat and drink late into the night. Eventually, the tab is paid and the two of head out to the waiting SUV. Before entering the vehicle, $sophie.name wraps her arms around you and pulls you in for a long, passionate kiss.''
+
+    <<pic $action "female-kiss-player">>\
+
+    <<nm $sophie "Thank you for a most wonderful night, $player.sophieName.">>\
+
+    ''You smile at each other before getting into the car, at which point $sophie.name promptly passes out on your shoulder. Once you arrive in your driveway, you quietly slip away back into your house.''
+
+    <<love $sophie 1>>
+
+    <<btnLink "Go home" "Home" "passTime()">>
+
+
+:: Sophie-Dose {"position":"475,1600","size":"100,100"}
+<<switch $c>>\
+	<<case 0>>\
+		<<loc_Steakhouse>>
+		<<Thought "Alright, now's my chance...">>\
+		
+		''$sophie.name looks at you with a vacant expression.''
+		
+		<<if $sophie.doseF > 0>>\
+			<<if $sophie.control.assist>>\
+				<<Thought "Hmm... Actually, I don't think I'm quite ready to take her further down the rabbit hole just yet... I'll save this for another time.">>\
+
+				''You slip the serum back into your pocket and give $sophie.name time to snap back to reality. After a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+				
+				<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+					
+				<<nm $player "Ha, you and me both.">>\
+					
+				''The two of you get up from the table and start walking towards the exit.''
+				
+				<<btnLink "Continue" "Steakhouse-Outside">>
+			<<elseif $sophie.control.date>>\
+				<<btnLink "Have her want to start showing you more affection" "Sophie-Dose" "$c='f5'">>
+			<<elseif $sophie.control.lunch>>\
+				<<btnLink "Have her want to start spending time with you outside the office" "Sophie-Dose" "$c='f4'">>
+			<<elseif $sophie.control.phone>>\
+				<<btnLink "Have her start inviting you into her office for lunch" "Sophie-Dose" "$c='f3'">>
+			<<elseif $sophie.control.casual>>\
+				<<btnLink "Have her give you her personal phone number" "Sophie-Dose" "$c='f2'">>
+			<<else>>\
+				<<Thought "Hmm... Actually, I don't think I'm quite ready to take her further down the rabbit hole just yet... I'll save this for another time.">>\
+
+				''You slip the serum back into your pocket and give $sophie.name time to snap back to reality. After a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+				
+				<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+					
+				<<nm $player "Ha, you and me both.">>\
+					
+				''The two of you get up from the table and start walking towards the exit.''
+				
+				<<btnLink "Continue" "Steakhouse-Outside">>
+			<</if>>\
+		<<elseif $sophie.doseS > 0>>\
+			<<if $sophie.control.publicSex>>\
+				<<Thought "Hmm... Actually, I don't think I'm quite ready to take her further down the rabbit hole just yet... I'll save this for another time.">>\
+
+				''You slip the serum back into your pocket and give $sophie.name time to snap back to reality. After a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+				
+				<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+					
+				<<nm $player "Ha, you and me both.">>\
+					
+				''The two of you get up from the table and start walking towards the exit.''
+				
+				<<btnLink "Continue" "Steakhouse-Outside">>
+			<<elseif $sophie.control.officeSex>>\
+				<<btnLink "Have her want to start having sex in public" "Sophie-Dose" "$c='s5'">>
+			<<elseif $sophie.control.oralOffice>>\
+				<<btnLink "Have her want to start having sex in the office" "Sophie-Dose" "$c='s4'">>
+			<<elseif $sophie.control.oralSecret>>\
+				<<btnLink "Have her start going down on you at the office" "Sophie-Dose" "$c='s3'">>
+			<<elseif $sophie.control.oralThink>>\
+				<<btnLink "Have her start going down on you in secret" "Sophie-Dose" "$c='s2'">>
+			<<else>>\
+				<<Thought "Hmm... Actually, I don't think I'm quite ready to take her further down the rabbit hole just yet... I'll save this for another time.">>\
+
+				''You slip the serum back into your pocket and give $sophie.name time to snap back to reality. After a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+				
+				<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+					
+				<<nm $player "Ha, you and me both.">>\
+					
+				''The two of you get up from the table and start walking towards the exit.''
+				
+				<<btnLink "Continue" "Steakhouse-Outside">>
+			<</if>>\
+		<<elseif $sophie.doseD > 0>>\
+			<<if $sophie.control.domSex>>\
+				<<Thought "Hmm... Actually, I don't think I'm quite ready to take her further down the rabbit hole just yet... I'll save this for another time.">>\
+
+				''You slip the serum back into your pocket and give $sophie.name time to snap back to reality. After a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+				
+				<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+					
+				<<nm $player "Ha, you and me both.">>\
+					
+				''The two of you get up from the table and start walking towards the exit.''
+				
+				<<btnLink "Continue" "Steakhouse-Outside">>
+			<<elseif $sophie.control.giveOral>>\
+				<<btnLink "Tell her she should start calling you to her office for sex" "Sophie-Dose" "$c='d5'">>
+			<<elseif $sophie.control.grope>>\
+				<<btnLink "Tell her she should want to start engaging in oral sex" "Sophie-Dose" "$c='d4'">>
+			<<elseif $sophie.control.touch>>\
+				<<btnLink "Tell her she should be more aggressive in her advances" "Sophie-Dose" "$c='d3'">>
+			<<elseif $sophie.control.flash>>\
+				<<btnLink "Have her get off by letting you touch her" "Sophie-Dose" "$c='d2'">>
+			<<else>>\
+				<<Thought "Hmm... Actually, I don't think I'm quite ready to take her further down the rabbit hole just yet... I'll save this for another time.">>\
+
+				''You slip the serum back into your pocket and give $sophie.name time to snap back to reality. After a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+				
+				<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+					
+				<<nm $player "Ha, you and me both.">>\
+					
+				''The two of you get up from the table and start walking towards the exit.''
+				
+				<<btnLink "Continue" "Steakhouse-Outside">>
+			<</if>>\
+		<<else>>\
+			<<btnLink "Allow you to address her more casually" "Sophie-Dose" "$c='f1'">>
+			<<btnLink "Have her go down on you" "Sophie-Dose" "$c='s1'">>
+			<<btnLink "Have her show you her tits" "Sophie-Dose" "$c='d1'">>
+		<</if>>\
+	<<case "f1">>\
+		<<nm $player "$sophie.name, now that I've proven myself, you feel that our working relationship should be a little less formal. You think even one day we could become friends, if not more. A simple start would be for you to allow me to call you by your first name from now on.">>\
+			
+		''$sophie.name nods slightly, and after a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+		
+		<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+			
+		<<nm $player "Ha, you and me both.">>\
+			
+		''The two of you get up from the table and start walking towards the exit.''
+		
+		<<nm $sophie "One more thing, <<Mr>> $player.surname. Since we're going to be spending a lot of time together from now on, I insist you simply call me Sophie. No need for such strict formalities in our line of work.">>\
+		
+		<<set $sophie.name = "Sophie">>\
+		<<nm $player "Sure thing, $sophie.name, if you insist.">>\
+			
+		''You smile to yourself as you near the doorway.''
+		
+		<<set $sophie.dose += 1>>\
+		<<set $sophie.doseF to 1>>\
+		<<set $sophie.control.casual to true>>\
+		<<AddNote $sophie "Ms. Dee, or rather, $sophie.name and I grew a little closer today with the help of my new low-power formula. It was a simple test but still a good proof of concept. Plus I got to see $sophie.name lower her a guard, if only a little">>\
+		<<btnLink "Continue" "Steakhouse-Outside">>
+	<<case "f2">>\
+		<<nm $player "$sophie.name, now that we're starting to get to know each other a little better, you think maybe we should start talking more outside of work. In fact, you feel so comfortable with me that you've decided to give me your personal cell number so we can keep in touch.">>\
+		
+		<<Thought "Never thought I'd have to resort to drugging a woman to get her phone number, but then $sophie.name's a bit of a special case...">>\
+			
+		''$sophie.name nods slightly, and after a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+		
+		<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+			
+		<<nm $player "Ha, you and me both.">>\
+		
+		<<nm $sophie "Oh, right, one more thing. I... I had a great time tonight, and, I think it would be nice if... you and I were to keep in touch... outside the office a little more often...">>\
+		
+		''You've never seen $sophie.name struggle quite like this before. You have to admit it's a little cute.''
+		
+		<<nm $sophie "A-anyway, here, my cell... Please call it, if you like...">>\
+			
+		''She slides you a piece of paper with a number written on it and quickly begins gathering her things. The two of you get up from the table and start walking towards the exit. You can't help but notice she's blushing slightly.''
+		
+		<<set $sophie.dose += 1>>\
+		<<set $sophie.doseF to 2>>\
+		<<set $sophie.control.phone to true>>\
+		<<AddNote $sophie "I've decided to use my serums to help $sophie.name loosen up a little. She ended up giving me her phone number and requested I call her from time to time.">>\
+		<<btnLink "Continue" "Steakhouse-Outside">>
+	<<case "f3">>\
+		<<nm $player "$sophie.name, you've really been enjoying the time we've been spending together, even if you're not quite ready to admit it. For now, you've decided it would be nice to have some company during your lunch breaks at work, and you know just the person...">>\
+		
+		<<Thought "Still feels weird using the serums in this way, but $sophie.name can be... difficult.">>\
+			
+		''$sophie.name nods slightly, and after a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+		
+		<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+			
+		<<nm $player "Ha, you and me both.">>\
+		
+		<<nm $sophie "I... had a great time again, $player.sophieName... Thank you.">>\
+			
+		''She gives you a warm smile and begins gathering her things. The two of you get up from the table and start walking towards the exit. You can't help but notice she's blushing slightly.''
+		
+		<<set $sophie.dose += 1>>\
+		<<set $sophie.doseF to 3>>\
+		<<set $sophie.control.lunch to true>>\
+		<<AddWorkEvent 22>>\
+		<<AddNote $sophie "I gave $sophie.name another dose tonight, this time prompting her to want to spend more time with me at the office. We'll see if that pays off...">>\
+		<<btnLink "Continue" "Steakhouse-Outside">>
+	<<case "f4">>\
+		<<nm $player "$sophie.name, you're done hiding the fact that you have feelings for $player.name. The connection is undeniable and in spite of all your reservations, you're finally willing to give things a real chance. For starters, you want to spend more time together outside the office.">>\
+		
+		<<Thought "With any luck, this might be the last time I need to use my serums on $sophie.name this way...">>\
+			
+		''$sophie.name nods slightly, and after a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+		
+		<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+			
+		<<nm $player "Ha, you and me both.">>\
+		
+		<<nm $sophie "I had a wonderful night, $player.sophieName. Umm...">>\
+			
+		''$sophie.name leans over the table and gives a kiss on the cheek. She smiles and begins gathering her things. The two of you get up from the table and start walking towards the exit. You can't help but notice she's blushing slightly.''
+		
+		<<set $sophie.dose += 1>>\
+		<<set $sophie.doseF to 4>>\
+		<<set $sophie.control.date to true>>\
+		<<AddConvo $sophie 6>>\
+		<<AddNote $sophie "After another dose, $sophie.name seems pretty content with the idea of moving our relationship forward, even outside of the office! Hopefully this will be enough for me not to have to use my serums on her in this way anymore...">>\
+		<<btnLink "Continue" "Steakhouse-Outside">>
+	<<case "f5">>\
+		<<nm $player "$sophie.name, you're falling for $player.name harder and harder every day, but you still have a hard time showing out in the ways you want to. From now on, you're not going to let yourself be stopped from showing your love, even if you think it's silly or unnecessary.">>\
+		
+		<<Thought "Maybe this'll be just what she needs to relax a little...">>\
+			
+		''$sophie.name nods slightly, and after a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+		
+		<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+			
+		<<nm $player "Ha, you and me both.">>\
+		
+		<<nm $sophie "I had a wonderful night, $player.sophieName. Umm...">>\
+
+		<<pic $sophie "kiss-player">>\
+			
+		''$sophie.name leans over the table, hesitates for just a moment, and kisses you deeply before gathering her things. The two of you get up from the table and start walking towards the exit. You can't help but notice she's blushing slightly.''
+
+		<<nm $sophie "Hey...">>\
+
+		<<nm $player "Yeah?">>\
+
+		<<nm $sophie "You, um... You should try texting me sometime, y'know, I don't always have time to chat, but... Could be kinda cute, I don't know...">>\
+
+		''You can't help but laugh.''
+
+		<<nm $player "Sure thing, that'd be great.">>\
+
+		@@You can now send $sophie.name text messages!@@
+		
+		<<set $sophie.dose += 1>>\
+		<<set $sophie.doseF to 5>>\
+		<<set $sophie.isDating to true>>\
+		<<SetFlag $player "TextSophie">>\
+		<<AddNote $sophie "$sophie.name seemed on edge tonight. I gave her another dose of MCS serum in the hopes that this might finally allow her to get passed her inhibitions.">>\
+		<<btnLink "Continue" "Steakhouse-Outside">>
+	<<case "f6">>\
+	
+	<<case "s1">>\
+		<<Thought "Go big or go home, right?">>\
+		
+		<<nm $player "$sophie.name, you can't resist the idea of <<if isMale()>>sucking my cock. <<else>>eating my pussy. <</if>>It's all you've thought about since meeting me. You want to do it tonight, as soon as you get the chance.">>\
+			
+		''$sophie.name stares blankly for a moment before nodding slightly, and after a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+		
+		<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+			
+		<<nm $player "Ha, you and me both.">>\
+			
+		''The two of you get up from the table and start walking towards the exit.''
+		
+		<<Thought "I can tell it had an effect on her, but $sophie.name is particularly strong-willed. Still, it's good to know that I can at least somewhat push the boundaries with my suggestions without any negative consequences... at least for now. With more time I can explore the full extent of the formula, and hopefully improve upon it.">>\
+		
+		<<set $sophie.dose += 1>>\
+		<<set $sophie.doseS to 1>>\
+		<<set $sophie.control.oralThink to true>>\
+		<<AddNote $sophie "I had the opportunity to test my serum on $sophie.name tonight, so I decided to have a little fun, putting the idea for her to go down on me in her head. As expected, she didn't do it after she came to, but I couldn't help but notice a few not-so-accidental glances towards my crotch. I might be able to go further with this if I get another chance to dose her somehow.">>\
+		<<btnLink "Continue" "Steakhouse-Outside">>
+	<<case "s2">>\
+		<<Thought "Alright, let's try this again...">>\
+		
+		<<nm $player "$sophie.name, you've been thinking about my <<PussyOrCock>> non-stop for a long time now, and you've about reached your limit. Unable to take it anymore, the next chance you get you're going to finally fulfill your craving!">>\
+			
+		''$sophie.name stares blankly for a moment before nodding slightly, and after a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+		
+		<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+			
+		<<nm $player "Ha, you and me both.">>\
+			
+		''The two of you get up from the table and start walking towards the exit. You can't help but notice $sophie.name lightly panting all the way to the door.''
+		
+		<<nm $player "$sophie.name? Are you okay?">>\
+		
+		<<nm $sophie "F-fine, <<Mr>> $player.surname, I just... need some air...">>\
+		
+		<<dom $sophie -10>>
+		
+		<<set $sophie.dose += 1>>\
+		<<set $sophie.doseS to 2>>\
+		<<set $sophie.control.oralSecret to true>>\
+		<<AddConvo $sophie 7>>\
+		<<AddDreamEvent 20>>\
+		<<AddWorkEvent 23>>\
+		<<AddNote $sophie "I've finally gotten $sophie.name to give into her desires, however little. I think I'm well on my way to corrupting her even further.">>\
+		<<btnLink "Continue" "Steakhouse-Outside">>
+	<<case "s3">>\
+		<<Thought "Time to push her further...">>\
+		
+		<<nm $player "$sophie.name, now that you've finally gotten a taste for my <<PussyOrCock>> it's all you can think about. You can't wait around for the perfect opportunities anymore. No, even if it's embarrassing, or there's a chance you'll get caught, you don't care. You'll take it anywhere you can get it, even if it means you'll have to beg for it.">>\
+			
+		''$sophie.name stares blankly for a moment before nodding slightly, drool runs out the corner of her mouth, and after a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her, panting slightly.''
+		
+		<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+			
+		<<nm $player "Ha, you and me both.">>\
+			
+		''The two of you get up from the table and start walking towards the exit. You can't help but notice $sophie.name lightly panting all the way to the door.''
+		
+		<<nm $player "$sophie.name? Are you okay?">>\
+		
+		<<nm $sophie "F-fine, <<Mr>> $player.surname, I just... need some air...">>\
+		
+		<<dom $sophie -10>>
+		
+		<<set $sophie.dose += 1>>\
+		<<set $sophie.doseS to 3>>\
+		<<set $sophie.control.oralOffice to true>>\
+		<<AddNote $sophie "I had another chance to dose $sophie.name tonight, and decided to use the opportunity to further her desperation for my <<PussyOrCock>>. On the ride home, she seemed even more voracious than usual, and I expect this behavior to bleed over into the office as well.">>\
+		<<btnLink "Continue" "Steakhouse-Outside">>
+	<<case "s4">>\
+		<<Thought "Alright, $sophie.name...">>\
+		
+		<<nm $player "$sophie.name, you're completely addicted to my <<PussyOrCock>> now. It's all you think about, day and night, and going down on it isn't cutting it for you anymore. You want more, whenever and however you can get it. You want me to fuck you, in the car, in the office... Everywhere!">>\
+			
+		''$sophie.name stares blankly for a moment before nodding slightly, drool runs out the corner of her mouth, and after a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her, drooling slightly.''
+		
+		<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+			
+		<<nm $player "Ha, you and me both.">>\
+			
+		''The two of you get up from the table and start walking towards the exit. You can't help but notice $sophie.name heavily panting all the way to the door.''
+		
+		<<nm $player "$sophie.name? Are you okay?">>\
+		
+		<<nm $sophie "F-fine, <<Mr>> $player.surname, I just... need some air...">>\
+		
+		<<dom $sophie -10>>
+		
+		<<set $sophie.dose += 1>>\
+		<<set $sophie.doseS to 4>>\
+		<<set $sophie.control.officeSex to true>>\
+		<<AddDreamEvent 21>>\
+		<<AddNote $sophie "After dosing $sophie.name again with my serum, I'm getting closer and closer to turning her into a fully obedient slut. It won't be much longer before before she'll be completely unable to fight her urges.">>\
+		<<btnLink "Continue" "Steakhouse-Outside">>
+	<<case "s5">>\
+		<<nm $player "$sophie.name, all you can even think about anymore is my <<PussyOrCock>> and it's driving you crazy having to wait for it. You've decided that you're not worried about getting found out anymore, and you're going to start taking me regardless of the time or place. In fact, people watching you will even get your more aroused!">>\
+		
+		<<Thought "This should be fun...">>\
+			
+		''$sophie.name nods slightly, and after a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+		
+		<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+			
+		<<nm $player "Ha, you and me both.">>\
+		
+		<<nm $sophie "I had a wonderful night, $player.sophieName. Umm...">>\
+
+		<<pic $sophie "kiss-player">>\
+			
+		''$sophie.name leans over the table, hesitates for just a moment, and kisses you deeply before gathering her things. The two of you get up from the table and start walking towards the exit. You can't help but notice she's blushing slightly.''
+
+		<<nm $sophie "Hey...">>\
+
+		<<nm $player "Yeah?">>\
+
+		<<nm $sophie "You, um... You should try texting me sometime, y'know, I don't always have time to chat, but... Could be kinda cute, I don't know...">>\
+
+		''You can't help but laugh.''
+
+		<<nm $player "Sure thing, that'd be great.">>\
+
+		@@You can now send $sophie.name text messages!@@
+		
+		<<set $sophie.dose += 1>>\
+		<<set $sophie.doseS to 5>>\
+		<<set $sophie.control.publicSex to true>>\
+		<<AddWorkEvent 39>>\
+		<<SetFlag $player "TextSophie">>\
+		<<SetFlag $sophie "PublicSex">>\
+		<<AddNote $sophie "I had another opportunity to use the MCS serum on $sophie.name tonight">>\
+		<<btnLink "Continue" "Steakhouse-Outside">>
+	<<case "s6">>\
+	
+	<<case "d1">>\
+		<<nm $player "$sophie.name, you've been thinking about me checking you out when we first met, and you think it would be fun to tease me a little by flashing your tits at me before I leave tonight.">>\
+			
+		<<Thought "May as well have some fun with it, right?">>\
+		
+		''$sophie.name nods slightly, and after a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+		
+		<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+			
+		<<nm $player "Ha, you and me both.">>\
+			
+		''The two of you get up from the table and start walking towards the exit.''
+		
+		<<set $sophie.dose += 1>>\
+		<<set $sophie.doseD to 1>>\
+		<<set $sophie.control.flash to true>>\
+		<<AddWorkEvent 23>>\
+		<<AddNote $sophie "I decided to test my new formula on $sophie.name, and the results were excellent! $sophie.name was actually compelled to flash her bare chest at me!">>\
+		<<btnLink "Continue" "Steakhouse-Outside">>
+	<<case "d2">>\
+		<<nm $player "$sophie.name, you've been having a lot of fun teasing me, but lately you've also been thinking a more 'hands on' approach could be even better. In fact, the thought of laying your hands on me fills you with so much lust and desire that you're not sure you'd be able to control yourself!">>\
+			
+		<<Thought "May as well have some fun with it, right?">>\
+		
+		''$sophie.name nods slightly, and after a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+		
+		<<nm $sophie "Hm, I must've had a little... too much to drink tonight.">>\
+			
+		<<nm $player "Ha, you and me both.">>\
+		
+		<<nm $sophie "Mmm, <<Mr>> $player.name, I had a wonderful time tonight...">>\
+		
+		''You're a little surprised as $sophie.name reaches out over the table to grab your hand. As she does, her face becomes flushed and her breathing intensifies. You only just notice her digging her fingernails into the back of your hand.''
+		
+		<<nm $sophie "H-haa... yessss... I-I...">>\
+		
+		''You try to pull your hand back, but she only digs in deeper.''
+		
+		<<nm $player "$sophie.name, I... My hand...">>\
+		
+		''After a moment, $sophie.name comes down, releasing your hand and leaving behind a series of indentations. She effortlessly composes herself as if nothing had just happened before gathering her belongings. The two of you get up from the table and start walking towards the exit.''
+		
+		<<Thought "Jeez, she obviously knew what she was doing... Guess I should be glad I'm not bleeding...">>\
+		
+		<<set $sophie.dose += 1>>\
+		<<set $sophie.doseD to 2>>\
+		<<set $sophie.control.touch to true>>\
+		<<AddNote $sophie "I used another serum on $sophie.name, this time having her get excited at the thought of touching me. I didn't expect she'd embrace the notion so heavily though, using me to get off in the middle of the restaurant and giving me something to remember it by to boot.">>\
+		<<btnLink "Continue" "Steakhouse-Outside">>
+	<<case "d3">>\
+		<<nm $player "$sophie.name, your recent 'hands on' activities have really sparked a fire inside you. The rush of dominance and arousal you feel every time you touch me is more than you can handle. Rather than try to fight it, you've decided to just fully embrace the situation.">>\
+		
+		''$sophie.name nods slightly, and after a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+		
+		<<nm $sophie "Hm, I must've had a little... too much to drink tonight.">>\
+			
+		<<nm $player "Ha, you and me both.">>\
+		
+		<<nm $sophie "Mmm, <<Mr>> $player.name, I had a wonderful time tonight...">>\
+		
+		''$sophie.name is blatantly flirting with you with her eyes, distracting you from the fact that her foot has slid up along your leg and is now kneading your crotch. Just as you notice yourself becoming <<hard>>, $sophie.name already seems lost in her first orgasm.''
+		
+		<<nm $sophie "H-haa... mmmm... $player.sophieName...">>\
+		
+		''You're on the verge yourself, and try to stop her so as not to make a scene.''
+		
+		<<nm $player "$sophie.name, m-maybe we should...">>\
+		
+		<<nm $sophie "Ah, the car, yes. Let's go then!">>\
+		
+		''She effortlessly composes herself as if nothing had just happened before gathering her belongings. The two of you get up from the table and start walking towards the exit.''
+		
+		<<set $sophie.dose += 1>>\
+		<<set $sophie.doseD to 3>>\
+		<<set $sophie.control.grope to true>>\
+		<<AddNote $sophie "I gave $sophie.name another serum tonight with the intent to further her descent into sexual dominance. She's become very aggressive, groping and pulling and grinding until she gets her release. It shouldn't be much longer before I've got her acting like a total slut!">>\
+		<<btnLink "Continue" "Steakhouse-Outside">>
+	<<case "d4">>\
+		<<nm $player "$sophie.name, the groping and grabbing isn't enough to get you off anymore. You need more, more contact, more sex... The thought of wet, sloppy oral sex, specifically, and you're done waiting around for it. Starting tonight, you're going to do whatever it takes to satisfy your urges!">>\
+		
+		''$sophie.name nods slightly, and after a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+		
+		<<nm $sophie "Hm, I must've had a little... too much to drink tonight.">>\
+			
+		<<nm $player "Ha, you and me both.">>\
+		
+		<<nm $sophie "Mmm, <<Mr>> $player.name, I had a wonderful time tonight...">>\
+		
+		''$sophie.name is blatantly flirting with you with her eyes, distracting you from the fact that her foot has slid up along your leg and is now kneading your crotch. Just as you notice yourself becoming <<hard>>, $sophie.name already seems lost in her first orgasm.''
+		
+		<<nm $sophie "We should go, $player.sophieName... I have something... special waiting for you in the car...">>\
+		
+		''She gives you a devious smile before gathering her belongings. The two of you get up from the table and start walking towards the exit.''
+		
+		<<set $sophie.dose += 1>>\
+		<<set $sophie.doseD to 4>>\
+		<<set $sophie.control.giveOral to true>>\
+		<<AddConvo $sophie 8>>\
+		<<AddWorkEvent 24>>\
+		<<AddDreamEvent 22>>\
+		<<AddNote $sophie "Dosing $sophie.name has... not gone the way I was hoping. I tried to instill in her an obsession with oral sex but didn't consider how she'd interpret the command. Now my jaw is sore.">>\
+		<<btnLink "Continue" "Steakhouse-Outside">>
+	<<case "d5">>\
+		<<nm $player "$sophie.name, you've never felt better than you do now, completely sexually liberated and free to do and act however you please. Still, you've noticed that no matter how much you get, it's just still not enough. Part of that has a lot to do with you still be tied down to this idea that you need to behave a certain way in front of other people, but you're done with that! From now on, you'll take whatever you want, whenever and wherever you want it!">>\
+		
+		<<Thought "Well, this should be fun...">>\
+			
+		''$sophie.name nods slightly, and after a few seconds, her eyes clear up and she appears much more aware. She looks down at the empty glass in front of her and gives you an inquisitive look.''
+		
+		<<nm $sophie "Hm, I must've had a little... too much to drink tonight. Anyway, shall we be going?">>\
+			
+		<<nm $player "Ha, you and me both.">>\
+		
+		<<nm $sophie "I had a wonderful night, $player.sophieName. Umm...">>\
+
+		<<pic $sophie "kiss-player">>\
+			
+		''$sophie.name leans over the table, hesitates for just a moment, and kisses you deeply before gathering her things. The two of you get up from the table and start walking towards the exit. You can't help but notice she's blushing slightly.''
+
+		<<nm $sophie "Hey...">>\
+
+		<<nm $player "Yeah?">>\
+
+		<<nm $sophie "By the way, feel free to text me once in a while, okay? I promise I won't bite too hard...">>\
+
+		<<nm $player "Sure thing, that'd be great.">>\
+
+		@@You can now send $sophie.name text messages!@@
+		
+		<<set $sophie.dose += 1>>\
+		<<set $sophie.doseD to 5>>\
+		<<AddWorkEvent 38>>\
+		<<SetFlag $player "TextSophie">>\
+		<<SetFlag $sophie "CallForSex">>\
+		<<AddNote $sophie "You used the MCS serum on $sophie.name tonight, this time further increasing her sex drive to the point that she's inclined to start demanding it from me at work.">>\
+		<<btnLink "Continue" "Steakhouse-Outside">>
+	
+	<<case "d6">>\
+	
+<</switch>>
+
+
+:: Sophie-FreePlay-DinnerDate {"position":"725,14975","size":"100,100"}
+<<set $sophie.dinnerScheduled to false>>\
+    <<if firstVisit()>>\
+        ''As you approach the elevator doors to head home, you can see $sophie.name standing in the lobby waiting for you.''
+
+        <<pic $sophie>>\
+
+        <<nm $sophie "Ah, $player.sophieName. You had something you wanted to discuss after work?">>\
+
+        <<nm $player "Hey $sophie.name. Yeah, I was wondering if you might want to grab dinner and chat?">>\
+
+        ''$sophie.name smiles.''
+
+        <<nm $sophie "Hmm, I see... Do you want to know a secret, <<Mr>> $player.surname? About... myself?">>\
+
+        ''You begin to tense up slightly as $sophie.name approaches, now standing nearly toe to toe with you.''
+
+        <<nm $player "I-I, um, yes?">>\
+
+        ''She leans in.''
+
+        <<nm $sophie "The truth is... Well you see...">>\
+
+        ''$sophie.name backs away, gliding back to the elevator. She spins around with a bright smile on her face, something you don't think you've ever seen from her before. It's enough to catch you off guard.''
+
+        <<nm $sophie "The truth is, <<Mr>> $player.surname, I simply cannot resist a good steak! And I mean a 'real' steak. Most people just assume I'm the fine dining, oysters and caviar type, or maybe those obnoxious little fillet cubes... No, no. Give me a 16 ounce rib-eye and a side of baked potato in a loud, smoky steakhouse and I'm truly, //truly// content.">>\
+
+        <<nm $player "...">>\
+
+        ''You can't help it, seeing the expression on $sophie.name's face along with a completely unexpected break of character sends you doubling over in laughter. It's too much, and before you know it you've fallen to the floor, clutching your side.''
+
+        <<nm $sophie "<<Mr>> $player.surname!">>\
+
+        <<nm $player "I'm... Oh, man, I'm sorry... I just... Aha! Hooo... Y-yeah... I'm good now...">>\
+
+        <<nm $sophie "Hmph... ANYWAY, if you're finished... Since you're so keen on getting to know me better, I thought I would extend you an invitation to join me tonight. In fact, I insist on it.">>\
+
+        ''Not one to argue with your boss, you follow $sophie.name into the elevator and head up to the surface. The two of you step into a company vehicle where $sophie.name instructs the driver to take the both of you to 'the usual place'. After about twenty minutes of silence, the SUV parks in front of the Rippin' Steer Steakhouse. You can't help but give $sophie.name an amused look.''
+
+        <<nm $sophie "Don't you judge. Come on, let's go.">>\
+
+        ''You follow her out of the vehicle and into the steakhouse.''
+    <<else>>\
+        <<pic $sophie>>\
+
+        <<nm $sophie "Ah, <<Mr>> $player.surname...">>\
+
+        <<nm $player "Hey $sophie.name. You're looking a little stressed.">>\
+
+        ''She laughs.''
+
+        <<nm $sophie "Oh is that so? I don't suppose you some kind of plan to assist with that tonight?">>\
+
+        ''You step up closer.''
+
+        <<nm $player "Well, I was thinking about taking my favorite boss out for a nice steak dinner, if you're up to it.">>\
+
+        ''She laughs again, this time blushing slightly.''
+
+        <<nm $sophie "<<Mr>> $player.surname, you're not nearly as charming as you think you are... Still, getting out of the office with some company might not be the worst idea in the world...">>\
+
+        <<nm $player "Sounds like a yes to me!">>\
+
+        <<if $sophie.doseF > 1>>\
+            ''$sophie.name steps towards you.''
+            
+            <<nm $sophie "I... Thank you, $player.name, this sounds like exactly what I needed right now. Shall we go?">>\
+            
+            <<nm $player "Heh, hey, no worries. C'mon, let's try to get our minds off things for at least a couple hours.">>\
+            
+            ''$sophie.name motions to the elevator door and the two of you head up.''
+        <<elseif $sophie.doseD > 1>>\
+            ''$sophie.name steps towards you, getting in close and wrapping her fingers around your shoulder. You can hear her shudder in pleasure.''
+            
+            <<nm $sophie "Such a good <<boy>>, always looking out for me. Hm, shall we?">>\
+            
+            <<nm $player "H-heh, yeah, let's go.">>\
+            
+            ''$sophie.name motions to the elevator door and the two of you head up.''
+        <<elseif $sophie.doseS > 1>>\
+            ''$sophie.name approaches you.''
+            
+            <<nm $sophie "Th-thanks for thinking about me, $player.name... Perhaps afterwards I can find a way to... thank you properly?">>\
+            
+            <<nm $player "I'd like that, $sophie.name. Should we go?">>\
+            
+            <<nm $sophie "Yes, let's!">>\
+            
+            ''$sophie.name motions to the elevator door and the two of you head up.''
+        <<else>>\
+            ''$sophie.name motions to the elevator door and the two of you head up.''
+        <</if>>\
+    <</if>>\
+
+    <<btnLink "Continue" "Sophie-FreePlay-DinnerDate2">>
+
+
+:: Sophie-FreePlay-DinnerDate2 {"position":"850,14975","size":"100,100"}
+<<loc_Steakhouse>>\
+
+	''You're greeted at the entrance by a young waitress who immediately recognizes $sophie.name.''
+
+	<<nm $girl "Sophie! Welcome back!">>\
+
+	<<nm $sophie "Hello dear. Table for two this time, a booth in the back if you have one.">>\
+
+	''She grabs two menus and motions for you to follow.''
+
+	<<nm $girl "Right this way!">>\
+
+	''You take in the atmosphere as you're led through the restaurant. Tables and booths are filled with couples and families, while patrons at the bar drink out of bottles and shout at the TV. Country music plays loudly over the speakers while the smell of smoke and charcoal fill the air. You feel right at home in a place like this, but you're still getting over just how comfortable $sophie.name seems right now.''
+
+	<<nm $girl "Your table. Here's our specials menu and your server will be with you shortly. Enjoy!">>\
+
+	''With a warm smile, the woman disappears.''
+
+	<<nm $player "Well... This is... nice...">>\
+
+	<<nm $sophie "Indeed! Things have been quite eventful lately, and I think a break is well deserved.">>\
+
+	''Before you can respond, your server appears next to your table. You both ask for water, and $sophie.name requests a bottle of wine.''
+
+	<<nm $sophie "Do you know what you want to eat?">>\
+
+	<<nm $player "Hm? Oh, um, I mean, I'll just have whatever you're having.">>\
+
+	<<nm $sophie "Very well. My colleague and I will each take the eight ounce sirloin, medium rare, with a side of... baked potato?">>\
+
+	<<nm $player "Sounds good to me.">>\
+
+	''The server takes your order, returning a moment later with waters, empty wine glasses, and a bottle of red wine. $sophie.name pours you each a glass.''
+
+	<<nm $player "So, I gotta say. I'm surprised at how relaxed you seem right now. At the office you're always so... professional.">>\
+
+	<<nm $sophie "Is that so? Hm... Maybe this was a mistake, then?">>\
+
+	<<nm $player "Oh, no! I just mean, it's nice to see that at the end of the day you're, ah...">>\
+
+	<<nm $sophie "Human? Ha, yes well... Ah, our meal has arrived!">>\
+
+	''The server returns with your plates, laying them out on the table in front of you. You can't help but smile in response to $sophie.name's overjoyed expression as she lifts her fork and steak knife.''
+
+	<<nm $sophie "Enough shop talk. Let's eat!">>\
+
+	''The two of you eat, and chat, and drink, and seem to be having a genuinely good time together. It's somewhat reassuring to see $sophie.name let loose a little bit, given how reserved she tends to be at the office. Before you know it, your plates are cleared.''
+
+	<<nm $player "Oh man, that was great!">>\
+
+	<<nm $sophie "Wasn't it? Ahhh... Now, if you'll excuse me...">>\
+
+	''$sophie.name gets up from her seat rather quickly and starts walking towards the bathroom. You lean back in your seat, allowing your hands to fall to your sides.''
+
+	<<nm $player "Hm?">>\
+
+	''You pull a small vial out of your pocket.''
+
+	<<nm $player "Must have forgotten about this... Actually...">>\
+
+	''The wine glass across the table is still half full, and $sophie.name's judgment is more than a little compromised at this point. You start to consider the opportunity in front of you.''
+
+	<<if $sophie.dose > 2 and not visited("Sophie-Apartment-Intro")>>\
+        <<nm $sophie "You're gonna come home w'th me tonight. Case closed.">>\
+
+        ''You nearly spit out your drink.''
+
+        <<nm $player "S-sorry, what was that!?">>\
+
+        <<nm $sophie "Mmmmmmhm! C'mon, le's get in the car. That's on order!">>\
+
+        ''$sophie.name stands up and grabs you by the hand, pulling you to your feet as she stumbles out of the restaurant. You can never quite catch your breath enough to argue with her, and before you know it you've been pulled into her now-moving SUV.''
+
+        <<nm $player "H-hey, hold oMPH-">>\
+
+        <<pic $sophie "kiss-player">>\
+
+        <<nm $sophie "Mmmm, mmmmm... Shhh, we can talk later baby, mmmmm...">>\
+
+        ''And with that, you're off to gods know where making out with your boss in the back of a company vehicle...''
+
+        <<btnLink "Continue..." "Sophie-Apartment-Intro" "setTime('night')">>\
+    <<else>>\
+		<<btnChoice "Put the serum in her drink" "Sophie-FreePlay-DinnerDateDose">>
+		<<btnChoice "Don't spike her drink" "Sophie-FreePlay-DinnerDateNoDose">>
+    <</if>>\
+
+
+:: Sophie-FreePlay-DinnerDateDose {"position":"975,14975","size":"100,100"}
+<<loc_Steakhouse>>\
+
+    <<Thought "Alright, I don't know when I'll get another chance like this...">>\
+				
+    ''You pour the contents of the vial into $sophie.name's wine glass and give it a quick stir. A couple minutes later she returns to the table and sits down.''
+    
+    <<nm $sophie "I took care of the check while I was up. It's been a rather long evening, hasn't it?">>\
+    
+    <<nm $player "Oh, thanks for covering the check. Yeah, it's been a long couple of weeks. Thank god for wine, right?">>\
+    
+    <<nm $sophie "Ha, indeed...">>\
+    
+    ''Your subtle suggestion prompts $sophie.name to finish off her glass. After she sets it back down, she begins to shift slightly in her seat. Her eyes begin to glaze over and their color changes slightly...''
+    
+    <<btnLink "Issue a command" "Sophie-Dose" "$c=0">>
+
+
+:: Sophie-FreePlay-DinnerDateNoDose {"position":"1100,14975","size":"100,100"}
+<<loc_Steakhouse>>\
+
+    <<Thought "No, I think I'll leave things alone for now...">>\
+				
+    ''You slip the vial back into your pocket and a couple minutes later, $sophie.name returns to the table.''
+    
+    <<nm $sophie "I took care of the check while I was up. It's getting rather late, shall we go?">>\
+    
+    <<nm $player "Oh, thanks for that. Yeah, sounds good.">>\
+    
+    ''The two of you gather your belongs and head back outside.''
+    
+    <<btnLink "Continue" "Steakhouse-Outside">>
+
+
+:: Sophie-ISS-Condo-AnalCreampie {"position":"225,17725","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    <<pic $sophie "ass-fucked-by-player-doggy">>\
+
+    <<nm $sophie "H-haa! Haa! H-holy f-fuck, $player.name... I-I'm going to...">>\
+
+    ''You continue to mercilessly pound $sophie.name's trembling asshole, her juices spraying back from her drenched pussy onto your thighs as she howls in ecstasy. It's not long before you can feel your own orgasm welling up, causing you to tighten your grip on the older woman's waist.''
+
+    <<nm $player "$sophie.name... I'm c-cumming!">>\
+
+    <<nm $sophie "Yes! Fill me up $player.name! F-FUCK!">>\
+
+    <<pic $sophie "creampie-anal">>\
+
+    ''Wave after wave of thick cum fills $sophie.name's ass, the warm sensation sending her over the edge and face first into her sheets. You hold your position, pumping out every last drop before pulling out and collapsing next to her.''
+
+    <<nm $sophie "Mmmm... that was... excellent...">>\
+
+    <<nm $player "Y-yeah... fuck...">>\
+
+    <<SexResults $sophie>>\
+
+    <<horny 0>>
+
+    <<trackAction "creampie.give" $sophie>>\
+    <<btnLink "Continue" "Sophie-ISS-Condo-Cleanup">>\
+
+
+:: Sophie-ISS-Condo-Cleanup {"position":"100,17850","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    <<pic $sophie "sophie-nekkid">>\
+
+    <<if flag($sophie,"Feminizing")>>\
+        <<nm $sophie "Mmmmm, not bad at all... little girl...">>\
+
+        ''$sophie.name's not so subtle reminder of your new role in the relationship is both biting and arousing, and all you can do is blush and accept it.''
+
+        <<nm $player "T-thank... you... Mistress...">>\
+    <<elseif $sophie.isDom>>\
+        <<nm $sophie "Hmmm, I must say... you didn't do half bad, $player.name...">>\
+
+        <<nm $player "Thank you? You're pretty great yourself.">>\
+
+        ''$sophie.name purrs as she runs a finger down your neck.''
+
+        <<nm $sophie "Tell me something I don't know, sweetie.">>\
+    <<elseif $sophie.isSub>>\
+        <<nm $sophie "That was... fantastic! We should do this more often, yeah?">>\
+
+        <<nm $player "Haha, yeah, definitely...">>\
+    <<else>>\
+        <<nm $sophie "Mmmm... that was wonderful $player.name...">>\
+
+        ''$sophie.name leans over, kissing you on your neck.''
+
+        <<nm $player "Yeah... definitely need to do that more often...">>\
+    <</if>>\
+
+    ''You both lay in bed for a little longer before $sophie.name finally gets up and starts typing on her phone. After a moment, she turns to you.''
+
+    <<nm $sophie "I've contacted my driver, he'll be here in about ten minutes to pick you up and take you back home.">>\
+
+    <<nm $player "Hah, just like that, huh?">>\
+
+    ''$sophie.name winks at you before walking into her bathroom and turning on the shower.''
+
+    <<nm $sophie "Just like that.">>\
+
+    ''You shrug you shoulders and start fishing for your clothing. A honk from outside signals your ride has arrived just as you finish putting on your <<shoes>>. You call to $sophie.name, still in the shower, letting her know you're on your way out before leaving through the front door.''
+
+    <<Thought "Feeling just a little used! Ah well, probably worth it...">>\
+
+    ''The familiar SUV gets you home late. You quietly sneak through the front door and into your bedroom where you abruptly crash into bed.''
+
+    <<Thought "So... beat...">>\
+
+    <<run setDailyCD("SophieCondo",3)>>\
+    <<SetFlag $sophie "UnlockCondo">>\
+    <<btnLink "Fall asleep" "Room-GotoBed">>\
+
+
+:: Sophie-ISS-Condo-CleanupChastity {"position":"225,17850","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    ''As you're catching your breath, $sophie.name is resting her head on your soft stomach, gently stroking your <<pSize>> with her finger.''
+
+    <<pic $sophie "sophie-nekkid">>\
+
+    <<nm $sophie "Mmmm, your little clitty is so cute, $player.name... but you know...">>\
+
+    <<nm $player "Hm?">>\
+
+    ''$sophie.name sits up and spins around, giving you a devious look dead in the eyes. She holds her gaze for a moment before jumping out of bed and pulling a small box out from a drawer.''
+
+    <<nm $sophie "I bet we can make it even cuter, though! Close you eyes!">>\
+
+    <<nm $player "I-I... um...">>\
+
+    <<nm $sophie "NOW!">>\
+
+    ''You do as your told, closing your eyes and leaning your head back. $sophie.name softly strokes your flacid cock for a moment before, much to your surprise, sliding it into her mouth. Her soft tongue is warm and wet, and the sensation is amazing. You're more than a little dissappointed when she stops, but the real shock is what comes immediately after.''
+
+    <<AddChastity $sophie>>\
+
+    <<nm $player "W-what the!?">>\
+
+    <<nm $sophie "It's SO CUTE!">>\
+
+    ''You open your eyes to see a bright pink chastity device locked around your penis. You don't immediately react, and as you take in the sight before you you can't help but feel more than a little aroused.''
+
+    <<nm $player "M-my... b-but...">>\
+
+    <<nm $sophie "Oh sweetie, you were never going to use that little thing anyway... Don't worry, I won't take it away, the whole point is that you get to live as a sissy slut and not a real woman. Mmmmm, just thinking about watching that little cage bouncing around while hordes of men take turns passing you around... Fuck, I need a shower!">>\
+
+    ''$sophie.name quickly gets up and starts typing on her phone. After a moment, she turns to you.''
+
+    <<nm $sophie "I've contacted my driver, he'll be here in about ten minutes to pick you up and take you back home. I'll see you at the office!">>\
+
+    <<nm $player "W-wait, M-mistress...">>\
+
+    ''She's already left and turned on the shower. All you can do is accept your new fate and gather your clothing. A honk from outside signals your ride has arrived just as you finish putting on your <<shoes>>. You call to $sophie.name, still in the shower, letting her know you're on your way out before leaving through the front door.''
+
+    <<Thought "M-maybe this won't be so bad...">>\
+
+    ''The familiar SUV gets you home late. You quietly sneak through the front door and into your bedroom where you abruptly crash into bed.''
+
+    <<Thought "So... beat...">>\
+
+    <<run setDailyCD("SophieCondo",3)>>\
+    <<SetFlag $sophie "UnlockCondo">>\
+    <<btnLink "Fall asleep" "Room-GotoBed">>\
+
+
+:: Sophie-ISS-Condo-Creampie {"position":"100,17725","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    <<pic $sophie "fucked-by-player-doggy">>\
+
+    <<nm $sophie "H-haa! Haa! H-holy f-fuck, $player.name... I-I'm going to...">>\
+
+    ''You continue to mercilessly pound $sophie.name's trembling pussy, her juices spraying back onto your thighs as she howls in ecstasy. It's not long before you can feel your own orgasm welling up, causing you to tighten your grip on the older woman's waist.''
+
+    <<nm $player "$sophie.name... I'm c-cumming!">>\
+
+    <<nm $sophie "Yes! Fill me up $player.name! F-FUCK!">>\
+
+    <<pic $sophie "creampie">>\
+
+    ''Wave after wave of thick cum fills $sophie.name's pussy, the warm sensation sending her over the edge and face first into her sheets. You hold your position, pumping out every last drop before pulling out and collapsing next to her.''
+
+    <<nm $sophie "Mmmm... that was... excellent...">>\
+
+    <<nm $player "Y-yeah... fuck...">>\
+
+    <<SexResults $sophie>>\
+
+    <<preg $sophie>>
+
+    <<horny 0>>
+
+    <<trackAction "creampie.give" $sophie>>\
+    <<btnLink "Continue" "Sophie-ISS-Condo-Cleanup">>\
+
+
+:: Sophie-ISS-Condo-CumInMouth {"position":"475,17725","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    <<pic $sophie "suck-player">>\
+
+    ''$sophie.name continues vigorously bobbing up and down on your <<pSize>>, masterfully licking and sucking and eventually sending you over the edge.''
+
+    <<nm $sophie "Mmph! Mph! HMPH!">>\
+
+    <<nm $player "C-cumming!">>\
+
+    <<pic $sophie "cum-in-mouth">>\
+
+    ''You release rope after rope of thick cum directly into $sophie.name's mouth which happily swallows.''
+
+    <<nm $sophie "Mmmmm, perfect! I must say, $player.name, you taste quite amazing.">>\
+
+    <<nm $player "Haaa... hmmm, h-haha, thanks...">>\
+
+    ''You collapse into the bed as $sophie.name climbs up next to you.''
+
+    <<SexResults $sophie>>\
+
+    <<horny 0>>
+
+    <<trackAction "cumEat.give" $sophie>>\
+    <<btnLink "Continue" "Sophie-ISS-Condo-Cleanup">>\
+
+
+:: Sophie-ISS-Condo-CumOnFace {"position":"600,17725","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    <<pic $sophie "fucked-by-player-doggy">>\
+
+    <<nm $sophie "H-haa! Haa! H-holy f-fuck, $player.name... I-I'm going to...">>\
+
+    ''You continue to mercilessly pound $sophie.name's trembling pussy, her juices spraying back from her drenched pussy onto your thighs as she howls in ecstasy. It's not long before you can feel your own orgasm welling up, prompting you to quickly pull out and spin her around so her face lines up directly with with your pulsing cock.''
+
+    <<nm $player "$sophie.name... I'm c-cumming!">>\
+
+    <<pic $sophie "cum-on-face">>\
+
+    ''You release rope after rope of thick cum across $sophie.name's face, which she then happily licks up.''
+
+    <<nm $sophie "Mmmmm, perfect! I must say, $player.name, you taste quite amazing.">>\
+
+    <<nm $player "Haaa... hmmm, h-haha, thanks...">>\
+
+    ''You collapse into the bed as $sophie.name climbs up next to you.''
+
+    <<SexResults $sophie>>\
+
+    <<horny 0>>
+
+    <<trackAction "cumBody.give" $sophie>>\
+    <<btnLink "Continue" "Sophie-ISS-Condo-Cleanup">>\
+
+
+:: Sophie-ISS-Condo-EatPussy {"position":"475,17600","size":"100,100"}
+<<loc_SophieApartment>>\
+    
+    <<if previous() is "Sophie-ISS-Condo-RideFace">>\
+        <<SexUpdate 5 3 0 3>>\
+        ''You climb off of $sophie.name's face, drenched with her own drool<<if hasPussy()>>, and no small amount of your own juices<</if>>. As she catches her breath, you waste no time sliding down and situating your face directly in front of her wet, quivering pussy.''
+
+        <<nm $sophie "Wha... w-what are you... O-OOHHH!!">>\
+    <<else>>\
+        ''You lower your head slightly as $sophie.name gingerly strokes her glistening slit in front of you.''
+
+        <<pic $sophie "spread">>\
+
+        <<if $sophie.isDom>>\
+            <<SexUpdate 3 1 0 1>>\
+            <<nm $sophie "Mmm, something on your mind?">>\
+
+            <<nm $player "Heh, just relax...">>\
+
+            ''As you begin kissing her inner thighs, $sophie.name throws her head back in satisfaction while you work your way closer and closer to her quivering pussy. You can feel her shudder every time you glide from one thigh to the other, making sure to focus your breath directly onto her hole with every pass.''
+
+            <<nm $sophie "S-stop teasing me already a-and! O-OOOHHH!">>\
+        <<elseif $sophie.isSub>>\
+            <<SexUpdate 5 3 0 3>>\
+            <<nm $sophie "Mmmm, hehe, sorry, I can't help but touch myself in front of you...">>\
+
+            <<nm $player "I understand, but...">>\
+            
+            ''You lower yourself into position and eagerly inhale. You almost immediately become lightheaded as her intoxicating scent floods your senses. You lean in...''
+        <<else>>\
+            <<nm $sophie "Mmmm, hehe, you don't mind, do you?">>\
+
+            <<nm $player "No, but I bet I could make you feel even better...">>\
+            
+            ''You lower yourself into position and eagerly inhale. You almost immediately become lightheaded as her intoxicating scent floods your senses. You lean in...''
+        <</if>>\
+    <</if>>\
+
+    <<pic $sophie "eaten-by-player">>\
+
+    <<skillComment $sophie "eatPussy.give"
+        "O-OH MY! Mmmmm, o-ooohhhhh $player.name! S-so gooood!"
+        "O-oohhhh, mmmmm... You're q-quite good at this... Haaaaa..."
+        "Mmmm, very nice... keep going..."
+        "Hmmm, not bad... You're definitely going to be getting some more practice, though!"
+        "W-wow, hey, be more c-careful down there!"
+    >>\
+
+    <<nm $player "Mmmm, mph! Mmph!" "She tastes soooo good!">>\
+
+    ''You continue for some time as $sophie.name moans in pleasure.''
+
+    <<trackAction "eatPussy.give" $sophie>>\
+    <<if canFuck()>>\
+        <<if $sophie.isDom>>\
+            <<btnDom "Throw her back into the bed and fuck her pussy" "Sophie-ISS-Condo-FuckPussy">>\
+        <<else>>\
+            <<btnDom "Throw her back into the bed and fuck her asshole" "Sophie-ISS-Condo-FuckAss">>\
+            <<btnChoice "Throw her back into the bed and fuck her pussy" "Sophie-ISS-Condo-FuckPussy">>\
+        <</if>>\
+        <<btnChoice "Have $sophie.name suck on your <<StraponOrCock>>" "Sophie-ISS-Condo-GetSucked">>\
+    <<else>>\
+        <<btnChoice "Climb over her and grind your <<AssOrPussy>> into $sophie.name's mouth" "Sophie-ISS-Condo-RideFace">>\
+    <</if>>\
+    <<btnChoice "Lick her pussy until she squirts" "Sophie-ISS-Condo-SwallowSquirt">>\
+
+
+:: Sophie-ISS-Condo-FacesitCum {"position":"1100,17725","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    <<if not hasPenis()>>\
+        <<pic $player "facesit-female">>\
+
+    <</if>>\
+    ''You continue grinding your <<if hasPussy()>>gushing <</if>><<AssOrPussy>> into your helpless boss's eager mouth, juices running down her chin and chest, as she desperately rubs her clit in seek of her own release. You've been riding her for a little while now, and you can start to feel the warm sensation of your building climax in your now-quivering thighs.''
+
+    <<nm $player "F-FUCK! $sophie.name... G-get ready! I'm about t-to... F-FUCK! CUMMING!">>\
+
+    <<nm $sophie "M-MMPH!?" "I'm cumming too!">>\
+
+    <<if isMale() and isChastity()>>
+        <<pic $action "chastity-squirt">>\
+    <<else>>\
+        <<pic $player "squirt">>\
+    <</if>>\
+
+    ''Thick squirt sprays across $sophie.name's face, the entire bed beneath her now soaked. You keep riding her, even harder than before, grabbing and rubbing your <<bSize>> as you milk your intense orgasm for all it's worth before finally falling over and collapsing into the mattress next to your exhausted partner.''
+
+    <<nm $sophie "Haaaaa... h-haaaaa... fuuuuuuu... $player.name... that was...">>\
+
+    <<nm $player "Hahaha, y-yeah... yeah it was...">>\
+
+    ''$sophie.name reaches out, wrapping her hand around yours as she catches her breath.''
+
+    <<SexResults $sophie>>\
+
+    <<horny 0>>
+
+    <<trackAction "cumEat.give" $sophie>>\
+    <<trackAction "eatPussy.give" $sophie>>\
+    <<btnLink "Continue" "Sophie-ISS-Condo-Cleanup">>\
+
+
+:: Sophie-ISS-Condo-FuckAss {"position":"975,17600","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    <<switch previous()>>\
+        <<case "Sophie-ISS-Condo-Start">>\
+            <<SexUpdate 3 4 0 5>>\
+            ''Without saying a word you throw $sophie.name back into the bed and pull out your <<StraponOrCock size>>, stroking it in front of her.''
+
+            <<pic $sophie "spread-ass">>\
+
+            <<nm $sophie "Mmm, no foreplay? Well, I have to give credit to a <<man>> who doesn't care to waste time with formalities... What are you waiting for? Take me!">>\
+        <<case "Sophie-ISS-Condo-Kiss">>\
+            <<SexUpdate 4 3 0 3>>\
+            <<pic $sophie "kiss-player">>\
+
+            <<nm $sophie "Mmmm, mmmm, mmphwah! Haaa, hahaha, hmm...">>\
+
+            <<nm $player "What? Bored already? Fine then!">>\
+
+            ''You throw $sophie.name down into the bed, pulling out your <<StraponOrCock size>> and stroking its length in front of her.''
+
+            <<nm $sophie "Mmm, now we're talking! Well, what are you waiting for? Take me already!">>\
+        <<case "Sophie-ISS-Condo-EatPussy">>\
+            <<SexUpdate 5 5 0 3>>\
+            <<pic $sophie "eaten-by-player">>\
+
+            ''You pull away from $sophie.name's pussy, sitting up in front of her.''
+
+            <<nm $sophie "A-aw... Why did you stop!?">>\
+
+            <<nm $player "Well, I thought we could go ahead and get to the main attraction...">>\
+
+            ''$sophie.name looks down and sees you stroking your <<StraponOrCock size>>, a smile spreads across her face.''
+
+            <<nm $sophie "Mmm, now we're talking! Well, what are you waiting for? Take me already!">>\
+        <<case "Sophie-ISS-Condo-GetSucked">>\
+            <<SexUpdate 5 5 0 3>>\
+            <<pic $sophie "suck-player">>\
+
+            ''You pull away from $sophie.name's face, leaving her looking more than a little dissappointed.''
+
+            <<nm $sophie "A-aw... why?">>\
+
+            <<nm $player "Well, I thought we could go ahead and get to the main attraction...">>\
+
+            ''$sophie.name looks up and sees you stroking your <<StraponOrCock size>>, a smile spreads across her face.''
+
+            <<nm $sophie "Mmm, now we're talking! Well, what are you waiting for? Take me already!">>\
+        <<case "Sophie-ISS-Condo-FuckPussy">>\
+            <<SexUpdate 4 3 0 5>>\
+            <<pic $sophie "fucked-by-player-doggy">>\
+
+            <<nm $sophie "Ha! H-haa! Mmmm!">>\
+
+            ''You abruptly pull your <<StraponOrCock size>> out of $sophie.name's gushing pussy. The sudden empty sensation is enough to make her gasp, but before she can rest you've already lined yourself up with her trembling asshole.''
+    <</switch>>\
+
+    <<pic $sophie "ass-fucked-by-player-doggy">>\
+
+    <<if $sophie.isDom>>\
+        <<nm $sophie "W-what the fuck!? W-who told you you could p-put that oOOH! FUCK!">>\
+    <<else>>\
+        <<nm $sophie "A-ah! Seriously!? H-hold on a minuoOOH! F-FUCK!">>\
+    <</if>>\
+
+    ''You ignore $sophie.name's weak pleas, railing away at her surprisingly accommodating asshole.''
+
+    <<if hasPenis()>>\
+        <<CommentPenis $sophie
+            "HAAA! Mmmm, o-ooohhhh FUCK! $player.name! Y-you're going to tear me apart! It's t-too big!"
+            "Haaa! Mmmmm, ooohhhhh fuck $player.name! Your thick cock is t-too much!"
+            "Mmmmm, ooooohhhh! $player.name, y-you... you feel amazing in my ass!"
+            "Mmmm, f-fuck! Your cock feels amazing in my ass! Fuck me harder $player.name!"
+            "Mmmm, f-fuck! Your cock feels amazing in my ass! Fuck me harder $player.name!"
+        >>\
+    <<else>>\
+        <<nm $sophie "H-HA! O-oh my god, $player.name! Y-you're gonna tear me open!">>\
+    <</if>>\
+
+    ''You continue to bury your <<StraponOrCock size>> as deep into $sophie.name's tight asshole as you can, her moans escalate and echo through the bedroom. You can see her gripping the sheets as you ram her from behind, and after a few moments you can begin to feel her thighs trembling.''
+
+    <<nm $sophie "$player.name... I-I..." "<<He>>'s going to make me... make me CUM!">>\
+
+    <<trackAction "analFuck.give" $sophie>>\
+    <<if previous() isnot "Sophie-ISS-Condo-FuckPussy">>\
+        <<btnChoice "Pull out, and slam your <<StraponOrCock>> into $sophie.name's pussy" "Sophie-ISS-Condo-FuckPussy">>\
+    <</if>>\
+    <<if hasPenis()>>\
+        <<btnChoice "Cum inside $sophie.name's ass" "Sophie-ISS-Condo-AnalCreampie">>\
+        <<btnChoice "Pull out and cum on $sophie.name's face" "Sophie-ISS-Condo-CumOnFace">>\
+    <<else>>\
+        <<btnChoice "Bury your <<accf>> inside her and cum together" "Sophie-ISS-Condo-StraponCum">>\
+    <</if>>\
+
+
+:: Sophie-ISS-Condo-FuckPussy {"position":"850,17600","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    <<switch previous()>>\
+        <<case "Sophie-ISS-Condo-Start">>\
+            <<SexUpdate 3 4 0 5>>\
+            ''Without saying a word you throw $sophie.name back into the bed and pull out your <<StraponOrCock size>>, stroking it in front of her.''
+
+            <<pic $sophie "spread-ass">>\
+
+            <<nm $sophie "Mmm, no foreplay? Well, I have to give credit to a <<man>> who doesn't care to waste time with formalities... What are you waiting for? Take me!">>\
+        <<case "Sophie-ISS-Condo-Kiss">>\
+            <<SexUpdate 4 3 0 3>>\
+            <<pic $sophie "kiss-player">>\
+
+            <<nm $sophie "Mmmm, mmmm, mmphwah! Haaa, hahaha, hmm...">>\
+
+            <<nm $player "What? Bored already? Fine then!">>\
+
+            ''You throw $sophie.name down into the bed, pulling out your <<StraponOrCock size>> and stroking its length in front of her.''
+
+            <<nm $sophie "Mmm, now we're talking! Well, what are you waiting for? Take me already!">>\
+        <<case "Sophie-ISS-Condo-EatPussy">>\
+            <<SexUpdate 5 5 0 3>>\
+            <<pic $sophie "eaten-by-player">>\
+
+            ''You pull away from $sophie.name's pussy, sitting up in front of her.''
+
+            <<nm $sophie "A-aw... Why did you stop!?">>\
+
+            <<nm $player "Well, I thought we could go ahead and get to the main attraction...">>\
+
+            ''$sophie.name looks down and sees you stroking your <<StraponOrCock size>>, a smile spreads across her face.''
+
+            <<nm $sophie "Mmm, now we're talking! Well, what are you waiting for? Take me already!">>\
+        <<case "Sophie-ISS-Condo-GetSucked">>\
+            <<SexUpdate 5 5 0 3>>\
+            <<pic $sophie "suck-player">>\
+
+            ''You pull away from $sophie.name's face, leaving her looking more than a little dissappointed.''
+
+            <<nm $sophie "A-aw... why?">>\
+
+            <<nm $player "Well, I thought we could go ahead and get to the main attraction...">>\
+
+            ''$sophie.name looks up and sees you stroking your <<StraponOrCock size>>, a smile spreads across her face.''
+
+            <<nm $sophie "Mmm, now we're talking! Well, what are you waiting for? Take me already!">>\
+        <<case "Sophie-ISS-Condo-FuckAss">>\
+            <<SexUpdate 4 3 0 5>>\
+            <<pic $sophie "ass-fucked-by-player-doggy">>\
+
+            <<nm $sophie "Ha! H-haa! Mmmm!">>\
+
+            ''You abruptly pull your <<StraponOrCock size>> out of $sophie.name's trembling asshole. The sudden empty sensation is enough to make her gasp, but before she can rest you've already lined yourself up with her gushing pussy.''
+    <</switch>>\
+
+    <<pic $sophie "fucked-by-player-doggy">>\
+
+    <<if hasPenis()>>\
+        <<CommentPenis $sophie
+            "HAAA! Mmmm, o-ooohhhh FUCK! $player.name! Y-you're going to tear me apart!"
+            "Haaa! Mmmmm, ooohhhhh fuck $player.name! Your thick cock feels amazing!"
+            "Mmmmm, ooooohhhh! $player.name, you feel incredible! Mmmm, harder!"
+            "Mmmm, yeeaahhhh, there it is! Don't stop! Fuck me harder $player.name!"
+            "Mmm... Ooohhhh, $player.name... Can't you fuck me harder!?"
+        >>\
+    <<else>>\
+        <<nm $sophie "H-HA! O-oh my god, $player.name, mmmm, oooohhhh!">>\
+    <</if>>\
+
+    ''You continue to bury your <<StraponOrCock size>> as deep into $sophie.name's soaking wet pussy as you can, her moans escalate and echo through the bedroom. You can see her gripping the sheets as you ram her from behind, and after a few moments you can begin to feel her thighs trembling.''
+
+    <<nm $sophie "$player.name... I-I..." "<<He>>'s going to make me... make me CUM!">>\
+
+    <<trackAction "pussyFuck.give" $sophie>>\
+    <<if previous() isnot "Sophie-ISS-Condo-FuckAss">>\
+        <<if visited("Sophie-ISS-Condo-FuckAss")>>\
+            <<btnChoice "Pull out, and slam your <<StraponOrCock>> into $sophie.name's ass" "Sophie-ISS-Condo-FuckAss">>\
+        <<else>>\
+            <<btnDom "Pull out, and slam your <<StraponOrCock>> into $sophie.name's ass" "Sophie-ISS-Condo-FuckAss">>\
+        <</if>>\
+    <</if>>\
+    <<if hasPenis()>>\
+        <<btnDom "Cum inside $sophie.name" "Sophie-ISS-Condo-Creampie">>\
+        <<btnChoice "Pull out and cum on $sophie.name's face" "Sophie-ISS-Condo-CumOnFace">>\
+    <<else>>\
+        <<btnChoice "Bury your <<accf>> inside her and cum together" "Sophie-ISS-Condo-StraponCum">>\
+    <</if>>\
+
+
+:: Sophie-ISS-Condo-GetSucked {"position":"600,17600","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    <<if previous() is "Sophie-ISS-Condo-Start">>\
+        <<SexUpdate 3 1 0 2>>\
+        ''You stand up in front of $sophie.name, bringing your <<StraponOrCock size>> into view.''
+
+        <<nm $sophie "Mmmm, something you want baby?">>\
+
+        <<nm $player "Heh, maybe... You're not scared, are you?">>\
+
+        ''$sophie.name lunges forward, taking your <<StraponOrCock>> into her hand and stroking it as she looks up at you with an excited smile.''
+
+        <<nm $sophie "Mmm, never scared!">>\
+    <<else>>\
+        ''You pull away from $sophie.name's trembling mound, lean back, and start to stroke your <<StraponOrCock size>> wantingly in front of her.''
+
+        <<if $sophie.isDom>>\
+            <<SexUpdate 2 0 0 3>>\
+
+            <<nm $sophie "My, the nerve... Still, there's something undeniably, mmmm, intoxicating about a <<man>> who knows what <<he>> wants...">>\
+
+            ''$sophie.name lunges forward, taking your <<StraponOrCock>> into her hand and stroking it as she looks up at you with an excited smile.''
+
+            <<nm $sophie "You should be grateful, you know? Now lay back and enjoy yourself...">>\
+        <<else>>\
+            <<SexUpdate 3 2 0 2>>\
+
+            <<nm $sophie "Mmm, so that's what <<he>> wants... Well...">>\
+
+            ''$sophie.name lunges forward, taking your <<StraponOrCock>> into her hand and stroking it as she looks up at you with an excited smile.''
+
+            <<nm $sophie "I'd hate to dissappoint... Hehehe!">>\
+        <</if>>\
+    <</if>>\
+
+    <<pic $sophie "suck-player">>\
+
+    <<nm $player "O-oh! Mmmm, o-oooohhhh...">>\
+
+    <<if hasPenis()>>\
+        <<CommentPenis $sophie
+            "Mmmph! Hmph! MPH!|Holy shit, this thing is massive! I-it's making my jaw hurt!"
+            "Mmmph! Mmmph, mph! MPH!|Mmm, it's so big! I can feel it filling up my whole throat!"
+            "Mmph! Hmph! Ngph!|Mmm, this cock is just amazing!"
+            "Mph! Mmmph! Mmph!|Mmm, this cock is just so tasty..."
+            "Mmmmm, mmmph, Hmmph!|Mmm, this little cock is so cute! I should put a little bow on it..."
+        >>\
+    <<else>>\
+        <<nm $sophie "Mmmph! Mph! Hngph!" "This this is huge! I wonder how it'll feel inside me...">>\
+    <</if>>\
+
+    ''She carries on for some time, bobbing up and down on your <<StraponOrCock size>>, moaning and slurping and leaving you in absolute bliss as she works tirelessly. You're not sure when, but at some point she slipped one hand between her legs and now you can hear the wet smacking of her fingers plunging into her pussy as she works your cock with her mouth.''
+
+    <<nm $player "F-fuck! $sophie.name!">>\
+
+    <<trackAction "suckCock.get" $sophie>>\
+    <<btnDom "Throw her back into the bed and fuck her asshole" "Sophie-ISS-Condo-FuckAss">>\
+    <<btnChoice "Throw her back into the bed and fuck her pussy" "Sophie-ISS-Condo-FuckPussy">>\
+    <<if hasPenis()>>\
+        <<btnChoice "Cum in her mouth" "Sophie-ISS-Condo-CumInMouth">>\
+    <</if>>\
+
+
+:: Sophie-ISS-Condo-Kiss {"position":"225,17600","size":"100,100"}
+<<loc_SophieApartment>>\
+    <<SexUpdate 3 3 0 1>>\
+
+    ''Not being one to so easily let $sophie.name have complete control over the situation, you jump in and cut her off as you lock your lips with her, forcing your tongue into her mouth.''
+
+    <<pic $sophie "kiss-player">>\
+
+    <<nm $sophie "M-MPH!" "H-how aggressive! Mmm...">>\
+
+    ''You both take the time to explore each other's bodies while maintaining your intense kiss. Eventually, you move down to her neck, then her chest...''
+
+    <<nm $sophie "Mmmm, $player.name... you clearly deserve a little more credit... So, what's next?">>\
+
+    <<if canFuck()>>\
+        <<btnDom "Spin her around and ram your <<StraponOrCock size>> into her pussy" "Sophie-ISS-Condo-FuckPussy">>\
+        <<btnChoice "Stand up and stroke your <<StraponOrCock size>> in front of her face" "Sophie-ISS-Condo-GetSucked">>\
+    <</if>>\
+    <<btnChoice "Work your way down and eat her pussy" "Sophie-ISS-Condo-EatPussy">>\
+
+
+:: Sophie-ISS-Condo-RideFace {"position":"725,17600","size":"100,100"}
+<<loc_SophieApartment>>\
+    <<SexUpdate 5 3 0 5>>\
+
+    ''You push $sophie.name back into the bed and, before she can react, you throw one of your legs over her head and allow your <<if hasPussy()>>wet, <<vSize>><<else>><<aSize>><</if>> to hover just above her nose.''
+
+    <<nm $sophie "O-oh my! How aggressive!">>\
+
+    <<nm $player "Think so? Well, let's quiet your opinions for a little bit, hm?">>\
+    <<if hasPussy()>>\
+    
+        <<pic $player "facesit-female">>\
+    <</if>>\
+
+    <<nm $sophie "HMPH!">>\
+
+    <<nm $player "Mmmm, just like that! O-ooohhhh, mmmmm, come on! Get your tongue in deeper!">>\
+
+    ''$sophie.name struggles beneath you as she tries to press her tongue deeper and deeper into your <<AssOrPussy>>. Despite how little regard you're currently giving to her comfort, you watch as she slides one hand down between her thighs and starts vigorously rubbing her clit.''
+
+    <<nm $sophie "Mmph! Hmmmph! A-ANMPH! Mmmm..." "<<He>>'s so rough! But, mmm, f-fuck!">>\
+
+    <<if hasPussy()>>\
+        <<trackAction "eatPussy.get" $sophie>>\
+    <<else>>\
+        <<trackAction "rimjob.get" $sophie>>\
+    <</if>>\
+    <<btnDom "Grind your <<AssOrPussy>> into $sophie.name's mouth until you cum" "Sophie-ISS-Condo-FacesitCum">>
+    <<if hasPussy()>>\
+        <<btnChoice "Climb off and grind your pussy into $sophie.name's" "Sophie-ISS-Condo-Trib">>
+    <</if>>\
+    <<btnChoice "Climb off and start licking $sophie.name's pussy" "Sophie-ISS-Condo-EatPussy">>
+
+
+:: Sophie-ISS-Condo-SissyCum {"position":"1225,17725","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    <<pic $player "fucked-by-female-doggy">>\
+
+    ''You squeal and yelp in a high, girly pitch as $sophie.name continues to mercilessly pound you from behind. Your <<if isChastity()>>locked up <</if>><<pSize>> pathetically flaps up and down between your trembling thighs while the dominant woman drives her massive cock deeper and deeper into your <<aSize>>.''
+
+    <<nm $sophie "Mmmmm... F-fuck, $player.name! Your little sissy fuckhole feels amazing! I think I'm about to cum, how about you, hm?">>\
+
+    <<nm $player "I-I... Oooohhh... M-Mistress!" "S-she's gonna make me c-cum just from fucking me!">>\
+
+    ''All it takes is one last thrust, the head of $sophie.name's big fake cock slamming against your prostate, for you to start shooting streams of cum out from between your legs.''
+
+    <<if isChastity()>>\
+        <<pic $action "chastity-squirt">>\
+    <<else>>\
+        <<pic $action "sissy-squirt">>\
+    <</if>>\
+
+    ''You start to lose your balance, the orgasm making you lightheaded, but $sophie.name only fucks you harder.''
+
+    <<nm $sophie "We're not done yet, slut! You think the men I'll have lining up to use your ass are going to stop just because you're such a slut that you cum early? I don't think so!">>\
+
+    ''$sophie.name rams her giant strapon deeper and harder until the harness eventually brings her to her own rolling orgasm. The pleasure brought on from $sophie.name's climax, of course, only makes her somehow bury herself even deeper inside of you.''
+
+    <<nm $player "HNGH!" "TOO DEEP!">>\
+
+    <<pic $sophie "orgasm">>\
+
+    <<nm $sophie "F-FUCK! OOOOOooooohhhhh... Mmmmmm... FUCK that's amazing! Mmmm... well done little sissy... haaaa...">>\
+
+    ''The fake cock exits your well used asshole with a loud 'pop' as $sophie.name falls over next to you, collapsing into the mattress.''
+
+    <<SexResults $sophie>>\
+
+    <<horny 0>>
+
+    <<trackAction "analFuck.get" $sophie>>\
+    <<if isChastity()>>\
+        <<btnLink "Continue" "Sophie-ISS-Condo-Cleanup">>\
+    <<else>>\
+        <<btnLink "Continue" "Sophie-ISS-Condo-CleanupChastity">>\
+    <</if>>\
+
+
+:: Sophie-ISS-Condo-SissyEatPussy {"position":"350,17600","size":"100,100"}
+<<loc_SophieApartment>>\
+    <<SexUpdate 3 3 0 -3>>\
+
+    ''You lower your head slightly as $sophie.name gingerly strokes her glistening slit in front of you.''
+
+    <<pic $sophie "spread">>\
+
+    <<nm $sophie "Mmm, something on your mind?">>\
+
+    <<nm $player "M-may I please lick your p-pussy, Mistress?">>\
+
+    ''Her mouth curls into a satisfied smile as you move closer.''
+
+    <<nm $sophie "You may...">>\
+
+    <<nm $player "T-thank you Mistress!">>\
+
+    ''Excitedly, you lower yourself into position and eagerly inhale. You almost immediately become lightheaded as her intoxicating scent floods your senses. You lean in...''
+
+    <<pic $sophie "eaten-by-player">>\
+
+    <<skillComment $sophie "eatPussy.give"
+        "O-OH MY! Mmmmm, o-ooohhhhh $player.name! S-so gooood!"
+        "O-oohhhh, mmmmm... You're q-quite good at this... Haaaaa..."
+        "Mmmm, very nice... keep going..."
+        "Hmmm, not bad, but we'll need to take some time to train that mouth of yours..."
+        "W-wow, hey, be more c-careful down there!"
+    >>\
+
+    <<nm $player "Mmmm, mph! Mmph!" "She tastes soooo good!">>\
+
+    ''You continue for some time as $sophie.name moans in pleasure.''
+
+    <<trackAction "eatPussy.give" $sophie>>\
+    <<btnChoice "Offer her your asshole" "Sophie-ISS-Condo-SissyFucked">>\
+    <<btnChoice "Keep going until you make her cum" "Sophie-ISS-Condo-SissySwallowSquirt">>\
+
+
+:: Sophie-ISS-Condo-SissyFucked {"position":"1225,17600","size":"100,100"}
+<<loc_SophieApartment>>\
+    <<SexUpdate 5 3 0 -5>>\
+
+    <<if previous() is "Sophie-ISS-Condo-SissyEatPussy">>\
+        ''You look up at $sophie.name from between her thighs, her juices running down your chin, and pause your licking for a moment.''
+
+        <<pic $sophie "spread">>\
+
+        <<nm $sophie "Hm? Is there a problem?">>\
+
+        <<nm $player "N-no, Mistress... B-but I was just wondering if maybe...">>\
+
+        ''Pulling away from $sophie.name's glistening pussy, you turn around and prop your ass into the air. You reach around with one hand and start sliding a finger in and out of your <<aSize>>.''
+
+        <<nm $player "P-please, Mistress... Please fuck your sissy slut!">>\
+
+        <<nm $sophie "Mmm, well since you asked so nicely...">>\
+    <<else>>\
+        <<pic $sophie "spread">>\
+
+        ''You smile at $sophie.name before lowering your head and blushing intensely.''
+
+        <<nm $sophie "Hm? Something wrong sweetie?">>\
+
+        <<nm $player "W-well, actually, I was wondering if maybe... u-umm...">>\
+
+        ''Getting onto your hands and knees, you turn around and prop your ass into the air. You reach around with one hand and start sliding a finger in and out of your <<aSize>>.''
+
+        <<nm $player "P-please, Mistress... Please fuck your sissy slut!">>\
+
+        <<nm $sophie "Mmm, well since you asked so nicely...">>\
+    <</if>>\
+
+    ''$sophie.name instructs you to continue fingering yourself while she runs to the closet, emerging with a large strapon cock fastened around her waist.''
+    
+    <<pic $sophie "strapon">>\
+
+    <<nm $sophie "This what you wanted, slut?">>\
+
+    <<nm $player "Y-yes, please fuck me Mistress!">>\
+
+    ''She laughs as she lowers herself behind you, adjusting your rear to line up better with her giant, lubed up fake cock. You shudder as the cold tip makes contact with your anus.''
+
+    <<nm $sophie "Mmm, here... it... COMES!">>\
+
+    <<pic $player "fucked-by-female-doggy">>\
+
+    <<nm $player "AAHHH!" "H-HOLY SHIT!">>\
+
+    ''You can't help but bite the sheets as $sophie.name mercilessly rams your <<aSize>> with her massive toy. Every time you try to get comfortable she pushes you back down into the mattress, fucking you harder to remind you of your place.''
+
+    <<CommentAss $sophie
+        "Mmm, h-haaa, your slutty hole is taking my huge cock way too easily! Hahaha, honestly now, how often do you let yourself get fucked every day?"
+        "Mmm, h-haaa, your slutty boipussy took my huge cock so easily! Hahaha, really, I didn't take you for such a whore!"
+        "Mmmm, haaa, hmm, there we go! Take my cock, slut! Your ass feels incredible!"
+        "Mmmm, ooohhhh, so tight! Hahaha, hmmm, loosening you up is going to be so much fun!"
+        "O-Ooohh, mmmm, ahhhh! Holy shit, have you never taken a cock before? Ooohhhh, breaking you in is going to be amazing!"
+    >>\
+
+    <<anal "$sophie.name's huge strapon">>
+
+    ''She continues like this for some time, somehow finding a way to go ever so slightly deeper with every thrust. Eventually, the pressure of her cock pounding against your prostate is enough to send you over the edge as your <<if isChastity()>>caged cock<<else>><<pSize>><</if>> swings and drips between your legs.''
+
+    <<Thought "G-gonna... Cum!">>\
+
+    <<trackAction "analFuck.get" $sophie>>\
+    <<btnLink "Cum from getting fucked by $sophie.name's strapon" "Sophie-ISS-Condo-SissyCum">>\
+
+
+:: Sophie-ISS-Condo-SissySwallowSquirt {"position":"850,17725","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    <<pic $sophie "eaten-by-player">>\
+
+    ''$sophie.name holds your head in place as she grinds her gushing mound into your mouth. You struggle to keep up, not that she's giving you much of a choice.''
+
+    <<nm $sophie "Mmmmm, oooohhhh... Sooo good! I wonder if you suck a cock half as well as you eat a pussy? We'll have to find out some time, wo-OH-nt we? A-ahhh! Ffffuck!">>\
+
+    ''The threat only serves to make you lick even harder, and it's only a few more moments before $sophie.name's hips start to quiver and tremble, and wave after wave of thick juices start to violently erupt from her pussy down your throat.''
+
+    <<pic $sophie "squirt">>\
+
+    <<nm $sophie "OH F-FUCK!!!">>\
+
+    <<nm $player "MMPH! HNGPH!" "T-there's so much!">>\
+
+    ''She locks you between her damp thighs until she's completely spent, finally releasing you and allowing you to collapse into the mattress next to her as you work to catch your breath.''
+
+    <<nm $sophie "Mmmm... well done little sissy... haaaa...">>\
+
+    <<SexResults $sophie>>\
+
+    <<horny 30>>
+
+    <<trackAction "cumEat.get" $sophie>>\
+    <<trackAction "eatPussy.give" $sophie>>\
+    <<if isChastity()>>\
+        <<btnLink "Continue" "Sophie-ISS-Condo-Cleanup">>\
+    <<else>>\
+        <<btnLink "Continue" "Sophie-ISS-Condo-CleanupChastity">>\
+    <</if>>\
+
+
+:: Sophie-ISS-Condo-Start {"position":"1225,17475","size":"100,100"}
+<<set $DisableNightEvent to true>>\
+    <<SexInitialize $sophie>>\
+    <<loc_SophieApartment>>\
+    
+    ''You and $sophie.name crash into her bedroom, falling onto her large bed as your clothing quickly starts falling away.''
+
+    <<pic $sophie "bed">>\
+    
+    <<if flag($sophie,"Feminizing")>>\
+        <<nm $sophie "Mmm, alright little girl, time to continue your training!">>\
+
+        <<nm $player "Y-yes, Mistress!">>\
+
+        <<btnTooHorny "Ask $sophie.name to hurry and fuck your boipussy!" "Sophie-ISS-Condo-SissyFucked">>\
+        <<btnTooSub "Ask $sophie.name if you can lick her pussy" "Sophie-ISS-Condo-SissyEatPussy">>\
+    <<elseif flag($sophie,"StartFeminizing") > 0 and $player.identity is "male" and (isSissy() or isChastity()) and not flag($sophie,"Feminizing")>>\
+        <<include "Sophie-ISS-Feminization">>
+    <<elseif $sophie.isDom>>\
+        <<nm $sophie "Mmm, time to make your mistress feel good...">>\
+
+        <<btnDom "Pin her down and kiss her" "Sophie-ISS-Condo-Kiss">>\
+        <<btnTooSub "Start lightly kissing her thighs" "Sophie-ISS-Condo-EatPussy">>\
+    <<elseif $sophie.isSub>>\
+        <<nm $sophie "Well, you gonna fuck me or what? Come on, I'm tired of waiting!">>\
+
+        <<if canFuck()>>\
+            <<btnDom "Throw her back into the bed and fuck her asshole" "Sophie-ISS-Condo-FuckAss">>\
+            <<btnChoice "Throw her back into the bed and fuck her pussy" "Sophie-ISS-Condo-FuckPussy">>\
+            <<btnChoice "Have $sophie.name suck on your <<StraponOrCock>>" "Sophie-ISS-Condo-GetSucked">>\
+        <<else>>\
+            <<btnChoice "Climb over her and grind your <<AssOrPussy>> into $sophie.name's mouth" "Sophie-ISS-Condo-RideFace">>\
+        <</if>>\
+        <<btnChoice "Go down on $sophie.name" "Sophie-ISS-Condo-EatPussy">>\
+    <<else>>\
+        <<nm $sophie "Mmmm, well? Shall we?">>\
+        
+        <<if canFuck()>>\
+            <<btnDom "Throw her back into the bed and fuck her asshole" "Sophie-ISS-Condo-FuckAss">>\
+            <<btnDom "Throw her back into the bed and fuck her pussy" "Sophie-ISS-Condo-FuckPussy">>\
+            <<btnChoice "Have $sophie.name suck on your <<StraponOrCock>>" "Sophie-ISS-Condo-GetSucked">>\
+        <<else>>\
+            <<btnDom "Climb over her and grind your <<AssOrPussy>> into $sophie.name's mouth" "Sophie-ISS-Condo-RideFace">>\
+        <</if>>\
+        <<btnChoice "Go down on $sophie.name" "Sophie-ISS-Condo-EatPussy">>\
+    <</if>>\
+
+
+:: Sophie-ISS-Condo-StraponCum {"position":"350,17725","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    <<pic $sophie "fucked-by-player-doggy">>\
+
+    <<nm $sophie "H-haa! Haa! H-holy f-fuck, $player.name... I-I'm going to...">>\
+
+    ''You continue to mercilessly pound $sophie.name's trembling pussy, her juices spraying back from her drenched pussy onto your thighs as she howls in ecstasy. It's not long before you can feel your own orgasm welling up, causing you to tighten your grip on the older woman's waist.''
+
+    <<nm $player "$sophie.name... I'm c-cumming!">>\
+
+    <<nm $sophie "Yes! Don't stop $player.name! F-FUCK!">>\
+
+    <<pic $sophie "squirt">>\
+
+    ''You ram your <<accf>> deep into $sophie.name's cunt while wave after wave of thick squirt spray out from under both of you. As she collapses into the sheets, you maintain your position, working the toy around inside her until you don't have anything left. Finally, you pull out and collapse next to her on the bed.''
+
+    <<nm $sophie "Mmmm... that was... excellent...">>\
+
+    <<nm $player "Y-yeah... fuck...">>\
+
+    <<SexResults $sophie>>\
+
+    <<horny 0>>
+
+    <<btnLink "Continue" "Sophie-ISS-Condo-Cleanup">>\
+
+
+:: Sophie-ISS-Condo-SwallowSquirt {"position":"975,17725","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    <<pic $sophie "eaten-by-player">>\
+
+    ''$sophie.name holds your head in place as she grinds her gushing mound into your mouth. You struggle to keep up, not that she's giving you much of a choice.''
+
+    <<nm $sophie "Mmmmm, oooohhhh... Sooo good! A-ahhh! Ffffuck!">>\
+
+    ''You double down on sucking her clit, licking harder and faster, and it's only a few more moments before $sophie.name's hips start to quiver and tremble, and wave after wave of thick juices start to violently erupt from her pussy down your throat. Meanwhile, you've been working yourself up to your own rolling orgasm which happens to come to a head at just the same time.''
+
+    <<pic $sophie "squirt">>\
+
+    <<nm $sophie "OH F-FUCK!!!">>\
+
+    <<nm $player "MMPH! HNGPH!" "CUMMING!">>\
+
+    ''She locks you between her damp thighs until she's completely spent, finally releasing you and allowing you to collapse into the mattress next to her as you work to catch your breath, <<if hasPussy()>>your own juices still pouring from your <<vSize>>.<<else>>with precum leaking from your <<if isChastity()>>caged <</if>><<pSize>>.<</if>>''
+
+    <<nm $sophie "Mmmm... that was... excellent...">>\
+
+    <<nm $player "Y-yeah... fuck...">>\
+
+    <<SexResults $sophie>>\
+
+    <<horny 0>>
+
+    <<trackAction "cumEat.get" $sophie>>\
+    <<trackAction "eatPussy.give" $sophie>>\
+    <<btnLink "Continue" "Sophie-ISS-Condo-Cleanup">>\
+
+
+:: Sophie-ISS-Condo-Trib {"position":"1100,17600","size":"100,100"}
+<<loc_SophieApartment>>\
+    <<SexUpdate 5 5 0 1>>\
+
+    ''You climb off your boss's cum-drenched face and turn to meet her glazed over stare. Before she can recover completely, you run you tongue up her chin and into her mouth, mixing your juices and saliva together in a wet, passionate embrace.''
+
+    <<pic $sophie "kiss-player">>\
+
+    <<nm $sophie "Mmmm, haaammm, mmmmm...">>\
+
+    <<nm $player "Mmmm, haaa! Hehe, let's put these juicy cunts of ours to good use, huh?">>\
+
+    ''All she can do is nod emphatically as you move into position, weaving your legs between $sophie.name's and pressing your soaked pussy up against hers. She moans loudly once you start sliding the length of your warm slit over her quivering clit.''
+
+    <<pic $action "tribbing">>\
+
+    <<nm $sophie "O-OH MY GOD! MMmmmm, hnnngh! Haaaa!" "I-I'm going to cum again!">>\
+
+    <<nm $player "Hehe, enjoying yourself over there? How does my <<vSize>> feel, hm?">>\
+
+    ''She screams as another orgasm overtakes her.''
+
+    <<nm $sophie "S-so good! FUCK!">>\
+
+    ''You don't give her a second to rest, instead just gyrating your hips faster and grinding your pussy deeper and deeper into hers. It's not long before you start to feel your own legs tremble and pulse, and you know you'll only be able to hold out for a moment longer.''
+
+    <<btnDom "Jump back onto her face and squirt into her mouth" "Sophie-ISS-Condo-FacesitCum">>\
+    <<btnChoice "Keep going until you cum" "Sophie-ISS-Condo-TribCum">>
+
+
+:: Sophie-ISS-Condo-TribCum {"position":"725,17725","size":"100,100"}
+<<loc_SophieApartment>>\
+
+    <<pic $action "tribbing">>\
+
+    ''You grind your drenched <<vSize>> into $sophie.name's, your juices intermixing to the point that the two of you are now rolling in a huge puddle thick squirt. You're unsure of how many orgasms either of you have had by this point, but you know the big one is coming in fast. You pick up your rhythm, driving your slick clit hard into your boss's pussy.''
+
+    <<nm $sophie "O-OOHHH!! FUCK!">>\
+
+    <<pic $sophie "orgasm">>\
+
+    <<nm $player "$sophie.name! I'M CUMMING!">>\
+
+    <<pic $player "squirt">>\
+
+    ''The two of you erupt in orgasm, tightening your embrace as you both cum hard, thick juices spraying across each other's bodies. Finally, once your bodies stop quivering, you both collapse into the bed.''
+
+    <<nm $sophie "T-that was...">>\
+
+    <<nm $player "Incredible...">>\
+
+    <<SexResults $sophie>>\
+
+    <<horny 0>>
+
+    <<trackAction "trib.give" $sophie>>\
+    <<btnLink "Continue" "Sophie-ISS-Condo-Cleanup">>\
+
+
+:: Sophie-ISS-Feminization {"position":"100,17600","size":"100,100"}
+''You look down at your <<if isChastity()>>caged<<else>>flaccid<</if>> <<pDSize>>, then back at $sophie.name.''
+    
+    <<nm $player "I, uh...">>\
+    
+    <<nm $sophie "W-what? Mmmmm... Still can't get it up, eh? Well, after our last encounter I thought I should be better prepared...">>\
+    
+    ''$sophie.name slides off the bed and starts digging through her nightstand and, unsurprisingly, pulling out her large, familiar strapon cock and harness. Your <<aSize>> tenses up as she turns around.''
+    
+    <<pic $sophie "strapon">>\
+    
+    <<nm $sophie "You remember this, don't you sweetie? Oh, don't worry, I wasn't planning on fucking you with it this time...">>\
+    
+    ''She climbs back onto the bed, rolling over and spreading her legs. She starts stroking the strapon seductively.''
+    
+    <<nm $sophie "It's time you showed me how good you are at sucking cock, sweetie... Don't even think about refusing, either. It'll only be worse for you if you do.">>\
+    
+    <<nm $player "I-I...">>\
+    
+    ''Between your humiliation and your arousal, you start making your way to your boss, naked on the bed in front of you. You wrap you hand around her strapon and start working it into your mouth.''
+    
+    <<pic $action "player-suck-strapon">>\
+    
+    <<nm $sophie "Mmmmm, yeeeaaahhh... You're really good at this, did you know that? Make sure you're imagining it's the real thing, okay?">>\
+    
+    ''$sophie.name throws her head back, running a hand around the back of neck and letting you suck her off for several minutes. You slide a finger in beneath the strapon, probing the inside of her moist pussy as she purrs in approval. After a while, you start to lose yourself in the activity, gradually taking her cock deeper and deeper into your throat until a sudden sting in your neck snaps you back to reality.''
+    
+    <<nm $player "$sophie.name? W-what...">>\
+    
+    ''You pop the strapon out of your mouth and look up to see $sophie.name smiling at you with a small, empty syringe in her hand. You can't get your voice to work.''
+    
+    <<nm $sophie "Oh, this? Don't worry, sweetie, I wouldn't dream of using one of your mind control serums on you, what fun would that be? No, this is a little something special I asked $penny.name to whip up for me.">>\
+    
+    ''She grabs your head and pushes it into her soaking wet pussy, you can't help but stick your tongue out and begin servicing her.''
+    
+    <<pic $action "player-eat-pussy">>\
+    
+    <<nm $sophie "Oohhh, good girl... That's what you're going to be from now on, a girl, okay? You're going to start calling yourself that, and I'll instruct everyone else to do the same. Mmmm, sooo good... ">>\
+    
+    ''Everything is hazy, but $sophie.name sultry voice echoes clearly in your head. Her words sinking into your brain.''
+    
+    <<nm $sophie "Haaaa, so, this little number here will give me a little more control over your body. You'll notice little things at first, but we'll be sure to speed things up eventually. First thing is getting rid of that useless little cock of yours and turning it into a proper clitty. Won't that be wonderful?">>\
+    
+    ''You keep licking.''
+    
+    <<nm $sophie "Mmmm, yesssss... Now, ahhh, I'm going to cum in your mouth, okay? And you're going to swallow it all like a good little girl. After that, I'll tuck you in so you can rest and let the serum do its work, okay?">>\
+    
+    ''You open your mouth wide and $sophie.name starts rubbing her clit. Soon, torrents of thick, warm squirt start flooding your mouth. As it does, the room starts to spin and then... darkness...''
+    
+    <<love $sophie 10>>
+    <<lust $sophie 10>>
+    <<dom $player -10>>
+    <<trackAction "suckCock.give" $sophie>>\
+    <<trackAction "eatPussy.give" $sophie>>\
+    
+    <<horny 10>>
+    <<set $player.penisSize to 1>>\
+    <<set $player.hairLength to 5>>\
+    <<run setDailyCD("SophieCondo",3)>>\
+    <<SetFlag $sophie "UnlockCondo">>\
+    <<SetFlag $sophie "Feminizing">>\
+    <<SetFlag $player "FeminizedAtSophieCondo">>\
+    <<AddDreamEvent 27>>\
+    <<AddNote $sophie "$sophie.name brought me back to her condo for some fun. Since I couldn't fuck her, she had me suck her strapon while telling me I was a girl... That made me happy, I think.">>\
+
+    <<btnLink "Fall asleep" "Room-GotoBed">>\
+
+
+:: Sophie-Office [nobr] {"position":"1225,14850","size":"100,100"}
+<<loc_SophieOffice>><br>
+	<<switch $time.time>>
+	<<case "Morning">>
+		<<SophieOfficeEvents "out">>
+	<<case "Late Morning">>
+		<<SophieOfficeEvents "in">>
+	<<case "Noon">>
+		<<SophieOfficeEvents "in">>
+	<<case "Early Afternoon">>
+		<<SophieOfficeEvents "in">>
+	<<case "Afternoon">>
+		<<SophieOfficeEvents "in">>
+	<<case "Evening">>
+		<<SophieOfficeEvents "out">>
+	<<case "Night">>
+		<<SophieOfficeEvents "out">>
+	<</switch>>
+
+
+:: SophieOffice-Dom {"position":"225,14975","size":"100,100"}
+<<loc_SophieOffice>>\
+
+''You give $sophie.name's door a couple solid knocks.''
+
+<<nm $player "Hey $sophie.name, it's $player.name. You busy?">>\
+
+''She tells you to come inside, so you open the door and enter.''
+
+<<pic $sophie>>\
+
+<<nm $sophie "$player.sophieName, how are you? You know I was just thinking about you... Please, take a seat!">>\
+
+''She motions to a chair in front of her desk. After you sit, she stands up and circles around you, slowly, running her fingers along your shoulders as she passes behind you. Once she reach the front of her desk, she sits down and folds her legs over one another to ensure you have a clear view of her panties.''
+
+<<nm $sophie "So, $player.sophieName... What brings you to my office today?">>\
+
+<<nm $player "W-well, the other night you told me I should start visiting you more often, so, here I am!">>\
+
+''Her lips twist into a smile.''
+
+<<nm $sophie "Mm, yes... Here you are. Well? You know what to do...">>\
+
+<<if $player.isSub>>\
+	''You quickly drop to your knees in front of $sophie.name and pull her panties off. She moans loudly and spreads her legs, giving you easy access to her quivering, dripping pussy.''
+	
+	<<nm $sophie "That's my good <<boy>>. Now, get to work.">>\
+<<else>>\
+	''You give $sophie.name an inquisitive look. You're pretty sure you know what she's asking for, but...''
+	
+	<<nm $player "$sophie.name?">>\
+	
+	<<nm $sophie "Really? Do I need to spell it out for you, slut? Get on your knees and put that tongue of yours to work. It's been a stressful month, and you're my only reliable means of relief. Now then, if you please.">>\
+	
+	''She pulls her panties off and spreads her legs. Her quivering, dripping pussy is now in clear view. You drop down in front of her.''
+<</if>>\
+
+<<pic $action "player-eat-pussy">>\
+
+<<nm $sophie "Ooohhhh, yesss.... Mmmmm... You're, ohh, quite good at this, you know? Perhaps I should, mmm, have you work in here with me... haaaa...">>\
+
+''You continue licking and sucking, $sophie.name wraps a leg around your back to hold you firmly in place as she begins to climax.''
+
+<<nm $sophie "Hngh! Haaa!! Y-YES! K-keep it up, M-<<Mr>> $player.surname, I'm going to... haaa... ha-a-AHHH!!!">>\
+
+<<pic $action "female-squirt">>\
+
+''Wave after wave of thick juices start to gush from $sophie.name's pulsing twat. You start to choke as more and more of it rushes down your throat and into your stomach. Even as you pull away, she continues to spray across your head and back.''
+
+<<pic $sophie "orgasm">>\
+
+<<nm $player "$sophie.name, I-I... *cough* t-too much...">>\
+
+<<nm $sophie "Haaaa, hoooo... hmmmm, haaa... W-well done, $player.sophieName... well... done...">>\
+
+''As she comes down from her intense orgasm, she leans forward to retrieve her panties, giving you an excellent view of her amazing cleavage. She walks back to her desk and sits in her seat.''
+
+<<nm $sophie "Hm? Well? I'm quite busy, so if you could see yourself out, please.">>\
+
+<<nm $player "Y-yes, $sophie.name..." "Seriously?">>\
+
+''You dry yourself off as best you can and walk back to the elevator.''
+
+<<lust $sophie 1>>
+<<dom $sophie 1>>
+<<dom $player -1>>
+<<trackAction "eatPussy.give" $sophie>>\
+
+<<horny 10>>
+
+<<btnLink "Go back" "Work" "$sophie.eventCD+=1;passTime()">>
+
+
+:: SophieOffice-Kagney {"position":"350,14975","size":"100,100"}
+<<loc_SophieOffice>>\
+
+    ''You knock on the heavy door and hear $sophie.name's voice from the other side. You identify yourself and she invites you inside.''
+
+    <<pic $sophie>>\
+    <<art $sophie>>\
+
+    <<if $sophie.isLover>>\
+        <<nm $sophie "$player.name! What brings you to see me today?">>\
+    <<elseif $sophie.isDom>>\
+        <<nm $sophie "Mmm, $player.sophieName... What can I do for you today?">>\
+    <<elseif $sophie.isSub>>\
+        <<nm $sophie "Mmm, $player.sophieName... Some way I can be of service to you today?">>\
+    <<else>>\
+        <<nm $sophie "Ah, $player.sophieName, please come in.">>\
+    <</if>>\
+
+    <<nm $player "Hi $sophie.name, actually, I was hoping to talk to you about $kagney.name.">>\
+
+    ''$sophie.name raises an eyebrow, taking a deep breath.''
+
+    <<nm $sophie "$kagney.name? What has she done now?">>\
+
+    <<nm $player "Huh? Oh, no, she hasn't done anything. I've just been noticing that she's been a little buried under her work lately. What with everything going on lately, her workload seems to have increased pretty drastically...">>\
+
+    ''Your boss leans back, taking what you said under consideration.''
+    <<if $kagney.isBimbo>>\
+
+        <<nm $sophie "Are you sure she's not just too busy fucking anything that moves to focus on her job?">>\
+
+        <<nm $player "I-I, um..." "Shit!">>\
+
+        ''$sophie.name can't fight back the amused smile on her face.''
+
+        <<nm $sophie "Ha, so it was you... You really need to stop turning all my employees into braindead cumsluts...">>\
+
+        ''She motions for you to calm down.''
+    <</if>>\
+
+    <<nm $sophie "The truth is, finding some help for the front desk is something that I'd tasked $diana.name with before last month's... spectacle. With everything she's dealing with on top of playing catch up, I doubt she'd get around to it anytime soon.">>\
+
+    ''$sophie.name stands up and moves over to you, placing one hand on your shoulder.''
+
+    <<nm $sophie "I'll tell you what, if you can find me a suitable person to fill that position, I'll hire them on the spot for you. Consider it a professional recognition of everything you've done for our office.">>\
+
+    <<nm $player "You mean it? That's great! Thanks $sophie.name, I'll find someone and let you know!">>\
+
+    <<nm $sophie "I'm sure you'll do just fine. Was there anything else?">>\
+
+    ''You stand up from your seat and shake $sophie.name's hand.''
+
+    <<nm $player "No, that's all I wanted to talk to you about. Thanks again!">>\
+
+    <<if $sophie.isLover>>\
+        ''$sophie.name blushes as you take her hand.''
+
+        <<nm $sophie "Y-yes, of course. Good luck then!">>\
+    <<elseif $sophie.isDom>>\
+        ''$sophie.name tightens her grip on your hand.''
+
+        <<nm $sophie "I'm expecting you to come through on this, $player.sophieName.">>\
+    <<elseif $sophie.isSub>>\
+        ''$sophie.name lowers her head slightly as she takes your hand.''
+
+        <<nm $sophie "I'm sure you'll do great, $player.name.">>\
+    <<else>>\
+        ''$sophie.name returns your handshake.''
+
+        <<nm $sophie "Good luck, $player.sophieName. Let me know when you have someone.">>\
+    <</if>>\
+
+    <<SetFlag $kagney "FindHelp">>\
+    <<btnLink "Continue" "Work" "passTime()">>\
+
+
+:: SophieOffice-Lunch {"position":"475,14975","size":"100,100"}
+<<loc_SophieOffice>>\
+
+    ''You give $sophie.name's door a couple solid knocks.''
+
+    <<nm $player "Hey $sophie.name, it's $player.name. You busy?">>\
+
+    ''She tells you to come inside, so you open the door and enter.''
+
+    <<pic $sophie>>\
+    <<art $sophie "happy">>\
+
+    <<nm $sophie "Please, come in.">>\
+
+    ''You walk further inside.''
+
+    <<nm $sophie "So, $player.sophieName, how are you? I was just sitting down for a quick lunch, care to join me?">>\
+
+    <<nm $player "Sure, that'd be great. Let me just go run and grab something from the commons real quick and I'll be right back.">>\
+
+    ''You take the elevator down to the office level, pick up a quick meal, then head back to $sophie.name's office. When you return, you see she's set up at the small conference table near the door.''
+
+    <<nm $sophie "Hope you don't mind I've started without you. Please, come in and shut the door.">>\
+
+    ''Doing as instructed, you shut the door behind you and sit at the table across from $sophie.name. The two of you eat in silence for a few minutes before $sophie.name finally looks up.''
+    <<if $player.hasLunch>>\
+
+		<<set $c to $sophie>>\
+		<<include "Ava-PackedLunch">>
+	<</if>>\
+
+    <<Conversation $sophie>>
+
+    <<btnLink "Go back" "Work">>
+
+
+:: SophieOffice-Sub {"position":"600,14975","size":"100,100"}
+<<loc_SophieOffice>>\
+
+''You give the door a couple solid knocks.''
+
+<<nm $player "$sophie.name? It's $player.name, mind if I come in?">>\
+
+<<nm $sophie "$player.name? O-oh, um, yes... Please, come in.">>\
+
+''You enter her office and see her standing in front of her desk. She looks somewhat flustered, and there's a distinct smell in the air.''
+
+<<pic $sophie>>\
+
+<<nm $sophie "Ah, $player.sophieName... What can I do for you?">>\
+
+''You close the door behind you.''
+
+<<nm $player "Hey $sophie.name. I was just thinking about you, thought I'd check in, y'know...">>\
+
+''$sophie.name's breathing begins to intensify as you approach. One hand subconsciously slides under her skirt. You can see glistening droplets fall to the ground between her legs, confirming your earlier suspicions. Finally, she drops to her knees in front of you.''
+
+<<pic $sophie "flash2">>\
+
+<<nm $sophie "Oh f-fuck it! We both know why you're here, and it's not like I've been able to stop thinking about it... Come here, $player.sophieName, I-I need it... I need it now!">>\
+
+<<if isChastity() or isSissy() or flag($sophie,"Feminizing")>>\
+	<<if flag($sophie,"Feminizing")>>\
+		''You lose your balance as $sophie.name starts pulling at your <<bottom>>, knocking you to the floor as she reveals your <<if isChastity()>>locked up penis.<<else>>useless, flaccid penis.<</if>> She appears quite pleased.''
+		
+		<<nm $player "I-is that what you wanted?">>\
+		
+		<<nm $sophie "Hehe, mmmm, it's perfect! Now, you just stay put, okay?">>\
+	<<else>>\
+		''You lose your balance as $sophie.name starts pulling at your <<bottom>>, knocking you to the floor as she reveals your <<if isChastity()>>locked up penis.<<else>>useless, flaccid penis.<</if>> Her disappointment is palpable.''
+		
+		<<nm $player "$sophie.name, I-I...">>\
+		
+		<<nm $sophie "Hm, pity... Well, no matter. I was prepared for just such an occasion! You stay right where you are...">>\
+	<</if>>\
+	
+	''$sophie.name gives you a firm push into the ground as she gets up and walks to a small closet in the back of her office. When she comes out, you see she's removed most of her clothing, save for an enormous strapon cock.''
+	
+	<<pic $sophie "strapon">>\
+	
+	<<if flag($sophie,"Feminizing")>>\
+		<<nm $player "S-so big!">>\
+		
+		<<nm $sophie "Mmm, I'm so glad you became my little toy, $player.name!">>\
+	<<else>>\
+		<<nm $player "W-wait, what?">>\
+		
+		<<nm $sophie "Now, now, <<Mr>> $player.surname... The way I see it, if you can't give me what I need and make me your woman... I'll just have to make you mine!">>\
+	<</if>>\
+	
+	<<pic $action "player-suck-strapon">>\
+	
+	''Before you can react $sophie.name has her huge fake cock shoved down your throat, pinning you up against a small sofa in her office. She face-fucks you mercilessly, and looking up reveals an almost crazed expression on her face as she thrusts her hips.''
+	
+	<<nm $sophie "Haaa, mmm... Yes, suck that cock, little slut, and do a good job of it. This will be the only lube you're getting...">>\
+	
+	<<Thought "Lube?">>\
+	
+	''The punishment continues until finally $sophie.name slides her drool-coated dildo out from your throat and pushes you to the ground. Before you can even catch your breath you feel her hands pulling your ass up into the air.''
+	
+	<<nm $player "P-plea- *cough* w-wait!">>\
+	
+	<<anal "$sophie.name's huge, fake cock">>\
+	
+	<<pic $action "female-fuck-player">>\
+	
+	<<nm $player "A-AHH!! Ohh, fuuu...">>\
+	
+	<<nm $sophie "Mmmm, yessss... Be a good little girl and moan nice and loud for Mistress Sophie... Don't worry, no one will hear your girly little shrieks of pleasure on this floor!">>\
+	
+	''She pounds you harder and deeper, finding more energy and encouragement every time you accidentally let slip a high pitch squeal or satisfied moan.''
+	
+	<<nm $sophie "Oohhh, don't give up on me now sweetie! I'll be, ha, c-comming... going to... ha-AHHH!!!">>\
+	
+	''As $sophie.name reaches her climax, you can feel her relentless pounding intensify. Shamefully, ''<<if isSissy()>>''a continuous stream of thin cum pours out of your sissy cock as you ride your own anal orgasm.''<<else>>''jets of cum shoot through your <<accf>> as your <<pSize>> strains against its cage.''<</if>>'' Naturally, $sophie.name is quick to notice.''
+	
+	<<if isChastity()>>\
+		<<pic $action "chastity-squirt">>\
+	<<else>>\
+		<<pic $action "sissy-squirt">>\
+	<</if>>\
+	
+	<<nm $sophie "Ooohhh, look at that! I'll make you a proper sissy girl yet! Now, turn around and take care of me...">>\
+	
+	''She pulls out, dropping you to the floor. You can hear her pop the strapon out of its o-ring before she pulls you back to her. You get turned around as $sophie.name shoves her dripping pussy into your open mouth.''
+	
+	<<pic $action "player-eat-pussy">>\
+	
+	<<nm $sophie "Mmmm, g-good girl... almost t-there ha HAAAHHHH!!!">>\
+	
+	<<pic $action "female-squirt">>\
+	
+	''$sophie.name's thick juices flood your mouth, running down your throat and into your belly. What you can't swallow drenches your chin and <<top>>. When she's finally satisfied, you're dropped back onto the floor. $sophie.name returns to the closet to get dressed before sitting down back at her desk.''
+	
+	<<nm $sophie "Now then, pick yourself up and get out of my office. Don't come back until you're able to satisfy me with that cock of yours unless you want this to happen again. Of course, if you //do// want this again, well, we can certainly arrange for that as well...">>\
+	
+	''You put your <<bottom>> back on and hobble back towards the elevator, remembering to thank her on your way out...''
+	
+	<<lust $sophie 1>>
+	<<dom $sophie 1>>
+	<<dom $player -3>>
+	<<tfm "fem">>
+	<<trackAction "suckCock.give" $sophie>>\
+	<<trackAction "analFuck.get" $sophie>>\
+	
+	<<horny 0>>
+	<<SetFlag $sophie "StartFeminizing">>\
+<<elseif hasPenis()>>\
+	''You lose your balance as $sophie.name starts pulling at your <<bottom>>, knocking you to the floor as she reveals your <<pSize>>, already rock hard and ready.''
+	
+	<<nm $sophie "Mmm, there <<he>> is!">>\
+	
+	<<pic $sophie "suck-player">>\
+	
+	<<nm $player "O-OH!">>\
+	
+	''$sophie.name wastes no time stuffing your cock into her mouth, humming and moaning as she savors it before allowing it to slide effortlessly down her throat.''
+	
+	<<nm $sophie "Mph, mph, hngph!! Mmmm, hmmm...">>\
+	
+	<<nm $player "$sophie.name... s-so... good... h-haaa!!">>\
+	
+	''She expertly works your cock in her mouth and throat, all the while pleasuring herself with one hand between her legs. You can hear her juices squirting as a large puddle begins to grow on the floor beneath her skirt. The quivering of her lips and intensity of her moans and gasps imply she's already experienced multiple orgasms at this point, and yours is fast approaching.''
+	
+	<<if $sophie.control.officeSex>>\
+		<<trackAction "analFuck.give" $sophie>>\
+		<<nm $player "$sophie.name, I-I'm gonna...">>\
+		
+		''$sophie.name pops your cockhead out of her mouth.''
+		
+		<<nm $sophie "Oh no, not yet!">>\
+		
+		''She hikes up her skirt, confirming your suspicions that she was never wearing panties to begin with. She turns around and uses her fingers to spread open her tiny asshole.''
+		
+		<<nm $sophie "Here, mmm, put your <<pDSize>> right in here and fill me up! Quickly now!">>\
+		
+		''You waste no time.''
+		
+		<<pic $action "player-assfuck-female-doggy">>\
+		
+		<<nm $sophie "HAAA!!! O-ohhh, fuuuuuck! FUCK ME!! Y-YES!">>\
+		
+		''You fuck her deep and hard as requested, watching as wave after wave of thick juices gush from her quivering pussy. Still, after that amazing blowjob it's not long before you're once again on the edge. Feeling you tense up, $sophie.name slams her body back into you, allowing you to explode deep inside her asshole.''
+		
+		<<pic $action "anal-creampie-female">>\
+		
+		<<nm $sophie "Oooohhhhh, mmmmmm... F-feels so... amazing!">>\
+		
+		<<nm $player "Haaa... haaa...">>\
+		
+		''She holds you there for a moment before finally releasing you. Once she's regained her composure, $sophie.name straightens out her clothing and casually walks back to her desk.''
+		
+		<<nm $sophie "That was quite spectacular, $player.sophieName. Hmmm, we'll have to revisit this sometime soon... For now, I have some work I need to get back to. So, if you please...">>\
+	<<else>>\
+		<<pic $sophie "cum-in-mouth">>\
+		
+		<<nm $sophie "Haaaa, mmmmm... $player.sophieName!">>\
+		
+		''Rope after rope of hot cum lands on $sophie.name's face as she maintains her grip on your <<pDSize>>. She licks her lips as the experience prompts yet another orgasm from her. She holds you there for a moment before finally releasing you. Once she's regained her composure, $sophie.name straightens out her clothing and casually walks back to her desk.''
+		
+		<<nm $sophie "That was quite spectacular, $player.sophieName. Hmmm, we'll have to revisit this sometime soon... For now, I have some work I need to get back to. So, if you please...">>\
+	<</if>>\
+	
+	<<nm $player "Y-yeah... Talk to you later, $sophie.name.">>\
+	
+	''With that, you get dressed and leave her office.''
+	
+	<<lust $sophie 1>>
+	<<dom $player 1>>
+	<<trackAction "suckCock.get" $sophie>>\
+	
+	<<horny 0>>
+<<elseif hasStrapon()>>\
+	''You lose your balance as $sophie.name starts pulling at your <<bottom>>, knocking you to the floor as your <<accf>> flips up into position.''
+	
+	<<nm $sophie "Oohh, this will fun!">>\
+	
+	<<pic $action "female-suck-strapon">>\
+	
+	<<nm $player "O-OH!">>\
+	
+	''$sophie.name wastes no time stuffing your big fake cock into her mouth, humming and moaning as she savors it before allowing it to slide effortlessly down her throat. Meanwhile, two of her fingers have found their way deep inside your <<vSize>>.''
+	
+	<<nm $sophie "Mph, mph, hngph!! Mmmm, hmmm...">>\
+	
+	<<nm $player "$sophie.name... s-so... good... h-haaa!!">>\
+	
+	''She expertly works your cock in her mouth and throat, all the while pleasuring you with one hand and herself with the other between her legs. You can hear her juices squirting as a large puddle begins to grow on the floor beneath her skirt. The quivering of her lips and intensity of her moans and gasps imply she's already experienced multiple orgasms at this point, and yours is fast approaching.''
+	
+	<<if $sophie.control.officeSex>>\
+		<<trackAction "analFuck.give" $sophie>>\
+		<<nm $player "$sophie.name, I-I'm gonna...">>\
+		
+		''$sophie.name pulls her fingers out of your dripping pussy.''
+		
+		<<nm $sophie "Oh no, not yet!">>\
+		
+		''She hikes up her skirt, confirming your suspicions that she was never wearing panties to begin with. She turns around and uses her fingers to spread open her tiny asshole.''
+		
+		<<nm $sophie "Here, mmm, put your big cock right in here! Quickly now!">>\
+		
+		''You waste no time.''
+		
+		<<pic $action "player-assfuck-female-doggy">>\
+		
+		<<nm $sophie "HAAA!!! O-ohhh, fuuuuuck! FUCK ME!! Y-YES!">>\
+		
+		''You fuck her asshole deep and hard as requested, watching as wave after wave of thick juices gush from her quivering pussy. Still, after watching that amazing blowjob and getting that incredible finger-fucking it's not long before you're once again on the edge. Feeling you tense up, $sophie.name slams her body back into you, causing your <<vSize>> to erupt.''
+		
+		<<pic $action "female-squirt">>\
+		
+		<<nm $sophie "Oooohhhhh, mmmmmm... F-feels so... amazing!">>\
+		
+		<<nm $player "Haaa... haaa...">>\
+		
+		''She holds you there for a moment before finally releasing you. Once she's regained her composure, $sophie.name straightens out her clothing and casually walks back to her desk.''
+		
+		<<nm $sophie "That was quite spectacular, $player.sophieName. Hmmm, we'll have to revisit this sometime soon... For now, I have some work I need to get back to. So, if you please...">>\
+	<<else>>\
+		<<pic $action "female-squirt">>\
+		
+		<<nm $sophie "Haaaa, mmmmm... $player.sophieName!">>\
+		
+		''Wave after wave of hot, thick juices spray from your spasming pussy across $sophie.name's face as her fingers continue to work you. She licks her lips as the experience prompts yet another orgasm from her. She holds you there for a moment before finally withdrawing her hand. Once she's regained her composure, $sophie.name straightens out her clothing and casually walks back to her desk.''
+		
+		<<nm $sophie "That was quite spectacular, $player.sophieName. Hmmm, we'll have to revisit this sometime soon... For now, I have some work I need to get back to. So, if you please...">>\
+	<</if>>\
+	
+	<<nm $player "Y-yeah... Talk to you later, $sophie.name.">>\
+	
+	''With that, you get dressed and leave her office.''
+	
+	<<lust $sophie 1>>
+	<<dom $player 1>>
+	<<trackAction "suckCock.get" $sophie>>\
+	
+	<<horny 0>>
+<<else>>\
+	''You lose your balance as $sophie.name starts pulling at your <<bottom>>, knocking you to the floor as your glistening <<vSize>> comes into view.''
+	
+	<<nm $sophie "Oohh, there she is!">>\
+	
+	<<pic $action "female-eat-pussy">>\
+
+	<<NoticePussy $sophie>>\
+	
+	<<nm $player "O-OH!">>\
+	
+	''$sophie.name wastes no time diving into your mound, lightly sliding it along your slit, humming and moaning as she savors it before shoving her tongue inside. Meanwhile, one of her fingers has begun massaging your <<aSize>>.''
+	
+	<<nm $sophie "Mph, mph, hngph!! Mmmm, hmmm...">>\
+	
+	<<nm $player "$sophie.name... s-so... good... h-haaa!!">>\
+	
+	''She expertly works your clit in her mouth, all the while penetrating both your holes with one hand and herself with the other between her legs. You can hear her juices squirting as a large puddle begins to grow on the floor beneath her skirt. The quivering of her lips and intensity of her moans and gasps imply she's already experienced multiple orgasms at this point, and yours is fast approaching.''
+	
+	<<if $sophie.control.officeSex>>\
+		<<trackAction "eatPussy.give" $player>>\
+		<<nm $player "$sophie.name, I-I'm gonna...">>\
+		
+		''$sophie.name pulls her fingers out of your dripping pussy.''
+		
+		<<nm $sophie "Oh no, not yet!">>\
+		
+		''She hikes up her skirt, confirming your suspicions that she was never wearing panties to begin with. She turns around and climbs back, positioning herself over your face before lowering...''
+		
+		<<nm $sophie "Mmm, yessss... Let's cum together!">>\
+		
+		''You waste no time burying your face in your boss' cunt.''
+		
+		<<pic $action "female-69-female">>\
+		
+		<<nm $sophie "HAAA!!! O-ohhh, fuuuuuck! Hmph! Mmmph!">>\
+		
+		''You fuck her deep and hard with your tongue, watching as wave after wave of thick juices gush from her quivering pussy. Still, after $sophie.name's expert oral skills it's not long before you're once again on the edge. Feeling you tense up, $sophie.name sucks your clit into her mouth hard, causing your <<vSize>> to erupt.''
+		
+		<<pic $action "female-squirt">>\
+		
+		<<nm $sophie "Oooohhhhh, mmmmmm... F-feels so... amazing!">>\
+		
+		<<nm $player "Haaa... haaa...">>\
+		
+		''She holds you there for a moment before finally releasing you. Once she's regained her composure, $sophie.name straightens out her clothing and casually walks back to her desk.''
+		
+		<<nm $sophie "That was quite spectacular, $player.sophieName. Hmmm, we'll have to revisit this sometime soon... For now, I have some work I need to get back to. So, if you please...">>\
+	<<else>>\
+		<<pic $action "female-squirt">>\
+		
+		<<nm $sophie "Haaaa, mmmmm... $player.sophieName!">>\
+		
+		''Wave after wave of hot, thick juices spray from your spasming pussy across $sophie.name's face as her fingers continue to work you. She licks her lips as the experience prompts yet another orgasm from her. She holds you there for a moment before finally withdrawing her hand. Once she's regained her composure, $sophie.name straightens out her clothing and casually walks back to her desk.''
+		
+		<<nm $sophie "That was quite spectacular, $player.sophieName. Hmmm, we'll have to revisit this sometime soon... For now, I have some work I need to get back to. So, if you please...">>\
+	<</if>>\
+	
+	<<nm $player "Y-yeah... Talk to you later, $sophie.name.">>\
+	
+	''With that, you get dressed and leave her office.''
+	
+	<<lust $sophie 1>>
+	<<dom $player 1>>
+	<<trackAction "eatPussy.get" $sophie>>\
+	
+	<<horny 0>>
+<</if>>\
+
+<<btnLink "Go back" "Work" "passTime();$sophie.eventCD+=1">>
+
+
+:: SophieOfficeEvents [widget] {"position":"100,14975","size":"100,100"}
+<<widget "SophieOfficeEvents">>\
+	<<switch $args[0]>>\
+		<<case "in">>\
+			<<img "room" "ClosedDoor">>\
+			
+			''The door is closed, but it sounds like $sophie.name is inside.''
+			
+			<<if seenConvo($craig,1) and not visited("Lisa-Jag-Event")>>\
+				<<btnLink "Knock on the door - <<t1>>" "Lisa-Jag-Event">>\
+			<<elseif isNoon() and ($sophie.dose > 0 or $Chapter > 1)>>\
+				<<Thought "I think $sophie.name's eating lunch in her office right now. Maybe she wouldn't mind the company...">>\
+				
+				<<btnLink "Knock on the door - <<t1>><<NewConvoCheck $sophie>>" "SophieOffice-Lunch">>
+			<<elseif $sophie.eventCD > 0>>\
+				<<Thought "I've already come to see $sophie.name recently. I should probably leave her alone for now...">>\
+			<<elseif $sophie.control.giveOral>>\
+				<<Thought "$sophie.name mentioned I should come see her during the day... I wonder if now's fine?">>\
+				
+				<<btnLink "Knock on the door - <<t1>>" "SophieOffice-Dom">>
+			<<elseif $sophie.control.oralSecret>>\
+				<<Thought "I wonder if $sophie.name's busy? I could use some... stress relief about now...">>\
+				
+				<<btnLink "Knock on the door - <<t1>>" "SophieOffice-Sub">>
+			<<else>>\
+				<<Thought "I can hear activity behind it, but... I was told to stay off of this floor anyway so I probably shouldn't push my luck.">>\
+			<</if>>\
+		<<case "out">>\
+			<<img "room" "ClosedDoor">>\
+
+			''$sophie.name's door is closed and the light is off. She doesn't appear to be in her office.''
+	<</switch>>
+	
+	<<btnLink "Head back to lobby" "Work">>
+<</widget>>

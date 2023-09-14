@@ -1,0 +1,1389 @@
+:: ClubPearl {"position":"1100,8475","size":"100,100"}
+<<loc_ClubPearl>>\
+
+    <<if flag($tasha,"GoingClubbing") and not flag($tasha,"FirstClubVisit")>>\
+        <<SetFlag $tasha "FirstClubVisit">>\
+        ''The large man slams the door behind you before going back to his stool and waiting at the entrance. ?tasha grabs you by the arm and pulls you into the main room. Loud music blasts over the speakers as neon lights illuminate an otherwise dark and smokey room. Along one wall sits a long bar stationed by two well-dressed bartenders. The remaining walls have rows of doors and curtained off areas for private events, and in the center of the room stands a huge stage, easily accommodating the four dancers entertaining their audience.''
+
+        <<Thought "This place is wild...">>\
+
+        ''Surrounding the stage are rows of comfortable sofas, armchairs, and booths. At first glance, you could easily assume this to be any normal strip club, but closer inspection gives a glimpse into Club Pearl's true nature.''
+
+        <<nm $player "Hey, ?tasha.">>\
+
+        <<pic $tasha>>\
+        <<art $tasha "happy">>\
+
+        <<nm $tasha "Hm? What's up?">>\
+
+        ''You point over to the left of the stage.''
+
+        <<nm $player "Those guys over in that booth are getting their cocks sucked by the waitresses, is that normal?">>\
+
+        ''?tasha giggles.''
+
+        <<nm $tasha "Is that the only thing you notices? That booth over there is practically having an orgy, and that guy over at the bar has had another guy between his knees since before we got here!">>\
+
+        ''Scanning the room proves ?tasha right. Additionally, the various security staff seem to have no issue with it.''
+
+        <<nm $tasha "Basically, with consent everyone here is open game. It's the servers' job to keep the customers happy, whatever it takes!">>\
+
+        <<nm $player "With consent, huh?">>\
+
+        ''?tasha motions over to what you think you can make out as a girl in a maid outfit, gagged, bound and being pulled into one of the private rooms by two men, tears running down her face.''
+
+        <<nm $tasha "Well, that's the other rule. Enough money and consent is optional!">>\
+
+        <<nm $player "I see..." "Man, I wonder how many former Company employees have ended up forced to work here?">>\
+
+        <<nm $tasha "Tee-hee! So, what do you want to do?">>\
+
+        <<btnChoice "Sit down and watch the dancers - <<t1>>" "ClubPearl-Tasha-WatchDancers">>\
+        <<btnChoice "Peek in on one of the back rooms - <<t1>>" "ClubPearl-Tasha-Backroom">>\
+    <<else>>\
+        ''Loud music blasts over the speakers as neon lights illuminate an otherwise dark and smokey room. Along one wall sits a long bar stationed by two well-dressed bartenders. The remaining walls have rows of doors and curtained off areas for private events, and in the center of the room stands a huge stage, easily accommodating the four dancers entertaining their audience.''
+
+        <<Thought "This place is always hoppin'">>\
+
+        ''Surrounding the stage are rows of comfortable sofas, armchairs, and booths. At first glance, you could easily assume this to be any normal strip club, but closer inspection gives a glimpse into Club Pearl's true nature.''
+
+        <<if chance(50)>>\
+            <<if chance(50)>>\
+                <<nm $player "Wait a minute, is that... ?tasha?">>\
+
+                ''Sure enough, ?tasha is sitting in the front row of the main club room, one hand on her cock and the other holding a drink. You make your way over to her and get her attention.''
+
+                <<pic $tasha>>\
+                <<art $tasha "embarrassed">>\
+
+                <<nm $tasha "OH! ?mc, you scared me! I didn't know you were gonna be here tonight!">>\
+
+                <<nm $player "Thought I'd swing by. Having fun?">>\
+
+                <<nm $tasha "Yeah! Actually, I was wondering...">>\
+
+                ''?tasha motions over to the back corner of the club. There's not much lighting over there, but you can faintly make out a narrow hallway.''
+
+                <<nm $tasha "Mind helping me set something up? Could be a lot of fun!">>\
+
+                <<nm $player "Um, I don't...">>\
+
+                <<nm $tasha "Sexy fun!!!">>\
+
+                ''You think for a moment.''
+
+                <<btnChoice "Help ?tasha out" "ClubPearl-Tasha-FreeUse">>\
+                <<btnChoice "Decline ?tasha's request" "ClubPearl-Tasha-FreeUse-Refuse">>\
+            <<else>>\
+                <<nm $player "Wait a minute, is that... ?tasha?">>\
+
+                ''Sure enough, ?tasha is sitting in the front row of the main club room, one hand on her cock and the other holding a drink. You make your way over to her and get her attention.''
+
+                <<pic $tasha>>\
+                <<art $tasha "embarrassed">>\
+
+                <<nm $tasha "OH! ?mc, you scared me! I didn't know you were gonna be here tonight!">>\
+
+                <<nm $player "Thought I'd swing by. Having fun?">>\
+
+                <<nm $tasha "Tee-hee, yeah! So, what do you want to do?">>\
+
+                <<btnChoice "Sit down and watch the dancers - <<t1>>" "ClubPearl-Tasha-WatchDancers">>\
+                <<btnChoice "Peek in on one of the back rooms - <<t1>>" "ClubPearl-Tasha-Backroom">>\
+            <</if>>\
+        <<else>>\
+            <<if $tasha.isStripper>>\
+                <<Thought "Oh hey, ?tasha's up there!">>\
+
+                <<pic $tasha "strip">>\
+                <<art $tasha "aroused,2">>\
+
+                ''?tasha is on stage, swinging around one of the center poles in a barely-there leather outfit. Her large cock is on full display, and she's clearly enjoying herself. You can't help but notice that she's looking your way, and she gives you a wink as she finishes her routine.''
+
+                <<btnChoice "Watch her dance her next set - <<t1>>" "ClubPearl-Tasha-Dance">>\
+                <<btnChoice "Call her down to service you - <<t1>>" "ClubPearl-Tasha-Service">>\
+                <<btnChoice "Take her to a back room - <<t1>>" "ClubPearl-Tasha-BackroomSex">>\
+            <<else>>\
+                <<Thought "Doesn't look like there's much going on here tonight. I can at least grab a few drinks and take in the entertainment.">>\
+
+                <<pic $events "stripdance">>\
+                <<art "scene/Stripper">>\
+
+                ''You kick back with a drink as you watch a multitude of attractive dancers crawl around on stage in front of you.''
+            <</if>>\
+
+            <<btnLink "Head home" "Home" "setTime('n')">>\
+        <</if>>\
+    <</if>>\
+
+
+:: ClubPearl-Tasha-Backroom {"position":"1225,8475","size":"100,100"}
+<<loc_ClubPearl>>\
+
+    ''You point towards the doors along the back wall.''
+
+    <<nm $player "You wanna check out the private rooms?">>\
+
+    <<pic $tasha>>\
+    <<art $tasha "aroused">>\
+
+    <<nm $tasha "Ooohh, that could be fun! I think I saw some people in that one.">>\
+
+    ''?tasha points towards one of the doors, left slightly ajar. Most of the doors are either wide open and empty, or closed with "OCCUPIED" tags on them. There are a couple that a cracked, though, and one in particular has ?tasha's attention. She takes you by the hand and leads you through the loud, smokefilled room towards the back.''
+
+    <<nm $player "So do we knock, or...">>\
+
+    <<nm $tasha "Let's just go in!">>\
+
+    ''The door swings open revealing four men sitting on a couch that wraps around the small room, all with drinks in their hands. They're more than a little surprised to see the two of you.''
+
+    <<nm $tasha "Hi boys!">>\
+
+    <<nmc "Skinny Man" "U-um, hello? I don't think we were expecting you?">>\
+
+    <<nm $tasha "Oh? Who were you expecting?">>\
+
+    ''One of the men chugs the rest of his drink before standing up and putting his hands on his belt.''
+
+    <<nmc "Drunk Man" "One of sluts out front was s'posed to come meet us for some fun, but she never showed... How 'bout you? Wanna have some fun?">>\
+
+    ''He pulls down his pants, brandishing an impressive erection. This prompts the other three men to do the same, and before you know it you're trapped in a room with ?tasha and four very horny men.''
+
+    <<nm $tasha "Hm, well, when in Rome!">>\
+
+    <<actB $tasha "blowjob,lick">>\
+    ''?tasha drops to her knees in front of the man already standing, taking his thick cock into her hand and stroking sensually. After a couple moments, she takes him into her mouth. The others excitedly surround her as well.''
+
+    <<pic $tasha "suck-male">>\
+    <<act $tasha "blowjob">>\
+
+    <<nm $tasha "Mmph! Mmph! MMmmm...">>\
+
+    <<Thought "Wow, she just dove right in...">>\
+
+    <<if isMale()>>\
+        <<nmc "Skinny Man" "Yo, you gonna get in on this too?">>\
+
+        ''The man's signalling over to you.''
+    <<else>>\
+        <<nmc "Drunk Man" "Hey, yer pretty fuckin' hot! Why don't you join your friend here!">>\
+        
+        ''The man's signalling over to you.''
+    <</if>>\
+
+    <<nm $player "U-um...">>\
+
+    <<if hasWorkingPenis()>>\
+        <<if isMale()>>\
+            <<nm $tasha "Mmmphwa! Tee-hee, yeah ?mc, get over here!">>\
+        <<else>>\
+            <<nm $tasha "Mmmphwa! Tee-hee, actually, <<he>>'s packing! Get over here!">>\
+        <</if>>\
+
+        ''You shrug, dropping your <<UnderwearOrPants>> and moving over to give ?tasha easy access to your <<pSize>> which she eagerly takes into her mouth.''
+
+        <<nm $player "O-oh fuck!">>\
+
+        <<nmc "Drunk Man" "Hehehe, yeah! This chick can suck one helluva cock!">>\
+
+        <<pic $tasha "cum-on-face">>\
+        <<art $tasha "blowjob,facial">>\
+
+        ''Two of the men pop pretty quickly, covering ?tasha's face with their loads. This doesn't slow her down for a second, and she quickly shifts positions to easily cycle through the remaining cocks in front of her.''
+
+        <<nm $tasha "Mmph! Mph! Mmm! Hngph!">>\
+
+        <<nmc "Skinny Man" "F-fuck! Can't hold out any longer!">>\
+
+        <<nmc "Drunk Man" "S-same!">>\
+
+        ''Both of the other men coat ?tasha's face and tongue with their thick cum, allowing her to turn her attention to you exclusively.''
+
+        <<nm $tasha "Cum for me baby!">>\
+
+        <<nm $player "Fuck!">>\
+
+        <<pic $tasha "cum-in-mouth">>\
+        <<act $tasha "blowjob,creampie">>\
+
+        ''?tasha falls back on her butt, sitting on the floor and leaning up against the couch. The men are all still trying to catch their breath when ?tasha pulls out her own huge, dripping cock and finishes herself off.''
+
+        <<pic $tasha "solo">>\
+        <<act $tasha "solo,cum">>\
+
+        <<nm $tasha "Haaaaa!!! Ooohhhh fuuuuck that was good!">>\
+
+        ''The men all stare intently as she licks her own cum off her fingers.''
+
+        <<nmc "Drunk Man" "Wait... <<if isTrans()>>her too<<else>>she<</if>>? Fuck it, best head I've ever had... C'mon boys, let's head out!">>\
+
+        <<nm $tasha "Tee-hee!">>\
+
+        <<lust $tasha>>
+
+        <<horny 0>>
+        <<trackAction "suckCock.get" $tasha>>\
+        <<trackAction "cumEat.give" $tasha>>\
+    <<else>>\
+        <<if hasPenis()>>\
+            <<if isChastity()>>\
+                <<nm $tasha "Mmmphwa! Tee-hee, poor ?mc has <<his>> cock all locked away. Bet <<he>> gives a pretty amazing blowjob though!">>\
+            <<else>>\
+                <<nm $tasha "Mmmphwa! Tee-hee, poor ?mc's little clitty doesn't get hard anymore. Bet <<he>> gives a pretty amazing blowjob though!">>\
+            <</if>>\
+
+            ''The men think for a second before one in the back pipes up.''
+
+            <<nmc "Impatient Man" "Fuck it! <<He>> wants to suck our cocks let's let <<him>>!">>\
+
+            <<nm $player.d "Damnit ?tasha... fine, bring it on!">>\
+            <<nm $player.s "@@.sf;Y-you want me to... o-okay...@@">>\
+        <<else>>\
+            <<nm $tasha "Tee-hee! C'mon ?mc, join me!">>\
+
+            <<nmc "Impatient Man" "C'mon babe, it'll be fun!">>\
+
+            <<nm $player.d "Damnit ?tasha... fine, bring it on!">>\
+            <<nm $player.b "@@.bf;Mmmm, I was worried you weren't going to invite me!@@">>\
+        <</if>>\
+
+        ''You join ?tasha on the ground, finding yourself quickly surrounded by the other men. One of them drops their large cock directly on your face, prompting you to take it into your mouth.''
+
+        <<actB $player "blowjob,lick">>\
+        <<nmc "Impatient Man" "O-oh fuck!">>\
+
+        <<pic $player "suck-male">>\
+        <<act $player "blowjob">>\
+
+        <<nmc "Drunk Man" "Hehehe, yeah! These sluts can suck one helluva cock!">>\
+
+        <<pic $tasha "cum-on-face">>\
+        <<art $tasha "blowjob,facial">>\
+
+        ''Two of the men pop pretty quickly, covering ?tasha's face with their loads. This doesn't slow her down for a second, and she moves over to join you for the remaining two.''
+
+        <<nm $tasha "Mmph! Mph! Mmm! Hngph!">>\
+
+        <<nm $player "Nhph! Hnph! Mmph!">>\
+
+        <<nmc "Impatient Man" "F-fuck! Can't hold out any longer!">>\
+
+        <<nmc "Drunk Man" "S-same!">>\
+
+        ''?tasha's partner coats her face and tongue with his thick cum, just as yours pulls your head hard down onto his pulsing cock.''
+
+        <<pic $tasha "cum-in-mouth">>\
+        <<act $tasha "blowjob,mouth">>\
+        
+        <<nmc "Impatient Man" "T-take it!">>\
+
+        <<nm $player "HMNPH!">>\
+
+        <<pic $player "cum-in-mouth">>\
+        <<act $player "blowjob,creampie">>\
+
+        ''Before you can take a minute to breath, ?tasha pushes the man aside and rams her cock down your throat, bursting almost immediately.''
+
+        <<pic $tasha "orgasm">>\
+        <<act $tasha "orgasm">>\
+
+        <<nm $tasha "Haaaaa!!! Ooohhhh fuuuuck that was good!">>\
+
+        ''The men all stare intently as she squeezes.''
+
+        <<nmc "Drunk Man" "Wait... she? Fuck it, best head I've ever had... C'mon boys, let's head out!">>\
+
+        <<nm $tasha "Tee-hee!">>\
+
+        <<lust $tasha>>
+        <<dom $player -3>>
+
+        <<if hasPussy()>>\
+            <<horny 0>>
+        <<else>>\    
+            <<horny 30>>
+        <</if>>\
+
+        <<trackAction "suckCock.give" $tasha>>\
+        <<trackAction "cumEat.get" $tasha>>\
+    <</if>>\
+
+    <<AddNote $tasha "?tasha and I visited Club Pearl together tonight. One thing kinda led to another and before I knew it I was involved in a private blowbang with four other strangers! It was an experience for sure.">>\
+    <<btnLink "Continue" "ClubPearl-Tasha-GoHome" "setTime('night')">>\
+
+
+:: ClubPearl-Tasha-BackroomSex {"position":"100,8600","size":"100,100"}
+<<loc_ClubPearl>>\
+
+    ''You approach the stage and grab ?tasha's attention. Once her set's over, she excitedly runs down to meet you, throwing her arms around you and squeeing loudly.''
+
+    <<pic $tasha>>\
+    <<art $tasha "happy,2">>\
+
+    <<nm $tasha "?mc! I'm so happy to see you! Did you come to watch me dance?">>\
+
+    <<nm $player "Um, y-yeah, maybe a little...">>\
+
+    ''?tasha notices you glancing towards the back of the large room, towards the private areas. She slides her arms around your neck, resting her head on your shoulder and whispering into your ear.''
+
+    <<nm $tasha "Or maybe... you wanted to spend some alone time with me?">>\
+
+    ''Her breath on your neck sends a shiver up your spine.''
+
+    <<nm $player "Lead the way...">>\
+
+    ''?tasha takes you by the hand and pulls you over to one of the nicer rooms with a locking door and small bed. As you take a seat, ?tasha strips out of the outfit she was already barely wearing.''
+
+    <<pic $tasha "topless">>\
+    <<art $tasha "aroused,1,naked">>\
+
+    <<nm $tasha "Mmm, well, let's not waste any time okay?">>\
+
+    ''She pushes you into the bed, kissing you deeply as she undresses you. You can feel her hard cock pressing against your body.''
+
+    <<if hasWorkingPenis()>>\
+        <<nm $tasha "Oh! Tee-hee! There <<he>> is...">>\
+
+        ''?tasha takes you hard cock into her hand, admiring it as she gently strokes it before sliding down and taking it into her mouth.''
+
+        <<pic $tasha "suck-player">>\
+        <<act $tasha "blowjob">>\
+
+        <<nm $tasha "Mmmph... mmmph... hngph! Hmph! Mmf!" "<<His>> cock is so tasty!">>\
+
+        <<nm $player "Ooohhh... fuuu...">>\
+
+        ''She expertly sucks your <<pSize>>, sensually licking and kissing it until she's satisfied with how hard and slick she's made it.''
+
+        <<nm $tasha "Now for the fun part!">>\
+
+        ''?tasha straddles your waist, lining your wet cock up with her already-lubricated asshole. As she lowers her body you can feel yourself getting sucked up inside of her.''
+
+        <<nm $tasha "Ooohhhh... Tee-hee! Perfect fit!">>\
+
+        <<pic $tasha "ride-player">>\
+        <<act $tasha "ride,player">>\
+
+        <<nm $player "F-fuck! ?tasha!">>\
+
+        ''?tasha bounces up and down on your cock, one hand stroking herself as she takes you inside of her. The position allows for deep penetration, causing her to moan and squeak every time you bottom out. It's not long before you can start to feel an orgasm welling up inside you.''
+
+        <<nm $tasha "?mc... A-are about to c-cum? M-me too, let's cum together!">>\
+
+        <<nm $player "Y-yeah!">>\
+
+        ''When she feels you start to climax, she drops her weight onto you, causing you to shoot a massive load as deep as possible inside of her. At the same time, she strokes out her own anally induced orgasm, firing ropes of thick, warm cum across your <<bSize>>.''
+
+        <<pic $tasha "creampie">>\
+        <<act $tasha "ride,player,cum">>\
+
+        <<nm $tasha "Ooohhh... Tee-hee! That was so much fun!">>\
+
+        ''?tasha hops off you and wipes herself down before skipping over to the door.''
+
+        <<nm $tasha "It was super nice seeing you! Take your time cleaning up, I gotta get back out there!">>\
+
+        <<nm $player "Y-yeah, you too!">>\
+
+        <<lust $tasha>>
+
+        <<horny 0>>
+        <<trackAction "suckCock.get" $tasha>>\
+        <<trackAction "analFuck.give" $tasha>>\
+        <<trackAction "creampie.give" $tasha>>\
+    <<elseif hasPenis()>>\
+        <<nm $tasha "Oh! Tee-hee! There <<he>> is...">>\
+
+        ''?tasha exposes your ?useless-cock, giving you a pitying look before smiling and moving down to your <<aSize>>.''
+
+        <<pic $tasha "rimjob">>\
+        <<act $tasha "rimjob">>\
+
+        <<nm $tasha "Mmmph... mmmph... hngph! Hmph! Mmf!" "<<His>> ass is so tasty!">>\
+
+        <<nm $player "Ooohhh... fuuu...">>\
+
+        ''She expertly licks your quivering asshole, sensually piercing it with her tongue and kissing it until she's satisfied with how slick she's made it.''
+
+        <<nm $tasha "Now for the fun part!">>\
+
+        ''?tasha lifts your legs, lining her hard cock up with your well-lubricated hole. As she enters you, you can feel her getting sucked up inside of you.''
+
+        <<nm $tasha "Ooohhhh... Tee-hee! Perfect fit!">>\
+
+        <<pic $tasha "fuck-player">>\
+        <<act $player "missionary,male">>\
+
+        <<nm $player "F-fuck! ?tasha!">>\
+
+        ''?tasha slides in and out of your <<aSize>>, one hand massaging your <<bSize>> as you take her inside of you. The position allows for deep penetration, causing you to moan and squeak every time she bottoms out. It's not long before you can start to feel an orgasm welling up inside you.''
+
+        <<nm $tasha "?mc... A-are about to c-cum? M-me too, let's cum together!">>\
+
+        <<nm $player "Y-yeah!">>\
+
+        ''When she feels you start to climax, she buries herself into you, shooting a massive load as deep as possible inside of you. At the same time, your entire body starts trembling as the brain shattering anal orgasm runs through you like electricity. <<if isChastity()>>Beads of cum leak out from under your <<accf>><<else>>A stream of clear cum dribbles out of your <<pSize>><</if>>.''
+
+        <<pic $player "creampie">>\
+        <<act $player "missionary,male,cum">>\
+
+        <<nm $tasha "Ooohhh... Tee-hee! That was so much fun!">>\
+
+        ''?tasha hops off you and wipes herself down before skipping over to the door.''
+
+        <<nm $tasha "It was super nice seeing you! Take your time cleaning up, I gotta get back out there!">>\
+
+        <<nm $player "Y-yeah, you too!">>\
+
+        <<lust $tasha>>
+
+        <<horny 0>>
+        <<trackAction "rimjob.get" $tasha>>\
+        <<trackAction "analFuck.get" $tasha>>\
+        <<trackAction "creampie.get" $tasha>>\
+    <<else>>\
+        <<nm $tasha "Oh! Tee-hee! There <<he>> is...">>\
+
+        ''?tasha exposes your <<vSize>>, admiring it as she gently strokes it before sliding down and taking it into her mouth.''
+
+        <<pic $tasha "eat-pussy">>\
+        <<act $tasha "eatpussy">>\
+
+        <<nm $tasha "Mmmph... mmmph... hngph! Hmph! Mmf!" "<<His>> pussy is so tasty!">>\
+
+        <<nm $player "Ooohhh... fuuu...">>\
+
+        ''She expertly licks your quivering pussy, sensually running her tongue along it and kissing it until she's satisfied with how slick she's made it.''
+
+        <<nm $tasha "Now for the fun part!">>\
+
+        ''?tasha lifts your legs, lining her hard cock up with your well-lubricated cunt. As she enters you, you can feel her getting sucked up inside of you.''
+
+        <<nm $tasha "Ooohhhh... Tee-hee! Perfect fit!">>\
+
+        <<pic $tasha "fuck-player">>\
+        <<act $player "missionary,male">>\
+
+        <<nm $player "F-fuck! ?tasha!">>\
+
+        ''?tasha slides in and out of your <<vSize>>, one hand massaging your <<bSize>> as you take her inside of you. The position allows for deep penetration, causing you to moan and squeak every time she bottoms out. It's not long before you can start to feel an orgasm welling up inside you.''
+
+        <<nm $tasha "?mc... A-are about to c-cum? M-me too, let's cum together!">>\
+
+        <<nm $player "Y-yeah!">>\
+
+        ''When she feels you start to climax, she buries herself into you, shooting a massive load as deep as possible inside of you. At the same time, your entire body starts trembling as the brain shattering orgasm runs through you like electricity.''
+
+        <<pic $player "creampie">>\
+        <<act $player "missionary,male,cum">>\
+
+        <<nm $tasha "Ooohhh... Tee-hee! That was so much fun!">>\
+
+        ''?tasha hops off you and wipes herself down before skipping over to the door.''
+
+        <<nm $tasha "It was super nice seeing you! Take your time cleaning up, I gotta get back out there!">>\
+
+        <<nm $player "Y-yeah, you too!">>\
+
+        <<lust $tasha>>
+
+        <<horny 0>>
+
+
+        <<if $tasha.hasPussy>><<preg $player "?tasha">><</if>>\
+        <<trackAction "eatpussy.get" $tasha>>\
+        <<trackAction "pussyFuck.get" $tasha>>\
+        <<trackAction "creampie.get" $tasha>>\
+    <</if>>\
+
+    <<btnLink "Go back" "ClubPearl">>\
+
+
+:: ClubPearl-Tasha-Dance {"position":"225,8600","size":"100,100"}
+<<loc_ClubPearl>>\
+
+    ''You flag down a waitress and order a drink. She brings it over and you and you find a seat a little closer to the stage. A few minutes later, the lights start to dim and a synth beat starts to pickup from behind the stage.''
+
+    <<pic $events "stripdance">>\
+    <<art "scene/Stripper">>\
+
+    ''As the music starts to play, the girls on stage all take their positions. Much to your excitement, ?tasha walks straight up to you.''
+
+    <<pic $tasha "strip">>\
+    <<art $tasha "aroused,2">>\
+
+    <<nm $tasha "?mc! Tee-hee! You came to see me!">>\
+
+    <<nm $player "Yeah, hope you don't mind! I wanted to see you dance.">>\
+
+    ''You flash a few bills, causing ?tasha's face to light up. She leans over, taking the money from you with her teeth before turning around on all fours and giving you an up-close view of her ass. She looks over her shoulder, giving you a wink before starting to dance.''
+
+    <<nm $tasha "You just sit back and enjoy baby!">>\
+
+    ''You spend the next hour or so enjoying some drinks and slipping money into what remains of ?tasha's outfit. Between sets, she comes down to catch up with you while running her hands over your body. After a while, during one of these breaks, you tell her you're getting ready to head home.''
+
+    <<nm $player "?tasha, it was great seeing you but I think I'm about tapped out tonight.">>\
+
+    <<nm $tasha "Aww, well that's okay. Just promise to come see me again, okay?">>\
+
+    <<pic $tasha "kiss-player">>\
+    <<act $tasha "kiss,player">>\
+
+    ''?tasha pulls you in for a deep kiss, her tongue wrapping around yours.''
+
+    <<nm $tasha "Mmm... Well, see you next time baby!">>\
+
+    <<nm $player "You got it!">>\
+
+    <<btnLink "Head home" "Home" "passTime()">>\
+
+
+:: ClubPearl-Tasha-FreeUse {"position":"350,8600","size":"100,100"}
+<<loc_ClubPearl>>\
+
+    ''?tasha jumps up and grabs you by the hand.''
+
+    <<pic $tasha>>\
+    <<art $tasha "happy">>\
+
+    <<nm $tasha "This is gonna be great! C'mon ?mc!">>\
+
+    <<nm $player "C-can you tell me what it is we're actually doing!?">>\
+
+    ''She takes you down a hallway you hadn't noticed earlier, eventually coming up to another manned door. The large man sitting next to it could give the guy at the entrance a run for his money. You decide it's best to just keep quiet for now.''
+
+    <<nm $tasha "I'm back!">>\
+
+    <<nmc "Large Bearded Man" "...This her?">>\
+
+    <<nm $tasha "Tee-hee, yep! Cute, huh?">>\
+
+    <<if not dressed('crossdressed') and not isTrans()>>\
+        <<Thought "What? Wait, did he say 'her'?">>\
+
+        ''The man looks back at you, eyes narrowing.''
+
+        <<nmc "Large Bearded Man" "Hmm... Needs work.">>\
+    <<elseif dressed('crossdressed') and not isTrans()>>\
+        <<Thought "I'm not sure I like this...">>\
+        
+        ''The man looks back at you, eyes narrowing.''
+
+        <<nmc "Large Bearded Man" "Hmm... Needs a little work.">>\
+    <<else>>\
+        <<Thought "This is making me a little nervous...">>\
+
+        ''The man looks back at you, eyes narrowing.''
+
+        <<nmc "Large Bearded Man" "Hm... Mhm.">>\
+    <</if>>\
+
+    ''$tasha.name rocks on her heels smiling as the hulking man guides you into through the door...''
+
+    <<btnLink "Continue..." "ClubPearl-Tasha-FreeUse2">>
+
+
+:: ClubPearl-Tasha-FreeUse-Finish {"position":"850,8600","size":"100,100"}
+<<loc_ClubPearl>>\
+
+    ''You lay on the dirty bed, left only to your own wavering thoughts. Occasionally, you'll black out for a time before consciousness again fills your mind.''
+
+    <<Thought "Can't move... How long have I been here? Hours? No, can't be... Can't see anything... Can't move...">>\
+
+    ''You black out again. A few minutes later, the door behind you opens.''
+
+    <<Thought "Is someone...?">>\
+
+    <<nm $tasha "Oh, sweetie. You've had quite a night, huh? Tee-hee, let's get you home, huh?">>\
+
+    ''The feeling of being lifted off the bed and thrown over someone's shoulder is the last sensation you experience that night, save for the occasional glimpse of a flashing streetlight in a moving car. You can only vaguely remember being dropped off at your driveway and making your way to your bed.''
+
+    <<Thought "Sleep...">>\
+
+    <<AddConvo $tasha 23>>\
+    <<btnLink "Go to sleep" "Room-GotoBed">>
+
+
+:: ClubPearl-Tasha-FreeUse-Men {"position":"600,8600","size":"100,100"}
+<<loc_ClubPearl>>\
+
+    ''You're led through a large door from the dressing room into a dark hallway where the only thing visible is a series of small light dotting the edges of the hall.''
+
+    <<nmc "Marcus" "Follow the lights...">>\
+
+    ''The door slams shut behind you with an audible lock, leaving your only option to move forward. The path has you walking straight for several feet before the lights finally lead you around the corner and to another door. There's a small, fancy sign that simply reads ENTERTAINMENT. You take a deep breath.''
+
+    <<if isBimbo()>>\
+        <<Thought "@@.bf;Tee-hee, I'm kinda' excited right now...@@">>\
+    <<else>>\
+        <<Thought "Well, I guess this is it... Damnit $tasha.name...">>\
+    <</if>>\
+
+    ''After taking a brief moment to collect yourself, you grab the handle, push open the door, and walk on through.''
+
+    <<nmc "Muscular Man" "Hey hey! She's here!">>\
+
+    ''You laugh nervously. You're in a small room full of masked men all locked on you and your embarrassing maid outfit. In the center of the room is a dirty bed. It's clear that this room was designed for a single purpose.''
+    
+    <<if $player.identity is "female">>\
+        <<nm $player "H-hehe, yep, here I, um, am!">>\
+    <<else>>\
+        <<nm $player "S-she? O-oh, right, u-um... Hahaha...">>\
+    <</if>>\
+
+    <<nmc "Fat Man" "Hehehe, she's so cute! I love the maid getup!">>\
+
+    <<nmc "Old Man" "Who cares what she's wearing. Not like it's gonna stay on for long!">>\
+
+    ''The men all laugh. A younger man sitting in the corner gets up and walks over to you, a warm smile on his face.''
+
+    <<nmc "Young Man" "Don't mind those animals. This'll be fun, okay? This isn't your first time, is it?">>\
+
+    <<if firstVisit()>>\
+        <<nm $player "A-actually...">>\
+    <<else>>\
+        <<nm $player "A-actually..." "Nope, but they eat this up!">>\
+    <</if>>\
+
+    <<nmc "Young Man" "Oh I see! Well, in that case...">>\
+
+    ''The young man's warm smile shifts into a maniacal grin as he swings around.''
+
+    <<nmc "Young Man" "We got us a virgin, boys!">>\
+
+    <<nmc "Muscular Man" "No shit!? Hahaha! Get that bitch on her knees!">>\
+
+    ''You take a step back, only to be grabbed by the younger man and forced to your knees. Somehow, you only just know realized that all the men in the room were completely naked. You're now face to face with the young man's thick, hard cock. He smacks you in the face with it as the other men circle around. You know what's coming next...''
+
+    <<pic $action "player-suck-male">>\
+
+    <<nm $player "GLPH! MPH! HMPH!" "So rough! F-fuck!">>\
+
+    <<nmc "Young Man" "Holy shit! This bitch has clearly had some practice!">>\
+
+    <<nmc "Fat Man" "Yeah? Well come on, don't hog her!">>\
+
+    ''You're passed around like an object between the ring of men, forced to suck on one of them while jerking off two more. You notice that the older man isn't participating, but rather just sitting back and watching with a satisfied grin on his face. You're not sure why, but this is making you incredibly nervous.''
+
+    <<nmc "Muscular Man" "O-oh! Gonna cum!">>\
+
+    <<pic $action "player-oral-creampie">>\
+
+    <<nm $player "Hngruh-<<cough>> <<cough>> haaahMPH! MPH!">>\
+
+    ''Barely a second to breath after taking the man's load, you're immediately pulled onto another waiting cock.''
+
+    <<nmc "Old Man" "You dumb fuck! Fun's only just started and you're already blowin' your wad?">>\
+
+    <<nmc "Muscular Man" "Pfft, relax, old man. Unlike your tired ass I'm good for more than one!">>\
+
+    <<Thought "Oh for fuck's sake...">>\
+
+    <<nmc "Fat Man" "Well, to be fair, we should really get started on the main event, yeah?">>\
+
+    ''The young man withdraws his wet cock from your mouth and pushes your head back.''
+
+    <<nmc "Young Man" "Sounds good to me! Alright slut, stand up and walk over to that bed. Well, c'mon!">>\
+
+    <<nm $player "Y-yeah, I got it...">>\
+
+    ''You struggle to get to your feet, turning towards the bed. After a couple steps, you're pulled back as one of the men grabs your wrist.''
+
+    <<nmc "Old Man" "Tch, what'd I say about those clothes of yours?">>\
+
+    ''The men all converge on you, ripping your outfit to shreds before pushing you onto the bed.''
+
+    <<if bSize($XL)>>\
+        <<nmc "Fat Man" "Holy shit! I knew she had some huge tits but now that she's naked... mmmmmm...">>\
+
+        ''The larger man paws at your <<bSize>>...''
+    <<elseif bSize($L)>>\
+        <<nmc "Fat Man" "Oh yeah! Look at those huge titties!">>\
+
+        ''The larger man paws at your <<bSize>>...''
+    <<elseif bSize($M)>>\
+        <<nmc "Fat Man" "Mmm, what a cute rack!">>\
+        
+        ''The larger man paws at your <<bSize>>...''
+    <<elseif isChastity()>>\
+        <<nmc "Old Man" "Hahaha! Look at that, the slut's all locked up! Really is made for this, isn't she?">>\
+
+        ''The men all laugh at your <<accf>>...''
+    <<elseif pSize($XL)>>\
+        <<nmc "Muscular Man" "Oh wow! This slut's packin'! Too bad she won't be using that thing tonight!">>\
+
+        ''The men all gawk at your <<pSize>>...''
+    <<elseif pSize($M)>>\
+        <<nmc "Muscular Man" "Hehehe, look at that bitch's little cock gettin' all excited for what's about to happen...">>\
+        
+        ''The men all poke fun at your <<pSize>>...''
+    <<elseif hasPussy()>>\
+        <<nmc "Young Man" "Oh my, her cunt's so cute! You really were made for this, weren't you?">>\
+        
+        ''The men all fawn over your <<vSize>>...''
+    <<else>>\
+        <<nmc "Young Man" "Oh my, it's so cute! You really were made for this, weren't you?">>\
+        
+        ''The men all laugh at your <<pSize>>...''
+    <</if>>\
+
+    <<if isBimbo()>>\
+        <<Thought "@@.bf;This is really turning me on!@@">>\
+    <<else>>\
+        <<Thought "This is so embarrassing!">>\
+    <</if>>\
+
+    ''The men all suddenly go quiet as they rush the bed, grabbing at your wrists and ankles, twisting you around onto your hands and knees. Another cock forces its way into your mouth, you can't tell whose, as your ass gets groped and slapped. It's not long before your feel a cold pressure against your exposed <<aSize>>.''
+
+    <<if isBimbo()>>\
+        <<Thought "@@.bf;Mmm, here we go!@@">>\
+    <<elseif pref($player,"analFuck.get",$LIKE)>>\
+        <<Thought "Here it comes...">>\
+    <<else>>\
+        <<Thought "S-shit!">>\
+    <</if>>\
+
+    <<anal "one of the men's large cocks">>\
+
+    <<nm $player "HMPH!">>\
+
+    <<pic $action "male-fuck-player">>\
+
+    <<nmc "Muscular Man" "Oh fuck yeah! This bitch feels great!">>\
+
+    <<nmc "Old Man" "Hehe, her mouth ain't half bad either...">>\
+
+    ''The four men all take turns with you, alternating between your mouth and ass while making you jerk off those waiting for a turn. After a while you start to get dizzy, completely losing track of time or place. You're not sure how long this has been going on at this point, or how many times they've emptied their loads into your throat or ass...''
+    
+    <<if hasPenis()>>\
+        <<pic $action "sissy-gangbang">>\
+    <<else>>\
+        <<pic $action "female-gangbang">>\
+    <</if>>\
+
+    <<Thought "Can't... think straight... so many cocks...">>\
+
+    <<nmc "Young Man" "Oh man, I'm about at my limit here!">>\
+
+    <<nmc "Fat Man" "Haha, tell me about it. We'd better wrap up before we totally break her.">>\
+
+    ''Their pace and force starts to increase dramatically as they all push towards one final orgasm.''
+
+    <<nmc "Old Man" "Hahaha, here it comes bitch! Make sure you swallow every drop!">>\
+
+    <<pic $action "player-oral-creampie">>\
+
+    <<nm $player "HRCK!" "T-too much... it's too much...">>\
+
+    ''The warmth of their cum overtakes your entire body as your mind and vision begins to fade completely. After a moment, you can't tell if you're sitting up or laying down, another moment later and the only sense filling your head is the sound of the men's satisfied laughter. A moment after that, darkness.''
+
+    <<dom $player -10>>
+    <<tfm "fem">>
+    <<trackAction "suckCock.give">>\
+    <<trackAction "analFuck.get">>\
+    <<trackAction "cumEat.get">>\
+    <<trackAction "gangbang.get">>\
+    <<if visited() is 1>>\
+        <<AddNote $tasha "$tasha.name brought me to a sex club tucked away in the industrial sector of town. There, I was used and abused for hours by a group of strange men.">>\
+        <<AddDreamEvent 30>>\
+    <</if>>\
+
+    <<horny 0 "Unsure of how, when, or why, getting gangraped by the group of men forced out at least a few orgasms...">>
+
+    <<btnLink "Fade away..." "ClubPearl-Tasha-FreeUse-Finish">>
+
+
+:: ClubPearl-Tasha-FreeUse-Refuse {"position":"975,8600","size":"100,100"}
+<<loc_ClubPearl>>\
+
+    ''You shake your head.''
+
+    <<nm $player "Yeah, I don't think I'm up for any sexy surprises tonight.">>\
+
+    <<pic $tasha>>\
+    <<art $tasha "sad">>\
+
+    <<nm $tasha "Aww, okay, I get it. Well, at least hang out with me!">>\
+
+    <<nm $player "Yeah for sure!">>\
+
+    <<pic $events "stripdance">>\
+    <<art "scene/Stripper">>\
+
+    ''The two of you kick back with some drinks, casually feeling each other up as you watch a multitude of attractive dancers crawl around on stage in front of you.''
+
+    <<love $tasha>>
+
+    <<horny 100>>
+
+    <<btnLink "Go home" "ClubPearl-Tasha-GoHome" "setTime('night')">>\
+
+
+:: ClubPearl-Tasha-FreeUse-Women {"position":"725,8600","size":"100,100"}
+<<loc_ClubPearl>>\
+
+    ''You're led through a large door from the dressing room into a dark hallway where the only thing visible is a series of small light dotting the edges of the hall.''
+
+    <<nmc "Marcus" "Follow the lights...">>\
+
+    ''The door slams shut behind you with an audible lock, leaving your only option to move forward. The path has you walking straight for several feet before the lights finally lead you around the corner and to another door. There's a small, fancy sign that simply reads ENTERTAINMENT. You take a deep breath.''
+
+    <<if isBimbo()>>\
+        <<Thought "@@.bf;Tee-hee, I'm kinda' excited right now...@@">>\
+    <<else>>\
+        <<Thought "Well, I guess this is it... Damnit $tasha.name...">>\
+    <</if>>\
+
+    ''After taking a brief moment to collect yourself, you grab the handle, push open the door, and walk on through.''
+
+    <<nmc "Voluptuous Woman" "Hey girls! She's here!" "UnknownF">>\
+
+    ''You laugh nervously. You're in a small room full of intimidating women, all locked on you and your embarrassing maid outfit. In the center of the room is a dirty bed. It's clear that this room was designed for a single purpose.''
+    
+    <<if $player.identity is "female">>\
+        <<nm $player "H-hehe, yep, here I, um, am!">>\
+    <<else>>\
+        <<nm $player "S-she? O-oh, right, u-um... Hahaha...">>\
+    <</if>>\
+
+    <<nmc "Curvy Woman" "Hehehe, she's so cute! I love the maid getup!" "UnknownF">>\
+
+    <<nmc "Mature Woman" "Who cares what she's wearing. Not like it's gonna stay on for long!" "UnknownF">>\
+
+    ''The women all laugh. A younger girl sitting in the corner gets up and walks over to you, a warm smile on her face.''
+
+    <<nmc "Young Woman" "Don't mind those bitches, sweetie. This'll be fun, m'kay? Hey, this isn't your first time, is it?" "UnknownF">>\
+
+    <<if firstVisit()>>\
+        <<nm $player "A-actually...">>\
+    <<else>>\
+        <<nm $player "A-actually..." "Nope, but they eat this up!">>\
+    <</if>>\
+
+    <<nmc "Young Woman" "Really? Oh I see! Well, in that case..." "UnknownF">>\
+
+    ''The young girls's warm smile shifts into a maniacal grin as she swings around.''
+
+    <<nmc "Young Woman" "We got us a virgin, ladies!" "UnknownF">>\
+
+    <<nmc "Voluptuous Woman" "No shit!? Hahaha! Get that bitch on her knees!" "UnknownF">>\
+
+    ''You take a step back, only to be grabbed by the younger girl and forced to your knees. Somehow, you only just know realized that all the women in the room were completely naked. You're now face to face with the young girl's shaved, dripping pussy. She rubs her hand forcibly on the back of your head as the other women circle around. You know what's coming next...''
+
+    <<pic $action "player-eat-pussy">>\
+
+    <<nm $player "GLPH! MPH! HMPH!" "So rough! F-fuck!">>\
+
+    <<nmc "Young Woman" "Holy shit! This bitch has clearly had some practice!" "UnknownF">>\
+
+    <<nmc "Curvy Woman" "Yeah? Well come on, don't hog her!" "UnknownF">>\
+
+    ''You're passed around like an object between the ring of women, forced to eat one of them out while using your hands to rub two more. You notice that the older woman isn't participating, but rather just sitting back and watching with a satisfied grin on her face. You're not sure why, but this is making you incredibly nervous.''
+
+    <<nmc "Voluptuous Woman" "O-oh! Gonna cum!" "UnknownF">>\
+
+    <<pic $action "female-squirt">>\
+
+    <<nm $player "Hngruh-<<cough>> <<cough>> haaahMPH! MPH!">>\
+
+    ''Barely a second to breath after drinking the flood of juices, you're immediately pulled onto another waiting cunt.''
+
+    <<nmc "Mature Woman" "You dumb bitch! Fun's only just started and you're already blowin' your load?" "UnknownF">>\
+
+    <<nmc "Voluptuous Woman" "Pfft, relax, old lady. Unlike your tired ass I'm good to go all night!" "UnknownF">>\
+
+    <<Thought "Oh for fuck's sake...">>\
+
+    <<nmc "Curvy Woman" "Well, to be fair, we should really get started on the main event, yeah?" "UnknownF">>\
+
+    ''The young woman pushes you off her dripping slit.''
+
+    <<nmc "Young Woman" "Sounds good to me! Alright slut, stand up and walk over to that bed. Well, c'mon!" "UnknownF">>\
+
+    <<nm $player "Y-yeah, I got it...">>\
+
+    ''You struggle to get to your feet, turning towards the bed. After a couple steps, you turn around to see the women all helping each other fasten strapon harnesses to their waists.''
+
+    <<Thought "Oh f-fuck...">>\
+
+    ''The older woman is the first to finish preparing, quickly making her way over to you and throwing down to the bed.''
+
+    <<nmc "Mature Woman" "Tch, what'd I say about those clothes of yours?" "UnknownF">>\
+
+    ''The women all converge on you, ripping your outfit to shreds before pushing you onto the bed.''
+
+    <<if bSize($XL)>>\
+        <<nmc "Curvy Woman" "Holy shit! I knew she had some huge tits but now that she's naked... Dayum!" "UnknownF">>\
+
+        ''The larger woman paws at your <<bSize>>...''
+    <<elseif bSize($L)>>\
+        <<nmc "Curvy Woman" "Oh yeah! Look at those huge titties! Tee-hee, almost as big as mine!" "UnknownF">>\
+
+        ''The larger woman paws at your <<bSize>>...''
+    <<elseif bSize($M)>>\
+        <<nmc "Curvy Woman" "Mmm, what a cute rack!" "UnknownF">>\
+        
+        ''The larger woman paws at your <<bSize>>...''
+    <<elseif isChastity()>>\
+        <<nmc "Mature Woman" "Hahaha! Look at that, the slut's all locked up! Really is made for this, isn't she?" "UnknownF">>\
+
+        ''The women all laugh at your <<accf>>...''
+    <<elseif pSize($XL)>>\
+        <<nmc "Voluptuous Woman" "Oh wow! This slut's packin'! Too bad she won't be using that thing tonight!" "UnknownF">>\
+
+        ''The women all gawk at your <<pSize>>...''
+    <<elseif pSize($M)>>\
+        <<nmc "Voluptuous Woman" "Hehehe, look at that bitch's little cock gettin' all excited for what's about to happen..." "UnknownF">>\
+        
+        ''The women all poke fun at your <<pSize>>...''
+    <<elseif hasPussy()>>\      
+        <<nmc "Young Woman" "Oh my, what a perfect slit! You really were made for this, weren't you?" "UnknownF">>\
+        
+        ''The women all fawn over your <<vSize>>...''
+    <<else>>\
+        <<nmc "Young Woman" "Oh my, it's so cute! You really were made for this, weren't you?" "UnknownF">>\
+        
+        ''The women all laugh at your <<pSize>>...''
+    <</if>>\
+
+    <<if isBimbo()>>\
+        <<Thought "@@.bf;This is really turning me on!@@">>\
+    <<else>>\
+        <<Thought "This is so embarrassing!">>\
+    <</if>>\
+
+    ''The women all suddenly go quiet as they rush the bed, grabbing at your wrists and ankles, twisting you around onto your hands and knees. Another wet pussy forces its way into your mouth, you can't tell whose, as your ass gets groped and slapped. It's not long before your feel a cold pressure against your exposed <<aSize>>.''
+
+    <<if isBimbo()>>\
+        <<Thought "@@.bf;Mmm, here we go!@@">>\
+    <<elseif pref($player,"analFuck.get",$LIKE)>>\
+        <<Thought "Here it comes...">>\
+    <<else>>\
+        <<Thought "S-shit!">>\
+    <</if>>\
+
+    <<anal "one of the women's large strapon cocks">>\
+
+    <<nm $player "HMPH!">>\
+
+    <<pic $action "female-fuck-player">>\
+
+    <<nmc "Voluptuous Woman" "Oh fuck yeah! This bitch feels great!" "UnknownF">>\
+
+    <<nmc "Mature Woman" "Hehe, her mouth ain't half bad either..." "UnknownF">>\
+
+    ''The four women all take turns with you, alternating between your mouth and ass while making you finger those waiting for a turn. After a while you start to get dizzy, completely losing track of time or place. You're not sure how long this has been going on at this point, or how many times they've emptied their loads into your throat or ass...''
+    
+    <<if hasPenis()>>\
+        <<pic $action "sissy-strapon-gangbang">>\
+    <<else>>\
+        <<pic $action "female-ride-female">>\
+    <</if>>\
+
+    <<Thought "Can't... think straight... so many cocks... pussies...">>\
+
+    <<nmc "Young Woman" "Oh man, I'm about at my limit here!" "UnknownF">>\
+
+    <<nmc "Curvy Woman" "Haha, tell me about it. We'd better wrap up before we totally break her." "UnknownF">>\
+
+    ''Their pace and force starts to increase dramatically as they all push towards one final orgasm.''
+
+    <<nmc "Mature Woman" "Hahaha, here it comes bitch! Make sure you swallow every drop!" "UnknownF">>\
+
+    <<pic $action "female-squirt">>\
+
+    <<nm $player "HRCK!" "T-too much... it's too much...">>\
+
+    ''The warmth of their juices overtakes your entire body as your mind and vision begins to fade completely. After a moment, you can't tell if you're sitting up or laying down, another moment later and the only sense filling your head is the sound of the women's satisfied laughter. A moment after that, darkness.''
+
+    <<dom $player -10>>
+    <<tfm "fem">>
+    <<trackAction "suckCock.give">>\
+    <<trackAction "eatPussy.give">>\
+    <<trackAction "analFuck.get">>\
+    <<trackAction "gangbang.get">>\
+    <<if visited() is 1>>\
+        <<AddNote $tasha "$tasha.name brought me to a sex club tucked away in the industrial sector of town. There, I was used and abused for hours by a group of aggressive women.">>\
+        <<AddDreamEvent 31>>\
+    <</if>>\
+
+    <<horny 0 "Unsure of how, when, or why, getting gangraped by the group of women forced out at least a few orgasms...">>
+
+    <<btnLink "Fade away..." "ClubPearl-Tasha-FreeUse-Finish">>
+
+
+:: ClubPearl-Tasha-FreeUse2 {"position":"475,8600","size":"100,100"}
+<<loc_ClubPearl>>\
+
+    ''On the other side of the door wait an attractive young woman and a short, muscular man in a leather vest.''
+
+    <<if visited() > 1>>\
+        <<pic $tasha>>\
+        <<art $tasha "happy">>\
+
+        <<nm $tasha "Hey Lucy!!!">>\
+
+        ''$tasha.name shouts to her friend who smiles and waves back excitedly. Marcus growls in disapproval and the three of you quickly move to the back room.''
+
+        <<nm $tasha "Tee-hee, okay, okay! Don't be so grumpy!">>\
+    <<else>>\
+        <<nmc "Club Girl" "$tasha.name? Holy shit, it's you! Haha, wow, you look GREAT!" "UnknownF">>\
+
+        <<pic $tasha>>\
+        <<art $tasha "happy">>\
+
+        <<nm $tasha "Oh my GAWD! Lucy? I haven't seen you in months! How have you been?">>\
+
+        ''Your large escort looks mildly irritated.''
+
+        <<nmc "Lucy" "I've been good, great even! Hey, are you here, um, working tonight?" "UnknownF">>\
+
+        <<nm $tasha "Oh, I don't do that anymore. Work's been too busy and the pay's good enough that I don't really have to, y'know? Nope, tonight's entertainment is, well, tee-hee!">>\
+
+        ''$tasha.name gives you an excited smile as Lucy covers her now gaping mouth with a hand. This makes you very nervous.''
+
+        <<nmc "Large Bearded Man" "No time...">>\
+
+        <<nmc "Lucy" "Uh-oh! Don't wanna make Marcus cranky, haha! Take care $tasha.name, and tell your friend to just relax and have fun!" "UnknownF">>\
+
+        <<nm $tasha "Oh he's just a big sweetie, aincha' Marcus? But yeah, I'll see you around!">>\
+    <</if>>\
+
+    ''You're finally led to a narrow corridor that winds around the back of the club. As you travel through it, the music grows quieter and, after passing through a soundproof door, silences completely. You're finally led through one last door that closes behind you.''
+
+    <<nm $player "This looks like a... dressing room?">>\
+
+    <<nm $tasha "That's right! Hm, let's see...">>\
+
+    ''The three of you stand in a dimly lit room covered in pink wallpaper and pink shag carpet, various cabinets and dressers and lit-up vanities line the walls. There are two doors, one you just came through and one on the back wall, and the entire room appears to have been stuck in a time capsule sealed sometime in the late 70's. After digging around for a little while, $tasha.name comes back holding a French Maid outfit in her hands.''
+
+    <<nm $tasha "Tee-hee! This one! Well, go on $player.name, put it on!">>\
+
+    <<nm $player "W-what? Me!? H-hold on a min-">>\
+
+    ''Marcus grabs you from behind while $tasha.name starts pulling your clothes off. Your arms begin to hurt from Marcus' grip and evenutually you recognize the losing battle for what it is and relax your body.''
+
+    <<nm $tasha "OOOHHH!!! She's so CUTE! Be sure to pull that skirt up, 'kay?">>\
+
+    <<if hasPenis()>>\
+        <<pic $events "ts-maid">>\
+    <<else>>\
+        <<pic $events "female-maid">>\
+    <</if>>\
+
+    <<nm $player.b "@@.bf;Tee-hee, I actually do feel pretty cute!@@">>\
+    <<nm $player.s "@@.sf;Y-you really think I look cute?@@">>\
+    <<nm $player.d "This is so fucking embarrassing...">>\
+
+    ''As $tasha.name giggles uncontrollably, Marcus pulls out his cell phone.''
+
+    <<if visited() > 1>>\
+        <<if chance(50)>>\
+            <<nmc "Marcus" "Tonight, she is seeing a group of men. Please, go through to the other room and wait patiently.">>\
+
+            <<if pref($player,"sex.Men",$LIKE)>>\
+                <<Thought "Well, at least I might be able to have some fun tonight...">>\
+            <<elseif pref($player,"sex.Men",$NEUTRAL)>>\
+                <<Thought "Let's just get this over with...">>\
+            <<else>>\
+                <<Thought "Fuck...">>\
+            <</if>>\
+
+            <<btnLink "Walk through the door" "ClubPearl-Tasha-FreeUse-Men">>\
+        <<else>>\
+            <<nmc "Marcus" "Tonight, she is seeing a group of women. Please, go through to the other room and wait patiently.">>\
+
+            <<if pref($player,"sex.Women",$LIKE)>>\
+                <<Thought "Well, at least I might be able to have some fun tonight...">>\
+            <<elseif pref($player,"sex.Women",$NEUTRAL)>>\
+                <<Thought "Let's just get this over with...">>\
+            <<else>>\
+                <<Thought "Fuck...">>\
+            <</if>>\
+
+            <<btnLink "Walk through the door" "ClubPearl-Tasha-FreeUse-Women">>\
+        <</if>>\
+    <<else>>\
+        <<nmc "Marcus" "Hm... First night?">>\
+
+        <<nm $tasha "Sure is!">>\
+
+        ''Marcus stares at you for a moment, making you feel more than a little intimidated.''
+
+        <<nmc "Marcus" "First night, you choose. Boys or girls?">>\
+
+        <<nm $player "Huh?">>\
+
+        <<nm $tasha "Tee-hee, silly $player.name! Haven't you figured it out yet? This is a sex club and you're tonight's entertainment! First-timers get to pick who their, hehe, partner is. So, wanna get fucked by men or women?">>\
+
+        ''You're both completely shocked and yet totally unsurprised all at the same time.''
+
+        <<nm $tasha "Oh and don't try to run, either. If you run then you get Marcus for a partner, and the last girl who had that pleasure ended up in the hospital with a broken hip and torn esophagus... So what'll it be!?">>\
+
+        <<btnChoice "Choose Men" "ClubPearl-Tasha-FreeUse-Men">>
+        <<btnChoice "Choose Women" "ClubPearl-Tasha-FreeUse-Women">>
+    <</if>>\
+
+
+:: ClubPearl-Tasha-GoHome {"position":"100,8725","size":"100,100"}
+<<loc_Night>>\
+
+    ''You and ?tasha walk together for a ways before finally splitting up.''
+
+    <<pic $tasha>>\
+    <<art $tasha "happy,2">>\
+
+    <<nm $tasha "I had a great time tonight!">>\
+
+    <<nm $player "Yeah, same! That place was... a little intense!">>\
+
+    ''?tasha giggles.''
+
+    <<nm $tasha "Yeah, but I think I really liked it! I might come back from time to time.">>\
+
+    <<nm $player "I might as well, who knows.">>\
+
+    <<nm $tasha "Hehe, yay! Maybe we'll run into each other!">>\
+
+    <<nm $player "Yeah, maybe!">>\
+
+    <<pic $tasha "kiss-player">>\
+    <<act $tasha "kiss,player,1">>\
+
+    ''With that, you return home.''
+
+    <<Thought "Maybe I will come back here sometime...">>\
+
+    @@.data;You can now visit Club Pearl after work in the evening!@@
+
+    <<btnLink "Continue" "Home">>\
+
+
+:: ClubPearl-Tasha-Service {"position":"1100,8600","size":"100,100"}
+<<loc_ClubPearl>>\
+
+    ''You flag down a waitress and order a drink. She brings it over and you and you find a seat a little closer to the stage. A few minutes later, the lights start to dim and a synth beat starts to pickup from behind the stage.''
+
+    <<pic $tasha "strip">>\
+    <<art $tasha "aroused,2">>\
+
+    ''As the music starts to play, you get ?tasha's attention prompting her to slink down off the stage and into your lap. She wraps her arms around your neck and pulls you in for a deep kiss. She breaks it off after a few seconds, her tongue running over her lips before she looks up at you.''
+
+    <<pic $tasha "kiss-player">>\
+    <<act $tasha "kiss,player">>\
+
+    <<nm $tasha "Mmm, miss me?">>\
+
+    <<nm $player "Maybe a little... Okay maybe a lot.">>\
+
+    <<if hasWorkingPenis()>>\
+        ''?tasha smiles deviously before leaning in and kissing your neck. After a moment, she moves down to the floor between your legs, and pulls out your <<pSize>>.''
+
+        <<nm $tasha "Oooh, there <<he>> is!">>\
+
+        <<pic $tasha "suck-player">>\
+        <<act $tasha "blowjob,lick">>\
+
+        <<nm $player "Mmmm... fuck...">>\
+
+        ''She wastes no time pulling your cock into her mouth, licking the shaft and teasing the head before finally taking it deep into her throat.''
+
+        <<actB $tasha "blowjob,deep">>\
+        <<nm $tasha "Mmmph! Mmmnhph! Nnnngph!">>\
+
+        ''It's not long before her expert skills have you near the edge, and even less time after that before you can feel your orgasm welling up inside you.''
+
+        <<nm $player "?tasha... I-I'm gonna...">>\
+
+        <<pic $tasha "cum-in-mouth">>\
+        <<act $tasha "blowjob,creampie">>\
+
+        ''She takes you even deeper and faster. Finally, thick ropes of hot cum shoot down ?tasha's throat, which she happily swallows. ?tasha licks her lips, clearly satisfied with her good job.''
+
+        <<nm $tasha "Mmm, tee-hee! That was fun!">>\
+
+        ''?tasha cleans up her mess before tucking your worn out penis back into your <<UnderwearOrPants>>. She gives you a quick hug before returning to stage.''
+
+        <<lust $tasha>>
+
+        <<horny 0>>
+        <<trackAction "suckCock.get" $tasha>>\
+    <<elseif hasPenis()>>\
+        ''?tasha smiles deviously before leaning in and kissing your neck. After a moment, she moves down to the floor between your legs, and pulls out your ?unusable-cock.''
+
+        <<nm $tasha "Aw, looks like there's nothing for me to suck... Say, I bet I know what you really want!">>\
+
+        ''?tasha hops off the floor and stands directly in front of you, her huge cock bouncing just inches from your face. Before you can even put the pieces together, her hands are already wrapped around the back of your head and her hard cock has already breached your lips.''
+
+        <<pic $player "suck-ts">>\
+        <<act $player "blowjob,deep">>\
+
+        <<nm $tasha "Mmmm... that's it baby... Tee-hee, it's okay, don't be shy! I know this is why you came to see me!">>\
+
+        ''She quickly starts ramping up her pace, sliding her pulsing cock over your tongue and down your throat, making breathing incredibly difficult.''
+
+        <<nm $player "Mmmph! Mmmnhph! Nnnngph!">>\
+
+        ''It's not long before you start to feel her cock twitch and quiver, and even less time after that before you can taste the steady stream of precum running down your throat.''
+
+        <<nm $tasha "?mc... I-I'm gonna...">>\
+
+        <<pic $tasha "cum-in-mouth">>\
+        <<act $tasha "blowjob,creampie">>\
+
+        ''She makes you take her even deeper and faster. Finally, thick ropes of hot cum shoot down your throat, which you have no choice but to swallow. ?tasha licks her lips and purrs, clearly satisfied with your good job.''
+
+        <<nm $tasha "Mmm, tee-hee! That was fun!">>\
+
+        ''?tasha cleans up her mess before giving you a quick hug and returning to stage.''
+
+        <<lust $tasha>>
+
+        <<horny 30>>
+        <<trackAction "suckCock.give" $tasha>>\
+    <<else>>\
+        ''?tasha smiles deviously before leaning in and kissing your neck. After a moment, she moves down to the floor between your legs, and exposes your <<vSize>>.''
+
+        <<nm $tasha "Oooh, there <<he>> is!">>\
+
+        <<pic $tasha "eat-pussy">>\
+        <<act $tasha "eatpussy">>\
+
+        <<nm $player "Mmmm... fuck...">>\
+
+        ''She wastes no time diving towards your mound, licking your pussy up and down and teasing the clit before finally burying her tongue inside you.''
+
+        <<nm $tasha "Mmmph! Mmmnhph! Nnnngph!">>\
+
+        ''It's not long before her expert skills have you near the edge, and even less time after that before you can feel your orgasm welling up inside you.''
+
+        <<nm $player "?tasha... I-I'm gonna...">>\
+
+        <<pic $player "orgasm">>\
+        <<act $tasha "eatpussy,cum">>\
+
+        ''She takes you even deeper and faster. Finally, a torrent of thick juices spray over her mouth and chest. ?tasha licks her lips, clearly satisfied with her good job.''
+
+        <<nm $tasha "Mmm, tee-hee! That was fun!">>\
+
+        ''?tasha cleans up her mess before tucking your worn out penis back into your <<UnderwearOrPants>>. She gives you a quick hug before returning to stage.''
+
+        <<lust $tasha>>
+
+        <<horny 0>>
+        <<trackAction "eatPussy.get" $tasha>>\
+    <</if>>\
+
+    <<btnLink "Head home" "Home" "passTime()">>\
+
+
+:: ClubPearl-Tasha-WatchDancers {"position":"1225,8600","size":"100,100"}
+<<loc_ClubPearl>>\
+
+    ''You point near the stage.''
+
+    <<nm $player "I think I want to sit down and watch the dancers for a bit.">>\
+
+    <<pic $tasha>>\
+    <<art $tasha "happy">>\
+
+    <<nm $tasha "Okay, sounds fun!">>\
+
+    ''The two of you wade through the crowd and find an empty sofa. You sit after ?tasha, who immediately moves to cuddle up with you. A waitress quickly makes her way over towards where you're sitting. She's wrapped in leather straps leaving one of her breasts completely exposed. Her g-string holds a vibrating dildo inside of her pussy, explaining the streaks of liquids running down her thighs and into her boots. The woman has a lithe body, dark skin, and short black hair accented with green and blue neon streaks.''
+
+    <<npc "ClubPearlServer">>\
+    <<nmc "Waitress" "C-c-can I... h-haaa... Can I g-get you something to d-drink?" "UnknownF">>\
+
+    ''You lean in to ?tasha's ear.''
+
+    <<nm $player "Am I gonna get charged $$9,000 for a drink and wake up with a kidney missing?">>\
+
+    <<nm $tasha "Hahahaha! No silly, once you're inside drinks are free.">>\
+
+    ''You look back at the waitress.''
+
+    <<nm $player "Drinks are free?">>\
+
+    <<nmc "Waitress" "Y-yes <<sir>>." "UnknownF">>\
+
+    <<nm $player "Then... how does this place make money?">>\
+
+    ''She stairs at you for a moment, before responding in the most deadpan way possible.''
+
+    <<nmc "Waitress" "Not drinks." "UnknownF">>\
+
+    <<nm $player "R-right... I guess I'll take a beer, then. Honestly, just whatever's popular here.">>\
+
+    <<nm $tasha "I'll just have a Coke. Don't want to risk whiskey dick tonight, tee-hee!">>\
+    
+    ''The woman rolls her eyes before turning on a heel and heading for the bar. Before she can get too far, you can see her thighs spasm as she endures yet another gushing orgasm.''
+    
+    <<pic $events "stripdance">>\
+    <<art "scene/Stripper">>\
+
+    <<nm $tasha "Show's starting! Tee-hee, c'mon ?mc, let's have some fun, too!">>\
+
+    <<if hasWorkingPenis()>>\
+        ''?tasha moves her hand over to your now-throbbing <<pSize>>, stroking it to the point that it's bulging against your <<UnderwearOrPants>>.''
+
+        <<Thought "Fuck, this whole thing is pushing me to the brink...">>\
+    <<elseif hasPenis()>>\
+        ''?tasha moves her hand over to your crotch, massaging your ?unusable-cock.''
+
+        <<Thought "Fuck, I'm so horny!">>\
+    <<else>>\
+        ''?tasha moves her hand over to your crotch, massaging your wet pussy beneath your <<UnderwearOrPants>>.''
+        
+        <<Thought "Fuck, this whole thing is pushing me to the brink...">>\
+    <</if>>\
+
+    <<nm $tasha "Mmmm... ahhh...">>\
+
+    ''Looking over, you see ?tasha's already pulled her engorged cock out from under her skirt, stroking it slowly as beads of precum start to form at the tip. Her eyes are locked on the dancer nearest where you're sitting, but her hand is slowly moving up over your chest and around the back of your neck. You can feel her applying light pressure, and her intentions are fairly obvious.''
+
+    <<nm $player.d "Something you want?" "I wouldn't mind getting a taste...">>\
+    <<nm $player.s "@@.sf;H-huh? Oh...@@" "?tasha's big... strong... cock...">>\
+    <<nm $player.b "@@.bf;Mmmm, something you want baby?@@" "GOD I thought she'd never ask! What an amazing fuckstick!">>\
+
+    ''She smiles as you slowly lower your head into her lap. You open your mouth, almost in a hypnotic haze with the music blastic and the lights flashing overhead, and allow her thick member to slide over your tongue and down your throat.''
+
+    <<pic $player "suck-ts">>\
+    <<act $player "blowjob">>\
+
+    <<skillComment $tasha "suckCock.give"
+        "Oooohhhhhh wow! You're soooooo good a this! Mmm..."
+        "Mmmm... you're sooooo good at this ?mc..."
+        "Mmmm... yeah... just like that..."
+        "Haaa... haaa..."
+        "Mmmm... mmm..."
+    >>\
+
+    ''Between the loud environment, overwhelming arousal, and ?tasha's pulsing cock filling your throat, you don't even realize how much time has passed as you bob up and down along her slippery shaft. You're so lost to your own pleasure, you don't even notice ?tasha's hand pressing against the back of your head, or her penis twitching violently in your mouth.''
+
+    <<nm $tasha "?mc... I-I'm gonna... O-OOHHHH!">>\
+
+    <<pic $player "cum-in-mouth">>\
+    <<act $player "blowjob,creampie">>\
+
+    <<nm $player "HNGH!" "There's so much!">>\
+
+    ''Thick, hot cum floods your mouth and throat as ?tasha holds you firmly in place while she rides out her intense orgasm. Finally, you're allowed to sit up and let oxygen flood your lungs once more. Despite the fact that you're sitting upright with thick cum pouring from your mouth down your clothes, and ?tasha is sitting next to your massaging her spent cock, no one really seems to pay you much mind. In fact, it's only just now that your server comes by with your drinks.''
+
+    <<npc "ClubPearlServer">>\
+    <<nmc "Waitress" "Ma'am, your coke... And here the swill your bitch ordered..." "UnknownF">>\
+
+    <<nm $player "Wait, why am-">>\
+
+    <<nm $tasha "Here ya' go!">>\
+
+    ''?tasha hands you your beer before you can complain. You're too exhausted to fight it, choosing instead to enjoy your frosty, definitely not "swill", beverage. After hounging out for another hour or so, resting off the earlier activities and cleaning yourselves up, you and ?tasha decide it's time to head home.''
+
+    <<lust $tasha>>
+    <<dom $player -3>>
+
+    <<horny 100>>
+
+    <<trackAction "suckCock.give" $tasha>>\
+    <<trackAction "cumEat.get" $tasha>>\
+    <<AddNote $tasha "?tasha and I visited Club Pearl together tonight. One thing kinda led to another and before I knew it I was gagging on ?tasha's huge cock in a room filled with other people! It was an experience for sure.">>\
+    <<btnLink "Continue" "ClubPearl-Tasha-GoHome" "setTime('night')">>\

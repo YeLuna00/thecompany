@@ -1,0 +1,914 @@
+:: DreamEvent-0 {"position":"1225,3100","size":"100,100"}
+/* No Dream */\
+	''You sleep soundly, not recalling having dreamed at all...''
+
+
+:: DreamEvent-1 {"position":"100,3225","size":"100,100"}
+/* Sophie Tease */\
+	<<pic $sophie "tease">>\
+	<<art "events/dreams/sophie-tease">>\
+	
+	''You dream about your boss, $sophie.name, teasing you provocatively...''
+	
+	<<horny 10>>
+	<<AddDreamEvent 0 2 3>>\
+
+
+:: DreamEvent-10 {"position":"1225,3225","size":"100,100"}
+/* Penny Cuckold 3 */\
+	<<if isMale()>>\
+		<<pic $penny "cuckoldmf2">>\
+		
+		''You dream about $penny.name, fucking you in the ass with a strapon...''
+	<<elseif hasPenis()>>\
+		<<pic $player "fucked-by-female">>\
+		
+		''You dream about $penny.name, fucking you in the ass with a strapon...''
+	<<else>>\
+		<<pic $penny "cuckoldff2">>\
+		
+		''You dream about $penny.name, fucking you in the ass with a strapon...''
+	<</if>>\
+	
+	<<dom $player -1>>
+	
+	<<horny 10>>
+
+
+:: DreamEvent-11 {"position":"100,3350","size":"100,100"}
+/* Chanel TF */\
+	<<switch random(1,4)>>\
+		<<case 1>>\	
+			<<pic $john "blowjob-double">>\
+	
+			''You dream of $john.name, choking down a pair of cocks in your lab while you and $penny.name watch.''
+		<<case 2>>\	
+			<<pic $john "mmf">>\
+	
+			''You dream of $john.name, getting fucked while sucking cock in your lab while you and $penny.name watch.''
+		<<case 3>>\	
+			<<pic $john "dp">>\
+	
+			''You dream of $john.name, getting double penetrated in your lab while you and $penny.name watch.''
+		<<case 4>>\	
+			<<pic $john "blowjob-double-finish">>\
+	
+			''You dream of $john.name, taking two loads to the face in your lab while you and $penny.name watch.''
+	<</switch>>\
+	
+	<<horny 10>>
+
+
+:: DreamEvent-12 {"position":"225,3350","size":"100,100"}
+/* John Bathroom */\
+	<<pic $john "sucked-by-player">>\
+	
+	''You dream about $john.name facefucking you in the bathroom...''
+	
+	<<dom $player -1>>
+	
+	<<if isSissy() or isBimbo()>>\
+		<<horny 10>>
+	<</if>>\
+
+
+:: DreamEvent-13 {"position":"350,3350","size":"100,100"}
+/* Kiss Penny */\
+	<<pic $penny "kiss-player">>\
+	
+	''You dream about $penny.name, and the kiss she surprised you with down in the lab.''
+
+
+:: DreamEvent-14 {"position":"475,3350","size":"100,100"}
+/* Dakota Pegging */\
+	<<if hasPenis()>>\
+		<<pic $sister "fuck-player">>\
+		
+		''You dream about your <<sister>>, fucking you in the ass with her strapon...''
+		
+		<<dom $player -1>>
+		
+		<<if isSissy() or isBimbo()>>\
+			<<horny 10>>
+		<</if>>\
+	<<else>>\
+		<<pic $sister "fuck-female">>\
+		
+		''You dream of your <<sister>>, $sister.name, fucking you hard with her strapon cock...''
+		
+		<<horny 10>>
+	<</if>>\
+
+
+:: DreamEvent-15 {"position":"600,3350","size":"100,100"}
+/* Dakota Sex */\
+	<<if hasPenis()>>\
+		<<if random(1,2) is 1>>\
+			<<pic $sister "ride-male">>\
+			
+			''You dream of your <<sister>>, $sister.name, riding you, taking your hard cock deep into her pussy...''
+			
+			<<horny 10>>
+		<<else>>\
+			<<pic $sister "cum-on-face">>\
+			
+			''You dream of your <<sister>>, $sister.name, taking your load on her face after a hard fucking...''
+			
+			<<horny 10>>
+		<</if>>\
+	<<else>>\
+		<<switch random(1,4)>>\
+			<<case 1>>\
+				<<pic $sister "sex-ff3">>\
+				
+				''You dream of your <<sister>>, $sister.name, as you ride her strapon...''
+				
+				<<horny 10>>
+			<<case 2>>\
+				<<pic $sister "sex-ff3">>\
+				
+				''You dream of your <<sister>>, $sister.name, kissing you on the bed after a hard fucking...''
+				
+				<<horny 10>>
+			<<case 3>>\
+				<<pic $sister "fuck-female">>\
+				
+				''You dream of your <<sister>>, $sister.name, fucking you hard with her strapon cock...''
+				
+				<<horny 10>>
+			<<case 4>>\
+				<<pic $sister "sucked-by-female">>\
+				
+				''You dream of your <<sister>>, $sister.name, as you suck your own cum off her strapon...''
+				
+				<<horny 10>>
+		<</switch>>\
+	<</if>>\
+
+
+:: DreamEvent-16 {"position":"725,3350","size":"100,100"}
+/* Dakota Couch Sex */\
+	<<if hasPenis()>>\
+		<<pic $sister "ride-male">>\
+		
+		''You dream about your <<sister>>, $sister.name, as she rides your <<pSize>> on the living room couch...''
+		
+		<<horny 10>>
+	<<else>>\
+		<<pic $sister "fucked-by-female">>\
+		
+		''You dream about your <<sister>>, $sister.name, as you fuck her with a huge strapon over the living room couch...''
+		
+		<<horny 10>>
+	<</if>>\
+
+
+:: DreamEvent-17 {"position":"850,3350","size":"100,100"}
+/* Dakota Dogs */\
+	<<switch random(1,4)>>\
+		<<case 1>>\	
+			<<pic $sister "dog1">>\
+			
+			''You dream about your <<sister>>, $sister.name, as you watch her getting fucked by dogs in the alley behind your house...''
+		<<case 2>>\	
+			<<pic $sister "dog2">>\
+			
+			''You dream about your <<sister>>, $sister.name, as you watch her sucking a dog's cock in the alley behind your house...''
+		<<case 3>>\	
+			<<pic $sister "dog3">>\
+			
+			''You dream about your <<sister>>, $sister.name, as you watch her getting used by dogs in the alley behind your house...''
+		<<case 4>>\	
+			<<pic $sister "dog4">>\
+			
+			''You dream about your <<sister>>, $sister.name, as you watch her getting used by dogs in the alley behind your house...''
+	<</switch>>\
+
+
+:: DreamEvent-18 {"position":"975,3350","size":"100,100"}
+/* Diana Oral */\
+	<<if hasPenis()>>\
+		<<if random(1,2) is 1>>\
+			<<pic $diana "blowjob">>\
+			
+			''You dream about $diana.name... She's going to town on your cock in her office...''
+		<<else>>\
+			<<pic $diana "cum-on-face">>\
+			
+			''You dream about $diana.name... You're coming on her face and tits after an amazing blowjob in her office...''
+		<</if>>\
+	<<else>>\
+		<<if random(1,2) is 1>>\
+			<<pic $diana "eat-pussy">>\
+			
+			''You dream about $diana.name... She's lapping away at your pussy...''
+		<<else>>\
+			<<pic $diana "eat-pussy2">>\
+			
+			''You dream about $diana.name... She's licking and sucking your clit... You orgasm intensely...''
+		<</if>>\
+	<</if>>\
+
+
+:: DreamEvent-19 {"position":"1100,3350","size":"100,100"}
+/* Diana Sex */\
+	<<if hasPenis()>>\
+		<<if random(1,2) is 1>>\
+			<<pic $diana "fucked-by-male">>\
+			
+			''You dream about $diana.name... You're fucking her from behind on her desk in her office...''
+		<<else>>\
+			<<pic $diana "cum-in-mouth">>\
+			
+			''You dream about $diana.name... You're fucking her in her office, and pulling out to blow your load on her face...''
+		<</if>>\
+	<<else>>\
+		<<pic $diana "fucked-by-female">>\
+			
+		''You dream about $diana.name... Fucking her in her office with a strapon...''
+	<</if>>\
+
+
+:: DreamEvent-2 {"position":"225,3225","size":"100,100"}
+/* No Dream */\
+	''You sleep soundly, not recalling having dreamed at all...''
+
+
+:: DreamEvent-20 {"position":"1225,3350","size":"100,100"}
+/* Oral with Sophie */\
+	<<if hasPenis()>>\
+		<<if random(1,2) is 1>>\
+			<<pic $sophie "suck-player">>\
+			
+			''You dream of $sophie.name sucking your <<pDSize>>...''
+		<<else>>\
+			<<pic $sophie "cum-on-face">>\
+			
+			''You dream of $sophie.name, as you empty your load on her face...''
+		<</if>>\
+	<<else>>\
+		<<pic $action "female-eat-pussy">>\
+		
+		''You dream of $sophie.name as she eats out your <<vDSize>>...''
+	<</if>>\
+	
+	<<horny 10>>
+
+
+:: DreamEvent-21 {"position":"100,3475","size":"100,100"}
+/* Sex with Sophie */\
+	<<if hasPenis()>>\
+		<<pic $sophie "fucked-by-player">>\
+		
+		''You dream about $sophie.name as you slam your <<pDSize>> into her dripping cunt...''
+	<<elseif hasStrapon()>>\
+		<<pic $sophie "fucked-by-player">>\
+		
+		''You dream about $sophie.name as you slam your <<accf>> into her dripping cunt...''
+	<<else>>\
+		<<pic $action "fingering">>\
+		
+		''You dream about $sophie.name as you finger-fuck her dripping cunt until she squirts...''
+	<</if>>\
+	
+	<<horny 10>>
+
+
+:: DreamEvent-22 {"position":"225,3475","size":"100,100"}
+/* Pleasuring Sophie */\
+	<<pic $action "player-eat-pussy">>\
+	
+	''You dream of $sophie.name as she lunges forward and grabs you by your <<top>>, pulling you down between her legs. Her scent is overwhelming, dizzying, and your unable to muster up any ability to resist as she pulls you into her.''
+	
+	<<nm $sophie "Mmmmm, yesssss... That's a good <<boy>>, $player.sophieName, keep it u-up! O-ohhhh... haaa...">>\
+	
+	<<dom $player -1>>
+	
+	<<horny 10>>
+
+
+:: DreamEvent-23 {"position":"350,3475","size":"100,100"}
+/* Lauren in the Changing Room */\
+	<<if isSissy()>>\
+		<<if analPlugged()>>\
+			<<pic $action "anal-dildo">>\
+			
+			''You dream of $lauren.name, pulling you into the changing room and fucking your asshole with your <<accb>>...''
+		
+			<<nm $lauren "Hehe, how's that feel little sissy slut? Think I can make you cum like this?">>\
+		<<else>>\
+			<<pic $action "anal-fingering">>\
+			
+			''You dream of $lauren.name, pulling you into the changing room and fucking your asshole with her fingers...''
+		
+			<<nm $lauren "Hehe, how's that feel little sissy slut? Think I can make you cum like this?">>\
+		<</if>>\
+		
+		<<dom $player -1>>
+	<<elseif hasPenis()>>\
+		<<pic $lauren "suck-player">>\
+		
+		''You dream of $lauren.name, pulling you into the changing room and sucking your <<pDSize>>...''
+	
+		<<nm $lauren "Mmmph, mmmm, mph, mph, mph!">>\
+	<<else>>\
+		<<pic $lauren "eat-pussy">>\
+		
+		''You dream of $lauren.name, pulling you into the changing room and eating your pussy...''
+	
+		<<nm $lauren "Mmmph, mmmm, mph, mph, mph!">>\
+	<</if>>\
+	
+	<<horny 10>>
+
+
+:: DreamEvent-24 {"position":"475,3475","size":"100,100"}
+/* Sucking Tasha */\
+	<<pic $action "player-suck-ts">>\
+	
+	''You dream about $tasha.name, as she forces her huge cock down your throat... her cum coating your tongue...''
+	
+	<<horny 10>>
+
+
+:: DreamEvent-25 {"position":"600,3475","size":"100,100"}
+/* Tasha Sucking */\
+	<<if hasPenis()>>\
+		<<pic $tasha "suck-player">>\
+		
+		''You dream about $tasha.name... sucking your cock...''
+	<<elseif hasStrapon()>>\
+		<<pic $action "ts-suck-strapon">>\
+		
+		''You dream about $tasha.name... sucking your strapon cock...''
+	<<else>>\
+		<<pic $action "ts-eat-pussy">>\
+		
+		''You dream about $tasha.name... eating your pussy...''
+	<</if>>\
+	
+	<<horny 10>>
+
+
+:: DreamEvent-26 {"position":"725,3475","size":"100,100"}
+/* Fucked by Tasha */\
+	<<pic $action "ts-fuck-player">>\
+	
+	''You dream about $tasha.name... fucking you over and over again...''
+	
+	<<horny 10>>
+	<<tfm "fem">>
+
+
+:: DreamEvent-27 {"position":"850,3475","size":"100,100"}
+/* Suck Sophie's Strapon */\
+	<<pic $action "player-suck-strapon">>\
+	
+	''You dream about $sophie.name... forcing you to suck her strapon cock...''
+	
+	<<horny 10>>
+	<<tfm "fem">>
+
+
+:: DreamEvent-28 {"position":"975,3475","size":"100,100"}
+/* Fucking Tasha */\
+	<<pic $action "player-fuck-ts">>\
+	
+	''You dream about fucking $tasha.name in her ass...''
+	
+	<<horny 10>>
+	
+	<<tfm "mas">>
+
+
+:: DreamEvent-29 {"position":"1100,3475","size":"100,100"}
+/* Tasha's Sybian */\
+	<<pic $action "female-solo-sybian-cum">>\
+
+	<<if hasPenis()>>\
+		''You dream about riding $tasha.name's sybian, back when you still had your pussy...''
+	<<else>>\
+		''You dream about being forced to ride $tasha.name's sybian for hours, orgasming repeatedly...''
+
+		<<horny 30>>
+
+		<<dom $player -1>>
+	<</if>>\
+
+
+:: DreamEvent-3 {"position":"350,3225","size":"100,100"}
+/* No Dream */\
+	''You sleep soundly, not recalling having dreamed at all...''
+
+
+:: DreamEvent-30 {"position":"1225,3475","size":"100,100"}
+/* Club Pearl - Men Gangbang */\
+	<<pic $action "sissy-gangbang">>\
+
+	''You dream about getting gangbanged by a group of men at Club Pearl...''
+
+	<<horny 10>>
+
+	<<dom $player -1>>
+
+
+:: DreamEvent-31 {"position":"100,3600","size":"100,100"}
+/* Club Pearl - Women Gangbang */\
+	<<pic $action "sissy-strapon-gangbang">>\
+
+	''You dream about getting gangbanged by a group of women at Club Pearl...''
+
+	<<horny 10>>
+
+	<<dom $player -1>>
+
+
+:: DreamEvent-32 {"position":"225,3600","size":"100,100"}
+/* The Pit - Getting Milked */\
+	<<pic $action "machine-fuck-player">>\
+
+	''You dream about being strapped to the milker in The Pit, fucked relentlessly all night long...''
+
+	<<horny 10>>
+
+	<<dom $player -1>>
+
+
+:: DreamEvent-33 {"position":"350,3600","size":"100,100"}
+/* The Pit - Breeding Bull */\
+	<<pic $action "female-creampie">>\
+
+	''You dream about being used as a breeding bull in The Pit, forced to impregnate women all night long...''
+
+	<<horny 10>>
+
+	<<dom $player -1>>
+
+
+:: DreamEvent-34 {"position":"475,3600","size":"100,100"}
+/* The Pit - Breeding Cow */\
+	<<pic $action "male-fuck-female-doggy">>\
+
+	''You dream about being used as a breeding cow in The Pit, forced to allow men to try and impregnate you all night long...''
+
+	<<horny 10>>
+
+	<<dom $player -1>>
+
+
+:: DreamEvent-4 {"position":"475,3225","size":"100,100"}
+/* Ava Tease */\
+	<<pic $mom "solo1">>\
+	<<act $mom "solo">>\
+	
+	''You dream about your <<mother>>, teasing you in lingerie... she's rubbing herself, her massive tits hanging out of her top...''
+	
+	<<horny 10>>
+
+
+:: DreamEvent-5 {"position":"600,3225","size":"100,100"}
+/* Dommed by Dakota */\
+	<<if $player.baseGender is "male">>\
+		<<pic $action "male-eat-pussy">>\
+	<<else>>\
+		<<pic $sister "couchoral-ff1">>\
+	<</if>>\
+	<<act $player "eatpussy">>\
+	
+	''You dream about your <<littlesister>>, $sister.name. You're licking her pussy and sucking her clit... because... she ordered you to...''
+	
+	<<nm $sister "Mmm, yes, keep at it! Oooohhhh...">>\
+	
+	<<dom $player -1>>
+	
+	<<horny 10>>
+
+
+:: DreamEvent-6 {"position":"725,3225","size":"100,100"}
+/* Dakota Couch Oral 1 */\
+	<<if hasPenis()>>\
+		<<pic $sister "couchoral-mf2">>\
+		
+		''You dream about your <<littlesister>>, $sister.name. She's bobbing up and down on your <<pDSize>>, looking you in the eyes...''
+		
+		<<horny 10>>
+	<<else>>\
+		<<pic $sister "couchoral-ff2">>\
+		
+		''You dream about your <<littlesister>>, $sister.name. You're smothering her face, grinding your pussy into her mouth...''
+		
+		<<horny 10>>
+	<</if>>\
+
+
+:: DreamEvent-7 {"position":"850,3225","size":"100,100"}
+/* Dakota Couch Oral 2 */\
+	<<if hasPenis()>>\
+		<<pic $sister "couchoral-mf3">>\
+		
+		''You dream about your <<littlesister>>, $sister.name. She's taking your cock in her hand, jerking you off onto her face....''
+		
+		<<horny 10>>
+	<<else>>\
+		<<pic $sister "couchoral-ff2">>\
+		
+		''You dream about your <<littlesister>>, $sister.name. You're smothering her face, grinding your pussy into her mouth...''
+		
+		<<horny 10>>
+	<</if>>\
+
+
+:: DreamEvent-8 {"position":"975,3225","size":"100,100"}
+/* Penny Cuckold 1 */\
+	<<pic $penny "officesexmf1">>\
+	
+	''You dream about $penny.name, getting taken from behind and pounded relentlessly by $john.name... Part of you wishes it was you instead of $penny.name...''
+	
+	<<dom $player -1>>
+	
+	<<horny 10>>
+
+
+:: DreamEvent-9 {"position":"1100,3225","size":"100,100"}
+/* Penny Cuckold 2 */\
+	<<pic $penny "officesexmf3">>\
+	<<act $penny "blowjob,facial,dosed">>\
+	
+	''You dream about $penny.name, taking $john.name's hot load on her face and in her mouth... Part of you wishes it was you instead of $penny.name...''
+	
+	<<dom $player -1>>
+	
+	<<horny 10>>
+
+
+:: Dreaming {"position":"725,21225","size":"100,100"}
+<<set $player.loc to "Night">>\
+	<<if isSeptember(1)>> /* Difficulty Check */\
+		''Images begin forming from the darkness.''
+
+		<<pic $saya>>\
+		<<art $saya "happy,2">>\
+
+		<<nm $saya "$player.name! We meet again!">>\
+
+		<<nm $player "$saya.name, right? Is this gonna be a normal thing for me from now on?">>\
+
+		''$saya.name floats around lazily.''
+
+		<<nm $saya "I dunno... Say, how are you doing these days?">>\
+
+		<<nm $player "How am I... doing? What do you mean by that?">>\
+
+		<<nm $saya "I mean what I said. Life is tough, y'know? The old generation is obsessed with this idea that all you gotta do is work hard, go to college and pick up a trade and you'll be all set to buy a house, get married, start a family and retire, but we all know that that's a load of bullshit these days, right?">>\
+
+		<<nm $player "Ummm...">>\
+
+		<<nm $saya "It might have been true back then, but nowadays it all comes down to being in the right place at the right time under the right set of circumstances, kinda' like how you were when The Company picked you up! Doncha' think life is unfair, no matter how hard people work at it?">>\
+
+		<span id="dream0">\
+			@@.btnChoice;<<button "You're right, life can be tough - @@Easy difficulty, more money and less grinding@@">>
+				<<replace "#dream0">>\
+					<<set $matYield += 25, $LabUpgradeCost -= 200, $LabUpgradeCostIncrease -= 100, $YieldIncrease += 20, $penny.matBonus += 20, $Paycheck += 500, $serum[1].yield += 2, $serum[2].yield += 2, $serum[3].yield += 2, $StatRate to 1>>\
+					<<nm $player "You're right, $saya.name. There's people out there a lot smarter than I am that will never get the opportunities that I will just as a matter of their circumstance. Meanwhile, people a lot dumber than me will be put into positions of power and authority, making impactful decisions they have no qualifications to be making! Now you've got me in a bad mood.">>\
+
+					<<artB $saya "happy">>\
+					<<nm $saya "Sorry about that, but you totally get what I'm saying! Glad to see we think the same way!">>\
+
+					<<btnLink "Continue..." "Room-Morning">>
+				<</replace>>\
+			<</button>>@@
+			@@.btnChoice;<<button "Life can be hard, but it's manageable - @@Default difficulty@@">>
+				<<replace "#dream0">>\
+					<<nm $player "I can see where you're coming from, but you can still get far with a little hard work. Yes, people are limited by their circumstances, but they also have the means to change them if they're smart enough, or resourceful enough.">>\
+
+					<<artB $saya>>\
+					<<nm $saya "That's awfully optimistic of you, but, I guess I can agree on some level. I wish more people had your attitude, y'know?">>\
+
+					<<btnLink "Continue..." "Room-Morning">>
+				<</replace>>\
+			<</button>>@@
+			@@.btnChoice;<<button "Life is too forgiving - @@Harder difficulty, less money and more grinding@@">>
+				<<replace "#dream0">>\
+					<<set $matYield -= 15, $LabUpgradeCost += 100, $LabUpgradeCostIncrease += 50, $YieldIncrease -= 5, $penny.matBonus -= 5, $Paycheck -= 250>>\
+					<<nm $player "Frankly, people have it way too easy. Look around! You have incapable, barely functional meat-sacks running the country while they rest of us spend all our time complaining about our coffee on the internet. Yeah, there's people who have it tough, but it could be a lot worse...">>\
+
+					<<artB $saya "embarrassed">>\
+					<<nm $saya "Wow! That's... certainly one way to look at things. I didn't take you for such a masochist!">>\
+
+					<<btnLink "Continue..." "Room-Morning">>
+				<</replace>>\
+			<</button>>@@
+		</span>\
+	<<elseif isSeptember(2)>> /* Transformation Speed */\
+		''Images begin forming from the darkness.''
+
+		<<pic $saya>>\
+		<<art $saya "default,2">>\
+
+		<<nm $saya "Oh hey, it's you again.">>\
+
+		<<nm $player "$saya.name? I really need to see someone about these dreams...">>\
+
+		<<nm $saya "What, like a shrink? Eh, I wouldn't worry too much about it. Say, I've been wondering...">>\
+
+		<<nm $player "Wondering? About what?">>\
+
+		''$saya.name floats wistfully around you as she stares blankly into the void.''
+
+		<<nm $saya "Things sure do change a lot, huh? One day you're eating paste in grade school, and the next you're out looking for a job so you can pay off loan sharks. It's crazy! I mean, really, the whole game's gotta be rigged.">>\
+
+		<<nm $player "Rigged?">>\
+
+		<<nm $saya "Yeah! Like, you remember how those tea drinks used to have random facts under the caps?">>\
+
+		<<nm $player "Yeah, they still do.">>\
+
+		<<nm $saya "Well sure, but now that everyone's connected to the internet all the time, everybody already knows everything, so the tea companies have to start hiring engineers and physicists and astronauts to discover new things that haven't been posted on the internet yet, all so they can sell more tea!">>\
+
+		<<nm $player "...You think?">>\
+
+		<<nm $saya "I dunno... What really matters is what YOU think. So how about it, are you happy with the rate of change in the world?">>\
+
+		<span id="dream1">\
+			@@.btnChoice;<<button "Things change too quickly - @@Slower player transformation@@">>
+				<<replace "#dream1">>\
+					<<set $TFMilestone to 10>>\
+					<<set $player.tfRate to 0.25>>\
+					<<nm $player "I guess... Things do change a little too quickly.">>\
+
+					<<artB $saya "happy">>\
+					<<nm $saya "Right? We should all just sloooowwwww doooowwwwnnnn... Right?">>\
+					
+					<<btnLink "Continue..." "Room-Morning">>
+				<</replace>>\
+			<</button>>@@
+			@@.btnChoice;<<button "The rate of change is fine - @@Default player transformation rate@@">>
+				<<replace "#dream1">>\
+					<<nm $player "I don't know, I think things are fine the way they are. Without change, there'd be no progression.">>\
+
+					<<artB $saya "sad">>\
+					<<nm $saya "Man, I figured you'd say something like that...">>\
+					
+					<<btnLink "Continue..." "Room-Morning">>
+				<</replace>>\
+			<</button>>@@
+			@@.btnChoice;<<button "Things don't change quickly enough - @@Faster player transformation@@">>
+				<<replace "#dream1">>\
+					<<set $TFMilestone to 3>>\
+					<<set $player.tfRate to 1.5>>\
+					<<nm $player "Honestly, things don't change quickly enough. I'm excited to see where the future will take us!">>\
+
+					<<artB $saya "aroused">>\
+					<<nm $saya "My, how optimistic! I wish more people thought that way. Like me!">>\
+					
+					<<btnLink "Continue..." "Room-Morning">>
+				<</replace>>\
+			<</button>>@@
+		</span>\
+	<<elseif isSeptember(3)>> /* Dominance Setting */\
+		''Images begin forming from the darkness.''
+
+		<<pic $saya>>\
+		<<art $saya "happy,2">>\
+
+		<<nm $saya "Why if it isn't my favorite human!">>\
+
+		<<nm $player "Favorite human? This raises so many questions... How many humans do you know? If you're just in my imagination, I mean, aren't you human, too? Um... What makes me your favorite?">>\
+
+		<<nm $saya "Oh man, OH-HO MAAAANNNN!!! So many questions! Do you really need to know everything about, like, everything? Seriously...">>\
+
+		<<nm $player "What? No, I just like to know things... Plus, what else is there to do in the Endless Void if not ask each other questions?">>\
+
+		''$saya.name floats wistfully around you, rubbing her scalp and putting on a pained expression like you've somehow given her a headache...''
+
+		<<nm $saya "Look... Knowing things? Asking things? Trying to unlock the secrets of the universe through casual conversation with your sexy dream guide? It's all just a bid for control, y'know?">>\
+
+		<<nm $player "Control? No, I think-">>\
+
+		<<nm $saya "It TOTALLY is! Like, doesn't it just drive you crazy not knowing what's really inside those double stuffed cookies we both know you're stealing from the kitchen every night? At, frankly, alarming quantities?">>\
+
+		<<nm $player "I'll neither confirm nor deny that accusation, but the ingredients list is right there on the package.">>\
+
+		<<nm $saya "Is it, though!? They could put ANYTHING on that label, y'know? And you wouldn't know, y'know?">>\
+
+		''You rub the back of your head.''
+
+		<<nm $player "There are regulations that-">>\
+
+		<<nm $saya "UGH! See? There you go being a know-it-all again! Can't you just, like, not know something for once? I bet you can't! I bet you couldn't stomach the idea of relinquishing that kind of CONTROL!">>\
+
+		''You think on it for a moment.''
+
+		<<nm $player "I think... I see what you're trying to say, but your analogies really don't hold up... I don't think... Ummm...">>\
+
+		<span id="dream15">\
+			@@.btnChoice;<<button "I prefer letting others take control - @@Start off more submissive@@">>
+				<<replace "#dream15">>\
+					<<set $player.dom to 25>>\
+					<<nm $player "Honestly, given the choice, I would prefer not to have to be in control all the time. I really would kind of like it if there was someone else around to do the thinking for me from time to time.">>\
+
+					<<artB $saya "happy">>\
+					<<nm $saya "Right? Oh man, I was starting to think you didn't get me at all!">>\
+					
+					<<btnLink "Continue..." "Room-Morning">>
+				<</replace>>\
+			<</button>>@@
+			@@.btnChoice;<<button "I don't have to know everything, but I still like to be able to take over - @@Default player dominance@@">>
+				<<replace "#dream15">>\
+					<<set $player.dom to 50>>\
+					<<nm $player "It's fun to turn off sometimes, sure, but I think it's still important to be able to take charge when needed. It's good to know things!">>\
+
+					<<artB $saya "sad">>\
+					<<nm $saya "Mmm, I suppose...">>\
+					
+					<<btnLink "Continue..." "Room-Morning">>
+				<</replace>>\
+			<</button>>@@
+			@@.btnChoice;<<button "I would rather be in control of things - @@Start off more dominant@@">>
+				<<replace "#dream15">>\
+					<<set $player.dom to 75>>\
+					<<nm $player "On second thought, I think you're probably right. Knowledge is power, right? And power, I guess, is a form of control... Well, I guess maybe I'm a bit of a control freak after all!">>\
+
+					<<artB $saya "aroused">>\
+					<<nm $saya "Right? Oh man, I was starting to think you didn't get me at all!">>\
+					
+					<<btnLink "Continue..." "Room-Morning">>
+				<</replace>>\
+			<</button>>@@
+		</span>\
+	<<elseif isSeptember(4)>> /* Dream of Family */\
+		<<if chance(50)>>\
+			<<pic $events "dream-sister">>\
+			<<art "scene/DakotaSolo">>\
+
+			''Your <<sister>>, $sister.name is naked, masturbating furiously.''
+
+			<<nm $player "$sister.name? Why am I dreaming about this... I mean, it's just a dream so, I guess it's fine...">>\
+			<<set $FDream to "little <<sister>>">>\
+		<<else>>\
+			<<pic $events "dream-mom">>\
+			<<art "scene/AvaSolo">>\
+
+			''Your <<mother>> is naked, masturbating furiously.''
+
+			<<nm $player "Now I'm dreaming about $mom.name, too? Man, I wonder if something's wrong with me after all. Oh well, since it's a dream I might as well just enjoy it...">>\
+			<<set $FDream to "<<mom>>">>\
+		<</if>>\
+		
+		<<btnLink "Continue..." "Room-Morning">>
+	<<elseif isSeptember(5)>> /* Forced Transformation Check */\
+		''Images begin forming from the darkness.''
+
+		<<pic $saya>>\
+		<<art $saya "happy,2">>\
+
+		<<nm $saya "Well hello again!">>\
+
+		<<nm $player "Oh... Hey.">>\
+
+		<<nm $saya "Is that any way to greet me? Jeez... Oh, I see. You'd rather be dreaming about your $FDream again, is that it?">>\
+
+		<<nm $player "Well, I'd prefer it over this...">>\
+
+		<<nm $saya "Whatever... You know, outside of your dreams if people found out you were thinking about your $FDream like that you'd probably be branded a pervert.">>\
+
+		<<nm $player "Yeah, probably.">>\
+
+		<<nm $saya "'Yeah, probably'? What's with you tonight! You're probably one of those people who're totally fine with the status quo, aren't you? I bet you never even think about fighting the power. Hell, I bet you don't even hate The Man!">>\
+
+		<<nm $player "The Man? You mean, like, the institution?">>\
+
+		<<nm $saya "Institution? No, I mean The Man. The sole, shadowy figure who oversees and influences every deliberate act of happenstance that you sheeple all write off as 'fate'. When your alarm doesn't go off in the morning and you miss that important custody hearing, forever losing your racially mixed adopted children to your junkie wife? The Man. When your boss finds out you've been surfing porn at the office and you get demoted back down to the mailroom where that bitch, Brenda, steals your lunch out of the break room every day? That's The Man, too!">>\
+
+		<<nm $player "I guess getting stuck listening to your rants at night is the work of The Man?">>\
+
+		<<nm $saya "Now you're getting it! No one wins unless someone else loses, and that's got The Man's claw marks all over it!">>\
+
+		<<unset $FDream>>\
+		<span id="dream2">\
+			@@.btnChoice;<<button "I think you're crazy, things happen and that's that - @@Enable forced player transformation@@">>
+				<<replace "#dream2">>\
+					<<set $ForceTF to true>>\
+					<<nm $player "You're crazy. There's no shadowy figure pulling the strings. Life happens, and we do what we can to control it, but ultimately what happens happens.">>\
+
+					<<artB $saya>>\
+					<<nm $saya "You think so? Maybe I just have trouble accepting the world for what it is...">>\
+					/* <<NewDay>> */\
+					
+					<<btnLink "Continue..." "Room-Morning">>
+				<</replace>>\
+			<</button>>@@
+			@@.btnChoice;<<button "You're right. We should fight The Man! - @@Disable forced player transformation and allow gender locking@@">>
+				<<replace "#dream2">>\
+					<<set $ForceTF to false>>\
+					<<nm $player "You know what? You're right! There's no way the world is as shitty as it is just because things worked out that way. We need to fight the powers that be!">>\
+
+					<<artB $saya "happy">>\
+					<<nm $saya "That's the spirit! Let our voices be heard!">>\
+					/* <<NewDay>> */\
+					
+					<<btnLink "Continue..." "Room-Morning">>
+				<</replace>>\
+			<</button>>@@
+		</span>\
+	<<elseif isSeptember(6)>> /* TFM Accident */\
+		''Images begin forming from the darkness.''
+
+		<<pic $saya>>\
+		<<art $saya "sad,2">>\
+
+		<<nm $saya "Looks like you had an accident!">>\
+
+		<<nm $player "Yeah, it's fine... What do you care?">>\
+
+		''$saya.name puts on a fake display of hurt, then snaps back with a smile.''
+
+		<<nm $saya "You're right, I don't! I'm just a dream, after all. Maybe you should care a little more though, hm?">>\
+
+		<<nm $player "What's that supposed to mean? Are you about to go off on another one of your rants?">>\
+
+		<<nm $saya "Nope! Just a word of caution. Whatever's coursing through your veins isn't going to go away anytime soon, and I would advise you pay attention to the things you say and do from here on out. Your brain and body share a special connection now, almost as special as the one you and I share!">>\
+
+		<<nm $player "My... body?">>\
+
+		<<nm $saya "Welp, that's all I have to say this time. Come to think of it, I've been visiting you a lot lately... Y'know, I think it's high time I took a little vacation. I'll see ya' around, $player.name. Don't disappoint me now!">>\
+
+		<<nm $player "I still don't know what you- She's gone... Whatever, hopefully these dreams will end now... All she ever did was spout meaningless nonsense...">>\
+
+		<<Thought "...Right?">>\
+		<<SetFlag $player "absorbSerum">>\
+		<<set $EventsEnabled to true>>\
+		
+		<<btnLink "Continue..." "Room-Morning">>
+	<<elseif $ManiacalDream>>\
+		''Images begin forming from the darkness.''
+
+		<<pic $npc "saya">>\
+		<<art $saya "sad,2">>\
+
+		<<nm $saya "Well, well, well... Isn't this a sad sight...">>\
+
+		<<nm $player "$saya.name?">>\
+
+		''$saya.name wisps towards you, placing a finger on your chin.''
+
+		<<nm $saya "Aww, I can see the wheels turning, but... Anyway, you should know that you've been here, loitering in my space for several days now, a little over a week, in fact. That woman is, well... She's certainly creative!">>\
+
+		<<nm $player "That woman? Does she mean $mom.name?">>\
+
+		<<artB $saya "embarrassed,1">>\
+		<<nm $saya "Well, looks like this is going to be goodbye. You'll be waking up soon and I don't think you'll be needing me anymore. Not with this new life you've chosen...">>\
+
+		''You try to call out, but no sound leaves your mouth.''
+
+		<<Thought "Wait! I'm so confused right now...">>\
+
+		''Your body suddenly becomes cold and uncomfortable, your throat becomes sore, and your eyes start to hurt. You realize you're laying down on a hard, metal surface...''
+
+		<<unset $ManiacalDream>>\
+		<<btnLink "Wake up" "MCSX-ManiacalMorning">>\
+
+	<<elseif isOctober(61)>>\
+		<<pic $npc "saya">>\
+		
+		<<nm $saya "Congratulations on completing Chapter 2! You may continue playing normally from here on out, however story events will no longer trigger. Enjoy, and keep an eye on Patreon and TFGameSite for news on upcoming patches!">>\
+		
+		<<btnLink "Continue..." "Room-Morning">>
+	<<else>>\
+		<<CallDreamEvent>>
+
+		<<btnLink "Continue..." "Room-Morning">>
+	<</if>>\
+
+/*<<elseif isSeptember(6)>> /* Preference Check */\
+	/*''Images begin forming from the darkness...''
+
+	<<pic $npc "saya">>\
+
+	<<nm $saya "Hey there sexy!">>\
+
+	<<nm $player "Sexy?">>\
+
+	<<nm $saya "So hey, I think we should talk about you tonight.">>\
+
+	<<nm $player "Me? What about me?">>\
+
+	<<nm $saya "Well, like, maybe I just want to get to know you more is all. Is that a problem?">>\
+
+	''Saya makes an annoyed and somewhat pouty face.''
+
+	<<nm $player "I mean, it's not a problem, but if you're part of my subconscious shouldn't you already know everything about me? You basically are me, right?">>\
+
+	<<nm $saya "Am I? Well, it doesn't matter, right? Besides, talking about dirty stuff is so much fun!">>\
+
+	<<nm $player "Oh... So that's what this is.">>\
+
+	<<nm $saya "Bingo! Hey, I know, why I don't I just ask you a series of questions and you can just answer them. Then we'll have a clear idea of the sorts of things you're into. Sound fun?">>\
+
+	<<nm $player "Do I have a choice?">>\
+
+	<<nm $saya "First question!">>\
+
+	<<btnLink "Select Character Preferences" "PreferenceSelect">>
+	<<btnLink "@@Randomize@@ Character Preferences" "PreferenceRandom">>
+*/\

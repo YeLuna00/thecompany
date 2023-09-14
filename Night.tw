@@ -1,0 +1,2140 @@
+:: Night-12-Handjob {"position":"475,5600","size":"100,100"}
+<<loc_Room>>\
+
+    ''You pull your <<sister>> back in for another kiss as you slide one hand down under her panties, gently rubbing her moist clit with your finger.''
+
+    <<pic $sister "dakota-nekkid">>\
+
+    <<nm $sister "O-oh! Mmmm...">>\
+
+    <<nm $player "I thought we could just keep this up, if that's alright with you...">>\
+
+    ''Your <<sister>> shoves her tongue back into your mouth, sliding one hand down between your legs. <<if isChastity()>>You feel her finger run the length of your <<accf>>, down past your balls, and over the surface of your <<aSize>>. She starts to poke a finger past the entrance, lightly fucking your hole as she kisses you.<<elseif hasPenis()>>You feel her fingers gently wrap around your <<pSize>>, gliding up and down the length of your shaft as she kisses you.<<else>>You feel her fingers tracing the outline of your <<vSize>> before finally slipping inside of you. She continues to kiss you as she slides her fingers in and out of your glistening hole.<</if>>''
+
+    <<nm $player "Mmmm, o-ooohhh, mmmm..." "Her hand feels amazing...">>\
+
+    <<nm $sister "Haaaa, m-mmm, $player.name... mmmm...">>\
+
+    <<pic $sister "kiss-player">>\
+
+    ''You continue stimulating each other while maintaining your passionate embrace. Your hands move over each other, faster and more intensely until it finally becomes too much.''
+
+    <<nm $sister "F-fuck! I'm c-cumming!">>\
+
+    <<nm $player "M-me too!">>\
+    
+    <<pic $sister "orgasm">>\
+
+    ''As you both ride your climaxes, you hold each other tighter, kissing, licking, gasping, and eventually collapsing into each other's arms. You lay for some time, staring at each other and trying not to laugh about how amazing your shared experience was.''
+
+    <<nm $sister "T-that was great... <<bro>>...">>\
+
+    <<nm $player "Y-yeah, you too... <<sis>>...">>\
+
+    ''$sister.name gives you one last kiss before slipping out of bed and putting her clothes back on.''
+
+    <<pic $sister "door">>\
+
+    <<nm $sister "I'd better get back to my room now. Let's do this again later, okay?">>\
+
+    <<nm $player "Definitely!">>\
+
+    ''Your sister quietly opens the door and sneaks back to her room, leaving you a little surprised, if not entirely satisfied.''
+
+    <<love $sister>>
+    <<lust $sister>>
+
+    <<horny 0>>
+
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: Night-12-OralGet {"position":"225,5600","size":"100,100"}
+<<loc_Room>>\
+
+    ''You continue to embrace your <<sister>> for a little while longer before pulling back slightly, motioning downward.''
+
+    <<if isChastity() or isSissy()>>\
+        <<trackAction "rimjob.get" $sister>>\
+        <<if isChastity()>>\
+            <<nm $player "U-um, since my cock's still locked up, I was wondering if you could, maybe...">>\
+        <<else>>\
+            <<nm $player "U-um, since my cock can't get hard right now, I was wondering if you could, maybe...">>\
+        <</if>>\
+
+        <<pic $sister "dakota-nekkid">>\
+
+        <<nm $sister "Hehe, did you want your little <<sister>> to toss your salad? You like that, huh?">>\
+
+        <<nm $player "I-I, um, yeah kinda...">>\
+
+        ''She disappears under the covers, kissing your body as she moves down to your stomach, then crotch, then thighs. You raise your legs for her as she settles into position.''
+
+        <<nm $sister "Aw, you kept it all clean for me! Mmmm...">>\
+
+        <<pic $sister "rim-player">>\
+
+        <<nm $player "O-oh! $sister.name... Mmm...">>\
+
+        <<CommentAss $sister
+            "Mmm, mmmm, haaa...|Wow, <<he>>'s got a lot of room in here! Wonder if <<he>> takes it up the ass a lot?"
+            "Mmm, mmmm, haaa...|Hehe, <<he>>'s so loose, I bet I could get a few fingers up here, too"
+            "Mmm, mmmm, haaa...|Mmm, <<he>>'s pretty open, I wonder if I could get a finger up here?"
+            "Mmm, mmmm, haaa...|Hehe, so tight! Bet <<he>>'s never had anything up there before..."
+            "Mmm, mmmm, haaa...|Wow, so tight! Guess my <<brother>>'s still an anal virgin..."
+        >>\
+
+        ''Your <<sister>> really seems to know what she's doing, and all it takes is a strategically placed finger to send you over the edge.''
+
+        <<if isChastity()>>\
+            <<pic $action "chastity-squirt">>\
+        <<else>>\
+            <<pic $action "sissy-squirt">>\
+        <</if>>\
+
+        <<nm $player "F-fuck!">>\
+
+        <<nm $sister "Mmm, mmmphwa! Haaaa, hehehe, looks like I made you cum! Uh-oh, I'd better get back to my room, but you'd better repay the service later, hehe!">>\
+    <<elseif hasPenis()>>\
+        <<trackAction "suckCock.get" $sister>>\
+        <<trackAction "cumEat.give" $sister>>\
+        <<nm $player "A-actually, I was thinking maybe you could, um, y'know...">>\
+
+        ''$sister.name wraps her fingers around your erect <<pSize>>, biting her lip as she moans into your ear.''
+
+        <<pic $sister "dakota-nekkid">>\
+
+        <<nm $sister "Hehe, did you want your little <<sister>> to suck your cock? You like that, huh?">>\
+
+        <<nm $player "I-I, um, yeah kinda...">>\
+
+        ''She disappears under the covers, kissing your body as she moves down to your stomach, then crotch, then thighs. Finally, she makes her way to your cock.''
+
+        <<CommentPenis $sister
+            "Oh wow, I keep forgetting how huge it is!"
+            "Mmmm, big <<brother>>'s got a big cock!"
+            "Mmmm, I love the way it feels in my hand..."
+            "Hehe, your cock looks yummy!"
+            "Hehe, your cock's so cute! I'mma suck it!"
+        >>\
+
+        <<pic $sister "suck-player">>\
+
+        <<nm $player "O-oh! $sister.name... Mmm...">>\
+
+        ''Your <<sister>> really seems to know what she's doing, and it's not long before her tongue is sending you over the edge.''
+
+        <<nm $sister "Mmph! Hmph! M-MPH!" "<<He>>'s about to cum!">>\
+
+        <<pic $sister "cum-in-mouth">>\
+
+        <<nm $player "F-fuck!">>\
+
+        ''Rope after rope of thick cum spray over your little <<sister>>'s tongue, down her throat. She keeps her lips sealed around your <<pSize>>, making sure to suck out every last drop.''
+
+        <<nm $sister "Mmm, mmmphwa! Haaaa, hehehe, looks like I made you cum! Uh-oh, I'd better get back to my room, but you'd better repay the service later, hehe!">>\
+    <<else>>\
+        <<trackAction "eatPussy.get" $sister>>\
+        <<nm $player "A-actually, I was thinking maybe you could, um, y'know...">>\
+
+        <<pic $sister "dakota-nekkid">>\
+
+        <<nm $sister "Hehe, did you want your little <<sister>> to eat your pussy? You like that, huh?">>\
+
+        <<nm $player "I-I, um, yeah kinda...">>\
+
+        ''She disappears under the covers, kissing your body as she moves down to your stomach, then crotch, then thighs. You raise your legs for her as she settles into position.''
+
+        <<nm $sister "Mmmm, your scent is amazing <<bro>>...">>\
+
+        <<pic $sister "eat-pussy">>\
+
+        <<nm $player "O-oh! $sister.name... Mmm...">>\
+
+        <<CommentAss $sister
+            "Mmm, mmmm, haaa...|Wow, <<he>>'s got a lot of room in here! Wonder how often <<he>> gets laid?"
+            "Mmm, mmmm, haaa...|Hehe, <<he>>'s so loose, I bet I could get my whole fist up here!"
+            "Mmm, mmmm, haaa...|Mmm, <<he>>'s pretty open, I wonder if I could get a few fingers up here?"
+            "Mmm, mmmm, haaa...|Hehe, so tight! I wonder if <<he>>'s still a virgin..."
+            "Mmm, mmmm, haaa...|Wow, so tight! I wonder if my <<brother>>'s still a virgin..."
+        >>\
+
+        ''Your <<sister>> really seems to know what she's doing, and all it takes is a bit of light nibbling on your clit to send you over the edge.''
+
+        <<nm $sister "Mmph! Hmph! M-MPH!" "<<He>>'s about to cum!">>\
+
+        <<pic $player "squirt">>\
+
+        <<nm $player "F-fuck!">>\
+
+        ''Wave after wave of thick juices spray over your little <<sister>>'s tongue and face. She keeps licking, forcing you to squirt out every last drop, for as long as it takes for your thighs to stop shaking.''
+
+        <<nm $sister "Mmm, mmmphwa! Haaaa, hehehe, looks like I made you cum! Uh-oh, I'd better get back to my room, but you'd better repay the service later, hehe!">>\
+    <</if>>\
+
+    ''$sister.name slides out from under your covers and sneaks back to her room, leaving you a little surprised, if not satisfied.''
+
+    <<love $sister>>
+    <<lust $sister>>
+    
+    <<horny 0>>
+
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: Night-12-OralGive {"position":"350,5600","size":"100,100"}
+<<loc_Room>>\
+    <<trackAction "eatPussy.give" $sister>>\
+
+    ''You continue to embrace your <<sister>> for a little while longer before pulling back slightly, motioning downward.''
+
+    <<nm $player "A-actually, I was thinking maybe I could... make you feel good?">>\
+
+    <<pic $sister "dakota-nekkid">>\
+
+    <<nm $sister "R-really? You wanna eat my p-pussy? Well, I mean, if you insist...">>\
+
+    <<nm $player "Hehe, yeah!">>\
+
+    ''She rolls over, sliding off her panties and spreading her legs open for you.''
+
+    <<pic $sister "spread">>\
+
+    <<nm $sister "Hehe, well, eat up!">>\
+
+    ''You position yourself on top of your <<sister>>, kissing her neck, then her tiny breasts, her stomach, her thighs. You can feel the heat coming off her glistening pussy as you pass over it. Finally, you lean forward and slide your tongue along her slit.''
+
+    <<pic $sister "eaten-by-player">>\
+
+    <<nm $sister "O-oh! $player.name... Mmm...">>\
+
+    <<skillComment $sister "eatPussy.give"
+        "M-mmm, ahhh, h-holy shit! Why are you so good at this!"
+        "O-oohhh, wow, you're amazing!"
+        "Mmmm, yeah, j-just like that... O-oohhh..."
+        "A-ah, hmmm, there you go... Mmmm..."
+        "O-oh! H-hey, take it easy down there, h-hehe..."
+    >>\
+
+    ''Your <<sister>>'s pussy is impossibly tight, so you focus on her clit as you slowly work your tongue deeper and deeper into her hole. It's not long before you feel her thighs and pelvis start to shake and spasm.''
+
+    <<nm $sister "A-AHH! C-CUMMING!">>\
+
+    <<pic $sister "squirt">>\
+
+    <<nm $player "M-MPH!">>\
+
+    ''Wave after wave of thick juices spray over your tongue and face. She keeps going, holding your head in place forcing you to eek out every last drop, for as long as it takes for her thighs to stop twitching.''
+
+    <<nm $sister "That... was... incredible... H-holy shit...">>\
+
+    <<nm $player "You came... a lot!">>\
+
+    ''She takes a minute to catch her breath as you move back up beside her.''
+
+    <<nm $sister "Hehe, that was awesome! I should get back to my room now, but you gotta let me repay you later, okay?">>\
+
+    ''$sister.name slides out from under your covers and sneaks back to her room, leaving you a little surprised, if not a little unsatisfied.''
+
+    <<love $sister>>
+    <<lust $sister>>
+
+    <<horny 10>>
+
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: Night-14-Finger {"position":"975,5600","size":"100,100"}
+<<loc_Room>>\
+
+    ''You smile, stand up, and motion to the bed.''
+
+    <<nm $player "You did great today, and I think you've earned your reward. Mind getting on the bed and sticking your ass in the air for me?">>\
+
+    ''Her eyes light up.''
+
+    <<pic $mom>>\
+    <<art $mom "aroused">>\
+
+    <<nm $mom "Oh <<Master>>! Thank you!">>\
+
+    ''She gives you a quick kiss before climbing into the bed on her hands and knees per your instruction. You gently press your fingers against her mound, noting how wet her pussy is. As you slide inside of her, <<dl $mom.hasPenis "her large cock immediately starts twitching" "her tight pussy starts to quiver">>.''
+
+    <<nm $mom "O-oh!">>\
+
+    <<pic $mom "fingered">>\
+    <<act $mom "fingered">>\
+
+    ''You plunge your fingers deep inside of $mom.realName, causing her to start <<if $mom.hasPenis>>shooting long streams of cum out from beneath her<<else>>spraying waves of juices onto your waist<</if>>.''
+
+    <<pic $mom "orgasm">>\
+    <<act $mom "orgasm">>\
+
+    <<nm $mom "F-fuck! Yes! M-<<Master>>!">>\
+
+    ''After another two or three of your ?mother's quaking orgasms, you go in for one last deep session, ensuring stimulation to her g-spot until she cums one last time.''
+
+    <<nm $mom "C-cumming!">>\
+
+    <<pic $action "ts-squirt">>\
+    <<act $mom "fingered,cum">>\
+
+    ''You bury your fingers into $mom.realName's pussy as she bites down on your sheets. <<dl $mom.hasPenis "Rope after rope of thick, hot cum shoot out from under her" "wave after wave of hot juices spray out from under her">> and after a few moments, you slide out and allow her to fall into your mattress.''
+
+    <<pic $mom "ava-nekkid">>\
+    <<art $mom "aroused,2,naked">>\
+    
+    <<nm $mom "Mmmm... Thank you so much <<Master>>, that was wonderful! Now, please allow me to change out your bedding before you go to sleep. It'll only take a moment!">>\
+
+    <<nm $player "Thank you, $mom.name. That would be great!">>\
+
+    ''Your ?mother quickly changes out your sheets and prepares your bed for you to lay down. She gives you a kiss on the cheek and quietly leaves your room.''
+
+    <<lust $mom>>
+    <<love $mom>>
+
+    <<horny 30>>
+
+    <<btnLink "Go to sleep" "Room-Sleep">>\
+
+
+:: Night-14-Fuck {"position":"850,5600","size":"100,100"}
+<<loc_Room>>\
+
+    ''You smile, stand up, and pull off your <<UnderwearOrPants>>, exposing your hard <<pSize>>.''
+
+    <<nm $player "You did great today, and I think you've earned your reward.">>\
+
+    ''Her eyes light up.''
+
+    <<pic $mom>>\
+    <<art $mom "aroused">>\
+
+    <<nm $mom "Oh <<Master>>! Thank you!">>\
+
+    ''She gives your penis a few cursory licks and kisses before climbing into the bed on her hands and knees per your instruction. You line yourself up behind her, noting how wet her pussy is. As you slide inside of her, her <<if $mom.hasPenis>>large cock<<else>>tight pussy<</if>> immediately starts twitching.''
+
+    <<nm $mom "O-oh!">>\
+
+    <<pic $action "player-fuck-female-doggy">>\
+    <<act $mom "doggy,player,start">>\
+
+    ''You plunge yourself deep inside of $mom.realName, causing her to immediately start <<if $mom.hasPenis>>shooting long streams of cum out from beneath her<<else>>spraying waves of juices onto your waist<</if>>.''
+
+    <<pic $mom "orgasm">>\
+    <<act $mom "doggy,player,creampie">>\
+
+    <<nm $mom "F-fuck! Yes! M-<<Master>>!">>\
+
+    ''After another two or three of your ?mother's quaking orgasms, you can feel yourself welling up, unable to hold back anymore.''
+
+    <<nm $player "C-cumming!">>\
+
+    <<pic $mom "creampie">>\
+    <<act $mom "doggy,player,creampie,xray">>\
+
+    ''You bury your cock into $mom.realName's pussy as she bites down on your sheets. Rope after rope of thick, hot cum shoots deep inside of her and after a few moments, you slide out and allow her to fall into your mattress.''
+
+    <<pic $mom "ava-nekkid">>\
+    <<art $mom "aroused,2,naked">>\
+    
+    <<nm $mom "Mmmm... Thank you so much <<Master>>, that was wonderful! Now, please allow me to change out your bedding before you go to sleep. It'll only take a moment!">>\
+
+    <<nm $player "Thank you, $mom.name. That would be great!">>\
+
+    ''Your ?mother quickly changes out your sheets and prepares your bed for you to lay down. She gives you a kiss on the cheek and quietly leaves your room.''
+
+    <<lust $mom>>
+    <<love $mom>>
+
+    <<preg $mom>>
+
+    <<horny 0>>
+
+    <<trackAction "pussyFuck.give" $mom>>\
+    <<trackAction "creampie.give" $mom>>\
+    <<btnLink "Go to sleep" "Room-Sleep">>\
+
+
+:: Night-14-Ignore {"position":"1100,5600","size":"100,100"}
+<<loc_Room>>\
+
+    ''You think for a moment while $mom.realName waits anxiously in front of you.''
+
+    <<nm $player "You've done... okay.">>\
+
+    <<pic $mom>>\
+    <<art $mom "sad,2">>\
+
+    <<nm $mom "Just o-okay? <<Master>>?">>\
+
+    <<nm $player "Don't worry too much about it. I have everything I need here, goodnight, $mom.name.">>\
+
+    ''Your ?mother looks defeated but forces a smile.''
+
+    <<nm $mom "Of course, <<Master>>. Goodnight!">>\
+
+    ''She quietly takes her leave, closing your door behind her.''
+
+    <<btnLink "Go to sleep" "Room-Sleep">>\
+
+
+:: Night-15-Check {"position":"225,5725","size":"100,100"}
+<<loc_Landing>>\
+
+    ''You reluctantly get out of your cozy bed and approach the door. You crack it open just a little bit so you can listen...''
+
+    <<pic $sister>>\
+
+    <<nm $sister "I mean... I don't know. Something about this feels wrong...">>\
+
+    <<pic $mom>>\
+
+    <<nm $mom "Don't worry, I'm here for you.">>\
+
+    <<nm $sister "I'm the one who suggested it... sorry, ignore it. I won't ask again.">>\
+
+    <<nm $mom "You can kiss if you really want it. I won't make you do it, but over these years, you've just made my life so much better. I feel the same way towards you.">>\
+
+    <<nm $sister "I want to, but...">>\
+
+    <<nm $mom "You're smart, you're kind, you stayed with me in hard times... $sister.name, if you want a kiss, I'll gladly give you one.">>\
+
+    <<nm $sister "Maybe just one.">>\
+
+    ''You crack your door open a little more and see your ?mother and ?sister kissing.''
+
+    <<nm $sister "Mmm, yeah, no regrets...">>\
+
+    <<if chance(50)>>\
+        <<pic $mom "kiss-female">>\
+    <<else>>\
+        <<pic $sister "kiss-female">>\
+    <</if>>\
+
+    <<Thought "Oh yeah... they're actually doing it!">>\
+
+    ''They passionately make out for a while as you watch. However, $sister.name opens her eyes and sees that your door is cracked, and then she sees you and takes her lips off $mom.realName.''
+
+    <<pic $sister>>\
+
+    <<nm $sister "Ack! Can't I kiss my ?mom in peace? Jerk...">>\
+
+    ''Her anxiety is completely gone, and she looks pissed at you for interrupting her wonderful moment...''
+
+    <<nm $player "Sorry! Thought I heard something. I'll leave you alone.">>\
+
+    ''You close your door and jump back in bed. You don't hear anything else from outside, and eventually take your mind off the incident as you drift off to sleep.''
+
+    <<horny 10>>
+
+    <<btnLink "Go to sleep" "Room-Sleep">>\
+
+
+:: Night-15-Ignore {"position":"100,5725","size":"100,100"}
+<<loc_Room>>\
+
+    <<Thought "I really hope she quiets down. I'm dying for some sleep!">>\
+
+    ''She eventually does, letting you fall asleep.''
+
+    <<btnLink "Go to sleep" "Room-Sleep">>\
+
+
+:: Night-5-Creampie {"position":"1100,5725","size":"100,100"}
+<<loc_Room>>\
+
+    <<pic $action "creampie-female">>\
+                
+    <<if dose($mom,"threesome")>>\
+        <<if $sister.isPregnant and not $mom.isPregnant>>\
+            <<nm $mom "Yes! Come inside of <<mama>>! Get me pregnant just like you did your <<sister>>! FUCK! YES! OOOOoooohhhh!!!" "<<He>>'s cumming... <<He>>'s cumming inside! I'm going to h-have <<his>> b-baby! My <<son>>'s baby!">>\
+            
+            ''You continue pumping every last drop of your hot cum into your <<mother>> as she moans wildly.''<<if $mom.hasPenis>>@@.ef; Her huge cock shoots rope after rope of cum in the sheets beneath her.@@<</if>>
+            <<if $mom.hasPenis>>\
+            
+                <<pic $action "player-fuck-ts">>\
+            <</if>>\
+            
+            <<love $mom>>
+            <<lust $mom>>
+            <<dom $player 3>>
+            
+            <<preg $mom>>
+            <<trackAction "creampie.give" $mom>>\
+            <<trackAction "pussyFuck.give" $mom>>\
+        <<elseif not $mom.isPregnant>>\
+            <<nm $mom "Yes! Come inside of <<mama>>! Get me pregnant! FUCK! YES! OOOOoooohhhh!!!" "<<He>>'s cumming... <<He>>'s cumming inside! I'm going to h-have <<his>> b-baby! My <<son>>'s baby!">>\
+            
+            ''You continue pumping every last drop of your hot cum into your <<mother>> as she moans wildly.<<if $mom.hasPenis>>@@.ef; Her huge cock shoots rope after rope of cum in the sheets beneath her.@@<</if>>''
+            <<if $mom.hasPenis>>\
+            
+                <<pic $player "fuck-ts">>\
+            <</if>>\
+            
+            <<love $mom>>
+            <<lust $mom>>
+            <<dom $player 3>>
+            
+            <<preg $mom>>
+            <<trackAction "creampie.give" $mom>>\
+            <<trackAction "pussyFuck.give" $mom>>\
+        <<else>>\
+            <<nm $mom "Mmmm, yessss... I love the feeling of your hot cum filling my insides!">>\
+            
+            <<love $mom>>
+            <<lust $mom>>
+            <<dom $player 3>>
+            <<trackAction "creampie.give" $mom>>\
+            <<trackAction "pussyFuck.give" $mom>>\
+        <</if>>\
+    <<elseif dose($mom,"sex")>>\
+        <<if not $mom.isPregnant>>\
+            <<nm $mom "Yes! Come inside of <<mama>>! Get me pregnant! FUCK! YES! OOOOoooohhhh!!!" "<<He>>'s cumming... <<He>>'s cumming inside! I'm going to h-have <<his>> b-baby! My <<son>>'s baby!">>\
+            
+            ''You continue pumping every last drop of your hot cum into your <<mother>> as she moans wildly.<<if $mom.hasPenis>>@@.ef; Her huge cock shoots rope after rope of cum in the sheets beneath her.@@<</if>>''
+            <<if $mom.hasPenis>>\
+            
+                <<pic $player "fuck-ts">>\
+            <</if>>\
+            
+            <<love $mom>>
+            <<lust $mom>>
+            <<dom $player 3>>
+            
+            <<preg $mom>>
+            <<trackAction "creampie.give" $mom>>\
+            <<trackAction "pussyFuck.give" $mom>>\
+        <<else>>\
+            <<nm $mom "Mmmm, yessss... I love the feeling of your hot cum filling my insides!">>\
+            
+            <<love $mom>>
+            <<lust $mom>>
+            <<dom $player 3>>
+            <<trackAction "creampie.give" $mom>>\
+            <<trackAction "pussyFuck.give" $mom>>\
+        <</if>>\
+    <</if>>\
+    
+    <<horny 0>>
+    
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: Night-5-CumOnAss {"position":"1225,5725","size":"100,100"}
+<<loc_Room>>\
+
+    ''You pull your <<pSize>> out of your <<mother>>'s pussy and shoot your load over her ass.''
+                
+    <<pic $action "cum-on-ass">>\
+    
+    <<nm $mom "Ah, fffuOH GOD!">>\
+    
+    ''The feeling of hot cum covering your <<mother>>'s ass is enough to send her spiraling into yet another orgasm. She nearly collapses as her legs tremble and juices pour from her spasming pussy.''
+    
+    <<love $mom>>
+    <<lust $mom>>
+    <<dom $player 3>>
+    <<trackAction "pussyFuck.give" $mom>>\
+    
+    <<horny 0>>
+    
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: Night-5-CumOnBack {"position":"100,5850","size":"100,100"}
+<<loc_Room>>\
+
+    ''You pull your <<pSize>> out of your <<mother>>'s pussy and shoot your load over her back.''
+                
+    <<pic $action "cum-on-back-female">>\
+    
+    <<nm $mom "Ah, fffuOH GOD!">>\
+    
+    ''The feeling of hot cum covering your <<mother>>'s back is enough to send her spiraling into yet another orgasm. She nearly collapses as her legs tremble and juices pour from her spasming pussy.''
+    
+    <<love $mom>>
+    <<lust $mom>>
+    <<dom $player 3>>
+    <<trackAction "pussyFuck.give" $mom>>\
+    
+    <<horny 0>>
+    
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: Night-5-EatPussy {"position":"850,5725","size":"100,100"}
+<<loc_Room>>\
+
+    ''You lean in, already intoxicated by your <<mother>>'s powerful scent. She moans softly as your tongue begins tracing her slit.''
+
+    <<pic $mom "eaten-by-player">>\
+
+    <<nm $mom "Ahhh! Mmmmm, ohhh... K-keep going baby... That's... mmmmm... sooooo gooood...">>\
+
+    ''Your nose is buried in your <<mom>>'s cunt as you lap away, penetrating her with your tongue and biting at her clit. You can feel her legs trembling in anticipation for her first orgasm.''
+
+    <<nm $mom "Mmmm... Oh! OOOHHHH!!!">>\
+
+    <<pic $mom "squirt">>\
+
+    ''Your mouth is flooded with your <<mother>>'s juices as she clasps her hands around your head, locking you into place. You struggle to swallow fast enough to avoid drowning in your <<mom>>'s orgasm as she slowly, very slowly, begins to come down from it.''
+
+    <<nm $mom "That... That was good, sweetie... D-definitely a good... good start...">>\
+
+    <<Thought "Good start?">>\
+
+    ''Before you can finish processing, your <<mother>>'s begun grinding her mound into your face, moving in for her second climax... then her third, fourth... By the time she's finally climbed off of your face and left your room you've lost count of how many times your <<mother>> forced you to swallow her squirt, and frankly you're too exhausted to care... The door slowly closes as you drift off to sleep.''
+
+    <<love $mom>>
+    <<lust $mom>>
+    <<dom $player -3>>
+    <<trackAction "eatPussy.give" $mom>>\
+
+    <<horny 10>>
+
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: Night-5-GetFucked {"position":"225,5850","size":"100,100"}
+<<loc_Room>>\
+
+    <<nm $player "$mom.name, look at all this cum you're just... wasting...">>\
+                    
+    ''You flip her over and wrap your lips around her pulsing member.''
+    
+    <<pic $player "suck-ts">>\
+    
+    <<nm $mom "OH! H-honey! What are... mmmmm... ohhhh god that's...">>\
+    
+    ''You take your <<mother>> deep into your throat, feeling every veiny inch as it slides over your tongue. She's cumming almost constantly at this point, and while you swallow what you can it's impossible to stop most of it from running down your chin onto your <<bSize>>.''
+    
+    <<nm $player "Mmm, I think that's good enough.">>\
+    
+    ''You pounce on your <<mother>>, kissing her deeply as she's forced to swallow her own juices from your mouth. Your legs straddle her, and your dripping <<vSize>> lines up with her pulsing cock.''
+    
+    <<pic $player "ride-ts">>\
+    
+    <<vaginal "your <<mother>>'s huge cock">>
+    
+    <<nm $mom "S-sweetie! You're! OH! Ohhhh... S-so good... Your p-pussy feels... SO GOOD!">>\
+    
+    ''It's not long before your <<mother>>'s started bouncing you hard on her cock. You weren't expecting it to feel so massive inside you, and you can't help but scream in pleasure as her cockhead penetrates your cervix. It's deep... deeper than you've ever felt before... You can feel stream after stream of hot cum spraying into you, coating your walls, shooting straight into your womb... You can't think straight anymore. You can feel your brain melting as you give into the intense pleasure.''
+    
+    <<nm $player "C-c-cumming! Can't... stop... CUMMING! OH GOD!!!">>\
+    
+    ''You black out. The last thing you remember is the feeling of your <<mother>>'s lips on your cheek, and the sound of the door closing... And the feeling of thick, hot cum flowing from between your legs...''
+    
+    <<love $mom>>
+    <<lust $mom>>
+    <<dom $player -3>>
+    <<trackAction "pussyFuck.get" $mom>>\
+    <<trackAction "creampie.get" $mom>>\
+    
+    <<horny 0>>
+    
+    <<preg $player "your <<mother>>" "mom">>
+    
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: Night-5-KeepLicking {"position":"350,5850","size":"100,100"}
+<<loc_Room>>\
+
+    <<pic $player "eat-pussy">>\
+                    
+    ''The two of you continue like this for hours before finally collapsing into a pool of sweat and cum. The last thing you remember is the feeling of your <<mother>>'s lips on your cheek, and the sound of the door closing.''
+    
+    <<love $mom>>
+    <<lust $mom>>
+    
+    <<horny 0>>
+    
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: Night-5-SuckCock {"position":"975,5725","size":"100,100"}
+<<loc_Room>>\
+
+    <<if isBimbo() or pref($player,"suckCock.give",$LIKE)>>\
+        <<nm $player "$mom.name, look at all this cum you're just... wasting...">>\
+                    
+        ''You flip her over and wrap your lips around her pulsing member.''
+        
+        <<pic $player "suck-ts">>\
+        
+        <<nm $mom "OH! H-honey! What are... mmmmm... ohhhh god that's...">>\
+        
+        ''You take your <<mother>> deep into your throat, feeling every veiny inch as it slides over your tongue. She's cumming almost constantly at this point, and while you swallow what you can it's impossible to stop most of it from running down your chin onto your breasts.''
+        
+        <<pic $player "cum-in-mouth">>\
+        
+        ''As you suck on the huge, wet cock you finding yourself fading in and out of reality, surrendering to your lust. Suddenly, the feeling of air rapidly filling your lungs snaps you back. Your <<mother>> is sitting up in front of you, panting, quivering, eyes glazed over.''
+        
+        <<nm $player "W... Why...?">>\
+        
+        ''She tries to catch her breath.''
+        
+        <<nm $mom "I... I can't... N-no more tonight... M-mama needs... to rest...">>\
+        
+        ''She completely drained as her cock sputters out a few more tiny jets of cum. You wonder if you went overboard, looking at the huge pool of cum that's formed in your bed, but end up just passing out before you can think too much about it. The last thing you remember is the feeling of your <<mother>>'s lips on your cheek, and the sound of the door closing.''
+        
+        <<love $mom>>
+        <<lust $mom>>
+        
+        <<horny 0>>
+    <<else>>\
+        ''You lean in, hypnotized by the sight of your <<mother>>'s huge, swaying cock. She shudders in pleasure as your lips make contact with the head, prompting her to pull you down hard. You gag as she forces her massive penis down your throat.''
+                            
+        <<pic $player "suck-ts">>\
+
+        <<nm $mom "Ahhh! Mmmmm, ohhh... K-keep going baby... That's... mmmmm... sooooo gooood...">>\
+
+        ''You're forced to bob up and down rapidly as you deepthroat your <<mother>>, choking on her precum. You can feel her legs trembling in anticipation for her first orgasm.''
+
+        <<nm $mom "Mmmm... Oh! OOOHHHH!!!">>\
+
+        <<pic $action "ts-squirt">>\
+
+        ''Your mouth is flooded with your <<mother>>'s thick cum as she clasps her hands around your head, locking you into place. You struggle to swallow fast enough to avoid drowning in your <<mom>>'s orgasm as she slowly, very slowly, begins to come down from it. You can feel your stomach begin to expand from the sheer volume of her load.''
+
+        <<nm $mom "That... That was good, sweetie... D-definitely a good... good start...">>\
+
+        <<Thought "Good start?">>\
+
+        ''Before you can finish processing, your <<mother>>'s cock has already slid back down your now well-lubricated throat, moving in for her second climax... then her third, fourth...''
+
+        ''By the time she's finally withdrawn her cock from your mouth and left your room you've lost count of how many times your <<mother>> forced you to swallow her cum, and frankly you're too exhausted to care... The door slowly closes as you drift off to sleep.''
+
+        <<love $mom>>
+        <<lust $mom>>
+        <<dom $player -3>>
+
+        <<horny 10>>
+    <</if>>\
+
+    <<trackAction "suckCock.give" $mom>>\
+    <<trackAction "cumEat.get" $mom>>\
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: NightEvent-0 {"position":"850,5475","size":"100,100"}
+<<set $player.tfChange to false, $player.tfStateChange to false>>\
+    <span id="output">\
+        <<if $SleepWithSlave>>\
+            ''You pull $roomSlave.name into your bed, and the two of you fall asleep in each other's arms.''
+
+        <</if>>\
+        @@.btnUI;<<button "Fade into a dream...">>
+            <<replace "#output">>\
+                <<if flag($player,"absorbSerum") and $player.tfCD is 0 and not $game.lockGender and $CanTF and not $PauseTF>>\
+                    <<TFCheck>>\
+                <<else>>\
+                    <<include Dreaming>>\
+                <</if>>\
+            <</replace>>\
+        <</button>>@@
+    </span>\
+
+
+:: NightEvent-1 {"position":"975,5475","size":"100,100"}
+<<loc_Room>>\
+    
+    ''Before you can fall asleep, your door creaks open.''
+
+    <<nm $player "Hm... Hey <<sis>>, what's...!?">>\
+        
+    <<pic $sister "strip">>\
+    <<art $sister "aroused,2,naked">>\
+
+    <<nm $sister "Oh, hey <<bro>>, just wanted to say good night before I head to bed. It's been so warm lately, Summer just doesn't want to let go. I've had to start sleeping naked just to feel comfortable. Anyway, I'll see ya' in the morning!">>\
+        
+    ''$sister.name slinks down the hall into her own room and closes the door.''
+
+    <<nm $player "Well, that was nice.">>\
+
+    <<lust $sister>>
+
+    <<horny 10>>
+        
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: NightEvent-10 {"position":"1100,5475","size":"100,100"}
+<<loc_Room>>\
+    
+    ''Before you can fall asleep, your door creaks open.''
+
+    <<nm $player "Hm... Hey <<sis>>, what's...!?">>\
+        
+    <<pic $sister "strip">>\
+
+    <<nm $sister "Mmm, hey <<bro>>... got a minute for me?">>\
+        
+    ''She doesn't give you time to answer, instead closing the door behind her and crawling on top of you. The room is dark, but there's enough light coming through the window to clearly see her tiny breasts hovering just over your face. A moment later, you feel her start to grind herself into your crotch.''
+
+    <<nm $player "O-oh!">>\
+
+    <<if isChastity()>>\
+        ''$sister.name grinds herself against your <<accf>> as your <<pSize>> is left completely unstimulated.''
+    <<elseif isSissy()>>\
+        ''$sister.name grinds herself against your flaccid <<pSize>>, sending jolts of pleasure through your body.''
+    <<elseif hasPenis()>>\
+        ''$sister.name grinds herself against your rapidly hardening <<pSize>>, sending you close to the edge.''
+    <<else>>\
+        ''$sister.name grinds herself against your mound, occassionally sliding herself along your clit and sending a jolt of pleasure through your body.''
+    <</if>>\
+
+    <<nm $sister "Well, what are you waiting for? Can't you see how, mmm, desperate I am?">>\
+
+    ''She grabs your hand and slides it down her silky panties, wrapping one of your fingers straight into her tight pussy. You can't believe how wet she is already, and how warm. Once you're in place, she drops herself down and starts rolling her crotch over your fingers.''
+
+    <<nm $sister "Mmm, o-ooohhh, just like that! Y-YES!">>\
+
+    <<pic $sister "orgasm">>\
+    <<art "sister/act/orgasm/orgasm">>\
+
+    ''Thick, hot juices pour over your hand as your <<sister>> rides your fingers for all they're worth before finally collapsing on top of you. She continues to slowly grind her twitching cunt over your hand, and her sweaty breasts over your face as she milks her orgasm for all it's worth before finally rolling off your bed.''
+
+    <<nm $sister "Ahhh, thanks <<bro>>, that's just what I needed! Well, I'm off to bed, make sure to take care of yourself after I leave!">>\
+
+    ''And with that she's gone, leaving you hot, wet and horny.''
+
+    <<Thought "Well... I suppose this was my own fault...">>\
+
+    <<lust $sister>>
+    <<dom $player -3>>
+
+    <<horny 30>>
+        
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: NightEvent-11 {"position":"1225,5475","size":"100,100"}
+<<loc_Room>>\
+    
+    ''Before you can fall asleep, your door creaks open.''
+
+    <<nm $player "Hm... Hey <<sis>>, what's...!?">>\
+        
+    <<pic $sister "strip">>\
+    <<act $sister "strip-aroused">>\
+
+    <<nm $sister "Mmm, hey <<bro>>... I need some help getting to sleep tonight...">>\
+
+    ''Your <<sister>> walks over and sits down on your bed.''
+
+    <<nm $sister "Whoops, left the door open! Go close it.">>\
+
+    ''You do as you're told. When you turn around, you see $sister.name spread and waiting, a sly smile on her face.''
+    
+    <<pic $sister "spread">>\
+    <<art "scene/DakotaSolo">>\
+
+    <<nm $sister "Well? What are you waiting for? Crawl over here and help your little <<sister>> out...">>\
+
+    <<if firstVisit()>>\
+        ''Deciding it's best not to argue, you start to walk over.''
+
+        <<nm $sister "Hold it! I said 'crawl' over here, didn't I?">>\
+
+        <<nm $player "A-are you serious?">>\
+
+        ''She's serious. You slowly drop to your knees and crawl over to meet her waiting pussy.''
+    <<else>>\
+        ''You do as you're told, dropping to your knees and crawling over to her waiting pussy.''
+    <</if>>\
+
+    <<nm $sister "Mmm, such a good puppy! Now make me feel good, okay?">>\
+
+    <<pic $sister "eaten-by-player">>\
+    <<act $player "eatpussy">>\
+
+    ''You lean in, sliding your tongue into her tight slit. She's so small, you can almost wrap your mouth around her entire mound. She twists and moans as you lick her pussy, piercing it with your tongue, withdrawing to flick and nibble her tiny clit.''
+
+    <<nm $sister "O-ooohhhh, mmmmm, $player.name...">>\
+
+    <<pic $sister "orgasm">>\
+    <<art "sister/act/orgasm/orgasm">>\
+
+    ''Thick juices start to fill your mouth as $sister.name's pussy pulses and spasms. You stay put and swallow what you can, knowing full well that this is only the first of your <<sister>>'s orgasms you'll be drinking tonight.''
+
+    <<skillComment $sister "eatPussy.give"
+        "Oooohhh my god you're AMAZING! Mmmm, alright, keep going!"
+        "God you're so fucking good at this! Alright, keep going!"
+        "Mmmmm, that was a good cum... Well, keep it up!"
+        "Hm, you still need some work <<bro>>... Well, let's do it again!"
+        "Hahaha, man. I came, you really suck at this! C'mon, let's keep practicing!"
+    >>\
+
+    ''As expected, she wraps her hands around your head and starts roughly grinding herself into your mouth. This continues for some time until your <<top>> is thoroughly soaked through and your <<sister>> is completely satisfied. You collapse into your bed as she stands up and puts her clothing back on.''
+
+    <<nm $sister "Mmmm, that was great! Let's play again soon, okay?">>\
+
+    ''She leaves the room as you drift off to sleep.''
+
+    <<lust $sister>>
+    <<dom $player -3>>
+
+    <<horny 10>>
+
+	<<trackAction "eatPussy.give" $sister>>\
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: NightEvent-12 {"position":"100,5600","size":"100,100"}
+<<loc_Room>>\
+    
+    ''Before you can fall asleep, your door creaks open.''
+
+    <<nm $player "Hm... Hey <<sis>>, what's...!?">>\
+        
+    <<pic $sister "strip">>\
+    <<act $sister "strip,aroused">>\
+
+    <<nm $sister "Mmm, hey <<bro>>... I need some help getting to sleep tonight...">>\
+
+    ''$sister.name closes the door behind her and slips under your covers, cuddling up close to you.''
+
+    <<pic $sister "kiss-player">>\
+
+    <<nm $sister "Mmmm, mmm, hehehe! Hey you!">>\
+
+    <<nm $player "Hmhm, heya <<sis>>.">>\
+
+    ''You feel a hand slide up your leg as $sister.name starts to explore your crotch with her fingers. <<if isChastity()>>She traces the outline of your <<accf>><<elseif hasPenis()>>She runs her fingers along your <<pSize>><<else>>She runs a finger along your slit<</if>> as she continues to make out with you, sliding down to suck on your neck a little.''
+
+    <<nm $player "O-oohhh, mmmm...">>\
+
+    <<nm $sister "S-so, what's on the menu tonight, hm?">>\
+
+    <<btnChoice "Ask her to go down on you" "Night-12-OralGet">>\
+    <<btnChoice "Go down on her" "Night-12-OralGive">>\
+    <<btnChoice "Keep making out while using your hands to get each other off" "Night-12-Handjob">>\
+
+
+:: NightEvent-13 {"position":"600,5600","size":"100,100"}
+<<loc_Room>>\
+    
+    ''You walk across your room and collapse in your bed, ready to drift off into a nice sleep, when you realize something feels... off.''
+    
+    <<Thought "Is my bed made? I didn't make it... Was $mom.name in here again? Come to think of it, I didn't trip over anything on my way to the bed either...">>\
+    
+    ''As you become more alert, you sense someone else in your room. You roll over to find $sister.name standing in your doorway, just staring at you.''
+    
+    <<pic $sister "door">>\
+    
+    <<nm $player "Um... Hey, <<sis>>.">>\
+    
+    <<nm $sister "Hey <<bro>>! Are you, um, comfortable?">>\
+    
+    <<nm $player "Yes...? Wait... Did you clean my room?">>\
+    
+    ''$sister.name starts bouncing in place, looking extremely pleased with herself.''
+    
+    <<nm $sister "Yeah! YEAH! I did. Wait, did I not do it right? Is it okay? Are you... mad at me?">>\
+    
+    <<Thought "She just went from elated to defeated in a fraction of a second...">>\
+    
+    <<nm $player "What? No, no, I really... appreciate it, <<sis>>. Thank you, I-">>\
+    
+    <<pic $sister "kiss-player">>\
+    
+    ''Your <<sister>> leaps across the room, pinning you into your bed and kissing you deeply. After several moments, she breaks from your lips and begins kissing your neck and collar.''
+    
+    <<nm $player "<<S-sis>>!">>\
+    
+    <<nm $sister "Oh, big <<brother>>! I'm so happy I could make you happy! SO HAPPY!">>\
+    
+    <<Thought "What the f... Wait, this isn't the serum I gave her, is it? I mean, I don't know what else it could be...">>\
+    
+    ''You put your hands firmly on your <<sister>>'s shoulders and push her back so that she's sitting up straight in front of you. She tilts her head inquisitively.''
+    
+    <<nm $player "Umm... That's a very... good girl." "Yep, that confirms it.">>\
+    
+    ''As you pat your little <<sister>> on the head she practically springs into the ceiling. Pinning you again for another round of intimate kissing, this time grinding her bare cunt against your <<pSize>> through your <<bottom>>.''
+    
+    <<Thought "Hm? W-where did her panties go!?">>\
+    
+    <<nm $player "Okay, okay, okay. Thank you very much $sister.name, why don't you go ahead and go back to your room now.">>\
+    
+    <<nm $sister "Sure thing big <<brother>>! I'll come visit you another time, okay? And I'll keep cleaning your room and making you happy okay? And, um... maybe I could do some other things to make you REALLY happy... Okay?">>\
+    
+    ''Her face became flush with that last comment.''
+    
+    <<nm $player "Y-yeah, sure. I'll see you tomorrow, <<sis>>.">>\
+    
+    ''With that, $sister.name hops out of your bed and runs off to her own room. You fall back into your own bed.''
+    
+    <<Thought "Wow... I know I told her to act like a slutty puppy but... Wow. Oh well, I think I can live with this.">>\
+    
+    <<if dose($sister,"dogkota")>>\
+        ''You fall asleep, unaware of the true extent that the MCS-X was affecting your <<sister>>...''
+    <<else>>\
+        ''You fall asleep, thinking about your <<sister>>...''
+    <</if>>\
+
+    <<btnLink "Go to sleep..." "Room-Sleep">>
+    
+    <<if not flag($sister,"PuppyLove")>>\
+        <<set $sister.status to "@@.xxx;Slutty Puppy@@">>\
+        <<AddNote $sister "$sister.name cleaned my room today, visiting me in the night seeking praise. When I finally gave it to her, she jumped into my bed, kissing me deeply and appearing elated. I have to admit I was really expecting her to be more 'slut' and less... dog.">>\
+        <<SetFlag $sister "PuppyLove">>\
+    <</if>>\
+
+
+:: NightEvent-14 {"position":"725,5600","size":"100,100"}
+<<loc_Room>>\
+
+    ''As you settle in for the night, you hear a light knock on the door followed by $mom.realName peaking her head in.''
+
+    <<pic $mom>>\
+    <<art $mom "embarrassed,2">>\
+
+    <<nm $mom "M-<<Master>>? I just wanted to check in on you before going to bed.">>\
+
+    <<nm $player "Oh, I'm good. I was just getting ready to go to sleep. Did you need anything?">>\
+
+    ''Your ?mother rocks back and forth a little bit, something clearly on her mind, but she struggles to communicate.''
+
+    <<nm $mom "I-I... Um... Did I serve you well today, <<Master>>?">>\
+
+    <<Thought "Ah, she wants a reward...">>\
+
+    <<nm $player "Well, let's see...">>\
+
+    <<if hasWorkingPenis()>>\
+        <<btnChoice "Fuck her to orgasm" "Night-14-Fuck">>\
+    <<else>>\
+        <<btnChoice "Finger her to orgasm" "Night-14-Finger">>\
+    <</if>>\
+    <<btnChoice "Tell her to go back to bed" "Night-14-Ignore">>\
+
+
+:: NightEvent-15 {"position":"1225,5600","size":"100,100"}
+<<loc_Room>>\
+
+    ''You decide to go to bed. As you pull the sheets over yourself, shut your eyes, and plop your head onto a pillow, you hear $sister.name saying something in the hallway.''
+
+    <<Thought "Ugh... just as I lay down... do I have to get up?">>\
+
+    ''It's muffled, but you still hear her talking...''
+
+    <<btnChoice "Check it out" "Night-15-Check">>\
+    <<btnChoice "Ignore it" "Night-15-Ignore">>\
+
+
+:: NightEvent-2 {"position":"350,5725","size":"100,100"}
+<<loc_Room>>\
+
+    ''Before you can fall asleep there's a light knock on your door. You sit up to see your <<sister>>, $sister.name, peeking in from around the door.''
+
+    <<pic $sister "door">>\
+    <<art $sister "embarrassed,0,nightie">>\
+
+    ''You can see she has her laptop with her, this must be that "movie" she wanted to show you later.''
+            
+    <<nm $sister "Hey <<bro>>... You, uh, have a minute?">>\
+                
+    ''You climb out from under your covers and slide over to make room on your bed.''
+
+    ''You catch your <<sister>> checking you out a little.''
+
+    <<nm $sister "Ooh, hey <<bigbro>>, you're a bit of a hottie!">>\
+
+    ''Your <<sister>> nudges you playfully.''
+        
+    <<nm $player "So you wanted to show me a... movie?">>\
+        
+    <<nm $sister "Oh yeah yeah yeah! So I've been using this one a lot lately. It's about a brother and <<sister>> fooling around and their mom joining in. I mean, you know it's all staged, but the idea gets me going pretty good, you know?">>\
+        
+    <<nm $player "Incest porn, huh?">>\
+
+    ''Your <<sister>> gives you a slightly-too-innocent smile before opening her laptop and loading the video.''
+
+    <<pic $events "porn-porn_sis">>\
+    <<art "events/porn/straight">>\
+
+    ''After a few minutes you see your <<sister>>'s hand resting on her panties, rubbing slightly. She gives you another smile when she notices you looking.''
+            
+    ''$sister.name is panting heavily, just as the mother and daughter on screen are sharing a facial from their brother/son.''
+
+    <<pic $sister>>\
+    <<art $sister "aroused,2,nightie">>\
+
+    <<nm $sister "That was great... See <<bro>>? I told you it was good. We should do this more often...">>\
+        
+    ''With that, $sister.name packs up her laptop and heads back to her room.''
+
+    <<Thought "Well, yeah, can't say that wasn't fun! Time to finally get some sleep in, though...">>\
+
+    <<love $sister>>
+    <<lust $sister>>
+    
+    <<horny 10>>
+    
+    <<RemoveNightEvent 2>>\
+    <<AddNightEvent 3>>\
+    <<if dose($mom,"kiss")>>\
+        <<AddConvo $sister 14>>\
+    <</if>>\
+    <<AddConvo $sister 21>>\
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: NightEvent-3 {"position":"475,5725","size":"100,100"}
+''Before you can fall asleep there's a light knock on your door. You sit up to see your <<sister>>, $sister.name, peeking in from around the door.''
+
+    <<pic $sister "door">>\
+    <<art $sister "embarrassed,0,nightie">>\
+
+    ''You can see she has her laptop with her, this must be that "movie" she wanted to show you later.''
+            
+    <<nm $sister "Hey <<bro>>... You, uh, have a minute?">>\
+                
+    ''You climb out from under your covers and slide over to make room on your bed.''
+
+    <<if dose($sister,"oral")>>\
+        <<if isChastity()>>\
+            <<if isWearingUnderwear()>>\
+                ''You see your <<sister>> clearly staring at the strange outline of your <<accf>> through your <<underwear>>.''
+            <<else>>\
+                ''Your <<sister>> can't help but stare at the <<accf>> encasing your <<pSize>>.''
+
+                <<NoticePenis $sister>>\
+            <</if>>\
+        <<elseif hasPenis()>>\
+            <<if isWearingUnderwear()>>\
+                ''You see your <<sister>> clearly staring at your half-hard cock through your <<underwear>>.''
+            <<else>>\
+                ''Your <<sister>> can't help but stare at your exposed <<pSize>>.''
+
+                <<NoticePenis $sister>>\
+            <</if>>\
+        <<else>>\
+            ''You sleep shirtless, and your <<sister>>'s clearly staring at your exposed <<bSize>>.''
+
+            <<NoticeBreasts $sister>>\
+        <</if>>\
+        
+        <<nm $sister "Ooh, I can think of a couple ways to make tonight even more fun! But, that's not why I'm here... probably...">>\
+    <<else>>\
+        ''You catch your <<sister>> checking you out a little.''
+        
+        <<nm $sister "Ooh, hey <<bigbro>>, you're a bit of a hottie!">>\
+        
+        ''Your <<sister>> nudges you playfully.''
+    <</if>>\
+        
+    <<nm $player "So you wanted to show me a... movie?">>\
+        
+    <<nm $sister "Oh yeah yeah yeah! So I've been using this one a lot lately. It's about a brother and u-um s-sister fooling around and their mom joining in. I mean, you know it's all staged, but the idea gets me going pretty good, you know?">>\
+        
+    <<nm $player "Incest porn, huh?">>\
+
+    ''Your <<sister>> gives you a slightly-too-innocent smile before opening her laptop and loading the video.''
+
+    <<pic $events "porn-porn_sis">>\
+    <<art "events/porn/straight">>\
+
+    <<if dose($sister,"masturbate")>>\
+        ''After a few minutes your <<sister>> slides her hand down her panties and starts slowly rubbing, giving you another smile when she notices you looking.''
+
+        <<nm $sister "Go on <<bro>>, feel free to take care of yourself, too. It's just masturbating, we both do it, no sense hiding it.">>\
+            
+        <<pic $sister "spread">>\
+        <<art "scene/DakotaSolo">>\
+            
+        ''$sister.name pulls her panties off to make herself more comfortable...''
+        
+        <<Thought "What the hell...">>\
+        
+        ''You start rubbing ''<<if isChastity()>>''the outside of your <<aSize>>''<<else>>''your <<PussyOrCock>>''<</if>> <<if isWearingUnderwear()>>''under your <<underwear>>''<</if>>'' as your <<sister>> nods in approval.''
+        
+        ''You both start picking up the pace as the on-screen action begins to escalate.''
+        
+        <<nm $player "You don't think this is a bit much, <<sis>>?">>\
+            
+        ''$sister.name starts rubbing harder. It's only now you notice her attention has been focused on your actions rather than the video...''
+        
+        <<nm $sister "No, I mean, it's just masturbating... it's not... wrong... <<bro>>">>\
+        
+        <<if dose($sister,"oral")>>\
+            ''After some more time passes your <<sister>>, unsurprisingly, moves into position to start servicing you, all while keeping an eye on the screen and making sure you're doing the same.''
+            
+            <<if isChastity()>>\
+                ''Your <<sister>> penetrates your <<aSize>> with her tongue.''
+                <<trackAction "rimjob.get" $sister>>\
+            <<elseif isSissy()>>\
+                ''Your <<sister>> penetrates your <<aSize>> with her tongue.''
+                <<trackAction "rimjob.get" $sister>>\
+            <<elseif hasPenis()>>\
+                <<pic $sister "suck-male">>\
+                <<trackAction "suckCock.get" $sister>>\
+            <<else>>\
+                <<pic $sister "eat-pussy">>\
+                <<trackAction "eatPussy.get" $sister>>\
+            <</if>>\
+            
+            ''Between the "sibling bonding moment" you're both sharing and the fact that there's a warm mouth on your ''<<if isChastity()>>''ass''<<else>>''<<PussyOrCock>>''<</if>>'', it's not long before you're ''<<if isSissy() or isChastity()>>''trembling in orgasm''<<else>>''coming in your little <<sister>>'s mouth''<</if>>''.''
+            
+            <<nm $sister "Hehe, see? I told you this would be fun.">>\
+                
+            ''$sister.name wipes her mouth and starts rubbing herself even harder while staring at your dripping, <<pSize>>.''
+        <<elseif dose($sister,"handjob")>>\
+            ''After some more time passes, $sister.name starts pawing at your thighs.''
+            
+            <<nm $sister "Hey... <<bro>>... Why don't you let me help you with that?">>\
+                
+            ''Before you have time to react, $sister.name already has your pants off.''
+            
+            <<if isChastity()>>\
+                <<nm $sister "Aw... It's all locked up! Oh well, guess we'll move to Plan B!">>\
+                
+                ''$sister.name fingers herself for a few seconds, then glides a pair of cum-slick fingers into your <<aSize>>. She pumps you harder and harder, focusing on hitting your prostate with ever thrust. Eventually, even through your cage, she's able to extract an orgasm.''
+            <<elseif isSissy()>>\
+                <<nm $sister "Aw... It's so small! No point wasting my time on that little thing, go ahead and lift your legs more...">>\
+                
+                ''$sister.name fingers herself for a few seconds, then glides a pair of cum-slick fingers into your <<aSize>>. She pumps you harder and harder, focusing on hitting your prostate with ever thrust. Eventually, even though you were never able to achieve an erection, she's able to extract an orgasm.''
+                <<set $player.SissyForever += 1>>\
+            <<elseif hasPenis()>>\
+                <<pic $sister "handjob-player">>\
+                <<act $sister "handjob,male">>\
+                
+                ''Just as you suggested, your little <<sister>> is furiously stroking your hard cock, all while still trying to pay attention to the video playing on the screen. She moves faster, hitting all the right notes, until finally you can't hold back any longer. You shoot your hot load directly onto $sister.name's eager face, only serving to drive her even further over the edge.''
+            
+                <<pic $sister "handjob-finish">>\
+                <<act $sister "handjob,malecum">>\
+            <<else>>\
+                <<pic $sister "rub-pussy">>\
+                <<act $sister "handjob,female">>\
+                
+            ''Just as you suggested, your little <<sister>> is furiously fingering your dripping twat, all while still trying to pay attention to the video playing on the screen. She moves deeper and faster, hitting all the right notes, until finally your legs begin spasming. Your juices begin running down $sister.name's arm, only serving to drive her even further over the edge.''
+            
+                <<pic $player "squirt">>\
+                <<act $sister "handjob,femalecum">>\
+            <</if>>\
+            
+            <<nm $sister "Hehe, see? I told you this would be fun.">>\
+                
+            ''$sister.name starts rubbing herself even harder while staring at your dripping, <<pSize>>.''
+        <<else>>\
+            ''Hearing your <<sister>> panting while trying to tell you how not wrong this is sends you over the edge, and you're the first to come. Of course this triggers a chain reaction...''
+        <</if>>
+        
+        <<nm $sister "Oh shit that's hot! Me- Me too!">>\
+
+        <<pic $sister "orgasm">>\
+        <<art "sister/act/orgasm/orgasm">>\
+            
+        ''Your little <<sister>> trembles in orgasm on your bed, just as the mother and daughter on screen are sharing a facial from their brother/son.''
+        
+        <<nm $sister "That was great... See <<bro>>? I told you it was good. We should do this more often...">>\
+            
+        ''With that, $sister.name packs up her laptop and heads back to her room.''
+
+        <<Thought "Well, yeah, can't say that wasn't fun! Time to finally get some sleep in, though...">>\
+        
+        <<horny 0>>
+    <<else>>\
+        ''Your little <<sister>> pants heavily on your bed, just as the mother and daughter on screen are sharing a facial from their brother/son.''
+
+        <<pic $sister>>\
+        <<art $sister "aroused,2,nightie">>\
+        
+        <<nm $sister "That was great... See <<bro>>? I told you it was good. We should do this more often...">>\
+            
+        ''With that, $sister.name packs up her laptop and heads back to her room.''
+
+        <<Thought "Well, yeah, can't say that wasn't fun! Time to finally get some sleep in, though...">>\
+        
+        <<horny 10>>
+    <</if>>\
+    
+    <<love $sister>>
+    <<lust $sister>>
+    
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: NightEvent-4 {"position":"600,5725","size":"100,100"}
+''Before you can fall asleep there's a soft knock on your door. You sit up to see your <<sister>>, $sister.name, peeking in from around the door.''
+
+    <<pic $sister "door">>\	
+
+    ''She's panting lightly, with a sly smile on her face and a hand down her panties.''
+
+    <<nm $sister "Hey <<bro>>... You, uh, have a minute?">>\
+                
+    ''Knowing she's too far gone to try arguing with her, you pull the covers off ''<<if (hasPenis()) and not isChastity()>>''to reveal your hard cock to''<<else>>''and spread your legs for''<</if>>'' her.''
+
+    <<if isChastity()>>\
+        <<NoticePenis $sister>>\
+
+        ''Your <<sister>> climbs into bed and starts eating out your ass, ignoring your locked up <<PussyOrCock>>. After a few minutes she stops and climbs on top of you.''
+        
+        <<nm $sister "Too bad your poor <<pSize>> is all locked up, but I think we can milk some use out of it!">>\
+        
+        ''$sister.name intertwines her legs with yours, mounting the hood of her labia over your <<accf>>.''
+        
+        <<nm $sister "Let's do this like proper girls, 'kay?">>\
+        
+        ''Once in position, she starts grinding herself against you. The activity is humiliating, since you're unable to feel any of it, as your <<sister>> forces you to trib her like a woman.''
+        
+        <<nm $sister "Mmmm, yeah... That's... OH!! YES!!!">>\
+        
+        ''Your <<sister>> comes hard, dismounting you immediately to leave you desperate and wanting.''
+        
+        <<nm $sister "Thanks for that, <<bro>>, I needed it. If you want to finish just go ahead and... well, I guess there's not much you can do, is there?. I'm going to bed. Night!">>\
+        
+        ''$sister.name leaves the room, leaving you to your own devices...''
+        
+        <<lust $sister>>
+        <<dom $player -3>>
+        
+        <<horny 10>>
+    <<elseif isSissy()>>\
+        <<NoticePenis $sister>>\
+
+        ''Your <<sister>> climbs into bed and starts eating out your ass, ignoring your <<pSize>>. After a few minutes she stops and climbs on top of you.''
+        
+        <<nm $sister "Your little clitty might be useless as a proper cock, but I think we can milk some use out of it!">>\
+        
+        ''$sister.name intertwines her legs with yours, mounting the hood of her labia over your tiny cockhead.''
+        
+        <<nm $sister "Let's do this like proper girls, 'kay?">>\
+        
+        ''Once in position, she starts grinding herself against you. The activity is as pleasurable as it is humiliating, as your <<sister>> forces you to trib her like a woman.''
+        
+        <<nm $sister "Mmmm, yeah... That's... OH!! YES!!!">>\
+        
+        ''Your <<sister>> comes hard, dismounting you immediately to leave you desperate and wanting.''
+        
+        <<nm $sister "Thanks for that, <<bro>>, I needed it. If you want to finish just go ahead and rub your clitty 'til you come like the sissy slut you are. I'm going to bed. Night!">>\
+        
+        ''$sister.name leaves the room, leaving you to your own devices...''
+        
+        <<lust $sister>>
+        <<dom $player -3>>
+        
+        <<horny 10>>
+    <<elseif hasPenis()>>\
+        <<NoticePenis $sister>>\
+
+        ''Your <<sister>> climbs into your bed and gets to work, taking your cock into her mouth and working it until you come on her face.''
+                
+        <<pic $sister "handjob-finish">>\
+        
+        ''You sigh in relief while $sister.name looks quite satisfied with herself. As she leaves the room she closes the door behind her, going back to her bed, likely rubbing herself to sleep...''
+        
+        <<love $sister>>
+        <<lust $sister>>
+        
+        <<horny 0>>
+        <<trackAction "suckCock.get" $sister>>\
+    <<else>>\
+        <<NoticePussy $sister>>\
+
+        ''Your <<sister>> climbs into the bed''<<if isWearingUnderwear()>>'' and removes your panties,''<</if>>'' getting to work on your <<vSize>>. She laps and sucks until you start convulsing with pleasure.''
+                
+        <<pic $sister "eat-pussy">>\
+        
+        ''You sigh in relief while $sister.name looks quite satisfied with herself. As she leaves the room she closes the door behind her, going back to her bed, likely rubbing herself to sleep...''
+        
+        <<love $sister>>
+        <<lust $sister>>
+        
+        <<horny 0>>
+        <<trackAction "eatPussy.get" $sister>>\
+    <</if>>\
+
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: NightEvent-5 {"position":"725,5725","size":"100,100"}
+<<loc_Room>>\
+
+    ''Before you can fall asleep, you hear your door creak open. You look up to find your <<mother>> standing in the doorway.''
+    
+    <<pic $mom "robe-full">>\
+    
+    <<nm $mom "Hey sweetie, you weren't sleeping, were you? I was thinking we could... spend some time together.">>\
+    
+    ''She closes the door behind her, quickly making her way onto your bed and into your arms. Her large breasts ''<<if $mom.hasPenis>>@@.ef;and huge cock @@<</if>>''press up against you as she pulls you in for a deep, sensual kiss.''
+    
+    <<pic $mom "kiss-player">>\
+    
+    ''The two of you hold your embrace for several minutes before you finally roll over on top of your <<mother>>, pinning her into your bed and propping yourself up on your knees.''
+    
+    <<nm $mom "Mmmm, come on baby, I can't wait anymore!">>\
+    
+    <<if isChastity()>>\
+        ''Your <<mother>> frantically pulls down your <<UnderwearOrPants>> only to reveal your <<pSize>> locked away in your <<accf>>.''
+        
+        <<if dose($mom,"lover")>>\
+            <<nm $mom "Aw, you're all locked up... Well, we could still have fun, whaddaya think?">>\
+        <<elseif dose($mom,"dom")>>\
+            <<nm $mom "What? Seriously? Hmm, well, guess only one of us is getting off tonight!">>\
+        <<else>>\
+            <<nm $mom "Hmm, well, guess only one of us is getting off tonight!">>\
+        <</if>>\
+        
+        ''Pulling herself up against the wall, your <<mother>> spreads her legs wide open, revealing <<if $mom.hasPenis>>@@.ef;both her glistening pussy and rock hard cock to you.@@<<else>>her glistening pussy to you.<</if>>''
+        
+        <<if $mom.hasPenis>>\
+            <<if isSissy()>>\
+                <<nm $mom "I'd let you choose which one you want your lips on, but we both know how much of a little cocksucker you are. Now what are you waiting for?">>\
+            <<else>>\
+                <<nm $mom "I'll let you pick my pleasure, baby.">>\
+            <</if>>\
+            
+            <<btnChoice "Eat her pussy" "Night-5-EatPussy">>
+            <<btnChoice "Suck her cock" "Night-5-SuckCock">>
+        <<else>>\
+            <<if dose($mom,"lover")>>\
+                <<nm $mom "Tee-hee, wanna come lick mama's pussy?">>\
+
+                <<nm $player "Heh, I'd love to, $mom.name...">>\
+            <<else>>\
+                <<nm $mom "Since your little caged cock is worthless, why don't you come make <<mama>> feel good instead, hm?">>\
+            <</if>>\
+            
+            ''You lean in, already intoxicated by your <<mother>>'s powerful scent. She moans softly as your tongue begins tracing her slit.''
+            
+            <<pic $player "eat-pussy">>\
+            
+            <<nm $mom "Ahhh! Mmmmm, ohhh... K-keep going baby... That's... mmmmm... sooooo gooood...">>\
+            
+            ''Your nose is buried in your <<mom>>'s cunt as you lap away, penetrating her with your tongue and biting at her clit. You can feel her legs trembling in anticipation for her first orgasm.''
+            
+            <<nm $mom "Mmmm... Oh! OOOHHHH!!!">>\
+            
+            <<pic $mom "squirt">>\
+            
+            ''Your mouth is flooded with your <<mother>>'s juices as she clasps her hands around your head, locking you into place. You struggle to swallow fast enough to avoid drowning in your <<mom>>'s orgasm as she slowly, very slowly, begins to come down from it.''
+            
+            <<nm $mom "That... That was good, sweetie... D-definitely a good... good start...">>\
+            
+            <<Thought "Good start?">>\
+            
+            ''Before you can finish processing, your <<mother>>'s begun grinding her mound into your face, moving in for her second climax... then her third, fourth... By the time she's finally climbed off of your face and left your room you've lost count of how many times your <<mother>> forced you to swallow her squirt, and frankly you're too exhausted to care... The door slowly closes as you drift off to sleep.''
+            
+            <<love $mom>>
+            <<lust $mom>>
+            <<dom $player -3>>
+            <<trackAction "eatPussy.give" $player>>\
+            
+            <<horny 10>>
+    
+            <<btnLink "Drift off to sleep" "NightEvent-0">>
+        <</if>>\
+    <<elseif isSissy()>>\
+        ''Your <<mother>> frantically pulls down your <<UnderwearOrPants>> only to reveal your tiny, useless <<pSize>> dangling between your legs.''
+        
+        <<if dose($mom,"lover")>>\
+            <<nm $mom "Oh no, it's not getting hard for me... Well, we can have fun in other ways, can't we?">>\
+        <<elseif dose($mom,"dom")>>\
+            <<nm $mom "What? Seriously? How embarrassing... What am I supposed to do with this!? Hmm, well, guess only one of us is getting off tonight!">>\
+        <<else>>\
+            <<nm $mom "Hmm, well, guess only one of us is getting off tonight!">>\
+        <</if>>\
+        
+        ''Pulling herself up against the wall, your <<mother>> spreads her legs wide open, revealing ''<<if $mom.hasPenis>>@@.ef;both her glistening pussy and rock hard cock to you.@@<<else>>''her glistening pussy to you.''<</if>>
+        
+        <<if $mom.hasPenis>>\
+            ''Your <<mother>> begins stroking her fat cock in front of you.''
+            
+            <<nm $mom "I'd let you choose which one you want your lips on, but we both know how much of a little cocksucker you are. Now what are you waiting for?">>\
+            
+            ''You lean in, hypnotized by the sight of your <<mother>>'s huge, swaying cock. She shudders in pleasure as your lips make contact with the head, prompting her to pull you down hard. You gag as she forces her massive penis down your throat.''
+            
+            <<pic $player "suck-ts">>\
+            
+            <<nm $mom "Ahhh! Mmmmm, ohhh... K-keep going baby... That's... mmmmm... sooooo gooood...">>\
+            
+            ''You're forced to bob up and down rapidly as you deepthroat your <<mother>>, choking on her precum. You can feel her legs trembling in anticipation for her first orgasm.''
+            
+            <<nm $mom "Mmmm... Oh! OOOHHHH!!!">>\
+            
+            <<pic $action "ts-squirt">>\
+            
+            ''Your mouth is flooded with your <<mother>>'s thick cum as she clasps her hands around your head, locking you into place. You struggle to swallow fast enough to avoid drowning in your <<mom>>'s orgasm as she slowly, very slowly, begins to come down from it. You can feel your stomach begin to expand from the sheer volume of her load.''
+            
+            <<nm $mom "That... That was good, sweetie... D-definitely a good... good start...">>\
+            
+            <<Thought "Good start?">>\
+            
+            ''Before you can finish processing, your <<mother>>'s already pushed you on your back and flipped you over. You can feel her drooling cock pressing up against your tight, sissy <<aSize>>.''
+            
+            <<nm $player "W-wait! What are-">>\
+            
+            ''You're cut off by the sudden pressure in your gut. Using her cum as lubricant, your <<mother>>'s pushed the entire length of her massive cock into your ass. You can feel the girth stretching you to your limits as she begins moving in and out. She fucks you slowly, for a <<mom>>ent, before going full-speed, pounding your fuckhole for all it's worth!''
+            
+            <<pic $player "fucked-by-ts">>\
+            
+            <<anal "your <<mother>>'s huge cock">>
+            
+            ''With every thrust you can feel your belly filling with more and more of your <<mom>>'s hot, thick cum. You can't tell where her orgasms are beginning and ending anymore, as her loads are now just firing one right after the other.''
+            
+            <<nm $mom "OOOOoooohhhh, mmmmmmm, baby... Your ass... Y-your... pussy feels so good!">>\
+            
+            <<Thought "My... pussy?">>\
+            
+            <<pic $player "creampie">>\
+            
+            ''You can barely think straight as your <<mother>> relentlessly pounds your tiny asspussy. All you can do is squeal and moan like a bitch in heat as thick cum floods your stomach, causing it to expand. You've already cum at least twice, not that you'd be able to tell with what little semen you can produce anymore.''
+            
+            <<nm $player "M... <<M-mom>>... please I... I...">>\
+            
+            ''You black out. The last thing you remember is the feeling of your <<mother>>'s lips on your cheek, and the sound of the door closing... And the feeling of thick, hot cum flowing from between your legs...''
+            
+            <<love $mom>>
+            <<lust $mom>>
+            <<dom $player -3>>
+            <<trackAction "suckCock.give" $mom>>\
+            <<trackAction "analFuck.get" $mom>>\
+            
+            <<horny 0>>
+            
+            <<btnLink "Drift off to sleep" "NightEvent-0">>
+        <<else>>\
+            ''You lean in, already intoxicated by your <<mother>>'s powerful scent. She moans softly as your tongue begins tracing her slit.''
+            
+            <<pic $player "eat-pussy">>\
+            
+            <<nm $mom "Ahhh! Mmmmm, ohhh... K-keep going baby... That's... mmmmm... sooooo gooood...">>\
+            
+            ''Your nose is buried in your <<mom>>'s cunt as you lap away, penetrating her with your tongue and biting at her clit. You can feel her legs trembling in anticipation for her first orgasm.''
+            
+            <<nm $mom "Mmmm... Oh! OOOHHHH!!!">>\
+            
+            <<pic $mom "squirt">>\
+            
+            ''Your mouth is flooded with your <<mother>>'s juices as she clasps her hands around your head, locking you into place. You struggle to swallow fast enough to avoid drowning in your <<mom>>'s orgasm as she slowly, very slowly, begins to come down from it.''
+            
+            <<nm $mom "That... That was good, sweetie... D-definitely a good... good start...">>\
+            
+            <<Thought "Good start?">>\
+            
+            ''Before you can finish processing, your <<mother>>'s begun grinding her mound into your face, moving in for her second climax... then her third, fourth...''
+            
+            ''By the time she's finally climbed off of your face and left your room you've lost count of how many times your <<mother>> forced you to swallow her squirt, and frankly you're too exhausted to care... The door slowly closes as you drift off to sleep.''
+            
+            <<love $mom>>
+            <<lust $mom>>
+            <<dom $player -3>>
+            <<trackAction "eatPussy.give" $mom>>\
+            
+            <<horny 10>>
+            
+            <<btnLink "Drift off to sleep" "NightEvent-0">>
+        <</if>>\
+    <<elseif hasPenis()>>\
+        ''Your <<mother>> frantically pulls down your <<UnderwearOrPants>> to reveal your <<pSize>>, primed and ready. She licks her lips as she takes in the sight.''
+        
+        <<if dose($mom,"lover")>>\
+            <<nm $mom "Ooohhh, I can't wait any more baby!">>\
+        <<elseif dose($mom,"dom")>>\
+            <<nm $mom "Hope you're ready to make mommy cum tonight!">>\
+        <<else>>\
+            <<nm $mom "Mmmmm, that's what I've been waiting for!">>\
+        <</if>>\
+        
+        <<pic $mom "suck-player">>\
+        
+        ''She bobs eagerly on your <<PussyOrCock>> as she ''<<if $mom.hasPenis>>@@.ef;strokes her own engorged penis@@<<else>>''fingers herself''<</if>>''.''
+        
+        <<nm $player "<<M-mom>>... holy shit...">>\
+        
+        ''Your <<mother>> looks up at you with a satisfied expression as she drools on your cock for a few more minutes. Finally, she releases it from her mouth with a loud pop.''
+        
+        <<if dose($mom,"lover")>>\
+            <<nm $mom "Tee-hee, okay baby, time to get serious...">>\
+        <<elseif dose($mom,"dom")>>\
+            <<nm $mom "Mmm, alright baby, time to make mommy cum...">>\
+        <<else>>\
+            <<nm $mom "Mmm, okay sweetie, time to get serious...">>\
+        <</if>>\
+        
+        ''She turns around, positioning herself on her knees. One hand slides up her leg''<<if $mom.hasPenis>>@@.ef;, along the length of her hanging cock,@@<</if>>'' and up to her dripping pussy. It's clear she's already come at least once while going down on you as she spreads herself open with her fingers.''
+        
+        <<nm $mom "Hmmmm, well?">>\
+        
+        ''You leap into position, lining up with your <<mom>>'s slick hole. Between the sloppy blowjob your <<mother>> just finished giving you and how wet her pussy's become from her own juices, you couldn't take it slow if you wanted to.''
+        
+        <<pic $mom "fucked-by-player">>\
+        
+        <<nm $mom "OOOHHH!!!">>\
+        
+        ''Your <<mom>> cries loudly as your cock quickly and easily penetrates her. You push deep, deep enough to hit her cervix as she moans loudly, bucking her hips in time with your thrusting. She seems to climax with every plunge, squirting wildly from her pussy''<<if $mom.hasPenis>>@@.ef; and shooting load after load from her huge twitching cock@@<</if>>'' as you fuck her.''
+        
+        <<nm $player "<<M-mom>>... I'm going to...">>\
+        
+        <<nm $mom "Don't... Don't hold back baby! C-come for m-mama!">>\
+        
+        ''You can't hold back anymore...''
+        
+        <<btnChoice "Cum inside her" "Night-5-Creampie">>
+        <<btnChoice "Cum on her ass" "Night-5-CumOnAss">>
+        <<btnChoice "Cum on her back" "Night-5-CumOnBack">>
+    <<elseif hasStrapon()>>\
+        ''Your <<mother>> frantically pulls down your <<UnderwearOrPants>> to reveal your <<accf>>, springing into action. She licks her lips as she takes in the sight.''
+        
+        <<if dose($mom,"lover")>>\
+            <<nm $mom "Ooohhh, I can't wait any more baby!">>\
+        <<elseif dose($mom,"dom")>>\
+            <<nm $mom "Hope you're ready to make mommy cum tonight!">>\
+        <<else>>\
+            <<nm $mom "Mmmmm, that's what I've been waiting for!">>\
+        <</if>>\
+        
+        <<pic $mom "suck-female">>\
+        
+        ''She bobs eagerly on your huge fake cock as she ''<<if $mom.hasPenis>>@@.ef;strokes her own engorged penis@@<<else>>''fingers herself''<</if>>''. Her other hand slides up and starts massaging your clitoris.''
+        
+        <<nm $player "<<M-mom>>... holy shit...">>\
+        
+        ''Your <<mother>> looks up at you with a satisfied expression as she drools on your cock for a few more minutes. Finally, she releases it from her mouth with a loud pop.''
+        
+        <<if dose($mom,"lover")>>\
+            <<nm $mom "Tee-hee, okay baby, time to get serious...">>\
+        <<elseif dose($mom,"dom")>>\
+            <<nm $mom "Mmm, alright baby, time to make mommy cum...">>\
+        <<else>>\
+            <<nm $mom "Mmm, okay sweetie, time to get serious...">>\
+        <</if>>\
+        
+        ''She turns around, positioning herself on her knees. One hand slides up her leg''<<if $mom.hasPenis>>@@.ef;, along the length of her hanging cock,@@<</if>>'' and up to her dripping pussy. It's clear she's already come at least once while going down on you as she spreads herself open with her fingers.''
+        
+        <<nm $mom "Hmmmm, well?">>\
+        
+        ''You leap into position, lining up with your <<mom>>'s slick hole. Between the sloppy blowjob and fingering your <<mother>> just finished giving you and how wet her pussy's become from her own juices, you couldn't take it slow if you wanted to.''
+        
+        <<pic $mom "fucked-by-player">>\
+        
+        <<nm $mom "OOOHHH!!!">>\
+        
+        ''Your <<mom>> cries loudly as your cock quickly and easily penetrates her. You push deep, deep enough to hit her cervix as she moans loudly, bucking her hips in time with your thrusting. She seems to climax with every plunge, squirting wildly from her pussy''<<if $mom.hasPenis>>@@.ef; and shooting load after load from her huge twitching cock@@<</if>>'' as you fuck her.''
+        
+        <<nm $mom "H-honey... I...">>\
+        
+        ''The two of you continue like this for hours before finally collapsing into a pool of sweat and cum. The last thing you remember is the feeling of your <<mother>>'s lips on your cheek, and the sound of the door closing.''
+        
+        <<love $mom>>
+        <<lust $mom>>
+        <<dom $player 3>>
+        <<trackAction "pussyFuck.give">>\
+        
+        <<horny 0>>
+        
+        <<btnLink "Drift off to sleep" "NightEvent-0">>
+    <<else>>\
+        ''Your <<mother>> frantically pulls down your <<UnderwearOrPants>> to reveal your <<pSize>>, wet with anticipation. She licks her lips as she takes in the sight.''
+        
+        <<if dose($mom,"lover")>>\
+            <<nm $mom "Ooohhh, I can't wait any more baby!">>\
+        <<elseif dose($mom,"dom")>>\
+            <<nm $mom "Hope you're ready to make mommy cum tonight!">>\
+        <<else>>\
+            <<nm $mom "Mmmmm, that's what I've been waiting for!">>\
+        <</if>>\
+        
+        <<pic $mom "eat-pussy">>\
+        
+        ''She eagerly laps away at your dripping mound as she ''<<if $mom.hasPenis>>@@.ef;strokes her own engorged penis@@<<else>>''fingers herself''<</if>>''. Her other hand slides up and starts massaging your clitoris.''
+        
+        <<nm $player "<<M-mom>>... holy shit...">>\
+        
+        ''Your <<mother>> looks up at you with a satisfied expression as she penetrates your pussy with her tongue for a few more minutes. Finally, she raises her head after giving your clit a brief, firm nibble.''
+        
+        <<nm $player "Ah...">>\
+        
+        <<if dose($mom,"lover")>>\
+            <<nm $mom "Tee-hee, okay baby, time to get serious...">>\
+        <<elseif dose($mom,"dom")>>\
+            <<nm $mom "Mmm, alright baby, time to make mommy cum...">>\
+        <<else>>\
+            <<nm $mom "Mmm, okay sweetie, time to get serious...">>\
+        <</if>>\
+        
+        ''She turns around, positioning herself on her knees. One hand slides up her leg''<<if $mom.hasPenis>>@@.ef;, along the length of her hanging cock,@@<</if>>'' and up to her dripping pussy. It's clear she's already come at least once while going down on you as she spreads herself open with her fingers.''
+        
+        <<nm $mom "Hmmmm, well?">>\
+        
+        ''You leap into position, lining your mouth up with your <<mom>>'s slick hole. The smell is intoxicating, and you've soon lost yourself completely as you begin eating your <<mother>>'s cunt.''
+        
+        <<pic $mom "eaten-by-player">>\
+        
+        <<nm $mom "OOOHHH!!!">>\
+        
+        ''Your <<mom>> cries loudly as you lick and nibble and rub''<<if $mom.hasPenis>>@@.ef;, using one hand to jerk her cock@@<</if>>''. You push your tongue in as deep as you can as your <<mother>> moans in ecstasy, bucking her hips in time with your motions. She seems to climax with every plunge, squirting wildly from her pussy''<<if $mom.hasPenis>>@@.ef; and shooting load after load from her huge twitching cock@@<</if>>'' as you eat her out.''
+        
+        <<nm $mom "H-honey... I...">>\
+        
+        <<trackAction "eatPussy.give" $mom>>\
+        <<if $mom.hasPenis>>\
+            ''As you nibble on your <<mom>>'s clit, you can't help but get turned on by how huge her ''@@.ef;cock@@'' feels in your hand...''
+            
+            <<btnChoice "Suck her off" "Night-5-SuckCock">>
+            <<btnChoice "Put it inside you" "Night-5-GetFucked">>
+            <<btnChoice "Keep eating her out" "Night-5-KeepLicking">>
+        <<else>>\
+            ''The two of you continue like this for hours before finally collapsing into a pool of sweat and cum. The last thing you remember is the feeling of your <<mother>>'s lips on your cheek, and the sound of the door closing.''
+            
+            <<love $mom>>
+            <<lust $mom>>
+            
+            <<horny 0>>
+            
+            <<btnLink "Drift off to sleep" "NightEvent-0">>
+        <</if>>\
+    <</if>>\
+
+
+:: NightEvent-6 {"position":"475,5850","size":"100,100"}
+''You fade off in your bed, barely on the brink of consciousness.''
+		
+    <<Thought "Bed... I love you, bed...">>\
+    
+    ''Your door creaks open. You barely notice the sound, or the feeling of your <<UnderwearOrPants>> sliding down your legs. You barely notice the heavy panting in your ear, or the feeling of wetness on your <<pSize>>...''
+    
+    <<Thought "Un... Mmm.... H-huh?">>\
+    
+    <<nm $player "Huh? What the...">>\
+    
+    <<if isChastity()>>\
+        <<pic $sister "suck-chastity">>\
+        
+        <<nm $player "<<S-sis>>!? What are you doing!">>\
+        
+        ''She doesn't respond, focused on sucking your caged cock, seemingly ignoring the chastity device altogether.''
+        
+        <<nm $player "<<Sis>>... You need to stop, here, let me-">>\
+        
+        <<nm $sister "Grrrrrr.....">>\
+        
+        ''$sister.name snaps at your hand before returning to her former task. Finally, she gives up, appearing frustrated by the fact that she can't get your cock hard enough to fuck...''
+        
+        <<nm $player "<<Sis>>? I told you I...">>\
+        
+        ''Your <<sister>> pulls a huge double sided dildo out from behind her and begins sucking on it ravenously.''
+        
+        <<nm $player "$sister.name? W-what are you..." "What the fuck is going on with her?">>\
+        
+        ''Before you even know what's happening, $sister.name pounces on you, flipping you over onto your hands and knees, ramming half the huge cock into your unlubricated asshole.''
+        
+        <<Thought "FUCK!">>\
+        
+        ''She turns around and presses her soaking pussy up against the other end of the dildo, sliding it in, moaning...''
+        
+        <<pic $sister "double-dildo-mf">>\
+        
+        ''She fucks you in the same position a dog would knot its mate, as though she's establishing some sort of primal dominance over you. She fucks you harder and harder, thinking only of her own lust as she ignores your pleas, never mind the fact that the force of her fucking has rammed your head into the wall multiple times.''
+        
+        <<nm $sister "Ha, ha, grrrrrr....">>\
+        
+        ''She's getting even more forceful as her orgasm draws closer.''
+        
+        <<nm $player "<<S-sis>>... I can't..." "This is too much! I can't take much more!">>\
+        
+        ''After slamming your ass hard for god knows how long, your <<sister>> finally goes in for one last deep thrust as she howls in climax.''
+        
+        <<nm $sister "Awoooooo!!!!!!">>\
+        
+        ''Acting like a true alpha, she adjusts her body in such a way as to keep you pinned in place for several agonizing minutes before she finally releases you from her lock, taking the dildo and leaving your room without saying a word.''
+        
+        <<Thought "<<Sis>>... I...">>\
+        
+        ''Too exhausted to think, you pass out on your bed...''
+        
+        <<if not flag($sister,"Knotting")>>\
+            <<SetFlag $sister "Knotting">>\
+            <<AddNote $sister "$sister.name visited me last night, waking me up as she attempted to suck my <<PussyOrCock>>, but failed due to the <<accf>>. When she finally gave up, she pulled out a huge double-sided dildo and forced herself into my ass. She raped me in a position similar to how a... dog might mate with a bitch...">>\
+        <</if>>\
+        <<lust $sister>>
+        <<dom $player -5>>
+        
+        <<horny 10>>
+        <<trackAction "analFuck.get" $sister>>\
+    <<elseif isSissy()>>\
+        ''$sister.name is sucking desperately on your flaccid <<pSize>>, trying to work it into something hard enough to fuck.''
+        
+        <<nm $player "<<S-sis>>!? What are you doing!">>\
+        
+        ''She doesn't respond, focused on the flap of flesh between your legs.''
+        
+        <<nm $player "<<Sis>>... You need to stop, here, let me-">>\
+        
+        <<nm $sister "Grrrrrr.....">>\
+        
+        ''$sister.name snaps at your hand before returning to her former task. Finally, she gives up, appearing frustrated by the fact that she can't get your cock hard enough to fuck...''
+        
+        <<nm $player "See? I told you I...">>\
+        
+        ''Your <<sister>> pulls a huge double sided dildo out from behind her and begins sucking on it ravenously.''
+        
+        <<nm $player "$sister.name? W-what are you..." "What the fuck is going on with her?">>\
+        
+        ''Before you even know what's happening, $sister.name pounces on you, flipping you over onto your hands and knees, ramming half the huge cock into your unlubricated asshole.''
+        
+        <<Thought "FUCK!">>\
+        
+        ''She turns around and presses her soaking pussy up against the other end of the dildo, sliding it in, moaning...''
+        
+        <<pic $sister "double-dildo-mf">>\
+        
+        ''She fucks you in the same position a dog would knot its mate, as though she's establishing some sort of primal dominance over you. She fucks you harder and harder, thinking only of her own lust as she ignores your pleas, never mind the fact that the force of her fucking has rammed your head into the wall multiple times.''
+        
+        <<nm $sister "Ha, ha, grrrrrr....">>\
+        
+        ''She's getting even more forceful as her orgasm draws closer.''
+        
+        <<nm $player "<<S-sis>>... I can't..." "This is too much! I can't take much more!">>\
+        
+        ''After slamming your ass hard for god knows how long, your <<sister>> finally goes in for one last deep thrust as she howls in climax.''
+        
+        <<nm $sister "Awoooooo!!!!!!">>\
+        
+        ''Acting like a true alpha, she adjusts her body in such a way as to keep you pinned in place for several agonizing minutes before she finally releases you from her lock, taking the dildo and leaving your room without saying a word.''
+        
+        <<Thought "<<Sis>>... I...">>\
+        
+        ''Too exhausted to think, you pass out on your bed...''
+        
+        <<if not flag($sister,"Knotting")>>\
+            <<SetFlag $sister "Knotting">>\
+            <<AddNote $sister "$sister.name visited me last night, waking me up as she attempted to suck my <<pSize>>, but failed to work it into anything she could actually get inside herself. When she finally gave up, she pulled out a huge double-sided dildo and forced herself into my ass. She raped me in a position similar to how a... dog might mate with a bitch...">>\
+        <</if>>\
+        <<lust $sister>>
+        <<dom $player -5>>
+        
+        <<horny 10>>
+        <<trackAction "analFuck.get" $sister>>\
+    <<elseif hasPenis()>>\
+        <<pic $sister "suck-player">>\
+        
+        ''You look down to see your little <<sister>> bobbing up and down on your hard cock, desperately gagging herself on it as she fingers herself on your bed.''
+        
+        <<nm $player "<<Sis>>? W-what are you...">>\
+        
+        ''$sister.name shoots you a quick look as she hums on your slick penis, increasing the pace of both her sucking and fingering before she finally decides you're both wet enough. She releases your cock from her mouth with a loud pop and pushes you up against your wall.''
+        
+        <<nm $player "$sister.name, you need to-">>\
+        
+        <<pic $sister "kiss-player">>\
+        
+        ''Your words are cut off as $sister.name's tongue forces its way into your mouth, until you finally relax into her embrace. She releases you, a look of lust, and need fills her eyes. She turns around in front of you, offering her soaking wet pussy to your twitching cock.''
+        
+        <<pic $sister "ride-player">>\
+        
+        ''Things have escalated too far to quit now, and without even thinking about it you've entered your little <<sister>>'s tiny cunt, sounds of wetness and moaning fill your small room while you and $sister.name engage in what feels more like primal mating than intimate sex...''
+        
+        <<nm $sister "<<Bro>>... I-wo... Aww... Awoooooo!!!">>\
+        
+        ''She can barely form words anymore, now only able to growl and whine and howl. She pushes you farther into herself, deep enough you can feel yourself penetrating her cervix. The sensation is too much, and you're unable to hold back. $sister.name pushes even harder against you, pinning you to the wall and ensuring you can't pull out.''
+        
+        <<nm $player "<<S-sis>>! I c-can't..." "Oh, fuck! I'm gonna...">>\
+        
+        ''You flood your <<sister>>'s uterus, as her cervix tightly suctions your cockhead. She moans and howls in ecstasy as she greedily takes your entire load. She keeps you pinned in place for several minutes, rocking back and forth to extract every last drop before finally lifting herself off your now-flaccid penis.''
+        
+        <<nm $player "<<Sis>>?">>\
+        
+        ''She turns around to clean your cock with her tongue, lapping at it enthusiastically, before silently turning around and leaving your room without a word.''
+        
+        <<Thought "<<Sis>>... I...">>\
+        
+        ''Too exhausted to think, you pass out on your bed...''
+        
+        <<lust $sister>>
+        <<dom $player -5>>
+        
+        <<preg $sister>>
+        
+        <<horny 0>>
+        <<trackAction "pussyFuck.give" $sister>>\
+        <<trackAction "creampie.give" $sister>>\
+        <<if not flag($sister,"Knotting")>>\
+            <<SetFlag $sister "Knotting">>\
+            <<AddNote $sister "$sister.name visited me last night, waking me up with an intense blowjob. Once she got me hard enough, she turned around in what almost looked like a show of submission, begging me to fuck her. I did. She pinned me against the wall, forcing me to come deep inside of her, and holding me in place for several minutes afterwards.">>\
+        <</if>>\
+    <<else>>\
+        <<pic $sister "eat-pussy">>\
+        
+        ''You look down to see your little <<sister>> lapping away at your dripping pussy, desperately sucking at your clit and labia on it as she fingers herself on your bed.''
+        
+        <<nm $player "<<Sis>>? W-what are you...">>\
+        
+        ''$sister.name shoots you a quick look as she runs her tongue along your slit, increasing the pace of both her licking and fingering before she finally decides you're both wet enough. She lightly bites on your clit, eliciting a yelp from you, and pushes your body up against the wall behind your bed.''
+        
+        <<nm $player "$sister.name, you need to-">>\
+        
+        <<pic $sister "kiss-player">>\
+        
+        ''Your words are cut off as $sister.name's tongue forces its way into your mouth, until you finally relax into her embrace. The taste of your own pussy from your <<sister>>'s mouth is intoxicating, and you can feel yourself slipping further away, surrendering to your lust. She releases you, a look of lust, and need fills her eyes. She turns around in front of you, offering her soaking wet mound in the hopes of some release.''
+        
+        <<nm $player "<<Sis>>...">>\
+        
+        <<pic $sister "eaten-by-player">>\
+        
+        ''Things have escalated too far to quit now, and without even thinking about it you lower your mouth to your little <<sister>>'s tiny cunt. After a moment, she pulls herself around you, riding your face into your bed as you continue licking and sucking. Sounds of wetness and licking and moaning fill your small room while you and $sister.name engage in what feels more like primal mating than intimate sex...''
+        
+        <<nm $sister "<<Bro>>... I-wo... Aww... Awoooooo!!!">>\
+        
+        ''She can barely form words anymore, now only able to grow and whine and howl. She pushes herself deeper into you, grinding her pussy into your mouth as you struggle to breath. Every inhale is met with a flood of your <<sister>>'s juices as you both experience one intense orgasm after another.''
+        
+        <<nm $player "<<S-sis>>! I c-can't..." "Oh, fuck! I'm gonna...">>\
+        
+        ''Your final climax sends you both over the edge as cum sprays from both of your spent pussies. $sister.name falls back, and the both of you collapse into a pool of cum and sweat and sex...''
+        
+        <<nm $player "<<Sis>>?">>\
+        
+        ''Your <<sister>> sits up and turns around to clean your pussy out with her tongue, lapping at it enthusiastically, before silently getting out of your bed and leaving your room without a word.''
+        
+        <<Thought "<<Sis>>... I...">>\
+        
+        ''Too exhausted to think, you pass out on your bed...''
+        
+        <<lust $sister>>
+        <<dom $player -5>>
+        
+        <<horny 0>>
+        <<trackAction "eatPussy.give" $sister>>\
+        <<trackAction "eatPussy.get" $sister>>\
+        <<if not flag($sister,"Knotting")>>\
+            <<SetFlag $sister "Knotting">>\
+            <<AddNote $sister "$sister.name visited me last night, waking me up by digging her face into my pussy. Once she got me wet enough, she turned around in what almost looked like a show of submission, begging me to return the favor. I did. She pinned me into the bed, riding my face long into the night. We both climaxed repeatedly, until I eventually collapsed.">>\
+        <</if>>\
+    <</if>>\
+
+    <<set $sister.status to "@@.xxx;Horny Slut-Puppy@@">>\
+    <<btnLink "Go to sleep..." "NightEvent-0">>
+
+
+:: NightEvent-7 {"position":"600,5850","size":"100,100"}
+''You find yourself struggling to fall asleep tonight. Every noise and passing light distracts you, until finally you sit up in your bed out of frustration.''
+
+    <<Thought "Ah, fuck I... Hm?">>\
+
+    ''You can hear noises coming from the alley behind your house. There's usually stray cats and dogs getting into things back there, but you could have swore you heard something distinctly human.''
+
+    <span id="sisterdogs">\
+        @@.btnChoice;<<button "Check it out">>
+            <<replace "#sisterdogs">>\
+                <<if not $player.isSub>>\
+                    ''You run to the window to get a better look at what's going on outside, but are unable to see into the alley. You run to your room to throw some shoes on, and quietly head for the front door.''
+                    
+                    <<Thought "It's unlocked?">>\
+                    
+                    ''The night is cool and dark, and dim street lamp is only just enough to help you make your way into the alley. As the clouds part to allow for a brief flood of moonlight, you see it...''
+                    
+                    <<pic $sister "dog1">>\
+                    
+                    ''The girl in the alley is unmistakably your <<sister>>. She's completely naked, on her hands and knees between two large Doberman Pinschers. While one impales her furiously from behind, the other forcefully fucks her mouth as she gags.''
+                    
+                    <<pic $sister "dog2">>\
+                    
+                    <<nm $player "..." "<<Sis>>...">>\
+                    
+                    ''You struggle to form words, only able to watch the spectacle unfold in front of you. A look of pure, blissful lust stretches across your <<sister>>'s face as her new doggy lovers empty their hot canine loads into her. First her cunt...''
+                    
+                    <<pic $sister "dog3">>\
+                    
+                    ''...then her mouth...''
+                    
+                    <<pic $sister "dog4">>\
+                    
+                    ''She collapses between them, licking up whatever pools of cum escaped her mouth. Only a moment later, the dogs scatter, leaving your <<sister>> a used, sticky mess in the back alley of your house. You realize now the true extent of the MCS-X serum, as your little <<sister>> rapidly degrades into nothing more than a doggy fuckhole...
+                    
+                    You can't really process it, nor can you explain the burning feeling between your legs. As you watch $sister.name revel in fresh dog cum, bringing herself to orgasm after orgasm, you can feel your <<pSize>> about to explode in your <<UnderwearOrPants>>.
+                    
+                    Silently, you go back to your room and lay in your bed. Several minutes later, the sound of trampling fills the house as $sister.name runs top speed from the front door to her bedroom, leaping into her bed...''
+                    
+                    ''Your hand subconsciously slides down beneath your <<UnderwearOrPants>>, your <<PussyOrCock>> burning with need, and you masturbate yourself to sleep...''
+                    
+                    <<dom $sister -3>>
+                    
+                    <<preg $sister "stray dogs">>
+                    
+                    <<btnLink "Go to sleep..." "Room-Sleep">>
+                <<else>>\
+                    <<set $SceneCredit to "KaiB">>\
+                    ''You run to the window to get a better look at what's going on outside, but are unable to see into the alley. You run to your room to throw some shoes on, and quietly head for the front door.''
+                    
+                    <<Thought "It's unlocked?">>\
+                    
+                    ''The night is cool and dark, and dim street lamp is only just enough to help you make your way into the alley. As the clouds part to allow for a brief flood of moonlight, you see it...''
+                    
+                    <<pic $sister "dog1">>\
+                    
+                    ''The girl in the alley is unmistakably your <<sister>>. She's completely naked, on her hands and knees between two large Doberman Pinschers. While one impales her furiously from behind, the other forcefully fucks her mouth as she gags.''
+                    
+                    <<pic $sister "dog2">>\
+                    
+                    <<nm $player "..." "<<Sis>>...">>\
+                    
+                    ''You struggle to form words, only able to watch the spectacle unfold in front of you. A look of pure, blissful lust stretches across your <<sister>>'s face as her new doggy lovers empty their hot canine loads into her. First her cunt...''
+                    
+                    <<pic $sister "dog3">>\
+                    
+                    ''...then her mouth...''
+                    
+                    <<pic $sister "dog4">>\
+                    
+                    ''She collapses between them, licking up whatever pools of cum escaped her mouth. Only a moment later, the dogs scatter, leaving your <<sister>> a used, sticky mess in the back alley of your house. You realize now the true extent of the MCS-X serum, as your little <<sister>> rapidly degrades into nothing more than a doggy fuckhole...
+                    
+                    You can't really process it, nor can you explain the burning feeling between your legs. As you watch $sister.name revel in fresh dog cum, bringing herself to orgasm after orgasm, you can feel your <<pSize>> about to explode in your <<UnderwearOrPants>>.''
+                    
+                    <<nm $sister "Awoooooo!">>\
+                    
+                    <<nm $player "Huh? $sister.name?">>\
+                    
+                    ''You look up, surprised to see not only your <<sister>>, but the whole pack of dogs staring directly at you.''
+                    
+                    <<nm $player "O-oh, I was just going back..." "Oh shit!">>\
+                    
+                    <<nm $sister "Woof!">>\
+                    
+                    ''$sister.name runs up to your and pins you to the ground. She leans in and forces her tongue into you mouth, still coated in doggy jizz. The taste, smell, and idea all combine to make you sick, but your <<sister>>'s not letting up. She reaches down with one hand and starts rubbing your <<PussyOrCock>>.''
+                    
+                    <<nm $sister "Bark!">>\
+                    
+                    <<nm $player "*cough* <<S-sis>>, please, n-no more, I-">>\
+                    
+                    ''Your <<sister>>'s kiss was nothing compared to what was to come. Two Dobermans rush over, teeth bared and seemingly ready to attack should you try to move. $sister.name turns herself around, hanging her tiny, well used slit over your face. Globs of dog cum drip out of her onto your face and into your mouth as she lowers herself down. The taste of your <<sister>>'s juices and thick semen fill your mouth and throat, and you can feel yourself getting dizzy.''
+                    
+                    <<nm $sister "Woof!">>\
+                    
+                    <<nm $player "Mff, mff, glmph!" "This is... I can't...">>\
+                    
+                    ''During this time, your <<sister>>'s pulled off your <<UnderwearOrPants>>, completely exposing your <<vSize>>. The dogs have closed in further. Two by your shoulders ensure you stay put, while another two have begun sniffing around your legs. You can feel their tongues and noses against your inner thighs, sending you into a panic made only worse when your little <<sister>> starts prying your legs open.''
+                    
+                    <<nm $player "MPH! MMMPH!!" "NO! OH GOD PLEASE NO!">>\
+                    
+                    <<nm $sister "Woof!!">>\
+                    
+                    ''One of the two dogs moves up alongside you, pushing into your <<sister>> who reaches out to wrap a hand around the hound's throbbing cock. The other stays put, pressing its nose against the entrance of your <<vSize>>. Your jump as its long, wet tongue enters you, lapping away, forcing unwanted arousal out of you. Of course, your <<sister>> still has you firmly pinned down, along with the two other dogs now growling into your ear.''
+                    
+                    <<nm $sister "Arf!">>\
+                    
+                    ''The dog between your legs moves himself forward, and that's when you feel it. $sister.name pulls him into position, lining his hot, slimy cock up with your defenseless hole, and then...''
+                    
+                    <<nm $player "HHHNNGGH!!!" "FFFFUCK!!!">>\
+                    
+                    <<if hasPussy()>>\
+                        <<vaginal "the stray dog's huge cock">>
+                        <<trackAction "GetFucked">>\
+                    <<else>>\
+                        <<anal "the stray dog's huge cock">>
+                        <<trackAction "GetAssFucked">>\
+                    <</if>>\
+                    
+                    <<nm $sister "Awoo!">>\
+                    
+                    ''$sister.name seems to cheer him on, her right hand now thoroughly coated in thick cum as she extracts yet another load from her canine lover. The violation is seemingly endless as the large Doberman between your legs rapes your <<vSize>> relentlessly. What feels like hours later, as you're on the verge of collapse, a sharp pain rouses you. As you swallow your <<sister>>'s umpteenth orgasm, you can feel a dull, pulling soreness in your <<vSize>>. You can't see past $sister.name's thighs, but you're sure you know what you're feeling.
+                    
+                    You've been knotted.
+                    
+                    $sister.name forcefully separates you from your new master, eliciting a whine from both of you for different reasons. The strays all run back into the alley as your <<sister>> hops off you face and back home. You're left a cum-soaked, doggy-bred whore, barely able to get to your feet. As you stand, cum pours from your <<vSize>> as you cough up even more from your stomach.''
+                    
+                    <<Thought "I-I... fuuu... c-can't...">>\
+                    
+                    ''You turn around to see two more large dogs in the alley, each staring you down while sporting huge erections, nearly touching the ground. You decide to run back home before your night gets much longer...''
+                    
+                    <<dom $player -10>>
+                    
+                    <<btnLink "Go to sleep..." "Room-Sleep">>
+                <</if>>\
+            <</replace>>\
+        <</button>>@@
+        @@.btnChoice;<<button "Ignore it and go to sleep">>
+            <<replace "#sisterdogs">>\
+                ''You put a pillow over your head in an effort to drown out the noise, eventually getting yourself to fall asleep.''
+                
+                <<btnLink "Go to sleep..." "Room-Sleep">>
+            <</replace>>\
+        <</button>>@@
+    </span>\
+
+
+:: NightEvent-8 {"position":"725,5850","size":"100,100"}
+<<loc_Room>>\
+
+    ''Before you can fall asleep, you hear your door creak open. You look up to find your <<mother>> standing in the doorway.''
+    
+    <<pic $mom "robe-full">>\
+
+    <<nm $mom "Mmm, hi sweetie. I just wanted to catch you before you fell asleep to tell you goodnight...">>\
+
+    ''She breaths in deeply, allowing her chest to portrude outward, perky nipples poking through the cups of her lingerie. You stare as your <<mother>> glides her hands along her body, biting her lip.''
+
+    <<nm $player "O-oh, yeah, goodnight, $mom.name.">>\
+
+    ''$mom.realName saunters over from your doorway and leans into your bed, pulling her hand to your cheek and bringing you for a sultry kiss.''
+
+    <<pic $mom "kiss-player">>\
+
+    <<nm $mom "Mmmm... mmmm... fwhaa! Hehe, hmmmm, goodnight baby...">>\
+
+    <<nm $player "H-haaa... yeah...">>\
+
+    ''Your <<mother>> gives you a playful boop on the nose before standing up and leaving your room.''
+
+    <<lust $mom>>
+
+    <<horny 10>>
+
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
+
+
+:: NightEvent-9 {"position":"850,5850","size":"100,100"}
+<<loc_Room>>\
+
+    ''Before you can fall asleep there's a light knock on your door. You sit up to see your <<sister>>, $sister.name, peeking in from around the door.''
+
+    <<pic $sister "door">>\
+
+    <<nm $sister "H-hey <<bro>>, you going to sleep?">>\
+
+    ''You sit up in bed to greet her.''
+
+    <<nm $player "Yeah, was about to. What's up?">>\
+
+    ''She looks down the hall before hopping over to your bed and sitting down next to you.''
+
+    <<if firstVisit()>>\
+        <<nm $sister "U-um, n-nothing... I, ah... Mmmm...">>\
+
+        ''Before she gets too flustered, your <<sister>> throws her arms around you, pulling herself in for an intimate kiss.''
+
+        <<pic $sister "kiss-player">>\
+
+        <<nm $sister "I... just wanted to say goodnight, that's all... That wasn't weird, was it?">>\
+
+        <<nm $player "Ha, nah, you can come by any time for a goodnight kiss. I don't mind at all.">>\
+
+        ''You response has her absolutely elated, she doesn't even try to hide her intense blushing.''
+
+        <<nm $sister "T-thanks, <<bro>>, I will!">>\
+    <<else>>\
+        <<nm $sister "Mmm, hehe, I just wanted to say goodnight again!">>\
+
+        <<pic $sister "kiss-player">>\
+
+        ''She leans in close, pulling herself up to you for a long, deep kiss.''
+
+        <<nm $sister "Mmmm... I really like that.">>\
+
+        <<nm $player "Heh, me too <<sis>>.">>\
+    <</if>>\
+
+    ''She gives you another quick peck on the cheek before hopping off your bed and back to the door.''
+
+    <<nm $sister "Well, g'night!">>\
+
+    <<nm $player "Night, see you tomorrow.">>\
+
+    <<love $sister>>
+
+    <<horny 10>>
+
+    <<btnLink "Drift off to sleep" "NightEvent-0">>
