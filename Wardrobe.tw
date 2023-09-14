@@ -1,0 +1,142 @@
+:: Wardrobe {"position":"850,11850","size":"100,100"}
+<<loc_Room>>\
+
+	''You're standing in your closet, wading through various clothing items...''
+	<<if dose($mom,"break") or $player.isBride>>\
+
+		<<Thought "Any time I try to buy masculine clothing, $mom.name just destroys them...">>\
+	<</if>>\
+
+	<<if $UsePics>>\
+		<<if detectMobile()>>\
+			<<DisplayCharacter>>\
+
+			<<draw_TableClothingChange>>
+			<hr>\
+			<<include ClothesCheck>>
+			<<btnLink "Go back" "Room">>
+		<<else>>\
+			<div class="row">\
+				<div class="column-33">\
+					<<DisplayCharacter>>
+				</div>\
+				<div class="column-66">\
+					<<draw_TableClothingChange>>
+					<hr>\
+					<<include ClothesCheck>>
+					<<btnLink "Go back" "Room">>
+				</div>\
+			</div>\
+		<</if>>\
+	<<else>>\
+		<<draw_TableClothingChange>>
+		<hr>\
+		<<include ClothesCheck>>
+		<<btnLink "Go back" "Room">>
+	<</if>>\
+
+
+:: Wardrobe-Accessories {"position":"100,11850","size":"100,100"}
+''You browse through your selection of toys and accessories...''
+
+<<if $UsePics>>\
+	<<if detectMobile()>>\
+		<<DisplayCharacter "naked">>\
+
+		<<draw_TableAccf>>
+		<<draw_TableAccb>>
+	<<else>>\
+		<div class="row">\
+			<div class="column-33">\
+				<<DisplayCharacter "naked">>
+			</div>\
+			<div class="column-66">\
+				<<draw_TableAccf>>
+				<<draw_TableAccb>>
+			</div>\
+		</div>\
+	<</if>>\
+<<else>>\
+	<<draw_TableAccf>>
+	<<draw_TableAccb>>
+<</if>>\
+
+	<<btnLink [[Go back|Wardrobe]]>>
+
+
+:: Wardrobe-Hats {"position":"475,11850","size":"100,100"}
+''You browse through your selection of accessories...''
+
+	<<if $UsePics>>\
+		<<if detectMobile()>>\
+			<<DisplayCharacter>>\
+
+			<<draw_TableHats>>
+		<<else>>\
+			<div class="row">\
+				<div class="column-33">\
+					<<DisplayCharacter>>
+				</div>\
+				<div class="column-66">\
+					<<draw_TableHats>>
+				</div>\
+			</div>\
+		<</if>>\
+	<<else>>\
+		<<draw_TableHats>>
+	<</if>>\
+
+	<<btnLink "Go back" "Wardrobe">>
+
+
+:: Wardrobe-Outfits {"position":"600,11850","size":"100,100"}
+''You browse through your selection of outfits...''
+
+	<<if $UsePics>>\
+		<<if detectMobile()>>\
+			<<DisplayCharacter>>\
+
+			<<draw_TableOutfits>>
+		<<else>>\
+			<div class="row">\
+				<div class="column-33">\
+					<<DisplayCharacter>>
+				</div>\
+				<div class="column-66">\
+					<<draw_TableOutfits>>
+				</div>\
+			</div>\
+		<</if>>\
+	<<else>>\
+		<<draw_TableOutfits>>
+	<</if>>\
+
+	<<btnLink "Go back" "Wardrobe">>
+
+
+:: Wardrobe-Underwears {"position":"725,11850","size":"100,100"}
+''You browse through your selection of underwear...''
+
+<<if $UsePics>>\
+	<<if detectMobile()>>\
+		<<DisplayCharacter>>\
+
+		<<draw_TableUnderwears>>
+		<<draw_TableBras>>
+	<<else>>\
+		<div class="row">\
+			<div class="column-33">\
+				<<DisplayCharacter "underwear">>
+			</div>\
+			<div class="column-66">\
+				<<draw_TableUnderwears>>
+				<<draw_TableBras>>
+			</div>\
+		</div>\
+	<</if>>\
+<<else>>\
+	<<draw_TableUnderwears>>
+	<<draw_TableBras>>
+<</if>>\
+
+<<btnLink [[Go back|Wardrobe]]>>

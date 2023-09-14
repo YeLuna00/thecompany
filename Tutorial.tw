@@ -1,0 +1,85 @@
+:: Tutorial {"position":"350,18225","size":"100,100"}
+<<pic $npc "saya">>\
+	<<art "cg/0-4-MeetSaya">>\
+	<<set $saya.name to "Dream Girl">>\
+	<<set $player.loc to "Night">>\
+	
+	<<nm $saya "Hey $player.name, wake up! I mean, no, don't wake up, but listen to me! You're dreaming, and that's the only time you and I can talk, so let's talk.">>\
+		
+	''From the darkness you see a... pink haired anime girl with glasses. Yep, you're dreaming. May as well roll with it...''
+
+	<<nm $player "Sure... why not. Question though, why am I talking to a little animated girl whom I may or may not recognize from some horror anime?">>\
+		
+	<<nm $saya "Think of me as your subconscious. Your head's full of pop-culture references and you watch an unhealthy amount of porn and anime, so when it came to what appearance I decided to take, I had a lot of options! It was either this or some creepy guy with a long nose welcoming you to his weird room. I figured I'd appeal to your pervy side instead.">>\
+		
+	<<nm $player "That's fair, I guess. My dreams aren't usually this vivid though, and this is kind of weird for me... What do I call you?">>\
+		
+	<<set $saya.name to "Saya">>\
+	<<nm $saya "Let's go with $saya.name, no particular reason, but we really need to move on before you wake up.<br><br>Your life's about to take a major turn, given recent events, and I think you know that. For that reason, we need to make sure you're prepared for what's to come. The information I'm about to offer you might seem a little kind of really weird, but I want you to take it all in anyway.">>\
+		
+	''You think about it for a moment...''
+
+	<<btnLink "Okay, lay it on me" "Tutorial-Start">>
+	<<btnLink "I don't think I need to hear this..." "Tutorial-End">>
+
+
+:: Tutorial-End {"position":"600,18225","size":"100,100"}
+<<pic $npc "saya">>\
+	<<art $saya "happy,2">>\
+	
+	<<nm $saya "Well that's about the size of it. Anyway, it's been fun but it's time for you wake up now!">>\
+		
+	<<nm $player "Wait! Will I ever see you again?">>\
+		
+	<<nm $saya "Of course you will! I'm part of you, after all.<br><br>We'll meet again!<br><br>In your drreeeeaaaaaammmmmmsssssss.........">>\
+		
+	<<Thought "...">>\
+
+	<<nm $player "I can... still see you. You're standing right in front of me.">>\
+		
+	''$saya.name rears up to punch you in the face, tsundere style.''
+
+	@@.btnUI;<<button [[Wake up|Intro-Chapter-1]]>>
+		<<SetFlag $player "tutorial">>
+		<<set $Location to "Home">>
+		<<set $Chapter to 1>>
+		<<set passTime()>>
+	<</button>>@@
+
+
+:: Tutorial-Start {"position":"475,18225","size":"100,100"}
+<<pic $saya>>\
+	<<art $saya "aroused,2">>\
+
+	''The Company is a story-driven adult interactive fiction game that focuses on character customization, transformation, time management and meaningful choices. For the most part, everything is pretty easy to grasp, however, there are some nuances that you should be aware of before diving in!''
+
+	''__Passage of Time__''
+		Every day is broken up into 7 major blocks of time:
+	
+	* Morning
+	* Late Morning
+	* Noon
+	* Early Afternoon
+	* Afternoon
+	* Evening
+	* Night
+	
+	The vast majority of actions in the game will cause time to pass, and your day will need to be planned around how much time any one activity or interaction requires. Any action in the game that would cause time to pass will be proceeded with either a <<t1>> or a <<t2>> indicator, noting how many blocks of time will progress for taking that action. Going to sleep at night will always cause the day to end, taking you to the following morning.
+	
+	On work days, you'll arrive at The Company in the late morning, and get back home in the evening. You'll need to plan ahead to make the most of your limited time at both locations!
+	
+	''__Stats and Relationships__''
+		You'll be able to cultivate Affection and Corruption with various characters you meet over the course of the game. Increasing these stats will rarely (though not never!) have impacts on the game itself, however, their importance will reveal themself later on.
+	
+	''__Gender__''
+		Your gender is not a boolean value, but rather a sliding scale. While you've already decided on your starting gender, it's entirely possible for this to change drastically over the course of the game, between male, female and various in-between states!
+	
+	''__Sidebar__''
+		All the aforementioned information can be tracked via the sidebar to the left. If you're playing The Company in a browser you'll see it at all times unless closed, however on a mobile device you'll need to tap the icon in the upper left corner. This is also where you can save, load and restart the game.
+	
+	''__Closing__''
+		That's enough to get you going, but there's a lot more information that you'll need to discover on your own! Experiment, explore, and even when you think you've exhausted all available options keep poking around, you may even have to retrace your foot steps.
+	
+	Remember, there's no ==right== wrong way to play!
+
+	<<btnLink "Hurray!" "Tutorial-End">>

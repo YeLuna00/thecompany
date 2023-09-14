@@ -1,0 +1,817 @@
+:: Response-Diana {"position":"100,11225","size":"100,100"}
+<<switch $diana.sms>>\
+        <<case "hello">>\
+            <<if flag($diana,"Workplan")>>\
+                <<nm $diana "Hello love. You know if you want more training you need only but to ask..." "@@.gain;$player.name: Hey $diana.name, just wanted to say hi!@@">>\
+            <<elseif $diana.control.sex>>\
+                <<nm $diana "Hello love. Missing me, are you?" "@@.gain;$player.name: Hey $diana.name, just wanted to say hi!@@">>\
+            <<elseif $diana.control.flirt>>\
+                <<nm $diana "Mmm, hello love. Nice to know you're thinking about me" "@@.gain;$player.name: Hey $diana.name, just wanted to say hi!@@">>\
+            <<else>>\
+                <<nm $diana "Hello $player.name, something you need?" "@@.gain;$player.name: Hey $diana.name, just wanted to say hi!@@">>\
+            <</if>>\
+
+            <<love $diana>>
+        <<case "thoughts" "checkup">>\
+            <<if flag($diana,"Workplan")>>\
+                <<nm $diana "Mmm, not much. Master and I were just thinking up some new ways to enhance your training routine. We've been working really hard, see?" "@@.gain;$player.name: Heya $diana.name! Just wanted to drop in and see what you've been up to lately!@@">>\
+
+                <<pic $diana "phonejohn">>\
+
+                <<dom $player -5>>
+            <<elseif $diana.control.sex>>\
+                <<nm $diana "Me? Oh, not much... I've just been missing you, if you catch my meaning. Maybe you can do something about that?" "@@.gain;$player.name: Heya $diana.name! Just wanted to drop in and see what you've been up to lately!@@">>\
+            <<elseif $diana.control.flirt>>\
+                <<nm $diana "Hello love. Can't say I've been too busy, maybe you could change that for me?" "@@.gain;$player.name: Heya $diana.name! Just wanted to drop in and see what you've been up to lately!@@">>\
+            <<else>>\
+                <<nm $diana "Oh, just this and that. Was there something you needed, $player.name?" "@@.gain;$player.name: Heya $diana.name! Just wanted to drop in and see what you've been up to lately!@@">>\
+
+            <</if>>\
+            <<love $diana>>
+        <<case "love">>\
+            <<if flag($diana,"Workplan")>>\
+                <<nm $diana "Mmm, sorry baby... My heart and body belong to Master..." "@@.gain;$player.name: Love you $diana.name!@@">>\
+
+                <<pic $diana "phonejohn">>\
+
+                <<dom $player -5>>
+            <<elseif $diana.control.sex>>\
+                <<nm $diana "Mmm, is that so? If you really love me you should come show me how much ;)" "@@.gain;$player.name: Love you $diana.name!@@">>\
+
+                <<pic $diana "topless">>\
+
+                <<lust $diana>>
+                <<love $diana>>
+            <<elseif $diana.control.flirt>>\
+                <<nm $diana "Aww, how sweet baby!" "@@.gain;$player.name: Love you $diana.name!@@">>\
+
+                <<pic $diana "flirt">>\
+
+                <<love $diana>>
+            <<else>>\
+                <<nm $diana "Damn right you do." "@@.gain;$player.name: Love you $diana.name!@@">>\
+
+                <<love $diana>>
+            <</if>>\
+        <<case "sexting">>\
+            <<if isChastity() or isSissy()>>\
+                <<if flag($diana,"Workplan")>>\
+                    <<nm $diana "Feeling what it's like for a real 'man' to take control ;)" "@@.gain;$player.name: Hey $diana.name... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+
+                    <<pic $diana "cum-on-face">>\
+
+                    <<dom $player -5>>
+                <<elseif $diana.control.sex>>\
+                    <<nm $diana "Is that so? Well, maybe you should come see me in my office and I can make that dream come true?" "@@.gain;$player.name: Hey $diana.name... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+
+                    <<pic $diana "bimbo4">>\
+                    
+                <<elseif $diana.control.flirt>>\
+                    <<nm $diana "Interesting. I just happened to have gotten myself off to the thought of railing you like the slut you are!" "@@.gain;$player.name: Hey $diana.name... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+
+                    <<pic $diana "bimbo2">>\
+                    
+                <<else>>\
+                    <<nm $diana "My, how naughty. Perhaps you'd be better suited to work in The Pit than in the lab? I could make that happen if you like..." "@@.gain;$player.name: Hey $diana.name... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+                <</if>>\
+
+                <<lust $diana>>
+            <<elseif hasPenis()>>\
+                <<if flag($diana,"Workplan")>>\
+                    <<nm $diana "Sorry, I'm too busy serving a 'real' cock. Your sad prick hardly qualifies." "@@.gain;$player.name: Hey $diana.name... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+
+                    <<pic $diana "suck-male">>\
+
+                    <<dom $player -5>>
+                <<elseif $diana.control.sex>>\
+                    <<nm $diana "My, how assertive! Perhaps you'd like to bring some of that energy to my office later?" "@@.gain;$player.name: Hey $diana.name... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+
+                    <<lust $diana>>
+                    <<love $diana>>
+                <<elseif $diana.control.flirt>>\
+                    <<nm $diana "Oh my, $player.name... After reading that I would have ruined my panties if I were wearing any..." "@@.gain;$player.name: Hey $diana.name... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+
+                    <<pic $diana "bimbo3">>\
+
+                    <<lust $diana>>
+                    <<love $diana>>
+                <<else>>\
+                    <<nm $diana "My, how forward. I'm afraid you'll have to earn that privilege, dear." "@@.gain;$player.name: Hey $diana.name... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+                <</if>>\
+            <<else>>\
+                <<if flag($diana,"Workplan")>>\
+                    <<nm $diana "Only if you come help me clean up Master's." "@@.gain;$player.name: Hey $diana.name... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                    <<pic $diana "cum-on-face">>\
+
+                    <<dom $player -5>>
+                <<elseif $diana.control.sex>>\
+                    <<nm $diana "Mmm, sorry I missed it. Maybe you can swing by my office some time and I can help you make a new one?" "@@.gain;$player.name: Hey $diana.name... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                    <<pic $diana "bendover">>\
+
+                    <<lust $diana>>
+                <<elseif $diana.control.flirt>>\
+                    <<nm $diana "I must say, that sounds like quite the offer! Whatever shall I do after reading something like that?" "@@.gain;$player.name: Hey $diana.name... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                    <<pic $diana "dildo">>\
+
+                    <<lust $diana>>
+                    <<love $diana>>
+                <<else>>\
+                    <<nm $diana "My, how confident! That said, I'll have to keep your offer in mind..." "@@.gain;$player.name: Hey $diana.name... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                    <<lust $diana>>
+                <</if>>\
+            <</if>>\
+        <<case "nude">>\
+            <<if $diana.control.sex>>\
+                <<nm $diana "Mmm...">>\
+
+                <<pic $diana "solo">>\
+
+                <<lust $diana>>
+                <<love $diana>>
+            <<elseif $diana.control.flirt>>\
+                <<nm $diana "Oh, that's nice...">>\
+
+                <<pic $diana "topless">>\
+
+                <<lust $diana>>
+                <<love $diana>>
+            <<else>>\
+                <<nm $diana "<<Formal>>, is this your way of asking me to relocate you to The Pit as a milking cow? It would be much easier to just come out and ask me directly...">>\
+            <</if>>\
+    <</switch>>\
+    <<set $diana.sms to $null>>\
+
+
+:: Response-Mom {"position":"225,11225","size":"100,100"}
+<<if $BrokenHome>>\
+        ''Your <<mother>> did not respond to your text.''
+    <<else>>\
+        <<switch $mom.sms>>\
+            <<case "hello">>\
+                <<if dose($mom,"dom")>>\
+                    <<nm $mom "Aw, thanks sweetie. Mommy's doing just fine... though she could use a little attention later... Be ready ;)" "@@.gain;$player.name: Hi mommy, just wanted to say hi and I love you.@@">>\
+                <<elseif dose($mom,"maid")>>\
+                    <<nm $mom "Thank you <<Master>>, I'm doing quite well. And you?" "@@.gain;$player.name: Hello $mom.name, just wanted to make sure you were doing alright.@@">>\
+                <<elseif dose($mom,"sex")>>\
+                    <<nm $mom "Oh is that all? Hehe, I'm doing just fine, though my bed's a little cold..." "@@.gain;$player.name: Heya $mom.name, just wanted to see how you were doing ;)@@">>\
+                <<else>>\
+                    <<nm $mom "You know we're in the same house, right? Like, I'm just down the hall. lol, hi honey." "@@.gain;$player.name: Hey $mom.name, just wanted to check in and see how you were doing.@@">>\
+                <</if>>\
+
+                <<love $mom>>
+            <<case "thoughts" "checkup">>\
+                <<if dose($mom,"dom")>>\
+                    <<nm $mom "Aw, I'm missing you too! Now, are you really missing mommy or do you just want to feel my <<if $mom.hasPenis>>big hard cock<<else>>big black strapon<</if>> inside you again?" "@@.gain;$player.name: Hi mommy, I was just laying here thinking about you, missing you...@@">>\
+
+                    <<lust $mom>>
+                <<elseif dose($mom,"maid")>>\
+                    <<nm $mom "Thank you <<Master>>! Of course, I'm always thinking of you as well." "@@.gain;$player.name: Hello $mom.name, I just wanted to make sure you had everything you needed to continue happily filling your new rule as the house maid? Let me know.@@">>\
+
+                <<elseif dose($mom,"sex")>>\
+                    <<nm $mom "Mmmm, mine too baby. I can't stop thinking about your delicious <<PussyOrCock>>!" "@@.gain;$player.name: Heya $mom.name, can't stop thinking about about you... My bed's been feeling awfully empty lately...@@">>\
+
+                    <<lust $mom>>
+                <<else>>\
+                    <<nm $mom "You know we're in the same house, right? Like, I'm just down the hall. lol, hi honey." "@@.gain;$player.name: Hey $mom.name, just wondering what you've been up to lately!@@">>\
+                
+                <</if>>\
+                <<love $mom>>
+            <<case "love">>\
+                <<if dose($mom,"dom")>>\
+                    <<nm $mom "Mmm, you love me, hm? Well we'll see just how much you love your mommy later won't we?" "@@.gain;$player.name: Hi mommy, just wanted to tell you how much I love you!@@">>\
+
+                    <<lust $mom>>
+                <<elseif dose($mom,"maid")>>\
+                    <<nm $mom "Thank you <<Master>>, I love you too!" "@@.gain;$player.name: Hello $mom.name, I just wanted to drop in and say I love you!@@">>\
+
+                <<elseif dose($mom,"sex")>>\
+                    <<nm $mom "Hehe, I love you too! Maybe later I can show you just how much ;)" "@@.gain;$player.name: Heya $mom.name, just wanted to say I love you!@@">>\
+
+                    <<lust $mom>>
+                <<else>>\
+                    <<nm $mom "Love you too!" "@@.gain;$player.name: Love you $mom.name!@@">>\
+
+                <</if>>\
+                <<love $mom>>
+            <<case "sexting">>\
+                <<if dose($mom,"dom")>>\
+                    <<nm $mom "Awww, does my little <<boy>> need mommy to fuck <<him>> in <<his>> little asshole again?" "@@.gain;$player.name: Mommy... you haven't punished me in a while... don't you love me anymore? Mmmm, I'm getting all <<hard>> thinking about you...@@">>\
+
+                    <<lust $mom>>
+                    <<love $mom>>
+                <<elseif dose($mom,"maid")>>\
+                    <<nm $mom "Mmmm, yes! I would love to service <<Master>> again, I'm wet just thinking about it!" "@@.gain;$player.name: Don't you think it's about time you took a break from cleaning the house and gave some personal service to your <<son>>?@@">>\
+
+                    <<lust $mom>>
+                    <<love $mom>>
+                <<elseif dose($mom,"sex")>>\
+                    <<nm $mom "Mmm, baby, you're getting all worked up! My panties would be soaked if I were wearing any!" "@@.gain;$player.name: Heya $mom.name, been thinking about your warm pussy all day... Missing me yet?@@">>\
+
+                    <<lust $mom>>
+                    <<love $mom>>
+                <<else>>\
+                    <<nm $mom "Did you mean to send this to me???" "@@.gain;$player.name: Hey sexy, been <<hard>> all day just thinking about you ;)@@">>\
+                <</if>>\
+            <<case "nude">>\
+                <<if dose($mom,"nude") or dose($mom,"sex")>>\
+                    <<nm $mom "Tee-hee!">>\
+
+                    <<pic $mom "bed-naked">>\
+
+                    <<lust $mom>>
+                    <<love $mom>>
+                <<else>>\
+                    <<nm $mom "Did you... I think you sent this to the wrong person sweetie...">>\
+                <</if>>\
+        <</switch>>\
+    <</if>>\
+        <<set $mom.sms to $null>>\
+
+
+:: Response-Penny {"position":"350,11225","size":"100,100"}
+<<switch $penny.sms>>\
+        <<case "hello">>\
+            <<if $john.cPenny > 1>>\
+                <<nm $penny "What's up? Sorry, $john.name was wrecking my shit all night, didn't hear my phone lol" "@@.gain;$player.name: Hey $penny.name, just wanted to say hi!@@">>\
+            <<elseif $penny.isDom>>\
+                <<nm $penny "Hey lover, what's up?" "@@.gain;$player.name: Hey $penny.name, just wanted to say hi!@@">>\
+            <<elseif $penny.isDating>>\
+                <<nm $penny "lol, hey babe!" "@@.gain;$player.name: Hey $penny.name, just wanted to say hi!@@">>\
+            <<elseif $penny.isSlut>>\
+                <<nm $penny "lol, hey you!" "@@.gain;$player.name: Hey $penny.name, just wanted to say hi!@@">>\
+            <<elseif $penny.isObedient>>\
+                <<nm $penny "Heya boss, need something?" "@@.gain;$player.name: Hey $penny.name, just wanted to say hi!@@">>\
+            <<else>>\
+                <<nm $penny "Heya boss!" "@@.gain;$player.name: Hey $penny.name, just wanted to say hi!@@">>\
+            <</if>>\
+
+            <<love $penny>>
+        <<case "thoughts" "checkup">>\
+            <<if $john.cPenny > 1>>\
+                <<nm $penny "lol, sucking Daddy's big fat cock mostly! Wanna taste?" "@@.gain;$player.name: Heya $penny.name! Just wanted to drop in and see what you've been up to lately!@@">>\
+
+                <<pic $penny "phonejohn">>\
+
+                <<dom $player -5>>
+            <<elseif $penny.isDom>>\
+                <<nm $penny "Just playing with some new serum ideas... What do you know about unobtrusively parsing empathy?" "@@.gain;$player.name: Heya $penny.name! Just wanted to drop in and see what you've been up to lately!@@">>\
+            <<elseif $penny.isDating>>\
+                <<nm $penny "Aww, just been sitting around thinking about you! When you gonna take me out again???" "@@.gain;$player.name: Heya $penny.name! Just wanted to drop in and see what you've been up to lately!@@">>\
+            <<elseif $penny.isSlut>>\
+                <<nm $penny "Oh... you know..." "@@.gain;$player.name: Heya $penny.name! Just wanted to drop in and see what you've been up to lately!@@">>\
+
+                <<pic $penny "spread">>\
+
+                <<lust $penny>>
+            <<elseif $penny.isObedient>>\
+                <<nm $penny "Not much, just sitting around thinking about how I could help optimize the lab better. lol, I'mma nerd, I know XD" "@@.gain;$player.name: Heya $penny.name! Just wanted to drop in and see what you've been up to lately!@@">>\
+
+            <<else>>\
+                <<nm $penny "Not too much, trying to find time to tackle my backlog... You?" "@@.gain;$player.name: Heya $penny.name! Just wanted to drop in and see what you've been up to lately!@@">>\
+
+            <</if>>\
+            <<love $penny>>
+        <<case "love">>\
+            <<if $john.cPenny > 1>>\
+                <<nm $penny "lol, sorry, my heart belongs to Daddy!" "@@.gain;$player.name: Love you $penny.name!@@">>\
+
+                <<pic $penny "phonejohn">>\
+
+                <<dom $player -5>>
+            <<elseif $penny.isDom>>\
+                <<nm $penny "Hehe, well I love you too ;)" "@@.gain;$player.name: Love you $penny.name!@@">>\
+
+                <<lust $penny>>
+                <<love $penny>>
+            <<elseif $penny.isDating>>\
+                <<nm $penny "I LOVE YOU TOO!!!!!!" "@@.gain;$player.name: Love you $penny.name!@@">>\
+
+                <<pic $penny "phone1">>\
+
+                <<love $penny>>
+            <<elseif $penny.isSlut>>\
+                <<nm $penny "Oh my, so forward! lol" "@@.gain;$player.name: Love you $penny.name!@@">>\
+
+                <<pic $penny "flash">>\
+
+                <<lust $penny>>
+            <<elseif $penny.isObedient>>\
+                <<nm $penny "EEEE!!! I love you too boss!!!" "@@.gain;$player.name: Love you $penny.name!@@">>\
+
+                <<love $penny>>
+            <<else>>\
+                <<nm $penny "lol, love ya too boss XD" "@@.gain;$player.name: Love you $penny.name!@@">>\
+
+                <<love $penny>>
+            <</if>>\
+        <<case "sexting">>\
+            <<if isChastity() or isSissy()>>\
+                <<if $john.cPenny > 1>>\
+                    <<nm $penny "lol, you should see if Daddy wants to fuck you later! If I haven't drained him by then XD" "@@.gain;$player.name: Hey $penny.name... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+
+                    <<pic $penny "cum-on-face">>\
+
+                    <<dom $player -5>>
+                <<elseif $penny.isDom>>\
+                    <<nm $penny "Oooohhh, looks like I'm gonna have to take my new toy for a spin today, huh?" "@@.gain;$player.name: Hey $penny.name... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+
+                    <<pic $penny "strapon">>\
+                    
+                <<elseif $penny.isDating>>\
+                    <<nm $penny "lol, well, I just happen to know a real woman who's ready and willing ;)" "@@.gain;$player.name: Hey $penny.name... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+
+                    <<pic $penny "strapon">>\
+                    
+                <<elseif $penny.isSlut>>\
+                    <<nm $penny "Ooo, so kinky! I'm totally into it lol!" "@@.gain;$player.name: Hey $penny.name... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+                <<elseif $penny.isObedient>>\
+                    <<nm $penny "O.o! I mean, if that's what you want I'm sure I could help you out XD" "@@.gain;$player.name: Hey $penny.name... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+                <<else>>\
+                    <<nm $penny "lol, we're gonna be GOOD friends XD" "@@.gain;$player.name: Hey $penny.name... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+                <</if>>\
+
+                <<lust $penny>>
+            <<elseif hasPenis()>>\
+                <<if $john.cPenny > 1>>\
+                    <<nm $penny "lol, with a sad little cock like yours it would be boring huh?" "@@.gain;$player.name: Hey $penny.name... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+
+                    <<pic $penny "phonejohn">>\
+
+                    <<dom $player -5>>
+                <<elseif $penny.isDom>>\
+                    <<nm $penny "lol, think you can put me in my place huh? I'm into it!" "@@.gain;$player.name: Hey $penny.name... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+
+                    <<lust $penny>>
+                    <<love $penny>>
+                <<elseif $penny.isDating>>\
+                    <<nm $penny "lol, someone's horny! Maybe I can help you out later ;)" "@@.gain;$player.name: Hey $penny.name... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+
+                    <<pic $penny "flash">>\
+
+                    <<lust $penny>>
+                    <<love $penny>>
+                <<elseif $penny.isSlut>>\
+                    <<nm $penny "Oh FUCK boss! Yes please!!!" "@@.gain;$player.name: Hey $penny.name... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+
+                    <<pic $penny "spread">>\
+
+                    <<lust $penny>>
+                    <<love $penny>>
+                <<elseif $penny.isObedient>>\
+                    <<nm $penny "lol, needy today huh boss? I mean, I'm not against the idea..." "@@.gain;$player.name: Hey $penny.name... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+
+                    <<lust $penny>>
+                    <<love $penny>>
+                <<else>>\
+                    <<nm $penny "LOL I dunno I'm kinda busy tonight XD" "@@.gain;$player.name: Hey $penny.name... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+
+                    <<love $penny>>
+                <</if>>\
+            <<else>>\
+                <<if $john.cPenny > 1>>\
+                    <<nm $penny "You'll have to clean up mine and Daddy's first!" "@@.gain;$player.name: Hey $penny.name... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                    <<pic $penny "cum-on-face">>\
+
+                    <<dom $player -5>>
+                <<elseif $penny.isDom>>\
+                    <<nm $penny "Oh you think I'll be the one cleaning up huh? lol, we'll see about that!" "@@.gain;$player.name: Hey $penny.name... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                    <<pic $penny "spread-dom">>\
+
+                    <<lust $penny>>
+                <<elseif $penny.isDating>>\
+                    <<nm $penny "lol, someone's horny tonight! Maybe I better come help you out ;)" "@@.gain;$player.name: Hey $penny.name... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                    <<pic $penny "spread">>\
+
+                    <<lust $penny>>
+                    <<love $penny>>
+                <<elseif $penny.isSlut>>\
+                    <<nm $penny "Mmmm, well now I'm all wet too! I bet we could make the mess even bigger before we have to lick it up ;)" "@@.gain;$player.name: Hey $penny.name... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                    <<pic $penny "spread">>\
+
+                    <<lust $penny>>
+                    <<love $penny>>
+                <<elseif $penny.isObedient>>\
+                    <<nm $penny "lol, is that the kind of assistant you think I am? I mean... I could be..." "@@.gain;$player.name: Hey $penny.name... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                    <<pic $penny "strip2">>\
+
+                    <<lust $penny>>
+                    <<love $penny>>
+                <<else>>\
+                    <<nm $penny "LOL oh yeah? Ngl, now I'm kinda wet too..." "@@.gain;$player.name: Hey $penny.name... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                    <<lust $penny>>
+                <</if>>\
+            <</if>>\
+        <<case "nude">>\
+            <<if $penny.isDating or $penny.isSlut>>\
+                <<nm $penny "Tee-hee!">>\
+
+                <<pic $penny "phone2">>\
+
+                <<lust $penny>>
+                <<love $penny>>
+            <<else>>\
+                <<nm $penny "Um... Thanks?">>\
+            <</if>>\
+    <</switch>>\
+    <<set $penny.sms to $null>>\
+
+
+:: Response-Sister {"position":"475,11225","size":"100,100"}
+<<if $BrokenHome>>\
+        ''Your <<sister>> did not respond to your text.''
+    <<else>>\
+        <<switch $sister.sms>>\
+            <<case "hello">>\
+                <<if $sister.isPornstar>>\
+                    <<nm $sister "Heya <<bro>>! Missing you out here!" "@@.gain;$player.name: Hey <<sis>>, just wanted to say hi!@@">>\
+                <<elseif dose($sister,"dom")>>\
+                    <<nm $sister "Just saying hi? WTF is wrong with you, srsly..." "@@.gain;$player.name: Hey <<sis>>, just wanted to say hi!@@">>\
+                <<elseif dose($sister,"sex")>>\
+                    <<nm $sister "Hehe, hey sexy... watcha up to?" "@@.gain;$player.name: Hey <<sis>>, just wanted to say hi!@@">>\
+                <<elseif dose($sister,"love")>>\
+                    <<nm $sister "Hehe, hey you! Should really just come over and say hi tho" "@@.gain;$player.name: Hey <<sis>>, just wanted to say hi!@@">>\
+                <<else>>\
+                    <<nm $sister "Hey?" "@@.gain;$player.name: Hey <<sis>>, just wanted to say hi!@@">>\
+                <</if>>\
+
+                <<love $sister>>
+            <<case "thoughts" "checkup">>\
+                <<if $sister.isPornstar>>\
+                    <<nm $sister "Heya <<bro>>! I'm getting ready for ANOTHER shoot today, so tired!" "@@.gain;$player.name: Heya <<sis>>! Just wanted to drop in and see what you've been up to lately!@@">>\
+
+                <<elseif dose($sister,"dom")>>\
+                    <<nm $sister "Oh y'know, just fucking anything that moves, shopping around for new things to fuck you with... the usual." "@@.gain;$player.name: Heya <<sis>>! Just wanted to drop in and see what you've been up to lately!@@">>\
+
+                    <<lust $sister>>
+                <<elseif dose($sister,"sex")>>\
+                    <<nm $sister "Masturbating mostly... Don't suppose you wanna help me out with that?" "@@.gain;$player.name: Heya <<sis>>! Just wanted to drop in and see what you've been up to lately!@@">>\
+
+                    <<lust $sister>>
+                <<elseif dose($sister,"love")>>\
+                    <<nm $sister "Aww, you're so sweet! You know I'm just down the hall, right? You should come visit!" "@@.gain;$player.name: Heya <<sis>>! Just wanted to drop in and see what you've been up to lately!@@">>\
+
+                <<else>>\
+                    <<nm $sister "Chillin?" "@@.gain;$player.name: Heya <<sis>>! Just wanted to drop in and see what you've been up to lately!@@">>\
+
+                <</if>>\
+                <<love $sister>>
+            <<case "love">>\
+                <<if $sister.isPornstar>>\
+                    <<nm $sister "I love you too <<bro>>! Missing you so much!" "@@.gain;$player.name: Love you <<sis>>!@@">>\
+
+                    <<love $sister>>
+                <<elseif dose($sister,"dom")>>\
+                    <<nm $sister "Damn right you do!" "@@.gain;$player.name: Love you <<sis>>!@@">>\
+
+                    <<love $sister>>
+                <<elseif dose($sister,"sex")>>\
+                    <<nm $sister "Hehe, oh yeah? You should come show me just how much!" "@@.gain;$player.name: Love you <<sis>>!@@">>\
+
+                    <<lust $sister>>
+                <<elseif dose($sister,"love")>>\
+                    <<nm $sister "Aww, I love you too!" "@@.gain;$player.name: Love you <<sis>>!@@">>\
+
+                    <<love $sister>>
+                <<else>>\
+                    <<nm $sister "You're being weird..." "@@.gain;$player.name: Love you <<sis>>!@@">>\
+                <</if>>\
+            <<case "sexting">>\
+                <<if isChastity() or isSissy()>>\
+                    <<if $sister.isPornstar>>\
+                        <<nm $sister "Mmm, wish I could be that woman!" "@@.gain;$player.name: Hey <<sis>>... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+
+                        <<pic $sister "dakota-porn-note">>\
+
+                        <<lust $sister>>
+                        <<love $sister>>
+                    <<elseif dose($sister,"dom")>>\
+                        <<nm $sister "Apparently I'm getting ready to fuck you like the sissy slut you are!" "@@.gain;$player.name: Hey <<sis>>... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+
+                        <<pic $sister "strapon">>\
+
+                        <<lust $sister>>
+                    <<elseif dose($sister,"sex")>>\
+                        <<nm $sister "Mmmm, is that what you're into lately? I bet I could help with that..." "@@.gain;$player.name: Hey <<sis>>... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+
+                        <<lust $sister>>
+                    <<elseif dose($sister,"love")>>\
+                        <<nm $sister "Wow! Dirty!" "@@.gain;$player.name: Hey <<sis>>... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+
+                        <<lust $sister>>
+                    <<else>>\
+                        <<nm $sister "What the actual fuck <<bro>>!?" "@@.gain;$player.name: Hey <<sis>>... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+                    <</if>>\
+                <<elseif hasPenis()>>\
+                    <<if $sister.isPornstar>>\
+                        <<nm $sister "Mmm, I think about that all the time <<bro>>!" "@@.gain;$player.name: Hey <<sis>>... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+
+                        <<pic $sister "rub-pussy">>\
+
+                        <<lust $sister>>
+                        <<love $sister>>
+                    <<elseif dose($sister,"dom")>>\
+                        <<nm $sister "Oh yeah? Well you're right about being on bottom anyway" "@@.gain;$player.name: Hey <<sis>>... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+
+                        <<pic $sister "strip">>\
+
+                        <<lust $sister>>\
+                    <<elseif dose($sister,"sex")>>\
+                        <<nm $sister "Oh yeah? Ngl that sounds like a good time ;)" "@@.gain;$player.name: Hey <<sis>>... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+
+                        <<pic $sister "spread">>\
+
+                        <<lust $sister>>
+                    <<elseif dose($sister,"love")>>\
+                        <<nm $sister "LOL wow! Dirty!" "@@.gain;$player.name: Hey <<sis>>... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+
+                        <<lust $sister>>
+                        <<love $sister>>
+                    <<else>>\
+                        <<nm $sister "What the actual fuck!? Do I need to talk to $mom.name about you!?" "@@.gain;$player.name: Hey <<sis>>... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+                    <</if>>\
+                <<else>>\
+                    <<if $sister.isPornstar>>\
+                        <<nm $sister "Mmm, mine too! Wish I could be there to lick it all up!" "@@.gain;$player.name: Hey <<sis>>... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                        <<pic $sister "rub-pussy">>\
+
+                        <<lust $sister>>
+                        <<love $sister>>
+                    <<elseif dose($sister,"dom")>>\
+                        <<nm $sister "lol, cute how you think I'll be the one cleaning up" "@@.gain;$player.name: Hey <<sis>>... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                        <<pic $sister "rub-pussy">>\
+
+                        <<lust $sister>>
+                    <<elseif dose($sister,"sex")>>\
+                        <<nm $sister "lol your's too, huh?" "@@.gain;$player.name: Hey <<sis>>... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                        <<pic $sister "rub-pussy">>\
+
+                        <<lust $sister>>
+                    <<elseif dose($sister,"love")>>\
+                        <<nm $sister "LOL dirty!" "@@.gain;$player.name: Hey <<sis>>... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                        <<lust $sister>>
+                    <<else>>\
+                        <<nm $sister "Wtf is wrong with you!?" "@@.gain;$player.name: Hey <<sis>>... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+                    <</if>>\
+                <</if>>\
+            <<case "nude">>\
+                <<if dose($sister,"nude") or dose($sister,"sex")>>\
+                    <<nm $sister "Tee-hee!">>\
+
+                    <<pic $sister "bed-naked">>\
+
+                    <<lust $sister>>
+                    <<love $sister>>
+                <<else>>\
+                    <<nm $sister "Dude wtf is wrong with you!?">>\
+                <</if>>\
+        <</switch>>\
+    <</if>>\
+    <<set $sister.sms to $null>>\
+
+
+:: Response-Sophie {"position":"600,11225","size":"100,100"}
+<<switch $sophie.sms>>\
+        <<case "hello">>\
+            <<if $sophie.isDating>>\
+                <<nm $sophie "Hello $player.name. I was just thinking about you!" "@@.gain;$player.name: Hey $sophie.name, just wanted to say hi!@@">>\
+            <<elseif $sophie.isDom>>\
+                <<nm $sophie "Hello lover." "@@.gain;$player.name: Hey $sophie.name, just wanted to say hi!@@">>\
+            <<else>>\
+                <<nm $sophie "Hello lover, my body's missing you!" "@@.gain;$player.name: Hey $sophie.name, just wanted to say hi!@@">>\
+            <</if>>\
+
+            <<love $sophie>>
+        <<case "thoughts" "checkup">>\
+            <<if $sophie.isDating>>\
+                <<nm $sophie "Just lounging around, mostly. Trying to stay relaxed." "@@.gain;$player.name: Heya $sophie.name! Just wanted to drop in and see what you've been up to lately!@@">>\
+            <<elseif $sophie.isDom>>\
+                <<nm $sophie "Not much, just thinking about being inside of you... How are you doing?" "@@.gain;$player.name: Heya $sophie.name! Just wanted to drop in and see what you've been up to lately!@@">>\
+
+                <<pic $sophie "phone-dom">>\
+            <<else>>\
+                <<nm $sophie "Not much, just thinking about having you inside me..." "@@.gain;$player.name: Heya $sophie.name! Just wanted to drop in and see what you've been up to lately!@@">>\
+
+                <<pic $sophie "phone-ready">>\
+            <</if>>\
+
+            <<love $sophie>>
+        <<case "love">>\
+            <<if $sophie.isDating>>\
+                <<nm $sophie "Really? I think I might love you, too, actually..." "@@.gain;$player.name: Love you $sophie.name!@@">>\
+
+                <<pic $sophie "phone-selfie">>\
+
+                <<love $sophie>>
+            <<elseif $sophie.isDom>>\
+                <<nm $sophie "Yes, you do." "@@.gain;$player.name: Love you $sophie.name!@@">>\
+
+                <<pic $sophie "tease">>\
+
+                <<lust $sophie>>
+                <<love $sophie>>
+            <<else>>\
+                <<nm $sophie "Aw, so nice to be loved." "@@.gain;$player.name: Love you $sophie.name!@@">>\
+
+                <<pic $sophie "phone-ready">>\
+
+                <<lust $sophie>>
+                <<love $sophie>>
+            <</if>>\
+        <<case "sexting">>\
+            <<if isChastity() or isSissy()>>\
+                <<if $sophie.isDating>>\
+                    <<nm $sophie "Oh my... Well, maybe you should come over some time and we can see if we can't do something about that!" "@@.gain;$player.name: Hey $sophie.name... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+
+                    <<pic $sophie "phone-topless">>\
+                <<elseif $sophie.isDom>>\
+                    <<nm $sophie "Well, you know my office hours..." "@@.gain;$player.name: Hey $sophie.name... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+
+                    <<pic $sophie "strapon">>\
+                <<else>>\
+                    <<nm $sophie "Mmm, you should really come visit me sometime!" "@@.gain;$player.name: Hey $sophie.name... been fucking myself in my little asshole wishing a real woman would take control... Whatcha up to?@@">>\
+
+                    <<pic $sophie "strapon">>\
+                <</if>>\
+
+                <<lust $sophie>>
+            <<elseif hasPenis()>>\
+                <<if $sophie.isDating>>\
+                    <<nm $sophie "Mmm, maybe you should come visit me sometime, then?" "@@.gain;$player.name: Hey $sophie.name... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\ 
+
+                    <<pic $sophie "phone-spread">>\
+                <<elseif $sophie.isDom>>\
+                    <<nm $sophie "Well, maybe you should swing by the office some time and show me what you've got..." "@@.gain;$player.name: Hey $sophie.name... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+
+                    <<pic $sophie "phone-topless">>\
+                <<else>>\
+                    <<nm $sophie "Ooh, well, by all means! My pussy's always ready for you, $player.sophieName." "@@.gain;$player.name: Hey $sophie.name... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+
+                    <<pic $sophie "phone-ready">>\
+                <</if>>\
+
+                <<lust $sophie>>
+                <<love $sophie>>
+            <<else>>\
+                <<if $sophie.isDating>>\
+                    <<nm $sophie "Oh my, well, now I'm all wet, too... Maybe you should come by sometime soon?" "@@.gain;$player.name: Hey $sophie.name... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                    <<pic $sophie "topless">>\
+                <<elseif $sophie.isDom>>\
+                    <<nm $sophie "Mmm, well, you know my office hours..." "@@.gain;$player.name: Hey $sophie.name... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                    <<pic $sophie "phone-dom">>\
+                <<else>>\
+                    <<nm $sophie "Mmm, I'm all wet now too! You should bring your mess over to my place..." "@@.gain;$player.name: Hey $sophie.name... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                    <<pic $sophie "spread">>\
+                <</if>>\
+
+                <<lust $sophie>>
+                <<love $sophie>>
+            <</if>>\
+        <<case "nude">>\
+            <<if $sophie.isDating>>\
+                <<nm $sophie "Mmm...">>\
+
+                <<pic $sophie "topless">>\
+            <<elseif $sophie.isDom>>\
+                <<nm $sophie "Oh, that's nice...">>\
+
+                <<pic $sophie "bed">>\
+            <<else>>\
+                <<nm $sophie "Mm, yes please!">>\
+
+                <<pic $sophie "spread-ass">>\
+            <</if>>\
+
+            <<lust $sophie>>
+            <<love $sophie>>
+    <</switch>>\
+    <<set $sophie.sms to $null>>\
+
+
+:: Response-Tasha {"position":"725,11225","size":"100,100"}
+<<switch $tasha.sms>>\
+        <<case "hello">>\
+            <<if $tasha.isDating>>\
+                <<nm $tasha "Tee-hee! Hi ?mc!" "@@.gain;$player.name: Hey ?tasha, just wanted to say hi!@@">>\
+            <<elseif $john.cTasha > 0>>\
+                <<nm $tasha "Hi ?mc! Daddy says hi too!" "@@.gain;$player.name: Hey ?tasha, just wanted to say hi!@@">>\
+            <<else>>\
+                <<nm $tasha "Hi ?mc!" "@@.gain;$player.name: Hey ?tasha, just wanted to say hi!@@">>\
+            <</if>>\
+
+            <<love $tasha>>
+        <<case "thoughts" "checkup">>\
+            <<if $tasha.isDating>>\
+                <<nm $tasha "Oh not much, just thinkin' about you, lounging around" "@@.gain;$player.name: Heya ?tasha! Just wanted to drop in and see what you've been up to lately!@@">>\
+            <<elseif $john.cTasha > 0>>\
+                <<nm $tasha "Tee-hee! Hi ?mc! I'm just getting ready to take a shower, Daddy filled me up with so many loads!" "@@.gain;$player.name: Heya ?tasha! Just wanted to drop in and see what you've been up to lately!@@">>\
+
+                <<pic $tasha "bimbo1">>\
+            <<else>>\
+                <<nm $tasha "Not too much, just lounging under a pile of blankets. You?" "@@.gain;$player.name: Heya ?tasha! Just wanted to drop in and see what you've been up to lately!@@">>\
+            <</if>>\
+
+            <<love $tasha>>
+        <<case "love">>\
+            <<if $tasha.isDating>>\
+                <<nm $tasha "Tee-hee! I love you too ?mc!" "@@.gain;$player.name: Love you ?tasha!@@">>\
+
+                <<pic $tasha "phone1">>\
+
+                <<love $tasha>>
+            <<elseif $john.cTasha > 0>>\
+                <<nm $tasha "I know! Not as much as Daddy does, tho!" "@@.gain;$player.name: Love you ?tasha!@@">>\
+
+                <<pic $tasha "cum-on-face">>\
+
+                <<lust $tasha>>
+                <<love $tasha>>
+            <<else>>\
+                <<nm $tasha "Um, ok?" "@@.gain;$player.name: Love you ?tasha!@@">>\
+            <</if>>\
+        <<case "sexting">>\
+            <<if isChastity() or isSissy()>>\
+                <<if $tasha.isDating>>\
+                    <<nm $tasha "YES PLEASE!" "@@.gain;$player.name: Hey ?tasha... been fucking myself in my little asshole wishing it was your girlcock instead... Whatcha up to?@@">>\
+
+                    <<pic $tasha "bimbo2">>\
+
+                    <<lust $tasha>>
+                <<elseif $john.cTasha > 0>>\
+                    <<nm $tasha "Only if I can watch you suck off Daddy while I do!" "@@.gain;$player.name: Hey ?tasha... been fucking myself in my little asshole wishing it was your girlcock instead... Whatcha up to?@@">>\
+
+                    <<pic $tasha "bimbo2">>\
+
+                    <<lust $tasha>>
+                <<else>>\
+                    <<nm $tasha "O_O" "@@.gain;$player.name: Hey ?tasha... been fucking myself in my little asshole wishing it was your girlcock instead... Whatcha up to?@@">>\
+                <</if>>\
+            <<elseif hasPenis()>>\
+                <<if $tasha.isDating>>\
+                    <<nm $tasha "YES PLEASE!!!" "@@.gain;$player.name: Hey ?tasha... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\ 
+
+                    <<pic $tasha "bimbo2">>\
+
+                    <<lust $tasha>>
+                    <<love $tasha>>
+                <<elseif $john.cTasha > 0>>\
+                    <<nm $tasha "Well, maybe you should swing by the office some time and show me what you've got..." "@@.gain;$player.name: Hey ?tasha... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+
+                    <<pic $tasha "bimbo2">>\
+
+                    <<lust $tasha>>
+                    <<love $tasha>>
+                <<else>>\
+                    <<nm $tasha "O_O" "@@.gain;$player.name: Hey ?tasha... it's so boring over here, nothing to do but stroke my cock and think about you riding it...@@">>\
+                <</if>>\
+            <<else>>\
+                <<if $tasha.isDating>>\
+                    <<nm $tasha "YES PLEASE!!!" "@@.gain;$player.name: Hey ?tasha... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                    <<pic $tasha "bimbo2">>\
+                <<elseif $john.cTasha > 0>>\
+                    <<nm $tasha "Mmm, I dunno... I've been cleaning up a LOT of Daddy's messes lately!" "@@.gain;$player.name: Hey ?tasha... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+
+                    <<pic $tasha "cum-on-face">>\
+                <<else>>\
+                    <<nm $tasha "O_O" "@@.gain;$player.name: Hey ?tasha... my little pussy's just soaked thinking about you! Wanna help me clean up the mess?@@">>\
+                <</if>>\
+
+                <<lust $tasha>>
+                <<love $tasha>>
+            <</if>>\
+        <<case "nude">>\
+            <<if $tasha.isDating>>\
+                <<nm $tasha ";)">>\
+
+                <<pic $tasha "tasha-nekkid">>\
+            <<elseif $john.cTasha > 0>>\
+                <<nm $tasha "Oh, that's nice... Should I send you a pic after Daddy's done railing me?">>\
+
+                <<pic $tasha "bed">>\
+            <<else>>\
+                <<nm $tasha "Oh you...">>\
+
+                <<pic $tasha "phone1">>\
+            <</if>>\
+
+            <<lust $tasha>>
+            <<love $tasha>>
+    <</switch>>\
+    <<set $tasha.sms to $null>>\
