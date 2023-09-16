@@ -1,0 +1,563 @@
+:: ISS-Tasha-Office-Cleanup {"position":"850,17975","size":"100,100"}
+<<loc_SalesOffice>>\
+
+    ''You and ?tasha both sit on the floor and work to catch your breaths. The whole office smells like sex, and clothing and cum is everywhere. Finally, you find the strength to get to your feet.''
+
+    <<nm $player "That was... amazing... here...">>\
+
+    ''?tasha takes your extended hand as you help her up, handing her her clothes.''
+
+    <<pic $tasha "topless">>\
+
+    <<nm $tasha "Y-yeah... but... tee-hee! S-sorry, I'm just so... happy!">>\
+
+    ''She throws her arms around you, further covering you in sweat and cum, not that you can bring yourself to break away as she looks at you with pure bliss in her eyes.''
+
+    <<nm $player "Ha, yeah! Anyway, um...">>\
+
+    <<nm $tasha "Hm? Oh, right, no, I need to head out, too. I'll see you later?">>\
+
+    ''You start dressing yourself as you head towards the door.''
+
+    <<nm $player "Definitely!">>\
+
+    <<SexResults $tasha>>\
+
+    <<horny 0>>
+
+    <<btnLink "Continue" "Work" "setTime('night')">>\
+
+
+:: ISS-Tasha-Office-CreampieTasha {"position":"600,17975","size":"100,100"}
+<<loc_SalesOffice>>\
+    <<SexUpdate 3 5 0 5>>\
+    <<trackAction "creampie.give" $tasha>>\
+
+    <<if $tasha.hasPussy>>\
+        ''You bury your <<pSize>> deep inside of ?tasha's quivering pussy as you release rope after rope of thick, hot cum into the girl's womb. The reaction is enough to trigger her own orgasm, juices sputtering out of her drenched cunt, splashing against your waist and thighs.''
+
+        <<preg $tasha>>
+    <<else>>\
+        ''You bury your <<pSize>> deep inside of ?tasha's quivering asshole as you release rope after rope of thick, hot cum into the girl's stomach. The reaction is enough to trigger her own hands-free orgasm, cum sputtering out of her huge cock as it flops around beneath her.''
+    <</if>>\
+
+    <<pic $tasha "creampie">>\
+
+    <<nm $tasha "Ooooohhhh... mmmm... s-so warm...">>\
+
+    <<btnLink "Clean up" "ISS-Tasha-Office-Cleanup">>\
+
+
+:: ISS-Tasha-Office-CumInMouth {"position":"225,17975","size":"100,100"}
+<<loc_SalesOffice>>\
+    <<SexUpdate 5 4 0 4>>\
+    <<trackAction "cumEat.give" $tasha>>\
+
+    ''You wrap your hands around ?tasha's head, pulling her in as you force your <<pSize>> deep into her throat, releasing ropes of thick, hot cum over her tongue and face.''
+
+    <<pic $tasha "cum-in-mouth">>\
+
+    <<nm $tasha "HNGH!" "<<His>> cum tastes... amazing...">>\
+
+    <<if $tasha.hasPussy>>\
+        ''After emptying your entire load down ?tasha's throat, you look down to see a puddle of thick juices between her legs, and her soaked hand still plunging in and out of her drenched pussy.''
+    <<else>>\
+        ''After emptying your entire load down ?tasha's throat, you look down to see a puddle of thick cum between her legs, and her cum-covered hand wrapped around her still-dripping cock.''
+    <</if>>\
+
+    <<btnLink "Clean up" "ISS-Tasha-Office-Cleanup">>\
+
+
+:: ISS-Tasha-Office-EatPussy {"position":"975,17850","size":"100,100"}
+<<loc_SalesOffice>>\
+    <<SexUpdate 4 1 0 -2>>\
+
+    ''You slide down in front of ?tasha, her glistening slit just inches from your face. The scent of her sex and perfume permeates your senses, drawing you in almost hypnotically.''
+
+    <<nm $tasha "Mmmm, p-please make me f-feel good, okay?">>\
+
+    ''Not needing to be asked twice, you lean in and start sliding your tongue along the length of her inviting pussy before finally burying your face in it completely.''
+
+    <<pic $player "eat-pussy">>\
+
+    <<nm $player "Mmmph... hnph... mmmph..." "S-she tastes amazing!">>\
+
+    <<skillComment $tasha "suckCock.give"
+        "OHMIGOSH! S-so good... H-ha!;God <<his>> mouth feels incredible!"
+        "H-haa... so good... mmm...;<<He>>'s really good at this!"
+        "Haaa... mmmm... s-so good! K-keep going!"
+        "Ah... h-haaa... h-hey, easy now..."
+        "Ah... h-haaa... h-hey, easy now..."
+    >>\
+
+    ''?tasha grabs on to the desk as you pierce her deeper and deeper with your tongue, taking short breaks to nibble on her clit. As you do, you slide a hand down to start playing with your ?hard ?cock.''
+
+    <<nm $tasha "?mc... I-I...">>\
+
+    ''You feel her starting to wrap her fingers around the back of your head as her hips start moving on their own.''
+
+    <<nm $player.d "Mmmph... mmph!" "Feels like she's almost at her limit...">>\
+    <<nm $player.s "Mmmph... mmph!" "@@.sf;S-she's about to cum...@@">>\
+    <<nm $player.b "Mmmph... mmph!" "@@.bf;Yes! Give me your delicious cum!@@">>\
+
+    <<btnChoice "Take her deep and swallow her cum" "ISS-Tasha-Office-SwallowTasha">>
+
+
+:: ISS-Tasha-Office-FuckTasha {"position":"1100,17850","size":"100,100"}
+<<loc_SalesOffice>>\
+    <<SexUpdate 5 1 0 3>>\
+
+    <<if $tasha.hasPussy>>\
+        <<trackAction "pussyFuck.give" $tasha>>\
+
+        ''?tasha lifts herself onto her desk, turning around and exposing her round ass to your, spreading a check to give you access to her glistening pussy.''
+
+        <<nm $tasha "T-there's lube in that draw there.">>\
+
+        ''In a nearby drawer is a bottle of lubricant which you apply before lining your <<pSize>> up with ?tasha's eager cunt. Her slightly engorged clit pulses with desire, twitching as you start to enter her.''
+
+        <<pic $tasha "fucked-by-player-doggy">>\
+
+        <<CommentPenis $tasha
+            "O-OH! F-fuu... S-so big! Mmm... hng...;<<He>>'s g-gonna tear me a-apart!"
+            "H-ha! Mmmm... s-so big...;God <<he>> feels amazing inside me!"
+            "M-mmm... oohhh... h-haaa... y-yeah..."
+            "Ohhh... There you go... Mmmm..."
+            "Ohhh... There you go... Mmmm..."
+        >>\
+
+        ''After starting slow, you quickly work up into a steady pace and before long you're burying your <<pSize>> as deep as you can inside of ?tasha's tight pussy with every thrust. She leaks juices steadily, forming a small pubble beneath her as she loses herself to pleasure.''
+    <<else>>\
+        <<trackAction "analFuck.give" $tasha>>\
+
+        ''?tasha lifts herself onto her desk, turning around and exposing her round ass to your, spreading a check to give you access to her hole.''
+
+        <<nm $tasha "T-there's lube in that draw there.">>\
+
+        ''In a nearby drawer is a bottle of lubricant which you apply before lining your <<pSize>> up with ?tasha's eager asshole. Her semi-hard cock dangles between her legs, twitching as you start to enter her.''
+
+        <<pic $tasha "fucked-by-player-doggy">>\
+
+        <<CommentPenis $tasha
+            "O-OH! F-fuu... S-so big! Mmm... hng...;<<He>>'s g-gonna tear me a-apart!"
+            "H-ha! Mmmm... s-so big...;God <<he>> feels amazing inside me!"
+            "M-mmm... oohhh... h-haaa... y-yeah..."
+            "Ohhh... There you go... Mmmm..."
+            "Ohhh... There you go... Mmmm..."
+        >>\
+
+        ''After starting slow, you quickly work up into a steady pace and before long you're burying your <<pSize>> as deep as you can inside of ?tasha's tight asshole with every thrust. Her large cock swings forward and back, dribbling precum beneath her as she loses herself to pleasure.''
+    <</if>>\
+
+    <<nm $tasha "?mc... So good... D-don't stop!">>\
+
+    <<btnChoice "Cum inside of ?tasha" "ISS-Tasha-Office-CreampieTasha">>\
+    <<btnChoice "Pull out and cum in ?tasha's mouth" "ISS-Tasha-Office-CumInMouth">>\
+
+
+:: ISS-Tasha-Office-FuckedByTasha {"position":"100,17975","size":"100,100"}
+<<loc_SalesOffice>>\
+
+    <<if $sex.takeover>>\
+        <<SexUpdate 5 1 0 -5>>\
+        ''Unable to hold back, ?tasha spins you around, pulling your ass up towards her. Her huge cock is rock hard, precum flowing down the shaft.''
+
+        <<nm $player "?tasha?">>\
+
+        <<nm $tasha "S-sorry ?mc... I-I need this!">>\
+    <<else>>\
+        <<SexUpdate 3 3 0 -1>>\
+        ''You turn around, getting on your hands and knees and raising your ass towards ?tasha.''
+
+        <<nm $player "Well, don't you wanna have some fun?">>\
+
+        <<nm $tasha "Y-yes!">>\
+    <</if>>\
+
+    ''You shudder as she presses her wet cockhead against your <<AssOrPussy>>, and starts pushing in.''
+
+    <<pic $tasha "fuck-player">>\
+
+    <<nm $player "O-OH! F-fuu... Hng... Haaa...">>\
+
+    <<if hasPussy()>>\
+        <<trackAction "pussyFuck.get" $tasha>>\
+        ?tasha's thick cock penetrates your <<vSize>> as she pounds you from behind, getting wetter and wetter with each thrust, it's not long before your first orgasm, and shorter still until your second.''
+
+        <<CommentPussy $player
+            "Haaa... haaa... You feel... Amazing!"
+            "Mmm... ?tasha... your cock's the perfect size!"
+            "Mmm... oohhhh... fuck you're filling me up!"
+            "S-so... big... mmm... haa...;I'm gonna need to get used to this!"
+            "A-ah! F-fuck, you're s-so big!;I-I didn't think it'd hurt this much!"
+        >>\
+
+        <<vaginal "?tasha's thick cock">>\
+
+        <<nm $tasha "?mc... I-I'm gonna...">>\
+
+        <<if chance(40)>>\
+            <<btnTakeover "?tasha starts wrapping her hands around your waist..." "ISS-Tasha-Office-GetCreampie">>\
+        <<else>>\
+            <<btnChoice "Let ?tasha cum inside you" "ISS-Tasha-Office-GetCreampie">>\
+            <<btnChoice "Hop off and swallow ?tasha's load" "ISS-Tasha-Office-SwallowTasha">>\
+        <</if>>\
+    <<else>>\
+        <<trackAction "analFuck.get" $tasha>>\
+        ?tasha's thick cock penetrates your <<aSize>> as she pounds you from behind, her precum making your wetter and wetter with each thrust, and it's not long before the pressure on your prostate has you approaching orgasm.''
+
+        <<CommentAss $player
+            "Haaa... haaa... You feel... Amazing!"
+            "Mmm... ?tasha... your cock's the perfect size!"
+            "Mmm... oohhhh... fuck you're filling me up!"
+            "S-so... big... mmm... haa...;I'm gonna need to get used to this!"
+            "A-ah! F-fuck, you're s-so big!;I-I didn't think it'd hurt this much!"
+        >>\
+
+        <<anal "?tasha's thick cock">>\
+
+        <<nm $tasha "?mc... I-I'm gonna...">>\
+
+        <<if chance(40)>>\
+            <<btnTakeover "?tasha starts wrapping her hands around your waist..." "ISS-Tasha-Office-GetCreampie">>\
+        <<else>>\
+            <<btnChoice "Let ?tasha cum inside you" "ISS-Tasha-Office-GetCreampie">>\
+            <<btnChoice "Hop off and swallow ?tasha's load" "ISS-Tasha-Office-SwallowTasha">>\
+        <</if>>\
+    <</if>>\
+
+
+:: ISS-Tasha-Office-GetCreampie {"position":"725,17975","size":"100,100"}
+<<loc_SalesOffice>>\
+    <<trackAction "creampie.get" $tasha>>\
+
+    <<if $sex.takeover>>\
+        <<SexUpdate 5 3 0 -10>>\
+
+        ''?tasha tightly grips your waist, giving you little choice in the matter as she holds you down and buries her huge, pulsing cock deep inside of your <<AssOrPussy size>>.''
+
+        <<nm $tasha "C-CUMMING! Let me cum inside of you!">>\
+    <<else>>\
+        <<SexUpdate 4 5 0 -5>>\
+
+        ''You press yourself against ?tasha's waist, ensure her cum has nowhere to go but deep inside of you.''
+
+        <<nm $tasha "C-cumming!">>\
+    <</if>>\
+
+    <<pic $player "creampie">>\
+
+    <<if hasPussy()>>\
+        <<nm $player "F-fuck! So... warm...">>\
+
+        <<if $tasha.hasPussy>><<preg $player "?tasha">><</if>>\
+
+        ''?tasha keeps you in place, emptying her entire load inside your quivering pussy. As she slowly starts to pull out, you can feel her thick cum filling the emptiness her cock left inside of you.''
+
+        <<nm $player.d "Oooohhh... mmmmm...">>\
+        <<nm $player.b "@@.bf;Ooohhh, there's no better feeling than a belly full of cum!@@">>\
+    <<else>>\
+        <<nm $player "F-fuck! So... warm...">>\
+
+        ''?tasha keeps you in place, emptying her entire load inside your quivering asshole. As she slowly starts to pull out, you can feel her thick cum filling the emptiness her cock left inside of you.''
+
+        <<nm $player.d "Ooohhh... mmmm....">>\
+        <<nm $player.s "@@.sf;Mmmmm... T-thank you... ?tasha...@@">>\
+    <</if>>\
+
+    <<btnLink "Clean up" "ISS-Tasha-Office-Cleanup">>\
+
+
+:: ISS-Tasha-Office-GetOral {"position":"725,17850","size":"100,100"}
+<<loc_SalesOffice>>\
+    <<SexUpdate 4 2 0 2>>\
+
+    ''You run a hand along ?tasha's face, drawing her attention to your exposed <<PussyOrCock size>>. She releases a light gasp before slowly dropping to her knees, never breaking eye contact.''
+
+    <<if hasPenis()>>\
+        <<trackAction "suckCock.get" $tasha>>\
+        <<CommentPenis $tasha
+            "O-oh wow... It's so... b-big!"
+            "Oh wow... Your c-cock looks a-amazing!;It's as big as mine!"
+            "Y-your c-cock looks... tasty..."
+            "H-hehe, I l-love your cock, ?mc"
+            "H-hehe, I l-love your cock, ?mc"
+        >>\
+
+        ''She caresses it for a moment, taking it in as it grows even harder in her hand before finally wraping her lips around it.''
+
+        <<pic $tasha "suck-player">>\
+
+        <<nm $player "Mmm... Ooohhh...">>\
+
+        ''?tasha takes your <<pSize>> deep into her mouth, rolling her tongue along the length of your shaft and around the head. As it slides in and out, you can feel yourself getting closer and closer to orgasm.''
+
+        <<nm $tasha "Mmmph... mmph... hmngph..." "<<He>> tastes... so good...">>\
+
+        <<if $tasha.hasPussy>>\
+            <<btnChoice "Lay her back and fuck ?tasha on her desk" "ISS-Tasha-Office-FuckTasha">>\
+            <<btnChoice "Cum in her mouth" "ISS-Tasha-Office-CumInMouth">>\
+        <<elseif chance(40)>>\
+            <<btnDom "Push her back and fuck ?tasha on her desk" "ISS-Tasha-Office-FuckTasha">>\
+            <<btnTakeover "?tasha looks ready to pounce on you..." "ISS-Tasha-Office-FuckedByTasha">>
+        <<else>>\
+            <<btnChoice "Lay her back and fuck ?tasha on her desk" "ISS-Tasha-Office-FuckTasha">>\
+            <<btnChoice "Cum in her mouth" "ISS-Tasha-Office-CumInMouth">>\
+            <<btnChoice "Turn around and invite her to fuck your <<aSize>>" "ISS-Tasha-Office-FuckedByTasha">>\
+        <</if>>\
+    <<else>>\
+        <<trackAction "eatPussy.get" $tasha>>\
+        <<nm $tasha "O-oh wow... Y-your p-pussy's so... beautiful...">>\
+
+        ''She examines your glistening mound for a moment, sliding her finger between its lips and coaxing out even more juices before finally burying her tongue deep inside you.''
+
+        <<pic $tasha "eat-pussy">>\
+
+        <<nm $player "Mmm... Ooohhh...">>\
+
+        ''?tasha plunges her tongue into your dripping pussy, alternating between piercing you as deep as she can and flicking your clit playfully. The stimulation is enough to drive you to erupt in ?tasha's mouth.''
+
+        <<pic $player "squirt">>\
+
+        <<nm $tasha "Mmmph... mmph... hmngph..." "<<He>> tastes... so good...">>\
+
+        <<if $tasha.hasPussy>>
+            <<btnChoice "Let her continue licking you to orgasm" "ISS-Tasha-Office-TakeSquirt">>\
+        <<elseif chance(40)>>\
+            <<btnTakeover "?tasha looks ready to pounce on you..." "ISS-Tasha-Office-FuckedByTasha">>
+        <<else>>\
+            <<btnChoice "Let her continue licking you to orgasm" "ISS-Tasha-Office-TakeSquirt">>\
+            <<btnChoice "Turn around and invite her to fuck you" "ISS-Tasha-Office-FuckedByTasha">>\
+        <</if>>\
+    <</if>>\
+
+
+:: ISS-Tasha-Office-GiveHandjob {"position":"600,17850","size":"100,100"}
+<<loc_SalesOffice>>\
+    <<SexUpdate 3 3 0 1>>\
+
+    ''You lean in, kissing $tasha.name deeply and seating her on her desk.''
+
+    <<pic $tasha "kiss-player">>\
+
+    <<nm $tasha "Mmmm... mmm... mHM!">>\
+
+    ''$tasha.name gasps as your fingers wrap around her pulsing cock, engorged with arousal the two of you enthusiastically make out in her office. After a few minutes, the sensation becomes too much for her to handle.''
+
+    <<nm $tasha "Mmmph... Haaa, w-wait... $player.name... I don't want to c-cum yet...">>\
+
+    <<if canFuck()>>\
+        <<btnChoice "Lay $tasha.name back and fuck her on her desk" "ISS-Tasha-Office-FuckTasha">>\
+    <</if>>\
+    <<if hasWorkingPenis() or hasPussy()>>\
+        <<btnChoice "Pull $tasha.name down to service your <<PussyOrCock>>" "ISS-Tasha-Office-GetOral">>\
+    <</if>>\
+    <<btnBimbo "Climb on to $tasha.name's cock and ride her" "ISS-Tasha-Office-RideTasha">>\
+    <<btnChoice "Get on your knees and suck $tasha.name's cock" "ISS-Tasha-Office-GiveOral">>\
+
+
+:: ISS-Tasha-Office-GiveOral {"position":"850,17850","size":"100,100"}
+<<loc_SalesOffice>>\
+    <<SexUpdate 4 1 0 -2>>\
+
+    ''You slide down in front of ?tasha, her large cock bobbing up and down just inches from your face. The scent of her sex and perfume permeates your senses, drawing you in almost hypnotically.''
+
+    <<nm $tasha "Mmmm, p-please make me f-feel good, okay?">>\
+
+    ''Not needing to be asked twice, you lean in and start sliding your tongue along the length of her thick shaft before finally allowing it to pass through your lips.''
+
+    <<pic $player "suck-ts">>\
+
+    <<nm $player "Mmmph... hnph... mmmph..." "S-she's so big!">>\
+
+    <<skillComment $tasha "suckCock.give"
+        "OHMIGOSH! S-so good... H-ha!;God <<his>> mouth feels incredible!"
+        "H-haa... so good... mmm...;<<He>>'s really good at this!"
+        "Haaa... mmmm... s-so good! K-keep going!"
+        "Ah... h-haaa... h-hey, easy now..."
+        "Ah... h-haaa... h-hey, easy now..."
+    >>\
+
+    ''?tasha grabs on to the desk as you take her pulsing member deeper and deeper down your throat. As it fills you, you slide a hand down to start playing with your ?hard ?cock.''
+
+    <<nm $tasha "?mc... I-I...">>\
+
+    ''You feel her starting to wrap her fingers around the back of your head as her hips start moving on their own.''
+
+    <<nm $player.d "Mmmph... mmph!" "Feels like she's almost at her limit...">>\
+    <<nm $player.s "Mmmph... mmph!" "@@.sf;S-she's about to cum...@@">>\
+    <<nm $player.b "Mmmph... mmph!" "@@.bf;Yes! Give me your delicious cum!@@">>\
+
+    <<if chance(40)>>\
+        <<if chance(50)>>\
+            <<btnTakeover "?tasha's starting to thrust harder..." "ISS-Tasha-Office-SwallowTasha">>\
+        <<else>>\
+            <<btnTakeover "?tasha's starting to slow down..." "ISS-Tasha-Office-FuckedByTasha">>\
+        <</if>>\
+    <<elseif isBimbo()>>\
+        <<btnBimbo "Take her deep and swallow her cum" "ISS-Tasha-Office-SwallowTasha">>\
+    <<else>>\
+        <<btnChoice "Take her deep and swallow her cum" "ISS-Tasha-Office-SwallowTasha">>\
+        <<btnChoice "Turn around and let her fuck you" "ISS-Tasha-Office-FuckedByTasha">>\
+    <</if>>\
+
+
+:: ISS-Tasha-Office-Leave {"position":"475,17850","size":"100,100"}
+<<loc_SalesOffice>>\
+    <<SexCancel>>\
+
+    <<nm $player "H-hey, $tasha.name, sorry but I actually can't stay tonight.">>\
+
+    <<pic $tasha "topless">>\
+    <<art $tasha "embarrassed,2,naked">>\
+
+    ''$tasha.name turns bright red with embarrassment, quickly pulling her clothes together and covering herself up.''
+
+    <<nm $tasha "O-oh! Right, u-um, hehe, yeah, of course... I-I, actually have some stuff I need to take care of, um... too...">>\
+
+    ''Before you can say anything else, $tasha.name hurries you out of her office, shutting and locking the door behind her.''
+
+    <<btnLink "Continue" "Work">>\
+
+
+:: ISS-Tasha-Office-RideTasha {"position":"1225,17850","size":"100,100"}
+<<loc_SalesOffice>>\
+    <<SexUpdate 3 3 0 -1>>\
+
+    ''You push ?tasha back onto her desk, her rock hard cock flipping up into position as you straddle her waist. Before she can say anything you lock your lips over hers, kissing her deeply as you line her throbbing member up with your <<AssOrPussy>>.''
+
+    <<pic $player "ride-ts">>\
+
+    <<nm $tasha "O-OH! F-fuu... Hng... Haaa...">>\
+
+    <<if hasPussy()>>\
+        <<trackAction "pussyFuck.get" $tasha>>\
+        ?tasha's thick cock penetrates your <<vSize>> as you bounce on it, getting wetter and wetter with each thrust, it's not long before your first orgasm, and shorter still until your second.''
+
+        <<CommentPussy $player
+            "Haaa... haaa... You feel... Amazing!"
+            "Mmm... ?tasha... your cock's the perfect size!"
+            "Mmm... oohhhh... fuck you're filling me up!"
+            "S-so... big... mmm... haa...;I'm gonna need to get used to this!"
+            "A-ah! F-fuck, you're s-so big!;I-I didn't think it'd hurt this much!"
+        >>\
+
+        <<vaginal "?tasha's thick cock">>\
+
+        <<nm $tasha "?mc... I-I'm gonna...">>\
+
+        <<if chance(40)>>\
+            <<btnTakeover "?tasha starts wrapping her hands around your waist..." "ISS-Tasha-Office-GetCreampie">>\
+        <<else>>\
+            <<btnChoice "Let ?tasha cum inside you" "ISS-Tasha-Office-GetCreampie">>\
+            <<btnChoice "Hop off and swallow ?tasha's load" "ISS-Tasha-Office-SwallowTasha">>\
+        <</if>>\
+    <<else>>\
+        <<trackAction "analFuck.get" $tasha>>\
+        ?tasha's thick cock penetrates your <<aSize>> as you bounce on it, her precum making your wetter and wetter with each thrust, and it's not long before the pressure on your prostate has you approaching orgasm.''
+
+        <<CommentPussy $player
+            "Haaa... haaa... You feel... Amazing!"
+            "Mmm... ?tasha... your cock's the perfect size!"
+            "Mmm... oohhhh... fuck you're filling me up!"
+            "S-so... big... mmm... haa...;I'm gonna need to get used to this!"
+            "A-ah! F-fuck, you're s-so big!;I-I didn't think it'd hurt this much!"
+        >>\
+
+        <<anal "?tasha's thick cock">>\
+
+        <<nm $tasha "?mc... I-I'm gonna...">>\
+
+        <<if chance(40)>>\
+            <<btnTakeover "?tasha starts wrapping her hands around your waist..." "ISS-Tasha-Office-GetCreampie">>\
+        <<else>>\
+            <<btnChoice "Let ?tasha cum inside you" "ISS-Tasha-Office-GetCreampie">>\
+            <<btnChoice "Hop off and swallow ?tasha's load" "ISS-Tasha-Office-SwallowTasha">>\
+        <</if>>\
+    <</if>>\
+
+
+:: ISS-Tasha-Office-Start {"position":"350,17850","size":"100,100"}
+<<loc_SalesOffice>>\
+    <<SexInitialize $tasha>>\
+    <<set $TashaOfficeSex to true>>\
+
+    <<pic $tasha>>\
+    <<art $tasha "embarrassed">>\
+
+    <<nm $tasha "Oh, h-hey, $player.name... Um, I was... waiting here for you...">>\
+
+    <<nm $player "Were you?">>\
+
+    ''Blushing deeply, $tasha.name motions for you to close the door behind you. When you turn around, you find she's stripped off her top, and is leaning against her desk.''
+
+    <<pic $tasha "topless">>\
+    <<art $tasha "aroused,2,naked">>\
+
+    <<nm $player "Oh!">>\
+
+    <<if $tasha.hasPussy>>\
+        ''Silently, $tasha.name walks up to you, removing the rest of her clothes and revealing her wet pussy. She wraps her arms around your neck, pulling you in for a deep kiss as she works to undress you.''
+    <<else>>\
+        ''Silently, $tasha.name walks up to you, removing the rest of her clothes and revealing her fully erect cock. She wraps her arms around your neck, pulling you in for a deep kiss as she works to undress you.''
+    <</if>>\
+
+    <<nm $tasha "U-um, so...">>\
+
+    <<if hasWorkingPenis()>>\
+        <<btnChoice "Pull out your <<pSize>> while ?tasha undresses you" "ISS-Tasha-Office-GetOral">>
+    <<elseif hasPussy()>>\
+        <<btnChoice "Push $tasha.name to her knees in front of you" "ISS-Tasha-Office-GetOral">>
+    <</if>>\
+    <<if $tasha.hasPussy>>\
+        <<btnChoice "Get on your knees and eat $tasha.name's pussy" "ISS-Tasha-Office-EatPussy">>
+    <<else>>\
+        <<btnChoice "Play with $tasha.name's cock while you kiss her" "ISS-Tasha-Office-GiveHandjob">>
+        <<btnChoice "Get on your knees and give $tasha.name head" "ISS-Tasha-Office-GiveOral">>
+    <</if>>\
+
+    <<btnChoice "Tell $tasha.name you need to get going" "ISS-Tasha-Office-Leave">>\
+
+
+:: ISS-Tasha-Office-SwallowTasha {"position":"475,17975","size":"100,100"}
+<<loc_SalesOffice>>\
+    <<SexUpdate 5 4 0 -5>>\
+    <<trackAction "cumEat.get" $tasha>>\
+
+    <<if $tasha.hasPussy>>\
+        ''?tasha wraps her hands around your head, pulling you in as she releases a torrential orgasm into your mouth, unloading wave after wave of hot, thick juices over your tongue and face.''
+
+        <<pic $tasha "squirt">>\
+
+        <<nm $player "HNGH!" "She tastes... amazing...">>\
+
+        ''After emptying her entire load down your throat, she slowly backs up as a few final spurts of juice squirt out of her quivering pussy.''
+
+        <<btnLink "Clean up" "ISS-Tasha-Office-Cleanup">>\
+    <<else>>\
+        ''?tasha wraps her hands around your head, pulling you in as she forces her pulsing cock deep into your throat, releasing ropes of thick, hot cum over your tongue and face.''
+
+        <<pic $player "cum-in-mouth">>\
+
+        <<nm $player "HNGH!" "Her cum tastes... amazing...">>\
+
+        ''After emptying her entire load down your throat, she slowly backs up as a few final spurts of cum dribble out of her cockhead.''
+
+        <<btnLink "Clean up" "ISS-Tasha-Office-Cleanup">>\
+    <</if>>\
+
+
+:: ISS-Tasha-Office-TakeSquirt {"position":"350,17975","size":"100,100"}
+<<loc_SalesOffice>>\
+    <<SexUpdate 5 4 0 4>>\
+    <<trackAction "cumEat.give" $tasha>>\
+
+    ''You wrap your hands around ?tasha's head, pulling her in as you release a torrent of hot juices over her tongue and face.''
+
+    <<pic $player "squirt">>\
+
+    <<nm $tasha "HNGH!" "<<His>> cum tastes... amazing...">>\
+
+    ''After squirting buckets over ?tasha, you look down to see a puddle of thick cum between her legs, and her cum-covered hand wrapped around her still-dripping cock.''
+
+    <<btnLink "Clean up" "ISS-Tasha-Office-Cleanup">>\

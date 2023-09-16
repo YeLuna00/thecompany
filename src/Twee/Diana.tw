@@ -1,0 +1,3070 @@
+:: Diana-DJ1-PayWithold {"position":"100,12725","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+    <<pic $diana>>\
+
+    <<nm $diana "Ah, $player.name, thank you for coming. Please take a seat, hm?">>\
+
+    ''$diana.name motions to the chair in front of her desk. You're a little uncomfortable with how formal she's being right now, but decide not to start worrying too much about it just yet. She smiles as you sit.''
+
+    <<nm $player "Hey $diana.name, not really used to you calling me up here. What's up?">>\
+
+    ''She starts pulling out some paperwork, shuffling through it as she pushes up her glasses.''
+
+    <<nm $diana "I'm not sure if you knew this or not, I suppose you wouldn't, but in addition to the records clerk I'm also the closest thing this building has to an HR department. While we obviously have a... less than typical idea of what constitutes acceptable behavior here, performance monitoring is still something we keep close tabs on. As it is, $player.name, that's why you're here now.">>\
+
+    <<nm $player "W-wait, what? My... performance?">>\
+
+    ''$diana.name nods indifferently as she starts pulling a few sheets of paper out of a larger stack.''
+
+    <<Thought "What the fuck is going on here?">>\
+
+    <<nm $diana "Now don't get too worked up, we're not exploring anything drastic, however after consulting with your colleagues the decision has been made to start you on a work plan. It's a little more intense than a written reprimant, but it's not turning your <<mother>> and <<sister>> into breeding cows, either, so...">>\
+
+    <<nm $player "Hold on, how was it decided that I'm not meeting performance requirements? And, wait, you consulted my colleagues to determin what action you'd take? Is that really how things work here!?">>\
+
+    ''You notice $diana.name grinning at you, her icy calculating eyes stopping you dead.''
+
+    <<nm $diana "Well, would you prefer we pull your family into this? We could certainly use a pair like them...">>\
+
+    <<nm $player "N-no, I... I just don't understand...">>\
+
+    ''$diana.name starts laying forms out in front of you.''
+
+    <<nm $diana "Alright, let's go over the specifics of your work plan. First, we're going to being witholding your paycheck, at least initially. In order to earn it back, while also repaying The Company for lost productivity, you've been enrolled in our voluntary enslavement track, temporarily.">>\
+
+    <<nm $player "What!?">>\
+
+    <<nm $diana "Haha, horrible name, I know. Don't worry, it's basically just company mandated prostitution. You'll provide service to customers on a regular basis until it's been decided you've made up for lost profits. Your performance will decide how long that takes, and how much of your paycheck is earned every week.">>\
+
+    ''You stand.''
+
+    <<nm $player "Prostitution!? H-hold on-">>\
+
+    <<nm $diana "Sit. Down. <<Formal>>.">>\
+
+    ''Her gaze is intense, you do as you're told.''
+
+    <<nm $diana "Most employees put on this path only need to work for a few months before being released from the arrangement. Your transgressions are far less egregious, so I'm sure you'll be fine...">>\
+
+    ''$diana.name starts examining you closely, a seductive smile forming on her lips.''
+
+    <<if isMale()>>\
+        <<if isSissy()>>\
+            <<nm $diana "Usually men can have a hard time with this sort of work, however, in your case I think we can find a fairly large market.">>\
+        <<else>>\
+            <<nm $diana "There's not much work for men in this particular track... We may need to make some 'modifications' as we progress. We'll see.">>\
+
+            <<Thought "What does that mean?">>\
+        <</if>>\
+    <<elseif isBimbo()>>\
+        <<nm $diana "Yes, with a body like yours I'm sure you'll have us repaid in no time.">>\
+
+        <<nm $player "@@.bf;Tee-hee!" "W-wait, what does that mean?">>\
+    <<elseif $player.breastSize < $L>>\
+        <<nm $diana "Hm, your body's nice enough, though we may need to look into some enhancement in the chest area...">>\
+
+        <<nm $player "Seriously?">>\
+    <<else>>\
+        <<nm $diana "You have a very nice body, $player.name. I'm sure you'll have us paid back in no time.">>\
+
+        <<nm $player "I-I... um...">>\
+    <</if>>\
+
+    ''She starts pulling her papers back together, now organizing them into a folder off to the side.''
+
+    <<nm $diana "That takes care of that. In addition, you'll be coming to see me regular training to help you succeed in this work plan. Weekly training is mandatory, though you'll have the option to see me more often if you really want to up your game! I'll let you know when we're ready to start.">>\
+
+    <<nm $player "I still don't under-">>\
+
+    ''$diana.name stands up and walks towards the door.''
+
+    <<nm $diana "I'm sure you have several questions, $player.name. Just try hard and I'm sure you'll get through this no problem. Now then, I have some work to attend to.">>\
+
+    ''She holds the door open expectantly. All you can do is compose yourself and leave the office in silence. The door closes behind you, leaving you to your thoughts as you stand in the empty hallway.''
+
+    <<Thought "This has to be $john.name... This must be what $tasha.name meant when she... Fuck...">>\
+
+    ''You wander aimlessly back to the lobby, not know what to expect next.''
+
+    <<set $PrMoney to 0>>\
+    <<set $diana.timesTrained to 0>>\
+    <<set $player.escortCounter to 1>>\
+    <<set $player.canEscort to true>>\
+    <<set $PrDebt to 500000>>\
+    <<run setDailyCD("DianaTraining",2)>>\
+    <<SetFlag $diana "Workplan">>\
+    <<AddNote $diana "Tonight, $diana.name informed me that due to 'performance issues', I'll be working as a company prostitute to pay back the lost profits. My paycheck is being withheld in the meantime as well...">>\
+    <<btnLink "Go back to work" "Work">>
+
+
+:: Diana-Dose {"position":"600,1600","size":"100,100"}
+<<switch $c>>\
+	<<case 0>>\
+		<<loc_Commons>>\
+
+		<<Thought "I bet $diana.name could go for a cup of tea right about now.">>\
+
+		''You pour a cup of tea, put a lid on it, and head to the records office.''
+
+		<<if serums() > 0>>\
+			<<if $diana.doseCD == 0>>\
+				<<Thought "You know, this would be a perfect time to use a serum on $diana.name">>\
+				
+				<span id="output">\
+					@@.btnChoice;<<button "Use serum">>\
+						<<replace "#output">>\
+							<<if $serum[1].qty > 0 && $diana.dose is 0>>\
+								<<if not $diana.control.flirt>>\
+									<<btnLink "Have her start acting even more flirty with you" "Diana-Dose" "$c=1">>
+								<</if>>\
+								<<if not $diana.control.sophieInfo>>\
+									<<btnLink "Have her start talking to you more about $sophie.name" "Diana-Dose" "$c=2">>
+								<</if>>\
+								
+								<<btnLink "Change your mind and just bring her tea" "Records-Diana-Talk">>
+							<<elseif $serum[1].qty > 0 && $diana.dose > 0>>\
+								<<if not $diana.control.oral>>\
+									<<btnLink "Have her start going down on you in her office" "Diana-Dose" "$c=3">>
+								<</if>>\
+								
+								<<btnLink "Change your mind and just bring her tea" "Records-Diana-Talk">>
+							<<elseif $serum[2].qty > 0 && $diana.dose == 2>>\
+								<<if not $diana.control.sex>>\
+									<<btnLink "Have her want to start having sex in her office" "Diana-Dose" "$c=4">>
+								<</if>>\
+							
+							<<btnLink "Change your mind and just bring her tea" "Records-Diana-Talk">>
+							<<elseif $serum[0].qty > 0 && $diana.dose == 3>>\
+								<<if not $diana.control.usb>>\
+									<<btnLink "Have her tell you what she knows about the Company's executives" "Diana-Dose" "$c=5">>
+								<</if>>\
+							
+							<<btnLink "Change your mind and just bring her tea" "Records-Diana-Talk">>
+							<<else>>\
+								<<Thought "I've done what I can with the serums I have available. I'll have to make something else to progress farther with her.">>\
+				
+								<<btnLink "Go to records office" "Records-Diana-Talk">>
+							<</if>>\
+						<</replace>>\
+					<</button>>@@
+					@@.btnChoice;<<button "Don't use serum">>\
+						<<replace "#output">>\
+							<<Thought "...Maybe I'll save it for another time.">>\
+				
+							<<btnLink "Go to records office" "Records-Diana-Talk">>
+						<</replace>>\
+					<</button>>@@
+				</span>\
+			<<else>>\
+				<<Thought "This would be a good time to test some serum on $diana.name, but I just gave her a dose recently. I should give her another $diana.doseCD day(s) before dosing her again.">>\
+				
+				<<btnLink "Go to records office" "Records-Diana-Talk">>
+			<</if>>\
+		<<else>>\
+			<<btnLink "Go to records office" "Records-Diana-Talk">>
+		<</if>>\
+	<<case 1>>\
+		''You add a vial of $serum[1].name to $diana.name's tea and walk towards her office.''
+
+		<<loc_RecordsOffice>>\
+
+		<<pic $diana>>\
+		<<art $diana>>\
+
+		<<nm $diana "Hello $player.name, come to see me? Oh, I see you brought a gift.">>\
+
+		<<nm $player.d "Hey $diana.name. Yeah, I noticed that you tend to prefer tea over coffee, so I thought I'd bring some for you.">>\
+		<<nm $player.b "Heya $diana.name! I know you like your tea, so, I brought some for ya'! Nice and hot, like me!">>\
+		<<nm $player.s "H-hey, $diana.name. I-I saw some tea in the commons, s-so, I thought I'd bring some by for you...">>\
+
+		''$diana.name takes the cup from you and starts drinking.''
+
+		<<nm $diana "How thoughtful, it's very-...">>\
+
+		''$diana.name trails off. Her eyes have glazed over. They've become cloudy, and their color has shifted slightly. She's now under the effects of the $serum[1].name.''
+
+		<<artB $diana "dosed,2">>\
+		<<Thought "Time to have some fun...">>\
+
+		<<nm $player "$diana.name, you really enjoy flirting with me, but you know you could do better. You think that, starting now, you're going to start being much more forward. You think it'll be a lot of fun for you, it'll probably even turn you on. In fact, you think it will probably turn you on a lot.">>\
+
+		<<Thought "This should be easy, I'm just enhancing a personality trait that's already there.">>\
+
+		''$diana.name quickly nods in agreement with your suggestion, and after a few more seconds snaps back to reality.''
+
+		<<nm $diana "Yes, it's very good tea. Thank you, $player.name.">>\
+
+		''You smile and drink some of the coffee you brought along for yourself. The two of you chat about various things for a bit.''
+
+		<<nm $player "Well it was good talking to you, I think I need to get back to the lab now.">>\
+
+		''$diana.name rises from her desk, making sure to flash some cleavage on her way up.''
+
+		<<pic $diana "flirt">>\
+		<<art $diana "aroused">>\
+
+		<<nm $diana "Aw, that's too bad. At least let me walk you to the door.">>\
+
+		''$diana.name places her hand on your lower back and escorts you to her office door. On your way out you nearly jump at the feeling of her hand firmly grabbing your ass.''
+		
+		<<dom $diana -3>>
+		
+		<<horny 10>>
+
+		<<set $diana.dose += 1>>\
+		<<set $serum[1].qty -= 1>>\
+		<<set $diana.doseCD += ($serum[1].cd + $diana.dose)>>\
+		<<set $diana.control.flirt to true>>\
+		<<set $diana.status to "@@.xxx;Flirty@@">>\
+		<<set $player.hasTea to false>>\
+		<<AddNote $diana "I slipped some $serum[1].name into $diana.name's tea at work today. I decided to have her start acting even more flirty than she usually does, and it's already started working. It'll be interesting to see how she starts behaving around me from now on.">>\
+		<<btnLink "Go back" "Work" "passTime()">>
+	<<case 2>>\
+		''You add a vial of $serum[1].name to $diana.name's tea and walk towards her office.''
+
+		<<loc_RecordsOffice>>\
+
+		<<pic $diana>>\
+		<<art $diana>>\
+
+		<<nm $diana "Hello $player.name, come to see me? Oh, I see you brought a gift.">>\
+
+		<<nm $player.d "Hey $diana.name. Yeah, I noticed that you tend to prefer tea over coffee, so I thought I'd bring some for you.">>\
+		<<nm $player.b "Heya $diana.name! I know you like your tea, so, I brought some for ya'! Nice and hot, like me!">>\
+		<<nm $player.s "H-hey, $diana.name. I-I saw some tea in the commons, s-so, I thought I'd bring some by for you...">>\
+		
+		''$diana.name takes the cup from you and starts drinking.''
+
+		<<nm $diana "How thoughtful, it's very-...">>\
+
+		''$diana.name trails off. Her eyes have glazed over. They've become cloudy, and their color has shifted slightly. She's now under the effects of the $serum[1].name.''
+
+		<<artB $diana "dosed,2">>\
+		<<Thought "Alright, let's put this serum to some actual use...">>\
+
+		<<nm $player "$diana.name, you and $sophie.name sure are good friends, but keeping all of $sophie.name's secrets is really weighing on you. You've been dying to have someone to talk to about her, and you think you've finally found that person in me. From now on, you'll want to start freely talking about $sophie.name with me.">>\
+
+		<<Thought "$sophie.name is incredibly distant, and I need some kind of insight. Hopefully this will help provide that.">>\
+
+		''$diana.name stares blankly for a moment, then finally slowly starts nodding in agreement with your suggestion. After a few more seconds, she snaps back to reality.''
+
+		<<nm $diana "Yes, it's very good tea. Thank you, $player.name.">>\
+
+		''You smile and drink some of the coffee you brought along for yourself. The two of you chat about various things for a bit.''
+
+		<<nm $player "Hey, I've been meaning to ask you. $sophie.name hired me for this job, but she seems so detached. I noticed you two tend to spend a lot of time together. Is she not happy with me, or is something else bothering her?">>\
+
+		''$diana.name sips her tea, thinking about your question for a minute. A brief, violet sheen flashes across her eyes before she finally responds.''
+
+		<<nm $diana "She's not unhappy with you, quite the contrary. Sophie wouldn't like me talking to you about it, but I think understanding her could give you a better idea of why you're here. Could you please close the door?">>\
+
+		''You pull the door shut and take a seat next to $diana.name.''
+
+		<<nm $diana "It's a bit of an unspoken rule here, that no one talks about what brought them to The Company, or why they choose to stay. What we're doing here is not good, honest work. We're contributing to, facilitating what is for all intents and purposes an atrocity against humanity. Ours is an organization that kidnaps and tortures people, forcing them into a life of sexual servitude. We are the bad guys.">>\
+
+		<<Thought "This is the most up front I've heard anyone be about this place since $sophie.name spoke to me on my first day. It's no less jarring now than it was then.">>\
+
+		<<nm $diana "So then why do we continue? Simple: Deep down, $player.name, we ARE the bad guys. We may be decent people above ground. We all have friends and families, goals and ambitions, but the truth is, deep down, we're all... a little broken in one way or another. We do this because the excitement of it all, the control and wrongness of it all... Frankly, $player.name, we get off on it.">>\
+
+		''You feel yourself getting just a little <<hard>>...''
+
+		<<Thought "It's hard to accept, but she may be right...">>\
+
+		<<nm $player "So that's $sophie.name's angle? She just gets off on all this?">>\
+
+		<<nm $diana "Well, yes, but it's not quite that simple. The Company has been operating for years now, and for decades before that in some unofficial capacity. It's only very recently that those in power within The Company have decided to organize and modernize, and this branch of the company is one of the results of that initiative. In spite of this, our methods are still extremely crude. Sophie believes that we can use technology and science to not only bring the services we offer to new heights, but also to do it with less... collateral damage.">>\
+
+		<<nm $player "Collateral damage. You're talking about the girls in the infirmary downstairs?">>\
+
+		''$diana.name takes another sip of her tea.''
+
+		<<nm $diana "I am. Sophie claims that we can reach the same outcome with our assets, as well as potentially many more, without the excessive cruelty. She thinks that people like you are the key to seeing her vision become a reality, and from what I've seen, I'm inclined to agree with her.">>\
+
+		<<Thought "I still don't know what it is they're actually seeing in me, or how I should feel about the fact that there's something like that to be seen. I mean, I can't argue with her. Here I am slipping mind control serums into my coworkers' drinks to get them to do what I want.<<if $mom.dose > 0 or $sister.dose > 0>> Hell, I've even drugged my own fucking family!<</if>>">>\
+
+		<<nm $diana "And that's about the size of it. I guess you could say Sophie's just compassionate, in her own twisted way. She's also under a great deal of pressure to see her ideas succeed. The higher powers are putting a lot of trust and resources into her for this, and I'm sure I don't need to tell you what would happen to a woman like Sophie if she were to disappoint a company like this.">>\
+
+		<<nm $player "I... have a pretty good idea. It's about time for me to get back to work. It wouldn't be very good for a <<guy>> like me to disappoint this company either.">>\
+
+		''$diana.name smiles at you, and gets up to walk you out.''
+		
+		<<dom $diana -3>>
+		
+		<<set $diana.dose += 1>>\
+		<<set $serum[1].qty -= 1>>\
+		<<set $diana.doseCD += ($serum[1].cd + $diana.dose)>>\
+		<<set $diana.control.sophieInfo to true>>\
+		<<set $diana.status to "Informant">>\
+		<<set $player.hasTea to false>>\
+		<<AddNote $diana "I slipped some $serum[1].name into $diana.name's tea at work today. I thought it might be a good idea to use the opportunity to try and get some more information on $sophie.name and The Company in general. It paid off, I think... At the very least I think I understand $sophie.name a little better.">>\
+		<<btnLink "Go back" "Work" "passTime()">>
+	<<case 3>>\
+		''You add a vial of $serum[1].name to $diana.name's tea and walk towards her office.''
+
+		<<loc_RecordsOffice>>\
+
+		<<pic $diana>>\
+		<<art $diana>>\
+
+		<<nm $diana "Hello $player.name, come to see me? Oh, I see you brought a gift.">>\
+
+		<<nm $player.d "Hey $diana.name. Yeah, I noticed that you tend to prefer tea over coffee, so I thought I'd bring some for you.">>\
+		<<nm $player.b "Heya $diana.name! I know you like your tea, so, I brought some for ya'! Nice and hot, like me!">>\
+		<<nm $player.s "H-hey, $diana.name. I-I saw some tea in the commons, s-so, I thought I'd bring some by for you...">>\
+
+		''$diana.name takes the cup from you and starts drinking.''
+
+		<<nm $diana "How thoughtful, it's very-...">>\
+
+		''$diana.name trails off. Her eyes have glazed over. They've become cloudy, and their color has shifted slightly. She's now under the effects of the $serum[1].name.''
+
+		<<Thought "Flirting and groping is great and all, but I think I can get $diana.name to go further than that...">>\
+
+		<<nm $player "$diana.name, you're done flirting, you want some action. You've been dying to get a look inside my pants since I first started here and you're done waiting. From now on, whenever I'm in your office alone with you, you're going to desperately want to go down on me.">>\
+
+		''$diana.name stares blankly for a moment, a small bead of drool forming in the corner of her mouth, then finally starts nodding in agreement with your suggestion. After a few more seconds, she snaps back to reality.''
+
+		<<nm $diana "Yes, it's very good tea. Thank you, $player.name.">>\
+
+		''$diana.name finishes her tea quickly. As she looks up at you, a brief violet sheen flashes across her eyes.''
+
+		<<nm $diana "$player.name, please get the door. I need to discuss something with you privately.">>\
+
+		''You close the door.''
+
+		<<nm $player "What's up, $diana.name?">>\
+
+		''$diana.name begins undressing.''
+
+		<<nm $diana "Oh you know what's up... We've been playing this game long enough, and it's time to take it to the next level. Remove your <<bottom>>, please.">>\
+
+		''You do as instructed. $diana.name doesn't waste any time, ripping away your <<UnderwearOrPants>>.''
+
+		<<if isChastity()>>\
+			<<if isChastity("diana")>>\
+				<<nm $diana "Oh, sweetie, you still have this on? I thought for sure you'd have taken my little off by now...">>\
+			<<else>>\
+				<<nm $diana "Oh... sweetie... What am I supposed to do with that?">>\
+			<</if>>\
+			
+			<<nm $player "I, um...">>\
+			
+			<<if isChastity("diana")>>\
+				<<nm $diana "Although... I suppose since I am the one who locked you up in that, hm, little thing... We could still have some fun...">>\
+
+				<<pic $diana "spread">>\
+				<<art $diana "aroused,0,naked">>\
+
+				''She spreads her legs, revealing her glistening pussy.''
+
+				<<nm $diana "How about it, baby? Get on your knees for me?">>\
+
+				<<nm $player.b "Mmmm, yes ma'am...">>\
+				<<nm $player.s "U-um... O-okay...">>\
+				<<nm $player.d "I-I...">>\
+
+				''You're not sure what's taken hold of you as your body drops to its knees in front of the older, dominant woman. Slowly, you move closer, her strong scent making you feel even dizzier...''
+
+				<<pic $player "eat-pussy">>\
+				<<act $player "eatpussy">>\
+
+				<<nm $diana "Mmmm, oooohhhh... You really are quite the little c-cunt licker! Who knew you were s-sooOOOHHH t-talented!">>\
+
+				''$diana.name holds your head firmly, grinding into your mouth as she gyrates her hips. Her scent grows stronger and stronger, penetrating your senses. It's intoxicating, dizzying... You're not sure how much of her thick juices you've swallowed at this point, but the intensifying quivering of her thighs tell you the real flood is yet to come...''
+
+				<<nm $diana "Ooohhh... $player.name... I-I'm... You're going to make me... O-OOOHHHH!!!!">>\
+
+				<<pic $diana "orgasm">>\
+				<<act $player "eatpussy,cum">>\
+
+				''Sure enough, a torrent of hot squirt rushes down your throat! She holds you tight as you fight for breath. It's no use, the older woman has you in a vice grip and no amount of struggling is going to interrupt her intense orgasm. You're not sure how much time passes before she finally releases you, allowing you to drop to your hands and knees in front of her, pussy juices still dripping from your face.''
+
+				<<nm $player "S-so... <<cough>> So much... <<cough>> <<cough>>">>\
+
+				<<nm $diana "Mmmm, well done, $player.name... Now if you don't mind, I have some paperwork I need to get to. Please get the door on your way out.">>\
+
+				<<Thought "W-what? Just like that!?">>\
+
+				''You give $diana.name a somewhat pleading look, which she promptly dismisses, before cleaning yourself up and leaving the office.''
+				
+				<<dom $player -5>>
+				
+				<<horny 10>>
+				<<trackAction "eatPussy.give" $diana>>\
+				<<AddNote $diana "I slipped some $serum[1].name into $diana.name's tea at work today. I decided to take her flirting to the next level, suggesting she start providing oral sex in her office whenever we're alone together. Unfortunately, the cage on my penis resulted in me going down on her instead...">>\
+			<<else>>\
+				<<nm $diana "If you're into that sort of thing that's fine, we could always play that game later, but for now... I believe Ash's shop in the mall will take care of that for you. Anyway, I'm going to have to get back to work.">>\
+				
+				''$diana.name opens her door and goes back to her desk.''
+				
+				<<Thought "What!? Just like that!?">>\
+				
+				<<dom $player -5>>
+				
+				<<horny 10>>
+				<<AddNote $diana "I slipped some $serum[1].name into $diana.name's tea at work today. I decided to take her flirting to the next level, suggesting she start providing oral sex in her office whenever we're alone together. Unfortunately, the cage on my penis resulted in me getting kicked out of her office instead...">>\
+			<</if>>\
+		<<elseif isSissy()>>\
+			<<nm $diana "Oh my, look at that little thing... Does it even get hard anymore?">>\
+			
+			<<nm $player "I, um...">>\
+			
+			<<nm $diana "What a disappointment... Although, I suppose we could still have some fun...">>\
+
+			<<pic $diana "spread">>\
+			<<pic $diana "aroused,2,naked">>\
+
+			''She spreads her legs, revealing her glistening pussy.''
+
+			<<nm $diana "How about it, baby? Get on your knees for me?">>\
+
+			<<nm $player.b "Mmmm, yes ma'am...">>\
+			<<nm $player.s "U-um... O-okay...">>\
+			<<nm $player.d "I-I...">>\
+
+			''You're not sure what's taken hold of you as your body drops to its knees in front of the older, dominant woman. Slowly, you move closer, her strong scent making you feel even dizzier...''
+
+			<<pic $player "eat-pussy">>\
+			<<act $player "eatpussy">>\
+
+			<<nm $diana "Mmmm, oooohhhh... You really are quite the little c-cunt licker! Who knew you were s-sooOOOHHH t-talented!">>\
+
+			''$diana.name holds your head firmly, grinding into your mouth as she gyrates her hips. Her scent grows stronger and stronger, penetrating your senses. It's intoxicating, dizzying... You're not sure how much of her thick juices you've swallowed at this point, but the intensifying quivering of her thighs tell you the real flood is yet to come...''
+
+			<<nm $diana "Ooohhh... $player.name... I-I'm... You're going to make me... O-OOOHHHH!!!!">>\
+
+			<<pic $diana "orgasm">>\
+			<<act $player "eatpussy,cum">>\
+
+			''Sure enough, a torrent of hot squirt rushes down your throat! She holds you tight as you fight for breath. It's no use, the older woman has you in a vice grip and no amount of struggling is going to interrupt her intense orgasm. You're not sure how much time passes before she finally releases you, allowing you to drop to your hands and knees in front of her, pussy juices still dripping from your face.''
+
+			<<nm $player "S-so... <<cough>> So much... <<cough>> <<cough>>">>\
+
+			<<nm $diana "Mmmm, well done, $player.name... Now if you don't mind, I have some paperwork I need to get to. Please get the door on your way out.">>\
+
+			<<Thought "W-what? Just like that!?">>\
+
+			''You give $diana.name a somewhat pleading look, which she promptly dismisses, before cleaning yourself up and leaving the office.''
+			
+			<<dom $player -5>>
+			
+			<<horny 10>>
+			<<trackAction "eatPussy.give" $diana>>\
+			<<AddNote $diana "I slipped some $serum[1].name into $diana.name's tea at work today. I decided to take her flirting to the next level, suggesting she start providing oral sex in her office whenever we're alone together. Unfortunately, when she saw my flaccid penis she had me go down on her instead...">>\
+		<<elseif hasPenis()>>\
+			<<CommentPenis $diana
+				"Oh my, look at that massive beast!"
+				"Mmmm, what a nice big cock you have!"
+				"Mmmm, what a nice cock you have..."
+				"Mmm, ready $player.name?"
+				"Hm, not quite what I was expecting, but I can work with it."
+			>>\
+
+			<<nm $player.d "Oh. OH! Holy shit, $diana.name!">>\
+			<<nm $player.b "OOOooohhh, mmmm, yeah baby!">>\
+
+			<<pic $diana "start-suck">>\
+			<<act $diana "blowjob,lick">>\
+
+			''$diana.name licks the length of your shaft before plunging herself down on it. She's clearly no stranger to cock, as she works it like a pro.''
+
+			<<nm $player "$diana.name, you're incredible...">>\
+
+			''She picks up the pace.''
+			
+			<<pic $diana "blowjob">>\
+			<<act $diana "blowjob">>\
+			
+			<<nm $diana "Mmph! Mmph! Mmph! Mmph!">>\
+
+			''She moves a hand down to start pleasuring herself as she goes to town on you. The constant, expert attention to your <<pSize>> on top of the sound of $diana.name's wetness and the growing puddle on the floor between her legs is enough to send you over the edge.''
+
+			<<nm $diana "Haaa! On me! Finish on me!">>\
+
+			''She doesn't need to ask twice.''
+
+			<<pic $diana "cum-in-mouth">>\
+			<<act $diana "blowjob,facial">>\
+
+			''You let loose, spraying into $diana.name's mouth, and on her face and tits. She happily accepts everything you throw at her, seemingly in bliss as she rubs your cum into her skin. It takes you both a moment to recover from what just happened.''
+
+			<<nm $diana "I... haven't had fun like that in a while. I expect you to visit me more often, $player.name. In the meantime, you should probably clean up and get back to work.">>\
+
+			''You're still coming down from your orgasm and you clumsily put your <<bottom>> back on on.''
+
+			<<nm $player.d "Yeah... Sounds good... I... I'll see ya'...">>\
+			<<nm $player.b "Mmmm, you bet! We're gonna have so much fun!">>\
+			
+			<<love $diana 1>>
+			<<lust $diana 1>>
+			
+			<<horny 0>>
+			<<AddDreamEvent 18>>\
+			<<trackAction "suckCock.get" $diana>>\
+			<<AddNote $diana "I slipped some $serum[1].name into $diana.name's tea at work today. I decided to take her flirting to the next level, suggesting she start providing oral sex in her office whenever we're alone together. She happily complied.">>\
+		<<else>>\
+			<<NoticePussy $diana>>\
+
+			''$diana.name leads you to an area in the back of the large office.''
+
+			<<nm $diana "I often keep unusual hours here, so I finally decided to just have a small bedroom built in the back of my office.">>\
+
+			''She offers no more explanation than that before pushing you onto your back and diving right into your <<vSize>>.''
+
+			<<pic $diana "eat-pussy">>\
+			<<pic $diana "eatpussy">>\
+
+			<<nm $player.d "H-holy shit, $diana.name!">>\
+			<<nm $player.b "Mmmm, o-ooohhhh yeah! That's it baby!">>\
+
+			''The mature woman lapping away between your legs is clearly no stranger to eating pussy. Her tongue swirls and pierces, she flicks your clit like an expert, applying just the right amount of pressure at just the right time, deliberately keeping you on edge until she's ready to make you come.''
+
+			<<nm $player.d "$diana.name! I can't... I... I'm going to...">>\
+			<<nm $player.b "Oohhhh yeah! $diana.name, I-I'm gonna c-cum!">>\
+
+			<<picB $diana "eat-pussy2">>\
+			''With that, $diana.name props you up and goes to town on your clit. Sucking and licking, sliding fingers in and out of you. You can't hold it in anymore. Your body writhes and throws in pleasure as you fill $diana.name's mouth with your orgasm.''
+
+			<<pic $player "squirt">>\
+			<<art $diana "eatpussy,cum">>\
+
+			<<nm $player "F... Fuck...">>\
+
+			''$diana.name wipes her mouth and starts gathering her clothing.''
+
+			<<nm $diana "Liked that, did you? Good, because I promise it won't be the last time. I haven't had fun like that in a good while, and I don't plan on letting it all end now! In the meantime, you should probably clean up and get back to work.">>\
+
+			''You're still coming down from your orgasm and you clumsily put your <<bottom>> back on on.''
+
+			<<nm $player.d "Yeah... Sounds good... I... I'll see ya'...">>\
+			<<nm $player.b "Mmmm, you bet! We're gonna have so much fun!">>\
+			
+			<<love $diana 1>>
+			<<lust $diana 1>>
+			
+			<<horny 0>>
+			<<AddDreamEvent 18>>\
+			<<trackAction "eatPussy.get" $diana>>\
+			<<AddNote $diana "I slipped some $serum[1].name into $diana.name's tea at work today. I decided to take her flirting to the next level, suggesting she start providing oral sex in her office whenever we're alone together. She happily complied.">>\
+		<</if>>
+	
+		<<dom $diana -3>>
+		
+		<<set $diana.dose += 1>>\
+		<<set $serum[1].qty -= 1>>\
+		<<set $diana.doseCD += ($serum[1].cd + $diana.dose)>>\
+		<<set $diana.control.oral to true>>\
+		<<set $diana.status to "@@.xxx;Oral Addict@@">>\
+		<<set $player.hasTea to false>>\
+		<<btnLink "Go back" "Work" "passTime()">>
+	<<case 4>>\
+		''You add a vial of $serum[2].name to $diana.name's tea and walk towards her office.''
+
+		<<loc_RecordsOffice>>\
+
+		<<pic $diana>>\
+		<<art $diana>>\
+
+		<<nm $diana "Hello $player.name, come to see me? Oh, I see you brought a gift.">>\
+
+		<<nm $player.d "Hey $diana.name. Yeah, I noticed that you tend to prefer tea over coffee, so I thought I'd bring some for you.">>\
+		<<nm $player.b "Heya $diana.name! I know you like your tea, so, I brought some for ya'! Nice and hot, like me!">>\
+		<<nm $player.s "H-hey, $diana.name. I-I saw some tea in the commons, s-so, I thought I'd bring some by for you...">>\
+
+		''$diana.name takes the cup from you and starts drinking.''
+
+		<<nm $diana "How thoughtful, it's very-...">>\
+
+		''$diana.name trails off. Her eyes have glazed over. They've become cloudy, and their color has shifted slightly. She's now under the effects of the $serum[2].name.''
+
+		<<artB $diana "dosed,2">>
+		<<Thought "Alright $diana.name, time to cash that check you keep writing that... keeps... bouncing? Fuck, I'll work on that later...">>\
+
+		<<nm $player "$diana.name, you're done restraining yourself, you want the real thing and you want it now! From now on, any chance you get to fuck $player.name, you're gonna take! You need sex and you need it right now!">>\
+
+		''$diana.name begins nodding eagerly in agreement. After a few more seconds, she snaps back to reality.''
+
+		<<nm $diana "Yes, it's very good tea. Thank you, $player.name.">>\
+
+		''$diana.name finishes her tea quickly and begins undressing.''
+
+		<<nm $diana "Now, remove you clothing.">>\
+
+		''You close the door and begin stripping.''
+		
+		<<NoticeBreasts $diana>>\
+
+		<<if isChastity()>>\
+			<<if $player.isChastityBy is "diana">>\
+				<<nm $diana "Oh, sweetie, you still have this on? I thought for sure you'd have taken my little off by now...">>\
+			<<else>>\
+				<<nm $diana "Oh... sweetie... What am I supposed to do with that?">>\
+			<</if>>\
+			
+			''$diana.name pokes a finger at your <<accf>>.''
+			
+			<<nm $player "I, um...">>\
+			
+			<<nm $diana "If you're into that sort of thing that's fine, we could always play that game later, but for now... I believe Ash's shop in the mall will take care of that for you. Anyway, I'm going to have to get back to work.">>\
+			
+			''$diana.name opens her door and goes back to her desk.''
+			
+			<<Thought "What!? Just like that!?">>\
+			
+			<<dom $player -5>>
+			
+			<<horny 10>>
+		<<elseif isSissy()>>\
+			<<nm $diana "Oh dear, now how do you expect me to work with 'that'? Can it even get hard anymore?">>\
+			
+			<<nm $player "I, um...">>\
+			
+			<<nm $diana "What a disappointment... Anyway, I'm going to have to get back to work.">>\
+			
+			''$diana.name opens her door and goes back to her desk.''
+			
+			<<Thought "What!? Just like that!?">>\
+			
+			<<dom $player -5>>
+			
+			<<horny 10>>
+		<<elseif hasPenis()>>\
+			<<NoticePenis $diana>>\
+
+			''$diana.name lubes up your <<pSize>> with her mouth before taking position on the desk, her pussy dripping with need, she begs for it.''
+
+			<<nm $diana "I need it now, $player.name. Please, fuck me now!">>\
+
+			<<pic $diana "fucked-by-male">>\
+
+			<<nm $player "Oh. OH! Holy shit, $diana.name!">>\
+
+			''You pound her right on her desk, almost laughing out loud when you realize she'd been streaming hardcore porn on her work PC for gods know how long. Back to the task at hand, you keep your pace, watching for $diana.name's reactions and responding accordingly. You feel her getting wetter and wetter, even noticing a small puddle forming at the base of your feet.''
+
+			<<nm $diana "Fuck! $player.name! Don't stop! Fuck!!!">>\
+
+			''You're not sure how many times $diana.name's come so far, but you're not able to hold out any longer. You give her a few more deep, hard thrusts before withdrawing. She doesn't miss a beat, sliding off the desk into position to take your load.''
+
+			<<pic $diana "cum-on-face">>\
+
+			''You let loose, spraying into $diana.name's mouth, and on her face and tits. She happily accepts everything you throw at her, seemingly in bliss as she rubs your cum into her skin. It takes you both a moment to recover from what just happened.''
+
+			<<nm $diana "I... haven't had fun like that in a while. I expect you to visit me more often, $player.name. In the meantime, you should probably clean up and get back to work.">>\
+
+			''You're still coming down from your orgasm and you clumsily put your <<bottom>> back on on.''
+
+			<<nm $player "Yeah... Sounds good... I'll see ya'...">>\
+			
+			<<love $diana 1>>
+			<<lust $diana 1>>
+			
+			<<horny 0>>
+			<<AddDreamEvent 19>>\
+			<<trackAction "pussyFuck.give" $diana>>\
+		<<else>>\
+			<<if hasStrapon()>>\
+				''$diana.name smiles as your <<accf>> flips into position after removing your <<UnderwearOrPants>>.''
+
+				<<nm $diana "Mmm, looks like you came prepared... I trust you know what comes next...">>\
+
+				''You fasten the harness around your waist and $diana.name bends over.''
+			<<else>>\
+				''$diana.name pulls a small strapon out from a desk drawer and tosses it to you.''
+
+				<<nm $diana "Put that on, I trust you know what comes next.">>\
+
+				''You fasten the harness around your waist and $diana.name takes position.''
+			<</if>>\
+
+			<<pic $diana "fucked-by-female">>\
+
+			<<nm $diana "Yes, right there! Perfect, keep going!">>\
+
+			''$diana.name guides the fake cock into her dripping pussy She pushes against you, setting the pace until you start thrusting on your own. After a few moments, you're fucking $diana.name fast and hard as if the strapon you were wearing was a real dick all your own.''
+
+			<<nm $player "$diana.name, this is incredible!">>\
+
+			''As you continue, you begin to feel $diana.name's body trembling. You respond with deeper, harder thrusts until you've finally sent her over the edge. She makes her climax obvious, and her panting and moaning send you into your own orgasm.''
+
+			<<nm $player "F... Fuck...">>\
+
+			<<pic $diana "suck-female">>\
+
+			<<nm $diana "Liked that, did you? Good, because I promise it won't be the last time. I haven't had fun like that in a good while, and I don't plan on letting it all end now! In the meantime, you should probably clean up and get back to work.">>\
+
+			''You're still coming down from your orgasm and you clumsily put your <<bottom>> back on on.''
+
+			<<nm $player "Yeah... Sounds good... I'll see ya'...">>\
+			
+			<<love $diana 1>>
+			<<lust $diana 1>>
+			<<tfm "mas">>
+			
+			<<horny 0>>
+			<<AddDreamEvent 19>>\
+			<<trackAction "pussyFuck.give" $diana>>\
+		<</if>>
+
+		<<dom $diana -3>>
+		
+		<<set $diana.dose += 1>>\
+		<<set $serum[2].qty -= 1>>\
+		<<set $diana.doseCD += ($serum[2].cd + $diana.dose)>>\
+		<<set $diana.control.sex to true>>\
+		<<set $diana.status to "@@.xxx;Slutty Office MILF@@">>\
+		<<set $player.hasTea to false>>\
+		<<AddNote $diana "I used the $serum[2].name on $diana.name today, finally pushing her into wanting to have sex with me in her office, not that it took much convincing...">>\
+		<<btnLink "Go back" "Work" "passTime()">>
+	<<case 5>>\
+		@@Story to be continued in Chapter 3!@@
+
+		<<btnLink "Back to lobby" "Work">>
+<</switch>>\
+
+
+:: Diana-ISS-Office-Creampie {"position":"1225,15725","size":"100,100"}
+<<loc_RecordsOffice>>\
+    <<trackAction "creampie.give" $diana>>\
+
+    <<if $c2 is "anal">>\
+        <<pic $diana "creampie-anal">>\
+    <<else>>\
+        <<pic $diana "creampie">>\
+    <</if>>\
+    <<act $diana "doggy,creampie,xray">>\
+
+    <<if $c is $sex.wantReturn>>\
+        <<if $c2 is "anal">>\
+            <<nm $diana "O-OHHH FUUUCK! Yes! Fill my ass with your hot cum! OH GOD!" "It's so much! Shit! SO GOOD!">>\
+        <<else>>\
+            <<nm $diana "O-OHHH FUUUCK! Yes! Fill me up! OH GOD!" "It's so much! Shit! SO GOOD!">>\
+        <</if>>\
+        <<set $sex.lust += 2, $sex.love += 3, $sex.mind -= 2, $sex.dom += 3>>\
+    <<else>>\
+        <<if $c2 is "anal">>\
+            <<nm $diana "W-wait, no! That's n-noOOHHH FUCK!" "Fucker! <<He>>'s filling my ass with <<his>>... S-shit, can't stop now!">>\
+        <<else>>\
+            <<nm $diana "W-wait, no! That's n-noOOHHH FUCK!" "Fucker! <<He>> really came inside! S-shit, can't stop now!">>\
+        <</if>>\
+        <<set $sex.lust += 1, $sex.love -= 3, $sex.mind -= 1, $sex.dom += 2>>\
+    <</if>>\
+
+    <<if $c2 is "pussy">>\
+        <<preg $diana>>
+
+    <</if>>\
+    ''Your thick cum fills $diana.name, enough to start spilling out as she starts to experience her own intense, spraying orgasm. She rails against your still-pulsing cock as she clings to the edge of her desk, now barely hanging on to her sanity.''
+
+    <<pic $diana "orgasm">>\
+    <<act $diana "orgasm">>\
+
+    <<nm $player "Holy... shit... haaa...">>\
+
+    <<nm $diana "Heh... y-yeah... incredible...">>\
+
+    <<if $c2 is "anal">>\
+        ''$diana.name slides off your cock with a loud popping sound as your cum pours out of her tight hole and starts running down her leg. She gives you a mischievous smile before disappearing into a small closet in the back of her office to pull out a rag and a change of clothes.''
+    <<else>>\
+        ''$diana.name slides off your cock as a mix of both of your juices starts running down her leg. She gives you a mischievous smile before disappearing into a small closet in the back of her office to pull out a rag and a change of clothes.''
+    <</if>>\
+
+    <<if visited() > 1>>\
+        <<nm $player "Hm, maybe you should start leaving some clothes in there for me, huh?">>\
+
+        <<nm $diana "Mmm, putting me in charge of what you wear? Risky move, dear.">>\
+    <<else>>\
+        <<nm $player "Ha, so, you plan for these sorts of things, huh?">>\
+
+        <<nm $diana "Oh you know, sometimes this place just gets so boring and I need to find my own... entertainment.">>\
+    <</if>>\
+
+    ''She tosses you a spare rag to clean up with. Once you're both dressed, she gives you a parting kiss on the neck before nudging you towards the door.''
+
+    <<horny 0>>
+
+    <<SexResults $diana>>\
+
+    <<btnLink "Go back to work" "Work" "passTime()">>
+
+
+:: Diana-ISS-Office-CumFromOral {"position":"725,15850","size":"100,100"}
+<<loc_RecordsOffice>>\
+    
+    <<pic $player "eat-pussy">>\
+    <<act $player "eatpussy">>\
+
+    ''You continue licking $diana.name's wet slit, pressing deeper and deeper, penetrating her hole with your tongue and nibbling on her clit until you feel her legs tremble and quiver beneath you.''
+
+    <<if $c is $sex.wantReturn>>\
+        <<nm $diana "F-fuck! $player.name... I-I'm gonna..." "T-this is... This is amazing!">>\
+        <<set $sex.lust += 3, $sex.love += 3, $sex.mind -= 3>>\
+    <<else>>\
+        <<nm $diana "F-fuck! $player.name... Y-you're going to m-make me..." "S-shit! I didn't think <<he>> was actually going to take this all the way!">>\
+        <<set $sex.lust += 3, $sex.love += 3, $sex.mind -= 3>>\
+    <</if>>\
+
+    <<pic $diana "orgasm">>\
+    <<act $diana "orgasm">>\
+
+    <<nm $player "H-HMPH!" "It's so much!">>\
+
+    ''$diana.name's pussy explodes in a torrential orgasm! Thick squirt floods your mouth as you struggle not to cough and choke while she clamps her fingers around your head to hold you in place.''
+
+    <<nm $diana "So good! A-ahhHHH!!!">>\
+
+    ''You're held against $diana.name's pulsing mound for as long as it takes her to finally start to relax. After a few moments, she finally stands up, allowing you to catch your breath.''
+
+    <<nm $player "Haaa... haaa... that was, intense...">>\
+
+    <<nm $diana "Mmm, yes... Not bad, $player.name. We'll need to do that again. Now then, if we're all finished here I have some things I need to tend to, so...">>\
+
+    ''$diana.name swings open her office door before you've had the chance to dress yourself. You scramble to gather your clothes and jump behind her desk as you quickly throw them on.''
+
+    <<nm $player "Jeez! Seriously $diana.name!?">>\
+
+    <<nm $diana "Ha! Oh my, you should see your face! Now, run along!">>\
+
+    ''She blows you a kiss as you leave into the hallway, her door closing behind you.''
+
+    <<SexResults $diana>>\
+
+    <<btnLink "Go back to work" "Work" "passTime()">>
+
+
+:: Diana-ISS-Office-CumInMouth {"position":"350,15850","size":"100,100"}
+<<loc_RecordsOffice>>\
+    <<trackAction "cumEat.give" $diana>>\
+
+    ''You pull out of $diana.name and turn her around.''
+
+    <<pic $diana "cum-in-mouth">>\
+    <<act $diana "blowjob,creampie">>\
+
+    <<if $c is $sex.wantReturn>>\
+        <<nm $diana "OOOHHH! Mmmm... ahhhh!" "It's so much! Shit! SO GOOD!">>\
+        <<set $sex.lust += 2, $sex.love += 3, $sex.mind -= 2, $sex.dom += 3>>\
+    <<else>>\
+        <<nm $diana "W-wait, no! That's n-noOOHHH UGHPH!" "Ack! Ugh, I was NOT in the mood for this today!">>\
+        <<set $sex.lust += 1, $sex.love -= 3, $sex.mind -= 1, $sex.dom += 2>>\
+    <</if>>\
+
+    ''Your thick cum pours into $diana.name's mouth, coating her throat. You hold her head in place until she starts to gag before finally releasing her.''
+
+    <<nm $player "Holy... shit... haaa...">>\
+
+    <<nm $diana "Heh... y-yeah... incredible...">>\
+
+    ''$diana.name licks her lips as you finish up. She gives you a mischievous smile before disappearing into a small closet in the back of her office to pull out a rag and a change of clothes.''
+
+    <<if visited() > 1>>\
+        <<nm $player "Hm, maybe you should start leaving some clothes in there for me, huh?">>\
+
+        <<nm $diana "Mmm, putting me in charge of what you wear? Risky move, dear.">>\
+    <<else>>\
+        <<nm $player "Ha, so, you plan for these sorts of things, huh?">>\
+
+        <<nm $diana "Oh you know, sometimes this place just gets so boring and I need to find my own... entertainment.">>\
+    <</if>>\
+
+    ''She tosses you a spare rag to clean up with. Once you're both dressed, she gives you a parting kiss on the neck before nudging you towards the door.''
+
+    <<horny 0>>
+
+    <<SexResults $diana>>\
+
+    <<btnLink "Go back to work" "Work" "passTime()">>
+
+
+:: Diana-ISS-Office-CumOnFace {"position":"100,15850","size":"100,100"}
+<<loc_RecordsOffice>>\
+    <<trackAction "cumBody.give" $diana>>\
+
+    ''You pull out of $diana.name and turn her around.''
+
+    <<pic $diana "cum-on-face">>\
+    <<act $diana "blowjob,facial">>\
+
+    <<if $c is $sex.wantReturn>>\
+        <<nm $diana "OOOHHH! Mmmm... Cover me in your hot cum $player.name!" "It's so much! Shit! SO GOOD!">>\
+        <<set $sex.lust += 2, $sex.love += 3, $sex.mind -= 2, $sex.dom += 3>>\
+    <<else>>\
+        <<nm $diana "W-wait, no! That's n-noOOHHH FUCK!" "Ack! Ugh, this is going to take forever to wash out!">>\
+        <<set $sex.lust += 1, $sex.love -= 3, $sex.mind -= 1, $sex.dom += 2>>\
+    <</if>>\
+
+    ''Your thick cum covers $diana.name, covering her cheek, lips and neck.''
+
+    <<nm $player "Holy... shit... haaa...">>\
+
+    <<nm $diana "Heh... y-yeah... incredible...">>\
+
+    ''$diana.name licks her lips as you finish up. She gives you a mischievous smile before disappearing into a small closet in the back of her office to pull out a rag and a change of clothes.''
+
+    <<if visited() > 1>>\
+        <<nm $player "Hm, maybe you should start leaving some clothes in there for me, huh?">>\
+
+        <<nm $diana "Mmm, putting me in charge of what you wear? Risky move, dear.">>\
+    <<else>>\
+        <<nm $player "Ha, so, you plan for these sorts of things, huh?">>\
+
+        <<nm $diana "Oh you know, sometimes this place just gets so boring and I need to find my own... entertainment.">>\
+    <</if>>\
+
+    ''She tosses you a spare rag to clean up with. Once you're both dressed, she gives you a parting kiss on the neck before nudging you towards the door.''
+
+    <<horny 0>>
+
+    <<SexResults $diana>>\
+
+    <<btnLink "Go back to work" "Work" "passTime()">>
+
+
+:: Diana-ISS-Office-CumOnFloor {"position":"600,15850","size":"100,100"}
+<<loc_RecordsOffice>>\
+    <<set $sex.lust += 1, $sex.dom -= 5>>\
+
+    ''You pull out of $diana.name and turn your <<pSize>> downwards, cumming onto the floor behind her.''
+
+    <<nm $player "A-ah!">>\
+
+    <<nm $diana "What are... Wait, did you just fucking cum on my floor!?">>\
+
+    <<pic $diana "topless">>\
+    <<act $diana "angry,2,naked">>\
+
+    <<nm $player "U-um, I didn't think you'd let me...">>\
+
+    <<nm $diana "Let you what? I had a feeling this was going to be dissappointing, but I had no idea it would be this bad. My word, $player.name...">>\
+
+    ''Before you can even respond, $diana.name grabs you and throws you over her desk. You're still too wrapped up in your clothes to really be able to fight back.''
+
+    <<nm $player "W-wait, $diana.name! W-what are you...">>\
+
+    <<nm $diana "You didn't think you were the only one who gets to get off today, did you?">>\
+
+    <<horny 0>>
+
+    <<if hasPussy()>>\
+        <<btnLink "Let $diana.name have her way with you" "Diana-ISS-Office-FuckedInPussy" "$sex.path = 'punish'">>
+    <<else>>\
+        <<btnLink "Let $diana.name have her way with you" "Diana-ISS-Office-FuckedInAss" "$sex.path = 'punish'">>        
+    <</if>>\
+
+
+:: Diana-ISS-Office-Escape {"position":"975,15850","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+    ''You start to gather your clothes, suddenly having second thoughts about this whole arrangement.''
+
+    <<pic $diana>>\
+    <<art $diana "angry,2">>\
+
+    <<nm $diana "Oh? And just what the fuck do you think you're doing?">>\
+
+    <<nm $player "I-I um... This was fun, but, I really need to get back to the lab">>\
+    <<set _chance to 30 + $player.dom>>\
+
+    <<if chance(_chance)>>\
+        <<set $sex.love -= 5, $sex.lust += 1, $sex.dom += 1>>\
+        ''$diana.name folds her arms, unconvinced, but ultimately decides to wave you off.''
+
+        <<nm $diana "I must say, $player.name, I was expecting more from you. Well... That's too bad, I suppose.">>\
+
+        ''Before you can even finish putting your clothes back on, $diana.name has the door pulled wide open, standing next to it as she waits for you to leave.''
+
+        <<nm $player "H-hold on a se-">>\
+
+        <<nm $diana "I trust that next time we find ourselves in this position, it won't be such a dissappointing waste of my time... Now, if you'd please hurry up and leave, $player.name.">>\
+
+        ''Head down, you leave $diana.name's office and return to the lobby.''
+
+        <<SexResults $diana>>\
+
+        <<btnLink "Go back to work" "Work" "passTime()">>
+    <<else>>\
+        <<set $sex.love -= 2, $sex.lust += 2, $sex.dom -= 5>>\
+        ''$diana.name laughs behind a cold smile, not at all interested in what you have to say.''
+
+        <<nm $diana "Oh sweetie, it's so cute how you think you're going to just leave! I'm far to, mmm, pent up to let that happen...">>\
+
+        ''Before you can even respond, $diana.name grabs you and throws you over her desk. You're still too wrapped up in your clothes to really be able to fight back.''
+
+        <<nm $player "W-wait, $diana.name! W-what are you...">>\
+
+        <<if hasPussy()>>\
+            <<btnLink "Let $diana.name have her way with you" "Diana-ISS-Office-FuckedInPussy" "$sex.path = 'punish'">>
+        <<else>>\
+            <<btnLink "Let $diana.name have her way with you" "Diana-ISS-Office-FuckedInAss" "$sex.path = 'punish'">>        
+        <</if>>\
+    <</if>>\
+
+
+:: Diana-ISS-Office-FuckDiana {"position":"725,15725","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+    <<pic $diana "spread">>\
+
+    <<if $c is $sex.wantReturn>>\
+        <<nm $diana "Mmmm, come on $player.name! Fuck me right here!" "Oh god, I can't take it anymore! I need a cock!">>\
+        <<set $sex.lust += 1, $sex.love += 3, $sex.mind -= 1, $sex.dom += 2>>\
+    <<else>>\
+        <<nm $diana "Oh? Mmmm, alright baby, come and get it!" "Oh well, not like I'd refuse a good fuck!">>\
+        <<set $sex.lust += 1, $sex.dom += 1>>\
+    <</if>>\
+
+    <<if canFuck()>>\
+        ''$diana.name spreads herself open for your <<StraponOrCock size>>.''
+
+        <<pic $diana "fucked-by-player">>\
+
+        <<if hasStrapon()>>\
+            <<nm $diana "O-OH! Mmmm... f-fuck...!" "Ooohhh, <<he>>'s working that thing into me so good!">>\
+        <<else>>\
+            <<CommentPenis $diana
+                "HNGH! S-so big!|This thing's... gonna tear me apart!"
+                "Mmmm, you're filling me up! K-keep going!|This cock's great, mmm..."
+                "Mmmm, you're filling me up! K-keep going!|This cock's great, mmm..."
+                "Ah, there you go! Keep it up!|Mmm, <<he>> doesn't feel half bad..."
+                "Ah, there it is, keep going...|Hm, can't say it's the best dick I've had..."
+            >>\
+        <</if>>\
+    <<else>>\
+        ''$diana.name pulls a large dildo from her desk, shoving it into your hand and spreading herself open.''
+
+        <<pic $action "female-dildo-female">>\
+
+        <<nm $diana "O-OH! Mmmm... f-fuck...!" "Ooohhh, <<he>>'s working that thing into me so good!">>\
+    <</if>>\
+    <<trackAction "pussyFuck.give" $diana>>\
+
+    ''You continue ravaging $diana.name's dripping pussy, her moans getting louder with every passing thrust.''
+
+    <<nm $player "Mmm, fuck... $diana.name...">>\
+
+    <<nm $diana "$player.name... s-so good...">>\
+
+    <<if hasPenis()>>\
+        <<SetSexWants $diana "cumEat.get" "cumBody.get" "creampie.get">>\
+    <<else>>\
+        <<if hasStrapon()>>
+            <<set $sex.wantReturn to "strapon">>\
+        <<else>>\
+            <<set $sex.wantReturn to "lesbian">>\
+        <</if>>\
+    <</if>>\
+    <<switch $sex.wantReturn>>\
+        <<case "cumEat.get">>\
+            @@.xxx;$diana.name turns back towards you, licking her lips as her mouth hangs open...@@
+        <<case "cumBody.get">>\
+            @@.xxx;$diana.name turns back towards you, running a wet hand down her bare breasts...@@
+        <<case "creampie.get">>\
+            @@.xxx;$diana.name pushes herself harder onto your <<pSize>>, keeping you deep inside her...@@
+        <<case "lesbian" "strapon">>\
+            @@.xxx;$diana.name moans wildly as she approaches orgasm...@@
+    <</switch>>\
+
+    <<if hasPenis() and canFuck()>>\
+        <<btnDom "Cum inside her" "Diana-ISS-Office-Creampie" "$c='creampie.get',$c2='pussy'">>\
+        <<btnChoice "Pull out and cum on $diana.name's face" "Diana-ISS-Office-CumOnFace" "$c='cumBody.get'">>\
+        <<btnChoice "Pull out and cum in $diana.name's mouth" "Diana-ISS-Office-CumInMouth" "$c='cumEat.get'">>\
+        <<btnSub "Pull out and cum on the floor in front of you" "Diana-ISS-Office-CumOnFloor" "$c='sub'">>\
+    <<else>>\
+        <<btnChoice "Keep going until you both cum" "Diana-ISS-Office-LesbianFinish" "$c=$sex.wantReturn">>\
+    <</if>>\
+
+
+:: Diana-ISS-Office-FuckDianaAss {"position":"850,15725","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+    <<pic $diana "bendover">>\
+
+    ''You throw $diana.name over her desk, bending her over and exposing her tight asshole. She shudders as you <<if canFuck()>>press your <<StraponOrCock size>><<else>>reach for a large dildo she just "happened" to have laying around and press it<</if>> against her hole.''
+
+    <<if $c is $sex.wantReturn>>\
+        <<nm $diana "Mmmm, come on $player.name! Fuck me right here! Shove that thing right into my tight asshole!" "Oh god, I can't take it anymore! I need a cock!">>\
+        <<set $sex.lust += 1, $sex.love += 3, $sex.mind -= 1, $sex.dom += 2>>\
+    <<else>>\
+        <<nm $diana "H-huh? That's where you want to put it? S-sure, no problem! Hurry up!" "Not ideal, but...">>\
+        <<set $sex.lust += 1, $sex.dom += 1>>\
+    <</if>>\
+
+    <<if canFuck()>>\
+        <<pic $diana "ass-fucked-by-player">>\
+
+        <<if hasStrapon()>>\
+            <<nm $diana "O-OH! Mmmm... f-fuck...!" "Ooohhh, <<he>>'s working that thing into me so good!">>\
+        <<else>>\
+            <<CommentPenis $diana
+                "HNGH! S-so big!|This thing's... gonna tear me apart!"
+                "Mmmm, you're filling me up! K-keep going!|This cock's great, mmm..."
+                "Mmmm, you're filling me up! K-keep going!|This cock's great, mmm..."
+                "Ah, there you go! Keep it up!|Mmm, <<he>> doesn't feel half bad..."
+                "Ah, there it is, keep going...|Hm, can't say it's the best dick I've had..."
+            >>\
+        <</if>>\
+    <<else>>\
+        <<pic $action "female-dildo-female-ass">>\
+
+        <<nm $diana "O-OH! Mmmm... f-fuck...!" "Ooohhh, <<he>>'s working that thing into me so good!">>\
+    <</if>>\
+    <<trackAction "analFuck.give" $diana>>\
+
+    ''You continue ravaging $diana.name's tight asshole, her moans getting louder with every passing thrust.''
+
+    <<nm $player "Mmm, fuck... $diana.name...">>\
+
+    <<prefComment $diana "analFuck.get"
+        "$player.name... s-so good...|Oh my god this feels incredible!"
+        "Mmmm, yessss!|I love this... my asshole feels amazing!"
+        "Oohhh, $player.name, this is great...|I could really get used to this!"
+        "$player.name, n-not so rough, a-ahh!|This is a little too m-much..."
+        "Hngh, n-ngh! $player.name! S-slow down!|This is... too much!"
+    >>\
+
+    <<if hasPenis()>>\
+        <<SetSexWants $diana "cumEat.get" "cumBody.get" "creampie.get">>\
+    <<else>>\
+        <<if hasStrapon()>>
+            <<set $sex.wantReturn to "strapon">>\
+        <<else>>\
+            <<set $sex.wantReturn to "lesbian">>\
+        <</if>>\
+    <</if>>\
+    <<switch $sex.wantReturn>>\
+        <<case "cumEat.get">>\
+            @@.xxx;$diana.name turns back towards you, licking her lips as her mouth hangs open...@@
+        <<case "cumBody.get">>\
+            @@.xxx;$diana.name turns back towards you, running a wet hand down her bare breasts...@@
+        <<case "creampie.get">>\
+            @@.xxx;$diana.name pushes herself harder onto your <<pSize>>, keeping you deep inside her...@@
+        <<case "lesbian" "strapon">>\
+            @@.xxx;$diana.name moans wildly as she approaches orgasm...@@
+    <</switch>>\
+
+    <<if hasPenis() and canFuck()>>\
+        <<btnDom "Cum inside her ass" "Diana-ISS-Office-Creampie" "$c='creampie.get',$c2='anal'">>\
+        <<btnChoice "Pull out and cum on $diana.name's face" "Diana-ISS-Office-CumOnFace" "$c='cumBody.get'">>\
+        <<btnChoice "Pull out and cum in $diana.name's mouth" "Diana-ISS-Office-CumInMouth" "$c='cumEat.get'">>\
+        <<btnSub "Pull out and cum on the floor in front of you" "Diana-ISS-Office-CumOnFloor" "$c='sub'">>\
+    <<else>>\
+        <<btnChoice "Keep going until you both cum" "Diana-ISS-Office-LesbianFinish" "$c=$sex.wantReturn">>\
+    <</if>>\
+
+
+:: Diana-ISS-Office-FuckedInAss {"position":"1100,15725","size":"100,100"}
+<<loc_RecordsOffice>>\
+    <<trackAction "analFuck.get" $diana>>\
+
+    <<if $sex.path is "punish">>\
+        ''$diana.name pushes you into her desk, now leaning over you with her soft breasts pressing into your back. Being tangled in your clothes makes fighting back impossible, and you eventually find yourself giving up on trying to resist.''
+
+        <<nm $diana "Mmm, now that's a good <<boy>>... Now, how best to punish you...">>\
+
+        ''She reaches over her desk, fishing around in one of the larger drawers before finding something.''
+
+        <<nm $diana "Ah, here we are!">>\
+    <<else>>\
+        ''You lean over $diana.name's desk, carressing your ass as you spread your cheeks apart to give $diana.name a clear view of your <<aSize>>. She smiles, reaches over you to pull something out from a desk drawer.''
+
+        <<nm $diana "Mmm, aren't you the submissive little slut... Well alright then, I do loving using this thing after all...">>\
+    <</if>>\
+
+    ''$diana.name brandishes a large black cock along with a strapon harness.''
+
+    <<nm $diana "Here, get this nice and wet for me.">>\
+
+    ''She shoves the fake cock into your mouth and instructs you to hold it there until she's done fastening the harness around her waist. You do as you're told, taking it deep into your throat as you coat it with layers of spit and slobber. After a moment, she takes it out of your hand.''
+
+    <<nm $diana "Now, let's see how good of a job you did...">>\
+
+    <<pic $player "ass-fucked-by-female">>\
+
+    <<anal "$diana.name's strapon">>
+
+    <<nm $player "H-HOO! M-mmm, ahhhh...">>\
+
+    <<if $sex.path is "punish">>\
+        <<nm $diana "Mmm, you love it, don't you? My big hard cock breaking in your tight little asshole!">>\
+        <<set $sex.lust += 3, $sex.mind -= 1, $sex.dom -= 5>>\
+    <<elseif $c is $sex.wantReturn>>\
+        <<nm $diana "Oh god, $player.name! Your little asshole feels just amazing! God I could cum just from watching you take me inside you!">>\
+        <<set $sex.lust += 1, $sex.love += 3, $sex.dom -= 2>>\
+    <<else>>\
+        <<nm $diana "Mmm, you're getting me all hot and bothered, seeing you taking my cock down there...">>\
+        <<set $sex.lust += 1, $sex.dom -= 2>>\
+    <</if>>\
+
+    ''$diana.name starts picking up the pace, plunging deeper and deeper into you.''
+
+    <<if isSissy()>>\
+        <<nm $player "@@.sf;Fffuck! P-please use m-my asspussy h-however you want! O-OHHH!@@">>\
+    <<else>>\
+        <<prefComment $player "analFuck.get"
+            "Ooohhh, this feels amazing!"
+            "God this f-feels incredible!"
+            "Haaa... haa... $diana.name... mmmm..."
+            "T-too hard... haa... I-I don't know if..."
+            "P-please, $diana.name... O-OH! S-slow down!"
+        >>\
+    <</if>>\
+
+    <<nm $diana "$player.name... I-I think I'm going to... O-OOOHHHH!!!">>\
+
+    <<pic $diana "orgasm">>\
+
+    ''You start to feel faint as $diana.name thrusts herself deep into your asshole, her legs quivering against yours as you explode into your own intense orgasm. The two of you buck and tremble and press into each other for some time, riding your joint climax for all it's worth. After a moment, $diana.name collapses on top of you, and for the next five minutes or so, the two of you just rest.''
+
+    <<nm $diana "$player.name... that was... mmmm...">>\
+
+    <<btnLink "Continue" "Diana-ISS-Office-GetFuckedFinish">>\
+
+
+:: Diana-ISS-Office-FuckedInPussy {"position":"975,15725","size":"100,100"}
+<<loc_RecordsOffice>>\
+    <<trackAction "pussyFuck.get" $diana>>\
+
+    <<if $sex.path is "punish">>\
+        ''$diana.name pushes you into her desk, now leaning over you with her soft breasts pressing into your back. Being tangled in your clothes makes fighting back impossible, and you eventually find yourself giving up on trying to resist.''
+
+        <<nm $diana "Mmm, now that's a good <<boy>>... Now, how best to punish you...">>\
+
+        ''She reaches over her desk, fishing around in one of the larger drawers before finding something.''
+
+        <<nm $diana "Ah, here we are!">>\
+    <<else>>\
+        ''You lean over $diana.name's desk, carressing your ass as you spread your cheeks apart to give $diana.name a clear view of your <<vSize>>. She smiles, reaches over you to pull something out from a desk drawer.''
+
+        <<nm $diana "Mmm, aren't you the submissive little slut... Well alright then, I do loving using this thing after all...">>\
+    <</if>>\
+
+    ''$diana.name brandishes a large black cock along with a strapon harness.''
+
+    <<nm $diana "Here, get this nice and wet for me.">>\
+
+    ''She shoves the fake cock into your mouth and instructs you to hold it there until she's done fastening the harness around her waist. You do as you're told, taking it deep into your throat as you coat it with layers of spit and slobber. After a moment, she takes it out of your hand.''
+
+    <<nm $diana "Now, let's see how good of a job you did...">>\
+
+    <<pic $player "fucked-by-female">>\
+
+    <<vaginal "$diana.name's strapon">>
+
+    <<nm $player "H-HOO! M-mmm, ahhhh...">>\
+
+    <<if $sex.path is "punish">>\
+        <<nm $diana "Mmm, you love it, don't you? My big hard cock breaking in your tight little cunt!">>\
+        <<set $sex.lust += 3, $sex.mind -= 1, $sex.dom -= 5>>\
+    <<elseif $c is $sex.wantReturn>>\
+        <<nm $diana "Oh god, $player.name! Your little pussy feels just amazing! God I could cum just from watching you take me inside you!">>\
+        <<set $sex.lust += 1, $sex.love += 3, $sex.dom -= 2>>\
+    <<else>>\
+        <<nm $diana "Mmm, you're getting me all hot and bothered, seeing you taking my cock down there...">>\
+        <<set $sex.lust += 1, $sex.dom -= 2>>\
+    <</if>>\
+
+    ''$diana.name starts picking up the pace, plunging deeper and deeper into you.''
+
+    <<if isBimbo()>>\
+        <<nm $player "@@.bf;Fffuck! Fuck me harder! This is AMAZING! Oh GOD make me your little slut $diana.name!@@">>\
+    <<else>>\
+        <<prefComment $player "pussyFuck.get"
+            "Mmm, this is amazing!"
+            "God this f-feels incredible!"
+            "Haaa... haa... $diana.name... mmmm..."
+            "T-too hard... haa... I-I don't know if..."
+            "P-please, $diana.name... O-OH! S-slow down!"
+        >>\
+    <</if>>\
+
+    <<nm $diana "$player.name... I-I think I'm going to... O-OOOHHHH!!!">>\
+
+    <<pic $diana "orgasm">>\
+
+    ''You start to feel faint as $diana.name thrusts herself deep into your pussy, her legs quivering against yours as you explode into your own intense orgasm. The two of you buck and tremble and press into each other for some time, riding your joint climax for all it's worth. After a moment, $diana.name collapses on top of you, and for the next five minutes or so, the two of you just rest.''
+
+    <<nm $diana "$player.name... that was... mmmm...">>\
+
+    <<btnLink "Continue" "Diana-ISS-Office-GetFuckedFinish">>\
+
+
+:: Diana-ISS-Office-GetFuckedFinish {"position":"850,15850","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+    <<pic $diana>>\
+    <<art $diana "aroused,2,naked">>\
+
+    <<if $sex.path is "punish" and hasPenis() and not isChastity()>>\
+        <<nm $diana "Mmm, well done $player.name... Now, just one more thing...">>\
+
+        <<nm $player "W-what are you...!">>\
+
+        @@CLING!@@
+
+        ''$diana.name pushes down on you, holding you in place while she grabs your cock and stuffs it into a small chastity device!''
+
+        <<AddChastity $diana>>\
+
+        <<nm $diana "There we are! Now, next time you think about walking out on me, maybe that will help serve as a reminder, hm?">>\
+
+        ''You pull at the device, which only results in discomfort, as $diana.name dangles a key in front of you.''
+
+        <<nm $player "T-this is going a little too far, don't you think?">>\
+
+        <<nm $diana "Too far? No, too far would be losing this little key, and you know I have such a hard time keep track of things...">>\
+
+        <<nm $player "I... Okay...">>\
+    <<else>>\
+        <<nm $diana "Mmm, well done $player.name... I do love taking top on occasion.">>\
+
+        ''You gasp as $diana.name withdraws her strapon cock from your <<if hasPussy()>><<pSize>><<else>><<aSize>><</if>>.''
+
+        <<nm $player "O-on occasion, huh?">>\
+
+        <<nm $diana "Hm, well, maybe a little more than that... In any case, I think it's time we wrapped up here for the day.">>\
+    <</if>>\
+
+    ''She tosses you a spare rag to clean up with. Once you're both dressed, she gives you a parting kiss on the neck before nudging you towards the door.''
+
+    <<SexResults $diana>>\
+
+    <<btnLink "Go back to work" "Work" "passTime()">>
+
+
+:: Diana-ISS-Office-Kiss {"position":"225,15725","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+    <<if $player.isSub or $sex.path is "beg">>\
+        <<if $sex.path is "beg">>\
+            <<if $player.isSub>>\
+                ''Understanding the situation you're in, you slowly drop to your knees in front of the older woman.''
+
+                <<nm $player "What... um, can I do to make you feel good?">>\
+            <<else>>\
+                ''You smile, somewhat mischievously, as you kneel down in front of the older woman.''
+
+                <<nm $player "Maybe I should just put myself at your mercy today, hm?">>\
+            <</if>>\
+
+            <<pic $diana>>\
+            <<art $diana "aroused">>\
+            
+            <<nm $diana "Mmm, aren't you well trained... Hm, since you're offering...">>\
+
+            ''$diana.name starts removing her clothing. As her panties come off, you take in her strong scent, losing yourself a little in the moment.''
+
+            <<pic $diana "pussy">>\
+            <<art $diana "aroused,0,naked">>\
+
+            <<nm $diana "Go on, lose the clothes. Oh, but make sure you stay on the floor, and don't take your eyes off my pussy for even a second!">>\
+
+            ''You do as your told, pulling off your outfit while keeping you eyes locked on her glistening slit.''
+        <<else>>\
+            <<pic $diana "kiss-player">>\
+            <<act $diana "kiss,player">>\
+
+            ''$diana.name moans in pleasure as she receives your kiss.''
+
+            <<nm $diana "Mmmm, mmmmmhmhm! O-okay, hold on.">>\
+
+            ''She pushes you back and starts removing her clothes.''
+
+            <<pic $diana "topless">>\
+            <<art $diana "aroused,2,naked">>\
+
+            <<nm $diana "Well? You next, come on, lose the clothes.">>\
+
+            <<nm $player "O-oh, right.">>\
+
+            ''You do as you're told.''
+        <</if>>\
+
+        <<if noticePenis($diana)>>\
+            <<NoticePenis $diana>>\
+        <<else>>\
+            <<nm $diana "Now, let's see...">>\
+        <</if>>\
+
+        <<if hasPenis()>>\
+            ''She looks at your <<pSize>> for a moment longer.''
+
+            <<if isChastity($diana.name)>>\
+                <<nm $diana "Mmm, good <<boy>>, you left it on.">>\
+            <<elseif isChastity()>>\
+                <<nm $diana "My, my... You're all locked up! Well, that's fine. I wasn't planning on letting you inside me anyway.">>\
+            <<elseif isSissy()>>\
+                <<nm $diana "Aw, it's so soft! Well, that's alright. I wasn't planning on letting you inside me anyway.">>\
+            <<else>>\
+                <<CommentPenis $diana
+                    "It's... massive!"
+                    "It's quite large, hm."
+                    "Not bad... not bad."
+                    "Not the most impressive cock, is it?"
+                    "Oh dear, you're quite tiny aren't you? Hm..."
+                >>\
+            <</if>>\
+
+            ''$diana.name finishes commenting on your penis.''
+        <<elseif frontPlugged()>>\
+            <<nm $diana "Oh, is this a <<accf>>? $player.name, so naughty!">>\
+
+            ''$diana.name examines your <<accf>> for a moment.''
+        <<elseif hasStrapon()>>\
+            <<nm $diana "You wearing this thing under your clothes, $player.name? Hm, interesting...">>\
+
+            ''$diana.name examines your <<accf>> for a moment.''
+        <<else>>\
+            ''$diana.name runs a finger along your slit.''
+            
+            <<if isBimbo()>>\
+                <<nm $diana "Oh my, $player.name! You're soaking wet! Ha, mmmm...">>\
+            <<else>>\
+                <<CommentPussy $diana
+                    "Oh my, $player.name! Your pussy looks, ha, quite broken in, doesn't it?"
+                    "Mmm, your pussy looks like it sees a lot of action, $player.name."
+                    "Ohhh, your pussy looks quite nice"
+                    "Oh $player.name! Your pussy's adorable! You're not a virgin, are you?"
+                    "Oh $player.name! Your pussy's adorable! You're not a virgin, are you?"
+                >>\
+            <</if>>\
+
+            ''$diana.name finishes commenting on your pussy.''
+        <</if>>\
+        <<if hasPenis()>>\
+            <<if pTier() < 3 or isChastity()>>\
+                <<set $sex.dom -= 5>>\
+            <</if>>\
+        <<else>>\
+            <<if vTier() > 3 or isBimbo()>>\
+                <<set $sex.dom -= 5>>\
+            <</if>>\
+        <</if>>\
+        
+        <<nm $diana "Mmm, good <<boy>>. Now, where do you suppose we should go from here, hm?">>\
+
+        <<if hasPussy()>>\
+            <<SetSexWants $diana "eatPussy.get" "pussyFuck.give">>\
+        <<else>>\
+            <<SetSexWants $diana "eatPussy.get" "analFuck.give">>\
+        <</if>>\
+        <<switch $sex.wantReturn>>\
+            <<case "pussyFuck.give" "analFuck.give">>\
+                @@.xxx;$diana.name runs a finger along your thigh...@@
+            <<case "eatPussy.get">>\
+                @@.xxx;$diana.name leans back slightly, rubbing her pussy...@@
+        <</switch>>\
+
+        <<if hasPussy()>>\
+            <<btnSub "Bend over and offer $diana.name your pussy" "Diana-ISS-Office-FuckedInPussy" "$c='pussyFuck.give'">>\
+        <<else>>\
+            <<btnSissy "Bend over and offer $diana.name your ass" "Diana-ISS-Office-FuckedInAss" "$c='analFuck.give'">>\
+        <</if>>\
+        <<btnChoice "Get on your knees and eat $diana.name's pussy" "Diana-ISS-Office-OralGive" "$c='eatPussy.get'">>\
+        <<btnChoice "Gather your clothes and back out of the office" "Diana-ISS-Office-Escape" "$c='escape'">>\
+    <<else>>\
+        <<pic $diana "kiss-player">>\
+        <<act $diana "kiss,player">>\
+        
+        <<if $sex.path is "dom">>\
+            ''$diana.name gasps in surprise as you pin her against the door, forcing your tongue into her mouth which she happily receives.''
+
+            <<nm $diana "MPH! Mmmm! Mmmmm...">>\
+
+            ''She wraps her arms around you, digging her fingers into your back as you continue pressing your lips into hers. The two of you go at it for some time, both ripping clothing off each other until nothing separates your bare flesh.''
+        <<else>>\
+            ''$diana.name moans in pleasure as she receives your kiss.''
+
+            <<nm $diana "Mmmmm, mhmmmmm...">>\
+
+            ''She wraps her arms around you, digging her fingers into your back as you continue pressing your lips into hers. The two of you start picking up the pace, pulling at each other's clothing until you're both completely naked in her office.''
+        <</if>>\
+
+        <<if hasStrapon()>>\
+            <<nm $diana "Oh $player.name, you've been wearing that this whole time? Mmmm...">>\
+
+            ''$diana.name eyes the <<accf>> that's since been freed from under your outfit.''
+
+            <<if $sex.path is "dom">>\
+                <<nm $player "Hehe, like it? I keep it on for situations like this...">>\
+            <<else>>\
+                <<nm $player "Hehe, yeah. I mean you never know when you might need a cock ready, haha!">>\
+            <</if>>\
+        <<else>>\
+            <<nm $diana "Ah! Mmmm, ooohhh $player.name...">>\
+        <</if>>\
+
+        <<if $sex.path is "dom">>\
+            ''You lean in and bite down on one of her pert nipples as she reaches down between your legs and grabs at your <<pSize>>.''
+        <<else>>\
+            ''You caress her breasts as she reaches down between your legs and grabs at your <<pSize>>.''
+        <</if>>\
+
+        <<if noticePenis($diana)>>\
+            <<NoticePenis $diana>>
+        <<else>>\
+            <<nm $diana "O-OHHH!">>\
+        <</if>>\
+
+        <<pic $diana "orgasm">>\
+        <<act $diana "orgasm">>\
+
+        <<if hasPenis()>>\
+            <<CommentPenis $diana
+                "Mmmm, $player.name... I still can't believe how huge your cock is!"
+                "Ohh, $player.name... I love your big cock... I want it!"
+                "Mmm, your cock is wonderful $player.name!"
+                "Oohhh, $player.name!"
+                "Oohhh, $player.name!"
+            >>\
+        <<elseif frontPlugged()>>\
+            <<nm $diana "Oh, is this a <<accf>>? $player.name, so naughty!">>\
+        <<elseif hasStrapon()>>\
+            <<nm $diana "Mmm, I bet this <<accf>> of your would feel great inside me, $player.name...">>\
+        <<else>>\
+            <<if isBimbo()>>\
+                <<nm $diana "Oh my, $player.name! You're soaking wet! Ha, mmmm...">>\
+            <<else>>\
+                <<CommentPussy $diana
+                    "Oh my, $player.name! You're soaking wet down here!"
+                    "Mmm, your pussy's so warm and wet $player.name..."
+                    "Ohhh, your pussy feels just amazing..."
+                    "Oh $player.name! Your pussy feels so tight!"
+                    "Oh $player.name! Your pussy feels so tight!"
+                >>\
+            <</if>>\
+        <</if>>\
+
+        <<if canFuck()>>\
+            <<SetSexWants $diana "suckCock.give" "eatPussy.get" "pussyFuck.get">>\
+        <<else>>\
+            <<SetSexWants $diana "eatPussy.give" "eatPussy.get" "pussyFuck.get">>\
+        <</if>>\
+        <<switch $sex.wantReturn>>\
+            <<case "suckCock.give" "eatPussy.give">>\
+                @@.xxx;$diana.name licks her lips, trying to control her drooling...@@
+            <<case "eatPussy.get">>\
+                @@.xxx;$diana.name leans back slightly, rubbing her pussy...@@
+            <<case "pussyFuck.get">>\
+                @@.xxx;$diana.name leans back slightly, fingering her pussy...@@
+        <</switch>>\
+
+        <<btnDom "Bend $diana.name over her desk and <<if canFuck()>>fuck<<else>>toy<</if>> her pussy" "Diana-ISS-Office-FuckDiana" "$c='pussyFuck.get'">>\
+        <<if canFuck()>>\
+            <<btnChoice "Push $diana.name down onto your <<StraponOrCock>>" "Diana-ISS-Office-OralGet" "$c='suckCock.give'">>\
+        <<elseif hasPussy()>>\
+            <<btnChoice "Push $diana.name down onto your pussy" "Diana-ISS-Office-OralGet" "$c='eatPussy.give'">>\
+        <</if>>\
+        <<btnChoice "Push $diana.name back and eat her pussy" "Diana-ISS-Office-OralGive" "$c='eatPussy.get'">>\
+    <</if>>\
+
+
+:: Diana-ISS-Office-LesbianFinish {"position":"475,15850","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+    ''You continue thrusting the fake cock deep into $diana.name's gushing pussy until she finally starts rolling in orgasm, the two of you grabbing, clawing, kissing each other as the climax overtakes you.''
+
+    <<pic $diana "orgasm">>\
+    <<act $diana "orgasm">>\
+
+    <<nm $diana "OOOHHH! Mmmm... ahhhh! $player.name! F-fuck!" "It's so good! <<He>>'s... SO GOOD!">>\
+    <<set $sex.lust += 2, $sex.love += 3, $sex.mind -= 2, $sex.dom += 3>>\
+
+    ''The two of you press and grind against each other for some time before finally calming down, collapsing next to each other.''
+
+    <<nm $player "Holy... shit... haaa...">>\
+
+    <<nm $diana "Heh... y-yeah... incredible...">>\
+
+    ''$diana.name licks her lips as you finish up. She gives you a mischievous smile before disappearing into a small closet in the back of her office to pull out a rag and a change of clothes.''
+
+    <<if visited() > 1>>\
+        <<nm $player "Hm, maybe you should start leaving some clothes in there for me, huh?">>\
+
+        <<nm $diana "Mmm, putting me in charge of what you wear? Risky move, dear.">>\
+    <<else>>\
+        <<nm $player "Ha, so, you plan for these sorts of things, huh?">>\
+
+        <<nm $diana "Oh you know, sometimes this place just gets so boring and I need to find my own... entertainment.">>\
+    <</if>>\
+
+    ''She tosses you a spare rag to clean up with. Once you're both dressed, she gives you a parting kiss on the neck before nudging you towards the door.''
+
+    <<horny 0>>
+
+    <<SexResults $diana>>\
+
+    <<btnLink "Go back to work" "Work" "passTime()">>
+
+
+:: Diana-ISS-Office-OralGet {"position":"475,15725","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+    <<if canFuck()>>\
+        <<pic $diana "suck-player">>\
+        <<act $diana "blowjob">>\
+    <<else>>\
+        <<pic $diana "eat-pussy">>\
+        <<act $diana "eatpussy">>\
+    <</if>>\
+
+    <<if $sex.path is "dom">>\
+        <<nm $diana "MPH!!">>\
+
+        <<nm $player "Mmmm, that's it!">>\
+    <<else>>\
+        <<nm $diana "Mmmm...">>\
+        
+        <<nm $player "$diana.name...">>\
+    <</if>>\
+
+    <<if hasPenis() or hasStrapon()>>\
+        <<if $sex.path is "dom">>\
+            ''You force $diana.name's head down onto your <<pSize>>, all the way to the hilt until you hear her start to gag, then hold her for a minute before letting her take a quick breath.''
+        <<else>>\
+            ''You start to push $diana.name's head down onto your <<pSize>>, holding her for a minute before letting her take a quick breath.''
+        <</if>>\
+
+        <<if $c is $sex.wantReturn>>\
+            <<nm $diana "Mmmmmph! MPH! HHMPH!" "Mmmm yes! This cock is fantastic, just what I needed!">>\
+            <<set $sex.lust += 1, $sex.love += 3, $sex.mind -= 1, $sex.dom += 2>>\
+        <<else>>\
+            <<prefComment $diana "suckCock.give"
+                "Mmph! Hmph! Mph!|Not what I was hoping for, but... This cock... this is cock is amazing!"
+                "Mmph! Hmph! Mph!|Not what I was hoping for, but... Mmm, $player.name really knows how to treat a girl!"
+                "Mmph! Hmph! Mph!|Mmm, so this is the kind of <<guy>> <<he>> is, hm? Not what I was hoping for, but... "
+                "Mmph! Hmph! Mph!|Not my favorite situation, not that that really matters..."
+                "Mmph! Hmph! Mph!|Ugh, can't say this is what I was hoping for..."
+            >>\
+            <<set $sex.lust += 1, $sex.dom += 1>>\
+        <</if>>\
+        <<trackAction "suckCock.get" $diana>>\
+    <<else>>\
+        <<if $sex.path is "dom">>\
+            ''You force $diana.name's head down onto your <<vSize>>, shoving her into your mound until you hear her start to gag, then hold her for a minute before letting her take a quick breath.''
+        <<else>>\
+            ''You start to push $diana.name's head down onto your <<pSize>>, holding her for a minute before letting her take a quick breath.''
+        <</if>>\
+
+        <<if $c is $sex.wantReturn>>\
+            <<nm $diana "Mmmmmph! MPH! HHMPH!" "Mmmm yes! This pussy is delicious, just what I needed!">>\
+            <<set $sex.lust += 1, $sex.love += 3, $sex.mind -= 1, $sex.dom += 2>>\
+        <<else>>\
+            <<prefComment $diana "eatPussy.give"
+                "Mmph! Hmph! Mph!|Not what I was hoping for, but... This pussy... this is pussy is amazing!"
+                "Mmph! Hmph! Mph!|Not what I was hoping for, but... Mmm, $player.name really knows how to treat a girl!"
+                "Mmph! Hmph! Mph!|Mmm, so this is the kind of <<guy>> <<he>> is, hm? Not what I was hoping for, but... "
+                "Mmph! Hmph! Mph!|Not my favorite situation, not that that really matters..."
+                "Mmph! Hmph! Mph!|Ugh, can't say this is what I was hoping for..."
+            >>\
+            <<set $sex.lust += 1, $sex.dom += 1>>\
+        <</if>>\
+        <<trackAction "eatPussy.get" $diana>>\
+    <</if>>\
+
+    ''$diana.name continues <<if hasPenis() or hasStrapon()>>sucking your <<StraponOrCock size>>, taking it deeper and deeper with every passing moment<<else>>burying her face into your dripping cunt, lapping away at your <<vSize>><</if>>. You can see her eyes start to roll into the back of her head, unsure as to whether or not she's losing herself to the pleasure... or just getting close to passing out, you start to ease up on her, giving her a chance to breath.''
+
+    <<nm $player "Mmmm, $diana.name... you feel amazing...">>\
+
+    <<nm $diana "Mmmph, mmmph... Haaa, haha... mmm... Y-you're not too bad yourself...">>\
+
+    <<SetSexWants $diana "pussyFuck.get" "analFuck.get" "cumEat.get">>\
+    <<switch $sex.want.random()>>\
+        <<case "pussyFuck.get">>\
+            @@.xxx;$diana.name leans back, spreading her legs, and starts fingering her pussy.@@
+        <<case "analFuck.get">>\
+            @@.xxx;$diana.name leans back, spreading her legs, and starts running her finger along her asshole.@@
+        <<case "cumEat.get">>\
+            @@.xxx;$diana.name looks up at you, running a finger along her tongue.@@
+    <</switch>>\
+
+    <<if canFuck()>>\
+        <<btnChoice "Bend $diana.name over her desk and fuck her pussy" "Diana-ISS-Office-FuckDiana" "$c='pussyFuck.get'">>\
+        <<if $sex.wantReturn is "analFuck.get">>\
+            <<btnChoice "Bend $diana.name over her desk and fuck her ass" "Diana-ISS-Office-FuckDianaAss" "$c='analFuck.get'">>\
+        <<else>>\
+            <<btnDom "Bend $diana.name over her desk and fuck her ass" "Diana-ISS-Office-FuckDianaAss" "$c='analFuck.get'">>\
+        <</if>>\
+    <<else>>\
+        <<btnChoice "Bend $diana.name over her desk and toy her pussy" "Diana-ISS-Office-FuckDiana" "$c='pussyFuck.get'">>\
+        <<if $sex.wantReturn is "analFuck.get">>\
+            <<btnChoice "Bend $diana.name over her desk and toy her ass" "Diana-ISS-Office-FuckDianaAss" "$c='analFuck.get'">>\
+        <<else>>\
+            <<btnDom "Bend $diana.name over her desk and toy her ass" "Diana-ISS-Office-FuckDianaAss" "$c='analFuck.get'">>\
+        <</if>>\
+    <</if>>\
+    <<if hasPussy()>>\
+        <<btnChoice "Squirt in $diana.name's face" "Diana-ISS-Office-SquirtOnFace" "$c='cumEat.get'">>\
+    <<else>>\
+        <<btnChoice "Cum in $diana.name's mouth" "Diana-ISS-Office-CumInMouth" "$c='cumEat.get'">>\
+    <</if>>\
+
+
+:: Diana-ISS-Office-OralGive {"position":"600,15725","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+    <<pic $action "player-eat-pussy">>\
+    <<act $player "eatpussy">>\
+
+    <<if $sex.path is "sub">>\
+        ''You drop down and get to work eating the older woman's dripping pussy, lapping up her juices and sliding your tongue up and down her wet slit. Her scent is overwhelming, intoxicating, and you can't get enough of it.''
+        <<set $sex.dom -= 1>>\
+    <<elseif $sex.path is "bimbo">>\
+        ''You pounce on the older woman, burying your face in her mound and lapping up her juices. You slide your tongue up and down her slit while occasionally nibbling on her twitching clit.''
+    <<else>>\
+        ''You push her back onto her butt, giving you easy access to her quivering pussy. Holding up her legs, you bury your face into her mound, using your tongue to lick and flick at her wet hole, occasionally biting down softly on her twitching clit.''
+    <</if>>\
+
+    <<if $c is $sex.wantReturn>>\
+        <<nm $diana "Mmmm, oooohhhhh yesssss... You're doing a great job down there, $player.name..." "Holy fuck I really needed this!">>\
+        <<set $sex.lust += 1, $sex.love += 2, $sex.mind -= 1>>\
+    <<else>>\
+        <<nm $diana "Mmmm, oooohhhhh yesssss... You're doing a great job down there, $player.name..." "Holy fuck I really needed this!">>\
+        <<set $sex.lust += 1>>\
+    <</if>>\
+
+    ''You continue licking away, $diana.name becoming more and more responsive with every passing moment. You can tell she's starting to force herself to hold back a little, worried she might be sent over the edge.''
+
+    <<nm $diana "Mmmm, that's good, so good... W-we should, mmmm, maybe change things up, y'know? A-AAAHHH!">>\
+    
+    <<if $sex.path is "sub" or $sex.path is "bimbo">>\
+        <<if canFuck()>>\
+            <<if hasPussy()>>\
+                <<SetSexWants $diana "eatPussy.get" "pussyFuck.give" "pussyFuck.get">>\
+            <<else>>\
+                <<SetSexWants $diana "eatPussy.get" "analFuck.give" "pussyFuck.get">>\
+            <</if>>\
+        <<else>>\
+            <<if hasPussy()>>\
+                <<SetSexWants $diana "eatPussy.get" "pussyFuck.give">>\
+            <<else>>\
+                <<SetSexWants $diana "eatPussy.get" "analFuck.give">>\
+            <</if>>\
+        <</if>>\
+        <<switch $sex.wantReturn>>\
+            <<case "pussyFuck.give" "analFuck.give">>\
+                @@.xxx;$diana.name starts thrusting her hips into your face...@@
+            <<case "pussyFuck.get" "analFuck.get">>\
+                @@.xxx;$diana.name starts pulling away slightly...@@
+            <<case "eatPussy.get">>\
+                @@.xxx;$diana.name tightens her grip, pulling you harder into her pussy...@@
+        <</switch>>\
+
+        <<if hasPussy()>>\
+            <<btnChoice "Bend over and offer $diana.name your pussy" "Diana-ISS-Office-FuckedInPussy" "$c='pussyFuck.give'">>\
+            <<btnChoice "Bend over and offer $diana.name your ass" "Diana-ISS-Office-FuckedInAss" "$c='analFuck.give'">>\
+        <<else>>\
+            <<btnChoice "Bend over and offer $diana.name your ass" "Diana-ISS-Office-FuckedInAss" "$c='analFuck.give'">>\
+        <</if>>\
+        <<if hasStrapon() or (pTier() > 2 and canFuck())>>\
+            <<btnChoice "Pounce on $diana.name and fuck her pussy" "Diana-ISS-Office-FuckDiana" "$c='pussyFuck.get'">>\
+        <</if>>\
+        <<btnChoice "Make her cum with your mouth" "Diana-ISS-Office-CumFromOral" "$c='eatPussy.get'">>\
+    <<else>>\
+        <<if canFuck()>>\
+            <<SetSexWants $diana "eatPussy.get" "pussyFuck.get">>\
+        <<else>>\
+            <<if hasPussy()>>\
+                <<SetSexWants $diana "eatPussy.get" "pussyFuck.give">>\
+            <<else>>\
+                <<SetSexWants $diana "eatPussy.get">>\
+            <</if>>\
+        <</if>>\
+        <<switch $sex.wantReturn>>\
+            <<case "pussyFuck.give">>\
+                @@.xxx;$diana.name starts thrusting her hips into your face...@@
+            <<case "pussyFuck.get" "analFuck.get">>\
+                @@.xxx;$diana.name starts pulling away slightly...@@
+            <<case "eatPussy.get">>\
+                @@.xxx;$diana.name tightens her grip, pulling you harder into her pussy...@@
+        <</switch>>\
+
+        <<if canFuck()>>\
+            <<btnChoice "Bend $diana.name over her desk and fuck her pussy" "Diana-ISS-Office-FuckDiana" "$c='pussyFuck.get'">>\
+            <<if $sex.wantReturn is "analFuck.get">>\
+                <<btnChoice "Bend $diana.name over her desk and fuck her ass" "Diana-ISS-Office-FuckDianaAss" "$c='analFuck.get'">>\
+            <<else>>\
+                <<btnDom "Bend $diana.name over her desk and fuck her ass" "Diana-ISS-Office-FuckDianaAss" "$c='analFuck.get'">>\
+            <</if>>\
+        <<else>>\
+            <<btnChoice "Bend $diana.name over her desk and toy her pussy" "Diana-ISS-Office-FuckDiana" "$c='pussyFuck.get'">>\
+            <<if $sex.wantReturn is "analFuck.get">>\
+                <<btnChoice "Bend $diana.name over her desk and toy her ass" "Diana-ISS-Office-FuckDianaAss" "$c='analFuck.get'">>\
+            <<else>>\
+                <<btnDom "Bend $diana.name over her desk and toy her ass" "Diana-ISS-Office-FuckDianaAss" "$c='analFuck.get'">>\
+            <</if>>\
+        <</if>>\
+        <<btnChoice "Make her cum with your mouth" "Diana-ISS-Office-CumFromOral" "$c='eatPussy.get'">>\
+    <</if>>\
+
+
+:: Diana-ISS-Office-Spread {"position":"350,15725","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+    <<picB $player "spread">>\
+    ''You hop back on the table, ripping your clothing off and spreading your legs. $diana.name looks equal parts shocked and delighted.''
+
+    <<nm $player "@@.bf;Tee-hee, well c'mon! You OBVIOUSLY wanna have your way with me!@@">>\
+
+    <<nm $diana "Oh my! You're quite easy, aren't you? Well, I can certainly appreciate a free meal...">>\
+
+    ''$diana.name strips her clothing off as well before taking a closer look at your <<pSize>>.''
+
+    <<if noticePenis($diana)>>\
+        <<NoticePenis $diana>>
+    <<else>>\
+        <<if hasPenis()>>\
+            <<if isChastity() or isSissy()>>\
+                <<nm $diana "Hm, doesn't look like you'll be doing the fucking today does it?">>\
+                <<set $sex.dom -= 2>>\
+            <<else>>\
+                <<CommentPenis $diana
+                    "Mmm, look at that monster between your legs..."
+                    "That's quite a fine cock, mmm..."
+                    "Looks like you're all hard and ready, hm?"
+                    "Hm, your little <<boy>> is all ready to go, isn't <<he>>?"
+                    "Haha, it's so tiny! Bet you prefer taking more than giving, huh?"
+                >>\
+            <</if>>\
+        <<elseif hasStrapon()>>\
+            <<nm $diana "A... strapon? Really? Well, that definitely opens up a few possibilities...">>\
+        <<elseif frontPlugged()>>\
+            <<nm $diana "Is that a... <<accf>>? You naughty <<boy>>...">>\
+        <<else>>\
+            <<if isBimbo()>>\
+                <<nm $diana "Oh my, $player.name! You're soaking wet! Ha, mmmm...">>\
+            <<else>>\
+                <<CommentPussy $diana
+                    "Oh my, $player.name! Your pussy looks, ha, quite broken in, doesn't it?"
+                    "Mmm, your pussy looks like it sees a lot of action, $player.name."
+                    "Ohhh, your pussy looks quite nice"
+                    "Oh $player.name! Your pussy's adorable! You're not a virgin, are you?"
+                    "Oh $player.name! Your pussy's adorable! You're not a virgin, are you?"
+                >>\
+            <</if>>\
+        <</if>>\
+    <</if>>\
+
+    <<if canFuck()>>\
+        <<if hasPussy()>>\
+            <<SetSexWants $diana "eatPussy.get" "eatPussy.give" "pussyFuck.give" "pussyFuck.get" "suckCock.give">>\
+        <<else>>\
+            <<SetSexWants $diana "eatPussy.get" "analFuck.give" "pussyFuck.get" "suckCock.give">>\
+        <</if>>\
+    <<else>>\
+        <<if hasPussy()>>\
+            <<SetSexWants $diana "eatPussy.get" "eatPussy.give" "pussyFuck.give">>\
+        <<else>>\
+            <<SetSexWants $diana "eatPussy.get" "analFuck.give">>\
+        <</if>>\
+    <</if>>\
+    <<switch $sex.wantReturn>>\
+        <<case "pussyFuck.give" "analFuck.give">>\
+            @@.xxx;$diana.name runs a finger along your thigh...@@
+        <<case "pussyFuck.get" "analFuck.get">>\
+            @@.xxx;$diana.name starts lightly fingering her pussy...@@
+        <<case "eatPussy.give">>\
+            @@.xxx;$diana.name starts licking her lips, staring at your pussy...@@
+        <<case "suckCock.give">>\
+            @@.xxx;$diana.name starts licking her lips, staring at your <<StraponOrCock size>>...@@
+        <<case "eatPussy.get">>\
+            @@.xxx;$diana.name leans back slightly, rubbing her pussy...@@
+    <</switch>>\
+
+    <<if hasPussy()>>\
+        <<btnChoice "Bend over and offer $diana.name your pussy" "Diana-ISS-Office-FuckedInPussy" "$c='pussyFuck.give'">>\
+        <<btnChoice "Bend over and offer $diana.name your ass" "Diana-ISS-Office-FuckedInAss" "$c='analFuck.give'">>\
+    <<else>>\
+        <<btnChoice "Bend over and offer $diana.name your ass" "Diana-ISS-Office-FuckedInAss" "$c='analFuck.give'">>\
+    <</if>>\
+    <<if hasStrapon() or (pTier() > 2 and canFuck())>>\
+        <<btnChoice "Pounce on $diana.name and fuck her pussy" "Diana-ISS-Office-FuckDiana" "$c='pussyFuck.get'">>\
+        <<btnChoice "Pull $diana.name down onto your <<StraponOrCock>>" "Diana-ISS-Office-OralGet" "$c='suckCock.get'">>\
+    <</if>>\
+    <<btnChoice "Get on your knees and eat $diana.name's pussy" "Diana-ISS-Office-OralGive" "$c='eatPussy.get'">>\
+
+
+:: Diana-ISS-Office-SquirtOnFace {"position":"225,15850","size":"100,100"}
+<<loc_RecordsOffice>>\
+    <<trackAction "cumBody.give" $diana>>\
+
+    ''You hold $diana.name's head in front of your quivering pussy.''
+
+    <<pic $player "squirt">>\
+    <<act $diana "eatpussy,cum">>\
+
+    <<if $c is $sex.wantReturn>>\
+        <<nm $diana "OOOHHH! Mmmm... Cover me in your thick juices $player.name!" "It's so much! Shit! SO GOOD!">>\
+        <<set $sex.lust += 2, $sex.love += 3, $sex.mind -= 2, $sex.dom += 3>>\
+    <<else>>\
+        <<nm $diana "W-wait, no! That's n-noOOHHH FUCK!" "Ack! Ugh, this is going to take forever to wash out!">>\
+        <<set $sex.lust += 1, $sex.love -= 3, $sex.mind -= 1, $sex.dom += 2>>\
+    <</if>>\
+
+    ''Your thick squirt covers $diana.name, spraying across her cheek, lips and neck.''
+
+    <<nm $player "Holy... shit... haaa...">>\
+
+    <<nm $diana "Heh... y-yeah... incredible...">>\
+
+    ''$diana.name licks her lips as you finish up. She gives you a mischievous smile before disappearing into a small closet in the back of her office to pull out a rag and a change of clothes.''
+
+    <<if visited() > 1>>\
+        <<nm $player "Hm, maybe you should start leaving some clothes in there for me, huh?">>\
+
+        <<nm $diana "Mmm, putting me in charge of what you wear? Risky move, dear.">>\
+    <<else>>\
+        <<nm $player "Ha, so, you plan for these sorts of things, huh?">>\
+
+        <<nm $diana "Oh you know, sometimes this place just gets so boring and I need to find my own... entertainment.">>\
+    <</if>>\
+
+    ''She tosses you a spare rag to clean up with. Once you're both dressed, she gives you a parting kiss on the neck before nudging you towards the door.''
+
+    <<horny 0>>
+
+    <<SexResults $diana>>\
+
+    <<btnLink "Go back to work" "Work" "passTime()">>
+
+
+:: Diana-ISS-Office-Start {"position":"100,15725","size":"100,100"}
+<<loc_RecordsOffice>>\
+    <<SexInitialize $diana>>\
+
+    ''You walk over to $diana.name's desk as she gets up to lock the door behind you. You now stand between her and the desk.''
+
+    <<pic $diana>>\
+    <<art $diana "aroused,2">>\
+
+    <<nm $diana "Well, here we are... Just you and me in a locked office, mmhm...">>\
+
+    ''$diana.name stares you down, a look of intense lust in her eyes. She runs a finger down her neck over her blouse, tracing the outline of her breast. If you don't make a move on her own she'll likely pounce on you herself.''
+
+    <<btnDom "Take her quickly, pinning her to the door and kissing her deeply" "Diana-ISS-Office-Kiss" "$sex.path = 'dom'">>\
+    <<btnChoice "Walk up slowly and caress her cheek before pulling her in for a kiss" "Diana-ISS-Office-Kiss">>\
+    <<btnChoice "Get on your knees and ask how you can serve her" "Diana-ISS-Office-Kiss" "$sex.path = 'beg'">>\
+    <<btnBimbo "Hop on the desk and spread your legs for her" "Diana-ISS-Office-Spread" "$sex.path = 'bimbo'">>\
+
+
+:: Diana-ISS-Train-Cleanup {"position":"475,15975","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+    ''You help $diana.name clean herself up, dressing her before putting your own clothes back on.''
+
+    <<switch $c>>\
+        <<case "analToy">>\
+            <<pic $diana>>\
+
+            <<nm $diana "Mmm, not bad at all for your first night, sweetie. We have a few kinks to work out, and a few others to work in, but all in all I'm happy with the progress we made.">>\
+
+            ''$diana.name stares at you expectantly.''
+
+            <<nm $player "Um... O-oh! Thank you... Mistress $diana.name.">>\
+
+            <<nm $diana "Mmm, very good... Now then, I've still got some work to finish up here, so please get dressed and go home for the night. I'll let you know when our next session is.">>\
+
+            <<if analPlugged()>>\
+                ''$diana.name reaches over and grabs your <<accb>> off the shelf, easily sliding it back into your <<aSize>>.''
+
+                <<nm $diana "Can't have you forgetting that, haha.">>\
+
+                <<nm $player "A-ah! T-thank you... Mistress...">>\
+
+            <</if>>\
+            <<run prefEdit($player,"analFuck.get",10)>>\
+            <<trackAction "analFuck.get" $diana>>\
+        <<case "suckCock">>\
+            <<pic $diana>>\
+
+            <<nm $diana "Mmm, not bad at all for your first night, sweetie. We have a few kinks to work out, and a few others to work in, but all in all I'm happy with the progress we made.">>\
+
+            ''$diana.name stares at you expectantly.''
+
+            <<nm $player "Um... O-oh! Thank you... Mistress $diana.name.">>\
+
+            <<nm $diana "Mmm, very good... Now then, I've still got some work to finish up here, so please get dressed and go home for the night. I'll let you know when our next session is.">>\
+
+            <<run prefEdit($player,"suckCock.give",10)>>\
+            <<trackAction "suckCock.give" $diana>>\
+        <<case "eatPussy">>\
+            <<pic $diana>>\
+
+            <<nm $diana "Hm, well done $player.name... I think we'll have to train your oral skills a LOT more, don't you agree?">>\
+
+            ''$diana.name gives you a teasing smile, the unexpected warmth having you immediately return it.''
+
+            <<nm $player "Thank you Mistress $diana.name.">>\
+
+            <<nm $diana "Mmm, very good... Now then, I've still got some work to finish up here, so please get dressed and go home for the night. I'll let you know when our next session is.">>\
+
+            <<run prefEdit($player,"eatPussy.give",10)>>\
+            <<trackAction "eatPussy.give" $diana>>\
+        <<case "group">>\
+            <<pic $diana>>\
+
+            <<if $c2 is "spill">>\
+                <<nm $diana "Hmph, how dare you embarrass me in front of my guests!? You just wait slut, I'll make sure you never let me down like that again!">>\
+
+                ''$diana.name stomps over to the door, opening it and motioning for you to leave immediately.''
+
+                <<nm $player "S-sorry Mistress... I won't let it happen again...">>\
+            <<else>>\
+                <<nm $diana "Hm, well done $player.name. I'll have to have you entertain even more guests in the future!">>\
+
+                ''$diana.name gives you a teasing smile, the unexpected warmth having you immediately return it.''
+
+                <<nm $player "Thank you Mistress $diana.name.">>\
+
+                <<nm $diana "Mmm, very good... Now then, I've still got some work to finish up here, so please get dressed and go home for the night. I'll let you know when our next session is.">>\
+            <</if>>\
+
+            <<run prefEdit($player,"suckCock.give",5)>>\
+            <<run prefEdit($player,"analFuck.get",5)>>\
+            <<run prefEdit($player,"cumEat.get",5)>>\
+            <<trackAction "analFuck.get" $diana>>\
+            <<trackAction "analFuck.get">>\
+            <<trackAction "suckCock.give">>\
+            <<trackAction "cumEat.get">>\
+    <</switch>>\
+
+    ''You gather your clothing and hurriedly dress yourself before leaving $diana.name's office, closing the door behind you and making your way back to the surface.''
+
+    <<set $diana.timesTrained += 1>>\
+    <<if $diana.timesTrained > 4>>\
+        <<run setDailyCD("DianaTraining",5)>>\
+        <<SetFlag $diana "TrainingFinished">>\
+    <<else>>\
+        <<run setDailyCD("DianaTraining",2)>>\
+    <</if>>\
+    <<btnLink "Go home" "Home" "passTime()">>
+
+
+:: Diana-ISS-Train-EatPussy {"position":"225,15975","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+    <<if $sex.path is "return">>\
+        <<nm $player "Please let me service your pussy, Mistress $diana.name.">>\
+
+        <<if $c is $sex.wantReturn>>\
+            <<SexUpdate 2 2 0 -1>>\
+            <<nm $diana "Mmm, $player.name. I was hoping you'd say that!">>\
+        <<else>>\
+            <<SexUpdate 1 0 0 -1>>\
+            <<nm $diana "Hm, if you insist...">>\
+        <</if>>\
+    <<elseif $sex.path is "sissy">>\
+        <<SexUpdate 2 2 0 -5>>\
+        <<nm $player "@@.sf;Y-yes Mistress $diana.name, please let me lick you!@@">>\
+
+        <<nm $diana "Hm, so eager to please! Well, if you insist...">>\
+    <<elseif $sex.path is "bimbo">>\
+        <<SexUpdate 2 1 0 -3>>\
+        <<nm $player "@@.bf;Yes please Mistress $diana.name! Let me eat your sweet pussy!@@">>\
+
+        <<nm $diana "Oh my! I appreciate your energy but do try to compose yourself sweetie...">>\
+    <<else>>\
+        <<SexUpdate 1 0 0 -2>>\
+        <<nm $player "Yes Mistress $diana.name!">>\
+
+        <<nm $diana "Mmm, good <<boy>>. Now then, let's get started...">>\
+    <</if>>\
+
+    <<pic $diana "spread">>\
+
+    ''$diana.name leans back on her desk, spreading her legs apart before using her fingers to open her glistening twat. She looks at you expectantly as if you don't need further instruction which, of course, you don't.''
+
+    <<nm $player "Mmmm..." "Her smell is... amazing...">>\
+
+    <<pic $player "eat-pussy">>\
+
+    <<skillComment $diana "eatPussy.give"
+        "$player.name! S-so good, oh m-my..."
+        "Oh my, $player.name! Y-you're so good at this!"
+        "Ooohhh mmmm... Mhmmm..."
+        "Your technique could use some work, but, mmmm... N-not bad $player.name..."
+        "You don't have much experience with this, do you? Well, we'll get you up to speed..."
+    >>\
+
+    ''She begins thrusting her hips, grinding her pussy into your mouth as you struggle to keep up with the increasingly steady stream of juices flowing from her.''
+
+    <<pic $diana "orgasm">>\
+
+    <<nm $diana "T-there it is! O-OHH! YES!!">>\
+
+    <<pic $diana "squirt">>\
+
+    <<nm $player "NGHPH!! MPH!!!" "There's so much!">>\
+
+    ''You cough and choke as $diana.name holds you down, having now slid off her desk and pinned you to the floor between her thighs. She continues to roll and grind her soaked mound into you mouth, moan and riding your face.''
+
+    <<skillComment $diana "eatPussy.give"
+        "Mmmm... Amazing $player.name... Just amazing!"
+        "Ahhh... You're a natural, $player.name..."
+        "Mmmm... Ahhhh, $player.name..."
+        "Mmm, not too bad, $player.name. We'll definitely work on this more, haha."
+        "Mmm, it took some doing, but we finally got there $player.name..."
+    >>\
+
+    ''$diana.name rolls off your face, finally allowing you to catch your breath.''
+
+    <<nm $player "T-thank you... Mistress $diana.name...">>\
+
+    <<SexResults $diana>>\
+
+    <<btnLink "Clean up Mistress $diana.name" "Diana-ISS-Train-Cleanup" "$c='eatPussy'">>
+
+
+:: Diana-ISS-Train-Group {"position":"350,15975","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+    <<switch $sex.path>>\
+        <<case "return">>\
+            <<nm $player "Please call in some more people, Mistress $diana.name.">>\
+
+            <<if $c is $sex.wantReturn>>\
+                <<SexUpdate 2 2 0 -1>>\
+                <<nm $diana "Mmm, $player.name. I was hoping you'd say that!">>\
+            <<else>>\
+                <<SexUpdate 1 0 0 -1>>\
+                <<nm $diana "Hm, if you insist...">>\
+            <</if>>\
+
+            ''$diana.name picks up her desk phone, seemingly speaking to the same two men you serviced last time. It's only a moment before the door swings open.''
+
+            <<nmc "Larger Man" "Oh yeah! I've been waitin' to have another crack at this bitch!">>\
+
+            <<nmc "Shorter Man" "Hey $diana.name! Yeah it's basically all he's been talking about lately, not that I can blame him...">>\
+
+            ''$diana.name smiles menacingly at you.''
+            
+            <<nm $diana "Well, they're here, just like you asked. Now, present that ass of yours to your guests...">>\
+
+            ''Putting your head down, you do as your told. You spread your cheeks apart as you turn around on your hands and knees.''
+
+            <<nm $player "P-please use me as you l-like...">>\
+
+            <<nm $diana "Good <<boy>>! Well, you heard <<him>> boys.">>\
+        <<case "punish">>\
+            <<SexUpdate 1 -3 0 -5>>\
+            <<nm $player "W-wait, I don't know about this!">>\
+
+            ''$diana.name glares at you.''
+
+            <<nm $player "M-MISTRESS! I meant to s-say...">>\
+
+            <<nm $diana "Oh sweetie... If you don't think you can do this then that's just fine...">>\
+
+            ''$diana.name calmly pulls a large folder out of her desk and starts to walk over to the two men.''
+
+            <<nm $player "R-really?">>\
+
+            <<nm $diana "Of course, baby. Of course you don't have to... but someone does. See, this folder contains your home address, as well as some VERY flattering photos of dear $sister.name, not to mention your <<mother>>, and-">>\
+
+            <<nm $player "Wait!">>\
+
+            ''You drop to your hands and knees, turning around and presenting your <<aSize>> to $diana.name and the men.''
+
+            <<nm $player "P-please... use me h-however you'd like...">>\
+
+            <<nm $diana "Mmm, that's better slut! Well, you heard <<him>> boys.">>\
+        <<case "bimbo">>\
+            <<SexUpdate 2 1 0 -3>>\
+            <<nm $player "@@.bf;Yes Mistress $diana.name! Well, c'mon boys!@@">>\
+
+            <<nm $diana "My, so eager! Well, you heard <<him>> boys.">>\
+        <<case "sissy">>\
+            <<SexUpdate 3 2 0 -5>>\
+            <<nm $player "@@.sf;Y-yes Mistress $diana.name. P-please be gentle with me...@@">>\
+
+            <<nm $diana "Mmm, what a good sissy slut you are... Well, you heard <<him>> boys!">>\
+        <<default>>\
+            <<SexUpdate 2 1 0 -1>>\
+            <<nm $player "Y-yes, okay Mistress $diana.name">>\
+
+            <<nm $diana "Mmm, very good, slut. Now, present that ass of yours to your guests...">>\
+
+            ''Putting your head down, you do as your told. You spread your cheeks apart as you turn around on your hands and knees.''
+
+            <<nm $player "P-please use me as you l-like...">>\
+
+            <<nm $diana "Good <<boy>>! Well, you heard <<him>> boys.">>\
+    <</switch>>\
+
+    <<nmc "Shorter Man" "Hahaha, oh man, we're gonna wreck that little asshole of yours!">>\
+
+    <<nmc "Larger Man" "You go for it, all I want is that sweet mouth wrapped my cock!">>\
+
+    ''You're quickly and roughly dragged to the back of the room where the two men waste no time <<if analPlugged()>>ripping out your <<accb>> and <</if>>throwing you to the floor and pulling you into position. The larger man thrusts his cock into your throat while the shorter one lines up behind you.''
+
+    <<pic $player "spitroast-mm">>\
+
+    <<anal "your coworker's thick cock">>
+
+    <<nm $player.b "HRK!" "@@.bf;Mmm! Yes! Use me like the bimbo slut I am!@@">>\
+    <<nm $player.s "HRK!" "@@.sf;Mmm... This is all... I ever wanted...@@">>\
+    <<nm $player.d "HRK!" "S-shit! Too rough!">>\
+    
+    <<skillComment "Larger Man" "suckCock.give"
+        "O-oh fuck! My cock feels like it's melting!"
+        "Oh wow! This bitch really knows how to suck a cock!"
+        "Hey hey! This slut's pretty good!"
+        "Yeah, suck my fat cock you little slut!"
+        "Jeez, who taught you how to suck a cock?"
+    >>\
+
+    <<pic $player "suck-male">>\
+
+    <<CommentAss "Shorter Man"
+        "Hm, <<he>>'s a bit loose back here..."
+        "This bitch's asshole has some miles on it, but it's still pretty great!"
+        "This asshole ain't half bad! Really grippin' my cock."
+        "Man this slut's tight! Feels amazing!"
+        "Holy shit, this bitch's ass is so tight it feels like it's gonna pinch my dick right off!"
+    >>\
+
+    <<pic $player "ass-fucked-by-male">>\
+
+    <<nm $player "HGH! MMPH! HNGH!" "These guys are gonna tear me apart!">>\
+
+    ''Out of the corner of your eye you can see $diana.name furiously rubbing her pussy as she watches the men have their way with you. She uses her other hand to plunge two fingers inside her, juices spurting to the floor.''
+
+    <<pic $diana "solo">>\
+
+    <<if isSissy()>>\
+        <<nm $diana "Mmmm yes! Make that sissy slut feel like a REAL girl!">>\
+    <<elseif isBimbo()>>\
+        <<nm $diana "Mmmm yes! Fuck that bimbo slut like the whore <<he>> is!">>\
+    <<else>>\
+        <<nm $diana "Mmmm yes! Fuck that slut until <<he>> knows <<his>> place!">>\
+    <</if>>\
+
+    <<nmc "Larger Man" "Hehehe, you got it boss! C'mon bitch, pick up the pace!">>\
+
+    <<nmc "Shorter Man" "S-shit! I'm about to...">>\
+
+    <<pic $player "creampie-anal">>\
+
+    <<Thought "H-he's...">>\
+
+    ''Warm cum floods your <<aSize>>. There's so much that you can start to feel it in your stomach as you continue gagging on the other man's pulsing cock. The shorter man pumps harder and harder to ensure every last drop gets deposited inside you before finally pulling out with a loud popping noise.''
+
+    <<nmc "Shorter Man" "Haaa... Ho man! That ass is just too good!">>\
+
+    <<nmc "Larger Man" "Hahaha, looks like I've got you beat in the stamina department, buddy! This bitch is on cocksucking duty for a little longer yet!">>\
+
+    ''The shorter man wipes his slimy, softening penis across your back before sitting down against some shelving. Meanwhile, $diana.name's slipped on a familiar toy.''
+
+    <<nm $diana "Well, just because you're done with that slut hole doesn't mean it's closed for business. Ha, look at you, all covered in filth... At least he left you all lubed up for me!">>\
+
+    <<nm $player "HNGH!?">>\
+
+    <<pic $player "ass-fucked-by-female">>\
+
+    <<anal "$diana.name's huge dildo">>
+
+    <<nm $player "HGRPH!!!" "N-now she's inside me!?">>\
+
+    <<nmc "Shorter Man" "Oh shit, now THAT'S hot!">>\
+
+    <<nmc "Larger Man" "Hahaha, $diana.name's a fuckin', ahhh, she's a fuckin' sex demon queen or somethin' hahaha!">>\
+
+    ''You're pistoned back and forth between your heavyset coworker and $diana.name for some time. $diana.name's clearly had a squirting orgasm or two as the backs of your thighs are now thoroughly soaked in her juices. As for the man in front of you, you can tell by how his cock has started twitching and tightening that he's about reached his limit as well.''
+
+    <<nmc "Larger Man" "H-here it comes slut! Make sure you get every last drop!">>\
+
+    <<pic $player "cum-in-mouth">>\
+
+    <<if skill($player,"cumEat.get",$GREAT)>>\
+        <<SexUpdate 3 2 0 -5>>\
+        ''You wrap your mouth around the man's pulsing cock as streams of thick cum shoot down your throat. Once the torrent has finally subsided, your pull your head back revealing you'd managed to swallow his entire load.''
+
+        <<nmc "Larger Man" "Wow, now that's impressive!">>\
+
+        <<nm $diana "Mmm, yes, your training's really starting to pay off, slut.">>\
+    <<elseif skill($player,"cumEat.get",$OKAY)>>\
+        <<SexUpdate 2 0 0 -5>>\
+        ''You do your best, taking in the majority of the man's surprisingly thick load before finally allowing some to drip out and roll down your chin onto the floor.''
+
+        <<nmc "Larger Man" "Hmph, not quite... Guess I'll just have to put that mouth of yours to work more often, 'eh?">>\
+
+        <<nm $diana "Mmm, not just you. We'll have to start having <<him>> service the entire accounting team on <<his>> breaks, won't we?">>\
+    <<else>>\
+        <<SexUpdate 2 -3 0 -5>>\
+        ''The second his thick load hits the back of your throat you begin gagging uncontrollably, cum spilling out of your mouth and onto the floor beneath you. As you're coughing, you feel $diana.name's boot pressing against the back of your head and forcing you into the puddle of spit and semen.''
+
+        <<nm $diana "You dumb fucking cunt! You lick it all up right now!">>\
+
+        <<nmc "Larger Man" "Hahaha, looks like your slut could use some more training in that department!">>\
+
+        <<nm $diana "Oh and <<he>>'ll get it, too! You should be grateful slut, because of this I'll be focusing all my efforts into making you a worldclass cumdump!">>\
+        <<set $c2 to "spill">>\
+    <</if>>\
+
+    ''You help the two men get dressed, which includes licking them both clean as $diana.name watches and taunts you. Once they leave, you turn your attentions towards your mistress.''
+
+    <<SexResults $diana>>\
+
+    <<btnLink "Clean up Mistress $diana.name" "Diana-ISS-Train-Cleanup" "$c='group'">>
+
+
+:: Diana-ISS-Train-Start {"position":"1100,15850","size":"100,100"}
+<<loc_RecordsOffice>>\
+    <<SexInitialize $diana>>\
+
+    ''You walk into $diana.name's office, closing the door behind you and taking a seat across from her at her large desk.''
+
+    <<pic $diana>>\
+
+    <<switch $diana.timesTrained>>\
+        <<case 0>>\
+            <<nm $diana "Ah, right on time. Good <<boy>>! So, are you ready to start your training?">>\
+
+            ''Not exactly thrilled with your situation, you force a silent nod. $diana.name leans back in her chair, clearly unimpressed.''
+
+            <<nm $diana "Mmm, no sweaty. As long as it's just the two of us you'll respond aloud, and address me as Mistress $diana.name. Do you understand?">>\
+
+            ''You take a moment to consider your response.''
+
+            <<btnChoice "I understand" "Diana-ISS-Train-ToyFuck" "$sex.path = 'punish'">>\
+            <<btnSub "Yes Mistress $diana.name, I understand" "Diana-ISS-Train-ToyFuck" "$sex.path = 'submit'">>\
+        <<case 1>>\
+            <<nm $diana "Welcome back, $player.name. How are you feeling after our last session, hm?">>\
+
+            ''You pause for a moment, considering your response as you strip off your clothes as previously instructed.''
+
+            <<nm $player "I'm... fine, Mistress $diana.name...">>\
+
+            ''She smiles widely.''
+
+            <<nm $diana "That's wonderful! Today we'll be working on your oral skills, doesn't that sound like fun?">>\
+
+            ''You watch as she pulls out a series of increasingly larger dildos from her desk drawer.''
+
+            <<btnChoice "I don't think I'm ready for that" "Diana-ISS-Train-SuckCock" "$sex.path = 'punish', $c=1">>\
+            <<btnChoice "Yes, I'm excited" "Diana-ISS-Train-SuckCock" "$sex.path = 'punish', $c=2">>\
+            <<btnSub "Yes Mistress $diana.name, let's get started" "Diana-ISS-Train-SuckCock" "$sex.path = 'sub'">>\
+            <<btnSissy "@@.sf;P-please make me a good little cocksucker, Mistress $diana.name@@" "Diana-ISS-Train-SuckCock" "$sex.path = 'sissy'">>\
+            <<btnBimbo "@@.bf;Hell yeah! I-I mean... Hell yeah, Mistress $diana.name!@@" "Diana-ISS-Train-SuckCock" "$sex.path = 'bimbo'">>\
+        <<case 2>>\
+            <<nm $diana "Mmm, we meet again $player.name. Have you been enjoying our time together as much as I have?">>\
+
+            <<nm $player "Y-yes Mistress $diana.name...">>\
+
+            ''She looks impressed, raising her eyebrows and widening her smile as she watches you undress.''
+
+            <<nm $diana "So quick to respond! Well, as a reward for you good behavior, I thought we'd spend tonight making you top tier pussy eater.">>\
+
+            ''$diana.name stands from her seat, lifting her dress to reveal she's not wearing panties. You can immediately detect her scent wafting across the desk.''
+
+            <<pic $diana "pussy">>\
+
+            <<nm $diana "Shall we get started?">>\
+
+            <<btnChoice "Yes Mistress $diana.name!" "Diana-ISS-Train-EatPussy">>\
+            <<btnSissy "@@.sf;Y-yes Mistress $diana.name, please let me lick you!@@" "Diana-ISS-Train-EatPussy" "$sex.path = 'sissy'">>\
+            <<btnBimbo "@@.bf;Yes please Mistress $diana.name! Let me eat your sweet pussy!@@" "Diana-ISS-Train-EatPussy" "$sex.path = 'bimbo'">>\
+        <<case 3>>\
+            <<nm $diana "Ah, you've finally arrived.">>\
+
+            <<nm $player "M-mistress?">>\
+
+            ''You only just now notice the two large men standing in the back of $diana.name's office. You recognize both of them from around the office, one from the cubicle farm and the other from the maintenance crew.''
+
+            <<nm $diana "Hm, so you finally noticed? I've enlisted the help of a couple of your coworkers for tonight's training session. You'll finally be putting everything you've learned to use!">>\
+
+            <<if isSissy()>>\
+                <<nmc "Larger Man" "Hehehe, I'm not really into guys, but you're just too damn cute!">>\
+            <<elseif isMale()>>\
+                <<nmc "Larger Man" "Hehehe, I'm not really into dudes, but $diana.name promised this would be a good time, so...">>\
+            <<else>>\
+                <<nmc "Larger Man" "Hehehe, $diana.name said you're gonna make us feel real good, babe!">>\
+            <</if>>\
+
+            <<nmc "Shorter Man" "Hmph, so do we get to fuck <<him>> now or what?">>\
+
+            ''Your anxiety picks up as the step closer.''
+
+            <<btnChoice "W-wait, I don't know about this!" "Diana-ISS-Train-Group" "$sex.path = 'punish'">>\
+            <<btnChoice "Y-yes, okay Mistress $diana.name" "Diana-ISS-Train-Group">>\
+            <<btnSissy "@@.sf;Y-yes Mistress $diana.name. P-please be gentle with me...@@" "Diana-ISS-Train-Group" "$sex.path = 'sissy'">>\
+            <<btnBimbo "@@.bf;Yes Mistress $diana.name! Well, c'mon boys!@@" "Diana-ISS-Train-Group" "$sex.path = 'bimbo'">>\
+        <<default>>\
+            <<set $sex.path to "return">>\
+            <<nm $diana "Ah, $player.name. I think from now on I'll let you decide what we work on. So?">>\
+
+            ''You consider your answer as you remove your clothing, noticing $diana.name watching as you do.''
+
+            <<SetSexWants $diana "eatPussy.get" "analFuck.give" "suckCock.get">>\
+            <<switch $sex.wantReturn>>\
+                <<case "analFuck.give">>\
+                    @@.xxx;$diana.name stares at you intently, subtly licking her lips...@@
+                <<case "eatPussy.get">>\
+                    @@.xxx;$diana.name stands up and leans over her desk, you can smell her from where you're sitting...@@
+                <<case "suckCock.get">>\
+                    @@.xxx;$diana.name runs her hand over the side of her desk, waiting for your response...@@
+            <</switch>>\
+
+            <<btnChoice "Please train my ass, Mistress $diana.name" "Diana-ISS-Train-ToyFuck" "$c='analFuck.give'">>\
+            <<btnChoice "Please let me service your pussy, Mistress $diana.name" "Diana-ISS-Train-EatPussy" "$c='eatPussy.get'">>\
+            <<btnChoice "Please train my throat, Mistress $diana.name" "Diana-ISS-Train-SuckCock" "$c='suckCock.get'">>\
+            <<btnChoice "Please call in more people, Mistress $diana.name" "Diana-ISS-Train-Group">>\
+    <</switch>>\
+
+
+:: Diana-ISS-Train-SuckCock {"position":"100,15975","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+    <<switch $sex.path>>\
+        <<case "return">>\
+            <<nm $player "Please train my throat more, Mistress $diana.name.">>\
+
+            <<if $c is $sex.wantReturn>>\
+                <<SexUpdate 2 2 0 -1>>\
+                <<nm $diana "Mmm, $player.name. I was hoping you'd say that!">>\
+            <<else>>\
+                <<SexUpdate 1 0 0 -1>>\
+                <<nm $diana "Hm, if you insist...">>\
+            <</if>>\
+        <<case "punish">>\
+            <<if $c is 1>>\
+                <<nm $player "I-I don't think I'm ready for... that!">>\
+
+                @@SMACK!@@
+
+                <<nm $player "AHH!">>\
+
+                ''Your head rings as you hit the floor. $diana.name lifts your head by your chin, allowing you to see what hit you so hard.''
+
+                <<nm $diana "Not ready to suck cock? Well, after a few more swings you won't have any teeth to worry about and it should be much easier for you. Why, that would be a great step towards turning you into a proper brainless, toothless cumdump, how about it?">>\
+
+                ''She pulls back the massive dildo in her hand, preparing for another swing.''
+
+                <<nm $player "N-no! Please, I'm s-sorry Mistress, I'm ready...">>\
+
+                <<nm $diana "Mmm, pity. I was starting to get off thinking about our possible new trajectory. Oh well, let's get started, shall we?">>\
+                <<SexUpdate 1 -1 0 -5>>\
+            <<else>>\
+                <<nm $player "Yes, I'm excited...">>\
+
+                @@SMACK!@@
+
+                <<nm $player "A-AH! W-why did-">>\
+
+                @@SMACK!@@
+
+                ''The second swing was hard enough to knock you to the floor. You look up to see $diana.name holding the largest of the black dildos up behind her shoulder, preparing for her next swing.''
+
+                <<nm $diana "Oh sweetie, I thought we'd worked past this. I'll give you one last chance to fix your mistake before I start working this whole collection into your asshole...">>\
+
+                ''Your mind starts racing as you panic to produce the answer she's looking for.''
+
+                <<nm $player "R-right, I'm sorry. I'm e-excited to serve you M-Mistress $diana.name!">>\
+
+                ''She gently sets the dildo back on the desk.''
+
+                <<nm $diana "See? I knew you'd get it. Now, let's begin...">>\
+                <<SexUpdate 0 -1 0 -5>>\
+            <</if>>\
+        <<case "sub">>\
+            <<nm $player "Y-yes Mistress, let's get started.">>\
+
+            <<nm $diana "Mmm, good <<boy>>... Yes, let's get started.">>\
+            <<SexUpdate 0 1 0 -2>>\
+        <<case "sissy">>\
+            <<nm $player "@@.sf;Y-yes Mistress $diana.name, p-please make me a good little c-cocksucker...@@">>\
+
+            ''$diana.name nearly doubles over laughing.''
+
+            <<nm $diana "Oh... Oh sweetie, since you asked so nicely...">>\
+            <<SexUpdate 5 2 1 -10>>\
+        <<case "bimbo">>\
+            <<nm $player "@@.bf;Hell yeah! I-I mean... Hell yeah, Mistress $diana.name!@@">>\
+
+            ''$diana.name can't help but start laughing loudly at your enthusiasm.''
+
+            <<nm $diana "Oh dear, I was hoping to have a little more fun breaking you in, but I guess it can't be helped... Let's get started!">>\
+    <</switch>>\
+
+    <<pic $diana "dildo">>\
+
+    ''$diana.name picks up one of the larger dildos and glides it along her tongue...''
+
+    <<nm $diana "Alright then, let's see just how much that little throat of yours can handle...">>\
+
+    <<nm $player "H-hold on a segRAGPH!">>\
+
+    ''Before you can protest, $diana.name's already shoved the first of her toys into your mouth, sliding it in and out of of your throat. You're able to handle it easily enough without gagging.''
+
+    <<nm $diana "Mmm, much better. It's too bad you need that tongue of yours to service cocks and cunts, otherwise I'd have it removed so you could speak only in gags and gargles. Now, let's go a little bigger...">>\
+
+    <<if skill($player,"suckCock.give",$EXPERT)>>\
+        <<SexUpdate 1 1 0 -1>>\
+        ''$diana.name pulls the fake cock out of your mouth, allowing you a moment to breath before quickly replacing it with an even larger one. You easily take it down your throat, followed the larger one that comes next, and the even larger one after that.''
+
+        <<nm $player.b "@@.bf;Haa! Mmm, more cock! More!@@">>\
+        <<nm $player.s "@@.bf;Haa! Mmm, m-more cock, p-please Mistress! I can take m-more!@@">>\
+        <<nm $player.d "Haaa... haaaa..." "Well, at least I've had all that practice...">>\
+
+        <<nm $diana "My, how impressive... Actually, I don't have anything else to give you! I'll have to find something... or someone... bigger for you next time.">>\
+
+        ''You pant, trying to catch your breath having just spent the last hour or so getting relentlessly throatfucked by $diana.name.''
+    <<elseif skill($player,"suckCock.give",$GOOD)>>\
+        <<SexUpdate 2 1 0 -2>>\
+        ''$diana.name pulls the fake cock out of your mouth, allowing you a moment to breath before quickly replacing it with an even larger one. You manage to take it down your throat, but start gagging and choking on the larger one that.''
+
+        <<nm $diana "Mmm, there we go! I'm going to keep ramming this hard cock down your throat until that gag reflex of yours is all but forgotten about!">>\
+
+        <<nm $player.b "@@.bf;Haa! <<cough>> More cock! I can take <<cough>> more!!@@">>\
+        <<nm $player.s "@@.bf;Haa! <<cough>> <<cough>> S-sorry Mistress! I-I can <<cough>> I can k-keep going!@@">>\
+        <<nm $player.d "<<cough>> <<cough>> P-please <<cough>> Please Mistress, I n-need a <<cough>> break!">>\
+
+        ''The large dildo returns to your mouth as $diana.name continues to work it for some time. After a while, your throat moves past being sore and you eventually find yourself completely numb. Once the gagging eventually stops, so also does $diana.name's assault.''
+
+        <<nm $diana "Mmm, not bad... Next time we'll have to step things up some to get your training on track, okay? I'll have to arrange for you to get plenty of practice before our next session...">>\
+
+        ''You pant, trying to catch your breath having just spent the last hour or so getting relentlessly throatfucked by $diana.name.''
+
+        <<nm $player "Y-yes... Mistress...">>\
+    <<else>>\
+        <<SexUpdate 3 0 0 -5>>\
+        ''$diana.name pulls the fake cock out of your mouth, allowing you a moment to breath before quickly replacing it with an even larger one. You immediately start gagging and choking on it.''
+
+        <<nm $diana "Oh my, we've got some work to do on you! I'm going to keep ramming this hard cock down your throat until that gag reflex of yours is all but forgotten about!">>\
+
+        <<nm $player.b "@@.bf;Haa! <<cough>> More cock! I can take <<cough>> more!!@@">>\
+        <<nm $player.s "@@.bf;Haa! <<cough>> <<cough>> S-sorry Mistress! I-I can <<cough>> I can k-keep going!@@">>\
+        <<nm $player.d "<<cough>> <<cough>> P-please <<cough>> Please Mistress, I n-need a <<cough>> break!">>\
+
+        ''The large dildo returns to your mouth as $diana.name continues to work it for some time. After a while, your throat moves past being sore and you eventually find yourself completely numb. Once the gagging eventually stops, so also does $diana.name's assault.''
+
+        <<nm $diana "Mmm, not bad... Next time we'll have to step things up some to get your training on track, okay? I'll have to arrange for you to get plenty of practice before our next session...">>\
+
+        ''You pant, trying to catch your breath having just spent the last hour or so getting relentlessly throatfucked by $diana.name.''
+
+        <<nm $player "Y-yes... Mistress...">>\
+    <</if>>\
+
+    <<SexResults $diana>>\
+
+    <<btnLink "Clean up" "Diana-ISS-Train-Cleanup" "$c='suckCock'">>
+
+
+:: Diana-ISS-Train-ToyFuck {"position":"1225,15850","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+    <<if visited() > 1>>\
+        <<nm $player "Please train my ass more, Mistress $diana.name.">>\
+
+        <<if $c is $sex.wantReturn>>\
+            <<SexUpdate 2 2 0 -1>>\
+            <<nm $diana "Mmm, $player.name. I was hoping you'd say that!">>\
+        <<else>>\
+            <<SexUpdate 1 0 0 -1>>\
+            <<nm $diana "Hm, if you insist...">>\
+        <</if>>\
+
+        <<pic $diana "topless">>\
+
+        <<nm $diana "Let's get started, shall we? Now, your ass, please.">>\
+    <<elseif $sex.path is "punish">>\
+        <<SexUpdate 2 -2 0 -1>>\
+        <<nm $player "Yes $diana.name, I understa-">>\
+
+        @@SMACK!@@
+
+        <<nm $diana "Try again slut!">>\
+
+        <<nm $player "W-what the fuck ar-">>\
+
+        @@SMACK!@@
+
+        <<pic $diana "pussy">>\
+
+        ''You're on the ground, reeling in pain as $diana.name stands over you, a large black dildo in her hand. She thumps it on her desk once to emphasize the weight before pulling it back threateningly.''
+
+        <<nm $diana "You'll address me properly slut! One last chance.">>\
+
+        ''Cowering at her feet, you find yourself submitting on pure instinct.''
+
+        <<nm $player "Y-yes, sorry Mistress $diana.name. Please, n-no more, I'm ready.">>\
+
+        ''$diana.name smiles, seemingly satisfied, and gently sets the large fake cock down on the desk.''
+    <<else>>\
+        <<SexUpdate 1 1 0 -3>>\
+        <<nm $player "Y-yes Mistress $diana.name, I understand.">>\
+
+        ''$diana.name offers a satisfied smile before standing up from her desk and pulling a large black dildo out of a drawer, setting it down gently in front of her.''
+
+        <<if isBimbo()>>\
+            <<Thought "@@.bf;Ooooh, this is getting exciting!@@">>\
+        <<else>>\
+            <<Thought "Oh god...">>\
+        <</if>>\
+
+        <<pic $diana "topless">>\
+
+        <<nm $diana "Let's begin our adventure with some anal training! Now, your ass, please.">>\
+    <</if>>\
+
+    <<if visited() > 1>>\
+        ''You turn around, getting down on your hands and knees and propping your <<aSize>> into the air.''
+    <<else>>\
+        <<nm $player "M-mistress?">>\
+
+        ''$diana.name sighs heavily.''
+
+        <<nm $diana "I should beat you, but since this is our first official session together I'll go a little easy on you, considering you're still... untrained.">>\
+
+        ''She walks around her desk, kneeling down and pulling your chin up to face her.''
+
+        <<nm $diana "Mmm, from now on you'll start each of our sessions by removing your clothing, leaving them on that shelf over there by the door. When you're done, I want you to bend over and present your asshole to me.">>\
+
+        ''$diana.name addresses you so matter-of-factly that you almost don't even bat an eye at her instructions, instead simply turning around and happily doing as your told. Once you're naked, however, you can't help but hesitate a little.''
+
+        <<nm $diana "Well? On your hands and knees then stick your ass into the air. Don't think for a second your clients will be anywhere near as patient with you as I'm being.">>\
+
+        ''Her tone starts to become harsher and you quickly comply, red with embarrassment.''
+    <</if>>\
+
+    <<if analPlugged()>>\
+        <<nm $diana "Oh, look at this. You've already got some company back here...">>\
+
+        ''$diana.name plays with your <<accb>>, pumping it in and out of you a little before removing it completely with a loud pop. You see her place it on a rag on a shelf in front of you.''
+
+        <<nm $diana "Mmm, very nice... But today we'll be using my toy, okay?">>\
+    <<else>>\
+        <<nm $diana "Mmmm, good <<boy>>. Now then, time to start working that cute little hole of yours!">>\
+    <</if>>\
+
+    ''You hear the squirting of lubrication from a bottle, and the application to the large toy on $diana.name's desk. Shortly after, you feel the cold, wet sensation of $diana.name rubbing it into and around your hole.''
+
+    <<pic $player "toy-ass">>\
+
+    <<if isBimbo()>>\
+        <<nm $player "@@.bf;OOOHHHH! MMMMmmmm, YES Mistress!@@" "@@.bf;Oh GOD that hits the spot!@@">>\
+    <<else>>\
+        <<prefComment $player "analFuck.get"
+            "O-OOOHHhh, mmmm, ooooo...|That's... really nice..."
+            "Ahhhh, ooohhh, mmmm...|This isn't half bad..."
+            "A-ahh, ahhh, mmm;I wasn't... mph... ready..."
+            "O-oooh! T-too rough!|That hurts! Fuck!"
+            "N-no! Ah! Ngh...|F-fuck this sucks!"
+        >>\
+    <</if>>\
+
+    ''Without warning, $diana.name plunges the large cock into your <<aSize>>, working it deeper and deeper into you as you struggle to keep your balance on the floor.''
+
+    <<nm $diana "Mmmm, feel good slut? This is just a little taste of what's to come! Well, tell me how good it feels!">>\
+
+    <<if isBimbo()>>\
+        <<nm $player "@@.bf;It feels so good Mistress! Fuck my slutty hole even harder!@@">>\
+
+        <<nm $diana "That's a good slut! I'll reward you properly now!">>\
+    <<elseif isSissy()>>\
+        <<nm $player "@@.sf;I-it feels good M-mistress $diana.name... P-please use me however you l-like!@@">>\
+        
+        <<nm $diana "That's a good sissy slut! I'll reward you properly now!">>\
+    <<else>>\
+        <<if visited() is 1>>\
+            <<SexUpdate 0 -2 0 -3>>\
+            <<prefComment $player "analFuck.get"
+                "I-it feels good! Really good!"
+                "It feels g-great!"
+                "I-it's good. It feels good."
+                "It's... good..."
+                "...Good..."
+            >>\
+
+            @@SMACK!@@
+
+            ''$diana.name's hand comes down hard on your ass as she shoves the dildo in even deeper.''
+
+            <<nm $diana "Try again slut!">>\
+
+            <<nm $player "I-it feels good! Mistress $diana.name!">>\
+
+            <<nm $diana "Don't you dare forget again. Now to fuck you like a proper slut...">>\
+
+            <<Thought "W-what?">>\
+        <<else>>\
+            <<SexUpdate 1 1 0 -2>>\
+            <<prefComment $player "analFuck.get"
+                "I-it feels good Mistress $diana.name! Really good!"
+                "It feels g-great Mistress!"
+                "I-it's good Mistress $diana.name."
+                "It's... good... Mistress $diana.name."
+                "It's... good... Mistress $diana.name."
+            >>\
+
+            <<nm $diana "Mmm, very good! Now then, time to fuck you like a proper slut...">>\
+        <</if>>\
+    <</if>>\
+
+    $diana.name pulls the dildo out of your worn hole before quickly replacing it with an even larger, longer double-ended one. Once your end is firmly inserted, she slides the other into herself as she positions herself behind you.''
+
+    <<pic $diana "fuck-player">>\
+
+    <<anal "$diana.name long cock">>
+
+    <<if hasPenis()>>\
+        <<if isChastity()>>\
+            ''$diana.name fucks you ruthlessly, your caged <<pSize>> dangling uselessly beneath you.''
+        <<elseif isSissy()>>\
+            ''$diana.name fucks you ruthlessly, your tiny sissy clit dangling uselessly beneath you.''
+        <<else>>\
+            ''$diana.name fucks you ruthlessly, your <<pSize>> flopping untouched beneath you.''
+        <</if>>\
+    <<elseif frontPlugged()>>\
+        ''$diana.name fucks you ruthlessly, her strapon rubbing against the <<accf>> in your <<vSize>>.''
+    <<else>>\
+        ''$diana.name fucks you ruthlessly, juices pouring from your <<vSize>>.''
+    <</if>>\
+
+    <<nm $diana "Mmmm, ooohhhh yes! Fuck!">>\
+
+    <<pic $diana "orgasm">>\
+
+    <<nm $player "A-AHGH!">>\
+
+    ''You nearly choke as $diana.name shoves her cock as deep into you as she can, then a little past that. She lingers inside you for a moment before collapsing on top of you.''
+
+    <<nm $diana "Mmmm... $player.name... You'll make a fine anal slut...">>\
+
+    ''You're still trying to catch your breath while getting your poor, used asshole to stop quivering.''
+
+    <<nm $player "T-thank you, Mistress...">>\
+
+    <<SexResults $diana>>\
+
+    <<btnLink "Clean up Mistress $diana.name" "Diana-ISS-Train-Cleanup" "$c='analToy'">>
+
+
+:: Diana-P1-FirstStory {"position":"225,12725","size":"100,100"}
+<<loc_Lobby>>\
+    <<SetFlag $diana "TellStory">>\
+					
+    ''You're walking through the lobby when $diana.name suddenly appears behind you.''
+    
+    <<nm $player "Gah!">>\
+    
+    <<pic $diana>>\
+    <<art $diana>>\
+    
+    <<nm $diana "Oho, did I scare you? Terribly sorry, dear. You wouldn't happen to have a moment, would you?">>\
+    
+    <<nm $player "Heh, hey $diana.name. Yeah, I've got time, what's up?">>\
+    
+    ''She motions for you to follow her down the hallway, and the two of you start walking and talking.''
+    
+    <<nm $diana "I was just thinking about that little conversation we had the other day in my office. You know, about our dear employer.">>\
+    
+    <<nm $player "Yeah, of course. It was, um, enlightening.">>\
+    
+    ''$diana.name giggles softly.''
+    
+    <<nm $diana "I'm glad you think so. Actually, it's nice having someone to confide in. Keeping so many secrets can be tiresome, you know? In fact, I was wondering if you wouldn't mind spending some time with me so I can, hm, expand on our previous conversation?">>\
+    
+    ''She stops and looks directly at you.''
+    
+    <<nm $diana "I should be honest, though. Knowing too much can be a just as dangerous as it can be beneficial. So?">>\
+
+    <<btnChoice "Better to know too much than too little - <<t1>>" "Diana-P1-FirstStory-B" "$c=1">>
+    <<btnChoice "Maybe it's best I don't know too much..." "Diana-P1-FirstStory-B" "$c=2">>
+
+
+:: Diana-P1-FirstStory-B {"position":"350,12725","size":"100,100"}
+<<loc_Lobby>>\
+
+    <<pic $diana>>\
+    <<art $diana>>\
+
+    <<switch $c>>\
+        <<case 1>>\
+            <<nm $player "I mean, I think around here it's safer to know too much than to not know enough.">>\
+            
+            ''$diana.name smiles.''
+            
+            <<nm $diana "I was hoping you'd say that! Follow me, let's talk in my office.">>\
+            
+            <<loc_RecordsOffice>>\
+            
+            ''You follow $diana.name into her office. She closes the door and pours you both a cup of tea before she relaxes into her chair.''
+            
+            <<nm $diana "Hm, I don't know why I feel so compelled to talk to you about this, now that I think about it...">>\
+            
+            <<nm $player "O-oh? Heh, I uh... I guess..." "Oh shit...">>\
+            
+            ''She sips at her tea.''
+            
+            <<nm $diana "I suppose it's just therapeutic. In any case, I was curious as to whether or not you've worked out how The Company operates from a logistical standpoint. Specifically, in the branch office locations in relation to central headquarters.">>\
+            
+            ''You think for a moment.''
+            
+            <<nm $player "I've... I mean I've never really thought about it. Most major corporations operate this way, right? A central office delegates operations to smaller satellite offices around the country, or world, so their business can expand without having to move resources around. Isn't that kind of a standard practice?">>\
+            
+            ''$diana.name smiles over her tea cup.''
+            
+            <<nm $diana "Precisely. We operate no differently than any other trade organization. The only real differences are the security measures we have in place, as well as the nature of our products and practices. From a business perspective we're quite ordinary, which is intentional, of course.">>\
+            
+            ''She sips at her tea and stands up, walking around her desk and running a finger along your shoulders.''
+            
+            <<nm $diana "Another key difference, the one I wanted to talk to you about specifically, is how The Company perceives 'trust'. Trust between employees, trust between offices... Do you trust your coworkers, $player.name?">>\
+            
+            ''Her breath against your ear is making you slightly dizzy, hazy.''
+            
+            <<nm $player "I-I... I mean, I work with you and $penny.name and $sophie.name every day. I'd like to think there's some trust between us?">>\
+            
+            <<nm $diana "Hm, oh sweetie... Your new line of work is such that failure to meet and exceed expectations can, and will, result in a situation where a quick death is the best case scenario... and also a very unlikely one.">>\
+            
+            ''She squeezes your shoulder.''
+            
+            <<nm $diana "Not a single, desperate, broken individual on this organization's payroll would hesitate to throw you to the wolves if it meant saving themselves. Not your cute little lab partner, not our fearless leader, and certainly not me.">>\
+            
+            ''Her grip loosens, and she sighs heavily as she sits back down across from you.''
+            
+            <<nm $diana "But that doesn't mean we can't look out for each other when our necks aren't on the chopping block. The truth is I'm quite fond of you, $player.name, and I'd hate for your naivety to be the end of you. If...">>\
+            
+            ''She pauses, adjusting her glasses.''
+            
+            <<nm $diana "When the time comes, I just want to make sure you're capable of looking out for yourself. Anyway, that's all. Perhaps we'll continue our conversation another time. For now, we have actual work to attend to.">>\
+            
+            <<nm $player "Y-yeah, $diana.name, thanks for the talk.">>\
+            
+            ''You're shown out of $diana.name's office, pretending not to notice her hand casually resting on your ass...''
+            
+            <<love $diana 5>>
+            
+            <<btnLink "Continue" "Work" "passTime()">>
+        <<case 2>>\
+            <<nm $player "Um, yeah, y'know, maybe it's best I don't know too much. Seems sticking your nose where it doesn't belong is liable to get you into a bad situation around here.">>\
+            
+            ''$diana.name's expression is both surprised, and somewhat impressed.''
+            
+            <<nm $diana "You're not wrong, $player.name, you're not wrong at all. Pity though, I do so enjoy our talks. Perhaps another time, then.">>\
+            
+            ''$diana.name leaves you standing in the hallway, the sound of her clicking heels vanishing off as she heads back to her office.''
+            
+            <<SetFlag $diana "SkipStory">>\
+            <<btnLink "Continue" "Work">>
+    <</switch>>\
+
+
+:: Diana-P2-SecondStory {"position":"475,12725","size":"100,100"}
+<<loc_Lobby>>\
+
+    <<pic $diana>>\
+    <<art $diana>>\
+
+    <<nm $diana "Ah, hello $player.name! How is your day going so far?">>\
+
+    <<nm $player "Oh, hey $diana.name. Um, no complaints... all things considered.">>\
+
+    ''She laughs.''
+
+    <<nm $diana "Well, I'm glad I ran into you. Don't suppose you're free to take a little walk with me around the office?">>\
+
+    <<btnChoice "Sure, I've got some time - <<t1>>" "Diana-P2-SecondStory-B" "$c=1">>
+    <<btnChoice "Sorry, I'm a little busy right now..." "Diana-P2-SecondStory-B" "$c=2">>
+
+
+:: Diana-P2-SecondStory-B {"position":"600,12725","size":"100,100"}
+<<loc_Lobby>>\
+
+    <<pic $diana>>\
+    <<art $diana>>\
+
+    <<switch $c>>\
+        <<case 1>>\
+            <<nm $player "Sure, I've got some time.">>\
+            
+            <<nm $diana "Excellent!">>\
+            
+            ''You and $diana.name meander aimlessly through the winding hallways of the office lobby, chatting about this and that, stopping for tea and coffee in the common area to take with you. Eventually, $diana.name begins speaking with a measure of purpose in her voice.''
+            
+            <<nm $diana "So, $player.name... A while back I shared, perhaps too much, of my perspective on Sophie. Either way, I...">>\
+            
+            ''$diana.name's face becomes flushed.''
+            
+            <<nm $player "$diana.name? Are you okay?">>\
+            
+            <<nm $diana "Ha, I'm fine... I guess, these days, sincerity is a lot harder for me than I realized. Really, all I wanted to say is that I've noticed a real change in Sophie since you started here. There's a kind of hopefulness to her that I don't recall seeing before, and...">>\
+            
+            ''Her face turns an even deeper shade of red.''
+            
+            <<nm $diana "Well I guess you could say that between you and Sophie, the feelings can be somewhat... infectious.">>\
+            
+            <<nm $player "Um... Thanks?">>\
+            
+            ''$diana.name notices how flustered she's become, laughing loudly as she regains her composure.''
+            
+            <<nm $diana "Anyway... All that talk about trust last week? I've decided that, in spite of the cost, I want to be someone that you and Sophie can put your trust in. That's all. Anyway, I've taken up enough of your time. I'll see you around, $player.name.">>\
+            
+            ''Before you can continue the conversation, $diana.name turns around and walks off quickly. You're left alone in the hallway.''
+            
+            <<Thought "What was all that about?">>\
+            
+            <<love $diana 5>>
+            
+            <<btnLink "Continue" "Work" "passTime()">>
+        <<case 2>>\
+            <<nm $player "Sorry, I'm a little busy right now.">>\
+            
+            ''$diana.name appears disappointed, but doesn't push it.''
+            
+            <<nm $diana "I see. Well, it's nothing important anyway... See you around, $player.name.">>\
+            
+            ''$diana.name leaves you standing in the hallway, the sound of her clicking heels vanishing off as she heads back to her office.''
+            
+            <<love $diana -5>>
+            
+            <<SetFlag $diana "SkipStory">>\
+            <<btnLink "Continue" "Work">>
+    <</switch>>\
+
+
+:: Diana-P3-ThirdStory {"position":"725,12725","size":"100,100"}
+<<loc_Lobby>>\
+
+    ''You're standing around, talking to coworkers about this and that when $diana.name suddenly approaches you. She has a somewhat serious look to her today.''
+    
+    <<pic $diana>>\
+    <<art $diana>>\
+    
+    <<nm $diana "$player.name, how are you?">>\
+    
+    <<nm $player "Oh, hey $diana.name. I'm okay, what's up.">>\
+    
+    ''She takes a quick look around the room while maintaining her nonchalant smile.''
+    
+    <<nm $diana "Oh, nothing much, though I am a bit hungry. It's lunch time, isn't it? Care to join me for a bite eat? There's an excellent seafood place nearby that I frequent, it'll be my treat!">>\
+
+    <<btnChoice "Sure, that sounds great - <<t1>>" "Diana-P3-ThirdStory-B" "$c=1">>
+    <<btnChoice "Sorry, I'm a little busy right now..." "Diana-P3-ThirdStory-B" "$c=2">>
+
+
+:: Diana-P3-ThirdStory-B {"position":"850,12725","size":"100,100"}
+<<loc_Lobby>>\
+
+    <<pic $diana>>\
+    <<art $diana>>\
+    
+    <<switch $c>>\
+        <<case 1>>\
+            <<nm $player "Sure, that sounds great.">>\
+            
+            <<nm $diana "Perfect! I'll lead the way.">>\
+            
+            ''You follow $diana.name into the elevator and up to the surface. A company vehicle takes you a few blocks away to small restaurant. The smell of fish and crab permeates the air as you exit the SUV. You start to think you should really try to visit the docks more often!''
+            
+            <<nm $diana "Well, here we are! Let's grab a seat.">>\
+            
+            ''The two of you are greeted at the door, instructed to choose any empty booth to sit at. $diana.name orders a variety platter and you both get comfortable.''
+            
+            <<nm $player "So, this is cozy. Never would have thought to have come here.">>\
+            
+            <<nm $diana "It's nice, isn't it? I've been coming her for a couple years now. It's nice and quiet, and the food is excellent. It's... Well it's too bad this may be the last time I get to see it...">>\
+            
+            <<Thought "There it is...">>\
+            
+            <<nm $player "I kind of got the impression something was on your mind when you asked me out here... What's going on $diana.name?">>\
+            
+            ''She smiles at you as the server comes by with your food. You both sit in silence as $diana.name carefully fishes a length of crab meat from its shell.''
+            
+            <<nm $diana "Well, I suppose I'll be blunt. I'm sure you heard the rumors surrounding the recent slave murders. That this isn't the first time?">>\
+            
+            <<nm $player "Y-yeah... Wait, you didn't... It wasn't you, was it?">>\
+            
+            ''$diana.name laughs, loud enough to startle the staff.''
+            
+            <<nm $diana "O-ho, oh my! Hahaha, no dear, no... I'm afraid $julia.name was responsible for that incident as well. At least, responsible for carrying out the act. For my part, I ensured there would be no evidence pointing to her for it. What's more is that, shortly before you arrived, I was also responsible for allowing her to once again pick up her old hobby.">>\
+            
+            ''She casually eats her meal as she speaks.''
+            
+            <<nm $player "S-so, what? Clearing your conscience? I mean, what's done is done...">>\
+            
+            <<nm $diana "Hm, you're so cute, $player.name. You see, I was placed here, at this office, with a single task. My instructions were to set Sophie up for slow, abysmal failure until The Company eventually had no choice but to liquidate her assets, that is, her employees, and punish her accordingly.<br><br>Oh I could have sealed the deal several times over, but I was clearly told not to strike until she was completely broken and desperate. She needed to be convinced that her downfall was entirely her own doing.">>\
+            
+            <<nm $player "I...">>\
+            
+            ''She swallows another crab leg.''
+            
+            <<nm $diana "Exactly! You! You see, I'm not as cold and soulless as I'm making myself sound. Over time, I grew quite fond of Sophie. However, a job's a job... Until you showed up! You were just, so... YOU! Sophie's new initiative was actually paying off, and your little stunt with Tory made some huge waves back at HQ. Sophie had hope again, and you and $penny.name started bringing about some incredible change.">>\
+            
+            <<if $john.dose > 0>>\
+                ''$diana.name laughs again.''
+                
+                <<nm $diana "I mean, hell, you even fixed $john.oldName!">>\
+                
+                ''$diana.name wipes her mouth with a damp napkin.''
+            <<else>>\
+                ''$diana.name wipes her mouth with a damp napkin.''
+            <</if>>\
+            
+            <<nm $diana "Anyway... After last month I decided to, how shall I say it, slack on my duties when it comes to the matter of espionage. You can imagine how frustrated the man I report to gets when I tell him there's simply nothing to report!">>\
+            
+            <<nm $player "$diana.name...">>\
+            
+            <<nm $diana "So, as a result, I've been ordered back to headquarters. I know too much to simply be disposed of, and they're smart enough to realize I have some contingencies should the worst happen. That said, I've failed in my duties and will be 'seen to' accordingly.">>\
+            
+            ''You quietly stare at $diana.name, fidgeting with the oyster shell still in your hands. You're not sure how to respond.''
+            
+            <<nm $diana "I'm telling you all this because I don't want to see the worst come to you or Sophie. However, there's no way I could admit all this to Sophie now, so I'd appreciate it if you could keep everything I've told you today between us.">>\
+            
+            <<nm $player "Y-yeah, of course.">>\
+            
+            <<nm $diana "Excellent! Now, last thing. You need to know that whoever they send to replace me will have been given the same directive I was, or at least something similar. Either way, you can neither trust her nor can you become outright defiant. As far as everyone else is concerned, this is a simple staff reorganization and nothing more.">>\
+            
+            <<nm $player "Right... I understand. Will you be alright?">>\
+            
+            ''She smiles at you again as she takes a bite of fried fish.''
+            
+            <<nm $diana "I'm surprisingly resourceful, dear.">>\
+            
+            ''With that, the two of you finish off the plate of food as $diana.name makes idle chit chat, as though this conversation never happened. The tab is paid and you both return to the office.''
+            
+            <<love $diana 10>>
+            
+            <<SetFlag $diana "FullStory">>\
+            <<btnLink "Continue" "Work" "passTime()">>
+        <<case 2>>\
+            <<nm $player "Sorry, I'm a little busy right now.">>\
+            
+            ''$diana.name holds her smile, but you can still see her expression drop.''
+            
+            <<nm $diana "O-oh, sure. No problem. I'll see you around... $player.name.">>\
+            
+            ''$diana.name leaves you standing in the hallway, the sound of her clicking heels vanishing off as she heads back to her office.''
+            
+            <<love $diana -5>>
+            
+            <<SetFlag $diana "SkipStory">>\
+            <<btnLink "Continue" "Work">>
+    <</switch>>\
+
+
+:: Diana-SQ1-HelpJag {"position":"975,12725","size":"100,100"}
+<<loc_RecordsOffice>>\
+
+    <<pic $diana>>\
+
+    <<nm $diana "Wow, you must really care about this acquaintance of yours...">>\
+
+    <<nm $player "I guess? Karma and all that. Anyway, is there anything you need on my end?">>\
+
+    ''$diana.name giggles.''
+
+    <<nm $diana "Well I need to know who's life I'm saving.">>\
+
+    <<nm $player "Ha, right... It's one of my drivers, $jag.name. He's the one that talks a lot... or at all really.">>\
+
+    <<nm $diana "I know $jag.name. He and $mick.name have been my drivers a handful of times in the past. As far as I can tell he is a pretty decent person, so why he feels The Company is coming for him is beyond me. In any case, please let him know to expect me to make contact with him in the near future, and to have a couple bags packed.">>\
+
+    <<nm $player "Will do. Thanks again for doing this, $diana.name.">>\
+
+    ''She smiles at you.''
+
+    <<nm $diana "No trouble at all, $player.name.">>\
+
+    <<RemoveConvo $diana 6 7>>\
+    <<SetFlag $player "JagMoves">>\
+    <<btnLink "Continue - <<t1>>" "Work" "passTime()">>\

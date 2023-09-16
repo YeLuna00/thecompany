@@ -1,0 +1,1689 @@
+:: Escort-GetClient {"position":"1100,21475","size":"100,100"}
+<<nobr>>\
+        <<set _cDesc to ["polite","somewhat rude","intelligent","nervous"]>>
+        <<set _cGDesc to ["male","female","trans"]>>
+        <<set _cGVal to ["male","female","ts"]>>
+        <<set _cPVal to ["nice","mean","dom","shy"]>>
+        <<set _g1 to random(0,2), _p1 to random(0,3)>>
+        <<set _g2 to random(0,2), _p2 to random(0,3)>>
+        <<set _g3 to random(0,2), _p3 to random(0,3)>>
+    <</nobr>>\
+    <<if $c is "continue">>\
+        <<loc_Night>>\
+
+        <<if flag($diana,"Workplan")>>\
+            ''You pull out your phone and see what options $diana.name's lined up for you.''
+        <<else>>\
+            ''You pull out your phone and look for potential options.''
+        <</if>>\
+    <<else>>\
+        <<loc_Room>>\
+        
+        <<if flag($diana,"Workplan")>>\
+            ''You pull up your browser and see what options $diana.name's lined up for you.''
+        <<else>>\
+            ''You pull up your browser and look for potential options.''
+        <</if>>\
+    <</if>>\
+
+    <<nm $player "Let's see...">>\
+
+    ''There are only a few listings that catch your eye. Of course, there's always the option of just responding to one at random and see where the night takes you...''
+
+    @@.btnUI;<<button "Respond to a <<print _cDesc[_p1]>> sounding <<print _cGDesc[_g1]>> client's posting" "Escort-Scene">>
+        <<set _cG to _cGVal[_g1], _cP to _cPVal[_p1]>>
+        <<set $player.escortCounter -= 1>>
+        <<escortGetClient _cG _cP>>
+    <</button>>@@\
+    @@.btnUI;<<button "Respond to a <<print _cDesc[_p2]>> sounding <<print _cGDesc[_g2]>> client's posting" "Escort-Scene">>
+        <<set _cG to _cGVal[_g2], _cP to _cPVal[_p2]>>
+        <<set $player.escortCounter -= 1>>
+        <<escortGetClient _cG _cP>>
+    <</button>>@@\
+    @@.btnUI;<<button "Respond to a <<print _cDesc[_p3]>> sounding <<print _cGDesc[_g3]>> client's posting" "Escort-Scene">>
+        <<set _cG to _cGVal[_g3], _cP to _cPVal[_p3]>>
+        <<set $player.escortCounter -= 1>>
+        <<escortGetClient _cG _cP>>
+    <</button>>@@
+    @@.btnUI;<<button "Just pick a random posting" "Escort-Scene">>
+        <<set $player.escortCounter -= 1>>
+        <<escortGetClient>>
+    <</button>>@@
+
+    <<if $c is "continue">>\
+        <<btnLink "Change your mind and go home for the night" "Room" "setTime('night')">>
+    <<else>>\
+        <<btnLink "Change your mind" "Room">>
+    <</if>>\
+
+
+:: Escort-Scene {"position":"1225,21475","size":"100,100"}
+<<loc_Hotel>>\
+    <<escortSetClient>>\
+    <<set $player.escortCounter -= 1>>\
+
+    ''You walk out to the arranged location to meet your client. You remember <<escortDesc 0>> over the phone<<if $client.gender is "ts">>, and made sure to identify herself as a transwoman to avoid any surprises<</if>>. Taking a deep breath, you force your best smile before knocking on the hotel room door. After a moment, the door opens. ''\
+    <<switch $client.personality>>\
+        <<case "nice">>\
+            ''A relaxed looking _man stands in the doorway.''
+        <<case "mean">>\
+            ''An angry looking _man stands in the doorway.''
+        <<case "dom">>\
+            ''An intimidating looking _man stands in the doorway.''
+        <<case "shy">>\
+            ''A nervous looking _man stands in the doorway.''
+    <</switch>>\
+
+    <<pic $client $client.pic>>\
+
+    <<clientComment
+        "Hm? Hello?"
+        "Yeah, what is it?"
+        "Yes, hello?"
+        "H-hello?"
+    >>\
+
+    <<if skill($player,"escorting",$EXPERT)>>\
+        <<nm $player "Hey you! Mmm, gonna invite me in?">>\
+
+        ''You throw your arms around the _man at the door.''
+
+        <<nm $client "<<escortDesc 1>>">>\
+    <<elseif skill($player,"escorting",$GREAT)>>\
+        <<nm $player "Oh hey there! $client.name, right? It's great to meet you!">>\
+
+        ''You lean in for a hug, pressing yourself up close.''
+
+        <<nm $client "<<escortDesc 2>>">>\
+    <<elseif skill($player,"escorting",$GOOD)>>\
+        <<nm $player "O-oh heya! You're, um, $client.name, right?">>\
+
+        ''You reach at and shake the _man's hand.''
+
+        <<nm $client "<<escortDesc 3>>">>\
+    <<elseif skill($player,"escorting",$OKAY)>>\
+        <<nm $player "Hey, um, hello. I, um... Can I come in?">>\
+
+        ''The _man in the doorway looks at you curiously.''
+
+        <<nm $client "<<escortDesc 4>>">>\
+    <<else>>\
+        <<nm $player "H-hi, are you, um, $client.name?">>\
+
+        ''The _man in the doorway looks a little confused and mildly annoyed.''
+
+        <<nm $client "<<escortDesc 5>>">>\
+    <</if>>\
+
+    <<if flag($diana,"Workplan")>>\
+        ''As you walk inside, closing the door behind you, you take a good look around the room. $diana.name took care of all the payments from clients through The Company, so you don't need to worry about any envelopes or giftbags.''
+    <<else>>\
+        ''You walk inside, closing the door behind you. As you walk inside and take the room in, you make it a point to discreetly check the small envelope on the dresser with your name on it.''
+    <</if>>\
+
+    <<skillComment $player "escorting"
+        "Hey, this is a great room!"
+        "Wow, this is a pretty nice room."
+        "Um, this is a nice room."
+        "U-um... Nice room, hehe..."
+        "This is a, u-um, nice room."
+    >>\
+
+    <<nm $client "<<escortDesc 6>>">>\
+
+    <<if skill($player,"escorting",$EXPERT)>>\
+        <<nm $player "Way ahead of you baby!">>\
+
+        ''You're already stripping out of your outfit, putting on a little show for your client before settling into the bed.''
+    <<elseif skill($player,"escorting",$GREAT)>>\
+        <<nm $player "Mmm, you read my mind!">>\
+
+        ''You pull your client over to the bed and start undressing.''
+    <<else>>\
+        <<nm $player "O-oh, right!">>\
+
+        ''You start pulling your clothing off, trying to make sure you're smiling as you do.''
+    <</if>>\
+
+    <<if $client.gender is "male">>\
+        <<pic $player "kiss-male">>\
+    <<else>>\
+        <<pic $player "kiss-female">>\
+    <</if>>\
+
+    ''The two of you make out on the bed for some time before you pull back.''
+
+    <<switch $client.wantedStart>>\
+        <<case "suckCock.give">>\
+            <<clientComment
+                "Hey, why don't you get to work down here, huh?"
+                "Mmm, alright, time to get me nice an' lubed up, hehe!"
+                "Alright, time to put that mouth to work sweetie."
+                "H-hey, um, c-could you maybe, ahhhh..."
+            >>\
+            
+            ''Your client reaches down and starts lightly stroking _his cock, signalling for you to come down and greet it.''
+
+            <<prefComment $player "suckCock.give"
+                "Hehe, I was hoping you'd ask!"
+                "Mmmm, yeah I can take care of that for you. Just lay back..."
+                "Mmm, sure thing baby..."
+                "Oh! Sure, mmm..."
+                "Y-yeah, okay..."
+            >>\
+
+            ''You lean in and take the _man's cock into your mouth.''
+
+            <<if $client.gender is "male">>\
+                <<pic $player "suck-male">>\
+            <<else>>\
+                <<pic $player "suck-ts">>\
+            <</if>>\
+
+            <<switch $client.personality>>\
+                <<case "nice">>\
+                    <<skillComment $client "suckCock.give"
+                        "O-ohhh fuck... That feels amazing!"
+                        "O-oh wow, mmm, that's great!"
+                        "Mmmm, that feels good..."
+                        "A-ah, hehe, y-yeah that's good..."
+                        "Ouch! H-hey, easy now..."
+                    >>\
+                <<case "mean">>\
+                    <<skillComment $client "suckCock.give"
+                        "Oh wow! You really know how to suck a dick!"
+                        "Hey, not bad. Not bad!"
+                        "Hm, you're not half bad!"
+                        "Hm, not the best hummer I've had, but don't stop!"
+                        "Jeez, I can't believe I'm paying for this..."
+                    >>\
+                <<case "dom">>\
+                    <<skillComment $client "suckCock.give"
+                        "O-oh my! Very good, mmm, don't stop!"
+                        "Oohhh, you're quite talented!"
+                        "Mmm, that's nice, you're not half bad..."
+                        "Hm, definitely some room for improvement..."
+                        "This is rather dissappointing..."
+                    >>\
+                <<case "shy">>\
+                    <<skillComment $client "suckCock.give"
+                        "M-mmm... mmmma-ahhh!"
+                        "T-that's... mmm... really good!"
+                        "Wow, you're r-really good!"
+                        "Hmm... mmmm... h-hehe, mmm..."
+                        "Mmmm... O-ouch! S-sorry, um..."
+                    >>\
+            <</switch>>\
+
+            ''You pull your head up for a moment.''
+        <<case "suckCock.get">>\
+            <<clientComment
+                "Mmm, actually I think you could some attention..."
+                "I'm gonna have some fun, you'd better not pop early on me!"
+                "Mmm, time to test your endurance..."
+                "H-hey, um, actually I was wondering if I could try, um, y'know..."
+            >>\
+
+            ''You notice _he's eyeing your <<StraponOrCock size>>.''
+            
+            <<prefComment $player "suckCock.get"
+                "Oh hell yeah! Hehe, here you go!"
+                "Hehe, you got it babe. Eat up!"
+                "Yeah? Mmm, sure thing babe, here you go..."
+                "Oh! Sure, mmm..."
+                "You mean you want to...? O-oh, yeah, here..."
+            >>\
+
+            ''Your client slides down and meets your hardening penis, running their tongue along it before finally pulling it into their mouth.''
+
+            <<if $client.gender is "male">>\
+                <<pic $player "sucked-by-male">>\
+            <<else>>\
+                <<pic $player "sucked-by-female">>\
+            <</if>>\
+
+            <<prefComment $player "suckCock.get"
+                "Oh fuuuuuck! Mmmm, you're amazing, that's so good!"
+                "Mmmm, yeah that's it! Oh that feels great!"
+                "Mmm, yeah, there you go... mmm..."
+                "Y-yeah, that feels good, hehe..."
+                "Y-yeah, that's, um, good, hehe..."
+            >>\
+
+            ''After a little while of this, you run a finger along your client's cheek to get _his attention.''
+        <<case "eatPussy.give">>\
+            <<clientComment
+                "Hey, why don't you get to work down here, huh?"
+                "Mmm, alright, time to get me nice an' lubed up, hehe!"
+                "Alright, time to put that mouth to work sweetie."
+                "H-hey, um, c-could you maybe, ahhhh..."
+            >>\
+            
+            ''Your client reaches down and starts lightly rubbing _his pussy, signalling for you to come down and greet it.''
+
+            <<prefComment $player "eatPussy.give"
+                "Hehe, I was hoping you'd ask!"
+                "Mmmm, yeah I can take care of that for you. Just lay back..."
+                "Mmm, sure thing baby..."
+                "Oh! Sure, mmm..."
+                "Y-yeah, okay..."
+            >>\
+
+            ''You lean in and start sliding your tongue along your client's wet slit.''
+
+            <<pic $player "eat-pussy">>\
+
+            <<switch $client.personality>>\
+                <<case "nice">>\
+                    <<skillComment $client "eatPussy.give"
+                        "O-ohhh fuck... That feels amazing!"
+                        "O-oh wow, mmm, that's great!"
+                        "Mmmm, that feels good..."
+                        "A-ah, hehe, y-yeah that's good..."
+                        "Ouch! H-hey, easy now..."
+                    >>\
+                <<case "mean">>\
+                    <<skillComment $client "eatPussy.give"
+                        "Not bad slut! You really know how to eat a cunt!"
+                        "Hey, not bad. Not bad!"
+                        "Hm, you're not half bad!"
+                        "Ugh, you need more practice... Just keep licking, slut!"
+                        "Jeez, I can't believe I'm paying for this..."
+                    >>\
+                <<case "dom">>\
+                    <<skillComment $client "eatPussy.give"
+                        "O-oh my! Very good, mmm, don't stop!"
+                        "Oohhh, you're quite talented!"
+                        "Mmm, that's nice, you're not half bad..."
+                        "Hm, definitely some room for improvement..."
+                        "This is rather dissappointing..."
+                    >>\
+                <<case "shy">>\
+                    <<skillComment $client "eatPussy.give"
+                        "M-mmm... mmmma-ahhh!"
+                        "T-that's... mmm... really good!"
+                        "Wow, you're r-really good!"
+                        "Hmm... mmmm... h-hehe, mmm..."
+                        "Mmmm... O-ouch! S-sorry, um..."
+                    >>\
+            <</switch>>\
+
+            ''You pull your head up for a moment.''
+        <<case "eatPussy.get">>\
+            <<clientComment
+                "Mmm, actually I think you could some attention..."
+                "I'm gonna have some fun, you'd better not squirt in my face!"
+                "Mmm, time to test your endurance..."
+                "H-hey, um, actually I was wondering if I could try, um, y'know..."
+            >>\
+
+            ''You notice _him looking down at your <<vDSize>> and licking _his lips.''
+            
+            <<prefComment $player "eatPussy.get"
+                "Oh hell yeah! Hehe, here you go!"
+                "Hehe, you got it babe. Eat up!"
+                "Yeah? Mmm, sure thing babe, here you go..."
+                "Oh! Sure, mmm..."
+                "You mean you want to...? O-oh, yeah, here..."
+            >>\
+
+            <<if frontPlugged()>>\
+                ''Your client slides down and meets your <<vSize>>, pulling out your <<accf>> and burying their face in your twat.''
+            <<else>>\
+                ''Your client slides down and meets your <<vSize>>, running their tongue up and down your slit before really going to town on you.''
+            <</if>>\
+
+            <<if $client.gender is "male">>\
+                <<pic $player "eaten-by-male">>\
+            <<else>>\
+                <<pic $player "eaten-by-female">>\
+            <</if>>\
+
+            <<prefComment $player "eatPussy.get"
+                "Oh fuuuuuck! Mmmm, you're amazing, that's so good!"
+                "Mmmm, yeah that's it! Oh that feels great!"
+                "Mmm, yeah, there you go... mmm..."
+                "Y-yeah, that feels good, hehe..."
+                "Y-yeah, that's, um, good, hehe..."
+            >>\
+
+            ''After a little while of this, you run a finger along your client's cheek to get _his attention.''
+        <<case "rimjob.give">>\
+            <<clientComment
+                "Hey, how do you feel about eating ass, hm?"
+                "Mmm, alright, now get down here and eat my ass, hehe!"
+                "Alright, time to put that mouth to work sweetie. This hole, here..."
+                "H-hey, um, c-could you maybe, ahhhh..."
+            >>\
+
+            ''You notice your client drawing your attention to _his now spread open asshole.''
+            
+            <<switch $client.personality>>\
+                <<case "nice" "dom">>\
+                    <<prefComment $player "rimjob.give"
+                        "Oh wow, I didn't think you'd be into that! Hehe, just lay back and enjoy!"
+                        "Mmmm, yeah I can take care of that for you. Just lay back..."
+                        "I don't have a lot of experience, but I don't mind, hehe!"
+                        "Oh! Sure, mmm..."
+                        "Y-yeah, okay..."
+                    >>\
+
+                    ''You slide down and push your client's legs up, lowering your head to their asshole.''
+
+                    <<Thought 
+                        "At least they keep clean..."
+                        "Thank god _he keeps clean down here..."
+                    >>\
+                <<case "mean">>\
+                    <<nm $player "Huh? H-hold on a-">>\
+
+                    ''You're shoved down between the _man's legs as _he pulls _his cheeks apart.''
+
+                    <<nm $client "Hehehe! Come on now, don't be shy!">>\
+
+                    <<prefComment $player "rimjob.give"
+                        "Mmm, sure thing baby! You just relax and enjoy..."
+                        "Hehe, you got it babe!"
+                        "O-okay, hehe, you just lay back now..."
+                        "O-okay, sure... mmm..."
+                        "..."
+                    >>\
+
+                    ''You lower your head to the _man's asshole.''
+
+                    <<Thought
+                        "Oh god... it stinks!"
+                        "When's the last time _he's washed down here?"
+                        "Mmm, not as bad as I thought it would be down here..."
+                    >>\
+                <<case "shy">>\
+                    <<prefComment $player "rimjob.give"
+                        "Ohhh, sure thing sweetie! Hehe, just lay back and enjoy!"
+                        "Mmmm, yeah babe, you're gonna love this..."
+                        "I don't have a lot of experience, but I don't mind, hehe!"
+                        "Oh! Sure, mmm..."
+                        "Y-yeah, okay..."
+                    >>\
+
+                    ''You slide down and push your client's legs up, lowering your head to their asshole.''
+
+                    <<Thought 
+                        "_He's so clean back here!"
+                        "Oh my god, _his little asshole's so cute!"
+                    >>\
+            <</switch>>\
+
+            <<if $client.gender is "male">>\
+                <<pic $player "rim-male">>\
+            <<elseif $client.gender is "ts">>\
+                <<pic $player "rim-ts">>\
+            <<else>>\
+                <<pic $player "rim-female">>\
+            <</if>>\
+
+            <<switch $client.personality>>\
+                <<case "nice">>\
+                    <<skillComment $client "rimjob.give"
+                        "O-ohhh fuck... That feels amazing!"
+                        "O-oh wow, mmm, that's great!"
+                        "Mmmm, that feels good..."
+                        "A-ah, hehe, y-yeah that's good..."
+                        "Ouch! H-hey, easy now..."
+                    >>\
+                <<case "mean">>\
+                    <<skillComment $client "rimjob.give"
+                        "Not bad slut! You really know how to eat ass!"
+                        "Hey, not bad. Not bad!"
+                        "Hm, you're not half bad!"
+                        "Ugh, you need more practice... Just keep licking, slut!"
+                        "Jeez, I can't believe I'm paying for this..."
+                    >>\
+                <<case "dom">>\
+                    <<skillComment $client "rimjob.give"
+                        "O-oh my! Very good, mmm, don't stop!"
+                        "Oohhh, you're quite talented!"
+                        "Mmm, that's nice, you're not half bad..."
+                        "Hm, definitely some room for improvement..."
+                        "This is rather dissappointing..."
+                    >>\
+                <<case "shy">>\
+                    <<skillComment $client "rimjob.give"
+                        "M-mmm... mmmma-ahhh!"
+                        "T-that's... mmm... really good!"
+                        "Wow, you're r-really good!"
+                        "Hmm... mmmm... h-hehe, mmm..."
+                        "Mmmm... O-ouch! S-sorry, um..."
+                    >>\
+            <</switch>>\
+
+            ''You pull your head up for a moment.''
+        <<case "titfuck.give">>\
+            <<clientComment
+                "Hey, since you're so well equipped, how about a titfuck?"
+                "Mmm, alright, why don't you slide my hard cock up between those titties of yours!"
+                "Mmm, since you've got what it takes, why don't you work my cock between your breasts, hm?"
+                "H-hey, um, could you rub m-my, um... Rub me between you're, um..."
+            >>\
+            
+            ''Your client leans back, allowing their large cock to stand upright. You smile as you rub it gently with your hand.''
+
+            <<prefComment $player "titfuck.give"
+                "Hehe, I was hoping you'd ask!"
+                "Mmmm, yeah I can take care of that for you. Just lay back..."
+                "Mmm, sure thing baby..."
+                "Oh! Sure, mmm..."
+                "Y-yeah, okay..."
+            >>\
+
+            ''You lube up the _man's cock with a quick sloppy blowjob before wrapping your <<bSize>> around it.''
+
+            <<pic $player "titfuck-give">>\
+
+            <<switch $client.personality>>\
+                <<case "nice">>\
+                    <<skillComment $client "titfuck.give"
+                        "O-ohhh fuck... That feels amazing!"
+                        "O-oh wow, mmm, that's great!"
+                        "Mmmm, that feels good..."
+                        "A-ah, hehe, y-yeah that's good..."
+                        "Ouch! H-hey, easy now..."
+                    >>\
+                <<case "mean">>\
+                    <<skillComment $client "titfuck.give"
+                        "Oh wow! You really know how to work those titties!"
+                        "Hey, not bad. Not bad!"
+                        "Hm, you're not half bad!"
+                        "Hm, not the best titfuck I've had, but don't stop!"
+                        "Jeez, I can't believe I'm paying for this..."
+                    >>\
+                <<case "dom">>\
+                    <<skillComment $client "titfuck.give"
+                        "O-oh my! Very good, mmm, don't stop!"
+                        "Oohhh, you're quite talented!"
+                        "Mmm, that's nice, you're not half bad..."
+                        "Hm, definitely some room for improvement..."
+                        "This is rather dissappointing..."
+                    >>\
+                <<case "shy">>\
+                    <<skillComment $client "titfuck.give"
+                        "M-mmm... mmmma-ahhh!"
+                        "T-that's... mmm... really good!"
+                        "Wow, you're r-really good!"
+                        "Hmm... mmmm... h-hehe, mmm..."
+                        "Mmmm... O-ouch! S-sorry, um..."
+                    >>\
+            <</switch>>\
+
+            ''You slow your pace and look up at your client.''
+        <<default>>\
+            <<err "Invalid wantedStart: $client.wantedStart">>\
+    <</switch>>\
+
+    <<skillComment $player "escorting"
+        "Mmm, alright baby, what do you want to do with me?"
+        "Mmm, so, what'd you really want to happen tonight?"
+        "Hehe, so, is this really all you wanted?"
+        "S-so, was this really, um, all you wanted tonight?"
+        "U-um, is this good for you? Was there, um, more you wanted to try?"
+    >>\
+
+    <<switch $client.wantedAction>>\
+        <<case "analFuck.get">>\
+            <<set _hole to "ass">>\
+            <<if $client.gender is "female">>\
+                <<nm $client "Hold that thought...">>\
+
+                ''You watch as _he slides off the bed and pulls something out of _his purse.''
+
+                <<Thought "A... strapon?">>\
+
+                ''The _man quickly fastens the large strapon harness around _his waist, then turns around to face you excitedly.''
+
+                <<if isSissy()>>\
+                    <<clientComment
+                        "Hehe, what can I say? I just love fucking little sissies!"
+                        "Heh, nothing I love more than fucking little sissy sluts like you!"
+                        "Oh come on, this is clearly the sort of thing you live for, right?"
+                        "Hehe, I h-hope you don't mind!"
+                    >>\
+                <<else>>\
+                    <<clientComment
+                        "Hehe, I hope you don't that I brought this!"
+                        "Heh, what, did you expect soft and sexy lesbian love making? C'mon, stick that ass out for me!"
+                        "Now that I'm all warmed up, I wanted to see how well you took it up the ass!"
+                        "A-actually, I was hoping I could try putting it in your, um, ass?"
+                    >>\
+                <</if>>\
+            <<else>>\
+                <<switch $client.wantedStart>>\
+                    <<case "suckCock.give" "rimjob.give">>\
+                        ''_He pulls away from your mouth and starts stroking _his hard cock.''
+                    <<case "suckCock.get">>\
+                        ''_He lifts his mouth off your <<StraponOrCock size>> and starts stroking his own cock.''
+                    <<case "titfuck.give">>\
+                        ''_He slides his wet cock out from between your large tits and starts stroking it.''
+                <</switch>>\
+
+                <<clientComment
+                    "Well, I was hoping I could fill up that cute ass of your now!"
+                    "I think it's about time I get to fuck that sweet ass of yours!"
+                    "Now that I'm all warmed up, I wanted to see how well you took it up the ass!"
+                    "A-actually, I was hoping I could try putting it in your, um, ass?"
+                >>\
+            <</if>>\
+
+            <<if analPlugged()>>\
+                ''You turn around and bend over, sliding the <<accb>> out from its hole and giving your client a clear view of your <<aSize>>.''
+            <<else>>\
+                ''You turn around and bend over, giving your client a clear view of your <<aSize>>.''
+            <</if>>\
+
+            <<prefComment $player "analFuck.get"
+                "God I thought you'd never ask! Come and get it!"
+                "Oh fuck yeah baby, come and take me!"
+                "Hehe, you got it babe!"
+                "Y-yeah, just try to be gentle, okay?"
+                "S-sure, um, just go slow, okay?"
+            >>\
+
+            <<if $client.gender is "male">>\
+                <<pic $player "ass-fucked-by-male">>\
+            <<elseif $client.gender is "female">>\
+                <<pic $player "ass-fucked-by-female">>\
+            <<else>>\
+                <<pic $player "ass-fucked-by-ts">>\
+            <</if>>\
+
+            <<if $client.gender is "female">>\
+                <<anal "your client's thick strapon">>
+            <<else>>\
+                <<anal "your client's thick cock">>
+            <</if>>\
+
+            <<nm $player "O-OH! Mmmm, haaaa!">>\
+
+            <<switch $client.personality>>\
+                <<case "nice">>\
+                    <<CommentAss $client
+                        "Wow, your asshole sure didn't have any trouble taking me in, huh?"
+                        "Hunh, feels like your asshole's pretty experienced, huh?"
+                        "Mmm, your ass feels great! Just enough give..."
+                        "Oooh, wow you're tight! This is great!"
+                        "Man, you're so tight! I might need some more lube..."
+                    >>\
+                <<case "mean">>\
+                    <<CommentAss $client
+                        "Damn babe, your asshole must see a ton of action, right?"
+                        "Ha, wow, you didn't have ANY trouble taking me in. Haha, you must be some slut!"
+                        "Mmm, I knew you'd have a killer asshole!"
+                        "Wow, didn't think someone like you'd still be this tight!"
+                        "Jesus fucking... Feels like you're gonna pinch my <<if $client.gender is 'female'>>strapon in half<<else>>cock off<</if>>! Better take my time breaking you in..."
+                    >>\
+                <<case "dom">>\
+                    <<CommentAss $client
+                        "You're quite pliable back here... I'll need to bring some insertables if I book you again..."
+                        "Hm, you sure can take it!"
+                        "Hm, your asshole feels quite nice, I have to admit!"
+                        "My, aren't you the tight one..."
+                        "Wow, looks like I'm gonna have to work harder to loosen you up back here!"
+                    >>\
+                <<case "shy">>\
+                    <<CommentAss $client
+                        "O-oh wow, it didn't have any trouble going in, huh?"
+                        "Hehe, your asshole just swallowed my up pretty easy, h-huh?"
+                        "S-so good... this feels amazing!"
+                        "It's so tight, wow! S-sorry, it just feels r-really good..."
+                        "U-um, s-sorry, did I hurt you? Y-you're just so tight back here!"
+                    >>\
+            <</switch>>\
+
+            ''You continue getting fucked from behind like this for some time until your client suddenly starts picking up the pace...''
+
+            <<skillComment $client "analFuck.get"
+                "This feels too fucking good... I-I think I'm about to..."
+                "This feels incredible... I think I'm going to..."
+                "Alright... I think I'm gonna..."
+                "I-I think I'm finally about to..."
+                "Sorry it took so long... I'm about to..."
+            >>\
+        <<case "analFuck.give">>\
+            <<switch $client.wantedStart>>\
+                <<case "suckCock.give" "eatPussy.give" "rimjob.give">>\
+                    ''_He pulls away from your mouth and leans over the bed near you.''
+                <<case "suckCock.get">>\
+                    ''_He lifts his mouth off your <<StraponOrCock size>> and leans over the bed near you.''
+                <<case "titfuck.give">>\
+                    ''_He pulls _his cock out from between your <<bSize>> and leans over the bed near you.''
+            <</switch>>\
+
+            <<if $client.gender is "male">>\
+                <<clientComment
+                    "Actually, I was kind of hoping you'd do me! Just, not too rough, okay?"
+                    "Ha, you're fuckin' ME tonight, and you'd better not cum before I do!"
+                    "Even I like to bottom sometimes. Well? Come over and show me what you can do."
+                    "A-actually, um, I was wondering if I could try, maybe, getting f-fucked?"
+                >>\
+            <<else>>\
+                <<clientComment
+                    "Mmm, bring that hard cock of yours over here and give my ass a good fucking!"
+                    "I wanna feel that cock of yours in my ass tonight, and you'd better not fuckin' cum before I do!"
+                    "I think I'd like to feel you in my ass tonight. Up to it?"
+                    "A-actually, um, I was wondering if I could try, maybe, trying a-anal?"
+                >>\
+            <</if>>\
+
+            ''You climb up behind the _man, slipping on a condom and lining your <<StraponOrCock>> up with _his asshole.''
+
+            <<prefComment $player "analFuck.give"
+                "There's nothing I'd love more than to fuck that sweet ass of yours!"
+                "Oh fuck yeah baby, get ready for me!"
+                "Hehe, you got it babe!"
+                "Y-yeah, I'll try to be careful..."
+                "S-sure, um, just bear with me, okay? I don't do this often..."
+            >>\
+
+            <<nm $player "O-OH! Mmmm, haaaa!">>\
+
+            <<if hasStrapon()>>\
+                <<nm $client "Ooohhh, that's a great toy you've got there...">>\
+            <<else>>\
+                <<CommentPenis $client
+                    "HOLY SH... I-it's bigger than I... expected!"
+                    "Ooof, mmm, w-wow that's really filling me up!"
+                    "Mmm, your cock feels great! Just the right size..."
+                    "Oooh, that fits in nicely!"
+                    "Are you in already? Hm..."
+                >>\
+            <</if>>\
+
+            <<if $client.gender is "male">>\
+                <<pic $player "fuck-male">>\
+            <<elseif $client.gender is "female">>\
+                <<pic $action "player-assfuck-female-doggy">>\
+            <<else>>\
+                <<pic $player "fuck-ts">>\
+            <</if>>\
+
+            ''You start picking up the pace, sliding your <<StraponOrCock size>> in and out of your client's asshole.''
+
+            <<Thought
+                "Man, this _guy's really tight!"
+                "Wow, it just slid right in!"
+                "Mmm, this hole feels great..."
+            >>\
+
+            <<switch $client.personality>>\
+                <<case "nice">>\
+                    <<skillComment $client "analFuck.give"
+                        "Ooooh wow... mmmm... You really know to work that <<pDSize>> of yours!"
+                        "Mmmm, you really know how to fuck!"
+                        "Haa... mmm... this feels great!"
+                        "Mmm, mmmm... You could go a little harder if you want..."
+                        "Mmmm, a-ah! Careful back there!"
+                    >>\
+                <<case "mean">>\
+                    <<skillComment $client "analFuck.give"
+                        "Ooooh wow... mmmm... You're not... half bad!"
+                        "Damn, you can really fuck..."
+                        "Oooh, yeah, keep it up and don't you dare cum yet!"
+                        "Jeez, are you even doing anything back there?"
+                        "God, you really suck at this! Just keep going..."
+                    >>\
+                <<case "dom">>\
+                    <<skillComment $client "analFuck.give"
+                        "W-wow! You're... really impressive..."
+                        "Haa, haha, you definitely know what you're doing!"
+                        "Mmm, not bad... keep it up..."
+                        "Hmm, try to move your hips a bit more... there you go..."
+                        "A-ah, um, hm... try to be a little more careful back there..."
+                    >>\
+                <<case "shy">>\
+                    <<skillComment $client "analFuck.give"
+                        "T-this feels incredible... Wow! Don't stop... d-don't stop!"
+                        "O-oh my g-god! This feels a-amazing!"
+                        "Mmm... haaa... s-so good..."
+                        "Mmm, m-mmm... haaa... ohhh..."
+                        "O-ouch! U-um, try to be maybe a little m-more careful?"
+                    >>\
+            <</switch>>\
+
+            ''You continue fucking your client from behind like this for some time until _he starts to twitch and grind against your <<StraponOrCock size>>.''
+
+            <<skillComment $client "analFuck.give"
+                "This feels too fucking good... I-I think I'm about to..."
+                "This feels incredible... I think I'm going to..."
+                "Alright... I think I'm gonna..."
+                "I-I think I'm finally about to..."
+                "Sorry it took so long... I'm about to..."
+            >>\
+        <<case "pussyFuck.get">>\
+            <<set _hole to "pussy">>\
+            <<if $client.gender is "female">>\
+                <<nm $client "Hold that thought...">>\
+
+                ''You watch as _he slides off the bed and pulls something out of _his purse.''
+
+                <<Thought "A... strapon?">>\
+
+                ''The _man quickly fastens the large strapon harness around _his waist, then turns around to face you excitedly.''
+
+                <<clientComment
+                    "Hehe, I hope you don't that I brought this!"
+                    "Heh, what, did you expect soft and sexy lesbian love making? C'mon, stick that ass up for me so I can rail that little cunt of yours!"
+                    "Now that I'm all warmed up, I wanted to see how well you took it from behind!"
+                    "A-actually, I was hoping I could try um, doing you?"
+                >>\
+            <<else>>\
+                <<switch $client.wantedStart>>\
+                    <<case "suckCock.give" "rimjob.give">>\
+                        ''_He pulls away from your mouth and starts stroking _his hard cock.''
+                    <<case "suckCock.get">>\
+                        ''_He lifts his mouth off your <<StraponOrCock size>> and starts stroking his own cock.''
+                    <<case "titfuck.give">>\
+                        ''_He slides his wet cock out from between your large tits and starts stroking it.''
+                <</switch>>\
+                
+                <<clientComment
+                    "Well, I was hoping I could fill up that cute pussy of your now!"
+                    "I think it's about time I get to fuck that sweet pussy of yours!"
+                    "Now that I'm all warmed up, I wanted to see how you felt from the inside!"
+                    "A-actually, I was hoping I could try putting it in?"
+                >>\
+            <</if>>\
+
+            <<if skill($player,"escorting",$OKAY)>>\
+                ''Smiling, you slide off the bed and pull a condom out of your bag, pulling it over your client's cock before giving the tip a little kiss. ''\
+            <</if>>\
+            <<if frontPlugged()>>\
+                ''You turn around and bend over, sliding the <<accf>> out from your <<vSize>> and giving your client a clear view of your dripping twat.''
+            <<else>>\
+                ''You turn around and bend over, giving your client a clear view of your <<vSize>>.''
+            <</if>>\
+
+            <<prefComment $player "pussyFuck.get"
+                "God I thought you'd never ask! Come and get it!"
+                "Oh fuck yeah baby, come and take me!"
+                "Hehe, you got it babe!"
+                "Y-yeah, just try to be gentle, okay?"
+                "S-sure, um, just go slow, okay?"
+            >>\
+
+            <<if $client.gender is "male">>\
+                <<pic $player "fucked-by-male">>\
+            <<elseif $client.gender is "female">>\
+                <<pic $player "fucked-by-female">>\
+            <<else>>\
+                <<pic $player "fucked-by-ts">>\
+            <</if>>\
+
+            <<if $client.gender is "female">>\
+                <<vaginal "your client's thick strapon">>
+            <<else>>\
+                <<vaginal "your client's thick cock">>
+            <</if>>\
+
+            <<nm $player "O-OH! Mmmm, haaaa!">>\
+
+            <<switch $client.personality>>\
+                <<case "nice">>\
+                    <<CommentPussy $client
+                        "Wow, you sure didn't have any trouble taking me in, huh?"
+                        "Hunh, feels like you're pretty, um, experienced, huh?"
+                        "Mmm, your pussy feels great! Just enough give..."
+                        "Oooh, wow you're tight! This is great!"
+                        "Man, you're so tight! I might need some more lube..."
+                    >>\
+                <<case "mean">>\
+                    <<CommentPussy $client
+                        "Damn babe, your cunt must see a ton of action, right?"
+                        "Ha, wow, you didn't have ANY trouble taking me in. Haha, you must be some slut!"
+                        "Mmm, I knew you'd have a killer pussy!"
+                        "Wow, didn't think someone like you'd still be this tight!"
+                        "Jesus fucking... Feels like you're gonna pinch my <<if $client.gender is 'female'>>strapon in half<<else>>cock off<</if>>! Better take my time breaking you in..."
+                    >>\
+                <<case "dom">>\
+                    <<CommentPussy $client
+                        "You're quite open back here... I'll need to bring some insertables if I book you again..."
+                        "Hm, you sure can take it!"
+                        "Hm, your pussy feels quite nice, I have to admit!"
+                        "My, aren't you the tight one..."
+                        "Wow, looks like I'm gonna have to work harder to loosen you up back here!"
+                    >>\
+                <<case "shy">>\
+                    <<CommentPussy $client
+                        "O-oh wow, it didn't have any trouble going in, huh?"
+                        "Hehe, you just swallowed my up pretty easy, h-huh?"
+                        "S-so good... this feels amazing!"
+                        "It's so tight, wow! S-sorry, it just feels r-really good..."
+                        "U-um, s-sorry, did I hurt you? Y-you're just so tight back here!"
+                    >>\
+            <</switch>>\
+
+            ''You continue getting fucked from behind like this for some time until your client suddenly starts picking up the pace...''
+
+            <<skillComment $client "pussyFuck.get"
+                "This feels too fucking good... I-I think I'm about to..."
+                "This feels incredible... I think I'm going to..."
+                "Alright... I think I'm gonna..."
+                "I-I think I'm finally about to..."
+                "Sorry it took so long... I'm about to..."
+            >>\
+        <<case "pussyFuck.give">>\
+            <<switch $client.wantedStart>>\
+                <<case "suckCock.give" "eatPussy.give" "rimjob.give">>\
+                    ''_He pulls away from your mouth and leans over the bed near you.''
+                <<case "eatPussy.get">>\
+                    ''_He lifts his mouth off your <<vSize>> and leans over the bed near you.''
+            <</switch>>\
+
+            <<clientComment
+                "Mmm, bring that hard cock of yours over here and give my pussy a good fucking!"
+                "I wanna feel that cock of yours inside me tonight, and you'd better not fuckin' cum before I do!"
+                "I think I'd like to feel you in me tonight. Up to it?"
+                "A-actually, um, I was wondering if I could try, maybe, trying you inside me?"
+            >>\
+
+            ''You climb up behind the _man, slipping on a condom and lining your <<StraponOrCock>> up with _his dripping pussy.''
+
+            <<prefComment $player "pussyFuck.give"
+                "There's nothing I'd love more than to fuck that warm pussy of yours!"
+                "Oh fuck yeah baby, get ready for me!"
+                "Hehe, you got it babe!"
+                "Y-yeah, I'll try to be careful..."
+                "S-sure, um, just bear with me, okay? I don't do this often..."
+            >>\
+
+            <<nm $player "O-OH! Mmmm, haaaa!">>\
+
+            <<if hasStrapon()>>\
+                <<nm $client "Ooohhh, that's a great toy you've got there...">>\
+            <<else>>\
+                <<CommentPenis $client
+                    "HOLY SH... I-it's bigger than I... expected!"
+                    "Ooof, mmm, w-wow that's really filling me up!"
+                    "Mmm, your cock feels great! Just the right size..."
+                    "Oooh, that fits in nicely!"
+                    "Are you in already? Hm..."
+                >>\
+            <</if>>\
+
+            <<pic $player "fuck-female">>\
+
+            ''You start picking up the pace, sliding your <<StraponOrCock size>> in and out of your client's dripping twat.''
+
+            <<Thought
+                "Man, this _guy's really tight!"
+                "Wow, it just slid right in!"
+                "Mmm, this hole feels great..."
+            >>\
+
+            <<switch $client.personality>>\
+                <<case "nice">>\
+                    <<skillComment $client "pussyFuck.give"
+                        "Ooooh wow... mmmm... You really know to work that <<pDSize>> of yours!"
+                        "Mmmm, you really know how to fuck!"
+                        "Haa... mmm... this feels great!"
+                        "Mmm, mmmm... You could go a little harder if you want..."
+                        "Mmmm, a-ah! Careful back there!"
+                    >>\
+                <<case "mean">>\
+                    <<skillComment $client "pussyFuck.give"
+                        "Ooooh wow... mmmm... You're not... half bad!"
+                        "Damn, you can really fuck..."
+                        "Oooh, yeah, keep it up and don't you dare cum yet!"
+                        "Jeez, are you even doing anything back there?"
+                        "God, you really suck at this! Just keep going..."
+                    >>\
+                <<case "dom">>\
+                    <<skillComment $client "pussyFuck.give"
+                        "W-wow! You're... really impressive..."
+                        "Haa, haha, you definitely know what you're doing!"
+                        "Mmm, not bad... keep it up..."
+                        "Hmm, try to move your hips a bit more... there you go..."
+                        "A-ah, um, hm... try to be a little more careful back there..."
+                    >>\
+                <<case "shy">>\
+                    <<skillComment $client "pussyFuck.give"
+                        "T-this feels incredible... Wow! Don't stop... d-don't stop!"
+                        "O-oh my g-god! This feels a-amazing!"
+                        "Mmm... haaa... s-so good..."
+                        "Mmm, m-mmm... haaa... ohhh..."
+                        "O-ouch! U-um, try to be maybe a little m-more careful?"
+                    >>\
+            <</switch>>\
+
+            ''You continue fucking your client from behind like this for some time until _he starts to twitch and grind against your <<StraponOrCock size>>.''
+
+            <<skillComment $client "pussyFuck.give"
+                "This feels too fucking good... I-I think I'm about to..."
+                "This feels incredible... I think I'm going to..."
+                "Alright... I think I'm gonna..."
+                "I-I think I'm finally about to..."
+                "Sorry it took so long... I'm about to..."
+            >>\
+        <<case "suckCock.give">>\
+            <<switch $client.wantedStart>>\
+                <<case "suckCock.give">>\
+                    ''_He guides his cock back into your mouth.''
+
+                    <<clientComment
+                        "Mmm, keep going, okay?"
+                        "You just get back to sucking me off for now..."
+                        "Hey now, I don't remember telling you to stop..."
+                        "C-could you keep going? You feel really good!"
+                    >>\
+                <<case "rimjob.give">>\
+                    ''_He pulls away from your mouth and starts stroking _his hard cock over your face.''
+
+                    <<clientComment
+                        "I think I'd like you to finish me off with your mouth."
+                        "Let's see just how good you are with your mouth babe!"
+                        "I think I'd like to see how good your oral skills are now..."
+                        "I-I was wondering if you could finish me with, um, your mouth, actually..."
+                    >>\
+                <<case "suckCock.get">>\
+                    ''_He lifts his mouth off your <<StraponOrCock size>> and starts stroking his own cock.''
+
+                    <<clientComment
+                        "I think I'd like you to finish me off with your mouth."
+                        "Let's see just how good you are with your mouth babe!"
+                        "I think I'd like to see how good your oral skills are now..."
+                        "I-I was wondering if you could finish me with, um, your mouth, actually..."
+                    >>\
+                <<case "titfuck.give">>\
+                    ''_He slides his wet cock out from between your large tits and starts stroking it.''
+
+                    <<clientComment
+                        "I think I'd like you to finish me off with your mouth."
+                        "Let's see just how good you are with your mouth babe!"
+                        "I think I'd like to see how good your oral skills are now..."
+                        "I-I was wondering if you could finish me with, um, your mouth, actually..."
+                    >>\
+            <</switch>>\
+
+            <<prefComment $player "suckCock.give"
+                "Mmmm, hell yeah babe!"
+                "Hehe, I got no problem with that!"
+                "Heh, you got it baby..."
+                "Yeah..."
+                "O-okay..."
+            >>\
+
+            <<if $client.wantedStart is "suckCock.give">>\
+                ''You take the _man's cock back into your mouth.''
+            <<else>>\
+                ''You lean in and take the _man's cock into your mouth.''
+            <</if>>\
+
+            <<if $client.gender is "male">>\
+                <<pic $player "suck-male">>\
+            <<else>>\
+                <<pic $player "suck-ts">>\
+            <</if>>\
+
+            <<switch $client.personality>>\
+                <<case "nice">>\
+                    <<skillComment $client "suckCock.give"
+                        "Yeah, there we go! Mmm..."
+                        "Damn you're good..."
+                        "Mmmm, yeah..."
+                        "M-mm, there, yeah..."
+                        "T-try to ease up a bit... there you go..."
+                    >>\
+                <<case "mean">>\
+                    <<skillComment $client "suckCock.give"
+                        "Fuck yeah! You're gonna have me cumming in no time with that mouth of yours!"
+                        "Yeah baby, keep it up!"
+                        "Mmm, yeah, just like that..."
+                        "Eesh, I should book you again just to fuck your mouth for a couple hours straight until you get the hang of this..."
+                        "Ugh, keep sucking slut! Let's just hurry and get this over with..."
+                    >>\
+                <<case "dom">>\
+                    <<skillComment $client "suckCock.give"
+                        "Incredible! D-don't stop now!"
+                        "Very good... Keep working it..."
+                        "Yes, that's it... Keep sucking..."
+                        "Keep at it, we're nearly there..."
+                        "You know the worse you are at this, the longer I'm going to make you do it, right?"
+                    >>\
+                <<case "shy">>\
+                    <<skillComment $client "suckCock.give"
+                        "O-oh man, your mouth feels a-amazing..."
+                        "Y-you're so... so good..."
+                        "T-this feels incredible... mmm..."
+                        "T-that's good, hehe... mmm..."
+                        "H-hey, maybe not so hard... k-keep going though..."
+                    >>\
+            <</switch>>\
+
+            ''You continue bobbing up and down on your client's thick cock until you start to feel _him quiver and twitch.''
+
+            <<skillComment $client "suckCock.give"
+                "This feels too fucking good... I-I think I'm about to..."
+                "This feels incredible... I think I'm going to..."
+                "Alright... I think I'm gonna..."
+                "I-I think I'm finally about to..."
+                "Sorry it took so long... I'm about to..."
+            >>\
+        <<case "suckCock.get">>\
+            <<switch $client.wantedStart>>\
+                <<case "suckCock.get">>\
+                    ''_He lifts his mouth off your <<StraponOrCock size>> for a moment, still stroking it idly.''
+
+                    <<clientComment
+                        "I think I'd like to finish you off just like this if you don't mind!"
+                        "Heh, I totally get off on this. Let's keep going!"
+                        "I think I'd like to see just how long you can hold out..."
+                        "I-I was wondering if I could finish you with, um, my mouth, actually..."
+                    >>\
+                <<default>>\
+                    ''_He slides down to meet your hard <<pDSize>>.''
+
+                    <<clientComment
+                        "I think I'd like to finish you off with my if you don't mind!"
+                        "Heh, I totally get off on makin' pepole pop with my mouth!"
+                        "I think I'd like to see just how long you can hold out..."
+                        "I-I was wondering if I could finish you with, um, my mouth, actually..."
+                    >>\
+            <</switch>>\
+
+            ''_He quickly goes to work on your <<StraponOrCock size>>.''
+            
+            <<prefComment $player "suckCock.get"
+                "Oh wow, you're really spoiling me tonight! Hehe, well you go right ahead!"
+                "Mmm, that's totally fine by me babe! I'll just lay back and enjoy..."
+                "Hehe, well if that's what you really want..."
+                "Really? Well, go ahead, heh."
+                "Y-you're sure? Well, okay..."
+            >>\
+
+            <<if $client.gender is "male">>\
+                <<pic $player "sucked-by-male">>\
+            <<else>>\
+                <<pic $player "sucked-by-female">>\
+            <</if>>\
+
+            ''Your client bobs up and down on your <<StraponOrCock size>>, faster and faster until you start to feel your testicles well up and your penis begins to twitch and jerk.''
+
+            <<prefComment $player "suckCock.get"
+                "F-fuck! Y-you're too good at this! I'm gonna... I'm gonna cum!"
+                "O-oh god, you're really good! I think... I think I'm about to cum!"
+                "Mmmm, that's good... t-that's... o-oh!"
+                "T-there it is, mmm, I'm getting close... I think I'm gonna..."
+                "A-ah, yeah... gonna cum..."
+            >>\
+        <<case "eatPussy.give">>\
+            <<switch $client.wantedStart>>\
+                <<case "eatPussy.give">>\
+                    ''_He guides your face back down onto _his pussy.''
+
+                    <<clientComment
+                        "Mmm, keep going, okay?"
+                        "You just get back to eating me out for now..."
+                        "Hey now, I don't remember telling you to stop..."
+                        "C-could you keep going? You feel really good!"
+                    >>\
+                <<default>>\
+                    ''_He pulls away from you and starts rubbing _his dripping pussy in front of your face.''
+
+                    <<clientComment
+                        "I think I'd like you to finish me off with your mouth."
+                        "Let's see just how good you are with your mouth babe!"
+                        "I think I'd like to see how good your oral skills are now..."
+                        "I-I was wondering if you could finish me with, um, your mouth, actually..."
+                    >>\
+            <</switch>>\
+
+            <<prefComment $player "eatPussy.give"
+                "Mmmm, hell yeah babe!"
+                "Hehe, I got no problem with that!"
+                "Heh, you got it baby..."
+                "Yeah..."
+                "O-okay..."
+            >>\
+
+            <<if $client.wantedStart is "eatPussy.give">>\
+                ''You go back to lapping away at your client's pussy.''
+            <<else>>\
+                ''You lean in and bury your tongue in the _man's pussy.''
+            <</if>>\
+
+            <<pic $player "eat-pussy">>\
+
+            <<switch $client.personality>>\
+                <<case "nice">>\
+                    <<skillComment $client "eatPussy.give"
+                        "Yeah, there we go! Mmm..."
+                        "Damn you're good..."
+                        "Mmmm, yeah..."
+                        "M-mm, there, yeah..."
+                        "T-try to ease up a bit... there you go..."
+                    >>\
+                <<case "mean">>\
+                    <<skillComment $client "eatPussy.give"
+                        "Fuck yeah! You're gonna have me cumming in no time with that mouth of yours!"
+                        "Yeah baby, keep it up!"
+                        "Mmm, yeah, just like that..."
+                        "Eesh, I should book you again just to eat my cunt for a couple hours straight until you get the hang of this..."
+                        "Ugh, keep licking slut! Let's just hurry and get this over with..."
+                    >>\
+                <<case "dom">>\
+                    <<skillComment $client "eatPussy.give"
+                        "Incredible! D-don't stop now!"
+                        "Very good... Keep working it..."
+                        "Yes, that's it... Keep sucking..."
+                        "Keep at it, we're nearly there..."
+                        "You know the worse you are at this, the longer I'm going to make you do it, right?"
+                    >>\
+                <<case "shy">>\
+                    <<skillComment $client "eatPussy.give"
+                        "O-oh man, your mouth feels a-amazing..."
+                        "Y-you're so... so good..."
+                        "T-this feels incredible... mmm..."
+                        "T-that's good, hehe... mmm..."
+                        "H-hey, maybe not so hard... k-keep going though..."
+                    >>\
+            <</switch>>\
+
+            ''You continue sliding your tongue up and down on your client's slit until you start to feel _him quivering and twitching.''
+
+            <<skillComment $client "eatPussy.give"
+                "This feels too fucking good... I-I think I'm about to..."
+                "This feels incredible... I think I'm going to..."
+                "Alright... I think I'm gonna..."
+                "I-I think I'm finally about to..."
+                "Sorry it took so long... I'm about to..."
+            >>\
+        <<case "eatPussy.get">>\
+            <<switch $client.wantedStart>>\
+                <<case "suckCock.get">>\
+                    ''_He lifts his mouth off your glistening pussy for a moment, still rubbing it idly.''
+
+                    <<clientComment
+                        "I think I'd like to finish you off just like this if you don't mind!"
+                        "Heh, I totally get off on this. Let's keep going!"
+                        "I think I'd like to see just how long you can hold out..."
+                        "I-I was wondering if I could finish you with, um, my mouth, actually..."
+                    >>\
+                <<default>>\
+                    ''_He slides down to meet your wet <<vDSize>>.''
+
+                    <<clientComment
+                        "I think I'd like to finish you off with my if you don't mind!"
+                        "Heh, I totally get off on makin' chicks squirt with my mouth!"
+                        "I think I'd like to see just how long you can hold out..."
+                        "I-I was wondering if I could finish you with, um, my mouth, actually..."
+                    >>\
+            <</switch>>\
+
+            ''_He quickly goes to work on your moistening slit.''
+            
+            <<prefComment $player "eatPussy.get"
+                "Oh wow, you're really spoiling me tonight! Hehe, well you go right ahead!"
+                "Mmm, that's totally fine by me babe! I'll just lay back and enjoy..."
+                "Hehe, well if that's what you really want..."
+                "Really? Well, go ahead, heh."
+                "Y-you're sure? Well, okay..."
+            >>\
+
+            <<if $client.gender is "male">>\
+                <<pic $player "eaten-by-male">>\
+            <<else>>\
+                <<pic $player "eaten-by-female">>\
+            <</if>>\
+
+            ''Your client licks up and down your <<vSize>>, faster and faster until you start to feel a warmth building inside you.''
+
+            <<prefComment $player "eatPussy.get"
+                "F-fuck! Y-you're too good at this! I'm gonna... I'm gonna cum!"
+                "O-oh god, you're really good! I think... I think I'm about to cum!"
+                "Mmmm, that's good... t-that's... o-oh!"
+                "T-there it is, mmm, I'm getting close... I think I'm gonna..."
+                "A-ah, yeah... gonna cum..."
+            >>\
+        <<case "titfuck.give">>\
+            <<switch $client.wantedStart>>\
+                <<case "titfuck.give">>\
+                    ''_He starts sliding his cock between your breasts, getting you to continue on your own.''
+
+                    <<clientComment
+                        "Mmm, keep going, okay?"
+                        "You just rubbing my cock between those tits of yours for now..."
+                        "Hey now, I don't remember telling you to stop..."
+                        "C-could you keep going? You feel really good!"
+                    >>\
+                <<case "rimjob.give" "suckCock.give">>\
+                    ''_He pulls away from your mouth and presses his wet cock between your breasts.''
+
+                    <<clientComment
+                        "I think I'd like you to finish me off with your tits."
+                        "Let's see just how good you are with big ol' titties of yours!"
+                        "I think I'd like to see how good you can work a cock between your tits now..."
+                        "I-I was wondering if you could finish me with, um, your b-breasts, actually..."
+                    >>\
+            <</switch>>\
+
+            <<prefComment $player "titfuck.give"
+                "Mmmm, hell yeah babe!"
+                "Hehe, I got no problem with that!"
+                "Heh, you got it baby..."
+                "Yeah..."
+                "O-okay..."
+            >>\
+
+            ''You bob the tip of _his cock as you start rubbing the length of _his shaft with your soft breasts.''
+
+            <<pic $player "titfuck-give">>\
+
+            <<switch $client.personality>>\
+                <<case "nice">>\
+                    <<skillComment $client "titfuck.give"
+                        "Yeah, there we go! Mmm..."
+                        "Damn you're good..."
+                        "Mmmm, yeah..."
+                        "M-mm, there, yeah..."
+                        "T-try to ease up a bit... there you go..."
+                    >>\
+                <<case "mean">>\
+                    <<skillComment $client "titfuck.give"
+                        "Fuck yeah! You're gonna have me cumming in no time with those tits!"
+                        "Yeah baby, keep it up!"
+                        "Mmm, yeah, just like that..."
+                        "Eesh, I should book you again just to put your tits to work for a couple hours straight until you get the hang of this..."
+                        "Ugh, keep going slut! Let's just hurry and get this over with..."
+                    >>\
+                <<case "dom">>\
+                    <<skillComment $client "titfuck.give"
+                        "Incredible! D-don't stop now!"
+                        "Very good... Keep working it..."
+                        "Yes, that's it... Keep rubbing..."
+                        "Keep at it, we're nearly there..."
+                        "You know the worse you are at this, the longer I'm going to make you do it, right?"
+                    >>\
+                <<case "shy">>\
+                    <<skillComment $client "titfuck.give"
+                        "O-oh man, your boobs feels a-amazing..."
+                        "Y-you're so... so good..."
+                        "T-this feels incredible... mmm..."
+                        "T-that's good, hehe... mmm..."
+                        "H-hey, maybe not so hard... k-keep going though..."
+                    >>\
+            <</switch>>\
+
+            ''You continue sliding your client's cock between your breasts until you start to feel _him quivering and twitching.''
+
+            <<skillComment $client "titfuck.give"
+                "This feels too fucking good... I-I think I'm about to..."
+                "This feels incredible... I think I'm going to..."
+                "Alright... I think I'm gonna..."
+                "I-I think I'm finally about to..."
+                "Sorry it took so long... I'm about to..."
+            >>\
+        <<default>>\
+            <<err "Invalid wantedAction: $client.wantedAction">>\
+    <</switch>>\
+
+    <<switch $client.wantedFinish>>\
+        <<case "creampie.get">>\
+            <<if $client.wantedAction is "analFuck.get">>\
+                <<pic $player "creampie-anal">>\
+
+                ''You moan and spasm as $client.name's hot load fills your <<aSize>>, the feeling of warm cum rushing through your bowels.''
+
+                <<clientComment
+                    "Haaa... haa... oh man... that was great..."
+                    "Heh, you like the way I feel inside you? Haha, man, you really are some slut."
+                    "Ahhh, mmm, there we go... mmm..."
+                    "A-ah, ahhh... t-that was great..."
+                >>\
+
+                <<prefComment $player "creampie.get"
+                    "Hehe, fuuuuuck I love the way that feels... so good..."
+                    "Oh man, your cum feels amazing in my ass babe..."
+                    "Heh, that feels nice..."
+                    "Y-yeah, that was great..."
+                    "Mmmm, hehe..."
+                >>\
+            <<else>>\
+                <<pic $player "creampie">>\
+
+                <<if skill($player,"escorting",$OKAY)>>\
+                    ''You feel the condom expanding inside you as it fills with $client.name's hot cum.''
+                <<elseif chance(25)>>\
+                    ''You feel the condom expanding inside you as it fills with $client.name's hot cum.''
+
+                    <<Thought "Oh fuck, I need to remember to check for that next time!">>\
+                <<else>>\
+                    ''You feel $client.name's hot cum filling your pussy.''
+
+                    <<if $player.isPregnant>>\
+                        <<Thought "I really need to remember use condoms for this shit...">>\
+                    <<else>>\
+                        <<Thought "Oh shit! Fuck I can't believe I forgot to slip a condom on _him!">>\
+
+                        <<preg $player "One of your clients">>
+                    <</if>>\
+                <</if>>\
+
+                <<clientComment
+                    "Haaa... haa... oh man... that was great..."
+                    "Heh, you like the way I feel inside you? Haha, man, you really are some slut."
+                    "Ahhh, mmm, there we go... mmm..."
+                    "A-ah, ahhh... t-that was great..."
+                >>\
+
+                <<prefComment $player "creampie.get"
+                    "Hehe, fuuuuuck I love the way that feels... so good..."
+                    "Oh man, you felt amazing inside me babe..."
+                    "Heh, that feels nice..."
+                    "Y-yeah, that was great..."
+                    "Mmmm, hehe..."
+                >>\
+            <</if>>\
+
+            ''You lay next to your client, cuddling up against _him.''
+        <<case "creampie.give">>\
+            <<if $client.wantedAction is "analFuck.give">>\
+                <<if $client.gender is "female">>\
+                    <<pic $client "creampie-female-anal">>\
+                <<else>>\
+                    <<pic $client "creampie-male">>\
+                <</if>>\
+
+                ''Your warm cum fills $client.name's asshole as the two of you climax together on the bed.''
+            <<else>>\
+                <<pic $client "creampie-female">>\
+
+                ''Your warm cum fills $client.name's pussy as the two of you climax together on the bed.''
+            <</if>>\
+
+            <<clientComment
+                "Ooohhh... that feels great!"
+                "Ahhh, that's the stuff..."
+                "Mmm, not bad... not bad..."
+                "S-so good... that feels really good..."
+            >>\
+
+            ''You lay next to your client, using your hand to finish _him off.''
+
+            <<horny 0>>
+        <<case "cumEat.get">>\
+            <<if $client.gender is "female">>\
+                <<pic $client "squirt">>\
+
+                ''$client.name moans wildly as _he releases a torrent of thick squirt into your mouth.''
+            <<else>>\
+                <<if $client.wantedAction is "titfuck.give">>\
+                    <<nm $client "S-swallow it!">>\
+
+                    ''Your head is pushed down onto the _man's twitching cock just in time to receive _his hot load.''
+
+                <</if>>\
+                <<pic $player "cum-in-mouth">>\
+
+                ''$client.name holds your head firmly in place as _he releases rope after rope of thick cum into your mouth.''
+            <</if>>\
+
+            <<prefComment $player "cumEat.get"
+                "Mmmm...|Mmm, _his cum tastes amazing!"
+                "Mmmm...|_His cum tastes great!"
+                "Mmmm...|This isn't too bad..."
+                "M-mmm...|Ugh, so gross!"
+                "M-mm! <<cough>> <<cough>>;I think... I might throw up!"
+            >>\
+
+            <<switch $client.personality>>\
+                <<case "nice">>\
+                    <<skillComment $client "cumEat.get"
+                        "Wow, you managed to swallow it all like it was nothing!"
+                        "Not bad, most people choke on that much!"
+                        "Hehe, was that a bit too much?"
+                        "Sorry, I should have warned you first."
+                        "Oh, shit, are you okay? I'll get some water..."
+                    >>\
+                <<case "mean">>\
+                    <<skillComment $client "cumEat.get"
+                        "Damn, you must really love to swallow!"
+                        "Hey not bad, you actually swallowed the whole thing!"
+                        "Haha, sorry babe, guess I shoulda' warned ya'!"
+                        "Hahaha, couldn't quite take my load, huh?"
+                        "Haha, oh man, it's actually kinda turning me on watching you choke on it!"
+                    >>\
+                <<case "dom">>\
+                    <<skillComment $client "cumEat.get"
+                        "Wow, you didn't even struggle to swallow it all!"
+                        "Hm, very impressive! Most people can't handle my loads."
+                        "Aw, was that a bit too much?"
+                        "Hm, looks like you could use a bit more... training."
+                        "Hm, couldn't even handle that, huh? Dissappointing..."
+                    >>\
+                <<case "shy">>\
+                    <<skillComment $client "cumEat.get"
+                        "O-oh wow! You're amazing!"
+                        "H-hehe, wow, that was great!"
+                        "O-oh no, I should have said something..."
+                        "Amazing... O-oh, are you okay?"
+                        "O-oh no, sorry, are you all right?"
+                    >>\
+            <</switch>>\
+
+            ''You lay next to your client, cuddling up against _him.''
+        <<case "cumEat.give">>\
+            <<if hasPussy()>>\
+                <<pic $player "squirt">>\
+                
+                ''You hold your client's head in place as thick juices gush from your quivering pussy down _his throat.''
+            <<else>>\
+                <<if $client.gender is "male">>\
+                    <<pic $client "oral-creampie-male">>\
+                <<else>>\
+                    <<pic $client "oral-creampie-female">>\
+                <</if>>\
+
+                ''You hold your client's head in place as rope after rope of thick cum shoots down _his throat.''
+            <</if>>\
+
+            <<nm $player "H-holy fuck! Oooohhh!!">>\
+
+            <<nm $client "HNGHPH!! MPH!!!">>\
+
+            ''You quickly remember to release _him, relieved to see a satisfied if not somewhat glassy expression on _his face.''
+
+            <<clientComment
+                "Not... Not bad, hehe. You taste great!"
+                "Damn... You can really cum, eh?"
+                "That was... better than expected. Well done."
+                "W-wow, so much... there was so much!"
+            >>\
+
+            ''You lay next to your client, using your hand to finish _him off.''
+
+            <<horny 0>>
+        <<case "cumBody.get">>\
+            <<if $client.wantedAction is "analFuck.give" or $client.wantedAction is "pussyFuck.give">>\
+                <<if $client.gender is "female">>\
+                    <<pic $client "squirt">>\
+
+                    ''As $client.name rams _his _cock into your _hole, you can feel your legs start to tremble as warm juices spray the backs of your thighs and calves.''
+                <<else>>\
+                    <<pic $player "cum-on-back">>\
+
+                    ''$client.name pulls _his _cock out of your _hole and holds you in place as _he sprays _his load across your back.''
+                <</if>>\
+
+                <<prefComment $player "cumBody.get"
+                    "Ooohhh fuuuuck! That feels great baby!"
+                    "Mmmm, it's so nice and warm..."
+                    "Mmm, that feels nice..."
+                    "H-heh, wow, that's a lot!|Did _he really have to cum on my back?"
+                    "Mmm, hmhmhm!|Ugh, it's so gross!"
+                >>\
+            <<else>>\
+                <<if $client.gender is "female">>\
+                    <<pic $client "squirt">>\
+
+                    ''$client.name pulls your head away from _his twitching pussy just in time to unleash a wave of thick squirt across your face, finding its way into your mouth and nose and down the entire front of your body.''
+                <<else>>\
+                    <<pic $player "cum-on-face">>\
+
+                    ''$client.name pulls _his _cock out of your mouth just in time for a huge load of thick cum to spray across your face.''
+                <</if>>\
+
+                <<prefComment $player "cumBody.get"
+                    "Ooohhh fuuuuck! That feels great baby!"
+                    "Mmmm, it's so nice and warm..."
+                    "Mmm, that feels nice..."
+                    "H-heh, wow, that's a lot!|Did _he really have to cum on my face?"
+                    "Mmm, hmhmhm!|Ugh, it's so gross!"
+                >>\
+            <</if>>\
+
+            <<clientComment
+                "Ooohhhh, that was great! Hehe, you look so hot down there!"
+                "Mmm, haha, you look hella sexy covered in my cum, slut!"
+                "Mmm, not bad dear... not bad at all..."
+                "U-um, I'm sorry, let me go find a towel..."
+            >>\
+
+            ''You lay next to your client, cuddling up against _him.''
+        <<case "cumBody.give">>\
+            <<if $client.wantedAction is "analFuck.give" or $client.wantedAction is "pussyFuck.give">>\
+                ''You quickly pull your <<StraponOrCock size>> out of your client, spraying your load across their back.''
+
+                <<if $client.gender is "female">>\
+                    <<pic $client "cum-on-back-female">>\
+                <<else>>\
+                    <<pic $client "cum-on-back-male">>\
+                <</if>>\
+            <<else>>\
+                ''You quickly pull your <<StraponOrCock size>> out of your client's mouth, spraying your load across their mouth and face.''
+
+                <<if $client.gender is "male">>\
+                    <<pic $client "oral-creampie-male">>\
+                <<else>>\
+                    <<pic $client "oral-creampie-female">>\
+                <</if>>\
+            <</if>>\
+
+            <<clientComment
+                "Mmmm, yeeeaaahhhh, that feels awesome!"
+                "Ahh, that's it, that's the spot!"
+                "Mmm, so warm... very nice..."
+                "O-oh, it's s-so warm..."
+            >>\
+
+            ''You lay next to your client, using your hand to finish _him off.''
+
+            <<horny 0>>
+        <<default>>\
+            <<err "Invalid wantedFinish: $client.wantedFinish">>\
+    <</switch>>\
+
+    <<if skill($player,"escorting",$EXPERT)>>\
+        <<nm $client "Mmm, that was great...">>\
+
+        <<nm $player "Yeah it was baby, you were awesome... Well, it looks like it's just about that time. How about a quick shower before I go, huh?">>\
+
+        ''You lean in to kiss the _man and pull _him over to the shower where you drop down to your knees and get _him off one last time before actually cleaning up. After getting dressed, you give $client.name a big hug goodbye and head for the door.''
+
+        <<pic $client $client.pic>>\
+
+        <<clientComment
+            "I had an absolutely amazing time. Thank you so much!"
+            "Gotta say, didn't think you'd be this much fun!"
+            "You provided an excellent experience, I had a great time."
+            "U-um, I had a really, really good time. T-thank you so much!"
+        >>\
+    <<elseif skill($player,"escorting",$GREAT)>>\
+        <<nm $client "Mmm, that was great...">>\
+
+        <<nm $player "Yeah it was baby, you were awesome... Well, it looks like it's just about that time. How about a quick shower before I go, huh?">>\
+
+        ''You lean in to kiss the _man and pull _him over to the shower for a quick make out session before actually cleaning each of you off. After getting dressed, you give $client.name a big hug goodbye and head for the door.''
+
+        <<pic $client $client.pic>>\
+
+        <<clientComment
+            "I had a wonderful time. Thank you so much!"
+            "You're a pretty great lay, just might call you again some time!"
+            "You provided a great experience, I had a good time."
+            "U-um, I had a really good time. T-thank you so much!"
+        >>\
+    <<elseif skill($player,"escorting",$GOOD)>>\
+        <<nm $client "Mmm, that was nice...">>\
+
+        <<nm $player "Hehe, you were awesome... Hey, mind if I take a quick shower before I go?">>\
+
+        ''_He motions over to the bathroom. You give _him a quick kiss before putting on a little show and hopping in the shower to rinse the sweat and cum off your body. After getting dressed, you give $client.name a big hug goodbye and head for the door.''
+
+        <<pic $client $client.pic>>\
+
+        <<clientComment
+            "I had a fun time. Thank you so much!"
+            "Yeah yeah, maybe I'll call ya' again some time!"
+            "You provided a decent experience, thank you."
+            "U-um, I had a nice time with you. T-thank you!"
+        >>\
+    <<elseif skill($player,"escorting",$OKAY)>>\
+        <<nm $client "Mmm...">>\
+
+        <<nm $player "Hehe, that was fun... Hey, mind if I take a quick shower before I go?">>\
+
+        ''_He motions over to the bathroom. You hop out of bed and into the shower to rinse the sweat and cum off your body. After getting dressed, you give $client.name a big hug goodbye and head for the door.''
+
+        <<pic $client $client.pic>>\
+
+        <<clientComment
+            "Alright, well, thanks a ton! I had a good time."
+            "Right, I'll see ya' around, maybe."
+            "Well, it was nice meeting you."
+            "U-um, I had a nice time with you."
+        >>\
+    <<else>>\
+        <<nm $client "...">>\
+
+        <<nm $player "Well, that was fun, right? Um, I think it's about that time...">>\
+
+        ''You roll out of bed and start fishing around for your clothes. After getting dressed, you give $client.name a big hug goodbye and head for the door.''
+
+        <<pic $client $client.pic>>\
+
+        <<clientComment
+            "Well it was nice meeting you!"
+            "Well, bye."
+            "Your service could use some improvement... Maybe you just need some personal training, hm?"
+            "U-um, thanks for meeting me tonight..."
+        >>\
+    <</if>>\
+
+    ''You turn off the alley, walking a few blocks down the well-lit street before taking a minute to sit down on a sidewalk bench.''
+
+    <<escortPayMod>>\
+    <<trackAction $client.wantedStart>>\
+    <<trackAction $client.wantedAction>>\
+    <<trackAction $client.wantedFinish>>\
+    <<trackAction "escorting">>\
+    <<trackAction "escorting">>\
+    <<switch $client.gender>>\
+ 		<<case "male">>
+ 			<<trackAction "sex.Men">>\
+ 		<<case "female">>
+ 			<<trackAction "sex.Women">>\
+ 		<<case "ts">>
+ 			<<trackAction "sex.Trans">>\
+     <</switch>>\
+    <<if flag($diana,"Workplan")>>\
+        <<nm $player "I don't really know how well that went... guess I'll find out come pay day...">>\
+        <<set $PrMoney += $client.basePay>>\
+    <<else>>\
+        <<nm $player "Let's see, looks like I earned $$$client.basePay from $client.name...">>\
+        <<set $Money += $client.basePay>>\
+    <</if>>\
+    <<unset $client>>\
+
+    <<if $player.escortCounter > 0>>\
+        ''Taking a deep breath, you realize you still have the energy to see another client. Of course, your own bed sounds pretty appealing right now as well.''
+
+        <<btnLink "Find another client" "Escort-GetClient" "$c to 'continue'">>\
+    <</if>>\
+    <<btnLink "Return home and go to bed" "Room-GotoBed">>

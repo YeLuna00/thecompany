@@ -1,0 +1,13 @@
+:: Achievements [nobr] {"position":"225,15100","size":"100,100"}
+<table style="width:100%">
+	<tr>
+		<th>Achievement</th>
+		<th>Description</th>
+		<th>Reward</th>
+	</tr>
+	<<for _alp=1; _alp<$achievement.length; _alp++>><tr>
+		<td style="text-align:center">$achievement[_alp].name</td>
+		<td style="text-align:center"><<if $achievement[_alp].earned>>$achievement[_alp].desc<<else>>??????????????<</if>></td>
+		<td style="text-align:center"><<if $achievement[_alp].earned>>@@.gain;$achievement[_alp].rewardText@@<<else>>@@.loss;???@@<</if>></td>
+	</tr><</for>>
+</table>\

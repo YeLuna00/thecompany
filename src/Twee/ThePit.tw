@@ -1,0 +1,1116 @@
+:: ThePit {"position":"600,14100","size":"100,100"}
+<<loc_TrainingRoom>>\
+
+	<<if $mom.isSlut>>\
+		<<if isAfternoon()>>\
+			''One of your <<mother>>'s job duties is to help train other slave later in the day. This can be anything from fucking trainers with or in front of other slave girls, to fucking the girls themselves.''
+			
+			<<pic $mom "pit">>\
+			
+			''With your <<mom>>'s insatiable lust and seemingly infinite stamina, she can keep going for an unimaginably long time. It's not uncommon for $craig.name to have to pull her off of slaves that she's been fucking for hours after they've fallen unconscious!''
+			
+			<<nm $player "Still at it, huh?">>\
+			
+			<<nm $craig "Yeah... That lady's somethin' else, lemme tell ya'... She put one of my boys out for three days on a account of dehydration!">>\
+			
+			<<horny 10>>
+		<<else>>\
+			''The training room is fairly inactive at the moment. There are a couple occupied cages in the back, but everyone seems to be resting. $craig.name sits at a table nearby sipping coffee and chatting up a couple of his trainers.''
+		<</if>>\
+	<<else>>\
+		''The training room is fairly inactive at the moment. There are a couple occupied cages in the back, but everyone seems to be resting. $craig.name sits at a table nearby sipping coffee and chatting up a couple of his trainers.''
+	<</if>>\
+	
+	<<Conversation $craig>>
+	<<if $UnlockPit>>\
+		
+		<<if $PitSlots < $MaxPitSlots>>\
+			<<Thought "I could use this time to get some slave training in, or I could talk to $craig.name about getting some new test subjects...">>\
+		<<else>>\
+			<<Thought "I could use this time to get some slave training in, or I could talk to $craig.name about getting some new test subjects...">>\
+		<</if>>\
+		
+		<<btnLink "Go to training area" "ThePit-Main">>
+		<<if $PitSlots < $MaxPitSlots>>\
+			<<btnLink "Get a new slave for testing" "ThePit-BuySlave">>
+		<</if>>\
+	<</if>>\
+	
+	<<btnLink "Go back" "Work">>
+
+
+:: ThePit-AssignToCubicles {"position":"1100,14225","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<set _weeklyValue to $pitSlaves[$aSlave].value * $WeeklySlavePayMod>>\
+
+    <<pic $thepit $pitSlaves[$aSlave].img>>\
+
+    ''You've decided to reassign $pitSlaves[$aSlave].name to the cubicles for morale duties. This will reduce their upfront value, but will increase your weekly income by @@.gain;<<num _weeklyValue '$' ''>>@@. You will no longer be able to directly interact with $pitSlaves[$aSlave].name. Are you sure you want to do this?''
+
+    @@.btnChoiceDom;<<button "Assign $pitSlaves[$aSlave].name to cubicles for morale duties for @@.gain;<<num _weeklyValue '$' ''>>/week@@." "ThePit-Main">>
+        <<run assignSlaveToCubicles($pitSlaves[$aSlave])>>
+    <</button>>@@
+    <<btnLink "Change your mind" "ThePit-SlaveStats">>\
+
+
+:: ThePit-BuySlave {"position":"475,14225","size":"100,100"}
+<<loc_TrainingRoom>>\
+
+    ''You look around the pit, finding ?craig standing in the corning flipping through some paperwork.''
+
+    <<nm $player "Heya ?craig!">>\
+
+    ''?craig looks up from what he was doing, mildly annoyed at the interruption.''
+
+    <<artB $craig>>\
+    <<nm $craig "Hey kid, whaddaya need?">>\
+
+    <<nm $player "I was wondering if you had any slaves for sale?">>\
+
+    <<if $BoughtSlave>>\
+        ''?craig looks at you, confused.''
+
+        <<artB $craig "angry">>\
+        <<nm $craig "I already sold you one today. Come back tomorrow and I'll see what comes in.">>\
+
+        <<btnLink "Continue" "ThePit-Main">>\
+    <<else>>\
+        ''?craig looks back down at the stack of papers in his hand, flipping through a few sheets before pulling one in particular out.''
+
+        <<nm $craig "Let's see... alright, here's what I've got for today...">>\
+
+        ''You take the sheet from ?craig and look through it...''
+
+        @@.form;
+            NAME: <<print $PitDailySlaveName.charAt(0).toUpperCase() + $PitDailySlaveName.slice(1)>>
+            AGE: $PitDailySlaveAge
+            GENDER: <<print $PitDailySlaveGender.charAt(0).toUpperCase() + $PitDailySlaveGender.slice(1)>>
+
+            <<if $PitDailySlaveGender is "male">>\
+                $PitDailySlaveDescriptionMale
+            <<else>>\
+                $PitDailySlaveDescriptionFemale
+            <</if>>\
+        @@
+
+        <<nm $craig "Well? How about it? I'll sell you this one for the usual <<num $PitSlaveCost '$' ''>>, sound good?">>\
+
+        <<if $Money >= $PitSlaveCost>>\
+            <<btnChoice "Make the purchase" "ThePit-BuySlave-Buy">>\
+            <<btnChoice "Decline" "ThePit-BuySlave-Decline">>\
+        <<else>>\
+            <<btnChoice "Decline" "ThePit-BuySlave-Decline">>\
+        <</if>>\
+    <</if>>\
+
+
+:: ThePit-BuySlave-Buy {"position":"600,14225","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<set $BuyingSlave to true>>\
+
+    <<nm $player "Sure, I'll take them.">>\
+
+    ''?craig nods, taking the money from you and handing you a leash.''
+
+    <<artB $craig "happy">>\
+    <<nm $craig "Alright, here you go.">>\
+
+    <<set $Money -= $PitSlaveCost>>\
+    <<run createSlave($PitDailySlaveName,"random",$PitDailySlaveGender,$PitDailySlaveHairColor,$PitDailySlaveHairLength,$PitDailySlaveBreastSize,$PitDailySlavePenisSize,$PitDailySlaveBallSize,$PitDailySlaveAge)>>\
+    @@.gain;You acquired a new slave!@@
+
+    @@.form;
+        <<pic $thepit $pitSlaves[$PitDailySlaveName].img>>
+        <hr>
+        <<print getSlaveHistory($pitSlaves[$PitDailySlaveName])>>
+    @@
+
+    <<if $PitTesting>>\
+        <<set $BoughtSlave to false>>\
+        <<NewDailySlave>>\
+    <<else>>\
+        <<set $BoughtSlave to true>>\
+    <</if>>\
+    <<unset $BuyingSlave>>\
+    <<btnLink "Continue" "ThePit-Main">>\
+
+
+:: ThePit-BuySlave-Decline {"position":"725,14225","size":"100,100"}
+<<loc_TrainingRoom>>\
+
+    <<nm $player "No thanks, I'll pass.">>\
+
+    ''?craig shrugs, taking the sheet back from you.''
+
+    <<artB $craig "angry">>\
+    <<nm $craig "Alright, suit yourself.">>\
+
+    <<btnLink "Continue" "ThePit-Main">>\
+
+
+:: ThePit-Lauren {"position":"350,14100","size":"100,100"}
+<<loc_TrainingRoom>>\
+
+<<pic $lauren "bound">>\
+
+<<nm $lauren "Hrgrph! Clrph!">>\
+
+''$lauren.name is tied, bound, and gagged in a small cage. The trainers have been instructed to feed her, but otherwise leave her alone. She tries to yell through her gag, visibly furious but completely unable to act. Next to her cage is a tray holding a number of syringes.''
+
+<<nm $player "I apologize about the arrangement, $lauren.name... Hopefully we'll be able to make you a little more comfortable soon.">>\
+
+''She continues straining against her bonds, tears forming in her eyes.''
+
+<<btnLink "Go back" "ThePit">>
+
+
+:: ThePit-Main {"position":"850,14225","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<unset $aSlave, $bSlave>>\
+    <<if $PitTesting>>\
+
+        <<set $TrainingPoints to $MaxTrainingPoints>>\
+        
+        <center>@@Development Mode@@</center>\
+        <hr>
+        <center>@@Training Points@@: @@.xxx;Infinite@@</center>\
+    <<else>>\
+        
+        <center>@@Training Points: $TrainingPoints / $MaxTrainingPoints@@</center>\
+    <</if>>\
+    <center>@@Cell Slots: $PitSlots / $MaxPitSlots@@</center>\
+
+    <<if $PitSlots < $MaxPitSlots>>\
+        <<btnLink "Purchase a new slave" "ThePit-BuySlave">>\
+    <</if>>\
+    <<btnLink "Training Options<<if $PitXP / $PitXPReq[$PitLevel] or firstVisit()>> - <<new>><</if>>" "ThePit-Upgrade">>\
+
+    <<set _slaves to Object.keys($pitSlaves)>>\
+    <<nobr>>\
+        <table style="width:100%;">
+            <caption>Current Test Subjects</caption>
+            <tr>
+                <th style="width:15%;">Name</th>
+                <th style="width:20%;">Trait</th>
+                <th style="width:10%;">Level</th>
+                <th style="width:15%;">Age</th>
+                <th style="width:25%;">Background</th>
+                <th style="width:15%;">Interact</th>
+            </tr>
+            <<for _i = 0; _i < _slaves.length; _i++>>
+                <<set _s to $pitSlaves[_slaves[_i]]>>
+                <<set _sKey to [_slaves[_i]]>>
+                <tr>
+                    <td><<print $pitSlaves[_slaves[_i]].name>></td>
+                    <td><<print $pitSlaves[_slaves[_i]].traitName>></td>
+                    <td><<print $pitSlaves[_slaves[_i]].level>></td>
+                    <td><<print $pitSlaves[_slaves[_i]].age>></td>
+                    <td><<print $pitSlaves[_slaves[_i]].background>></td>
+                    <td>
+                        <<capture _sKey>>
+                            <<if $pitSlaves[_slaves[_i]].xp >= $MaxSlaveXP and $pitSlaves[_slaves[_i]].level < $MaxSlaveLevel>>
+                                @@.btnChoiceSissy;<<button "Level Up!" "ThePit-SlaveLevelUp">>
+                                    <<set $aSlave to _sKey>>\
+                                <</button>>@@
+                            <<else>>
+                                <<if $TrainingPoints > 0>>
+                                    <<btnLink "Train" "ThePit-SlaveStats" "$aSlave = _sKey">>
+                                <<else>>
+                                    <<btnLink "Inspect" "ThePit-SlaveStats" "$aSlave = _sKey">>
+                                <</if>>
+                            <</if>>
+                        <</capture>>
+                    </td>
+                </tr>
+            <</for>>
+        </table>
+    <</nobr>>\
+
+    <<if $PitTesting>>\
+        <<btnLink "Go to Cubicles" "Cubicles-PitSlaves">>\
+        <<btnLink "Go to your room" "Room-Slave">>\
+    <<else>>\
+        <<btnLink "Return" "ThePit">>\
+    <</if>>\
+
+
+:: ThePit-Sean {"position":"475,14100","size":"100,100"}
+<<loc_TrainingRoom>>\
+
+<<pic $npc "sean-cage">>\
+
+<<nm $sean "...">>\
+
+''$sean.name sits in "her" cell, looking impossibly alluring and remaining silent. While her face is unable to reflect it, her eyes convey equal parts fear and sadness, and a touch of defeat. Her body's been completely transformed, and her mind remains mostly in tact, but her spirit is all but broken.''
+
+<<nm $player "Still not talking? What $penny.name's managed to do with you is truly remarkable, don't you think? Ha, I can't wait to show your wife what you look like now! Well, assuming she not too busy getting fucked into a coma...">>\
+
+''$sean.name's tiny cock starts twitching when you mention $julia.name.''
+
+<<nm $player "Oh? Is that getting you excited? Hey, I know!">>\
+
+''Her lips start quivering.''
+
+<<nm $sean "N-n-no, p-please... d-don't m-make me...">>\
+
+<<nm $player "Since you seem to love the idea so much, why don't you go ahead and stroke your clitty until you come while you think about $julia.name taking dozens and dozens of cocks. Use your other hand to finger fuck your asshole. Make sure to clean up any mess you make!">>\
+
+''Her hands start moving into position as she follows your orders.''
+
+<<nm $sean "Yes, <<master>>..." "No, no, no! God, no... please...">>\
+
+<<nm $player "Oh yeah, and make sure you're smiling the whole time!">>\
+
+<<pic $npc "sean-solo">>\
+
+''She follows your commands, all with a seductive smile on her face... tears forming in her eyes...''
+
+<<btnLink "Go back" "ThePit">>
+
+
+:: ThePit-SellSlave {"position":"975,14225","size":"100,100"}
+<<loc_TrainingRoom>>\
+
+    <<pic $thepit $pitSlaves[$aSlave].img>>\
+
+    ''You've decided to sell $pitSlaves[$aSlave].name for @@.gain;<<num $pitSlaves[$aSlave].value '$' ''>>@@. Are you sure you want to do this?''
+
+    @@.btnChoiceDom;<<button "Sell $pitSlaves[$aSlave].name for @@.gain;<<num $pitSlaves[$aSlave].value '$' ''>>@@" "ThePit-Main">>
+        <<run sellSlave($pitSlaves[$aSlave])>>
+    <</button>>@@
+    <<btnLink "Change your mind" "ThePit-SlaveStats">>\
+
+
+:: ThePit-SlaveLevelUp {"position":"225,14350","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<GetSlaveStrings>>\
+    <<SlaveLevelUp>>\
+
+    <center>''@@.gain;_name has leveled up!@@''</center>\
+    <<if $pitSlaves[$aSlave].level is $MaxSlaveLevel>>\
+        <center>''@@_name has reached the maximum level!@@''</center>\
+    <</if>>\
+
+    <<if _perk is "none">>\
+        ''There are no more available perks to obtain for _name.''
+    <<else>>\
+        ''You've unlocked the @@.xxx;_perk@@ perk!''
+    <</if>>\
+
+    <<switch _perk>>\
+        <<case "Oral Fixation">>\
+            ''Through repeated training, _name has learned to enjoy giving oral. _He now finds great pleasure in servicing a hard cock or wet pussy.''
+        <<case "Oral Expert">>\
+            ''After endless practice, and a personal penchant for it, _name has become an expert at providing oral pleasure!''
+        <<case "Anal Fixation">>\
+            ''_name's ass has become a particularly pleasurable zone for _him, and _he finds the act of anal penetration to be very pleasurable.''
+        <<case "Anal Expert">>\
+            ''After endless practice, and a personal penchant for it, _name has become an expert at providing pleasure with _his asshole!''
+        <<case "Nipple Fixation">>\
+            ''Through constant stimulation, _name has found that _he derives great pleasure from having _his nipples played with, even being able to cum through nipple play alone.''
+        <<case "Breeding Kink">>\
+            ''_name has found that being filled with cum, and the possibility of becoming impregnated, is a huge turn-on for _him. So much so that _name has developed a major breeding kink!''
+        <<case "Nymphomaniac">>\
+            ''_name's training down in the pit has unlocked a deeply hiddle love of sex and depravity, exposing _him as a nymphomaniac.''
+        <<case "Dominant">>\
+            ''_name has taken to dominating other slaves in the pit, and has developed a taste for it. _He is now a dominant slave.''
+        <<case "Sadistic">>\
+            ''_name has taken to torturing other slaves in the pit, and has developed a taste for it. _He is now a sadistic slave.''
+        <<case "Cruel">>\
+            ''_name has taken to humiliating other slaves in the pit, and has developed a taste for it. _He is now a cruel slave.''
+        <<case "Evil">>\
+            ''The pit has truly corrupted _name, who now elicits fear and contempt from the other slaves, and even some of the trainers. You worry you may have created a monster.''
+        <<case "Submissive">>\
+            ''_name has taken to being dominated by other slaves in the pit, and has developed a taste for it. _He is now a submissive slave.''
+        <<case "Masochistic">>\
+            ''_name has taken to being tortured by other slaves in the pit, and has developed a taste for it. _He is now a masochistic slave.''
+        <<case "Subservient">>\
+            ''_name has become completely subservient to both _his masters and other slaves, and will do anything they ask of _him.''
+        <<case "Willing Slave">>\
+            ''_name has become a willing slave, and will happily do anything _his masters ask of _him.''
+        <<case "Pet">>\
+            ''_name has become a pet, and will happily do anything _his masters ask of _him. _He has also developed a taste for being treated like an animal.''
+        <<case "Submissive Pet">>\
+            ''_name has completely given themself over to the idea of being someone's submissive little pet.''
+        <<default>>\
+    <</switch>>\
+
+    <<btnLink "Return" "ThePit-Main">>
+
+
+:: ThePit-SlaveStats {"position":"350,14350","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<set _slaves to Object.keys($pitSlaves)>>\
+
+    <hr>
+    <<if $PitTesting>>\
+        <<set $TrainingPoints to $MaxTrainingPoints>>\
+        <center>@@Training Points:@@ @@.xxx;Infinite@@</center>\
+    <<else>>\
+        <center>@@Training Points: $TrainingPoints / $MaxTrainingPoints@@</center>\
+    <</if>>\
+    <hr>
+    <center>''$pitSlaves[$aSlave].name - <<print properCase($pitSlaves[$aSlave].gender)>> - $pitSlaves[$aSlave].age''</center>\
+    <hr>
+    /*<<pic $thepit $pitSlaves[$aSlave].img>>*/\
+    <<pic $thepit $pitSlaves[$aSlave].img>>\
+    <hr>
+    <<print getSlaveHistory($pitSlaves[$aSlave])>>
+    <hr>
+    <center>\
+    ''@@Slave Stats:@@''
+    <<if $pitSlaves[$aSlave].level is $MaxSlaveLevel>>\
+        @@.xxx;Max Level!@@
+    <<else>>\
+        ''Level:'' $pitSlaves[$aSlave].level / $MaxSlaveLevel ''- XP:'' $pitSlaves[$aSlave].xp / $MaxSlaveXP
+    <</if>>\
+    <hr>
+    <<if $PitTesting>>\
+        @@Debug Stats@@
+        ''Purchased For:'' @@.loss;$30,000@@
+        ''SEX:'' @@.xxx;$pitSlaves[$aSlave].sex@@ ''| WLP:'' @@.loss;$pitSlaves[$aSlave].wlp@@ ''| LTY:'' @@.gain;$pitSlaves[$aSlave].lty@@
+        ''Learned Perks:'' <<print $pitSlaves[$aSlave].perks>>
+        ''Learnable Perks:'' <<print getPerk($pitSlaves[$aSlave],true)>>
+        <hr>
+    <</if>>\
+    __''Train $pitSlaves[$aSlave].name:''__
+    </center>\
+    <<if $PitAssistant>>\
+        <center>@@.gain;You have a Pit Assistant, allowing you to train slaves the way you want even if you don't have the necessary equipment.@@</center>
+
+    <</if>>\
+    <<if $pitSlaves[$aSlave].xp >= $MaxSlaveXP and $pitSlaves[$aSlave].level < $MaxSlaveLevel>>\
+        @@.btnChoiceSissy;<<button "Level Up!" "ThePit-SlaveLevelUp">>
+        <</button>>@@
+    <<elseif $TrainingPoints > 0>>\
+        <<if hasWorkingPenis() or hasPussy() or $PitAssistant>>\
+            <<btnLink "Train oral skills" "ThePit-Training-OralTraining">>
+            <<btnLink "Train anal skills" "ThePit-Training-AnalTraining">>
+            <<if $pitSlaves[$aSlave].hasPussy>>\
+                <<btnLink "Train vaginal skills" "ThePit-Training-VaginalTraining">>
+            <</if>>\
+            <hr>
+        <</if>>\
+        <<if _slaves.length gt 1>>\
+            <<btnLink "Have $pitSlaves[$aSlave].name dominate another slave" "ThePit-Training-DomTraining">>
+            <<btnLink "Have $pitSlaves[$aSlave].name be dominated by another slave" "ThePit-Training-SubTraining">>
+            <hr>
+        <</if>>\
+        <<btnLink "Tease $pitSlaves[$aSlave].name's nipples" "ThePit-Training-NippleTraining">>
+        <<btnLink "Have $pitSlaves[$aSlave].name treated like a pet" "ThePit-Training-PetTraining">>
+        <hr>
+        <<if $PitFemSurgery and $pitSlaves[$aSlave].gender isnot "female">>\
+
+            ''Feminization Surgery Options:''
+            <hr>
+            <<if not hasPerks($pitSlaves[$aSlave], ["Feminized Voice", "Mute"])>>\
+                <<if $Money >= 10000>>\
+                    <<btnLink "Give $pitSlaves[$aSlave].name a more feminine voice - @@$$10,000@@" "ThePit-Training-FemVoice" "$Money -= 10000">>
+                <<else>>\
+                    <<btnDisable "Give $pitSlaves[$aSlave].name a more feminine voice - @@.loss;$$10,000@@">>
+                <</if>>\
+            <</if>>\
+            <<if not hasPerk($pitSlaves[$aSlave], "Augmented Breasts") and not $pitSlaves[$aSlave].hasBreasts>>\
+                <<if $Money >= 20000>>\
+                    <<btnLink "Give $pitSlaves[$aSlave].name small breasts - @@$$20,000@@" "ThePit-Training-SmallBreasts" "$Money -= 20000">>
+                    <<btnLink "Give $pitSlaves[$aSlave].name large breasts - @@$$20,000@@" "ThePit-Training-BigBreasts" "$Money -= 20000">>
+                <<else>>\
+                    <<btnDisable "Give $pitSlaves[$aSlave].name small breasts - @@.loss;$$20,000@@">>
+                    <<btnDisable "Give $pitSlaves[$aSlave].name large breasts - @@.loss;$$20,000@@">>
+                <</if>>\
+            <</if>>\
+            <<if not hasPerk($pitSlaves[$aSlave], "Castrated")>>\
+                <<if $Money >= 35000>>\
+                    <<btnLink "Remove $pitSlaves[$aSlave].name's testicles - @@$$35,000@@" "ThePit-Training-Castrate" "$Money -= 20000">>
+                <<else>>\
+                    <<btnDisable "Remove $pitSlaves[$aSlave].name's testicles - @@.loss;$$35,000@@">>
+                <</if>>\
+            <</if>>\
+            <<if not hasPerk($pitSlaves[$aSlave], "Feminized")>>\
+                <<if $Money >= 50000>>\
+                    <<btnLink "Remove $pitSlaves[$aSlave].name's penis - @@$$50,000@@" "ThePit-Training-Feminize" "$Money -= 50000">>
+                <<else>>\
+                    <<btnDisable "Remove $pitSlaves[$aSlave].name's penis - @@.loss;$$50,000@@">>
+                <</if>>\
+            <</if>>\
+            <<if hasAllPerks($pitSlaves[$aSlave], "Feminized", "Castrated") and not hasPerk($pitSlaves[$aSlave], "Get Pussy")>>\
+                <<if $Money >= 100000>>\
+                    <<btnLink "Give $pitSlaves[$aSlave].name a working vagina - @@$$100,000@@" "ThePit-Training-GetPussy" "$Money -= 100000">>
+                <<else>>\
+                    <<btnDisable "Give $pitSlaves[$aSlave].name a working vagina - @@.loss;$$100,000@@">>
+                <</if>>\
+            <</if>>\
+        <</if>>\
+        <<if $PitSurgery and $pitSlaves[$aSlave].operations < 1>>\
+
+            ''Basic Surgery Options - Choose One''
+            <hr>
+            <<if not hasPerks($pitSlaves[$aSlave], ["Pulled Heels","Clipped Heels"])>>\
+                <<if $Money >= 20000>>\
+                    <<btnLink "Clip $pitSlaves[$aSlave].name's heels, preventing them from walking upright - @@$$20,000@@" "ThePit-Training-HeelsClipped" "$Money -= 20000">>
+                <<else>>\
+                    <<btnDisable "Clip $pitSlaves[$aSlave].name's heels, preventing them from walking upright - @@.loss;$$20,000@@">>
+                <</if>>\
+            <</if>>\
+            <<if not hasPerk($pitSlaves[$aSlave], "Mute")>>\
+                <<if $Money >= 20000>>\
+                    <<btnLink "Remove $pitSlaves[$aSlave].name's vocal cords, preventing them from speaking - @@$$20,000@@" "ThePit-Training-Muted" "$Money -= 20000">>
+                <<else>>\
+                    <<btnDisable "Remove $pitSlaves[$aSlave].name's vocal cords, preventing them from speaking - @@.loss;$$20,000@@">>
+                <</if>>\
+            <</if>>\
+            <<if not hasPerk($pitSlaves[$aSlave], "Permanent Makeup")>>\
+                <<if $Money >= 20000>>\
+                    <<btnLink "Apply permanent slutty makeup to $pitSlaves[$aSlave].name's face - @@$$20,000@@" "ThePit-Training-PermanentMakeup" "$Money -= 20000">>
+                <<else>>\
+                    <<btnDisable "Apply permanent slutty makeup to $pitSlaves[$aSlave].name's face - @@.loss;$$20,000@@">>
+                <</if>>\
+            <</if>>\
+        <</if>>\
+        <<if $PitSurgery2 and $pitSlaves[$aSlave].operations < 2>>\
+
+            ''Advanced Surgery Options - Choose One''
+            <hr>
+            <<if not hasPerks($pitSlaves[$aSlave], ["Pulled Heels","Clipped Heels"])>>\
+                <<if $Money >= 100000>>\
+                    <<btnLink "Pull Calves, making it so $pitSlaves[$aSlave].name can only walk upright in high heels - @@$$100,000@@" "ThePit-Training-HeelsPulled" "$Money -= 100000">>
+                <<else>>\
+                    <<btnDisable "Pull Calves, making it so $pitSlaves[$aSlave].name can only walk upright in high heels - @@$$100,000@@">>
+                <</if>>\
+            <</if>>\
+            <<if not hasPerk($pitSlaves[$aSlave], "Animal Ears")>>\
+                <<if $Money >= 100000>>\
+                    <<btnLink "Replace $pitSlaves[$aSlave].name's ears with a random animal's and be given a matching tail - @@$$100,000@@" "ThePit-Training-AnimalEars" "$Money -= 100000">>
+                <<else>>\
+                    <<btnDisable "Replace $pitSlaves[$aSlave].name's ears with a random animal's and be given a matching tail - @@$$100,000@@">>
+                <</if>>\
+            <</if>>\
+            <<if not hasPerk($pitSlaves[$aSlave], "Augmented Breasts") and $pitSlaves[$aSlave].breastSize < 5>>\
+                <<if $Money >= 20000>>\
+                    <<btnLink "Give $pitSlaves[$aSlave].name huge breasts - @@$$20,000@@" "ThePit-Training-BigBreasts" "$Money -= 20000, $pitSlaves[$aSlave].operations += 1">>
+                <<else>>\
+                    <<btnDisable "Give $pitSlaves[$aSlave].name huge breasts - @@$$20,000@@">>
+                <</if>>\
+            <</if>>\
+        <</if>>\
+    <<else>>\
+        @@.loss;You're out of Training Points today.@@
+    <</if>>\
+    <<btnLink "Update $pitSlaves[$aSlave].name's pronouns" "ThePit-Training-Pronouns">>
+    <hr>
+    <<if $pitSlaves[$aSlave].level is $MaxSlaveLevel or $PitTesting>>\
+        @@.btnChoiceDom;<<button "Sell $pitSlaves[$aSlave].name for @@.gain;<<num $pitSlaves[$aSlave].value '$' ''>>@@" "ThePit-SellSlave">>
+        <</button>>@@
+        <<set _weeklyValue to $pitSlaves[$aSlave].value * $WeeklySlavePayMod>>\
+        @@.btnChoiceDom;<<button "Assign $pitSlaves[$aSlave].name to cubicles for morale duties for @@.gain;<<num _weeklyValue '$' ''>>/week@@." "ThePit-AssignToCubicles">>
+        <</button>>@@
+        <<if not $roomSlave>>\
+            @@.btnChoiceDom;<<button "Take $pitSlaves[$aSlave].name home with you" "ThePit-TakeSlaveHome">>
+            <</button>>@@
+        <</if>>\
+    <<else>>\
+        <hr>
+        <<btnDisable "You can sell or repurpose this slave once they've reached max level">>
+    <</if>>\
+    
+    <<btnLink "Return" "ThePit-Main">>
+
+
+:: ThePit-TakeSlaveHome {"position":"1225,14225","size":"100,100"}
+<<loc_TrainingRoom>>\
+
+    <<pic $thepit $pitSlaves[$aSlave].img>>\
+
+    ''You've received permission from ?craig and ?sophie to take one of your trained slaves home with you. You can only do this once, and you will not be able to return the slave to the pit. Are you sure you want to do this?''
+
+    @@.btnChoiceDom;<<button "Take $pitSlaves[$aSlave].name home with you" "ThePit-TakeSlaveHome2">>
+        <<run assignSlaveToRoom($pitSlaves[$aSlave])>>
+    <</button>>@@
+    <<btnLink "Change your mind" "ThePit-SlaveStats">>\
+
+
+:: ThePit-TakeSlaveHome2 {"position":"100,14350","size":"100,100"}
+<<loc_TrainingRoom>>\
+
+    ''?craig calls some of his men over to help package and deliver $roomSlave.name to your home where $roomSlave.he will be waiting for you. Your room has a very large, and very underutilized walk-in closet, about 10' x 10', more than large enough to make for a comfortable living space for $roomSlave.name. You can't wait to get home and see $roomSlave.him!''
+
+    <<btnLink "Continue" "ThePit-Main">>\
+
+
+:: ThePit-Training-AnalTraining {"position":"600,14350","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+
+    ''You are training $pitSlaves[$aSlave].name's anal skills.''
+
+    <<print psGetAnal($pitSlaves[$aSlave])>>
+
+    <<psSex 2>>
+    <<psWlp -3>>
+    <<psLty -1>>
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-AnimalEars {"position":"225,14600","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+
+    ''You are giving $pitSlaves[$aSlave].name animal ears and a tail.''
+
+    <<print psGetAnimalEars($pitSlaves[$aSlave])>>
+
+    <<if hasPerks($pitSlaves[$aSlave], ["Masochist", "Pet"])>>\
+        <<psWlp -5>>
+        <<psLty -1>>
+    <<else>>\
+        <<psWlp -5>>
+        <<psLty -5>>
+    <</if>>\
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-BigBreasts {"position":"725,14475","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+
+    ''You are giving $pitSlaves[$aSlave].name a pair of large breasts.''
+
+    <<print psGetBigBreasts($pitSlaves[$aSlave])>>
+
+    <<if hasPerk($pitSlaves[$aSlave], "Feminized")>>\
+        <<psWlp -10>>
+        <<psLty 10>>
+    <<elseif hasPerk($pitSlaves[$aSlave], "Submissive")>>\
+        <<psWlp -5>>
+        <<psLty -1>>
+    <<else>>\
+        <<psWlp -5>>
+        <<psLty -5>>
+    <</if>>\
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-Castrate {"position":"850,14475","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+
+    ''You are removing $pitSlaves[$aSlave].name's testicles.''
+
+    <<print psGetCastrated($pitSlaves[$aSlave])>>
+
+    <<if hasPerk($pitSlaves[$aSlave], "Feminized")>>\
+        <<psWlp -10>>
+        <<psLty 10>>
+    <<elseif hasPerk($pitSlaves[$aSlave], "Submissive")>>\
+        <<psWlp -5>>
+        <<psLty -1>>
+    <<else>>\
+        <<psWlp -5>>
+        <<psLty -5>>
+    <</if>>\
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-DomTraining {"position":"850,14350","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+    <<GetSecondSlave>>\
+
+    ''Today, $pitSlaves[$aSlave].name will be joined by $pitSlaves[$bSlave].name.''
+
+    <<print psGetDom($pitSlaves[$aSlave],$pitSlaves[$bSlave])>>
+
+    <<psSex 2>>
+    <<psWlp 1>>
+    <<psLty 2>>
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-FemVoice {"position":"475,14475","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+
+    ''You are modifying $pitSlaves[$aSlave].name's voice to sound more feminine.''
+
+    <<print psGetFemVoice($pitSlaves[$aSlave])>>
+
+    <<if hasPerk($pitSlaves[$aSlave], "Feminized")>>\
+        <<psWlp -10>>
+        <<psLty 10>>
+    <<elseif hasPerk($pitSlaves[$aSlave], "Submissive")>>\
+        <<psWlp -5>>
+        <<psLty -1>>
+    <<else>>\
+        <<psWlp -5>>
+        <<psLty -5>>
+    <</if>>\
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-Feminize {"position":"975,14475","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+
+    ''You are removing $pitSlaves[$aSlave].name's penis.''
+
+    <<print psRemovePenis($pitSlaves[$aSlave])>>
+
+    <<if hasPerk($pitSlaves[$aSlave], "Castrated")>>\
+        <<psWlp -10>>
+        <<psLty 10>>
+    <<elseif hasPerk($pitSlaves[$aSlave], "Submissive")>>\
+        <<psWlp -5>>
+        <<psLty -1>>
+    <<else>>\
+        <<psWlp -5>>
+        <<psLty -5>>
+    <</if>>\
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-GetPussy {"position":"1100,14475","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+
+    ''You are giving $pitSlaves[$aSlave].name a vagina.''
+
+    <<print psGetPussy($pitSlaves[$aSlave])>>
+
+    <<if hasPerks($pitSlaves[$aSlave], "Feminized","Castrated")>>\
+        <<psWlp -10>>
+        <<psLty 10>>
+    <<elseif hasPerk($pitSlaves[$aSlave], "Submissive")>>\
+        <<psWlp -5>>
+        <<psLty -1>>
+    <<else>>\
+        <<psWlp -5>>
+        <<psLty -5>>
+    <</if>>\
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-HeelsClipped {"position":"100,14475","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+
+    ''You are clipping $pitSlaves[$aSlave].name's heels.''
+
+    <<print psGetHeelsClipped($pitSlaves[$aSlave])>>
+
+    <<if hasPerks($pitSlaves[$aSlave], ["Masochist", "Pet"])>>\
+        <<psWlp -5>>
+        <<psLty -1>>
+    <<else>>\
+        <<psWlp -5>>
+        <<psLty -5>>
+    <</if>>\
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-HeelsPulled {"position":"100,14600","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+
+    ''You are pulling $pitSlaves[$aSlave].name's calves.''
+
+    <<print psGetHeelsPulled($pitSlaves[$aSlave])>>
+
+    <<if hasPerks($pitSlaves[$aSlave], ["Masochist", "Nymphomaniac"])>>\
+        <<psWlp -5>>
+        <<psLty -1>>
+    <<else>>\
+        <<psWlp -5>>
+        <<psLty -5>>
+    <</if>>\
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-Muted {"position":"225,14475","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+
+    ''You are removing $pitSlaves[$aSlave].name's vocal cords.''
+
+    <<print psGetMuted($pitSlaves[$aSlave])>>
+
+    <<if hasPerk($pitSlaves[$aSlave], "Masochist")>>\
+        <<psWlp -5>>
+        <<psLty -1>>
+    <<else>>\
+        <<psWlp -5>>
+        <<psLty -5>>
+    <</if>>\
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-NippleTraining {"position":"1225,14350","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+
+    ''You are teasing $pitSlaves[$aSlave].name's nipples.''
+
+    <<print psGetNippleTraining($pitSlaves[$aSlave])>>
+
+    <<psSex 1>>
+    <<psWlp -2>>
+    <<psLty 2>>
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-OralTraining {"position":"475,14350","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+
+    ''You are training $pitSlaves[$aSlave].name's oral skills.''
+
+    <<print psGetOral($pitSlaves[$aSlave])>>
+
+    <<psSex 2>>
+    <<psWlp -2>>
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-PermanentMakeup {"position":"350,14475","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+
+    ''You are applying permanent makeup to $pitSlaves[$aSlave].name's face.''
+
+    <<print psGetPermanentMakeup($pitSlaves[$aSlave])>>
+
+    <<if hasPerk($pitSlaves[$aSlave], "Submissive")>>\
+        <<psWlp -5>>
+        <<psLty -1>>
+    <<else>>\
+        <<psWlp -5>>
+        <<psLty -5>>
+    <</if>>\
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-PetTraining {"position":"1100,14350","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+
+    ''You are training $pitSlaves[$aSlave].name like a pet.''
+
+    <<print psGetPetPlay($pitSlaves[$aSlave])>>
+
+    <<psWlp -3>>
+    <<psLty 3>>
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-Pronouns {"position":"1225,14475","size":"100,100"}
+<<loc_TrainingRoom>>\
+
+    ''You are reviewing $pitSlaves[$aSlave].name's pronouns.''
+
+    <<print psChangePronouns($pitSlaves[$aSlave])>>
+
+    <<btnChoice "Set @@Masculine@@ pronouns for $pitSlaves[$aSlave].name" "ThePit-SlaveStats" "assignPitSlavePronouns($pitSlaves[$aSlave],'masculine')">>\
+    <<btnChoice "Set @@Feminine@@ pronouns for $pitSlaves[$aSlave].name" "ThePit-SlaveStats" "assignPitSlavePronouns($pitSlaves[$aSlave],'feminine')">>\
+
+
+:: ThePit-Training-SmallBreasts {"position":"600,14475","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+
+    ''You are giving $pitSlaves[$aSlave].name a pair of small breasts.''
+
+    <<print psGetSmallBreasts($pitSlaves[$aSlave])>>
+
+    <<if hasPerk($pitSlaves[$aSlave], "Feminized")>>\
+        <<psWlp -10>>
+        <<psLty 10>>
+    <<elseif hasPerk($pitSlaves[$aSlave], "Submissive")>>\
+        <<psWlp -5>>
+        <<psLty -1>>
+    <<else>>\
+        <<psWlp -5>>
+        <<psLty -5>>
+    <</if>>\
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-SubTraining {"position":"975,14350","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+    <<GetSecondSlave>>\
+
+    ''Today, $pitSlaves[$aSlave].name will be joined by $pitSlaves[$bSlave].name.''
+
+    <<print psGetSub($pitSlaves[$aSlave],$pitSlaves[$bSlave])>>
+
+    <<psSex 1>>
+    <<psWlp -1>>
+    <<psLty 3>>
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Training-VaginalTraining {"position":"725,14350","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<PitTrainingUpdate>>\
+
+    ''You are training $pitSlaves[$aSlave].name's anal skills.''
+
+    <<print psGetPussy($pitSlaves[$aSlave])>>
+
+    <<psSex 2>>
+    <<psWlp -3>>
+    <<psLty -1>>
+
+    <<psXp>>
+
+    <<btnLink "Return" "ThePit-SlaveStats">>\
+
+
+:: ThePit-Trap {"position":"1225,14100","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<set $SceneCredit to "Serge VanDeKamp">>\
+
+	<<if $mom.isSlut>>\
+		''Before going home, you decide to head down to the training room to check on your <<mother>>. You're surprised to find the room completely empty, and eerily quiet.''
+		
+		<<Thought "They must have her in one of the back rooms tonight... Hm?">>\
+	<<else>>\
+		''Before going home, you decide to head down to the training room to check on things. They've been using your serums lately and you've been curious about the results. You're surprised to find the room completely empty, and eerily quiet.''
+		
+		<<Thought "That's strange, I was hoping to... Hm?">>\
+	<</if>>\
+	
+	''Near the back of the room you spot an open slave cage with a small table next to it. On the table are several empty syringes. They're all labeled as $serum[2].name, but...''
+	
+	<<nm $player "What the hell... There's three empty syringes here, looks like they've been used recently but I don't see anyone around here... They didn't inject three doses into one person at the same time, did they?">>\
+	
+	''There's a small puddle of something in the open, empty cage.''
+	
+    <<btnChoice "Investigate the puddle - <<t1>>" "ThePit-TrapSpring">>
+    <<btnChoice "Ignore it and turn back" "ThePit-TrapAvoid">>
+
+
+:: ThePit-TrapAvoid {"position":"225,14225","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<set $SceneCredit to "Serge VanDeKamp">>\
+
+    <<Thought "Hm, this place is kinda givin' me the creeps... I think I'll just leave it be.">>\
+    
+    ''You turn around and head back to the elevator.''
+    
+    <<btnLink "Go back" "Work">>
+
+
+:: ThePit-TrapSpring {"position":"100,14225","size":"100,100"}
+<<loc_TrainingRoom>>\
+    <<set $SceneCredit to "Serge VanDeKamp">>\
+
+    <<nm $player "What's this?">>\
+    
+    ''You enter the cage and kneel down, inspecting the liquid. Just then, a loud bang has you spinning around.''
+    
+    <<pic $events "pit-strapon">>\
+    
+    <<nm $player "Oh my GOD you scared the hell out of me! What are-">>\
+    
+    <<nm $girl "Haaa, haaaaa... Gotta break the pretty bitches! Gotta fuck 'em til their brain melts! Gonna fuck the pretty bitch!">>\
+    
+    <<nm $player "No, w-wait!">>\
+    
+    ''The woman lunges at you, pinning you up against the side of the cage as she starts ripping at you clothing. In the struggle, you notice a small stream of blood running down her neck. Three pin-prick sized holes seem to be the source.''
+    
+    <<nm $girl "Gonna fuck the pretty bitch! Gonna make her a brain-dead slut! Gonna fuck you good!">>\
+    
+    <<if isMale()>>\
+        <<if isSissy()>>\
+            <<nm $player "@@.sf;P-please! I don't want this!@@">>\
+        <<else>>\
+            <<nm $player "What did they do to you!? H-hey! I'm not even a girl, g-get off me!">>\
+        <</if>>\
+    <<elseif isBimbo()>>\
+        <<nm $player "@@.ef;Hehe, you're all scrambled up, aintcha'? Well, if this is what you want...@@">>\
+    <<else>>\
+        <<nm $player "What did they do to you!? H-hey, get off me!">>\
+    <</if>>\
+    
+    ''There's no reasoning with her, and soon her strength wins out over yours. Once you've been completely stripped naked, the woman grabs your head and rams her large strapon down your throat. You can hear her laughing and panting as you struggle to remain conscious during your skull-fucking.''
+    
+    <<pic $action "player-suck-strapon">>\
+    
+    <<nm $player "Mmh! Mmmf! Mmf!">>\
+    
+    <<nm $girl "Ha! Ha! Nice and wet! Now to break the pretty bitch!">>\
+    
+    ''The crazed woman pulls her long, fake cock out of your throat and throws you to the floor. She presses your face into the puddle, which you now unmistakably recognize as urine, as she lines herself up with your <<vSize>>.''
+    
+    <<if isBimbo()>>\
+        <<nm $player "@@.ef;Mmmm, yes! Give it to me now!@@">>\
+    <<else>>\
+        <<nm $player "N-no! Wait!">>\
+    <</if>>\
+    
+    <<pic $action "female-fuck-player">>\
+    
+    <<if hasPussy()>>\
+        <<vaginal "the insane woman's huge strapon">>
+        <<trackAction "pussyFuck.get">>\
+    <<else>>\
+        <<anal "the insane woman's huge strapon">>
+        <<trackAction "analFuck.get">>\
+    <</if>>\
+    
+    <<nm $girl "Haa! Haaa! YESSS! Gonna break your pussy, then gonna break your brain! Gonna make you a little cock slut! HAHAHAHA!!!">>\
+    
+    ''You're pounded mercilessly against the side of the cage as the woman behind you screams and holds you down. Every thrust harder than the first, and it's not long before your legs begin trembling through your first orgasm. She's completely insatiable, and her stamina seems endless.''
+    
+    <<nm $girl "HAHAHA!!! FUCK!! FUCK!! YESSSS!!!">>\
+    
+    <<Thought "I... I don't know how much longer I can...">>\
+    
+    ''The punishment continues for what feels like an eternity as you slip in and out of awareness. You're finally snapped back to life by the sharp sound of a bloodcurdling scream.''
+    
+    <<nm $girl "HYYAAAAAA!!!!!">>\
+    
+    <<nm $craig "What the fuck's goin' on here! Huh? $player.name?">>\
+    
+    ''You spin around, trying to hide your sorry state. $craig.name stands over the woman's body with a cattle prod in hand.''
+    
+    <<nm $player "$craig.name? What? I...">>\
+    
+    <<nm $craig "Aw, jeez... We'd been looking all over for Betsy here an', well, guess you found her for us. I, uh...">>\
+    
+    ''You grab $craig.name by his collar.''
+    
+    <<nm $player "What the FUCK $craig.name!? I almost got raped TO DEATH and you don't seem all that surprised! What the fuck's a 'Betsy'?">>\
+    
+    <<nm $craig "Hey, hey! Hands off <<buddy>>! I was gonna explain... Boys an' I needed some help breakin' the new girls in. We're a little under-staffed, y'know? That juice you've been sendin' down here's great'n all, but, it ain't no substitute for actual manpower. Well, woman-power in this case.">>\
+    
+    ''The room's still spinning.''
+    
+    <<nm $player "Let me guess, you dosed 'Betsy' up with a shit ton of my serum and told her to help you with just that?">>\
+    
+    <<nm $craig "Haha, yeah! Pretty great idea if I-">>\
+    
+    ''You grab his collar again and start shaking.''
+    
+    <<nm $player "No, $craig.name! It wasn't a pretty great idea! These serums are designed to administered one at a time, over time! You've turned that girl's brains into fucking egg salad! Damnit $craig.name!">>\
+    
+    ''You start gathering your clothes.''
+    
+    <<nm $craig "Eesh, touchy...">>\
+    
+    <<nm $player "Touchy!? Maybe next time YOU can go a round in the cage with that psycho!">>\
+    
+    <<nm $craig "Huh, not likely... Anyway, we're lockin' up. Think you'd better...">>\
+    
+    ''$craig.name's voice trails off as you're already on the elevator...''
+    
+    <<dom $player -3>>
+    
+    <<btnLink "Go back" "Work" "passTime()">>
+
+
+:: ThePit-Upgrade {"position":"350,14600","size":"100,100"}
+<<loc_TrainingRoom>>\
+    
+    <<if $PitXP >= $PitXPReq[$PitLevel]>>\
+        <<btnLink "@@.gain;Level Up!@@" "ThePit-Upgrade" "$PitXP -= $PitXPReq[$PitLevel], $PitLevel++">>\
+    <<else>>\
+        <<btnDisable "The Pit is currently at @@level $PitLevel@@, and needs @@<<print $PitXPReq[$PitLevel] - $PitXP>>@@ more XP to level up">>\
+    <</if>>\
+    <hr>
+    <center>''Slave Availability - Changes take one day to process!''</center>\
+    <<if JSON.stringify($PitSlaveGenders) is JSON.stringify(['female','female'])>>\
+        <<btnDisable "@@.gain;All new slaves will be Female!@@">>
+    <<else>>\
+        <<btnChoice "Make all new slaves @@Female@@" "ThePit-Upgrade" "$PitSlaveGenders=['female','female']">>\
+    <</if>>\
+    <<if JSON.stringify($PitSlaveGenders) is JSON.stringify(['male','male'])>>\
+        <<btnDisable "@@.gain;All new slaves will be Male!@@">>
+    <<else>>\
+        <<btnChoice "Make all new slaves @@Male@@" "ThePit-Upgrade" "$PitSlaveGenders=['male','male']">>\
+    <</if>>\
+    <<if JSON.stringify($PitSlaveGenders) is JSON.stringify(['female','male'])>>\
+        <<btnDisable "@@.gain;About half new slaves will be Female and half with be Male!@@">>
+    <<else>>\
+        <<btnChoice "Make all new slaves an even mix of @@Female@@ and @@Male@@" "ThePit-Upgrade" "$PitSlaveGenders=['female','male']">>\
+    <</if>>\
+    <<if JSON.stringify($PitSlaveGenders) is JSON.stringify(['female','female','female','male'])>>\
+        <<btnDisable "@@.gain;Most new slaves will be Female!@@">>
+    <<else>>\
+        <<btnChoice "Make @@.sf;most@@ new slaves @@Female@@" "ThePit-Upgrade" "$PitSlaveGenders=['female','female','female','male']">>\
+    <</if>>\
+    <<if JSON.stringify($PitSlaveGenders) is JSON.stringify(['male','male','male','female'])>>\
+        <<btnDisable "@@.gain;Most new slaves will be Male!@@">>
+    <<else>>\
+        <<btnChoice "Make @@.sf;most@@ new slaves @@Male@@" "ThePit-Upgrade" "$PitSlaveGenders=['male','male','male','female']">>\
+    <</if>>\
+    <hr>
+    <center>''Pit Upgrades''</center>\
+    <<for _i = 0; _i lt $PitUpgrade.length; _i++>>\
+        <<if $PitLevel gte $PitUpgrade[_i].level>>\
+            <<if $Money gte $PitUpgrade[_i].cost and $PitUpgrade[_i].locked>>\
+                <<capture _i>>\
+                    @@.btnUI;<<button "$PitUpgrade[_i].name - @@<<num $PitUpgrade[_i].cost '$' ''>>@@" "ThePit-Upgrade">>
+                        <<run upgradePit(_i)>>
+                    <</button>>@@\
+                <</capture>>\
+            <<elseif $Money lt $PitUpgrade[_i].cost>>\
+                <<btnDisable "$PitUpgrade[_i].name - @@<<num $PitUpgrade[_i].cost '$' ''>>@@">>\
+            <<else>>\
+                <<btnDisable "$PitUpgrade[_i].name already unlocked">>\
+            <</if>>\
+        <</if>>\
+    <</for>>
+
+    <<btnLink "Return" "ThePit-Main">>\

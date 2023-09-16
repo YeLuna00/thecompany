@@ -1,0 +1,48 @@
+:: Adult-Store-LearnAboutCoins {"position":"600,12225","size":"100,100"}
+<<pic $npc "ash">>\
+
+    <<if $player.met.ash>>\
+        <<nm $ash "Hey there, it's $player.name, right? Got something to show me?">>\
+    <<else>>\
+        <<nm $ash "Welcome to Image, name's $ash.name. Looks like you have something to show me, am I right?">>\
+    <</if>>\
+    
+    <<nm $player "H-huh? Wait, how'd you...">>\
+
+    ''Your voice trails off as $ash.name leans seductively over the glass counter. While she's not quite as gifted as other women you know in the chest department, she still has a way of making her small cleavage incredibly enticing. You snap back to reality as she holds out her hand.''
+
+    <<nm $ash "C'mon, let me see it. I know you brought a coin in with you, I can feel it on you.">>\
+
+    <<nm $player "Y-yeah, here..." "What the fuck is going on here?">>\
+
+    ''You reach into your pocket and pull out the heavy coin, which $ash.name promptly snatches out of your hand and starts to examine. A smile stretches across her face.''
+
+    <<if $COIN is "dog">>\
+        <<nm $ash "Ah, this one's a Wolf Coin! Generally, these coins are associated with professional relationships, or those with peers, often classmates and coworkers. Incidentally...">>\
+    <<elseif $COIN is "sheep">>\
+        <<nm $ash "Ah, this one's a Ram Coin! Generally, these coins are a bit of a wildcard, tying itself to chance encounters or passing relationships. Incidentally...">>\
+    <<elseif $COIN is "deer">>\
+        <<nm $ash "Ah, this one's a Hart Coin! Generally, these coins are associated with those closest to someone, usually family members or very dear friends. Incidentally...">>\
+    <</if>>\
+
+    ''$ash.name disappears behind the counter, shuffling around boxes before finally emerging with a large, leatherbound case. When she opens it, you see an assortment of clothing items neatly folded in front of you.''
+
+    <<nm $ash "So listen, I'm not gonna get into the details with you but the long and short of it is that this store will happily take any of those fancy coins off your hands in exchange for some rather unique apparel options.">>\
+
+    ''She holds up a dress from the box.''
+
+    <<nm $ash "Outfits purchased with coins are a little... special. See, when you give one to a compatible person you'll be the only one actually aware that they're wearing the outfit!">>\
+
+    <<nm $player "Aside from the fact that that sounds like crazy bullshit, what would be the point in that?">>\
+
+    ''$ash.name drops the dress back into the case.''
+
+    <<nm $ash "Aw, you've never wanted to go to work every day and see your busty coworker walking around in a fishnet bodysuit? You're in a sex shop, <<buddy>>, our whole business is basic gratification...">>\
+
+    <<nm $player "Fair enough... I guess...">>\
+
+    <<nm $ash "Great! Oh yeah, there's a couple other things...">>\
+
+    ''Again, $ash.name ducks behind the desk and starts fishing around boxes and containers.''
+
+    <<btnLink "Continue..." "Adult-Store-LearnAboutCoins2">>\

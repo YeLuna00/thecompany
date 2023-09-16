@@ -1,0 +1,13 @@
+:: Bathroom-John-OralFemale {"position":"600,13475","size":"100,100"}
+<<loc_Bathroom>>\
+    <<SetFlag $john "SeeBathroomOral">>\
+    
+    ''You hear the sounds of moaning women and a single, muffled man.''
+
+    <<pic $john "group-oral-female">>\
+
+    ''$john.name is pinned down on his back. A woman you recognize from around the office is riding his face while another woman offers assistance. You can't help but watch in amazement as she grinds herself to orgasm atop $john.name. Once she's done, her friend tags in and the cycle repeats itself as more women enter the restroom. Whenever $john.name's glistening face comes into view, his expression is pure, almost hypnotic bliss.''
+
+    <<dom $john -1>>
+
+    <<btnLink "Head back to the lobby" "Work">>

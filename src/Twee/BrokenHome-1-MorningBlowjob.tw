@@ -1,0 +1,94 @@
+:: BrokenHome-1-MorningBlowjob {"position":"850,2225","size":"100,100"}
+<<loc_Room>>\
+
+    ''Still mostly asleep, you start to rouse at a strange feeling coming from beneath the covers. Cracking your eyes open, you see a steaming cup of coffee sitting on your nightstand, but also...''
+    
+    <<if isSissy() or isChastity()>>\
+        <<pic $mom "rim-player">>\
+        
+        <<nm $player "<<M-mom>>?">>\
+        
+        ''Your <<mother>>'s under your sheets, with her tongue buried in your asshole.''
+        
+        <<nm $mom "Mmmm...">>\
+        
+        ''She returns to her task, piercing your anus as deeply as she can with her warm, wet tongue. Meanwhile, she's had one hand between her legs ''<<if $mom.hasPenis>>@@.ef;stroking herself to one orgasm after another. Your bed's now saturated with her thick cum@@<<else>>''fingering herself to one orgasm after another. Your bed's now saturated with her juices''<</if>>''...''
+        
+        <<nm $mom "Fwahhh... Mmmm... Hm? How did I get here? Oh well...">>\
+        
+        ''She picks up her panties and walks out into the hallway, leaving your bed a sopping mess.''
+        
+        <<nm $player "What the fuck was that all about? It's like she was completely in another world!">>\
+        
+        <<lust $mom 1>>
+        <<dom $player -1>>
+        
+        <<horny 10>>
+        <<trackAction "rimjob.get" $mom>>\
+    <<elseif hasPenis()>>\
+        <<pic $mom "suck-player">>\
+        
+        <<nm $player "<<M-mom>>?">>\
+        
+        ''Your <<mother>>'s under your sheets, bobbing up and down on your hard <<pSize>>.''
+        
+        <<nm $mom "Mmmm...">>\
+        
+        ''She returns to her task, taking you as deep as she can down her throat. Meanwhile, she's had one hand between her legs ''<<if $mom.hasPenis>>@@.ef;stroking herself to one orgasm after another. Your bed's now saturated with her thick cum@@<<else>>''fingering herself to one orgasm after another. Your bed's now saturated with her juices''<</if>>''...''
+        
+        <<nm $player "$mom.name, I'm... c-cumming...">>\
+        
+        <<pic $mom "cum-in-mouth">>\
+        
+        ''Hearing that makes her work all the harder for her reward, taking your entire morning load into her mouth.''
+        
+        <<nm $mom "Fwahhh... Mmmm... Hm? How did I get here? Oh well...">>\
+        
+        ''She picks up her panties and walks out into the hallway, leaving your bed a sopping mess.''
+        
+        <<nm $player "What the fuck was that all about? It's like she was completely in another world!">>\
+        
+        <<lust $mom 1>>
+        
+        <<horny 0>>
+        <<trackAction "suckCock.get" $mom>>\
+    <<else>>\
+        <<pic $mom "eat-pussy">>\
+        
+        <<nm $player "<<M-mom>>?">>\
+        
+        ''Your <<mother>>'s under your sheets, with her face buried in your <<vSize>>.''
+        
+        <<nm $mom "Mmmm...">>\
+        
+        ''She returns to her task, sucking your clit and lightly penetrating you with her warm, wet tongue. Meanwhile, she's had one hand between her legs ''<<if $mom.hasPenis>>@@.ef;stroking herself to one orgasm after another. Your bed's now saturated with her thick cum@@<<else>>''fingering herself to one orgasm after another. Your bed's now saturated with her juices''<</if>>''...''
+        
+        <<nm $player "$mom.name, I'm... c-cumming...">>\
+        
+        <<pic $action "female-squirt">>\
+        
+        ''Hearing that makes her work all the harder for her reward, taking a sizable load of your squirt to her face.''
+        
+        <<nm $mom "Fwahhh... Mmmm... Hm? How did I get here? Oh well...">>\
+        
+        ''She picks up her panties and walks out into the hallway, leaving your bed a sopping mess.''
+        
+        <<nm $player "What the fuck was that all about? It's like she was completely in another world!">>\
+        
+        <<lust $mom 1>>
+        
+        <<horny 0>>
+        <<trackAction "eatPussy.get" $mom>>\
+    <</if>>\
+
+    <<Thought "That was weird, right? I mean her expression was completely vacant... Could this be the MCS-X setting in?">>\
+    
+    <<set $mom.mcsx.brokenhome to 2>>\
+    <<if dose($sister,"brokenhome")>>\
+        <<set $mom.mcsx.cd to $mcsxCD>>\
+    <<else>>\
+        <<set $mom.default to "ava-nekkid">>\
+        <<set $player.coinOutfits.pushUnique("ava-nekkid")>>\
+        <<set $BrokenHome to true>>\
+    <</if>>\
+    <<btnLink "Get out of bed" "Room">>

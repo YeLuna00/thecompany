@@ -1,0 +1,15 @@
+:: AvaMorningTask-Oral {"position":"600,5475","size":"100,100"}
+<<loc_Room>>\
+
+    <<nm $player "You should wake me up with oral sex in the mornings, could be fun!">>\
+
+    <<if $mom.morningTask is "oral">>\
+        <<nm $mom "Hehe, you mean like I already am? Sure baby!">>\
+    <<else>>\
+        <<nm $mom "Ooohh, that does sound like fun! You got it!">>\
+    <</if>>\
+
+    ''Your ?mother gives you a quick kiss and leaves the room.''
+
+    <<set $mom.morningTask to "oral">>\
+    <<btnLink "Continue" "Room">>\

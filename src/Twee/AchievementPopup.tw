@@ -1,0 +1,31 @@
+:: AchievementPopup {"position":"100,15100","size":"100,100"}
+<center>\
+@@.john;
+	''@@$achievement[$ach].name@@''<hr>
+	//$achievement[$ach].desc//@@\
+
+<<if $achievement[$ach].reward>>\
+	<<set _aType to $achievement[$ach].rewardType>>\
+	<<switch _aType>>\
+		<<case "money">>\
+			You earned @@.gain;$achievement[$ach].rewardText@@!
+			<<set $Money += $achievement[$ach].rewardValue>>\
+		<<case "chem">>\
+			<<set _c to $achievement[$ach].rewardValue, _cv to $achievement[$ach].rewardQty>>\
+			You received @@.gain;$achievement[$ach].rewardText@@!
+			<<set $chem[_c].qty += _cv>>\
+		<<case "serum">>\
+			<<set _c to $achievement[$ach].rewardValue, _cv to $achievement[$ach].rewardQty>>\
+			You received @@.gain;$achievement[$ach].rewardText@@!
+			<<set $serum[_c].qty += _cv>>\
+		<<case "trait">>\
+			You unlocked the @@.gain;$achievement[$ach].rewardText@@ trait!
+			<<set $player.hasTrait[$achievement[$ach].rewardValue] to $traits[$achievement[$ach].rewardValue]>>\
+		<<case "wolf" "ram" "hart">>\
+			You earned @@.gain;$achievement[$ach].rewardText@@!
+			<<set $player[_aType] += $achievement[$ach].rewardValue>>\
+		<<default>>\
+			@@.gain;Go you!@@
+	<</switch>>\
+<</if>>\
+</center>

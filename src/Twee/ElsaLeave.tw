@@ -1,0 +1,100 @@
+:: ElsaLeave-Free {"position":"975,20725","size":"100,100"}
+<<loc_Landing>>\
+    <<SetFlag $player "CallElsa">>\
+
+    <<pic $elsa>>\
+    
+    ''$elsa.name turns to you and wraps her arms around you. As she does, you can feel her slip a piece of paper down the back of your <<bottom>> before gently nibbling on your ear.''
+
+    <<nm $elsa "Keep in touch, okay?">>\
+
+    <<nm $player "Sure thing...">>\
+
+    ''She finally frees you from her embrace and the four of you stand around the doorway waiting for $elsa.name's Uber to text her. After a few minutes or so it's time for her to go.''
+
+    <<nm $elsa "Alright, that's me! I love you all, can't wait to see you again!">>\
+
+    <<pic $sister>>\
+
+    <<nm $sister "Come back soon!">>\
+
+    ''After another quick round of goodbyes, $elsa.name takes her bags and leaves the house. The three of you stand around awkwardly for a moment before your <<mother>> speaks up.''
+
+    <<nm $mom "Well... Now I'm sad... Who wants pizza?">>\
+
+    <<nm $sister "Let's eat our feelings!">>\
+
+    <<nm $player "Yep...">>\
+
+    <<btnLink "Continue" "Home" "passTime()">>\
+
+
+:: ElsaLeave-FrontDesk {"position":"850,20725","size":"100,100"}
+<<loc_Landing>>\
+    <<set $CH4.ElsaHire to true>>\
+
+    ''While your <<mom>> and <<sister>> are saying their goodbyes, you discreetly send a text message from your phone, confirming your intentions to $sophie.name. Almost immediately, you're notified that $elsa.name will be picked up by The Company.''
+
+    <<pic $elsa>>\
+
+    <<nm $elsa "Hey you, c'mere!">>\
+
+    ''$elsa.name pulls you in close for a tight hug.''
+
+    <<nm $player "Hahaha, don't worry, I'm gonna get you a job at my office and we can hang out all the time!">>\
+
+    <<nm $elsa "Hahahaha, okay cuz, whatever you say. Sounds like a great time!">>\
+
+    ''The four of you move to the living room after $elsa.name receives a notice that her Uber's been 'delayed'. After about fifteen minutes or so it's finally time for her to go.''
+
+    <<nm $elsa "Alright, that's me! I love you all, can't wait to see you again!">>\
+
+    <<pic $sister>>\
+
+    <<nm $sister "Come back soon!">>\
+
+    ''After another quick round of goodbyes, $elsa.name takes her bags and leaves the house. The three of you stand around awkwardly for a moment before your <<mother>> speaks up.''
+
+    <<nm $mom "Well... Now I'm sad... Who wants pizza?">>\
+
+    <<nm $sister "Let's eat our feelings!">>\
+
+    <<nm $player "Yep...">>\
+
+    <<btnLink "Continue" "Home" "passTime()">>\
+
+
+:: ElsaLeave-Pit {"position":"725,20725","size":"100,100"}
+<<loc_Landing>>\
+    <<set $CH4.ElsaSlave to true>>\
+    <<run createSlave("elsa","elsa","female","blonde",2,2,0,0,"Teen")>>\
+
+    ''While your <<mom>> and <<sister>> are saying their goodbyes, you discreetly send a text message from your phone, confirming your intentions to $sophie.name. Almost immediately, you're notified that $elsa.name will be picked up by The Company.''
+
+    <<pic $elsa>>\
+
+    <<nm $elsa "Hey you, c'mere!">>\
+
+    ''$elsa.name pulls you in close for a tight hug.''
+
+    <<nm $player "Hahaha, yeah, I'll miss you too. I'm sure we'll see each other again soon.">>\
+
+    <<nm $elsa "Hopefully!">>\
+
+    ''The four of you move to the living room after $elsa.name receives a notice that her Uber's been 'delayed'. After about fifteen minutes or so it's finally time for her to go.''
+
+    <<nm $elsa "Alright, that's me! I love you all, can't wait to see you again!">>\
+
+    <<pic $sister>>\
+
+    <<nm $sister "Come back soon!">>\
+
+    ''After another quick round of goodbyes, $elsa.name takes her bags and leaves the house. The three of you stand around awkwardly for a moment before your <<mother>> speaks up.''
+
+    <<nm $mom "Well... Now I'm sad... Who wants pizza?">>\
+
+    <<nm $sister "Let's eat our feelings!">>\
+
+    <<nm $player "Yep...">>\
+
+    <<btnLink "Continue" "Home" "passTime()">>\

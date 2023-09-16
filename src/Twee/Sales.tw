@@ -1,0 +1,1131 @@
+:: Sales-John [nobr] {"position":"100,14725","size":"100,100"}
+<<switch $time.time>>
+		<<case "Morning">>		
+			<<if dose($tasha,"masturbate") and not flag($tasha,"PlayerSlave")>>
+				<<SalesEventsJohn "locked">>
+			<<else>>
+				<<SalesEventsJohn "locked">>
+			<</if>>
+		<<case "Late Morning">>
+			<<SalesEventsJohn "locked">>
+		<<case "Noon">>
+			<<if $john.cPenny > 1 and not $penny.isWhore>>
+				<<SalesEventsJohn "Penny">>
+			<<elseif dose($john,"numb")>>
+				<<SalesEventsJohn "DollRide">>
+			<<else>>
+				<<SalesEventsJohn "locked">>
+			<</if>>
+		<<case "Early Afternoon">>
+			<<if $tasha.control.domJohn>>
+				<<SalesEventsJohn "locked">>
+			<<else>>
+				<<SalesEventsJohn "John">>
+			<</if>>
+		<<case "Afternoon">>
+			<<SalesEventsJohn "John">>
+		<<case "Evening">>
+			<<SalesEventsJohn "locked">>
+		<<case "Night">>
+			<<SalesEventsJohn "locked">>
+	<</switch>>
+
+
+:: Sales-John-Drink {"position":"725,14725","size":"100,100"}
+<<loc_Commons>>\
+
+''$john.name brings you a cold beer, sticking it in your hand before taking a nearby seat.''
+
+<<pic $john "beer">>\
+<<art $john "happy,2">>\
+
+<<if flag($john,"Beer-Talk-1")>>\
+	<<nm $player "Thanks...">>\
+
+	<<nm $john "Hahaha, anything for you!">>\
+
+	''You listen to $john.name make small talk for a few minutes before he finally stands up and throws his empty bottle into a nearby bin.''
+<<else>>\
+	<<nm $player "I know this place is... unique... but still. I've never seen an office where employees have free access to alcohol.">>\
+		
+	''$john.name finishes taking a large drink.''
+
+	<<nm $john "Yeah, well, that's the thing. The Company'll hire anyone they think'll benefit 'em, even if they're shitbags like me, haha.">>\
+		
+	''He finishes his drink before continuing...''
+
+	<<nm $john "They don't care if you're drunk, high, weird, psycho, whatever. Long you get results, and can act professional in the field and around the bigwigs, you ain't got nothin' to worry about.">>\
+		
+	''You take another sip of your beer.''
+
+	<<nm $john "Anyway, that's about the size of it. You already know what it is we do here. You fuck up or fail to meet expectations, and you and your family end up 'missing'.">>\
+	<<SetFlag $john "Beer-Talk-1">>\
+	
+	''$john.name stands up and tosses his bottle in a bin across the hallway.''
+<</if>>\
+
+<<nm $john "Well I gotta go take a piss now. You?">>\
+	
+<span id="bathroom">\
+	@@.btnChoice;<<button "Yeah, me too - <<t1>>">>
+		<<replace "#bathroom">>\
+			<<nm $player "Yeah, actually I gotta go, too.">>\
+			
+			''You finish your drink and toss the empty bottle into the bin, then follow $john.name down the hall to the bathroom.''
+			
+			<<btnLink "Follow $john.name into the bathroom - <<t1>>" "John-ISS-Bathroom-Start" "passTime()">>
+		<</replace>>\
+	<</button>>@@
+	@@.btnChoice;<<button "No, I'm gonna head back to work">>
+		<<replace "#bathroom">>\
+			<<nm $player "Nah, I'm good. I need to get back to the lab now.">>\
+				
+			<<nm $john "Aight, later <<buddy>>.">>\
+				
+			<<btnLink "Go back to lobby" "Work" "passTime()">>
+		<</replace>>\
+	<</button>>@@
+</span>\
+
+
+:: Sales-John-Talk {"position":"850,14725","size":"100,100"}
+<<loc_SalesOffice>>\
+
+<<if $player.hasBeer>>\
+	<<set $player.hasBeer to false>>\
+	''You can hear $john.name on the phone, so you poke your head into his field of view and wave a bottle in your hand.''
+	
+	<<if $john.isMale>>\
+		<<pic $john>>\
+		<<art $john>>\
+
+		<<nm $player "Heya $john.name.">>\
+
+		<<greet-John>>\
+
+		''$john.name covers the phone with his hand to acknowledge you before returning to his call.''
+
+		<<if dose($john,"nice")>>\
+			<<nm $john "Hey man, I gotta let you go, somethin' just came up at the office. Uh-huh, yeah, yeah no worries. I'll call ya' back. Aight.<br><br>Hey $player.name! Good call, I'll be right there!">>\
+		<<else>>\
+			<<nm $john "Hey man, I gotta let you go, somethin' just came up at the office. Uh-huh, yeah, yeah no worries. I'll call ya' back. Aight.<br><br>Hey <<buddy>>! Good fuckin' call, I'll be right there!">>\
+		<</if>>\
+		
+		<<love $john 1>>
+	<<else>>\
+		<<pic $john "flirty">>\
+		<<art $john "aroused,2">>\
+		
+		<<nm $john "Hey sexy, that for me? You're the best!">>\
+		
+		<<love $john 1>>
+	<</if>>\
+		
+	''$john.name meets you in the hallway and the two of you share a drink.''
+	
+	<<if $john.cPlayer > 0>>\
+		''$john.name finishes his beer and gives you a sly look.''
+
+		<<nm $john "Hey <<buddy>>, wanna go play our new little game again? I can free up some time for ya', whaddaya say?">>\
+
+		<<btnChoice "Follow $john.name to the bathroom..." "John-ISS-Bathroom-Dom">>
+		<<if $player.horny < 90 and not $player.isSub>>\
+			<<btnChoice "Go back to the lobby" "Work">>
+		<</if>>\
+	<<else>>\
+		<<Conversation $john>>
+		
+		<<btnLink "Go back to the lobby" "Work">>
+	<</if>>\
+<<elseif $john.cPlayer > 0>>\
+	''You head over to $john.name's desk to chat. As he sees you approaching he mutes his line.''
+
+	<<nm $player "H-hey, $john.name.">>\
+		
+	<<greet-John>>\
+
+	''$john.name leans back in his seat.''
+	
+	<<pic $john>>\
+	<<art $john>>\
+	
+	<<nm $john "Hey <<buddy>>, wanna go play our new little game again? I can free up some time for ya', whaddaya say?">>\
+
+	<<if isBimbo()>>\
+		<<Thought "@@.ef;Oohhh, that could be fun...@@">>\
+	<<elseif isSissy()>>\
+		<<Thought "@@.sf;I-I...@@">>\
+	<<else>>\
+		<<Thought "...">>\
+	<</if>>\
+	
+	<<btnLink "Follow $john.name to the bathroom..." "John-ISS-Bathroom-Dom">>
+	<<if $player.horny < 90 and not $player.isSub>>\
+
+		<<btnLink "Go back" "Work">>
+	<</if>>\
+<<elseif flag($john,"slapDown") and $john.isMale and $john.dose is 0>>\
+	''You head over to $john.name's desk to chat. As he sees you approaching he looks away and flips you the bird.''
+	
+	<<artB $john "angry">>\
+	<<Thought "Guess he hasn't forgotten about the other day. Maybe if I bring him a drink he'll be more receptive.">>\
+	
+	<<btnLink "Go back" "Work">>
+<<else>>\
+	<<if $john.isFemale>>\
+		<<pic $john "on-phone">>\
+		<<art $john>>\
+
+		''You walk into $john.name's office to see her sitting at her desk on the phone, breasts hanging out of her open blouse. You're not a hundred percent sure what to make of the sight, but you've got a few ideas... $john.name quickly wraps up her call.''
+
+		<<nm $player "Heya $john.name.">>\
+		
+		<<greet-John>>\
+
+		''$john.name runs a finger along her chest.''
+		
+		<<if $john.sexCD is 0>>\
+			<<if (dose($tasha,"friends") or flag($tasha,"caughtPegging")) and $tasha.sexCD is 0 and not $tasha.hasPussy>>\
+				<<nm $john "So, come to chat? Or maybe, you're here for something else? Ooorrrr...">>\
+
+				''$john.name twirls her hair as she looks over at her door.''
+
+				<<nm $john "I bet if we go ask real nicely, $tasha.name would let us go play with her! Whaddaya say!?">>\
+
+				<<btnLink "Follow $john.name to $tasha.name's office" "Chanel-ISS-Tasha-Start">>
+			<<else>>\
+				<<nm $john "So, come to chat? Or maybe, you're here for something else?">>\
+
+			<</if>>\
+			<<btnLink "Fuck $john.name in her office" "Chanel-ISS-Office-Start">>
+		<<else>>\
+			<<nm $john "Tee-hee, heya sexy! Mmmm, I'm still thinking about earlier... We should play again tomorrow, whaddaya think?">>\
+
+			''You and $john.name chat for a minute before you head out.''
+
+		<</if>>\
+		<<btnLink "Go back" "Work">>
+	<<else>>\
+		''You head over to $john.name's desk to chat. As he sees you approaching he wraps up his phone call and hangs up.''
+
+		<<pic $john>>\
+		<<art $john>>\
+		
+		<<if $john.isMale>>\
+			<<if not dose($john,"compliant") or not dose($john,"nice")>>\
+				<<nm $player "Heya $john.name.">>\
+				
+				<<greet-John>>\
+
+				''$john.name leans back.''
+				
+				<<nm $john "So, <<faggot>>, come to watch the master at work?">>\
+					
+				<<nm $player "Ah, not quite, actually I just thought I could use a break. Wanna go to the commons a grab a drink with me?">>\
+					
+				''$john.name thinks about it for a second before shrugging his shoulders.''
+
+				<<nm $john "Sure, what the hell. Beer here's shit but at least they offer it.">>\
+					
+				<<btnLink "Go to the commons with $john.name" "Sales-John-Drink">>
+			<<else>>\
+				<<Conversation $john>>
+					
+				<<btnLink "Go back to lobby" "Work">>
+			<</if>>\
+		<<else>>\
+			<<Conversation $john>>
+					
+			<<btnLink "Go back to lobby" "Work">>
+		<</if>>
+	<</if>>\
+<</if>>\
+
+
+:: Sales-Penny {"position":"975,14725","size":"100,100"}
+<<loc_SalesOffice>>\
+
+	<<pic $action "female-solo">>\
+
+	<<nm $penny "Ahhhh, oooooo... mmmm... s-sooo good...">>\
+
+	<<if flag($player,"seePennyInSales")>>\
+		<<nm $player "$penny.name...">>\
+
+		''Once again you find $penny.name sitting in $john.name's chair, masturbating furiously. A steady stream of juices run down her legs. You arrive just in time to witness her latest rolling orgasm.''
+	<<else>>\
+		<<nm $player "$penny.name?">>\
+
+		''You're shocked to find $penny.name sitting in $john.name's chair, masturbating furiously. A steady stream of juices run down her legs. You walk in just in time to witness her latest rolling orgasm.''
+	<</if>>\
+
+	<<pic $penny "squirt">>\
+
+	''She comes down from her climax, sliding into the chair. Her eyes are closed as she smiles to herself for a few moments before finally deciding to acknowledge you.''
+
+	<<nm $penny "Oh, $player.name, I didn't notice you! Hehe, I was getting so horny thinking about the rough fucking I got from $john.name this morning that I just had to sneak away to deal with it. Say...">>\
+
+	''$penny.name lays back, spreading her legs apart and opening her glistening pussy lips with her fingers.''
+
+	<<pic $penny "spread">>\
+
+	<<if flag($player,"seePennyInSales")>>\
+		<<nm $penny "I bet you came to get another mouthful of my juicy pussy, huh?">>\
+
+		<<nm $player "I-I...">>\
+	<<else>>\
+		<<nm $penny "I don't suppose you came here to clean me up, didja?">>\
+
+		<<nm $player "C-clean you...?">>\
+	<</if>>\
+
+	<<btnTooSub "Get down on your knees - <<t1>>" "Sales-Penny-Sissy">>\
+	<<btnNotSub "Leave the office - <<t1>>" "Sales-Penny-Leave">>\
+
+
+:: Sales-Penny-Leave {"position":"1225,14725","size":"100,100"}
+<<loc_SalesOffice>>\
+
+	''You step back towards the door.''
+	
+	<<nm $player "Um, yeah, no... I was just wondering what you were up to. I guess I'll leave you to it.">>\
+	
+	<<nm $penny "Mmm, suit yourself!">>\
+	
+	''$penny.name goes back to masturbating, not even noticing as you close the door behind you.''
+	
+	<<SetFlag $player "seePennyInSales">>\
+	<<btnLink "Go back" "Work" "passTime()">>
+
+
+:: Sales-Penny-Sissy {"position":"1100,14725","size":"100,100"}
+<<loc_SalesOffice>>\
+
+	''Your body begins to move on its own as you slowly drop to your knees and lower your face towards $penny.name's waiting pussy.''
+	
+	<<Thought "Why... Why am I...">>\
+	
+	<<nm $penny "C'mon slut! Who knows what $john.name'll do if he finds you in here when he gets back. Unless... that's what you want?">>\
+	
+	<<nm $player "N-no, I... Okay...">>\
+	
+	''You brings your mouth to meet $penny.name's dripping cunt, the smell is overwhelming, and you quickly find yourself devouring it. Sliding your tongue along her tiny slit, taking her clit into her mouth. The sensation is heating up your entire body.''
+	
+	<<pic $penny "eaten-by-player">>\
+	
+	<<nm $penny "Ohhh, mmmm... You're really good at this! Haaaa... $john.name fucks me so hard it makes my pussy really sore, y'know? And the worst part? No matter how hard I beg him to, he just refuses to cum inside me! Can you believe it? Here I am, willing to give him everything, and all I want in return is his warm cum filling up my insides... He really is a jerk, huh? Ohhh... OHHHFUCK! I-I'm gonna... c-cum again!">>\
+	
+	<<pic $penny "orgasm">>\
+	
+	''$penny.name's warm, thick juices flood your mouth before running down your throat and chin. She holds you in place with her hands and thighs for the entirety of her orgasm. You try not to choke for what feels like several minutes before $penny.name finally allows you to drop to the ground.''
+	
+	<<pic $penny "squirt">>\
+	
+	<<nm $player "So... <<cough>> S-so much... <<cough>> <<cough>>">>\
+	
+	<<nm $penny "Mmmmm, hehehe! Yeah, sorry, I was a little backed up. Personally, I'm just glad to see you're able to get me off at all. Not totally useless after all! I'll be sure to tell $john.name. Anyway, I'm gonna hang out here for a while, so why don't you take off before $john.name gets back, okay?">>\
+	
+	''She turns around in the chair as you pick yourself up off the floor, quietly moving towards the office door.''
+	
+	<<lust $penny 1>>
+	<<dom $player -1>>
+	<<trackAction "eatPussy.give" $penny>>\
+	
+	<<horny 10>>
+	
+	<<SetFlag $player "seePennyInSales">>\
+	<<btnLink "Go back" "Work" "passTime()">>
+
+
+:: Sales-Tasha [nobr] {"position":"350,14725","size":"100,100"}
+<<if $tasha.isGone>>
+		<<SalesEventsTasha "locked">>
+	<<else>>
+		<<switch $time.time>>
+			<<case "Morning">>		
+				<<if flag($tasha,"CaughtMasturbating") and not flag($tasha,"PlayerSlave")>>
+					<<if dose($john,"labTest") and $john.isMale>>
+						<<SalesEventsTasha "Tasha-Fuck-John">>
+					<<elseif dose($tasha,"masturbate") or dose($tasha,"oral")>>
+						<<SalesEventsTasha "Tasha-Masturbate">>
+					<<else>>
+						<<SalesEventsTasha "Tasha-Morning">>
+					<</if>>
+				<<elseif not flag($tasha,"CaughtMasturbating")>>
+					<<SalesEventsTasha "Tasha-TransReveal">>
+				<<else>>
+					<<SalesEventsTasha "Tasha-Morning">>
+				<</if>>
+			<<case "Late Morning">>
+				<<SalesEventsTasha "Tasha">>
+			<<case "Noon">>
+				<<SalesEventsTasha "locked">>
+			<<case "Early Afternoon">>
+				<<if $tasha.control.domJohn>>
+					<<SalesEventsTasha "Domming-John">>
+				<<else>>
+					<<SalesEventsTasha "Tasha">>
+				<</if>>
+			<<case "Afternoon">>
+				<<SalesEventsTasha "Tasha">>
+			<<case "Evening">>
+				<<if dose($tasha,"officeSex") and not $TashaOfficeSex>>
+					<<SalesEventsTasha "sex">>
+				<<else>>
+					<<SalesEventsTasha "locked">>
+				<</if>>
+			<<case "Night">>
+				<<SalesEventsTasha "locked">>
+		<</switch>>
+	<</if>>
+
+
+:: Sales-Tasha-AskToApartment {"position":"100,14850","size":"100,100"}
+<<pic $tasha>>\
+    <<art $tasha "happy">>\
+
+    <<nm $tasha "Hey you!">>\
+
+    <<nm $player "Hey ?tasha! How are you?">>\
+
+    ''?tasha smiles brightly.''
+
+    <<nm $tasha "W-well, um, I was thinking maybe you'd like to come over tonight? We can just, I dunno, hang out...">>\
+
+    ''She waits anxiously for a response.''
+
+    <<btnChoice "Accept her offer and follow her home - <<t2>>" "Tasha-GotoApartment">>\
+    <<btnChoice "Tell her tonight won't work" "Tasha-DeclineApartment">>\
+
+
+:: Sales-Tasha-AskToDinner {"position":"475,14850","size":"100,100"}
+<<pic $tasha>>\
+    <<art $tasha "embarrassed">>\
+
+    <<nm $tasha "U-um, hey, ?mc... Are you busy?">>\
+
+    <<nm $player "Me? No, not really, I was just heading home. What's up?">>\
+
+    ''?tasha's clearly nervous about something, rocking on her feet as she works up the courage to say what she has to say.''
+
+    <<nm $tasha "W-well, um, hehe! Just so happens that, um, I don't have anything going on tonight either, and, um, wanted to know if you might, maybe... want to maybe grab dinner? With me? Tonight?">>\
+
+    ''Her face has gone completely red, but she stands her ground.''
+
+    <<btnChoice "Accept her offer and take her out - <<t2>>" "Tasha-TakeToDinner">>\
+    <<btnChoice "Decline her offer" "Tasha-DeclineDinner">>\
+
+
+:: Sales-Tasha-DommingJohn {"position":"850,14850","size":"100,100"}
+<<AddConvo $tasha 9>>\
+    <<nm $player "Hey $tasha.name, I just thought I'd... drop by?">>\
+    
+    <<if $john.isMale>>\
+        <<pic $action "ts-fuck-male">>\
+        
+        <<nm $tasha "Oh hi $player.name, what's up?">>\
+        
+        ''$tasha.name has $john.name bent over, thrusting her huge cock into ass as he winces and moans in pleasure and pain. She doesn't lose her pace at all as she turns to greet you.''
+        
+        <<if $player.hasCoffee>>\
+            <<nm $player "I uh, just brought you some coffee.">>\
+                
+            ''$tasha.name smiles and rams her cock down $john.name's ass to the hilt, making him yelp.''
+            
+            <<nm $tasha "Aww, thanks so much! Just set it right over there. Thanks!">>\
+            
+            <<love $tasha 1>>
+            <<set $player.hasCoffee to false>>\
+            
+            <<pic $tasha "orgasm">>\
+            
+            ''$tasha.name turns to look at you, clearly on the verge of erupting.''
+            
+            <<nm $tasha "H-hey, whaddaya say? S-should should I breed him?">>\
+            
+            <span id="choice">\
+                @@.btnChoice;<<button "Tell $tasha.name to cum inside him">>
+                    <<replace "#choice">>\
+                        <<nm $player "I say fill him up!">>\
+                        
+                        <<nm $tasha "Hehe, hear that? I'm gonna fill you up with lots of my cum! H-here we go!">>\
+                        
+                        <<pic $action "ts-creampie">>\
+                        
+                        ''$john.name groans as $tasha.name buries her cock deep inside him and holds it in place. She cries out in pleasure as she releases a massive load in $john.name's ass. There's so much it begins to spill out, running down his leg. $john.name slides off $tasha.name's twitching penis and hits the ground with a thud.''
+                        
+                        <<nm $tasha "Ahhh, much better! Aw, poor $john.name musta had too much fun... doesn't look like he can move much... Well, back to work!">>\
+                        
+                        <<lust $tasha 1>>
+                        <<lust $john 1>>
+                        <<dom $tasha 1>>
+                        <<dom $john -1>>
+                            
+                        <<btnLink "Go back to lobby" "Work" "passTime()">>
+                    <</replace>>\
+                <</button>>@@
+                @@.btnChoice;<<button "Tell her to feed it to him instead">>
+                    <<replace "#choice">>\
+                        <<nm $player "I dunno, $john.name looks a little thirsty. Maybe you could help him out?">>\
+                        
+                        <<nm $tasha "Hehe, hear that? I'm gonna let you gulp down lots of my cum! H-here we go!">>\
+                        
+                        ''$tasha.name pulls out of $john.name's ass, turning him around and cramming her cock deep down his throat. His eyes bulge as she begins unloading inside $john.name.''
+                        
+                        <<pic $action "ts-squirt">>\
+                        
+                        ''$john.name chokes as $tasha.name's huge, pulsing cock stays firmly in place. She cries out in pleasure as she releases one massive load after another straight into $john.name's stomach. There's so much of it that the second $tasha.name finally releases $john.name, he begins coughing it up into a large puddle on the ground. Finally, his arms give out under him and he hits the floor with a loud thud.''
+                        
+                        <<nm $tasha "Ahhh, much better! Aw, poor $john.name musta had too much fun... doesn't look like he can move much... Well, back to work!">>\
+                        
+                        <<lust $tasha 1>>
+                        <<lust $john 1>>
+                        <<dom $tasha 1>>
+                        <<dom $john -1>>
+                            
+                        <<btnLink "Go back to lobby" "Work" "passTime()">>
+                    <</replace>>\
+                <</button>>@@
+            </span>\
+        <<else>>\
+            <<nm $player "I uh, just thought I'd stop by, y'know, see how you're doing.">>\
+                
+            ''$tasha.name smiles and rams her massive cock down $john.name's ass to the hilt, making him yelp.''
+            
+            <<nm $tasha "I'm doing great actually, just spending some time with $john.name here. We've been getting along really well lately, isn't that right?">>\
+            
+            ''$tasha.name smacks $john.name's ass hard enough to leave a mark. He doesn't respond.''
+            
+            <<nm $player "Well, that's great! Anyway, I'll leave you to it and we'll catch up later. See'ya!">>\
+                
+            <<nm $tasha "Bye!">>\
+            
+            <<lust $tasha 1>>
+            <<lust $john 1>>
+            <<dom $tasha 1>>
+            <<dom $john -1>>
+                
+            <<btnLink "Go back to lobby" "Work" "passTime()">>
+        <</if>>\
+    <<else>>\
+        <<pic $action "female-suck-ts">>\
+        
+        <<nm $tasha "Oh hi $player.name, what's up?">>\
+        
+        ''$tasha.name has $john.name on her hands and feet, servicing her cock.''
+        
+        <<if $player.hasCoffee>>\
+            <<nm $player "I uh, just brought you some coffee.">>\
+                
+            ''$tasha.name smiles and rams her cock down $john.name's throat to the hilt, making her gag.''
+            
+            <<nm $tasha "Aww, thanks so much! Just set it right over there. Thanks!">>\
+            
+            <<love $tasha 1>>
+            <<set $player.hasCoffee to false>>\
+            
+            <<pic $tasha "orgasm">>\
+            
+            ''$tasha.name turns to look at you, clearly on the verge of erupting.''
+            
+            <<nm $tasha "H-hey, whaddaya say? S-should should I breed her?">>\
+            
+            <span id="choice">\
+                @@.btnChoice;<<button "Tell $tasha.name to cum inside her">>
+                    <<replace "#choice">>\
+                        <<nm $player "I say fill her up!">>\
+                        
+                        <<nm $tasha "Hehe, hear that? I'm gonna fill you up with lots of my cum and you're gonna have my baby!!! H-here we go!">>\
+                        
+                        ''$tasha.name pulls $john.name off her cock and spins her around. $john.name squeals in pleasure as her pussy gets stretched by $tasha.name's huge penis.''
+                        
+                        <<pic $action "female-creampie">>\
+                        
+                        ''$john.name moans as $tasha.name buries her cock deep inside her and holds it in place. She cries out in pleasure as she releases a massive load straight into $john.name's womb. There's so much it begins to spill out, running down her thighs. $john.name slides off $tasha.name's twitching cock and hits the ground with a thud.''
+                        
+                        <<nm $tasha "Ahhh, much better! Aw, poor $john.name musta' had too much fun... doesn't look like she can move much... Well, back to work!">>\
+                        
+                        <<lust $tasha 1>>
+                        <<lust $john 1>>
+                        <<dom $tasha 1>>
+                        <<dom $john -1>>
+                        
+                        <<preg $john "$tasha.name">>
+                            
+                        <<btnLink "Go back to lobby" "Work" "passTime()">>
+                    <</replace>>\
+                <</button>>@@
+                @@.btnChoice;<<button "Tell her to feed it to her instead">>
+                    <<replace "#choice">>\
+                        <<nm $player "I dunno, $john.name looks a little thirsty. Maybe you could help her out?">>\
+                        
+                        <<nm $tasha "Hehe, hear that? I'm gonna let you gulp down lots of my cum! H-here we go!">>\
+                        
+                        <<pic $action "ts-squirt">>\
+                        
+                        ''$john.name chokes as $tasha.name's huge, pulsing cock stays firmly in place. She cries out in pleasure as she releases one massive load after another straight into $john.name's stomach. There's so much of it that the second $tasha.name finally releases $john.name, she begins coughing it up into a large puddle on the ground. Finally, her arms give out under her and she hits the floor with a loud thud.''
+                        
+                        <<nm $tasha "Ahhh, much better! Aw, poor $john.name musta' had too much fun... doesn't look like she can move much... Well, back to work!">>\
+                        
+                        <<lust $tasha 1>>
+                        <<lust $john 1>>
+                        <<dom $tasha 1>>
+                        <<dom $john -1>>
+                            
+                        <<btnLink "Go back to lobby" "Work" "passTime()">>
+                    <</replace>>\
+                <</button>>@@
+            </span>\
+        <<else>>\
+            <<nm $player "I uh, just thought I'd stop by, y'know, see how you're doing.">>\
+            
+            <<nm $tasha "I'm doing great actually, just spending some time with $john.name here. We've been getting along really well lately, isn't that right?">>\
+            
+            ''$tasha.name smiles and rams her massive cock deep down $john.name's throat to the hilt, making her gag, then slapping her in the face hard enough to leave a mark. She doesn't respond, only continuing to gag on $tasha.name's pulsing member.''
+            
+            <<nm $player "Well, that's great! Anyway, I'll leave you to it and we'll catch up later. See'ya!">>\
+                
+            <<nm $tasha "Bye!">>\
+            
+            <<lust $tasha 1>>
+            <<lust $john 1>>
+            <<dom $tasha 1>>
+            <<dom $john -1>>
+                
+            <<btnLink "Go back to lobby" "Work" "passTime()">>
+        <</if>>\
+    <</if>>\
+
+
+:: Sales-Tasha-GotoClub {"position":"475,13350","size":"100,100"}
+<<loc_Lift>>\
+    <<run setDailyCD("TashaClub",3)>>\
+
+    ''As you're about to board the elevator, you hear the sound of clicking heels running up behind you.''
+
+    <<nm $tasha "Waaaaaiiiiiiiiit!">>\
+
+    <<nm $player "?tasha?">>\
+
+    ''You hold the door, turning around to see ?tasha running up to you, trying to communicate while also catching her breath.''
+
+    <<pic $tasha>>\
+    <<art $tasha "embarrassed">>\
+
+    <<nm $tasha "H-hey... ?mc... You, u-um... Phew, 'scuse me!">>\
+
+    <<nm $player "Breathe ?tasha, breathe...">>\
+
+    ''?tasha puts her hands on her knees and takes a minute to catch her breath before returning to her train of though.''
+
+    <<nm $tasha "Right... right... So remember that club I was talking to you about earlier? Um... Wanna go?">>\
+
+    <<nm $player "The uh... Oh right! Yeah, I'm free tonight, let's go!">>\
+
+    ''You and ?tasha ride the elevator to the surface, her wrapped around you arm the entire time. You follow $tasha.name through the main door of the complex, watching as she waves off the waiting drivers to let them know they wouldn't be taking you home yet.''
+
+    <<pic $tasha>>\
+    <<art $tasha "happy">>\
+
+    <<nm $tasha "Mmmm, isn't that nice? The air at night is so crisp and clean!">>\
+
+    <<nm $player "I... I guess so...">>\
+
+    ''The air was certainly crisp, but you weren't so sure the air in the heart of your city's industrial zone could be called 'clean'. You follow $tasha.name for three or four blocks until the scenery changes slightly. Tucked away among all the factories and warehouses is a tiny alleyway full of bars, shops, and clubs. You look around while staying close to $tasha.name until finally she stops at a nondescript metal door with a circular 'CP' logo etched into it.''
+
+    @@KNOCK! KNOCK!@@
+
+    ''After a moment, the door quickly opens. A large, bearded man steps out, needing to carefully duck under the doorway. He's completely silent, looking down at $tasha.name, then over to you, then back to $tasha.name inquisitively.''
+
+    <<nmc "Large Bearded Man" "...This the one?">>\
+
+    <<nm $tasha "Tee-hee, yep! Cute, huh?">>\
+
+    <<nm $player "Huh? Was I expected?">>\
+
+    ''?tasha puts a hand on your shoulder and whispers into your ear.''
+
+    <<nm $tasha "Only way to get in is either to know someone who's already a member or to blow the doorman.">>\
+
+    <<nm $player "Ah, so who did you know who already goes here?">>\
+
+    <<nm $tasha "I don't know anyone, why? Do you?">>\
+
+    ''$tasha.name shrugs as the hulking man guides you into through the door...''
+
+    <<btnLink "Continue" "ClubPearl">>
+
+
+:: Sales-Tasha-Oral {"position":"975,14850","size":"100,100"}
+<<loc_SalesOffice>>\
+
+	<<if $c is "FromLab">>\
+		''You follow ?tasha into her office, closing the door behind you.''
+
+		<<nm $tasha "Tee-hee! Sorry ?mc, hope you don't mind having some fun before we start the day!">>\
+			
+		''$tasha.name leaps from her desk and attacks you. She has your pants off before you have time to protest, not that you would.''
+	<<else>>\
+		<<nm $player "Hey, $tasha.name, how's it going?">>\
+			
+		''$tasha.name practically jumps out of her skin, she was clearly focused. Still, she makes no actual effort to hide what she was doing, and in fact makes sure it's clear to you what she was up to.''
+
+		<<nm $tasha "Oh, hey $player.name. I was just having a little fun. Of course, now that you're here, maybe you can help me have even more fun!">>\
+			
+		''$tasha.name leaps from her desk and attacks you. She has your pants off before you have time to protest, not that you would.''
+	<</if>>\
+
+	<<if isChastity() or isSissy()>>\
+		<<if $tasha.hasPussy>>\
+			<<pic $tasha "spread">>\
+
+			<<nm $tasha "Hm, doesn't look like you'll be able to get your ?unusable-cock sucked today, so I think it's my turn!">>\
+
+			''?tasha leans back, pulling down her skirt and panties and exposing her glistening pussy. It doesn't take more convincing than that, and you immediately find yourself diving between her legs.''
+
+			<<pic $player "eat-pussy">>\
+			
+			''You push her back and go to work on her slit. ?tasha moans and quivers in pleasure.''
+			
+			<<pic $tasha "orgasm">>\
+			
+			''?tasha's trembling thighs squeeze your head as she bucks and spasms in an intense climax. Torrents of thick juices spray across your face and chest, and it's quite some time before she settles down enough for you to move again.''
+
+			<<nm $tasha "See? I knew it'd be more fun with you here!">>\
+			
+			<<nm $player "Haha... ha... yeah... that was nice.">>\
+			
+			<<love $tasha 1>>
+			<<lust $tasha 1>>
+			<<dom $player -1>>
+			<<trackAction "eatPussy.give" $tasha>>\
+		
+			<<horny 30>>
+		<<elseif isChastity()>>\
+			<<nm $tasha "Oh... sweetie...">>\
+			
+			''$tasha.name is pointing at the <<accf>> encasing your <<PussyOrCock>>.''
+			
+			<<if not $player.isSub>>\
+				<<nm $tasha "Not much I can do with that in the way... You should see about removing it and coming back to me. I know a girl at the mall who'll take care of those things. Sorry hun.">>\
+				
+			<<else>>\
+				<<nm $tasha "It's super cute, but I can't suck on that... Hm, well, since I can't suck on you...">>\
+				
+				''$tasha.name reaches up and grabs you by your shoulders, easily pulling you down to your knees as she stands up. From this position she appears to almost tower over you, and your inadequacy is felt all the more after she pulls down her panties.''
+				
+				<<pic $action "ts-cock-hanging">>\
+				
+				<<nm $tasha "Hehe, oh my god, you look SO cute down there! You look just like... just like a little GIRL!">>\
+				
+				''As she laughs her massive cock bounces up and down in front of you. The smell is dizzying and you soon find yourself fixated on it.''
+				
+				<<nm $tasha "Well, c'mon sweetie. Be a good little girl and suck $tasha.name's cock, 'kay?">>\
+				
+				<<react "about-to-suck-tasha">>\
+				
+				<<pic $action "player-suck-ts">>\
+				
+				''You're not given any time to think as $tasha.name pulls your head onto her thick cock. You can feel your jaw stretching to it limit as she gleefully penetrates your throat, and before long you start to worry you might suffocate on it.''
+				
+				<<nm $tasha "Mmmm, s-so good! I h-haven't had someone do this to me in, like, forever! O-oh god... I'm gonna... Here it comes!">>\
+				
+				<<pic $action "ts-squirt">>\
+				
+				''Rope after rope of thick, hot cum shoots down your throat into your stomach as $tasha.name holds you firmly in place. You can feel her balls tensing and pulsing against your chin as she empties her massive load deep inside you. Finally satisfied, she pulls out and drops you to the ground. You're on your hands and knees for some time coughing up $tasha.name's cum.''
+				
+				<<nm $tasha "Oh, jeez, I'm sorry! I guess I got carried away... You just seemed to be having so much fun down there, I didn't want to stop! I'll try harder next time, 'kay? Anyway, I have to get back to work. Thanks for helping me focus!">>\
+				
+				<<tfm "fem">>
+				<<dom $tasha 1>>
+				<<trackAction "suckCock.give" $tasha>>\
+			<</if>>\
+			<<dom $player -1>>
+			
+			<<horny 10>>
+		<<elseif isSissy()>>\
+			<<nm $tasha "Oh... sweetie...">>\
+			
+			''$tasha.name is poking at your flaccid <<pSize>>.''
+			
+			<<nm $tasha "It's super cute, but I can't suck on that... Hm, well, since I can't suck on you...">>\
+			
+			''$tasha.name reaches up and grabs you by your shoulders, easily pulling you down to your knees as she stands up. From this position she appears to almost tower over you, and your inadequacy is felt all the more after she pulls down her panties.''
+			
+			<<pic $action "ts-cock-hanging">>\
+			
+			<<nm $tasha "Hehe, oh my god, you look SO cute down there! You look just like... just like a little GIRL!">>\
+			
+			''As she laughs her massive cock bounces up and down in front of you. The smell is dizzying and you soon find yourself fixated on it.''
+			
+			<<nm $tasha "Well, c'mon sweetie. Be a good little girl and suck $tasha.name's cock, 'kay?">>\
+			
+			<<react "about-to-suck-tasha">>\
+			
+			<<pic $action "player-suck-ts">>\
+			
+			''You're not given any time to think as $tasha.name pulls your head onto her thick cock. You can feel your jaw stretching to it limit as she gleefully penetrates your throat, and before long you start to worry you might suffocate on it.''
+			
+			<<nm $tasha "Mmmm, s-so good! I h-haven't had someone do this to me in, like, forever! O-oh god... I'm gonna... Here it comes!">>\
+			
+			<<pic $action "ts-squirt">>\
+			
+			''Rope after rope of thick, hot cum shoots down your throat into your stomach as $tasha.name holds you firmly in place. You can feel her balls tensing and pulsing against your chin as she empties her massive load deep inside you. Finally satisfied, she pulls out and drops you to the ground. You're on your hands and knees for some time coughing up $tasha.name's cum.''
+			
+			<<nm $tasha "Oh, jeez, I'm sorry! I guess I got carried away... You just seemed to be having so much fun down there, I didn't want to stop! I'll try harder next time, 'kay? Anyway, I have to get back to work. Thanks for helping me focus!">>\
+			
+			<<dom $tasha 1>>
+			<<dom $player -1>>
+			<<tfm "fem">>
+			<<trackAction "suckCock.give" $tasha>>\
+			
+			<<horny 10>>
+		<</if>>\
+	<<elseif hasPenis()>>\
+		<<NoticePenis $tasha>>\
+
+		<<pic $tasha "suck-player">>\
+		
+		''She takes you deep into her mouth, sucking your cock like a pro. She makes sure you feel every stroke of her tongue, every roll of her lips as she works diligently to push you to orgasm.''
+		
+		<<pic $tasha "cum-on-face">>\
+		
+		''$tasha.name pays special attention to every twitch and tremble of your cock in her mouth, responding perfectly in response. It's not long before you're plastering her face with hot cum. She looks more than satisfied, smiling at you from the floor.''
+
+		<<nm $tasha "See? I knew it'd be more fun with you here!">>\
+		
+		<<nm $player "Haha... ha... yeah... that was nice.">>\
+		
+		<<love $tasha 1>>
+		<<lust $tasha 1>>
+		<<dom $player 1>>
+		<<trackAction "suckCock.get" $tasha>>\
+		
+		<<horny 0>>
+	<<else>>\
+		<<if not $player.isSub>>\
+			<<NoticePussy $tasha>>\
+
+			<<pic $tasha "eat-pussy">>\
+			
+			''She pushes you back and goes to work on your slit. She's not especially experienced when it comes to pleasuring other women, but her effort more than makes up for her lack of practice.''
+			
+			<<pic $tasha "rim-female">>\
+			
+			''You turn around, offering your ass to $tasha.name who happily begins servicing it. Her tongue alternates between lightly penetrating your asshole and licking your increasingly wet twat. It's not long before you start spasming in orgasm, and you make sure $tasha.name knows exactly what's happening. When you're done, $tasha.name withdraws her head, her face glistening in your juices as she makes a dazed and satisfied expression.''
+
+			<<nm $tasha "See? I knew it'd be more fun with you here!">>\
+			
+			<<nm $player "Haha... ha... yeah... that was nice.">>\
+			
+			<<love $tasha 1>>
+			<<lust $tasha 1>>
+			<<dom $player 1>>
+			<<trackAction "eatPussy.get" $tasha>>\
+		
+			<<horny 0>>
+		<<else>>\
+			<<if $tasha.hasPussy>>\
+				<<pic $tasha "spread">>\
+
+				<<nm $tasha "Hm, doesn't look like you'll be able to get your ?unusable-cock sucked today, so I think it's my turn!">>\
+
+				''?tasha leans back, pulling down her skirt and panties and exposing her glistening pussy. It doesn't take more convincing than that, and you immediately find yourself diving between her legs.''
+
+				<<pic $player "eat-pussy">>\
+				
+				''You push her back and go to work on her slit. ?tasha moans and quivers in pleasure.''
+				
+				<<pic $tasha "orgasm">>\
+				
+				''?tasha's trembling thighs squeeze your head as she bucks and spasms in an intense climax. Torrents of thick juices spray across your face and chest, and it's quite some time before she settles down enough for you to move again.''
+
+				<<nm $tasha "See? I knew it'd be more fun with you here!">>\
+				
+				<<nm $player "Haha... ha... yeah... that was nice.">>\
+				
+				<<love $tasha 1>>
+				<<lust $tasha 1>>
+				<<dom $player -1>>
+				<<trackAction "eatPussy.give" $tasha>>\
+			
+				<<horny 30>>
+			<<else>>\
+				<<nm $tasha "Hmmm... Actually, know what? I don't wanna hog all the fun...">>\
+				
+				<<nm $player "W-what?">>\
+				
+				<<nm $tasha "Yeah, yeah! I can see it all over you face! Don't worry, I don't mind. Here...">>\
+				
+				''$tasha.name reaches up and grabs you by your shoulders, easily pulling you down to your knees as she stands up. From this position she appears to almost tower over you, and you feel even smaller after she pulls down her panties.''
+				
+				<<pic $action "ts-cock-hanging">>\
+				
+				<<nm $tasha "Hehe, oh my god, you look SO cute down there!">>\
+				
+				''As she laughs her massive cock bounces up and down in front of you. The smell is dizzying and you soon find yourself fixated on it.''
+				
+				<<nm $tasha "Well, c'mon sweetie. Be a good little girl and suck $tasha.name's cock, 'kay?">>\
+				
+				<<react "about-to-suck-tasha">>\
+				
+				<<pic $action "player-suck-ts">>\
+				
+				''You're not given any time to think as $tasha.name pulls your head onto her thick cock. You can feel your jaw stretching to it limit as she gleefully penetrates your throat, and before long you start to worry you might suffocate on it.''
+				
+				<<nm $tasha "Mmmm, s-so good! I h-haven't had someone do this to me in, like, forever! O-oh god... I'm gonna... Here it comes!">>\
+				
+				<<pic $action "ts-squirt">>\
+				
+				''Rope after rope of thick, hot cum shoots down your throat into your stomach as $tasha.name holds you firmly in place. You can feel her balls tensing and pulsing against your chin as she empties her massive load deep inside you. Finally satisfied, she pulls out and drops you to the ground. You're on your hands and knees for some time coughing up $tasha.name's cum.''
+				
+				<<nm $tasha "Oh, jeez, I'm sorry! I guess I got carried away... You just seemed to be having so much fun down there, I didn't want to stop! I'll try harder next time, 'kay? Anyway, I have to get back to work. Thanks for helping me focus!">>\
+				
+				<<dom $tasha 1>>
+				<<dom $player -1>>
+				<<tfm "fem">>
+				<<trackAction "suckCock.give" $tasha>>\
+				
+				<<horny 10>>
+			<</if>>\
+		<</if>>\
+	<</if>>\
+		
+	''You pull your clothes back on and walk out of the sales office, leaving $tasha.name to resume her earlier activities.''
+		
+	<<btnLink "Go back to lobby" "Work" "passTime()">>
+
+
+:: Sales-Tasha-Talk {"position":"1100,14850","size":"100,100"}
+<<loc_SalesOffice>>\
+
+	<<if isMorning()>>\
+		<<nm $player "Hey $tasha.name, I just noticed you were here early and thought I'd say good morning.">>\
+			
+		''$tasha.name stretches before standing up to greet you.''
+
+		<<pic $tasha>>\
+		<<art $tasha "happy,2">>\
+		
+		<<if flag($tasha,"PlayerSlave")>>\
+			<<nm $tasha "Tee-hee, hey you! Come to play with me?">>\
+
+			<<nm $player "U-um, no, I just thought I'd come say good morning.">>\
+
+			<<nm $tasha "Oh...">>\
+
+			''$tasha.name's eyes narrow.''
+
+			<<nm $player "Heh, right, well...">>\
+		<<elseif dose($john,"niceTasha")>>\
+			<<nm $tasha "Hehe, heya $player.name!">>\
+
+			<<nm $player "Wow, you're chipper for it being so early... I usually don't start waking up until around noon...">>\
+
+			''$tasha.name giggles.''
+
+			<<nm $tasha "You're not gonna believe this, but $john.name's actually had me in a good mood lately. He's been cleaning up after himself, coming in on time, telling me good morning... He even brought me coffee!">>\
+
+			''She holds up a paper cup.''
+
+			<<nm $tasha "I don't know what suddenly changed, but my job's been a whole lot more bearable lately!">>\
+
+			<<nm $player "Ha, well, I'm glad to hear it. That's pretty crazy though.">>\
+		<<elseif dose($john,"nice")>>\
+			<<nm $tasha "Yeah, I used to come in to avoid $john.name and get some work done, but lately it hasn't been so bad. Still, after doing it for so long it's sorta become a habit, y'know?">>\
+			
+			<<nm $player "Hah, yeah, I know what you mean. I used to hate mornings, now I can't sleep in past eight...">>\
+		<<else>>\
+			<<nm $tasha "Yeah, I like to come in early to get some actual work done. $john.name usually doesn't come in until later, but once he does it's hard to focus on anything... He can be very... abrasive.">>\
+				
+			<<nm $player "Haha, yeah, I picked up on that when I first met him. It must be interesting dealing with that every day.">>\
+				
+			<<nm $tasha "Well, that's one way to put it...">>\
+		<</if>>\
+		<<if $player.hasCoffee>>\
+		
+			<<if flag($tasha,"PlayerSlave")>>\
+				<<nm $player "O-oh hey! I brought you some coffee!">>\
+
+				<<nm $tasha "OOOH!">>\
+
+				''$tasha.name snatches the cup from your hand and sips at it happily. She appears content for the time being...''
+			<<elseif dose($john,"niceTasha")>>\
+				<<nm $player "Well, I brought some coffee for you, too, but it looks like-">>\
+
+				''$tasha.name throws away her empty cup and holds out her hand.''
+
+				<<nm $tasha "More please!">>\
+
+				<<nm $player "Hahaha, figures... Here you go then.">>\
+
+				''She takes the cup from you with both hands and takes a sip, satisfaction washing over her.''
+
+				<<nm $tasha "Can never have too much coffee...">>\
+			<<else>>\
+				<<nm $player "Oh hey, brought you some coffee.">>\
+					
+				''You hand $tasha.name the cup.''
+				
+				<<nm $tasha "Aww, thanks so much!">>\
+			<</if>>\
+
+			<<love $tasha 1>>
+			<<set $player.hasCoffee to false>>\
+		<</if>>\
+		
+		<<Conversation $tasha>>
+		
+		<<btnLink "Go back to lobby" "Work">>
+	<<else>>\
+		<<pic $tasha>>\
+		<<art $tasha "happy,2">>\
+		
+		<<if flag($tasha,"PlayerSlave")>>\
+			<<nm $player "Hey $tasha.name">>\
+
+			<<nm $tasha "Hm? Oh, I'm not really able to play right now... What did you want?">>\
+
+			''She barely takes the time to look at you.''
+
+			<<nm $player "O-oh, I just thought I'd check in on you...">>\
+
+			<<nm $tasha "Hm...">>\
+
+			''$tasha.name seems completely uninterested in talking to you right now.''
+
+			<<btnLink "Go back to lobby" "Work">>
+		<<else>>\
+			<<nm $player "Hey $tasha.name, I just thought I'd drop by.">>\
+				
+			''$tasha.name stops what she's doing to give you her attention.''
+
+			<<if $player.hasCoffee>>\ 
+				<<nm $player "Oh hey, brought you some coffee.">>\
+					
+				''You hand $tasha.name the cup.''
+				
+				<<nm $tasha "Aww, thanks so much!">>\
+				
+				<<love $tasha 1>>
+				<<set $player.hasCoffee to false>>\
+
+			<</if>>\
+			<<Conversation $tasha>>
+
+			<<btnLink "Go back to lobby" "Work">>
+		<</if>>\
+	<</if>>\
+
+
+:: SalesEventsJohn [widget] {"position":"225,14725","size":"100,100"}
+<<widget "SalesEventsJohn">>\
+	<<loc_SalesOffice>>\
+
+	<<switch $args[0]>>\
+		<<case "locked">>\
+			<<img "room" "ClosedDoor">>\
+			
+			''The door is locked. $john.name must not be in the office right now.''
+		<<case "John">>\
+			<<if $john.isMale>>\
+				''$john.name has his feet up on the desk taking a phone call.''
+				
+				<<btnLink "Talk to $john.name - <<t1>><<NewConvoCheck $john>>" "Sales-John-Talk">>
+			<<else>>\
+				''$john.name is in her office with the door only slightly cracked open.''
+				
+				<<btnLink "Talk to $john.name - <<t1>><<NewConvoCheck $john>>" "Sales-John-Talk">>
+			<</if>>\
+		<<case "DollRide">>\
+			''There are noises coming from $john.name's office. It sounds like $john.name's in there with someone else, and it doesn't sound like he's having a great time...''
+
+			<<btnLink "Crack open the door - <<t1>>" "JohnOffice-ForcedRide">>
+		<<case "Penny">>\
+			<<loc_SalesOffice>>\
+			
+			''$tasha.name's office is vacant during her lunch break, but the light's on in $john.name's office and you can hear strange noises coming from it. As you lean in, you can clearly make out the sounds of feint moans and squeals.''
+			
+			<<btnLink "Crack open the door - <<t1>>" "Sales-Penny">>
+	<</switch>>\
+	
+	<<btnLink "Head back to lobby" "Work">>
+<</widget>>
+
+
+:: SalesEventsTasha [widget] {"position":"475,14725","size":"100,100"}
+<<widget "SalesEventsTasha">>\
+		<<loc_SalesOffice>>\
+
+		<<switch $args[0]>>\
+			<<case "locked">>\
+				<<img "room" "ClosedDoor">>\
+				
+				<<if $tasha.isGone>>\
+					''The door is locked. ?tasha's old office is dark and empty.''
+				<<else>>\
+					''The door is locked. $john.name and $tasha.name must not be in the office right now.''
+				<</if>>\
+			<<case "Tasha-Morning">>\
+				''You're at the office early and are surprised to see $tasha.name's already here. You push the door open slightly.''
+				
+				<<nm $tasha "Oh, hey you, you're here early. What's up?">>\
+				
+				<<btnLink "Talk to $tasha.name - <<t1>><<NewConvoCheck $tasha>>" "Sales-Tasha-Talk">>
+			<<case "Tasha-TransReveal">>\
+				''You can tell someone's in $tasha.name's office, but the door is barely cracked and the lights are off.''
+
+				<<Thought "$tasha.name?">>\
+
+				<<btnLink "Investigate... - <<t1>>" "Tasha-Dose-TransReveal">>\
+			<<case "Tasha-Masturbate">>\
+				<<Thought "Well, let's see what $tasha.name is up to this fine morning...">>\
+				
+				''You can hear her working herself as you slowly walk by her office door, which is cracked open slightly.''
+				
+				<<pic $tasha "solo">>\
+				<<act $tasha "solo">>\
+				
+				<<if dose($tasha,"oral")>>\
+					''You enjoy the show for a bit, getting increasingly aroused.''
+
+					<<Thought "Actually, this would be the perfect time to see if $tasha.name's up for a little fun.">>\
+					
+					<<btnLink  "Walk in on her - <<t1>>" "Sales-Tasha-Oral">>
+				<<else>>\
+					''You enjoy the show for a bit before heading to your lab.''
+				<</if>>\
+			<<case "Tasha-Fuck-John">>\
+				<<Thought "Well, let's see what $tasha.name is up to this fine morning...">>\
+				
+				''You expect to hear her getting herself off, but the reality is much more interesting...''
+				
+				<<pic $tasha "fuck-male">>\
+				
+				<<Thought "I guess the little evening sessions with $john.name have really been paying off... And I guess simply masturbating isn't cutting it for $tasha.name anymore!">>\
+				
+				''You observe for a bit before heading to your lab.''
+				
+				<<SetFlag $tasha "caughtPegging">>\
+			<<case "Tasha">>\
+				''Looks like $tasha.name's in the office right now. You push the door open slightly.''
+				
+				<<pic $tasha>>\
+				<<art $tasha "happy,2">>\
+				
+				<<nm $tasha "H-hey you, what's up?">>\
+
+				<<include "Tasha-Interactions">>\
+				<<btnLink "Talk to $tasha.name - <<t1>>" "Sales-Tasha-Talk">>
+			<<case "Domming-John">>\
+				''$tasha.name appears to be in her office with the door cracked, and you can hear activity coming from inside.''
+				
+				<<btnLink "Talk to $tasha.name - <<t1>><<NewConvoCheck $tasha>>" "Sales-Tasha-DommingJohn">>
+			<<case "sex">>
+				''The lights are dimmed and the door is cracked, but someone appears to be in the room.''
+
+				<<btnLink "Enter $tasha.name's office" "ISS-Tasha-Office-Start" "passTime()">>\
+		<</switch>>\
+		
+		<<btnLink "Head back to lobby" "Work">>
+	<</widget>>

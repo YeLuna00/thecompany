@@ -1,0 +1,1727 @@
+:: Room {"position":"850,10975","size":"100,100"}
+<<include "StaticEvent-Check-Home">>\
+	<<if $NoStaticEvent>>\
+		<<loc_Room>>\
+
+		<<if flag($player,"NewBed")>>\
+			<<if $TightestFamily>>\
+				''This is the room you now share with your ?mother and ?sister. Your ?mom had bought a new large bed so the three of you could sleep comfortably together, as well as having plenty of room for hosting vigorous family fun time. <<if $ChristmasGift>>$ChristmasGift sits on the corner of your desk near your computer.<</if>>''
+			<<else>>\
+				''This is your room. Your ?mother bought you a large, new bed which takes up most of the space in it, not that you ever used it for much more than sleeping and fucking anyway. <<if $ChristmasGift>>$ChristmasGift sits on the corner of your desk near your computer.<</if>>''
+			<</if>>\
+		<<else>>\
+			''<<if $player.isBride>>This used to be your room. Before your <<mother>> forced you to become her slavewife, you used to sleep here...<<else>>This is your room. Your <<mom>> left it more or less untouched when you took off for college, probably knowing you wouldn't be gone as long as you told her you would...<</if>> <<if $ChristmasGift>>$ChristmasGift sits on the corner of your desk near your computer.<</if>>''
+		<</if>>\
+
+		''It's currently @@$time.day, $time.time@@.''
+		
+		<<if isSeptember(9) and not $FreePlay>>\
+			''You sit up on the side of your bed, thinking back on what $sophie.name said to you at the office last night.''
+			
+			<<nm $player "...$sophie.name's really counting on me, and frankly, it's my neck on the line as well. I think I should give $penny.name a call, she's good at coming up with last second plays, and I have her number from the other night.">>\
+				
+			<<btnLink "Call $penny.name" "Call-Penny">>
+		<<elseif isSaturday() and isMorning() and flag($john,"BimboPlayer")>>\
+			''You sit up in bed, idly playing with your <<vDSize>> as you yawn loudly. A knock at the front door catches your attention and you listen as your <<mother>> answers it. The voices are muffled, but you soon hear heavy footsteps making their way upstairs.''
+
+			<<if visited("John-ISS-BimboPlayer-Start")>>\
+				<<nm $player "@@.bf;Daddy!?@@" "No, not again, not @@.bf;Daddy@@...">>\
+			<<else>>\
+				<<nm $player "Hm? Is someone here?" "@@.bf;Someone to fuck me?@@">>\
+			<</if>>\
+
+			''There's a loud knock on the door.''
+
+			<<btnLink "Open the door" "John-ISS-BimboPlayer-Start">>\
+		<<else>>\
+			<<if $TightestFamily>>\
+				''Your door is currently unlocked. There's no sense locking it now that you share a room with $mom.name and $sister.name.''
+			<<else>>\
+				<<if $DoorLocked>>\
+					''Your door is currently set to be @@.gain;locked@@ in the morning. You may choose to have it [[unlocked|Room][$DoorLocked=false]] instead.''
+				<<else>>\
+					''Your door is currently set to be @@.loss;unlocked@@ in the morning. You may choose to have it [[locked|Room][$DoorLocked=true]] instead.''
+				<</if>>\
+			<</if>>\
+
+			<<if ($game.release is "Dev Build" or $game.unlockDebug) and not $UseArt>>\
+				@@.btnChoiceSissy;<<button "Use the computer" "Computer">><</button>>@@
+
+			<</if>>\
+			<<if $roomSlave>>\
+				''$roomSlave.name is waiting patiently in $roomSlave.his space in your closet.''
+				
+				@@.btnChoiceSissy;<<button "Interact with $roomSlave.name" "Room-Slave">><</button>>@@
+
+			<</if>>\
+			<<if $player.canEscort and not flag($saya,"EscortTutorial")>>\
+				<<nm $saya "Congratulations on your new entrepenurial endeavors into the world of escorting! You'll now have the option to pick up clients either by leaving the office a little early, or by checking your phone during free nights and evenings. Remember, the more you do it, the better you'll get! Now go out there and rake in the dough!">>\
+				<<SetFlag $saya "EscortTutorial">>\
+				
+			<</if>>\
+			<<if isSeptember(1) and not flag($player,"meetCompany")>>\
+				<<Thought "They should be here sometime this evening, maybe I'll just rest until then...">>\
+
+				@@.btnChoiceDom;<<button "Wait Until Evening..." "Room">>
+					<<run setTime('e')>>
+					<<set _bonus = $Chapter * 50>>
+					<<set $Money += $Paycheck + _bonus>>
+				<</button>>@@
+
+			<<elseif not isEventDay() and not isNight() and (not $game.firstGame or $Chapter > 4)>>\
+				<<Thought "I have a feeling today's gonna be pretty uneventful... Maybe I should just coast it.">>\
+
+				@@.btnChoiceDom;<<button "Skip to Night..." "Room">>
+					<<run setTime('n')>>
+				<</button>>@@
+
+			<<elseif isNight()>>\
+				<<if $player.isBride>>\
+					@@.btnChoiceDom;<<button "Go sleep in $mom.name's bed" "Room-GotoBed">>
+						<<set $player.wakeup to "avabride">>
+					<</button>>@@
+				<<elseif $TightestFamily>>\
+					<<btnChoice "Wake $sister.name up for some fun" "Sis-ISS-Bed-Start">>\
+					<<btnChoice "Wake $mom.name up for some fun" "Mom-ISS-Bed-Start">>\
+					
+					@@.btnChoiceDom;<<button "Go to Bed" "Room-GotoBed">><</button>>@@
+				<<else>>\
+					@@.btnChoiceDom;<<button "Go to Bed" "Room-GotoBed">><</button>>@@
+				<</if>>\
+
+			<</if>>\
+			<<btnLink "Change Clothes" "Wardrobe">>
+			<<if $player.coinOutfits.length > 1>>\
+				<<btnLink "Use Purchased Outfits" "CoinOutfits">>
+			<</if>>\
+			<<if flag($player,"unlockMirror")>>\
+				<<btnLink "Check Self in Mirror" "Mirror">>
+			<</if>>\
+			<<if flag($player,"startNotes")>>\
+				<<btnLink "Check Notebook<<if $NewNotes>> - <<new>><</if>>" "Notebook">>
+			<</if>>\
+			<<btnLink "Use Your Phone" "Room-Phone">>
+
+			<<if isLateMorning() and isWeekday() and not isSeptember(1) and not $NoWork>>\
+				<<Thought "I have to leave for work.">>\
+			<<elseif not isNight()>>\
+				<<btnLink "Send A Text" "Texting">>
+				<<if $player.horny >= 30>>\
+					<<btnLink "Masturbate - <<t1>>" "Room-Masturbate">>
+				<</if>>\
+				<<if flag($sister,"FindWebcam") and not flag($sister,"SetupServer")>>\
+					<<btnLink "Set up your computer to connect to $sister.name's webcam - <<t1>>" "Room-Webcam">>
+				<</if>>\
+				<<btnLink "Play a video game - <<t1>>" "Room-Game">>
+			<</if>>\
+
+			<<btnLink "Leave your room" "Home">>
+		<</if>>\
+	<</if>>\
+
+
+:: Room-Game {"position":"975,10850","size":"100,100"}
+You play a game for a while just to pass the time...
+
+<<pic $events "game">>\
+
+<<btnLink "Go back" "Room" "passTime()">>
+
+
+:: Room-GotoBed {"position":"1100,10850","size":"100,100"}
+<<img "room" "Night">>\
+
+	<<if isSunday() and $sister.playerCut > 0>>\
+		''There's a text message on your phone from your <<sister>>.''
+
+		<<if $sister.isPornstar>>\
+			<<nm $sister "Heya <<bro>>, thinking about you every day I'm out here! Things are going really well and since you're the reason behind my success I wanted to make sure you and $mom.name are taken care of. Love you!">>\
+
+			''There's a direct deposit notification from your bank.''
+
+			@@.gain;$sister.name sent you $$$sister.playerCut!@@
+			<<set $Money += $sister.playerCut>>\
+			<<set $sister.followers += (random(146,576))>>\
+			<<set $sister.earnings += ($sister.followers * 5)>>\
+			<<set $sister.playerCut to Math.floor($sister.earnings * 0.20)>>\
+		<<else>>\
+			<<nm $sister "Heya <<bro>>, thought it was only fair you get a little cut of my earnings from the camming business, so here you go!">>\
+
+			@@.gain;$sister.name sent you $$$sister.playerCut!@@
+			<<set $Money += $sister.playerCut>>\
+		<</if>>\
+
+	<</if>>\
+	<<if $FreePlay>>\
+		<<if $tasha.isDating and flag($tasha,"MetFamily") and cd("TashaSayaDream") and not flag($tasha,"FirstSayaDream")>>\
+			''You lay back in bed, immediately starting to fade.''
+
+			<<Thought "Mmm... I wonder how ?tasha's doing... I think I... really like... her...">>\
+
+			''It's not long before you drift off completely. Meanwhile, a young woman not too far away is fading into her own dream...''
+
+			<<btnLink "Continue" "Tasha-SayaDream">>\
+		<<elseif flag($tasha,"HadDreamTalk") and cd("TashaSayaDream") and not flag($tasha,"LastSayaDream")>>\
+			''You lay back in bed, immediately starting to fade.''
+
+			<<Thought "I hope ?tasha's okay... she seemed kind of bothered... the other...">>\
+
+			''You fall asleep mid-thought. Meanwhile, a young woman not too far away is fading into another one of her own dreams...''
+
+			<<btnLink "Continue" "Tasha-SayaDream2">>\
+		<<elseif $player.wakeup isnot "room" or $DisableNightEvent>>\
+			<<set $DisableNightEvent to false>>\
+			<<include "NightEvent-0">>\
+		<<elseif isOctober() and not $sister.isGone and not flag($sister,"EscortTalk")>>\
+			''Just as you're about to fall asleep, your bedroom door swings open, startling you enough that you nearly jump out of bed.''
+
+			<<pic $sister "door">>\
+
+			<<nm $sister "Heya <<bro>>!">>\
+
+			<<nm $player "Jesus fuck, $sister.name, I was almost fucking asleep!">>\
+
+			''She ignores you, plopping down on your bed next to you.''
+
+			<<pic $sister "bed">>\
+
+			<<nm $sister "Check it!">>\
+
+			''$sister.name opens her purse and proceeds to fan out about $$2,000 in cash.''
+
+			<<nm $player "Damn... Finally knock over that little restuarant down the street?">>\
+
+			<<nm $sister "No, I got a new job! I just made this over the last few days!">>\
+
+			''You're still on the verge of falling asleep.''
+
+			<<nm $player "Hunh, maybe I'm in the wrong business...">>\
+
+			<<nm $sister "Hehe, maybe! Anyway a friend of mine that works down at the mall hooked me up with it. Y'know, you'd probably be pretty good at... <<Bro>>?">>\
+
+			''You've fallen back onto your pillow, drool running down the side of your mouth.''
+
+			<<nm $sister "Oh fuck you! That's what I get for trying to be nice... Oh well, I'm sure you two will run into each other eventually... Night, asshole!">>\
+
+			<<nm $player "Niigghh...">>\
+
+			<<SetFlag $sister "EscortTalk">>\
+			<<btnLink "Continue" "Room-Sleep">>
+		<<elseif $NightEventOR>>\
+			<<CallNightEvent $NightEventOR>>\
+			<<unset $NightEventOR>>\
+		<<else>>\
+			<<if $mom.mcsx.slut is 1 and $mom.mcsx.cd is 0>>\
+				<<include "Mom-MCSX-Sell-1">>
+			<<elseif $mom.mcsx.slut is 2 and $mom.mcsx.cd is 0>>\
+				<<include "Mom-MCSX-Sell-2">>
+			<<elseif $mom.mcsx.slut is 3 and $mom.mcsx.cd is 0>>\
+				<<include "Mom-MCSX-Sell-3">>
+			<<elseif $mom.mcsx.maniac is 1 and $mom.mcsx.cd is 0>>\
+				<<include "MCSX-Maniacal-1">>
+			<<elseif $mom.mcsx.maniac is 2 and $mom.mcsx.cd is 0>>\
+				<<include "MCSX-Maniacal-2">>
+			<<elseif $mom.mcsx.maniac is 3 and $mom.mcsx.cd is 0>>\
+				<<include "MCSX-Maniacal-3">>
+			<<elseif $mom.mcsx.avabride is 1 and $mom.mcsx.cd is 0>>\
+				<<include "AvaBride-WeddingPlans">>
+			<<elseif $mom.mcsx.avabride is 2 and $mom.mcsx.cd is 0>>\
+				<<include "AvaBride-Wedding">>
+			<<elseif $mom.mcsx.bride is 2 and $mom.mcsx.cd is 0>>\
+				<<include "MCSX-MommyBride-2">>
+			<<elseif $mom.mcsx.bride is 3 and $mom.mcsx.cd is 0>>\
+				<<include "MCSX-MommyBride-3">>
+			<<elseif $mom.mcsx.tightest is 3 and $mom.mcsx.cd is 0>>\
+				<<include "MCSX-Tightest-3">>
+			<<elseif $mom.mcsx.brokenhome is 2 and $mom.mcsx.cd is 0 and not $BrokenHome>>\
+				<<include "BrokenHome-2-Dakota">>
+			<<elseif flag($sister,"Knotting") and not $sister.isDog>>\
+				<<include "Sister-MCSX-Dog-Ending">>
+			<<elseif $sister.mcsx.porn is 1 and $sister.mcsx.cd is 0>>\
+				<<include "Sister-MCSX-Porn-1">>
+			<<elseif $sister.mcsx.porn is 2 and $sister.mcsx.cd is 0>>\
+				<<include "Sister-MCSX-Porn-2">>
+			<<elseif $sister.mcsx.porn is 3 and $sister.mcsx.cd is 0>>\
+				<<include "Sister-MCSX-Porn-3">>
+			<<elseif $DoorLocked>>\
+				<<include "NightEvent-0">>
+			<<else>>\
+				<<CallNightEvent>>
+			<</if>>\
+		<</if>>\
+	<<else>>\
+		<<if $ArtDemo and isSeptember(22)>>\
+			''You start to fade off to sleep...''
+			
+			<<btnLink "Continue" "ArtDemoEnd">>
+		<<elseif isDecember(21) and $guest isnot "none">>\
+			''You lay down in bed, suddenly remembering the conversation you had with your <<mother>> this morning.''
+
+			<<switch $guest>>\
+				<<case "sophie">>\
+					<<nm $player "Shit, I need to call $sophie.name to see if they're even free for Christmas!">>\
+
+					''Rolling over, you pull your phone off the nightstand and dial $sophie.name's number. The phone rings a few times before there's an answer.''
+
+					<<nm $sophie "Hello? $player.name?">>\
+
+					<<nm $player "Hey $sophie.name! Um, sorry to call you so late... I was wondering if you'd maybe be free to come over for Christmas Eve dinner with my family this Sunday?">>\
+
+					''There's a brief pause on the other end.''
+				
+					<<nm $sophie "Well, I don't generally make plans for the holidays... If you, um, want me there, though, I'd be happy to make an exception...">>\
+
+					<<nm $player "I definitely want you to spend Christmas with me!">>\
+
+					<<nm $sophie "...O-okay then, just text me the details and I'll be there...">>\
+
+					<<nm $player "You got it, I'll see you there!">>\
+
+					''You hang up the call and text $sophie.name the details.''
+
+					<<love $sophie 50 "or">>
+				<<case "penny">>\
+					<<nm $player "Shit, I need to call $penny.name to see if they're even free for Christmas!">>\
+
+					''Rolling over, you pull your phone off the nightstand and dial $penny.name's number. The phone rings a few times before there's an answer.''
+
+					<<nm $penny "Hello? $player.name?">>\
+
+					<<nm $player "Hey $penny.name! Um, sorry to call you so late... I was wondering if you'd maybe be free to come over for Christmas Eve dinner with my family this Sunday?">>\
+
+					''There's a brief pause on the other end.''
+				
+					<<nm $penny "Really? That's great! I don't have any plans and I'd love to join you!">>\
+
+					<<nm $player "Awesome! Cool, so yeah, I'll text you the details and I'll see you then.">>\
+
+					<<nm $penny "Sounds good, I can't wait!">>\
+
+					''You hang up the call and text $penny.name the details.''
+
+					<<love $penny 50 "or">>
+				<<case "tasha">>\
+					<<nm $player "Shit, I need to call $tasha.name to see if they're even free for Christmas!">>\
+
+					''Rolling over, you pull your phone off the nightstand and dial $tasha.name's number. The phone rings a few times before there's an answer.''
+
+					<<nm $tasha "Hello? $player.name?">>\
+
+					<<nm $player "Hey $tasha.name! Um, sorry to call you so late... I was wondering if you'd maybe be free to come over for Christmas Eve dinner with my family this Sunday?">>\
+
+					''There's a brief pause on the other end.''
+				
+					<<nm $tasha "S-s-seriously!?">>\
+
+					''You can hear $tasha.name breathing heavily on the other side of the phone.''
+
+					<<nm $player "Yes?">>\
+
+					<<nm $tasha "YES! I-I mean, yes, I'd love you-LOVE TO! I'd love... to join you guys.">>\
+
+					<<nm $player "O-okay, great! I'll send you the details. See you then!">>\
+
+					''You hang up the call and text $tasha.name the details.''
+
+					<<love $tasha 50 "or">>
+				<<case "john">>\
+					<<nm $player "Shit, I need to call $john.name to see if they're even free for Christmas!">>\
+
+					''Rolling over, you pull your phone off the nightstand and dial $john.name's number. The phone rings a few times before there's an answer.''
+
+					<<nm $john "Hello? $player.name?">>\
+
+					<<nm $player "Hey $john.name! Um, sorry to call you so late... I was wondering if you'd maybe be free to come over for Christmas Eve dinner with my family this Sunday?">>\
+
+					''There's a brief pause on the other end.''
+				
+					<<nm $john "Um, yeah, sure that sounds great! I don't usually have anyone to spend Christmas with so this'll be cool!">>\
+
+					<<nm $player "Alright, yeah, cool! Cool, so, I'll text you the details and I'll see you here next week.">>\
+
+					<<nm $john "Awesome, see you then!">>\
+
+					''You hang up the call and text $john.name the details.''
+
+					<<love $john 50 "or">>
+				<<case "chris">>\
+					<<nm $player "Shit, I need to call $chris.name to see if they're even free for Christmas!">>\
+
+					''Rolling over, you pull your phone off the nightstand and dial $chris.name's number. The phone rings a few times before there's an answer.''
+
+					<<nm $chris "Hello? $player.name?">>\
+
+					<<nm $player "Hey $chris.name! Um, sorry to call you so late... I was wondering if you'd maybe be free to come over for Christmas Eve dinner with my family this Sunday?">>\
+
+					''There's a brief pause on the other end.''
+
+					<<if $chris.canRomance>>\
+						<<nm $chris "Christmas dinner, huh? Yeah... Yeah that'd be really cool! I think that sounds really nice.">>\
+					<<else>>\
+						<<nm $chris "Hells yeah man! Haven't seen $mom.realName in a minute, this'll be fun!">>\
+					<</if>>\
+
+					<<nm $player "Awesome, yeah, it'll be great! Alright man, I'll text you the details and see you next week.">>\
+
+					''You hang up the call and text $chris.name the details.''
+
+					<<love $chris 50 "or">>
+			<</switch>>\
+
+			<<Thought "Well, that takes care of that... This should be fun, now to get some sleep...">>\
+
+			<<btnLink "Continue" "Room-Sleep">>
+		<<elseif isOctober(24)>>\
+			''Getting ready for bed, you notice a pending message on your phone. It's from $sophie.name.''
+			
+			<<nm $sophie "$player.sophieName, sorry for the late notice but I need you to be ready to leave town tomorrow around noon. You'll need to pack for a one night stay before we return on Thursday. I've asked $tasha.name to accompany us as I have some sales-related business to attend to as well.">>\
+			
+			<<Thought "Well, guess I'm going on my first business trip...">>\
+			
+			''You pack a small overnight bag and hit the bed.''
+			
+			<<btnLink "Continue" "Room-Sleep">>
+		<<elseif isSeptember(11)>>\
+			''You drift off to sleep, unaware of the events occurring hundreds of miles away...''
+			
+			<span id="event1">\
+				@@.btnUI;<<button "Meanwhile...">>
+					<<replace "#event1">>\
+						<hr>
+						<<include CH1-SecretMeeting>>
+					<</replace>>\
+				<</button>>@@
+			</span>\
+		<<elseif isSeptember(18)>>\
+			<center>\
+				<h1><<timed 1s t8n>>__Chapter 2__<</timed>></h1>\
+				<<timed 2s t8n>><<btnLink "Continue" "Room-Sleep" "$Chapter = 2">><</timed>>
+			</center>
+		<<elseif isSeptember(19)>>\
+			''You drift off to sleep, unaware of the events occurring hundreds of miles away...''
+			
+			<span id="event2">\
+				@@.btnUI;<<button "Meanwhile...">>
+					<<replace "#event2">>\
+						<hr>
+						<<include CH1-ToryEnding>>
+					<</replace>>\
+				<</button>>@@
+			</span>\
+		<<elseif isSeptember(25)>>\
+			''You drift off to sleep, unaware of the events occurring hundreds of miles away...''
+			
+			<span id="event3">\
+				@@.btnUI;<<button "Meanwhile...">>
+					<<replace "#event3">>\
+						<hr>
+						<<include CH2-CompanyTalk1>>
+					<</replace>>\
+				<</button>>@@
+			</span>\
+		<<elseif isOctober(1)>>\
+			''Just as you're about to fall asleep, your bedroom door swings open, startling you enough that you nearly jump out of bed.''
+
+			<<pic $sister "door">>\
+
+			<<nm $sister "Heya <<bro>>!">>\
+
+			<<nm $player "Jesus fuck, $sister.name, I was almost fucking asleep!">>\
+
+			''She ignores you, plopping down on your bed next to you.''
+
+			<<pic $sister "bed">>\
+
+			<<nm $sister "Check it!">>\
+
+			''$sister.name opens her purse and proceeds to fan out about $$2,000 in cash.''
+
+			<<nm $player "Damn... Finally knock over that little restuarant down the street?">>\
+
+			<<nm $sister "No, I got a new job! I just made this over the last few days!">>\
+
+			''You're still on the verge of falling asleep.''
+
+			<<nm $player "Hunh, maybe I'm in the wrong business...">>\
+
+			<<nm $sister "Hehe, maybe! Anyway a friend of mine that works down at the mall hooked me up with it. Y'know, you'd probably be pretty good at... <<Bro>>?">>\
+
+			''You've fallen back onto your pillow, drool running down the side of your mouth.''
+
+			<<nm $sister "Oh fuck you! That's what I get for trying to be nice... Oh well, I'm sure you two will run into each other eventually... Night, asshole!">>\
+
+			<<nm $player "Niigghh...">>\
+
+			<<SetFlag $sister "EscortTalk">>\
+			<<btnLink "Continue" "Room-Sleep">>
+		<<elseif isOctober(6)>>\
+			''You drift off to sleep, unaware of the events occurring hundreds of miles away...''
+			
+			<span id="event4">\
+				@@.btnUI;<<button "Meanwhile...">>
+					<<replace "#event4">>\
+						<hr>
+						<<include CH2-Epilogue>>
+					<</replace>>\
+				<</button>>@@
+			</span>\
+		<<elseif isOctober(23) and $story.ch3.dateLauren>>\
+			''You drift off to sleep, unaware of the events occurring only a few miles away...''
+			
+			<span id="event5">\
+				@@.btnUI;<<button "Meanwhile...">>
+					<<replace "#event5">>\
+						<hr>
+						<<include Story-CH3-LaurenCatGirl>>
+					<</replace>>\
+				<</button>>@@
+			</span>\
+		<<elseif isOctober(31)>>\
+			''You drift off to sleep, unaware of the events occurring hundreds of miles away...''
+			
+			<span id="event6">\
+				@@.btnUI;<<button "Meanwhile...">>
+					<<replace "#event6">>\
+						<hr>
+						<<include Story-CH3-Epilogue2>>
+					<</replace>>\
+				<</button>>@@
+			</span>\
+		<<elseif isDecember(3)>>\
+			''You drift off to sleep, unaware of the events occurring hundreds of miles away...''
+			
+			<span id="event7">\
+				@@.btnUI;<<button "Meanwhile...">>
+					<<replace "#event7">>\
+						<hr>
+						<<include "Story-CH4-JamesAndErik">>
+					<</replace>>\
+				<</button>>@@
+			</span>\
+		<<elseif isDecember(29)>>\
+			''You drift off to sleep, unaware of the events occurring hundreds of miles away...''
+			
+			<span id="event8">\
+				@@.btnUI;<<button "Meanwhile...">>
+					<<replace "#event8">>\
+						<hr>
+						<<include "Story-CH4-Betrayal">>
+					<</replace>>\
+				<</button>>@@
+			</span>\
+		<<elseif isNovember(22) and not flag($player,"HearElsaDakota")>>
+			<<include "Story-CH4-Thanksgiving-Day3b">>
+		<<elseif $tasha.isDating and flag($tasha,"MetFamily") and cd("TashaSayaDream") and not flag($tasha,"FirstSayaDream") and $Chapter > 3>>\
+			''You lay back in bed, immediately starting to fade.''
+
+			<<Thought "Mmm... I wonder how ?tasha's doing... I think I... really like... her...">>\
+
+			''It's not long before you drift off completely. Meanwhile, a young woman not too far away is fading into her own dream...''
+
+			<<btnLink "Continue" "Tasha-SayaDream">>\
+		<<elseif flag($tasha,"HadDreamTalk") and cd("TashaSayaDream") and not flag($tasha,"LastSayaDream")>>\
+			''You lay back in bed, immediately starting to fade.''
+
+			<<Thought "I hope ?tasha's okay... she seemed kind of bothered... the other...">>\
+
+			''You fall asleep mid-thought. Meanwhile, a young woman not too far away is fading into another one of her own dreams...''
+
+			<<btnLink "Continue" "Tasha-SayaDream2">>\
+		<<elseif $player.wakeup isnot "room" or $DisableNightEvent>>
+			<<set $DisableNightEvent to false>>
+			<<include "NightEvent-0">>
+		<<elseif $NightEventOR>>
+			<<CallNightEvent $NightEventOR>>
+			<<unset $NightEventOR>>
+		<<else>>\
+			<<if $mom.mcsx.slut is 1 and $mom.mcsx.cd is 0>>\
+				<<include "Mom-MCSX-Sell-1">>
+			<<elseif $mom.mcsx.slut is 2 and $mom.mcsx.cd is 0>>\
+				<<include "Mom-MCSX-Sell-2">>
+			<<elseif $mom.mcsx.slut is 3 and $mom.mcsx.cd is 0>>\
+				<<include "Mom-MCSX-Sell-3">>
+			<<elseif $mom.mcsx.maniac is 1 and $mom.mcsx.cd is 0>>\
+				<<include "MCSX-Maniacal-1">>
+			<<elseif $mom.mcsx.maniac is 2 and $mom.mcsx.cd is 0>>\
+				<<include "MCSX-Maniacal-2">>
+			<<elseif $mom.mcsx.maniac is 3 and $mom.mcsx.cd is 0>>\
+				<<include "MCSX-Maniacal-3">>
+			<<elseif $mom.mcsx.avabride is 1 and $mom.mcsx.cd is 0>>\
+				<<include "AvaBride-WeddingPlans">>
+			<<elseif $mom.mcsx.avabride is 2 and $mom.mcsx.cd is 0>>\
+				<<include "AvaBride-Wedding">>
+			<<elseif $mom.mcsx.bride is 2 and $mom.mcsx.cd is 0>>\
+				<<include "MCSX-MommyBride-2">>
+			<<elseif $mom.mcsx.bride is 3 and $mom.mcsx.cd is 0>>\
+				<<include "MCSX-MommyBride-3">>
+			<<elseif $mom.mcsx.tightest is 3 and $mom.mcsx.cd is 0>>\
+				<<include "MCSX-Tightest-3">>
+			<<elseif $mom.mcsx.brokenhome is 2 and $mom.mcsx.cd is 0 and not $BrokenHome>>\
+				<<include "BrokenHome-2-Dakota">>
+			<<elseif flag($sister,"Knotting") and not $sister.isDog>>\
+				<<include "Sister-MCSX-Dog-Ending">>
+			<<elseif $sister.mcsx.porn is 1 and $sister.mcsx.cd is 0>>\
+				<<include "Sister-MCSX-Porn-1">>
+			<<elseif $sister.mcsx.porn is 2 and $sister.mcsx.cd is 0>>\
+				<<include "Sister-MCSX-Porn-2">>
+			<<elseif $sister.mcsx.porn is 3 and $sister.mcsx.cd is 0>>\
+				<<include "Sister-MCSX-Porn-3">>
+			<<elseif $DoorLocked>>\
+				<<include "NightEvent-0">>
+			<<else>>\
+				<<CallNightEvent>>
+			<</if>>\
+		<</if>>\
+	<</if>>\
+
+
+:: Room-Masturbate {"position":"1225,10850","size":"100,100"}
+<span id="porn">\
+	<<set _porn to random(1,1)>>\
+	''Feeling a little... pent up... you turn on your computer and click around, looking for something to help relieve some stress.''
+
+	<<Thought "Alright... What's it gonna be today?">>\
+	
+	''Your streaming service of choice offers a wide variety of content and categories. What will it be today?''
+	
+	@@.btnChoice;<<button "Straight porn">>
+		<<replace "#porn">>\
+			''You decide to watch some vanilla straight sex. Sometimes it's all you need.''
+			
+			<<pic $events "porn-straight">>\
+			
+			<<if $player.identity is "male">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind, leading your thoughts to wander as you watch the action on screen...@@
+					
+					<<dom $player -1>>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen, imagining what it would be like to have a real cock...@@
+					
+					<<tfm "mas">>
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen...@@
+				<<elseif analPlugged()>>\
+					@@.xxx;You can't help but tense up around the <<accb>> in your <<aSize>> every time the man thrusts into the woman on screen, leading your mind to wander, occasionally thinking about what it would be like if that toy in your ass wasn't a toy at all...@@
+					
+					<<tfm "fem">>
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you try your best to stroke your <<pSize>> into some level of hardness, imagining what it might be like to be able to fuck a woman the way the man on screen does...@@
+					
+					<<dom $player 1>>
+				<<else>>\
+					@@.xxx;You imagine yourself as the man on screen, plowing the woman beneath him with confidence...@@
+					
+					<<tfm "mas">>
+				<</if>>\
+			<<elseif $player.identity is "trans">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind, leading your thoughts to wander as you watch the action on screen...@@
+					
+					<<dom $player -1>>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen, imagining what it would be like to have a real cock...@@
+					
+					<<tfm "mas">>
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen, imagining yourself getting penetrated by a real cock...@@
+					
+					<<tfm "fem">>
+				<<elseif analPlugged()>>\
+					@@.xxx;You can't help but tense up around the <<accb>> in your <<aSize>> every time the man thrusts into the woman on screen, leading your mind to wander, wishing to feel what it would be like if that toy in your ass wasn't a toy at all...@@
+					
+					<<tfm "fem">>
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you try your best to stroke your <<pSize>> into some level of hardness, trying imagining what it might be like to be able to fuck a woman the way the man on screen does but instead fantasizing about being the woman on the bottom...@@
+					
+					<<dom $player 1>>
+					<<tfm "fem">>
+				<<else>>\
+					@@.xxx;You imagine yourself both as the man on screen, plowing the woman beneath him with confidence, as well as the woman on the bottom getting herself completely fulfilled...@@
+				<</if>>\
+			<<elseif $player.identity is "female">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind as you desperately wish you could be used and fucked like the woman on screen...@@
+					
+					<<dom $player -1>>
+					<<tfm "fem">>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen while your other hand works your <<vSize>>...@@
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen, imagining yourself getting penetrated by a real cock...@@
+					
+					<<tfm "fem">>
+				<<elseif analPlugged()>>\
+					@@.xxx;You can't help but tense up around the <<accb>> in your <<aSize>> every time the man thrusts into the woman on screen, leading your mind to wander, wishing to feel what it would be like if that toy in your ass wasn't a toy at all...@@
+					
+					<<tfm "fem">>
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you try your best to stroke your <<pSize>> into some level of hardness, trying imagining what it might be like to be able to fuck a woman the way the man on screen does but instead fantasizing about being the woman on the bottom...@@
+					
+					<<dom $player 1>>
+					<<tfm "fem">>
+				<<else>>\
+					@@.xxx;You imagine yourself as the woman on screen getting herself completely fulfilled...@@
+					
+					<<tfm "fem">>
+				<</if>>\
+			<</if>>\
+			
+			<<horny 0>>
+			
+			<<HornyCheckValue>>\
+			<<if $player.horny > 0>>\
+				<<Thought "Damn, still pent up... I guess I'll have to deal with it later...">>\
+			<<else>>\
+				<<Thought "Now that that's out of my system maybe I can focus on actually doing something productive...">>\
+			<</if>>\
+			
+			<<btnLink "Back to room" "Room" "passTime()">>
+		<</replace>>\
+	<</button>>@@
+	@@.btnChoice;<<button "Transdom porn">>
+		<<replace "#porn">>\
+			''You decide to watch some ts porn. Big tits and a big cock on a hot body? What could be better!''
+			
+			<<pic $events "porn-ts">>\
+			
+			<<if $player.identity is "male">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind, leading your thoughts to wander as you watch the action on screen...@@
+					
+					<<dom $player -1>>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen, imagining what it would be like to have a real cock...@@
+					
+					<<tfm "mas">>
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen...@@
+				<<elseif analPlugged()>>\
+					@@.xxx;You can't help but tense up around the <<accb>> in your <<aSize>> every time the man thrusts up into the hung woman on screen, leading your mind to wander, occasionally thinking about what it would be like if that toy in your ass wasn't a toy at all...@@
+					
+					<<tfm "fem">>
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you try your best to stroke your <<pSize>> into some level of hardness, imagining what it might be like to be able to fuck a woman the way the man on screen does...@@
+					
+					<<dom $player 1>>
+				<<else>>\
+					@@.xxx;You imagine yourself as the man on screen, plowing the trans woman in his lap with confidence...@@
+					
+					<<tfm "mas">>
+				<</if>>\
+			<<elseif $player.identity is "trans">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind, leading your thoughts to wander as you watch the action on screen...@@
+					
+					<<dom $player -1>>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen, imagining what it would be like to have a real cock...@@
+					
+					<<tfm "mas">>
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen, imagining yourself getting penetrated by a real cock...@@
+					
+					<<tfm "fem">>
+				<<elseif analPlugged()>>\
+					@@.xxx;You can't help but tense up around the <<accb>> in your <<aSize>> every time the man thrusts into the woman on screen, leading your mind to wander, wishing to feel what it would be like if that toy in your ass wasn't a toy at all...@@
+					
+					<<tfm "fem">>
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you try your best to stroke your <<pSize>> into some level of hardness, trying imagining what it might be like to be able to fuck a woman the way the man on screen does but instead fantasizing about riding that cock...@@
+					
+					<<dom $player 1>>
+					<<tfm "fem">>
+				<<else>>\
+					@@.xxx;You imagine yourself both as the man on screen, plowing the trans woman in his lap with confidence, as well as the woman on top getting herself completely fulfilled...@@
+				<</if>>\
+			<<elseif $player.identity is "female">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind as you desperately wish you could be used and fucked like the girl on screen...@@
+					
+					<<dom $player -1>>
+					<<tfm "fem">>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen while your other hand works your <<vSize>>...@@
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen, imagining yourself getting penetrated by a real cock...@@
+					
+					<<tfm "fem">>
+				<<elseif analPlugged()>>\
+					@@.xxx;You can't help but tense up around the <<accb>> in your <<aSize>> every time the man thrusts into the woman on screen, leading your mind to wander, wishing to feel what it would be like if that toy in your ass wasn't a toy at all...@@
+					
+					<<tfm "fem">>
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you try your best to stroke your <<pSize>> into some level of hardness, trying imagining what it might be like to be able to fuck a woman the way the man on screen does but instead fantasizing about being the girl on top...@@
+					
+					<<dom $player 1>>
+					<<tfm "fem">>
+				<<else>>\
+					@@.xxx;You imagine yourself as the woman on screen getting herself completely fulfilled...@@
+					
+					<<tfm "fem">>
+				<</if>>\
+			<</if>>\
+			
+			<<horny 0>>
+			
+			<<HornyCheckValue>>\
+			<<if $player.horny > 0>>\
+				<<Thought "Damn, still pent up... I guess I'll have to deal with it later...">>\
+			<<else>>\
+				<<Thought "Now that that's out of my system maybe I can focus on actually doing something productive...">>\
+			<</if>>\
+			
+			<<btnLink "Back to room" "Room" "passTime()">>
+		<</replace>>\
+	<</button>>@@
+	@@.btnChoice;<<button "Lesbian porn">>
+		<<replace "#porn">>\
+			''You decide to watch some lesbian porn. Girls fucking girls never disappoints!''
+			
+			<<pic $events "porn-lesbian">>\
+			
+			<<if $player.identity is "male">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind, leading your thoughts to wander as you watch the action on screen...@@
+					
+					<<dom $player -1>>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen, imagining what it would be like to have a real cock to fuck those girls with...@@
+					
+					<<tfm "mas">>
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen...@@
+				<<elseif analPlugged()>>\
+					@@.xxx;You pump the <<accb>> in and out of your <<aSize>> as you watch the action unfold on screen...@@
+					
+					<<tfm "fem">>
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you can't help but imagine getting dominated by the girls on screen...@@
+					
+					<<dom $player -1>>
+				<<else>>\
+					@@.xxx;You stroke your <<pSize>> as you watch the action on screen, imagining being able to fuck the girls playing in front of you...@@
+					
+					<<tfm "mas">>
+				<</if>>\
+			<<elseif $player.identity is "trans">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind, leading your thoughts to wander as you watch the action on screen...@@
+					
+					<<dom $player -1>>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen, imagining what it would be like to have a real cock to fuck those girls with...@@
+					
+					<<tfm "mas">>
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen...@@
+				<<elseif analPlugged()>>\
+					@@.xxx;You pump the <<accb>> in and out of your <<aSize>> as you watch the action unfold on screen...@@
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you can't help but imagine getting dominated by the girls on screen...@@
+					
+					<<dom $player -1>>
+				<<else>>\
+					@@.xxx;You stroke your <<pSize>> as you watch the action on screen...@@
+				<</if>>\
+			<<elseif $player.identity is "female">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind, leading your thoughts to wander as you watch the action on screen...@@
+					
+					<<dom $player -1>>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen...@@
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen...@@
+					
+					<<tfm "fem">>
+				<<elseif analPlugged()>>\
+					@@.xxx;You pump the <<accb>> in and out of your <<aSize>> as you watch the action unfold on screen...@@
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you can't help but imagine getting dominated by the girls on screen...@@
+					
+					<<dom $player -1>>
+				<<else>>\
+					@@.xxx;You stroke your <<pSize>> as you watch the action on screen...@@
+				<</if>>\
+			<</if>>\
+			
+			<<horny 0>>
+			
+			<<HornyCheckValue>>\
+			<<if $player.horny > 0>>\
+				<<Thought "Damn, still pent up... I guess I'll have to deal with it later...">>\
+			<<else>>\
+				<<Thought "Now that that's out of my system maybe I can focus on actually doing something productive...">>\
+			<</if>>\
+			
+			<<btnLink "Back to room" "Room" "passTime()">>
+		<</replace>>\
+	<</button>>@@
+	@@.btnChoice;<<button "Trans porn">>
+		<<replace "#porn">>\
+			''You decide to watch some transsexual porn, opting for a more natural femboy fucking.''
+			
+			<<pic $events "porn-trans">>\
+			
+			<<if $player.identity is "male">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind, leading your thoughts to wander as you watch the action on screen...@@
+					
+					<<dom $player -1>>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen, imagining what it would be like to have a real cock...@@
+					
+					<<tfm "mas">>
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen...@@
+				<<elseif analPlugged()>>\
+					@@.xxx;You can't help but tense up around the <<accb>> in your <<aSize>> every time the man thrusts into the trans girl on screen, leading your mind to wander, occasionally thinking about what it would be like if that toy in your ass wasn't a toy at all...@@
+					
+					<<tfm "fem">>
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you try your best to stroke your <<pSize>> into some level of hardness, imagining what it might be like to be able to fuck a woman the way the man on screen does...@@
+					
+					<<dom $player 1>>
+				<<else>>\
+					@@.xxx;You imagine yourself as the man on screen, plowing the trans girl beneath him with confidence...@@
+					
+					<<tfm "mas">>
+				<</if>>\
+			<<elseif $player.identity is "trans">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind, leading your thoughts to wander as you watch the action on screen...@@
+					
+					<<dom $player -1>>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen, imagining what it would be like to have a real cock...@@
+					
+					<<tfm "mas">>
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen, imagining yourself getting penetrated by a real cock...@@
+					
+					<<tfm "fem">>
+				<<elseif analPlugged()>>\
+					@@.xxx;You can't help but tense up around the <<accb>> in your <<aSize>> every time the man thrusts into the trans girl on screen, leading your mind to wander, wishing to feel what it would be like if that toy in your ass wasn't a toy at all...@@
+					
+					<<tfm "fem">>
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you try your best to stroke your <<pSize>> into some level of hardness, trying imagining what it might be like to be able to fuck a girl the way the man on screen does but instead fantasizing about feeling his cock inside you...@@
+					
+					<<dom $player 1>>
+					<<tfm "fem">>
+				<<else>>\
+					@@.xxx;You imagine yourself both as the man on screen, plowing the trans girl beneath him with confidence, as well as the woman getting herself completely fulfilled...@@
+				<</if>>\
+			<<elseif $player.identity is "female">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind as you desperately wish you could be used and fucked like the trans girl on screen...@@
+					
+					<<dom $player -1>>
+					<<tfm "fem">>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen while your other hand works your <<vSize>>...@@
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen, imagining yourself getting penetrated by a real cock...@@
+					
+					<<tfm "fem">>
+				<<elseif analPlugged()>>\
+					@@.xxx;You can't help but tense up around the <<accb>> in your <<aSize>> every time the man thrusts into the trans girl on screen, leading your mind to wander, wishing to feel what it would be like if that toy in your ass wasn't a toy at all...@@
+					
+					<<tfm "fem">>
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you try your best to stroke your <<pSize>> into some level of hardness, trying imagining what it might be like to be able to fuck a girl the way the man on screen does but instead fantasizing about feeling his cock inside you...@@
+					
+					<<dom $player 1>>
+					<<tfm "fem">>
+				<<else>>\
+					@@.xxx;You imagine yourself as the trans girl on screen getting herself completely fulfilled...@@
+					
+					<<tfm "fem">>
+				<</if>>\
+			<</if>>\
+			
+			<<horny 0>>
+			
+			<<HornyCheckValue>>\
+			<<if $player.horny > 0>>\
+				<<Thought "Damn, still pent up... I guess I'll have to deal with it later...">>\
+			<<else>>\
+				<<Thought "Now that that's out of my system maybe I can focus on actually doing something productive...">>\
+			<</if>>\
+			
+			<<btnLink "Back to room" "Room" "passTime()">>
+		<</replace>>\
+	<</button>>@@
+	@@.btnChoice;<<button "Sissy porn">>
+		<<replace "#porn">>\
+			''You decide to watch some sissy porn, wanting to watch some submissive sluts get feminized and fucked.''
+			
+			<<pic $events "porn-sissy">>\
+			
+			<<if $player.identity is "male">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind, leading your thoughts to wander as you watch the action on screen...@@
+					
+					<<dom $player -3>>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen, imagining using it to fuck that little sissy slut...@@
+					
+					<<tfm "mas">>
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen...@@
+				<<elseif analPlugged()>>\
+					@@.xxx;You can't help but tense up around the <<accb>> in your <<aSize>> every time the woman thrusts her strapon into the sissy on screen, leading your mind to wander, occasionally thinking about what it would be like if that toy in your ass wasn't a toy at all...@@
+					
+					<<dom $player -1>>
+					<<tfm "fem">>
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you try your best to stroke your <<pSize>> into some level of hardness, imagining what it might be like to be able to fuck another sissy the way the woman on screen does...@@
+					
+					<<dom $player 1>>
+					<<tfm "fem">>
+				<<else>>\
+					@@.xxx;You imagine yourself fucking your own sissy slave like that...@@
+					
+					<<dom $player 1>>
+					<<tfm "mas">>
+				<</if>>\
+			<<elseif $player.identity is "trans">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind, leading your thoughts to wander as you watch the action on screen...@@
+					
+					<<dom $player -3>>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen, imagining using it to fuck that little sissy slut...@@
+					
+					<<tfm "mas">>
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen...@@
+				<<elseif analPlugged()>>\
+					@@.xxx;You can't help but tense up around the <<accb>> in your <<aSize>> every time the woman thrusts her strapon into the sissy on screen, leading your mind to wander, occasionally thinking about what it would be like if that toy in your ass wasn't a toy at all...@@
+					
+					<<dom $player -1>>
+					<<tfm "fem">>
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you try your best to stroke your <<pSize>> into some level of hardness, imagining what it might be like to be able to fuck another sissy the way the woman on screen does...@@
+					
+					<<dom $player 1>>
+					<<tfm "fem">>
+				<<else>>\
+					@@.xxx;You imagine yourself fucking your own sissy slave like that...@@
+					
+					<<dom $player 1>>
+					<<tfm "mas">>
+				<</if>>\
+			<<elseif $player.identity is "female">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind, leading your thoughts to wander as you watch the action on screen, fantasizing about being used and fucked like that...@@
+					
+					<<dom $player -5>>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen, imagining using it to fuck that little sissy slut...@@
+					
+					<<tfm "mas">>
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen...@@
+				<<elseif analPlugged()>>\
+					@@.xxx;You can't help but tense up around the <<accb>> in your <<aSize>> every time the woman thrusts her strapon into the sissy on screen, leading your mind to wander, occasionally thinking about what it would be like if that toy in your ass wasn't a toy at all...@@
+					
+					<<dom $player -1>>
+					<<tfm "fem">>
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you finger your <<aSize>> as you fantasize about getting used and fucked like the girl on the screen...@@
+					
+					<<dom $player -3>>
+					<<tfm "fem">>
+				<<else>>\
+					@@.xxx;You imagine yourself fucking your own sissy slave like that...@@
+					
+					<<tfm "fem">>
+				<</if>>\
+			<</if>>\
+			
+			<<horny 0>>
+			
+			<<if $player.horny > 0>>\
+				<<Thought "Damn, still pent up... I guess I'll have to deal with it later...">>\
+			<<else>>\
+				<<Thought "Now that that's out of my system maybe I can focus on actually doing something productive...">>\
+			<</if>>\
+			
+			<<btnLink "Back to room" "Room" "passTime()">>
+		<</replace>>\
+	<</button>>@@
+	@@.btnChoice;<<button "Bimbo porn">>
+		<<replace "#porn">>\
+			''You decide to watch some bimbo porn. Sometimes plastic's fantastic!''
+			
+			<<pic $events "porn-bimbo">>\
+			
+			<<if $player.identity is "male">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind, leading your thoughts to wander as you watch the action on screen...@@
+					
+					<<dom $player -1>>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen, imagining what it would be like to have a real cock...@@
+					
+					<<tfm "mas">>
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen...@@
+				<<elseif analPlugged()>>\
+					@@.xxx;You can't help but tense up around the <<accb>> in your <<aSize>> every time the man thrusts into the woman on screen, leading your mind to wander, occasionally thinking about what it would be like if that toy in your ass wasn't a toy at all...@@
+					
+					<<tfm "fem">>
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you try your best to stroke your <<pSize>> into some level of hardness, imagining what it might be like to be able to fuck a woman the way the man on screen does...@@
+					
+					<<dom $player 1>>
+				<<else>>\
+					@@.xxx;You imagine yourself as the man on screen, plowing the woman beneath him with confidence...@@
+					
+					<<tfm "mas">>
+				<</if>>\
+			<<elseif $player.identity is "trans">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind, leading your thoughts to wander as you watch the action on screen...@@
+					
+					<<dom $player -1>>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen, imagining what it would be like to have a real cock...@@
+					
+					<<tfm "mas">>
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen, imagining yourself getting penetrated by a real cock...@@
+					
+					<<tfm "fem">>
+				<<elseif analPlugged()>>\
+					@@.xxx;You can't help but tense up around the <<accb>> in your <<aSize>> every time the man thrusts into the woman on screen, leading your mind to wander, wishing to feel what it would be like if that toy in your ass wasn't a toy at all...@@
+					
+					<<tfm "fem">>
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you try your best to stroke your <<pSize>> into some level of hardness, trying imagining what it might be like to be able to fuck a woman the way the man on screen does but instead fantasizing about being the woman on the bottom...@@
+					
+					<<dom $player 1>>
+					<<tfm "fem">>
+				<<else>>\
+					@@.xxx;You imagine yourself both as the man on screen, plowing the woman beneath him with confidence, as well as the woman on the bottom getting herself completely fulfilled...@@
+				<</if>>\
+			<<elseif $player.identity is "female">>\
+				<<if isChastity()>>\
+					@@.xxx;The <<accf>> on your <<pSize>> has you in a submissive state of mind as you desperately wish you could be used and fucked like the woman on screen...@@
+					
+					<<dom $player -1>>
+					<<tfm "fem">>
+				<<elseif hasStrapon()>>\
+					@@.xxx;You grip your <<accf>> and stroke in time to the action on screen while your other hand works your <<vSize>>...@@
+				<<elseif frontPlugged()>>\
+					@@.xxx;You fuck yourself with the <<accf>> in your <<vSize>> in time with the action on screen, imagining yourself getting penetrated by a real cock...@@
+					
+					<<tfm "fem">>
+				<<elseif analPlugged()>>\
+					@@.xxx;You can't help but tense up around the <<accb>> in your <<aSize>> every time the man thrusts into the woman on screen, leading your mind to wander, wishing to feel what it would be like if that toy in your ass wasn't a toy at all...@@
+					
+					<<tfm "fem">>
+				<<elseif isSissy()>>\
+					@@.xxx;As a submissive sissy, you try your best to stroke your <<pSize>> into some level of hardness, trying imagining what it might be like to be able to fuck a woman the way the man on screen does but instead fantasizing about being the woman on the bottom...@@
+					
+					<<dom $player 1>>
+					<<tfm "fem">>
+				<<else>>\
+					@@.xxx;You imagine yourself as the woman on screen getting herself completely fulfilled...@@
+					
+					<<tfm "fem">>
+				<</if>>\
+			<</if>>\
+			
+			<<horny 0>>
+			
+			<<HornyCheckValue>>\
+			<<if $player.horny > 0>>\
+				<<Thought "Damn, still pent up... I guess I'll have to deal with it later...">>\
+			<<else>>\
+				<<Thought "Now that that's out of my system maybe I can focus on actually doing something productive...">>\
+			<</if>>\
+			
+			<<btnLink "Back to room" "Room" "passTime()">>
+		<</replace>>\
+	<</button>>@@
+	
+	<<btnLink  "Back to room" "Room">>
+</span>\
+
+
+:: Room-Morning [autosave] {"position":"100,10975","size":"100,100"}
+<<if not $SkipNewDay>>\
+	<<NewDay>>\
+<<else>>\
+	<<unset $SkipNewDay>>\
+<</if>>\
+<<if $player.wakeup is "cage">>\
+	<<loc_SisterRoom>>\
+
+	''It's $time.day, $time.month $time.calendarDay.''
+	<<if $player.hairGrow>>\
+
+		@@.tf;You notice your hair has grown some.@@
+		<<set $player.hairGrow to false>>\
+	<</if>>\
+
+	''You wake up on the floor of your crate, still unable to speak.''
+
+	<<btnLink "Continue" "ManiacalHome">>\
+<<elseif $player.wakeup is "maniacal">>\
+	<<loc_MomRoom>>\
+
+	''It's $time.day, $time.month $time.calendarDay.''
+	<<if $player.hairGrow>>\
+
+		@@.tf;You notice your hair has grown some.@@
+		<<set $player.hairGrow to false>>\
+	<</if>>\
+
+	''You wake up in your ?mother's bed.''
+
+	<<pic $mom "bed-naked">>\
+
+	<<nm $mom "Mmm, good morning, good <<boy>>... Ready for some breakfast?">>\
+
+	''You sit in the bed while $mom.realName gets herself ready for the day. Eventually, she clips your leash to your collar and takes you to wake your ?sister before you all head downstairs.''
+
+	<<btnLink "Continue" "MH-Breakfast" "passTime()">>\
+<<elseif $player.wakeup is "tf" and $player.tfCD is 0>>\
+	<<loc_Room>>\
+
+	''It's $time.day, $time.month $time.calendarDay.''
+	<<if $player.hairGrow>>\
+
+		@@.tf;You notice your hair has grown some.@@
+		<<set $player.hairGrow to false>>\
+	<</if>>\
+	
+	<<set $player.tfCD += 2>>\
+	<<set $player.wakeup to "room">>\
+	<<include TFNewDay>>
+<<elseif $TightestFamily>>\
+	<<loc_Room>>\
+
+	''It's $time.day, $time.month $time.calendarDay.''
+	<<if $player.hairGrow>>\
+
+		@@.tf;You notice your hair has grown some.@@
+		<<set $player.hairGrow to false>>\
+	<</if>>\
+
+	<<if isFriday() or isSaturday() or isSunday()>>\
+		''You wake up early in the morning after a good night's rest. Your ?mother has already gotten out of bed, and your ?sister is sleeping like the dead beside you.''
+	<<else>>\
+		''You wake up early in the morning after a good night's rest. Your ?mom and ?sister have already gotten out of bed and have started their day.''
+	<</if>>\
+	<<if smsResponse()>>\
+	
+		<<include "Texting-Response">>
+	<</if>>\
+
+	<<include WakeupEvents>>
+<<elseif $player.wakeup is "avabride">>\
+	<<loc_MomRoom>>\
+
+	''It's $time.day, $time.month $time.calendarDay.''
+	<<if $player.hairGrow>>\
+
+		@@.tf;You notice your hair has grown some.@@
+		<<set $player.hairGrow to false>>\
+	<</if>>\
+
+	<<if not flag($player,"AvasBrideNight1")>>\
+		<<nm $player "Mmmm... oh man... what happened last night? Huh?">>\
+
+		''You sit up in bed and look around. Something feels off, and you don't just mean the cold puddle between your legs.''
+
+		<<nm $player "Is this, $mom.name's room? Wait, I remember now... Oh god...">>\
+
+		''Lifting your hand, the small diamond wedding ring serves as a jarring reminder that your <<mother>> had just last night taken you as her slavebride. Your thighs start trembling as your body begins to remember the night before, and apparently just before you woke up.''
+
+		<<nm $player "I guess... this is it, then. Well, it could be worse, I suppose...">>\
+
+		''You get out of bed, pulling on the clothing your <<mother>> left for you.''
+
+		<<nm $player "Hm? Aw...">>\
+
+		''On your way out, you're just a little happy to see a steaming cup of coffee left for you by your bedside. There's also a note...''
+
+		<<nm $mom "Dear $player.name,<br><br>I hope you're excited for our new life together as much as I am! You'll be sleeping with me from now on, but we'll still keep all your things in your old room for now. <<if isChastity()>>You'll be keeping that cute little cage on your clitty at all times starting today, I've already called IMAGE and let them know about your situation so they won't be removing it! I'll also be keeping an eye on your wardrobe, so keep dressing cute for me, 'kay? <</if>>I'll see you downstairs sweetie, don't forget your coffee!<br><br>Love,<br>Mommy">>\
+		<<SetFlag $player "AvasBrideNight1">>\
+	<<else>>\
+		''You wake up alone in your ?mother's bed, a steaming cup of coffee sitting next to you on the nightstand.''
+	<</if>>\
+	<<if smsResponse()>>\
+	
+		<<include "Texting-Response">>
+	<</if>>\
+
+	<<include WakeupEvents>>
+
+<<elseif $player.wakeup is "mommybride">>\
+	<<loc_MomRoom>>\
+
+	''It's $time.day, $time.month $time.calendarDay.''
+	<<if $player.hairGrow>>\
+
+		@@.tf;You notice your hair has grown some.@@
+		<<set $player.hairGrow to false>>\
+	<</if>>\
+
+	''You wake up alone in your ?mother's bed, a steaming cup of coffee sitting next to you on the nightstand. You can still smell her in the sheets.''
+	<<if smsResponse()>>\
+	
+		<<include "Texting-Response">>
+	<</if>>\
+
+	<<include WakeupEvents>>
+<<elseif $player.wakeup is "sister-tasha">>\
+	<<set $CanTF to true, $player.wakeup to "room">>\
+	<<set $SkipNewDay to true>>\
+    <<set $SceneCredit to "Adrianover">>\
+	<<loc_SisterRoom>>\
+	
+	<<nm $player "Mmmm, hmmm... Hm?">>\
+
+	<<if isChastity()>>\
+		<<trackAction "suckCock.get" $sister>>\
+		<<pic $sister "suck-chastity">>\
+	<<elseif hasPenis()>>\
+		<<trackAction "suckCock.get" $sister>>\
+		<<pic $sister "couchoral-mf2">>\
+	<<else>>\
+		<<trackAction "eatPussy.get" $sister>>\
+		<<pic $sister "eat-pussy">>\
+	<</if>>\
+
+    ''You wake up the next morning in the middle of a wet dream to a powerful orgasm. When you open your eyes, you're laying in $sister.name's bed while she licks your <<PussyOrCock>>. As memories of the previous night flood your mind, you enjoy one last orgasm before wondering where $tasha.name is.''
+
+    <<nm $player "Where's... ah! $tasha.name?">>\
+
+    ''$sister.name waits until your orgasm is over to respond.''
+
+    <<nm $sister "Hehe! She had an early morning appointment and had to leave. So, I guess this is a great way to say 'good morning', isn't it?">>\
+
+    ''You look over at $sister.name's bedside clock and see that it's a little after 4:00am. You lean forward and kiss your <<sister>> before climbing out of bed.''
+
+	<<nm $player "Yeah it is! I'm gonna head back to my room and get a couple more hours of sleep in... We should do this more often.">>\
+
+	<<pic $sister "bed">>\
+	
+	<<nm $sister "Hehe, sweet dreams!">>\
+
+	<<btnLink "A few hours later..." "Room-Morning">>
+<<elseif $player.wakeup is "penny">>\
+	<<set $CanTF to true, $player.wakeup to "room">>\
+	<<set $SkipNewDay to true>>\
+	<<loc_PennyApartment>>\
+
+	''It's $time.day, $time.month $time.calendarDay.''
+	<<if $player.hairGrow>>\
+
+		@@.tf;You notice your hair has grown some.@@
+		<<set $player.hairGrow to false>>\
+	<</if>>\
+	
+	<<nm $player "Mmmm, hmmm... Hm?">>\
+
+	<<if not flag($penny,"secondDate")>>\
+		<<SetFlag $penny "secondDate">>\
+		''It takes a minute for you to remember where you are as you wake up. You roll over just in time to see $penny.name's eyes flutter open, as she yawns and groggily greats you.''
+
+		<<pic $penny>>\
+
+		<<nm $penny "Hehe, 'morning cutie!">>\
+
+		<<nm $player "Hey, you.">>\
+
+		''She pulls you in for a quick kiss before stumbling out of bed and into the bathroom. You try not to laugh too loudly as she trips on just about everything on the way. You get out of bed shortly after, putting your <<bottom>> back on and heading in the living room to clean up last night's mess. $penny.name joins you shortly.''
+
+		<<nm $penny "Aw, you got dressed.">>\
+
+		<<nm $player "Ha, yeah, I need to head home in a minute. I had an awesome time last night, though.">>\
+
+		''$penny.name hops up to you and throws her arms around your shoulders.''
+
+		<<nm $penny "Thank you, $player.name... I know I got a little, um, weird last night... I'm really, really happy you didn't run away...">>\
+
+		''Not sure how to respond to that, you quietly rub her back and give her a kiss on the head before breaking the embrace. She smiles at you brightly.''
+
+		<<nm $penny "You, um... You wanna hang out again some time? Maybe?">>\
+
+		<<pic $penny "kiss-player">>\
+
+		<<nm $player "I'd love that, $penny.name!">>\
+
+		<<nm $penny "Hehe!">>\
+
+		''She helps you find your coat and walks you to the door. The morning air helps you wake up as you walk home, and by the time you reach the top of your stairs you can hear your <<mom>> and <<sister>> only just starting to rouse. You quietly walk into your room, close the door, and collapse into your bed hoping to sneak in a little bit of rest before the day starts.''
+		<<AddNote $penny "I stayed over at $penny.name's last night after a very... interesting evening. Still, I think the whole thing brought us closer!">>\
+	<<else>>\
+		<<Thought "Oh yeah, I stayed over at $penny.name's again. Heh, she's still out cold... I don't want to wake her...">>\
+
+		''You lean over and give her a kiss on the forehead. She smiles, unconsciously, before rolling over and lightly snoring. You laugh quietly to yourself before rolling out of bed and pulling your <<bottom>> back on. Quietly leaving her bedroom, you grab your coat and sneak out the front door.''
+		
+		''The morning air helps you wake up as you walk home, and by the time you reach the top of your stairs you can hear your <<mom>> and <<sister>> only just starting to rouse. You quietly walk into your room, close the door, and collapse into your bed hoping to sneak in a little bit of rest before the day starts.''
+	<</if>>\
+
+	<<btnLink "A few hours later..." "Room-Morning">>
+<<elseif $player.wakeup is "christmas">>\
+	<<set $CanTF to true, $player.wakeup to "room">>\
+	<<loc_Room>>\
+
+	<<switch $guest>>\
+		<<case "penny">>\
+			''You wake up alone in your bed, $penny.name's scent still filling your sheets. On your nightstand is a small giftbox with a note on it.''
+
+			<<nm $penny "$player.name,<br><br>Sorry I couldn't stick around for Christmas morning, some stuff came up and I had to run out. Thank you SO much for the great night with your family, I hope I get to do it again soon! Anyway, hope you like the gift I left you.<br><br>Love, $penny.name">>\
+
+			<<Thought "Heh. Well, let's see what she...">>\
+
+			''You open the box to find a pair of $penny.name's silky panties, specifically the pair she was wearing last night.''
+
+			<<nm $player "Well, that's... thoughtful?">>\
+
+			<<love $penny 50 "or">>
+			<<SetFlag $player "ChristmasPenny">>\
+			<<set $ChristmasGift to "A pair of $penny.name's panties">>\
+		<<case "john">>\
+			''You wake up alone in your bed, $john.name's scent still filling your sheets. On your nightstand is a small giftbox with a note on it.''
+
+			<<nm $john "$player.name,<br><br>Sorry I couldn't stick around for Christmas morning, some stuff came up and I had to run out. Thank a ton for the great night with your family, I hope I get to do it again soon! Anyway, hope you like the gift I left you.<br><br>$john.name">>\
+
+			<<Thought "Heh. Well, let's see what he...">>\
+
+			''You open the box to find a pair of $john.name's boxers, specifically the pair he was wearing last night.''
+
+			<<nm $player "Well, that's... thoughtful?">>\
+
+			<<love $john 50 "or">>
+			<<SetFlag $player "ChristmasJohn">>\
+			<<set $ChristmasGift to "A pair of $john.name's boxers">>\
+		<<case "chris">>\
+			<<if $chris.canRomance>>\
+				''You wake up alone in your bed, $chris.name's scent still filling your sheets. On your nightstand is a small giftbox with a note on it.''
+			<<else>>\
+				''You wake up alone in your room, $chris.name is gone, but at least he took the time to fold his bedding. On your nightstand is a small giftbox with a note on it.''
+			<</if>>\
+
+			<<nm $chris "$player.name,<br><br>Sorry I couldn't stick around for Christmas morning, some stuff came up and I had to run out. Thank a ton for the great night with your family, I hope I get to do it again soon! Anyway, hope you like the gift I left you.<br><br>$chris.name">>\
+
+			<<Thought "Heh. Well, let's see what he...">>\
+
+			''You open the box to find a commemorative shot glass from The Place, the bar you and $chris.name frequent.''
+
+			<<nm $player "Hunh, that's really cool, actually.">>\
+
+			<<love $chris 50 "or">>
+			<<SetFlag $player "ChristmasChris">>\
+			<<set $ChristmasGift to "A commemorative shot glass from The Place">>\
+		<<case "tasha">>\
+			''You wake up alone in your bed, $tasha.name's scent still filling your sheets. On your nightstand is a small giftbox with a note on it.''
+
+			<<nm $tasha "$player.name,<br><br>Sorry I couldn't stick around for Christmas morning, some stuff came up and I had to run out. Thank you SO much for the great night with your family, I hope I get to do it again soon! Anyway, hope you like the gift I left you.<br><br>Love, $tasha.name">>\
+
+			<<Thought "Heh. Well, let's see what she...">>\
+
+			''You open the box to find a pair of $tasha.name's frilly panties, specifically the pair she was wearing last night.''
+
+			<<nm $player "Well, that's... thoughtful?">>\
+
+			<<love $tasha 50 "or">>
+			<<SetFlag $player "ChristmasTasha">>\
+			<<set $ChristmasGift to "A pair of $tasha.name's panties">>\
+		<<case "sophie">>\
+			''You wake up alone in your bed, $sophie.name's scent still filling your sheets. On your nightstand is a small giftbox with a note on it.''
+
+			<<nm $sophie "$player.name,<br><br>Sorry we couldn't enjoy waking up together, unfortunately the job never ends for me. Thank you so much for the great night with your family, I hope I get to do it again someday. Anyway, hope you like the gift I left you.<br><br>Love, $sophie.name">>\
+
+			<<Thought "Heh. Well, let's see what she...">>\
+
+			''You open the box to find a pair of $sophie.name's lacey panties, specifically the pair she was wearing last night.''
+
+			<<nm $player "Well, that's... thoughtful?">>\
+
+			<<love $sophie 50 "or">>
+			<<SetFlag $player "ChristmasSophie">>\
+			<<set $ChristmasGift to "A pair of $sophie.name's panties">>\
+	<</switch>>\
+
+	''It's $time.day, $time.month $time.calendarDay.''
+
+	<<if $player.hairGrow>>\
+
+		@@.tf;You notice your hair has grown some.@@
+		<<set $player.hairGrow to false>>\
+	<</if>>\
+
+	''You wake up early in the morning after a good night's rest...''
+
+	<<include WakeupEvents>>
+<<else>>\
+	<<loc_Room>>\
+	
+	<<if flag($player,"FeminizedAtSophieCondo") and not flag($player,"FeminizedBySophieCheck")>>\
+		<<Thought "Ugh, last night is still a blur... I remember... Did $sophie.name stick me with something?">>\
+				
+		''You run your hands along your body, it's softer than you remember. In fact, there's a number of small changes you start to notice - Your hair's definitely longer and your penis... your penis is definitely smaller. Still, you can't seem to piece the night back together. You decide to shrug it off and climb out of bed...''
+		<<SetFlag $player "FeminizedBySophieCheck">>\
+	<<elseif $HomeReaction>>\
+		<<set $HomeReaction to false, $SkipWakeupEvent to true>>\
+		''You return to your room and fall back into your bed for several minutes...''
+	<<else>>\
+		''It's $time.day, $time.month $time.calendarDay.''
+		<<if $player.hairGrow>>\
+
+			@@.tf;You notice your hair has grown some.@@
+			<<set $player.hairGrow to false>>\
+		<</if>>\
+
+		''You wake up early in the morning after a good night's rest...''
+	<</if>>\
+	<<if smsResponse()>>\
+	
+		<<include "Texting-Response">>
+	<</if>>\
+
+	<<include WakeupEvents>>
+<</if>>\
+
+
+:: Room-Nap {"position":"225,10975","size":"100,100"}
+<<if $DoorLocked>>\
+	<<set _nap = random(0,1)>>\
+<<else>>\
+	<<set _nap = random(3)>>\
+<</if>>\
+<<switch _nap>>\
+	<<case 0>>\
+		''You have a nice nap, sleeping soundly for a couple of hours before rolling out of bed.''
+		
+		<<btnLink "Get out of bed" "Room" "passTime(2)">>
+	<<case 1>>\
+	  ''You have a nice nap, sleeping soundly for a couple of hours before rolling out of bed.''
+
+	  @@.gain;Your stamina is fully restored!@@
+	  	<<set $player.stamina to $player.staminaMax>>\
+
+	  <<btnLink "Get out of bed" "Room" "passTime(2)">>
+	<<case 2>>\
+		<<pic $mom>>\
+		
+		<<nm $mom "Honey do you have any lau-<br><br>Oh I'm sorry, I didn't realize you were resting. I'll leave a basket and let you get back to your nap. Sorry!">>\
+			
+		''Sorry or not, your nap is ruined.''
+		
+		<<Thought "I really need to remember to start closing my door when I need to rest...">>\
+		
+		<<btnLink "Get out of bed" "Room" "passTime(2)">>
+	<<case 3>>\
+		<<if $sister.isPornstar>>\
+			''You have a nice nap, sleeping soundly for a couple of hours before rolling out of bed.''
+			
+			@@.gain;Your stamina is fully restored!@@
+	  			<<set $player.stamina to $player.staminaMax>>\
+		
+			<<btnLink "Get out of bed" "Room" "passTime(2)">>
+		<<else>>\
+			<<if dose($sister,"tease")>>\
+				<<pic $sister "bed-strip">>\
+			<<else>>\
+				<<pic $sister "bed">>\
+			<</if>>\
+
+			<<nm $sister "Where the fuck did I leave my phone cha- Oh, hey <<bro>>, didn't see you there. Hey have you seen the charger for my phone?">>\
+
+			<<Thought "For fuck's sake...">>\
+
+			<<nm $player "No, <<sis>>, I haven't seen it, go check with $mom.name...">>\
+
+			<<nm $sister "Oh good idea!">>\
+
+			''$sister.name slams the door on her way out.''
+
+			<<Thought "Well so much for that...">>\
+
+			<<btnLink "Get out of bed" "Room" "passTime(2)">>
+		<</if>>\
+<</switch>>\
+
+
+:: Room-Phone {"position":"1225,11100","size":"100,100"}
+<<loc_Room>>\
+
+<<if $player.canEscort>>\
+    ''You unlock your phone. You can call up one of your saved contacts, or spend your nights and evenings working as an outcall escort.''
+
+    <<if isNight() or isEvening()>>\
+        <<btnLink "Find clients" "Escort-GetClient">>\
+    <<else>>\
+        <<btnDisable "It's too early to go out right now">>\
+    <</if>>\
+<<else>>\
+    ''You unlock your phone and pull up a list of contacts...''
+<</if>>\
+
+<<if flag($player,"callPenny")>>\
+	<<btnLink "Call $penny.name" "Call-Penny">>
+<<else>>\
+    <<btnDisable "?????">>
+<</if>>\
+<<if visited("John-ISS-BimboPlayer-Start")>>\
+	<<btnLink "Call @@.bf;Daddy@@ $john.name" "Call-John">>
+<<elseif flag($john,"CallChanel")>>\
+	<<btnLink "Call $john.name" "Call-Chanel">>
+<<elseif dose($john,"sub") or dose($john,"friend")>>\
+	<<btnLink "Call $john.name" "Call-John-Sub">>
+<<else>>\
+    <<btnDisable "?????">>
+<</if>>\
+<<if $player.met.chris>>
+	<<btnLink "Call $chris.name" "Call-Chris">>
+<<else>>\
+    <<btnDisable "?????">>
+<</if>>\
+<<if $sophie.control.phone>>\
+	<<btnLink "Call $sophie.name" "Call-Sophie">>
+<<else>>\
+    <<btnDisable "?????">>
+<</if>>\
+<<if flag($player,"callTasha")>>\
+    <<btnLink "Call $tasha.name" "Call-Tasha">>
+<<else>>\
+    <<btnDisable "?????">>
+<</if>>\
+<<if flag($player,"CallElsa")>>\
+    <<btnLink "Call $elsa.name" "Call-Elsa">>
+<<elseif $CH4.ElsaSlave>>\
+<<else>>\
+    <<btnDisable "?????">>
+<</if>>\
+
+<<btnBack>>
+
+
+:: Room-Slave {"position":"600,11725","size":"100,100"}
+<<loc_Room>>\
+
+    <<pic $thepit $roomSlave.img>>\
+
+    <<print getSlaveHistory($roomSlave)>>
+
+    <<if isNight()>>\
+        @@.btnChoiceDom;<<button "Pull $roomSlave.name into your bed and go to sleep" "Room-GotoBed">>
+            <<set $DisableNightEvent to true>>
+            <<set $SleepWithSlave to true>>
+        <</button>>@@\
+    <<else>>\
+        <<btnLink "Have $roomSlave.name service you orally" "Room-SlaveOral">>\
+        <<btnLink "Fuck $roomSlave.name<<if not canFuck()>> with a dildo<</if>>" "Room-SlaveFuckSlave">>\
+        <<btnLink "Have $roomSlave.name fuck you" "Room-SlaveFuckMC">>\
+    <</if>>
+
+    <<if $PitTesting>>\
+        <<btnLink "Return" "ThePit-Main">>\
+    <<else>>\
+        <<btnLink "Return" "Home">>\
+    <</if>>\
+
+
+:: Room-SlaveFuckMC {"position":"725,11725","size":"100,100"}
+<<loc_Room>>\
+
+    <<print psRoomSlaveFuckMC($roomSlave)>>
+
+    <<if $PitTesting>>\
+        <<btnLink "Return" "Room-Slave">>\
+    <<else>>\
+        <<btnLink "Return" "Room-Slave" "passTime()">>\
+    <</if>>\
+
+
+:: Room-SlaveFuckSlave {"position":"850,11725","size":"100,100"}
+<<loc_Room>>\
+
+    <<print psRoomSlaveFuckSlave($roomSlave)>>
+
+    <<if $PitTesting>>\
+        <<btnLink "Return" "Room-Slave">>\
+    <<else>>\
+        <<btnLink "Return" "Room-Slave" "passTime()">>\
+    <</if>>\
+
+
+:: Room-SlaveOral {"position":"975,11725","size":"100,100"}
+<<loc_Room>>\
+
+    <<print psRoomSlaveOral($roomSlave)>>
+
+    <<if $PitTesting>>\
+        <<btnLink "Return" "Room-Slave">>\
+    <<else>>\
+        <<btnLink "Return" "Room-Slave" "passTime()">>\
+    <</if>>\
+
+
+:: Room-Sleep {"position":"350,10975","size":"100,100"}
+<<set $player.tfChange to false, $player.tfStateChange to false>>\
+	<<img "room" "Night">>\
+
+	<<if $UnlockCoinShop>>\
+		<<if $NewCoinItem>>\
+			• @@.xxx;$ash.name's shop has new inventory!@@
+			<<unset $NewCoinItem>>\
+
+		<</if>>\
+	<</if>>\
+	<<btnLink "You fade into a dream..." "Room-Sleep-2">>\
+
+
+:: Room-Sleep-2 {"position":"475,10975","size":"100,100"}
+<<img "room" "Night">>\
+
+	<<if flag($player,"absorbSerum") and $player.tfCD is 0 and not $game.lockGender and $CanTF and not flag($sophie,"Feminizing")>>\
+		<<TFCheck>>\
+	<<else>>\
+		<<include Dreaming>>\
+	<</if>>\
+
+
+:: Room-Sleep-Bak {"position":"600,10975","size":"100,100"}
+<<set $player.tfChange to false, $player.tfStateChange to false>>\
+<span id="output">\
+	@@.btnUI;<<button "You fade into a dream...">>
+		<<replace "#output">>\
+			<<if $UnlockCoinShop>>\
+				<<if $NewCoinItem>>\
+					• @@.xxx;$ash.name's shop has new inventory!@@
+					<<unset $NewCoinItem>>\
+				<</if>>\
+			<</if>>\
+			<<if flag($player,"absorbSerum") and $player.tfCD is 0 and not $game.lockGender and $CanTF and not flag($sophie,"Feminizing")>>\
+				<<TFCheck>>\
+			<<else>>\
+				<<include Dreaming>>\
+			<</if>>\
+		<</replace>>\
+	<</button>>@@
+</span>\
+
+
+:: Room-Webcam {"position":"725,10975","size":"100,100"}
+<<loc_Room>>\
+    <<set $SceneCredit to "Jennifer Caswell">>\
+
+    ''You turn on your PC and start working through various network settings.''
+
+    <<nm $player "Alright, let's see... Helps that I know all of $sister.name's logins... I think all I need to do is... yep, that should do it. I still need to head back to <<sis>>' laptop to finish the connection, but that should be easy enough. Just need to find the time and we should be all set!">>\
+
+    ''You finish up at your desk. All that's left is to get back into $sister.name's room and you should have easy access to her webcam!''
+
+    <<SetFlag $sister "SetupServer">>\
+    <<btnLink "Go back - <<t1>>" "Room" "passTime()">>

@@ -1,0 +1,204 @@
+:: Escort Widgets [widget nobr] {"position":"975,21475","size":"100,100"}
+<<widget "escortGetClient">>
+    /* Check for custom values */
+    <<if $args[0]>>
+        <<set _cGender to $args[0]>>
+    <<else>>
+        <<set _cGender to ["male","female","ts"].random()>>
+    <</if>>
+    <<if $args[1]>>
+        <<set _cPerson to $args[1]>>
+    <<else>>
+        <<set _cPerson to ["nice","mean","dom","shy"].random()>>
+    <</if>>
+    /* Initialize and Create New Client Object */
+    <<set $client to {}>>
+    <<run createClient(_cGender,_cPerson)>>
+    <<if setup.imgEscorting>>
+        <<set $client.img to setup.imgEscorting>>
+    <</if>>
+<</widget>>
+
+<<widget "escortSetClient">>
+    /* Use client gender to set pronouns and descriptors */
+    <<if $client.gender is "male">>
+        <<set 
+            _man to "man",
+            _Man to "Man",
+            _guy to "guy",
+            _Guy to "Guy",
+            _he to "he",
+            _He to "He",
+            _his to "his",
+            _His to "His",
+            _him to "him",
+            _Him to "Him",
+            _hiss to "his",
+            _Hiss to "His",
+            _cock to "cock",
+            $client.portrait to "Client_male_dom",
+            $client.name to getName("male")
+        >>
+    <<elseif $client.gender is "ts">>
+        <<set 
+            _man to "transwoman",
+            _Man to "Transwoman",
+            _guy to "chick",
+            _Guy to "Chick",
+            _he to "she",
+            _He to "She",
+            _his to "her",
+            _His to "Her",
+            _him to "her",
+            _Him to "Her",
+            _hiss to "hers",
+            _Hiss to "Hers",
+            _cock to "cock",
+            $client.name to getName("female")
+        >>
+    <<else>>
+        <<set 
+            _man to "woman",
+            _Man to "Woman",
+            _guy to "chick",
+            _Guy to "Chick",
+            _he to "she",
+            _He to "She",
+            _his to "her",
+            _His to "Her",
+            _him to "her",
+            _Him to "Her",
+            _hiss to "hers",
+            _Hiss to "Hers",
+            _cock to "strapon",
+            $client.name to getName("female")
+        >>
+    <</if>>
+
+    /* Nice */
+    <<set $client.desc[0] to [
+        "_he sounded pretty nice",
+        "O-oh! Yes, um, please come in!",
+        "Yeah you too! Um, please come in!",
+        "Oh, right, yeah that's me! Please come inside...",
+        "U-um, you're... $player.name? Come on inside...",
+        "Um... Wait you're... $player.name? Right, uh, yeah, come on in.",
+        "Oh, you think so? Hm, thanks! Um, did you maybe want to get a little more comfortable?"
+    ]>>
+
+    /* Mean */
+    <<set $client.desc[1] to [
+        "_he sounded a little rough",
+        "Yeah that's me. Let's take it to the bed already.",
+        "Right, sure. Get inside.",
+        "Mhm, let's get inside.",
+        "You're the... You're $player.name? Let's get inside.",
+        "Jesus fuck will you get inside already!",
+        "Sure, sure. You ready?"
+    ]>>
+
+    /* Dom */
+    <<set $client.desc[2] to [
+        "_he sounded a bit intense",
+        "Mmm, very good. Let's take this inside, shall we?",
+        "Ah, you as well! Shall we?",
+        "Right, yes... Shall we?",
+        "Hmm... Yes, that's me. Let's maybe take this inside?",
+        "You seem... new. Let's move this inside, hm?",
+        "Yes, thank you. Ready to get started?"
+    ]>>
+
+    /* Shy */
+    <<set $client.desc[3] to [
+        "_he sounded kind of anxious",
+        "O-oh my, hehe, y-yes thank you!",
+        "Y-yes, you u-um, look great!",
+        "Oh, h-hi! Um, maybe let's go i-inside?",
+        "U-um, yes, that's me! C-can we maybe, um, get inside?",
+        "O-oh, um, m-maybe we shouldn't stand out here...",
+        "Oh, t-thanks, hehe. Um, should we, um..."
+    ]>>
+<</widget>>
+
+<<widget "escortDesc">>
+    <<set _d to $args[0]>>
+    <<switch $client.personality>>
+        <<case "nice">>
+            <<set _msg to $client.desc[0][_d]>>
+        <<case "mean">>
+            <<set _msg to $client.desc[1][_d]>>
+        <<case "dom">>
+            <<set _msg to $client.desc[2][_d]>>
+        <<case "shy">>
+            <<set _msg to $client.desc[3][_d]>>
+    <</switch>>
+    _msg
+<</widget>>
+
+<<widget "clientComment">>
+    <<switch $client.personality>>
+        <<case "nice">>
+            <<set _dlg to $args[0]>>
+        <<case "mean">>
+            <<set _dlg to $args[1]>>
+        <<case "dom">>
+            <<set _dlg to $args[2]>>
+        <<case "shy">>
+            <<set _dlg to $args[3]>>
+    <</switch>>
+    <<nm $client "_dlg">>
+<</widget>>
+
+<<widget "escortPayMod">>
+    <<switch skill($player,$client.wantedStart)>>
+        <<case "expert">>
+            <<set $client.basePay += 2>>
+        <<case "great">>
+            <<set $client.basePay += 1>>
+        <<case "good">>
+            <<set $client.basePay += 0>>
+        <<case "okay">>
+            <<set $client.basePay += 0>>
+        <<case "new">>
+            <<set $client.basePay -= 1>>
+    <</switch>>
+    <<switch skill($player,$client.wantedAction)>>
+        <<case "expert">>
+            <<set $client.basePay += 2>>
+        <<case "great">>
+            <<set $client.basePay += 1>>
+        <<case "good">>
+            <<set $client.basePay += 0>>
+        <<case "okay">>
+            <<set $client.basePay += 0>>
+        <<case "new">>
+            <<set $client.basePay -= 1>>
+    <</switch>>
+    <<switch skill($player,$client.wantedFinish)>>
+        <<case "expert">>
+            <<set $client.basePay += 2>>
+        <<case "great">>
+            <<set $client.basePay += 1>>
+        <<case "good">>
+            <<set $client.basePay += 0>>
+        <<case "okay">>
+            <<set $client.basePay += 0>>
+        <<case "new">>
+            <<set $client.basePay -= 1>>
+    <</switch>>
+    <<if $client.basePay < 1>>
+        <<set $client.basePay to 1>>
+    <</if>>
+    <<set $client.basePay to ($client.basePay * 5) + 100>>
+    <<if skill($player,"escorting",$EXPERT)>>
+        <<set $client.basePay to Math.floor($client.basePay *= 2) + 200>>
+    <<elseif skill($player,"escorting",$GREAT)>>
+        <<set $client.basePay to Math.floor($client.basePay *= 1.5) + 100>>
+    <<elseif skill($player,"escorting",$GOOD)>>
+        <<set $client.basePay to Math.floor($client.basePay *= 1.25) + 50>>
+    <<elseif skill($player,"escorting",$OKAY)>>
+        <<set $client.basePay to Math.floor($client.basePay *= 1) + 20>>
+    <<else>>
+        <<set $client.basePay to Math.floor($client.basePay *= 0.75) + 10>>
+    <</if>>
+<</widget>>

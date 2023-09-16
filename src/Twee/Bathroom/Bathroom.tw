@@ -1,0 +1,32 @@
+:: Bathroom [nobr] {"position":"850,13475","size":"100,100"}
+<<loc_Bathroom>><br>
+	<<switch $time.time>>
+	<<case "Morning">>
+		<<if dose($john,"oralSlave") and $john.sexCD is 0>>
+			<<BathroomEvents "suckYou">>
+		<<elseif dose($john,"sub") and $john.sexCD is 0>>
+			<<BathroomEvents "bullyJohn">>
+		<<else>>
+			<<BathroomEvents "empty">>
+		<</if>>
+	<<case "Late Morning">>
+		<<if dose($john,"oralSlave") and $john.sexCD is 0>>
+			<<BathroomEvents "suckYou">>
+		<<elseif dose($john,"sub") and $john.sexCD is 0>>
+			<<BathroomEvents "bullyJohn">>
+		<<elseif $john.sexCD > 0>>
+			<<BathroomEvents "empty">>
+		<<else>>\
+			<<BathroomEvents "john">>
+		<</if>>\
+	<<case "Noon">>
+		<<BathroomEvents "empty">>
+	<<case "Early Afternoon">>
+		<<BathroomEvents "empty">>
+	<<case "Afternoon">>
+		<<BathroomEvents "empty">>
+	<<case "Evening">>
+		<<BathroomEvents "empty">>
+	<<case "Night">>
+		<<BathroomEvents "empty">>
+	<</switch>>

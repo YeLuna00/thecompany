@@ -1,0 +1,12 @@
+:: Adult-Store-ChastityKeep {"position":"100,12225","size":"100,100"}
+<<loc_Image>>\
+
+	<<nm $player "I think I'll just go ahead and leave it on for now.">>\
+
+	<<pic $npc "ash">>\
+			
+	<<nm $ash "Hey, suit yourself. We sell plenty of buttplugs and other anal toys here, figure you're probably into that sorta thing.">>\
+	
+	<<nm $player "...Anyway, I'll see'ya.">>\
+	
+	<<btnLink "Go back" "Adult-Store">>

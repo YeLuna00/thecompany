@@ -1,0 +1,663 @@
+:: Intro-Chapter-1 {"position":"725,18225","size":"100,100"}
+<center>\
+	<h1><<timed 1s t8n>>__<<if $FreePlay>>Free Play<<else>>Chapter 1<</if>>__<</timed>></h1>\
+	<<timed 2s t8n>>\
+		<<btnLink "Continue" "Intro-Room">>
+	<</timed>>\
+	</center>\
+
+
+:: Intro-ChapterStart {"position":"600,18100","size":"100,100"}
+<<if $PitTesting>>\
+        <<loc_Lab>>\
+        <<set $Money to 1000000>>\
+        <<NewDailySlave>>\
+
+        ''Continue on to pit testing.''
+
+        <<btnLink "Continue" "ThePit-Main">>\
+    <<elseif $c is 1>>\
+		<<loc_Lab>>\
+		
+        <<if $FreePlay>>\
+            ''Since you're playing in @@.gain;Free Play@@ mode, we'll start you off at your evening meeting with $sophie.name in the Company Lab...''
+        <<else>>\
+		    ''You've decided to skip the introduction events. You'll now be transported to your first meeting with $sophie.name in the Company Lab on Friday evening...''
+        <</if>>\
+		
+		<<btnLink "Continue..." "CH1-Lab">>
+	<<elseif $c is 2>>\
+		<<loc_Lab>>\
+		
+		''You've decided to start the game at Chapter 2. Please proceed to make your choices as to how the game has progressed so far.''
+		
+		<<btnLink "Continue..." "Start-Chapter-Select" "$ChapterChoice = 2">>
+	<<elseif $c is 3>>\
+		<<loc_Lab>>\
+		
+		''You've decided to start the game at Chapter 3. Please proceed to make your choices as to how the game has progressed so far.''
+		
+		<<btnLink "Continue..." "Start-Chapter-Select" "$ChapterChoice = 3">>
+	<<elseif $c is 4>>\
+		<<loc_Lab>>\
+		
+		''You've decided to start the game at Chapter 4. Please proceed to make your choices as to how the game has progressed so far.''
+		
+		<<btnLink "Continue..." "Start-Chapter-Select" "$ChapterChoice = 4">>
+	<<elseif $c is 99>>\
+		<<loc_Lab>>\
+		
+		''You've decided to start the game just before the Thanksgiving Event, November 19th. Please proceed to make your choices as to how the game has progressed so far.''
+		
+		<<btnLink "Continue..." "Start-Chapter-Select" "$ChapterChoice = 4">>
+	<<else>>\
+		@@.pic;<img data-passage="cg0-1">@@\
+
+		''The meeting attendants look over the document which includes $player.name's basic information, known acquaintances, and anything else deemed relevant.''
+
+		<<nmc "Older Woman" "Hmph. Hard to believe such an unassuming <<boy>> could cause so much commotion..." "UnknownF">>\
+			
+		<<nmc "Older Man" "Quite, but that's what happened. Now, let's go back to the beginning...">>\
+			
+		<<btnLink "One year earlier..." "Intro-MeetSophie" "passTime()">>
+	<</if>>\
+
+
+:: Intro-CharacterGen {"position":"350,18100","size":"100,100"}
+@@.pic;<img data-passage="cg0-2">@@\
+	<<set _sur to getName("surname")>>\
+	
+	@@.form;
+	<<Pro $c>>THE COMPANY - RECORDS DEPARTMENT:<hr>
+	EMPLOYEE CONFIDENTIAL RECORDS. FOR INTERNAL USE ONLY. NON-ESSENTIAL INFORMATION HAS BEEN REDACTED FROM THIS DOCUMENT IN COMPLIANCE WITH COMPANY POLICY. ADDITIONAL INFORMATION MAY BE ADDED AS DEEMED NECESSARY BY AUTHORIZED PERSONNEL.
+	<hr>
+	First Name:
+	<<textbox "$player.name" $player.name>>
+	Last Name:
+	<<textbox "$player.surname" _sur>>
+
+	Known Relations:
+	<<textbox "$mom.realName" "Ava">> - \
+	<<listbox "$mom.isBlood">>
+		<<option "Stepmother" false selected>>
+		<<option "Mother" true>>
+	<</listbox>>
+	<<textbox "$sister.name" "Dakota">> - \
+	<<listbox "$sister.isBlood">>
+		<<option "Stepsister" false selected>>
+		<<option "Sister" true>>
+	<</listbox>>
+	<hr>
+	<<if $CustomCharacter>>\
+		Genitalia:
+		<<link "Male">>
+			<<set $player.baseGender to "male", $player.penisSize to $M, $player.pussySize to 0>>\
+			<<replace "#pGen">>\
+				<<include "CharacterGen-Genitals">>\
+			<</replace>>\
+		<</link>> - \
+		<<link "Female">>
+			<<set $player.baseGender to "female", $player.pussySize to $XS, $player.penisSize to 0>>\
+			<<replace "#pGen">>\
+				<<include "CharacterGen-Genitals">>\
+			<</replace>>\
+		<</link>>
+
+		Gender Identity:
+		<<radiobutton "$player.identity" "male" checked>> Male \
+		<<radiobutton "$player.identity" "female">> Female \
+		<<radiobutton "$player.identity" "trans">> Trans
+
+		Preferred Wardrobe:
+		<<radiobutton "_wardrobe" "mas" checked>> Masculine \
+		<<radiobutton "_wardrobe" "fem">> Feminine
+
+		Preferred Pronouns:
+		<<radiobutton "_pro" "mas" checked>> Masculine \
+		<<radiobutton "_pro" "fem">> Feminine
+
+		<span id="pGen">\
+			<<include "CharacterGen-Genitals">>\
+		</span>\
+
+		Hair Length:
+		<<listbox "$player.hairLength">>
+			<<option $HAIRLENGTH[0] 0>>
+			<<option $HAIRLENGTH[1] 1 selected>>
+			<<option $HAIRLENGTH[2] 2>>
+			<<option $HAIRLENGTH[3] 3>>
+			<<option $HAIRLENGTH[4] 4>>
+			<<option $HAIRLENGTH[5] 5>>
+		<</listbox>>
+
+		Breast Size:
+		<<listbox "$player.breastSize">>
+			<<option $BREASTSIZE[0] 0 selected>>
+			<<option $BREASTSIZE[1] $XS>>
+			<<option $BREASTSIZE[2] $S>>
+			<<option $BREASTSIZE[3] $M>>
+			<<option $BREASTSIZE[4] $L>>
+		<</listbox>>
+
+		Anal Tightness:
+		<<listbox "$player.assSize">>
+			<<option $ASSSIZE[0] 0 selected>>
+			<<option $ASSSIZE[1] $XS>>
+			<<option $ASSSIZE[2] $S>>
+			<<option $ASSSIZE[3] $M>>
+			<<option $ASSSIZE[4] $L>>
+		<</listbox>>
+		
+	<<else>>\
+		<<if $c is "Male">>\
+			<<set _pro to "mas", _wardrobe to "mas">>\
+		<<else>>\
+			<<set _pro to "fem", _wardrobe to "fem">>\
+		<</if>>\
+	<</if>>\
+	<<if $ShowImages>>\
+		Enable Player Portrait in Text Boxes:
+		<<radiobutton "$ShowPlayerPortrait" true checked>> Yes \
+		<<radiobutton "$ShowPlayerPortrait" false>> No
+	<</if>>\
+	<<if not $game.firstGame>>\
+		<hr>
+		<<if not $FreePlay>>\
+			<<radiobutton "_chapter" 0 checked>> Start from Prologue (Recommended)
+			<<radiobutton "_chapter" 1>> Start from Chapter 1
+			<<radiobutton "_chapter" 2>> Start from Chapter 2
+			<<radiobutton "_chapter" 3>> Start from Chapter 3
+			<<radiobutton "_chapter" 4>> Start from Chapter 4
+			<<if $game.release is "Dev Build">>\
+				/*<<radiobutton "_chapter" 99>> Start from Thanksgiving Event - @@Dev Build@@*/
+			<</if>>\
+			<hr>
+		<</if>>\
+		Cheats //(Separate multiple cheats with a space)//:
+		<<textbox "_cht" "">>
+	<<else>>\
+		<<set _chapter to 0>>\
+		<<set _cht to "na">>\
+	<</if>>\
+	@@\
+
+	@@.btnUI;<<button [[Confirm information|Intro-ChapterStart]]>>
+		<<nobr>>\
+			<<if hasPenis() and $player.identity is "male">>
+				<<set $player.genderv to (-50)>>
+				<<set $player.gender to "Male">>
+				<<set $player.baseGender to "male">>
+				<<set $sister.seePenis to true>>
+				<<set $mom.seePenis to true>>
+			<<elseif hasPenis()>>
+				<<set $player.genderv to 0>>
+				<<set $player.gender to "Trans">>
+				<<set $player.baseGender to "ts">>
+				<<set $sister.seePenis to true>>
+				<<set $mom.seePenis to true>>
+			<<elseif hasPussy()>>
+				<<set $player.genderv to 50>>
+				<<set $player.gender to "Female">>
+				<<set $player.baseGender to "female">>
+				<<set $sister.seePussy to true>>
+				<<set $mom.seePussy to true>>
+			<</if>>
+			<<if _wardrobe is "mas">>
+				<<set 
+					$player.outfit to "formal1",
+					$player.underwear to "boxers1",
+					$player.outfits.pushUnique("formal1"),
+					$player.underwears.pushUnique("boxers1")
+				>>
+			<<else>>
+				<<set 
+					$player.outfit to "formal2",
+					$player.underwear to "cotton1",
+					$player.bra to "cotton1",
+					$player.outfits.pushUnique("formal2"),
+					$player.underwears.pushUnique("cotton1"),
+					$player.bras.pushUnique("cotton1")
+				>>
+			<</if>>
+		<<if _pro is "mas">>
+			<<SetPronouns "male">>
+		<<else>>
+			<<SetPronouns "female">>
+		<</if>>
+		<<set $player.portrait to $player.gender>>
+		<<RunCheats _cht>>
+		<<GenderCheck>>
+		<<updatebar>>
+		<<if $FreePlay>>
+			<<set _chapter to 1>>
+		<</if>>
+		<<if _chapter is 0>>
+			<<set $c to 0>>
+		<<elseif _chapter is 1>>
+			<<set $player.met.sophie to true>>
+			<<set $time.dayCount to 1, $time.cMonth to 9>>
+			<<set $time.cDay to 5, $time.cTime to 5>>
+			<<if not $FreePlay>>
+				<<set $Chapter to 1>>
+			<</if>>
+			<<set $player.met.mom to true>>
+			<<set $player.met.sister to true>>
+			<<AddDreamEvent 1>>\
+			<<AddNote $sophie "Last night I met $sophie.name for the first time.">>\
+			<<AddNote $mom "I Moved back in with my <<mother>> after failing to maintain student housing. She acts like it's a bother, but she seems genuinely happier with me and $sister.name here. She was in a slump for a while after dad left her several years ago, but my <<sister>> and I have always been there for her.">>\
+			<<AddNote $sister "My younger <<sister>> never actually left after starting college. She tries to the play the bitchy, disinterested girl, but she's really sweet once you get to know her. She spends a lot of her time either in classes or working late at a bar popular with other students, so we don't see a whole lot of each other.">>\
+			<<AddNote $saya "For some reason, I started seeing this girl in my dreams, and she keeps talking to me like I'm not dreaming... Evidence is mounting that I'm headed for a mental breakdown...">>\
+			<<set $c to 1>>
+		<<elseif _chapter is 2>>
+			<<set $c to 2>>
+		<<elseif _chapter is 3>>
+			<<set $c to 3>>
+		<<elseif _chapter is 4>>
+			<<set $c to 4>>
+		<<elseif _chapter is 99>>
+			<<set $c to 99>>
+		<</if>>
+		<</nobr>>\
+	<</button>>@@
+	<<btnBack "Go back">>
+
+
+:: Intro-FirstCheck {"position":"1100,17975","size":"100,100"}
+@@.pic;<img data-passage="banner">@@\
+	
+	''Is this your first time playing The Company?''
+
+	@@.btnUIScale;<<button "__@@I have ''never'' played The Company before@@__<br>Recommended if you have never played before. Disables some of the more advanced controls that may affect your experience including day skips, cheat codes, debug features, etc." "Intro-ImageCheck">>
+		<<set $game.firstGame to true>>
+	<</button>>@@
+	<hr>
+	@@.btnUIScale;<<button "__@@I ''have'' played the game already@@__<br>Recommended if you've already played around with the game, and want to unlock advanced controls such as day skips, cheat codes, etc." "Intro-FreePlayCheck">>
+		<<set $game.firstGame to false>>
+	<</button>>@@
+
+
+:: Intro-FreePlayCheck {"position":"1225,17975","size":"100,100"}
+@@.pic;<img data-passage="banner">@@\
+
+	''How would you like to play The Company?''
+
+	@@.btnUIScale;<<button "__@@Story Mode@@__<br>Recommended way to play The Company. Watch events unfold over the course of multiple chapters and story sequences, unlocking new content as the story progresses" "Intro-ImageCheck">>
+		<<set $FreePlay to false>>
+	<</button>>@@
+	<hr>
+	@@.btnUIScale;<<button "__@@Free Play Mode@@__<br>Free Play Mode allows players to explore The Company and its characters without having to worry about time or story constraints. Recommended for players who just want to freely play with the game's systems and not experience the main story" "Intro-ImageCheck">>
+		<<set $FreePlay to true>>
+	<</button>>@@
+
+
+:: Intro-Home {"position":"975,18225","size":"100,100"}
+<<set $player.met.mom to true>>\
+	<<set $player.met.sister to true>>\
+	<<meet $sophie>>\
+	<<meet $mom>>\
+	<<meet $sister>>\
+	<<loc_LivingRoom true>>\
+
+	<<artB "cg/0-5-MeetFamily">>\
+	''You make your way down from the second floor to find your <<mother>> and <<sister>> sitting on the couch sipping coffee. Your <<sister>>, $sister.name, is the first to speak.''
+
+	<<pic $sister>>\
+	<<art $sister "happy">>\
+
+	<<nm $sister "You must have had a pretty good night...">>\
+
+	<<nm $player "Oh? What makes you say that?">>\
+
+	<<nm $sister "Well, you had to have two of your new coworkers haul your blacked-out ass all the way up to your room. They told us you went a little crazy during the welcome party they threw you.">>\
+
+	''You move to pour some coffee.''
+
+	<<btnChoice "Morning <<sis>>... Surprised you're up before sunset" "Intro-Home2" "$c=1">>
+	<<btnChoice "Hey <<sis>>, you're looking cute today" "Intro-Home2" "$c=2">>
+	<<btnChoice "Did they? Must have been a pretty crazy night then..." "Intro-Home2" "$c=3">>
+
+
+:: Intro-Home2 {"position":"1100,18225","size":"100,100"}
+<<loc_LivingRoom true>>\
+
+	<<if $c is 1>>\
+		<<artB $sister "angry,2">>\
+	<<elseif $c is 2>>\
+		<<artB $sister "embarrassed,2">>\
+	<<else>>\
+		<<artB $sister "default,2">>\
+	<</if>>\
+	<<switch $c>>\
+		<<case 1>>\
+			<<nm $player "Morning <<sis>>, what are you doing awake while the sun's still up?">>\
+
+			''$sister.name gives you the stinkeye.''
+
+			<<nm $sister "Oh fuck off, <<bro>>. At least I'm hungover.">>\
+
+			<<love $sister -1>>
+		<<case 2>>\
+			<<nm $player "Hey <<sis>>, you're looking cute today.">>\
+
+			''$sister.name tenses up and blushes, trying her best to look irritated.''
+
+			<<nm $sister "D-don't be weird! Jeez, the hell is that supposed to mean...">>\
+
+			<<love $sister 1>>
+		<<case 3>>\
+			<<nm $player "Did they? Did I? Yeah, it must have been pretty... crazy.">>\
+
+			''$sister.name rolls her eyes into her mug.''
+
+			<<nm $sister "Mmmmhm, you looked like hot shit. Was kind of pathetic, actually.">>\
+
+			<<nm $player "Right, love you, too, <<sis>>.">>\
+	<</switch>>\
+
+	''You drink your coffee trying to piece together exactly what happened last night. You remember part of the interview, meeting Ms. Dee. You remember the job, or at least that you have one now, for... The Company? Is that really the name?''
+
+	<<pic $mom>>\
+	<<art $mom "happy">>\
+
+	<<nm $mom "Well, you sure seem out of it this morning. I can't believe you could have possibly partied that hard with a crew from... What did they say it was, $sister.name? Some computer chip distribution company or something?">>\
+
+	<<nm $sister "Sales. <<He>>'s basically a glorified secretary for the sales division of some computer company. They didn't specify which.">>\
+
+	<<Thought "Computer company, huh? I'm pretty sure that's not right. What the hell line of work have I fallen into here?">>\
+
+	<<btnChoice "Morning $mom.name, you're looking nice today" "Intro-Home3" "$c=1">>
+	<<btnChoice "Um, yeah, it's really boring computer stuff" "Intro-Home3" "$c=2">>
+	<<btnChoice "Actually, it's more like pharmaceuticals" "Intro-Home3" "$c=3">>
+
+
+:: Intro-Home3 {"position":"1225,18225","size":"100,100"}
+<<loc_LivingRoom true>>\
+
+	<<if $c is 1>>\
+		<<artB $mom "embarrassed,2">>\
+	<<elseif $c is 2>>\
+		<<artB $mom "default,2">>\
+	<<else>>\
+		<<artB $mom "happy,2">>\
+	<</if>>\
+	<<switch $c>>\
+		<<case 1>>\
+			<<nm $player "Morning $mom.name, you're looking awefully nice today.">>\
+
+			''Your <<mother>> smiles warmly at you, clearly flattered.''
+
+			<<nm $mom "Aww, well aren't you just the little charmer... Doesn't change the fact that you were a dragged in like some kind of dead, drunk animal last night, hehe!">>\
+
+			<<love $mom 1>>
+		<<case 2>>\
+			<<nm $player "Um, yeah, it's just a bunch of boring admin work for a computer company...">>\
+
+			''You take another sip of your coffee.''
+
+			<<nm $mom "Really? Hm, that's too bad. It's a real waste of your talents, you know?">>\
+		<<case 3>>\
+			<<nm $player "Mm, actually, it's pharmaceuticals, not computer. So, at least I get to put my education to use.">>\
+
+			''Your <<mother>> looks ecstatic.''
+
+			<<nm $mom "Sweetie, that's wonderful! I'm so happy for you!">>\
+
+			<<love $mom 1>>
+	<</switch>>\
+
+	''The phone rings, your <<mother>> answers.''
+
+	<<nm $mom "Hello? Oh, $player.name? Yes, I have <<him>> right here, one moment.">>\
+
+	''The phone is passed to you.''
+
+	<<nm $sophie "<<Mr>> $player.surname, how are you? Well rested I hope. Don't worry, soon we won't need to be quite so... secretive when it comes to your transportation. I'd like to finalize the details of your working arrangements tonight, so we'll be sending someone over to pick you up this evening. If you're a good <<boy>>, we might not even gas you this time!">>\
+
+	''$sophie.name hangs up the phone.''
+
+	<<nm $mom "<<if isMale()>>A woman?<<else>>Who was that?<</if>>">>\
+
+	<<nm $player "<<if isMale()>>Something like that. <</if>>That was $sophie.name, my boss. I report directly to her for... sales... things...<br><br>Anyway, I have to go back in tonight to finalize some paperwork and get my actual job in order. There shouldn't be any, uh, partying afterward this time.">>\
+
+	''Your <<mom>> gives you an unconvinced smirk.''
+
+	<<nm $mom "Whatever you say. I'm just glad you'll finally be able to start helping out around here. I thought that once you and your <<sister>> left for college that meant that you and your <<sister>> would LEAVE for college... Can't say I mind the company these days, but the food bill adds up!<br><br>On that note, who wants to help me make some breakfast?">>\
+
+	<<AddDreamEvent 1>>\
+	<<AddNote $sophie "Last night I met $sophie.name for the first time.">>\
+	<<AddNote $mom "I Moved back in with my <<mother>> after failing to maintain student housing. She acts like it's a bother, but she seems genuinely happier with me and $sister.name here. She was in a slump for a while after dad left her several years ago, but my <<sister>> and I have always been there for her.">>\
+	<<AddNote $sister "My younger <<sister>> never actually left after starting college. She tries to the play the bitchy, disinterested girl, but she's really sweet once you get to know her. She spends a lot of her time either in classes or working late at a bar popular with other students, so we don't see a whole lot of each other.">>\
+	<<btnLink "Time to start your day!" "Home">>
+
+
+:: Intro-ImageCheck {"position":"100,18100","size":"100,100"}
+@@.pic;<img data-passage="banner">@@\
+
+	''The Company uses several images to enhance its story. While it's recommended to play with them enabled, you can decide if you'd like to play with images on or off.''
+
+	@@.data;Choose how you'd like to continue. These options can be changed at a later point in the game.@@
+	
+	@@.btnUI;<<button [[Continue with images - Recommended|Intro-Story1]]>>
+		<<set $ShowImages=true, $UsePics=false>>
+	<</button>>@@
+	@@.btnUI;<<button [[Continue with images + Paper Doll|Intro-Story1]]>>
+		<<set $ShowImages=true, $UsePics=true>>
+	<</button>>@@
+	
+	@@.btnChoiceDom;<<button [[Continue without images|Intro-Story1]]>>
+		<<set $ShowImages=false>>
+	<</button>>@@
+
+
+:: Intro-MeetSophie {"position":"975,18100","size":"100,100"}
+<<set $time.dayCount to 31, $time.cMonth to 8>>\
+	<<set $player.met.sophie to true>>\
+	<<GetTimeInfo>>\
+	<<loc_SophieOffice true>>\
+
+	<<pic $sophie>>\
+    <<art "cg/0-3-MeetSophie">>\
+	
+    ''Your new employer stands and leans forward to shake your hand. This close you notice her piercing violet  eyes as she appears to size you up behind a sincere yet cunning smile.''
+
+	<<Thought "Just what have I gotten myself into?">>\
+
+	''It's only now you realize your gaze has drifted past the firm handshake and smiling face, noticing just how remarkable $sophie.name's other... assets are. She's average height, well formed, //gorgeous//, and... well endowed...''
+
+	''Before your mind gets the chance to wander too far you feel your boss's grip tighten.''
+
+	<<Thought "Oh shit, she's looking dead at me!">>\
+
+	<<btnChoice "Play it off and thank her for the job" "Intro-Sophie-Play">>
+	<<btnChoice "Apologize for staring and thank her for the job" "Intro-Sophie-Apologize">>
+	<<btnChoice "Match her grip and continue staring" "Intro-Sophie-Flirt">>
+
+
+:: Intro-Room {"position":"850,18225","size":"100,100"}
+<<loc_Room>>\
+
+	<<Thought "...What a weird dream...">>\
+
+	''You're still groggy as you force yourself out of bed and stumble around your bedroom.''
+
+	''The sun's up. It's morning.''
+
+	''You're still wearing your suit from the night before but you can't for the life of you remember how you actually got back home. You can hear activity downstairs.''
+
+	<<nmc "$mom.name" "$player.name? Is that you? Come downstairs and tell us how it went!" "UnknownF">>\
+
+    ''You call downstairs.''
+
+	<<nm $player "Yeah, $mom.name, give me a minute, I'll be right down!" "Ugh, it's too early for this...">>\
+
+	''You collect yourself, change your clothes, put on some deodorant and prepare to head downstairs to join your <<mother>> and <<sister>>.''
+
+	<<btnLink "Head downstairs" "Intro-Home">>
+
+
+:: Intro-Sophie-3 {"position":"225,18225","size":"100,100"}
+<<loc_SophieOffice>>\
+
+	<<Thought "Come to think of it, I can barely remember how I even got here.<br><br>I had a job interview, yeah, I received an email from someone expressing interest in my research regarding behavioral modification and cognitive suggestion. I mean, 'research' is a generous term, really. I always thought the subject was a little boring, especially given my limited means to actually test any of my theories, but this person was offering me a sizable amount of resources... plus a hefty paycheck.<br><br>I was to meet a representative of The Company at a local restaurant for an interview, but after answering a few questions... it gets fuzzy after that. Next thing I knew I was being welcomed into the fold by that woman... She introduced herself as... $sophie.name?">>\
+
+	<<nm $player "Wait a minute, what do you mean send me home in the same fash-">>\
+
+	''Before you can finish your sentence the room begins to spin and the floor rises to meet you...''
+
+	<<btnLink "Fade off" "Tutorial" "passTime()">>
+
+
+:: Intro-Sophie-Apologize {"position":"1225,18100","size":"100,100"}
+<<loc_SophieOffice>>\
+
+    <<Thought "Shit! She totally caught me staring!">>\
+
+    <<nm $player "Oh, god, I'm sorry I just- I didn't mean-">>\
+
+    ''$sophie.name can't help but laugh before quickly regaining her composure''
+
+    <<pic $sophie>>\
+    <<art $sophie "sad">>\
+
+    <<nm $sophie "Nothing to apologize for! You've had quite a long day, I'm sure focusing on anything would be difficult right now and you're clearly... distracted. I think we're done for the day.<br><br>I'll have you escorted back to your house in the same fashion you were brought here.">>\
+
+    ''You can see a subtle twist in Ms. Dee's smile, as if you've just conceded some amount of control over to her.''
+
+    <<Thought "Ugh, dumb... I probably came off as a total loser just now. She's obviously confident in herself, I probably shouldn't even have said anything...">>\
+
+    @@.data;Your honesty will have an affect on how people see you.@@
+    <<all_Love 8>>\
+
+    <<btnLink "Be taken back home" "Intro-Sophie-3">>
+
+
+:: Intro-Sophie-Flirt {"position":"100,18225","size":"100,100"}
+<<loc_SophieOffice>>\
+
+    ''As Ms. Dee's grip tightens you break your gaze away from her body and meet her stare head on. There's a subtle twist in her smile, hinting at something sinister.''
+
+    <<nm $sophie "I see, so that's how it's going to be. You and I are going to get on just fine, <<Mr>> $player.surname, but I should caution you: We are all little more than assets in this organization, to do with as The Company pleases. Prove your worth to me and those above me and your wildest dreams will be within your reach-">>\
+
+    ''Ms. Dee walks around to the front of her desk, standing close and locking shoulders with you. Her breast pressed against your arm and lips less than an inch from your cheek, you can't help but take in her scent as she whispers...''
+
+    <<pic $sophie>>\
+    <<art $sophie "aroused">>\
+
+    <<nm $sophie "Fail to meet expectations, however, and your reputation, freedom, even your life are forfeit to The Company. The hell you will experience will be beyond your reckoning... But then, maybe you'll be into that sort of thing?<br><br>I'll have you escorted back to your house in the same fashion you were brought here.">>\
+
+    <<Thought "What the hell just happened?">>\
+
+    @@.data;Your confidence will have an affect on peoples' interest in you.@@
+    <<all_Love 4>>\
+    <<all_Lust 4>>\
+
+    <<btnLink "Be taken back home" "Intro-Sophie-3">>
+
+
+:: Intro-Sophie-Play {"position":"1100,18100","size":"100,100"}
+<<loc_SophieOffice>>\
+
+    <<nm $player "Yes, thank you very much for the, ah, opportunity. I'm still not entirely sure what is I'll be doing here, but, I'll do my best!" "Oh shit! Okay, play it cool. She definitely caught me looking but since she's not making a big deal out of it I won't either...">>\
+
+    <<pic $sophie>>\
+    <<art $sophie "happy">>\
+
+    <<nm $sophie "Oh yes, I'm sure I've made a good choice in you, <<Mr>> $player.surname. I expect great things, and in return even greater things will come to you. We'll go over the terms and details of your employment tomorrow, for now, you should go home and rest.<br><br>I'll have you escorted back to your house in the same fashion you were brought here.">>\
+
+    ''She was clearly on to you, but Ms. Dee was impressed by your conviction and seems to like you a little more as a result.''
+
+    <<Thought "This woman seems pretty strong-willed, not even slightly bothered by the fact that I was caught staring at her. I should watch myself, but I think we'll be able to get along?">>\
+
+    @@.data;Your confidence will have an affect on peoples' attraction to you.@@
+    <<all_Lust 8>>\
+
+    <<btnLink "Be taken back home" "Intro-Sophie-3">>
+
+
+:: Intro-Story1 {"position":"225,18100","size":"100,100"}
+@@.pic;<img data-passage="cg0-1">@@\
+	<<set $Location = "Company - Headquarters">>
+	
+	''Several men and women in suits gather around a large conference table in the executive meeting room. The office sits in one of the highest floors of one of the tallest buildings in the city.''
+
+	''The curtains are drawn closed, and the lights dimmed.''
+
+	<<nmc "Older Man" "I think we have everyone we need here. Let's lock the door and begin our review.">>\
+		
+	''The man speaking is an older gentleman. His face is aged, but hard and stern. His presence is demanding, and everyone in the room hangs on his words. He motions for another, younger man to proceed.''
+
+	<<nmc "Younger Man" "Thank you, sir. We're meeting today, this November 1st, to discuss the incident surrounding the northern branch of our company. Our records will indicate that nearly a year ago, we authorized funding towards an initiative requested by...">>\
+		
+	''The younger man drones on before he is interrupted by a woman sitting near him.''
+
+	<<nmc "Woman" "Excuse me, sir, but I think we're all familiar with the incident itself. I think it would be more beneficial for us now, to know a little bit more about the individual found to be at the center of it all." "UnknownF">>\
+		
+	''The younger man is clearly irritated by the interruption.''
+
+	<<nmc "Younger Man" "...Yes, of course... Here, the document I'm handing out to you all contains all the pertinent details regarding the individual in question...">>\
+
+	@@.pic;<img data-passage="cg0-2">@@\
+
+	''The old man from earlier is fumbling through the stack of files that were given to him.''
+
+	<<nmc "Older Man" "Ah, hm... It looks like you've given me too many documents? I'm seeing at least three employee records here, which is the one we're discussing today?">>\
+		
+	@@.btnChoice;<<button "The file regarding the @@.df;Male@@ employee" "Intro-CharacterGen">>
+		<<set 
+			$CustomCharacter to false,
+			$player.identity to "male",
+			$player.baseGender to "male",
+			$player.outfit to "casual1",
+			$player.underwear to "boxers1",
+			$player.penisSize to $M,
+			$player.hairLength to 1,
+			$player.breastSize to 0,
+			$player.assSize to 0,
+			$player.name to getName("male"),
+			$c to "Male"
+		>>
+	<</button>>@@
+	@@.btnChoice;<<button "It's the one with the @@.ef;Female@@ employee information" "Intro-CharacterGen">>
+		<<set 
+			$CustomCharacter to false,
+			$player.identity to "female",
+			$player.baseGender to "female",
+			$player.outfit to "casual2",
+			$player.makeup to 1,
+			$player.underwear to "cotton1",
+			$player.hairLength to 4,
+			$player.breastSize to $M,
+			$player.assSize to 0,
+			$player.pussySize to $XS,
+			$player.name to getName("female"),
+			$c to "Female"
+		>>
+	<</button>>@@
+	@@.btnChoice;<<button "It's the document containing the @@.sf;Transwoman's@@ file" "Intro-CharacterGen">>
+		<<set 
+			$CustomCharacter to false,
+			$player.identity to "trans",
+			$player.baseGender to "ts",
+			$player.outfit to "casual2",
+			$player.makeup to 1,
+			$player.underwear to "cotton1",
+			$player.penisSize to $S,
+			$player.hairLength to 3,
+			$player.breastSize to $S,
+			$player.assSize to $XS,
+			$player.name to getName("female"),
+			$c to "Trans"
+		>>
+	<</button>>@@
+
+	@@.btnUI;<<button "I'll print out a @@.gain;New File@@ for you" "Intro-CharacterGen">>
+		<<set 
+			$player.name to "Jesse",
+			$player.outfit to "casual1",
+			$player.underwear to "boxers1",
+			$player.baseGender to "male",
+			$player.penisSize to $M,
+			$CustomCharacter to true,
+			$c to "Unknown"
+		>>
+	<</button>>@@

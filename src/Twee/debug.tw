@@ -1,0 +1,773 @@
+:: dbg_Comments {"position":"475,1350","size":"100,100"}
+<hr>
+    ''Comments Testing''
+    <hr>
+    //Lots of changes can severely impact your character here. Be warned!//
+
+    Gender Override:
+    <<listbox "$debug_GenderOverride">>
+        <<option "Male" "male">>
+        <<option "Female" "female">>
+        <<option "Trans" "trans">>
+    <</listbox>>
+
+    ''Gender State Override''
+    <<radiobutton "$debug_StateOverride" "sissy">> Sissy
+    <<radiobutton "$debug_StateOverride" "bimbo">> Bimbo
+
+    ''Outfit Override''
+    <<listbox "$debug_OutfitOverride">>
+        <<option "Casual" "casual">>
+        <<option "Girly" "girly">>
+        <<option "Manly" "manly">>
+        <<option "Slutty" "slutty">>
+        <<option "Formal" "formal">>
+    <</listbox>>
+
+    ''Commentor''
+    <<listbox "$debug_Commentor">>
+        <<option $penny.name $penny selected>>
+        <<option $sophie.name $sophie>>
+        <<option $john.name $john>>
+        <<option $mom.name $mom>>
+        <<option $sister.name $sister>>
+    <</listbox>>
+
+    ''Mood''
+    <<listbox "$debug_Mood">>
+        <<option "Nice" "nice" selected>>
+        <<option "Mean" "mean">>
+        <<option "Shy" "shy">>
+        <<option "Flirty" "flirty">>
+        <<option "Horny" "horny">>
+        <<option "Formal" "formal">>
+    <</listbox>>
+
+    ''Topic''
+    <<listbox "$debug_Topic">>
+        <<option "Outfit" "outfit" selected>>
+        <<option "Makeup" "makeup">>
+    <</listbox>>
+
+    [[Test Comment|debug_Comment]] - <<back>>
+
+
+:: dbg_Events {"position":"350,1350","size":"100,100"}
+<hr>
+    ''Events Testing''
+    <hr>
+    //You can test various events and conversations from here.//
+
+    <<btnLink "Test Conversations" "debug_Convo">>
+    
+    <<btnLink "Test Home Events" "debug_EventViewHome">>
+    <<btnLink "Test Work Events" "debug_EventViewWork">>
+    <<btnLink "Test Dream Events" "debug_EventViewDream">>
+    <<btnLink "Test Night Events" "debug_EventViewNight">>
+
+    <<btnLink "Confirm" "debug_DebugMenu">>
+
+
+:: dbg_Greetings {"position":"350,1475","size":"100,100"}
+<hr>
+    ''Greetings - John''
+    <hr>
+
+    <<pic $john>>\
+
+    <<greet-John>>\
+
+    <<btnBack>>
+    <<btnReturn>>
+
+
+:: dbg_Scenes {"position":"725,1475","size":"100,100"}
+<hr>
+    ''Scenes''
+    <hr>
+    
+    <<btnLink "Go to the shop" "dbg_Shop">>
+
+    <<btnBack>>
+    <<btnReturn>>
+
+
+:: dbg_Shop {"position":"850,1475","size":"100,100"}
+<<pic $npc "ash">>\
+
+    <<if firstVisit()>>\
+        <<nm $player "Hello?">>\
+
+        ''There's a cute blond working the counter.''
+
+        <<nm $ash "What's up, name's $ash.name. Let me know if you need anything.">>\
+    <<else>>\
+        <<nm $player "Hey $ash.name.">>\
+
+        ''The cute blonde looks up.''
+
+        <<nm $ash "Oh, it's you... Welcome back.">>\
+    <</if>>\
+
+    ''You browse the shop.''
+
+    <<btnLink "Leave the store" "dbg_Scenes">>
+
+
+:: debug_CharacterCreation {"position":"600,1350","size":"100,100"}
+<<nm $westane "Under all the maintenance...">>\
+
+<<btnBack>>
+
+
+:: debug_Comment {"position":"725,1350","size":"100,100"}
+<<set $player.isDressedCasual to false>>\
+    <<set $player.isDressedGirly to false>>\
+    <<set $player.isDressedManly to false>>\
+    <<set $player.isDressedSlutty to false>>\
+    <<set $player.isDressedFormal to false>>\
+    <<set $player.isMale to false>>\
+    <<set $player.isFemale to false>>\
+    <<set $player.isTrans to false>>\
+    <<set $player.isSissy to false>>\
+    <<set $player.isBimbo to false>>\
+    <<switch $debug_GenderOverride>>\
+        <<case "male">>\
+            <<set $player.isMale to true>>\
+        <<case "female">>\
+            <<set $player.isFemale to true>>\
+        <<case "trans">>\
+            <<set $player.isTrans to true>>\
+    <</switch>>\
+    <<switch $debug_StateOverride>>\
+        <<case "sissy">>\
+            <<set $player.isSissy to true>>\
+        <<case "bimbo">>\
+            <<set $player.isBimbo to true>>\
+    <</switch>>\
+    <<switch $debug_OutfitOverride>>\
+        <<case "casual">>\
+            <<set $player.isDressedCasual to true>>\
+        <<case "girly">>\
+            <<set $player.isDressedGirly to true>>\
+        <<case "manly">>\
+            <<set $player.isDressedManly to true>>\
+        <<case "slutty">>\
+            <<set $player.isDressedSlutty to true>>\
+        <<case "formal">>\
+            <<set $player.isDressedFormal to true>>\
+        <<default>>\
+            <<set $player.isDressedCasual to true>>\
+    <</switch>>
+
+<<if $debug_Topic is "breasts">>\
+    Your Breast Tier: $player.breastTier
+    NPC Breast Tier: $penny.breastTier
+    NPC Breast Memory: $penny.rBreasts
+<</if>>\
+<<if $debug_Topic is "outfit">>\
+    Your Outfit is: $player.outfit
+    Outfit Remembered: $debug_Commentor.rOutfit
+<</if>>\
+
+Commentor: $debug_Commentor.name
+Mood: $debug_Mood
+
+<<com $debug_Commentor $debug_Topic $debug_Mood>>
+
+DType: _dType
+GType: _gType
+Tense: _tense
+
+Choice: _outc
+
+DB Selected:
+<<for _i = 0; _i < _comDB.length; _i++>>\
+    • - _comDB[_i] <br>
+<</for>>\
+
+DB Choices:
+<<for _i = 0; _i < _com.length; _i++>>\
+    • - _com[_i] <br>
+<</for>>\
+
+• [[GO BACK|debug_DebugMenu]]
+
+
+:: debug_Convo {"position":"850,1350","size":"100,100"}
+<<loc_Lab>>\
+
+    <<nm $saya "All conversations will end by sending you either to work or home, and will 'probably' completely break your game in the process!">>\
+
+    ''This is the debug view for conversations, meaning all locked conversations are still displayed, but disabled.''
+
+    <hr>
+
+    <<pic $mom>>\
+
+    <<Conversation $mom true>>
+
+    <<pic $sister>>\
+
+    <<Conversation $sister true>>
+
+    <<pic $sophie>>\
+
+    <<Conversation $sophie true>>
+
+    <<pic $penny>>\
+
+    <<Conversation $penny true>>
+
+    <<pic $diana>>\
+
+    <<Conversation $diana true>>
+
+    <<pic $julia>>\
+
+    <<Conversation $julia true>>
+
+    <<pic $tasha>>\
+
+    <<Conversation $tasha true>>
+
+    <<pic $john>>\
+
+    <<Conversation $john true>>
+
+    <<pic $kagney>>\
+
+    <<Conversation $kagney true>>
+
+    <<btnBack>>
+
+
+:: debug_DebugMenu {"position":"225,1350","size":"100,100"}
+<<unset $debug_OutfitOverride, $dEVENT_TITLE, $dEVENT_TYPE>>\
+<<set $dEVENT_TYPE to []>>\
+<<loc_Lab>>\
+
+<<nm $saya "PLEASE do not report any issues with the debug menu! It's a broken playground full of broken dreams, so it's expected that very little will work as intended here.<br><br>Be advised, any actions taken here will almost definitely have apocalyptic effects on your playthrough. It's recommended you save before touching anything!<br><br>Thank you!">>\
+<<if $game.release is "Dev Build">>\
+
+    @@Needs Testing:@@
+    <hr>
+    ''Testing Passages''
+    <<btnLink "Test Pit Slaves" "ThePit-Main">>\
+    <hr>
+<</if>>\
+
+''Options:''
+<hr>
+<<btnLink "Test Conversations and Events" "dbg_Events">>
+<<btnLink "Character Creation" "debug_CharacterCreation">>
+<<if $game.release is "Dev Build" or $game.devmode>>\
+
+    ''Experimental''
+    <hr>
+    <<btnLink "Test Shops" "debug_Shops">>
+    
+    <<btnLink "Test Pics" "debug_PicTest">>
+    <<btnLink "Test Memories" "debug_Memories">>
+    <<btnLink "Scene Tests" "dbg_Scenes">>
+    <<btnLink "Scratch Pad" "ScratchPad">>
+    @@.btnChoiceDom;<<button "Test Secret Dev Shit" "debug_DevRoom">><</button>>@@
+<</if>>\
+
+<<btnLink "Return to game, keeping changes - @@Depending on when you entered the debug menu, specifically during dialogue choice sequences or during events, the scene may not appear or work correctly upon return@@" "$dbgReturnPassage">>
+
+<<btnBack "Go back">>
+
+
+:: debug_DevRoom {"position":"975,1350","size":"100,100"}
+<<loc_Lab>>\
+
+<<nm $westane "This passage is modifying several variables behind the scenes, so the buttons may not do what they actually say the do, or may do them in unexpected ways. Look at the pretty buttons, but then consider using the back arrow in the sidebar!">>\
+
+__''Pulling information from new JS Functions:''__
+
+''Gender:''
+<<if isMale()>>\
+    Player is Male.
+<<elseif isFemale()>>\
+    Player is Female.
+<<elseif isTrans()>>\
+    Player is Trans.
+<<else>>\
+    Something went wrong!
+    <<print isMale()>>\
+    <<print isFemale()>>\
+    <<print isTrans()>>\
+<</if>>\
+Male: <<print gender('male')>>
+Female: <<print gender('female')>>
+Trans: <<print gender('trans')>>
+Sissy: <<print gender('sissy')>>
+Bimbo: <<print gender('bimbo')>>
+Trans-Sissy: <<print gender('trans-sissy')>>
+Trans-Bimbo: <<print gender('trans-bimbo')>>
+Trans-Sissy-Bimbo: <<print gender('trans-sissy-bimbo')>>
+
+''Anatomy:''
+Penis: <<print hasPenis() + " - " + pTier()>>
+Pussy: <<print hasPussy() + " - " + vTier()>>
+Breasts: <<print hasBreasts() + " - " + bTier()>>
+
+''Hair:''
+<<set _hVal to getHair()>>\
+Length (fun): <<print $HAIRLENGTH[getHair()]>>
+Length (var): $HAIRLENGTH[_hVal]
+
+<<if hair(1)>>\
+    Your hair is longer than @@$HAIRLENGTH[1]@@
+<<else>>\
+    Your hair is shorter than @@$HAIRLENGTH[1]@@
+<</if>>\
+
+''Makeup:''
+<<if makeup()>>\
+    You are wearing makeup.
+<<elseif not makeup()>>\
+    You are not wearing makeup.
+<<else>>\
+    Bad Return:
+    <<print makeup()>>
+<</if>>\
+    
+<<print $player.wearingMakeup[getMakeup()]>>
+<<print $player.makeupLevel[getMakeup()]>>
+
+''Outfit:''
+Dressed: <<print dressed('dressed')>>
+Manly: <<print dressed('manly')>>
+Girly: <<print dressed('girly')>>
+Slutty: <<print dressed('slutty')>>
+Formal: <<print dressed('formal')>>
+Casual: <<print dressed('casual')>>
+Crossed: <<print dressed('crossdressed')>>
+Bra: <<print dressed('bra')>>
+Underwear: <<print dressed('underwear')>>
+Girly Underwear: <<print dressed('girly-underwear')>>
+Slutty Underwear: <<print dressed('slutty-underwear')>>
+Strapon: <<print dressed('strapon')>>
+Chastity: <<print dressed('chastity')>>
+
+<<if dressed('strapon')>>\
+    You're wearing a strapon.
+<<else>>\
+    You're not wearing a strapon.
+<</if>>\
+
+<hr>
+<<btnBack>>
+
+
+:: debug_EventViewDream {"position":"100,1475","size":"100,100"}
+<<set _event to setup.DreamEventDB>>\
+    <<loc_Room>>\
+
+    <<nobr>>\
+        <table style="width:100%;">
+            <caption>Available Events</caption>
+            <tr style="width:100%;">
+                <th style="width:80%;">Event Name</th>
+                <th style="width:20%;">Event Link</th>
+            </tr>
+            <<for _i = 0; _i < $DreamEvents.length; _i++>>
+                <<set _ev to $DreamEvents[_i]>>
+                <<set _name to _event[_ev].title>>
+                <<set _link to _event[_ev].passage>>
+                <<set _id to _event[_ev].id>>
+                <tr>
+                    <td>_name</td>
+                    <td>
+                        <<capture _link, _id>>
+                            <<btnLink "Initiate" _link "$DreamEvents.delete(_id), $DreamEventsCD.push([_id,3])">>
+                        <</capture>>
+                    </td>
+                </tr>
+            <</for>>
+        </table>
+        <table style="width:100%;">
+            <caption>Events On Cooldown</caption>
+            <tr style="width:100%;">
+                <th style="width:80%;">Event Name</th>
+                <th style="width:20%;">Remaining</th>
+            </tr>
+            <<for _i2 = 0; _i2 < $DreamEventsCD.length; _i2++>>
+                <<set _ev2 to $DreamEventsCD[_i2][0]>>
+                <<set _cd to $DreamEventsCD[_i2][1]>>
+                <<set _name2 to _event[_ev2].title>>
+                <tr>
+                    <td>_name2</td>
+                    <td>_cd Day(s)</td>
+                </tr>
+            <</for>>
+        </table>
+        <table style="width:100%;">
+            <caption>All Events (Will Not Trigger Cooldown)</caption>
+            <tr style="width:100%;">
+                <th style="width:80%;">Event Name</th>
+                <th style="width:20%;">Event Link</th>
+            </tr>
+            <<for _i3 = 0; _i3 < _event.length; _i3++>>
+                <<set _name3 to _event[_i3].title>>
+                <<set _link3 to _event[_i3].passage>>
+                <tr>
+                    <td>_name3</td>
+                    <td>
+                        <<capture _link3>>
+                            <<btnLink "Initiate" _link3>>
+                        <</capture>>
+                    </td>
+                </tr>
+            <</for>>
+        </table>
+    <</nobr>>\
+
+    <<btnBack>>
+
+
+:: debug_EventViewHome {"position":"1100,1350","size":"100,100"}
+<<set _event to setup.HomeEventDB>>\
+    <<loc_Room>>\
+
+    <<nobr>>\
+        <table style="width:100%;">
+            <caption>Available Events</caption>
+            <tr style="width:100%;">
+                <th style="width:80%;">Event Name</th>
+                <th style="width:20%;">Event Link</th>
+            </tr>
+            <<for _i = 0; _i < $HomeEvents.length; _i++>>
+                <<set _ev to $HomeEvents[_i]>>
+                <<set _name to _event[_ev].title>>
+                <<set _link to _event[_ev].passage>>
+                <<set _id to _event[_ev].id>>
+                <tr>
+                    <td>_name</td>
+                    <td>
+                        <<capture _link, _id>>
+                            <<btnLink "Initiate" _link "$HomeEvents.delete(_id), $HomeEventsCD.push([_id,3])">>
+                        <</capture>>
+                    </td>
+                </tr>
+            <</for>>
+        </table>
+        <table style="width:100%;">
+            <caption>Events On Cooldown</caption>
+            <tr style="width:100%;">
+                <th style="width:80%;">Event Name</th>
+                <th style="width:20%;">Remaining</th>
+            </tr>
+            <<for _i2 = 0; _i2 < $HomeEventsCD.length; _i2++>>
+                <<set _ev2 to $HomeEventsCD[_i2][0]>>
+                <<set _cd to $HomeEventsCD[_i2][1]>>
+                <<set _name2 to _event[_ev2].title>>
+                <tr>
+                    <td>_name2</td>
+                    <td>_cd Day(s)</td>
+                </tr>
+            <</for>>
+        </table>
+        <table style="width:100%;">
+            <caption>All Events (Will Not Trigger Cooldown)</caption>
+            <tr style="width:100%;">
+                <th style="width:80%;">Event Name</th>
+                <th style="width:20%;">Event Link</th>
+            </tr>
+            <<for _i3 = 0; _i3 < _event.length; _i3++>>
+                <<set _name3 to _event[_i3].title>>
+                <<set _link3 to _event[_i3].passage>>
+                <tr>
+                    <td>_name3</td>
+                    <td>
+                        <<capture _link3>>
+                            <<btnLink "Initiate" _link3>>
+                        <</capture>>
+                    </td>
+                </tr>
+            <</for>>
+        </table>
+    <</nobr>>\
+
+    <<btnBack>>
+
+
+:: debug_EventViewNight {"position":"225,1475","size":"100,100"}
+<<set _event to setup.NightEventDB>>\
+    <<loc_Room>>\
+
+    <<nobr>>\
+        <table style="width:100%;">
+            <caption>Available Events</caption>
+            <tr style="width:100%;">
+                <th style="width:80%;">Event Name</th>
+                <th style="width:20%;">Event Link</th>
+            </tr>
+            <<for _i = 0; _i < $NightEvents.length; _i++>>
+                <<set _ev to $NightEvents[_i]>>
+                <<set _name to _event[_ev].title>>
+                <<set _link to _event[_ev].passage>>
+                <<set _id to _event[_ev].id>>
+                <tr>
+                    <td>_name</td>
+                    <td>
+                        <<capture _link, _id>>
+                            <<btnLink "Initiate" _link "$NightEvents.delete(_id), $NightEventsCD.push([_id,3])">>
+                        <</capture>>
+                    </td>
+                </tr>
+            <</for>>
+        </table>
+        <table style="width:100%;">
+            <caption>Events On Cooldown</caption>
+            <tr style="width:100%;">
+                <th style="width:80%;">Event Name</th>
+                <th style="width:20%;">Remaining</th>
+            </tr>
+            <<for _i2 = 0; _i2 < $NightEventsCD.length; _i2++>>
+                <<set _ev2 to $NightEventsCD[_i2][0]>>
+                <<set _cd to $NightEventsCD[_i2][1]>>
+                <<set _name2 to _event[_ev2].title>>
+                <tr>
+                    <td>_name2</td>
+                    <td>_cd Day(s)</td>
+                </tr>
+            <</for>>
+        </table>
+        <table style="width:100%;">
+            <caption>All Events (Will Not Trigger Cooldown)</caption>
+            <tr style="width:100%;">
+                <th style="width:80%;">Event Name</th>
+                <th style="width:20%;">Event Link</th>
+            </tr>
+            <<for _i3 = 0; _i3 < _event.length; _i3++>>
+                <<set _name3 to _event[_i3].title>>
+                <<set _link3 to _event[_i3].passage>>
+                <tr>
+                    <td>_name3</td>
+                    <td>
+                        <<capture _link3>>
+                            <<btnLink "Initiate" _link3>>
+                        <</capture>>
+                    </td>
+                </tr>
+            <</for>>
+        </table>
+    <</nobr>>\
+
+    <<btnBack>>
+
+
+:: debug_EventViewWork {"position":"1225,1350","size":"100,100"}
+<<set _event to setup.WorkEventDB>>\
+    <<loc_Room>>\
+
+    <<nobr>>\
+        <table style="width:100%;">
+            <caption>Available Events</caption>
+            <tr style="width:100%;">
+                <th style="width:80%;">Event Name</th>
+                <th style="width:20%;">Event Link</th>
+            </tr>
+            <<for _i = 0; _i < $WorkEvents.length; _i++>>
+                <<set _ev to $WorkEvents[_i]>>
+                <<set _name to _event[_ev].title>>
+                <<set _link to _event[_ev].passage>>
+                <<set _id to _event[_ev].id>>
+                <tr>
+                    <td>_name</td>
+                    <td>
+                        <<capture _link, _id>>
+                            <<btnLink "Initiate" _link "$WorkEvents.delete(_id), $WorkEventsCD.push([_id,3])">>
+                        <</capture>>
+                    </td>
+                </tr>
+            <</for>>
+        </table>
+        <table style="width:100%;">
+            <caption>Events On Cooldown</caption>
+            <tr style="width:100%;">
+                <th style="width:80%;">Event Name</th>
+                <th style="width:20%;">Remaining</th>
+            </tr>
+            <<for _i2 = 0; _i2 < $WorkEventsCD.length; _i2++>>
+                <<set _ev2 to $WorkEventsCD[_i2][0]>>
+                <<set _cd to $WorkEventsCD[_i2][1]>>
+                <<set _name2 to _event[_ev2].title>>
+                <tr>
+                    <td>_name2</td>
+                    <td>_cd Day(s)</td>
+                </tr>
+            <</for>>
+        </table>
+        <table style="width:100%;">
+            <caption>All Events (Will Not Trigger Cooldown)</caption>
+            <tr style="width:100%;">
+                <th style="width:80%;">Event Name</th>
+                <th style="width:20%;">Event Link</th>
+            </tr>
+            <<for _i3 = 0; _i3 < _event.length; _i3++>>
+                <<set _name3 to _event[_i3].title>>
+                <<set _link3 to _event[_i3].passage>>
+                <tr>
+                    <td>_name3</td>
+                    <td>
+                        <<capture _link3>>
+                            <<btnLink "Initiate" _link3>>
+                        <</capture>>
+                    </td>
+                </tr>
+            <</for>>
+        </table>
+    <</nobr>>\
+
+    <<btnBack>>
+
+
+:: debug_Memories {"position":"475,1475","size":"100,100"}
+<<loc_Lab>>\
+
+<<pic $penny>>\
+
+<<if not recallHair($penny)>>\
+    <<if hair(0) and gender('male')>>\
+        <<nm $penny "I love bald men!">>\
+        <<set commitMemory($penny,'bald-man')>>\
+    <<elseif hair(0) and gender('female','trans')>>\
+        <<nm $penny "Ah, that's an interesting look.">>\
+    <<else>>\
+        <<nm $penny "Oh hey, I like your hair!">>\
+    <</if>>\
+    <<set rHair($penny)>>\
+<<else>>\
+    <<if hairIsLonger($penny)>>\
+        <<if recallHair($penny,0) and gender('male')>>\
+            <<nm $penny "Aw, your grew your hair...">>\
+        <<else>>\
+            <<nm $penny "Oh you grew your hair out. Nice!">>\
+        <</if>>\
+    <<elseif hairIsShorter($penny)>>\
+        <<if recallMemory($penny,'bald-man') and gender('male')>>\
+            <<nm $penny "Yay! You're bald again!">>\
+        <<elseif recallMemory($penny,'bald-man') and not gender('male')>>\
+            <<nm $penny "Hm, I liked you bald before, but... I don't think it works now.">>\
+        <<elseif hair(0) and gender('male')>>\
+            <<nm $penny "Ooooh, you shaved your head! I love it!">>\
+        <<elseif hair(0) and not gender('male')>>\
+            <<nm $penny "I'm not sure the feminine bald looks works for you...">>\
+        <<else>>\
+            <<nm $penny "Oh hey, did you get a haircut? I like it!">>\
+        <</if>>\
+    <<else>>\
+        <<if hair(0)>>\
+            <<nm $penny "It must be easy to keep your hair so nice when you don't have any!">>\
+        <<elseif hair(4,true)>>\
+            <<nm $penny "Man, it must be tough to keep up on that much hair!">>\
+        <<else>>\
+            <<nm $penny "How do you keep your hair so nice, $player.name?">>\
+        <</if>>\
+    <</if>>\
+    <<set rHair($penny)>>\
+<</if>>\
+
+''$penny.name looks at your outfit.''
+Primary Outfit: <<print getPrimaryOutfit()>>
+
+<<btnLink "To Your Room" "Room">>
+<<btnLink "To The Bathroom" "HomeBathroom">>
+
+
+:: debug_PicTest {"position":"600,1475","size":"100,100"}
+<<set $ShowImages to true>>\
+    <<set $DebugImages to true>>\
+    <<loc_Room>>\
+
+    <<nm $elsa "Hello ?mc!">>\
+
+    <<nm $kagney "Hello ?mc!">>\
+    
+    <<nm $james "Hello ?mc!">>\
+    
+    <<set $james.isHidden to false>>\
+    <<nm $james "Hello ?mc!">>\
+    
+    <<nm $tory "Hello ?mc!">>\
+    
+    <<set $tory.isHidden to false>>\
+    <<nm $tory "Hello ?mc!">>\
+
+    <<nm $erik "dialogue">>\
+
+<<set $DebugImages to false>>\
+<<btnBack>>
+
+
+:: debug_ShopBuy {"position":"1100,1475","size":"100,100"}
+<<pic $npc "ash">>\
+
+    <<nm $ash "So you want to buy $Purchase.name? That'll be $$$Purchase.cost...">>\
+
+    <<btnBack>>\
+
+
+:: debug_Shops {"position":"975,1475","size":"100,100"}
+<<set
+        _shop to "hart", 
+        _store to setup.hartShop,
+        _pInv to $Coinshop[_shop],
+        _coin to "Hart Coin"
+    >>\
+    <<set _inventory to Object.keys(_store)>>
+    <<set $player.hartShop to ["ava-outdoorsy"]>>\
+    <<set _pInv.push("ava-greenTop","ava-outdoorsy","ava-polkadots","story_bossDinner")>>\
+    <<set $Money to 80000>>\
+    <<loc_Image>>\
+    
+    <<pic $npc "ash">>\
+
+    <<nm $ash "Alright cutie, here's what I have on offer right now so make sure you spend wisely. Remember, you'll be the only one actually aware of these outfits no matter how, hehe, questionable they might be...">>\
+
+    ''$ash.name mindlessly spins a coin on the shop counter as you look through her inventory...''
+    <<nobr>>\
+        <table style="width:100%;">
+            <caption>Hart Shop</caption>
+            <tr style="width:100%;">
+                <th>Item</th>
+                <th>Character</th>
+                <th>Cost</th>
+                <th>Type</th>
+                <th>Purchase</th>
+            </tr>
+            <<for _i = 0; _i < _inventory.length; _i++>>
+                <<set _itm to _inventory[_i], 
+                    _item to _store[_itm], 
+                    _cost to _item.cost, 
+                    _name to _item.name, 
+                    _type to _item.type, 
+                    _char to variables()[_item.char].name
+                >>
+                <<if _pInv.includes(_itm)>>
+                    <tr style="width:100%;">
+                        <td>_name</td>
+                        <td>_char</td>
+                        <td><<num _cost "$" "">> - 1x _coin</td>
+                        <td>_type</td>
+                        <<if $player.hartShop.includes(_itm)>>
+                            <<btnDisable "@@.gain;Owned@@">>
+                        <<elseif _cost > $Money>>
+                            <<btnDisable "@@.loss;Can't Afford">>
+                        <<else>>
+                            <<capture _item>>
+                                <<btnLink "Purchase" "debug_ShopBuy" "$Purchase = _item">>
+                            <</capture>>
+                        <</if>>
+                    </tr>
+                <</if>>
+            <</for>>
+        </table>
+    <</nobr>>\
+
+    <<btnBack>>\
+	

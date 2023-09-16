@@ -1,8 +1,0 @@
-:: ArtDemoEnd {"position":"100,100","size":"100,100"}
-<<loc_Night>>\
-
-    <<art $kagney "happy" $julia "aroused">>\
-
-    <<nm $saya "Hey there! So, what'd you think of the latest artwork demo for The Company? Hopefully you enjoyed it! That's it for now, stay tuned for future updates, and please fill out the feedback survey through the link below to tell us what you thought!">>\
-
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3tX2-pHqz6mAs7lVZMP35ygfY-OPeZsiQS5BL5dxDQzmHJw/viewform?usp=sf_link">@@.btnUI;<<button "Give us your feedback">><</button>>@@</a>

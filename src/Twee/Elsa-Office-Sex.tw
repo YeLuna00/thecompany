@@ -1,0 +1,245 @@
+:: Elsa-Office-Sex {"position":"1100,13725","size":"100,100"}
+<<loc_Cubicles>>\
+
+    ''You and $elsa.name sneak off into an empty storage room in the back of the cubicle farm. There just happens to be a mattress in the back corner of the room, implying you're not the first couple to think of using this space for sex. $elsa.name pulls you down onto the mattress and straddles your waist.''
+
+    <<pic $elsa "topless">>\
+
+    <<nm $elsa "Mmm, I've been missing you! C'mon, I don't have a lot of time!">>\
+
+    ''$elsa.name quickly sits herself up and starts pulling at your <<bottom>>.''
+
+    <<if isChastity()>>\
+        <<nm $elsa "Hm?">>\
+
+        ''She examines the cage on your cock.''
+
+        <<CommentChastity $elsa
+            "What the hell, your dick's all locked up!"
+            "Oh yeah, you're still wearing that thing..."
+        >>\
+
+        ''$elsa.name smiles mischievously before stripping out of the rest of her clothes.''
+
+        <<pic $elsa "spread">>\
+
+        <<nm $player "Holy shit...">>\
+
+        <<nm $elsa "Hehe, nice isn't it? Well I figured since you're all outta commission, you could just make me feel good instead!">>\
+
+        ''She starts to lightly rub the outside of her pussy, coaxing out small streams of glistening wetness. You can smell her warm sex wafting towards you, driving you to sit up and move forward until your nose is almost buried in it. By this point you're moving purely on primal instinct as you bury your tongue in your cousin's slit.''
+
+        <<pic $player "eat-pussy">>\
+
+        <<nm $elsa "Ooohhhh! Mmmm, yeah... Just like that...">>\
+
+        ''You lick and lap and pull her in as you push deeper and deeper. She tries her best to suppress her moaning, yelping in surprise when you flip her over on her back and start sucking on her throbbing clit.''
+
+        <<nm $elsa "F-fuck! Hnnggg..." "Damn... <<He>>'s really good at this! I-I'm gonna...">>\
+
+        <<pic $elsa "orgasm">>\
+
+        ''$elsa.name trembles and flails, biting into the sheets as waves of juices roll out of her quivering pussy. You give her a second to catch her breath before plunging two fingers deep inside her as you pull her clit back into your mouth.''
+
+        <<nm $elsa "HOLY FMMMM!!!" "<<He>> can't be serious!">>\
+
+        <<nm $player "Mph, mmph, hhmmmph..." "She tastes amazing...">>\
+
+        ''This continues on for some time, until your cousin has been left a complete puddle on the bed. You lean over her and slide your tongue into her panting mouth to ensure she gets a thorough taste of herself before sliding off the bed and back into your clothes.''
+
+        <<nm $player "Well, I've gotta get back to the lab. You good, or...">>\
+
+        <<nm $elsa "Can't... walk...">>\
+
+        ''You laugh and shrug as you head to the door.''
+
+        <<nm $player "I'll see you in a bit!">>\
+
+        <<dom $player -5>>
+
+        <<horny 30>>
+        <<trackAction "eatPussy.give">>\
+    <<elseif isSissy()>>\
+        <<nm $elsa "Aww, it's so cute!">>\
+
+        ''$elsa.name reaches out and starts to stroke your flaccid <<pSize>>, ignoring your blushing as she stares at it in some kind of perverted wonderment. Despite her best efforts, your tiny cock remains soft and impotent. She starts rolling the tip between her thumb and finger, coaxing out a small amount of precum that dribbles over her hand.''
+
+        <<nm $player "H-haa, mmm...">>\
+
+        <<nm $elsa "Hehe, your little cock's not worth much, huh? Good thing I brought this with me!">>\
+
+        ''$elsa.name reaches back for her purse, pulling back a familiar looking toy.''
+
+        <<nm $elsa "If that's the case, I'mma fuck you like a girl! Oh this is gonna be fun!">>\
+
+        <<nm $player "W-wait, I don't know if...">>\
+
+        ''It's far too late, $elsa.name's already got the harness fastened and is squirting lubrication into her hand.''
+
+        <<nm $elsa "Hehe, alright, show me that slutty little pussy of yours!">>\
+
+        ''You hesitate, but the sight of your lithe cousin wearing that huge cock has your entire body worked up. Almost without thinking, you lean back and expose your <<aSize>>, eagerly awaiting what comes next.''
+
+        <<pic $player "spread">>\
+        
+        <<nm $player "@@.sf;W-well... c-come on, then...@@" "@@.sf;C-cock... I need her... cock...@@">>\
+
+        <<nm $elsa "Hahaha, wow! Aren't you eager! Well, let's not keep you waiting!">>\
+
+        ''$elsa.name pounces on you, lining up her cock with your hole and pressing the tip against your anus. You shudder at the shock of cold lubricant, and take a deep breath as she enters you.''
+
+        <<nm $player "Mmm... Ooohhh...">>\
+
+        ''The fake cock slides in, and after just a few moments of thrusting $elsa.name is fucking you with the full length of the large toy. Once she's able to do this easily, she rapidly increases the pacing.''
+
+        <<pic $elsa "fuck-player">>\
+
+        <<nm $player "H-haa! Haaa, m-mmmm, ooohhhh..." "S-she's being so rough!">>\
+
+        ''$elsa.name is completely lost in her own pleasure, fucking you deeper and harder with every thrust as juices spill out from between her thighs. Precum flows from your flaccid, flapping cocklet and you know your own orgasm is imminent.''
+
+        <<nm $elsa "Haaa... Haaaa... Mmmm... C'mon baby, cum like a slut for me!">>\
+
+        <<nm $player "Hngg... HAAA! F-FUCK!">>\
+
+        ''You release a high pitched yelp as $elsa.name buries her strapon deep into your quivering <<aSize>>, spurts of transparent fluid shoots from the tip of your <<pSize>> as you spasm in ecstasy. $elsa.name, enjoying her own trembling orgasm, holds you in place for several moments before finally sliding her thick fake cock out of your asshole.''
+
+        <<pic $elsa "bed-topless">>\
+
+        <<nm $elsa "Mmm... That was amazing... Such a submissive little sissy!">>\
+
+        <<nm $player "Haaa... haaa..." "@@.sf;T-that was... so good...@@">>\
+
+        ''With that, $elsa.name pulls her clothing back on and gives you a kiss on the forhead before heading back to work. You get yourself together as well, knowing you have your own tasks to complete today.''
+
+        <<dom $player -5>>
+
+        <<horny 0>>
+        <<trackAction "analFuck.get">>\
+    <<elseif hasPenis()>>\
+        <<CommentPenis $elsa
+            "H-holy shit! You're fucking huge!"
+            "Mmm, hey there big <<boy>>!"
+            "Mmm, there <<he>> is!"
+            "Mmm, there <<he>> is!"
+            "Aw, there <<he>> is!"            
+        >>\
+
+        ''You moan softly as $elsa.name takes your <<pSize>> into her hand and works it until it's hard. Once she has it nice and stiff, your cousin slides down between your legs and begins licking the length of your cock, before finally wrapping her lips around it.''
+
+        <<pic $elsa "suck-player">>\
+
+        <<nm $player "O-ohhh, mmmm..." "Fuck she's amazing!">>\
+
+        <<CommentPenis $elsa
+            "Mmmph! Mmph! HHMPH!|Oh my GAWD I can barely get this monster down my throat!"
+            "Mmph! MMmph! Hngph!|Mmm, <<his>> thick cock is filling my entire throat! I need this inside me..."
+            "Mmmph, mph, mmph!|Mmm, <<he>> tastes so good..."
+            "Mmmph, mph, mmph!|Mmm, <<he>> tastes so good..."
+            "Mmmph, mph, mmph!|Mmm, <<he>> tastes so good..."
+        >>\
+
+        ''$elsa.name takes you as deep as she can and holds you there for a few moments before releasing your slick cock from her tiny, drooling mouth. With a mischievous look on her face, she climbs up on top of you and lines her dripping pussy up with your recently lubricated penis.''
+
+        <<nm $player "Eager are we?">>\
+
+        <<nm $elsa "Well, you said it yourself, we don't have much time, and I'm sick of waiting!">>\
+
+        ''Your wet <<pSize>> slides into $elsa.name's tight pussy as she drops herself down onto your waist.''
+
+        <<pic $elsa "ride-player">>\
+
+        <<CommentPenis $elsa
+            "H-HOLY FUCK! Mmmmmm... f-f-fuck that's t-thick!"
+            "Oooohhh FUCK! Mmmmm, that fills me so GOOD!"
+            "Mmmmm, fuuuuuck that's good! Mhmmm..."
+            "A-ahhh, there it is... Mmmm..."
+            "A-ahhh, there it is... Mmmm..."
+        >>\
+
+        ''After taking you in all the way, $elsa.name starts bouncing up and down on your cock, harder and faster as she gets further and further lost in her pleasure. You thrust upwards as well, ensuring maximum stimulation as you both quickly work towards an explosive orgasm.''
+
+        <<pic $elsa "orgasm">>\
+
+        <<nm $elsa "F-FUCK!">>\
+
+        <<nm $player "I'm c-cumming!">>\
+
+        <<pic $elsa "creampie">>\
+
+        ''You pull $elsa.name down by the wrists as you empty your thick, hot load deep inside her. She trembles through her intense climax before finally collapsing on top of you.''
+
+        <<nm $elsa "That was... amazing...">>\
+
+        <<nm $player "Y-yeah...">>\
+
+        ''The two of you lay together for a few moments before $elsa.name forces herself to roll off of you, your soft, wet cock slipping out of her dripping pussy. She pulls her clothing back on and makes her way to the door.''
+
+        <<nm $elsa "Mmm, that should hold me over for the day!">>\
+
+        <<dom $player 5>>
+
+        <<horny 0>>
+        <<trackAction "pussyFuck.give">>\
+        <<trackAction "creampie.give">>\
+    <<else>>\
+        <<pic $player "spread">>\
+
+        <<nm $elsa "Mmm, there <<he>> is... Your little pussy looks soooo tasty!">>\
+
+        <<nm $player.b "@@.bf;Tee-hee, I know right? You should come see just how tasty it is!@@">>\
+        <<nm $player.d "Think so? I mean, you won't know until you try...">>\
+
+        ''An excited smile stretches across $elsa.name's face before she throws you back into your bed and slides between your thighs. She gives you one last lustful gaze before tending to the glistening slit in front of her.''
+
+        <<pic $elsa "eat-pussy">>\
+
+        <<nm $player "Ooohhhh, mmmm..." "God, her tongue feels amazing!">>\
+
+        <<nm $elsa "Mmph, mmph, hhhmph, mph!">>\
+
+        ''Your cousin licks away at your dribbling pussy, sliding in a couple fingers at one point to stimulate your g-spot. You buck and moan as she sends you flying from one intense orgasm into another.''
+
+        <<nm $player "F-fuck!">>\
+        
+        <<nm $elsa "Mmmm, mmmph, mmmm...">>\
+
+        ''$elsa.name has completely zoned in on eating you out, leaving you just a little jealous at all the fun she's having down there.''
+
+        <<nm $player.d "H-hey, $elsa.name... I want a turn down on you!">>\
+        <<nm $player.b "@@.bf;Mmmm, heeyyyyy! I wanna taste your pussy, too!@@">>\
+
+        ''She freezes as her eyes dart upward to meet yours and without hesitation she moves into position.''
+
+        <<pic $elsa "spread">>\
+
+        <<nm $elsa "Well!?">>\
+
+        ''You don't need another invitation as you turn to bury your nose in your cousin's dripping pussy. She's already so drenched from eating you out that the smell is immediately intoxicating. You start slow, running your tongue along the length of her slit, but her moaning and gyrating hips are all it takes for you to go all in.''
+
+        <<pic $player "eat-pussy">>\
+
+        <<nm $elsa "Mmmmm ffffuck!">>\
+
+        <<nm $player "Mmph, mph, mmmm..." "She tastes amazing!">>\
+
+        <<pic $elsa "orgasm">>\
+
+        ''$elsa.name coos and moans as you work your tongue in and out of her sopping hole. You use your tongue, your fingers, nibble her clit, everything you can think of to make her cum at least as many times as you did. Finally, after who knows how many orgasms, the two of you collapse into each other. After several moments of basking in each other's afterglow, you slide out of your cousin and sit up in bed, gathering up both of your discarded clothing.''\
+
+        <<nm $elsa "That was... a-amazing...">>\
+
+        <<nm $player "Y-yeah... fuck...">>\
+
+        ''The two of you finally start getting yourselves back together. As $elsa.name moves to the door she turns around with a lustful smile on her face.''
+
+        <<nm $elsa "Mmm, that should hold me over for the day!">>\
+
+        <<horny 0>>
+        <<trackAction "eatPussy.get">>\
+        <<trackAction "eatPussy.give">>\
+    <</if>>\
+
+    <<set $ElsaScore -= 5>>\
+    <<run setDailyCD("FuckElsa",1)>>\
+    <<btnLink "Continue" "Work" "passTime()">>

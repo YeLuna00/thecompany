@@ -1,0 +1,17 @@
+:: Bathroom-John-OralMale {"position":"725,13475","size":"100,100"}
+<<loc_Bathroom>>\
+    <<SetFlag $john "SeeBathroomOral">>\
+    
+    ''You hear the sounds of choking, slapping and jeering coming from the bathroom.''
+
+    <<pic $john "group-oral-male">>\
+
+    ''Prior to this, you thought the women forcing themselves on $john.name were cruel, but now you can see they have nothing on men of the company. $john.name has been stripped down, and is getting passed around a large crowd of men in front of the stalls. Each of them takes turns skull-fucking $john.name to the point of near asphyxiation, before releasing him and shoving him over to the next waiting cock. All the while, he's being verbally degraded and lightly beaten by the onlookers.
+
+    Shockingly, $john.name maintains his erection throughout the entire experience, which ends in load after load being deposited into his mouth.''
+
+    <<Thought "I should probably sneak off before they notice me...">>\
+
+    <<dom $john -1>>
+
+    <<btnLink "Head back to the lobby" "Work">>
